@@ -5,7 +5,9 @@
 ### Processing? Python? Sim!
 
 Como instalar: https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/
-Outros exemplos do Alexandre: https://abav.lugaralgum.com/sketch-a-day
+
+Outros exemplos do Alexandre: https://github.com/villares/material-aulas/blob/master/workshop-2019-10-senac/senac.svg
+e https://abav.lugaralgum.com/sketch-a-day
 
 ```python
 h = 10
