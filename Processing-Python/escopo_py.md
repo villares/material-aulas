@@ -41,4 +41,11 @@ def draw():
         x = 0
 ```
 
-É comum escutarmos que devemos usar variáveis globais com parcimônia, usadas descuidadamente, elas criam o risco de alterarmos  inadvertidamente valores em pontos inesperados do programa.
+É comum escutarmos que devemos usar variáveis globais com parcimônia, usadas descuidadamente, elas criam o risco de alterarmos  inadvertidamente valores em pontos inesperados do programa. O uso indicriminado de variáveis globais viola certos princípios de "bom design de sofwtare", como o encapsulamento das funcionalidades em partes independentes. Em pequenos *sketches* você não deve se preocupar muito com isso!
+
+---
+Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
+
+---
+Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
+
