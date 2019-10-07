@@ -5,7 +5,7 @@
 
 - [Material introdutório de Python (usando Processing modo Python)](//blob/master/Processing-Python)
 
-  - [Desenho básico (linhas, retângulos e ect)](https://github.com/villares/material-aulas/blob/master/Processing-Python/desenho-basico_py.md)
+  - [Desenho básico (linhas, retângulos e etc)](https://github.com/villares/material-aulas/blob/master/Processing-Python/desenho-basico_py.md)
   - [Condicionais (`if` e `else`)](https://github.com/villares/material-aulas/blob/master/Processing-Python/condicionais_py.py)
   - [Escopo de variáveis (local e global)](https://github.com/villares/material-aulas/blob/master/Processing-Python/escopo_py.py)
   - [Movimento (bolinha rebatendo)](https://github.com/villares/material-aulas/blob/master/Processing-Python/movimento_py.py)
