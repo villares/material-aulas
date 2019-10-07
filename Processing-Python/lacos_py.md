@@ -32,3 +32,9 @@ for i in range(0, 80, 10):
   for j in range(0, 80, 10): 
     ellipse(i, j, 5, 5) 
 ```
+
+---
+Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
+
+---
+Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
