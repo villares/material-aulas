@@ -1,6 +1,6 @@
 # Input com teclado e mouse - entradas de dados
 
-No Processing, o teclado e o mouse são duas as principais formas de entrada de dados. Em outra ocasião trataremos da leitura de arquivos e outras fontes de dados. Veh=jamos aqui as maneiras de se obter informações sobre o movimento e cliques do mouse, assim como saber sobre as teclas sendo pressionadas no teclado. 
+No Processing, o teclado e o mouse são duas as principais formas de entrada de dados. Em outra ocasião trataremos da leitura de arquivos e outras fontes de dados. Vejamos aqui maneiras de se obter informações sobre o movimento e cliques do mouse, assim como saber sobre as teclas sendo pressionadas no teclado. 
 
 1. Variáveis de sistema 
 
@@ -83,3 +83,8 @@ def keyPressed():          # Esta função executa uma vez quando uma tecla é p
         
 ```
 
+---
+Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
+
+---
+Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
