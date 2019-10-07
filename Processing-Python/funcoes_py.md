@@ -30,3 +30,9 @@ def olho(x, y, tamanho) :
     fill(0)
     circle(x, y, tamanho*.40)
 ```
+
+---
+Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
+
+---
+Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
