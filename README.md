@@ -13,4 +13,4 @@
   - [Laços de repetição (iteração)](/Processing-Python/lacos_py.md)
   - [Declarando novas funções](/Processing-Python/funcoes_py.py)
   - [Escopo de variáveis (local e global)](/Processing-Python/escopo_py.md)
-  - [Tipos de valores (inteiros, números de ponto flutuante, texto)](/Processing-Python/desenho-basico_py.py)
+  - [Tipos de valores (inteiros, números de ponto flutuante, texto)](/Processing-Python/tipagem.md)
