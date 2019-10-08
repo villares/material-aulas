@@ -8,6 +8,11 @@ O `for` permite controlar uma seqüência de repetições. Pegando de um em um i
 lista_de_palavras = ["abacate", "uva", "frango"]
 for palavra in lista_de_palavras:
   print(palavra)
+  
+# o resultado impresso no console:
+# abacate
+# uva
+# franco
 ```
 
 É muito comum ser usado em conjunto com `range()` que produz uma sequência de números.
@@ -15,14 +20,24 @@ for palavra in lista_de_palavras:
 ```python   
 for n in range(10):
   print(n)
+  
+# o resultado impresso no console:
+# 0
+# 1
+# 2
+# ...
+# 8
+# 9
+
 ```
 
 ## Exemplos
 
-### contator 
+### linhas paralelas 
+
 ```python
-for i in range(10, 80, 5):
-  line(30, i, 80, i) 
+for y in range(10, 80, 5):
+  line(30, y, 80, y) 
 ```
 
 ### laços "aninhados" par fazer uma grade
