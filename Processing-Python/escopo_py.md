@@ -2,8 +2,9 @@
 
 ## Variáveis locais e parâmetros nas definições de funções
 
-Criando normalmente um variável dentro da definição de uma função (como `setup()`, por exemplo), dizemos que a variável tem *escopo local* e somente o código dentro da função reconhece aquele nome e enxerga os valores atribuidos neste escopo.
-Os parâmetros ou argumentos de uma função funcionan no escopo local da função.
+Criando um variável dentro da definição de uma função (como `setup()`, por exemplo), dizemos que a variável tem *escopo local*, isto significa que somente o código dentro da função reconhece aquele nome e enxerga os valores a ela atríbuidos.
+
+Os parâmetros que recebem os valores dos argumentos de uma função funcionan também como nomes no escopo local da função.
 
 ### exemplo de uma variável local
 
