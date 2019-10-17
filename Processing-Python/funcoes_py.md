@@ -2,7 +2,7 @@
 
 ### Sintaxe da definição/declaração
 ```python
-def nome_da_função(parâmetro, outro_parâmetro): # esta função precisa de dois parâmetros/argumentos
+def nome_da_função(nome_parâmetro, nome_outro_parâmetro): # esta função precisa de dois parâmetros/argumentos
      Bloco_de_código_que_a_função_executa
 ```
 
@@ -30,6 +30,23 @@ def olho(x, y, tamanho) :
     fill(0)
     circle(x, y, tamanho*.40)
 ```
+
+### Funções que devolvem valores
+
+A função `olho()` desenha um olho mas não devolve nenhum valor, na verdade ela devolve o valor especial `None`(uma espécie de "dada"). Mas é comum termos funções que devolvem um valor. Aqui alguns exemplos:
+
+```python
+def cor_sorteada():
+    """Sorteia uma cor RGB"""
+    r = random(256)
+    g = random(256)
+    b = random(256)
+    cor = color(r, g, b)
+    return cor # devolve a cor e retorna o fluxo de execução
+```
+
+Uso:
+
 
 ---
 Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
