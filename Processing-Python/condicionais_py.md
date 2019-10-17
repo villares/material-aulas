@@ -18,7 +18,7 @@ else:                   # termina o “se/então” e começa o “senão”
                         # termina o bloco do “senão”, continua o passeio.
 ```
 
-![condicionalhttps://arteprog.space/programacao-criativa/assets/imagens/condicional-sem-else.jpg)
+![condicional](https://arteprog.space/programacao-criativa/assets/imagens/condicional-sem-else.jpg)
 
 ``` python
 if chovendo:            # a condição "chovendo" é avaliada como true (verdadeiro) ou false (falso)
