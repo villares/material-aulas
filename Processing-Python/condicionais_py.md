@@ -1,4 +1,4 @@
-# Condicionais
+# Instruções condicionais e operadores lógicos
 
 ## As bifurcações no caminho de execução do código
 
@@ -34,29 +34,24 @@ if chovendo:            # a condição "chovendo" é avaliada como true (verdade
 def setup():
   size(200, 200)
 
-
 def draw():
     if mouseY < 100:    # se a posição Y do mouse for menor que 100, o mouse estiver perto do topo da tela
         fill(255)       # então pede preenchimento branco (só executa quando mouseY é menor que 100)
     else:               # termina o bloco “se/então” e começa o do “senão”
         fill(100)       # preenchimento cinza 100 (só executa quando mouseY não é menor que 100)
                         # termina o bloco do “senão”    
-
     if mousePressed:                    # Se o mouse estiver pressionado
         ellipse(mouseX, mouseY, 10, 10) # Então desenha um círculo na posição do mouse
                                         # termina o bloco (repare que não faz nada se o mouse estiver solto)
-
     if keyPressed and key == 'a':    # Se uma tecla foi precionada E a tecla foi o caractere 'a'
         background(200)              # Apague a tela com um fundo cinza (só executa sob as condições acima)
-  
-
 ```
 
-## Comparações e operadores lógicos
+## Comparações com operadores relacionais e operadores lógicos
 
-Os valores `True` (verdadeiro) e `False` (falso) são o resultado das comparações e das chamadas operações lógicas **e** (`and`), **ou** (`or`) e **não** (`not`). Podem ser armazenados em variáveis do tipo *boolean* (Booleano, em homenagem a [George Boole](https:#pt.wikipedia.org/wiki/George_Boole)) definidas pela pessoa que criou o programa, representando um *estado*.
+Os valores `True` (verdadeiro) e `False` (falso) são o resultado de expressões booleanas (*boolean*, em homenagem a [George Boole](https:#pt.wikipedia.org/wiki/George_Boole)) como as comparações com operadores relacionais (comprações), ou operações lógicas **e** (`and`), **ou** (`or`) e **não** (`not`). 
 
-Da mesma forma, são os valores acessados quando usamos as variáveis de sistema *mousePressed* e *keyPressed*.
+Podem ser armazenados em variáveis, representando um *estado* no programa, e são os mesmos valores obtidos quando usamos as variáveis de sistema *mousePressed* e *keyPressed*, por exemplo.
  
 |operador | uso | descrição |
 |:---:  |:---: |--- |
@@ -76,6 +71,15 @@ Da mesma forma, são os valores acessados quando usamos as variáveis de sistema
 
 No caso de repetidos `if`, o 'else + if' é abreviado `elif`.
 
+```python
+if a == 0:
+    faz_isto()
+elif a == 1:
+    faz_aquilo()
+else:
+    faz_outra_coisa()
+```
+
 Confira também a abreviação de `if` + atribuições, o `A if C == True else B`
 
 ```python
@@ -83,6 +87,14 @@ a = 50 if keyPressed else 100
 # a vai valer 50 se houver uma tecla pressionada
 # senão, vai valer 100
 ```
+
+## Glossário
+
+>[**expressão booleana**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:expressão%20booleana) Uma expressão cujo valor é True (verdadeiro) ou False (falso).
+>[**operador relacional**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:operador%20relacional) Um destes operadores, que compara seus operandos: `==`, `!=`, `>`, `<`, `>=` e `<=`.
+>[**operador lógico**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:operador%20lógico) Um destes operadores, que combina expressões booleanas: `and` (e), `or` (ou) e `not` (não).
+>[**instrução condicional**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:instrução%20condicional) Uma instrução que controla o fluxo de execução, dependendo de alguma condição (como por exemplo o `if` e o `while`).
+>[**condição**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:condição) A expressão booleana em uma instrução condicional que determina qual ramo deve ser executado.
 
 ---
 Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
