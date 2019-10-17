@@ -46,7 +46,17 @@ def cor_sorteada():
 ```
 
 Uso:
+```python
+fill(cor_sorteada())   # pede um preenchimento com uma cor sorteada!
+rect(10, 10, 100, 50)
+```
 
+Da mesma maneira todo o tipo de manipulação de valores pode ser "encapsulada"  em uma função.
+
+```python
+def media(a, b):
+     return (a + b) / 2.
+```
 
 ---
 Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
