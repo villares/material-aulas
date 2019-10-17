@@ -7,7 +7,7 @@
 
   - [Desenho básico (linhas, retângulos e etc)](/Processing-Python/desenho-basico_py.md)
   - [Condicionais (`if` e `else`)](/Processing-Python/condicionais_py.md)
-    - [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](/Processing-Python/atribuicao-e-compracao.md)
+    - [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](/Processing-Python/atribuicao-e-comparacao.md)
   - [Movimento (bolinha rebatendo)](/Processing-Python/movimento_py.md)
     - [Escopo de variáveis (local e global)](/Processing-Python/escopo_py.md)
   - [Números sorteados (pseudo-aleatórios)](/Processing-Python/numeros-aleatorios_py.md)

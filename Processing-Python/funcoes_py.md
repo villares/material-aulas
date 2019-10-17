@@ -3,16 +3,15 @@
 >[**função**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:função)
 >Uma sequência nomeada de declarações que executa alguma operação útil. As funções podem receber argumentos ou não e podem ou não produzir algum resultado.
 
-### Sintaxe da definição/declaração
+### Sintaxe da definição de uma função
 ```python
-def nome_da_função(nome_parâmetro, nome_outro_parâmetro): # esta função precisa de dois parâmetros/argumentos
-     Bloco_de_código_que_a_função_executa
+def nome_da_função(nome_parâmetro, outro_nome_parâmetro): # esta função precisa de dois parâmetros/argumentos
+     Corpo_formado_pelas_instruçÕes_que_a_função_executa
 ```
 
-### Sintaxe do uso/invocação da função
+### Sintaxe do uso, chamada ou invocação de uma função
 ```python
-nome_da_função(valor_parâmetro, valor_outro_parâmetro) # esta função precisa de dois parâmetros/argumentos
-
+nome_da_função(valor, outro_valor) # esta função precisa de dois parâmetros/argumentos
 ```
 
 ### Exemplo da função `olho()`
@@ -45,7 +44,7 @@ def cor_sorteada():
     g = random(256)
     b = random(256)
     cor = color(r, g, b)
-    return cor # devolve a cor e retorna o fluxo de execução
+    return cor # instrução que devolve a cor e retorna o fluxo de execução
 ```
 
 Uso:
@@ -60,6 +59,29 @@ Da mesma maneira todo o tipo de manipulação de valores pode ser "encapsulada" 
 def media(a, b):
      return (a + b) / 2.
 ```
+
+
+#### Glossário
+
+>[**função**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:função) Uma sequência nomeada de declarações que executa alguma operação útil. As funções podem receber argumentos ou não e podem ou não produzir algum resultado.
+
+>[**definição de função**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:definição%20de%20função) Uma instrução que cria uma função nova, especificando seu nome, parâmetros e as instruções que contém.
+
+>[**cabeçalho**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:cabeçalho) A primeira linha de uma definição de função.
+
+>[**corpo**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:corpo) A sequência de instruções dentro de uma definição de função.
+
+>[**parâmetro**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:parâmetro) Um nome usado dentro de uma função para se referir ao valor passado como argumento.
+
+>[**chamada de função**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:chamada%20de%20função) Uma instrução que executa uma função. É composta pelo nome da função seguido de uma lista de argumentos entre parênteses, ou caso a função possa ser chamada sem argumentos, só os parênteses (`nome()`).
+
+>[**argumento**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:argumento) Um valor apresentado a uma função quando a função é chamada. Este valor é atribuído ao parâmetro correspondente na função.
+
+>[**valor de retorno**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:valor%20de%20retorno) O resultado de uma função. Se uma chamada de função for usada como uma expressão, o valor de retorno é o valor da expressão.
+
+>[**função com resultado**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:função%20com%20resultado) Uma função que devolve um valor.
+
+>[**`None`**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:None) Um valor especial apresentado por funções nulas (circularmente definidas como funções que devolvem o valor `None`, em lugar de outro valor de resultado).
 
 ---
 Este material é baseado no material do curso https://arteprog.space/programacao-criativa/

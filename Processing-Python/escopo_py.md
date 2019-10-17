@@ -1,12 +1,12 @@
 # Escopo: variáveis locais e globais
 
-## Variáveis locais e parâmetros nas definições de funções
+## Variáveis locais
 
 Criando um variável dentro da definição de uma função (como `setup()`, por exemplo), dizemos que a variável tem *escopo local*, isto significa que somente o código dentro da função reconhece aquele nome e enxerga os valores a ela atríbuidos.
 
 Os parâmetros que recebem os valores dos argumentos de uma função funcionan também como nomes no escopo local da função.
 
-### exemplo de uma variável local
+### Exemplo de uma variável local
 
 ```python
 def olho(x, y, tamanho):
@@ -44,9 +44,18 @@ def draw():
 
 É comum escutarmos que devemos usar variáveis globais com parcimônia, usadas descuidadamente, elas criam o risco de alterarmos  inadvertidamente valores em pontos inesperados do programa. O uso indicriminado de variáveis globais viola certos princípios de "bom design de sofwtare", como o encapsulamento das funcionalidades em partes independentes. Em pequenos *sketches* você não deve se preocupar muito com isso!
 
+#### Glossário
+
+>[**variável**](https://penseallen.github.io/PensePython2e/02-vars-expr-instr.html#termo:variável) Um nome que se refere a um valor.
+
+>[**variável local**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:variável%20local) Uma variável definida dentro de uma função. Uma variável local só pode ser usada dentro da sua função.
+
+>[variável global](https://penseallen.github.io/PensePython2e/11-dicionarios.html#termo:variável%20global) Variável definida fora de uma função. As variáveis globais podem ser acessadas de qualquer função.
+
+> [instrução `global`](https://penseallen.github.io/PensePython2e/11-dicionarios.html#termo:instrução%20global) Instrução que declara um nome de variável global.
+
 ---
 Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
 
 ---
 Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
-
