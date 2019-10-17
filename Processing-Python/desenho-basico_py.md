@@ -1,4 +1,4 @@
-# Desenho Básico
+# Desenho básico
 
 ## Área de desenho e coordenadas
 
@@ -12,9 +12,7 @@ O computador precisa saber a posição de cada ponto que desenha. Para fazer iss
 
 ![coor](coord.jpg)
 
-
 ## Formas
-
 
 ```python
 square(100, 50, 40) # quadrado na posição x:100 y:50 e lado:40
@@ -52,11 +50,12 @@ background(0, 255, 0) # fundo verde, limpa a tela background(R, G, B)
 # Comentários de uma linha só começam com #. São um jeito rápido de desativar uma linha!
 
 """
-Quando temos três aspas podemos ter textos de documentação (doc-strings) que funcionam
-como comentários de várias linhas
+Com três aspas no começo e no final, podemos produzir strings que
+funcionam como comentários de múltiplas linhas e que quando estão
+logo após o cabeçalho de definição de uma função, no começo do corpo,
+são chamados textos de documentação (doc-strings).
 """
 ```
-
 
 ---
 Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
