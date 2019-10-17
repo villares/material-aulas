@@ -1,5 +1,8 @@
 # Definindo e chamando funções
 
+>[**função**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:função)
+>Uma sequência nomeada de declarações que executa alguma operação útil. As funções podem receber argumentos ou não e podem ou não produzir algum resultado.
+
 ### Sintaxe da definição/declaração
 ```python
 def nome_da_função(nome_parâmetro, nome_outro_parâmetro): # esta função precisa de dois parâmetros/argumentos
@@ -31,9 +34,9 @@ def olho(x, y, tamanho) :
     circle(x, y, tamanho*.40)
 ```
 
-### Funções que devolvem valores
+### Funções que devolvem resultados
 
-A função `olho()` desenha um olho mas não devolve nenhum valor, na verdade ela devolve o valor especial `None`(uma espécie de "nada"). Mas é comum termos funções que devolvem um valor. Aqui alguns exemplos:
+A função `olho()` desenha um olho mas não devolve nenhum valor, na verdade ela devolve o valor especial `None`(uma espécie de "nada"). Mas é comum termos funções que devolvem um valor como resultado. Aqui alguns exemplos:
 
 ```python
 def cor_sorteada():
