@@ -1,4 +1,3 @@
-
 tamanho_inicial = 50 # tamanho da bolinha quando pequena
 tamanho_atual = tamanho_inicial
 px, py = 250, 250 # posição inicial pra bola
@@ -9,7 +8,7 @@ def setup():
     size(900, 500) # tamanho o desenho
 
 def draw():
-    global px, tamanho, cor_bola
+    global px, tamanho_atual, cor_bola
     background(255) # fundo branco
     fill(cor_bola)
     circle(px, py, tamanho_atual) # desenha a bola
@@ -23,4 +22,3 @@ def draw():
         tamanho_atual = 300
     else: # senão
         tamanho_atual = tamanho_inicial
-        
