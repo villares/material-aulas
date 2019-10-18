@@ -1,5 +1,5 @@
 
-tamanho_inicial = 50 # tamanho da bolinha (pequena)
+tamanho_inicial = 50 # tamanho da bolinha quando pequena
 tamanho_atual = tamanho_inicial
 px, py = 250, 250 # posição inicial pra bola
 vx = 15 # velocidade no x da bola
