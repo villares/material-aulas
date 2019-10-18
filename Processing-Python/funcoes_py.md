@@ -5,14 +5,22 @@
 
 ### Sintaxe da definição de uma função
 ```python
-def nome_da_função(nome_parâmetro, outro_nome_parâmetro): # esta função precisa de dois parâmetros/argumentos
-     Corpo_formado_pelas_instruçÕes_que_a_função_executa
+def nome_da_função(nome_parâmetro, outro_nome_parâmetro): # esta função tem dois parâmetros
+     corpo_com_instruções_que_a_função_executa
+     
+def outra_função(): # esta função não tem nenhum parâmetro
+     corpo_da_outra_função
 ```
 
-### Sintaxe do uso, chamada ou invocação de uma função
+### Sintaxe da invocação, ou chamada, de uma função
+
 ```python
-nome_da_função(valor, outro_valor) # esta função precisa de dois parâmetros/argumentos
+nome_da_função(valor, outro_valor) # esta função precisa de dois argumentos
+
+outra_função() # esta função não requer argumentos
 ```
+
+Os parâmetros, quando existem, recebem os valores dos argumentos usados quando a função é chamada.
 
 ### Exemplo da função `olho()`
 
@@ -35,7 +43,7 @@ def olho(x, y, tamanho) :
 
 ### Funções que devolvem resultados
 
-A função `olho()` desenha um olho mas não devolve nenhum valor, na verdade ela devolve o valor especial `None`(uma espécie de "nada"). Mas é comum termos funções que devolvem um valor como resultado. Aqui alguns exemplos:
+A função `olho()` desenha um olho mas não devolve nenhum valor, na verdade ela devolve o valor especial `None` (uma espécie de "nada"). Mas é comum termos funções que devolvem algum valor como resultado. Aqui alguns exemplos:
 
 ```python
 def cor_sorteada():
@@ -53,13 +61,12 @@ fill(cor_sorteada())   # pede um preenchimento com uma cor sorteada!
 rect(10, 10, 100, 50)
 ```
 
-Da mesma maneira todo o tipo de manipulação de valores pode ser "encapsulada"  em uma função.
+Da mesma maneira todo o tipo de manipulação de valores pode ser "encapsulada" em uma função.
 
 ```python
 def media(a, b):
      return (a + b) / 2.
 ```
-
 
 #### Glossário
 
