@@ -1,19 +1,19 @@
 
-# Variáveis, parâmetros e seus tipos
+# Variáveis, parâmetros, valores e seus tipos
 
 ## Valores
 
-Quando atribuimos um valor a uma variável, por exemplo `i = 10`, o `i` (um nome) apontar para um valor na memória do computador, `10`, e esse valor é de uma determinada categoria, tipo, neste caso, é um número inteiro que abreviamos como `int`.
+Quando atribuimos um valor a uma variável, por exemplo `i = 10`, o `i` (um nome) aponta para um valor na memória do computador, `10`, e esse valor é de uma determinada categoria, tipo, neste caso, é um número inteiro que abreviamos como `int`.
 
 Já `10.5`, `0.2` ou até mesmo `10.` (dez seguido de um ponto), são considerados números de ponto flutuantes, ou `float`.
 
-Texto, que em geral aparece entre aspas quando no meio do código de um programa, como `'hello'` ou `"Eric Idle"`, são do tipo `String`.
+Texto, que em geral aparece entre aspas quando no meio do código de um programa, como `'hello'` ou `"Eric Idle"`, que são do tipo `string` ou `str`.
 
-Outro tipo curioso é o booleano (`boolean`) que pode ser apenas `True` ou `False` (verdadeiro ou falso).
+Outro tipo curioso é o booleano (`boolean`), para valores que podem ser apenas `True` ou `False` (verdadeiro ou falso).
 
 ## Conversão
 
-É necessário por vezes converter os dados de um tipo para outro, como por exemplo o número sorteado por uma função `random()` que é um `float` pode ser convertido em `int`, sendo truncado (encurtado) se tiver uma parte não inteira. E números podem ser convertidos em texto (`String`).
+É necessário por vezes converter os dados de um tipo para outro, como por exemplo o número sorteado por uma função `random()` que é um `float` pode ser convertido em `int`, sendo truncado (encurtado) se tiver uma parte não inteira. E números podem ser convertidos em texto (`string`).
 
 ```python
 R = int(random(256))
@@ -22,7 +22,7 @@ println("Red: "+str(R))
 
 ## Parâmetros e funções
 
-Os parâmetros ou argumentos que uma função recebe quando invocada tem tipos, que podem ser descobertos na documentação (no caso de funções pré-definidas ou de bibliotecas externas) ou na definição da função. Da mesma forma os dados retornados pela função tem um tipo. Algumas funções não retornan nada como `setup()`, `draw()`, `noStroke()` e `rect()`, por exemplo.
+Os parâmetros ou argumentos que uma função recebe quando invocada tem tipos, que podem ser descobertos na documentação (no caso de funções pré-definidas ou de bibliotecas externas) ou na definição da função. Da mesma forma os dados retornados pela função tem um tipo. Algumas funções não retornam nada como `setup()`, `draw()`, `noStroke()` e `rect()`, por exemplo, mas na verdade retornam o valor especial `None` (pedmos traduzir como "nada" ou "nenhum").
 
 A função `color()` do Processing, por exemplo, recebe como argumentos números inteiros e devolve uma cor:
 
@@ -31,7 +31,7 @@ A função `color()` do Processing, por exemplo, recebe como argumentos números
 Podemos construir uma função que retorna uma cor também:
 
 ```python
-corSorteada(alpha):
+cor_sorteada(alpha):
    R = int(random(256)
    G = int(random(256)
    B = int(random(256)
@@ -45,7 +45,7 @@ corSorteada(alpha):
 |`int`  |  número inteiro, como `-5`, `0` ou `42`|
 | `float`  | número com ponto flutante, como `.5` `3.` ou `6.267` (note que o separador decimal é o ponto)|
 | `boolean` |  valores `True` ou `False`|
-| `String`  | cadeia de caracteres, `“texto”` (
+| `string`  | cadeia de caracteres, `“texto”` (
 | `None` | o "nenhum" é de um tipo especial único `None`e é devolvido por funções que não devolvem nada.
 
 
@@ -57,6 +57,18 @@ corSorteada(alpha):
 | `PImage` | imagens raster/bitmap
 | `PShape` | formas vetorais, como as descritas num SVG
 | `PVector` | vetor, usado geralmente para descrever posição, velocidade ou aceleração (em 2 ou 3 dimensões) |
+
+### Glossário
+
+[**valor**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:valor) Uma das unidades básicas de dados, como um número ou string, que um programa manipula.
+
+[**tipo**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:tipo) Uma categoria de valores. Alguns tipos que vimos por enquanto são números inteiros (tipo int), números de ponto flutuante (tipo float) e strings (tipo str).
+
+[**inteiro**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:inteiro) Um tipo que representa números inteiros.
+
+[**ponto flutuante**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:ponto%20flutuante) Um tipo que representa números com partes fracionárias.
+
+[**string**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:string) Um tipo que representa sequências de caracteres.
 
 ---
 Este material é baseado no material do curso https://arteprog.space/programacao-criativa/

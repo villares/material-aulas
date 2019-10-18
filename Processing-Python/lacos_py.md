@@ -2,7 +2,7 @@
 
 ## Sintaxe
 
-O `for` permite controlar uma seqüência de repetições. Pegando de um em um itens fornecidos (de uma coleção, de um objeto iterável ou gerador). 
+O `for` permite controlar uma seqüência de repetições oegando de um em um itens fornecidos (de uma coleção, de um objeto iterável ou gerador). 
 
 ```python   
 lista_de_palavras = ["abacate", "uva", "frango"]
@@ -47,6 +47,10 @@ for i in range(0, 80, 10):
   for j in range(0, 80, 10): 
     ellipse(i, j, 5, 5) 
 ```
+
+### Glossário
+
+[**loop**](https://penseallen.github.io/PensePython2e/04-caso-interface.html#termo:loop) **(laço)** Parte de um programa que pode ser executada repetidamente.
 
 ---
 Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
