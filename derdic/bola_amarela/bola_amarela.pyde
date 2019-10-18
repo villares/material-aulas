@@ -9,7 +9,7 @@ def setup():
     size(900, 500) # tamanho o desenho
 
 def draw():
-    global px, tamanho, cor_bola
+    global px, tamanho_atual, cor_bola
     background(255) # fundo branco
     fill(cor_bola)
     circle(px, py, tamanho_atual) # desenha a bola
