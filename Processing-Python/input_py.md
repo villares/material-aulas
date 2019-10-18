@@ -46,14 +46,14 @@ Definidas pela pessoa criando o programa, com os nomes especiais "encomendados",
 
 | nome | descrição |
 | --- | --- |
-| mouseReleased() |    função executada quando o botão do mouse é solto depois de pressionado
-| mouseWheel()        |    função executada quando a rodinha do mouse é girada
+| mouseReleased()   |    função executada quando o botão do mouse é solto depois de pressionado
+| mouseWheel(event) |    função executada quando a rodinha do mouse é girada (deslocamento obtido com `event.getCount()`)
 | mouseClicked()    |    funcão executada quando o mouse é clicado (já solto o botão)
 | mouseDragged()    |    função executada quando o mouse é movido pressionado
-| mouseMoved()        |    função executada quando o mouse é movido
+| mouseMoved()      |    função executada quando o mouse é movido
 | mousePressed()    |    função executada quando o botão do mouse é pressionado
-| keyPressed()    |    função executada quando uma tecla é pressionada
-| keyReleased() |    função executada quando uma tecla é solta
+| keyPressed()      |    função executada quando uma tecla é pressionada
+| keyReleased()     |    função executada quando uma tecla é solta
 | keyTyped()        |    função executada quando uma tecla alfa-numérica é digitada
 
 
@@ -81,6 +81,28 @@ def keyPressed():          # Esta função executa uma vez quando uma tecla é p
         saveFrame("imagem-####.png")            # salve a imagem da tela de pintura em um arquivo PNG 
         println("salvo o frame {}.".format(frameCount))  # mostre no console o número do frame
         
+```
+
+Um exemplo do evento do acinamento da rodinha do mouse (mouseWheel)
+
+```python
+tamanho = 50
+
+def setup():
+    size(500, 500)
+    
+def draw():
+    background(200)
+    if tamanho > 0:
+        fill(0, 0, 200)
+    else:
+        fill(200, 0, 0)
+    square(width / 2, height / 2, tamanho)
+    
+def mouseWheel(event):
+    movimento_roda = event.getCount()
+    global tamanho
+    tamanho += movimento_roda
 ```
 
 ---
