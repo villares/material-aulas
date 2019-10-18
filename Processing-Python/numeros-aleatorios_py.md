@@ -5,6 +5,7 @@ Cada vez que chamamos a função `random()` com um parâmetro, como em `sorteio 
 Se dois parâmetros forem usados, por exemplo `random (-5, 5)` serão sorteados números entre -5 (incluso) e 5 (não incluso).
 E podemos obter números inteiros convertendo o valor usando `int()`, como em `sorteio_inteiro = int(random(1, 11))` que sorteia com igual probabilidades os números de 1 a 10.
 
+**Atenção:** *Este é o `random()` do Processing, o random do Python é um pouquinho diferente*
 
 ### Exemplos
 ```python
