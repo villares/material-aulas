@@ -20,24 +20,6 @@ R = int(random(256))
 println("Red: "+str(R))
 ```
 
-## Parâmetros e funções
-
-Os parâmetros ou argumentos que uma função recebe quando invocada tem tipos, que podem ser descobertos na documentação (no caso de funções pré-definidas ou de bibliotecas externas) ou na definição da função. Da mesma forma os dados retornados pela função tem um tipo. Algumas funções não retornam nada como `setup()`, `draw()`, `noStroke()` e `rect()`, por exemplo, mas na verdade retornam o valor especial `None` (pedmos traduzir como "nada" ou "nenhum").
-
-A função `color()` do Processing, por exemplo, recebe como argumentos números inteiros e devolve uma cor:
-
-`color minhaCor = color(255, 0, 0)  # A variável minhaCor aponta para uma cor vermelha na memória`
-
-Podemos construir uma função que retorna uma cor também:
-
-```python
-cor_sorteada(alpha):
-   R = int(random(256)
-   G = int(random(256)
-   B = int(random(256)
-   return color(R, G, B, alpha)
-```
-
 ### Alguns tipos simples/primitivos
 
 | tipo | descrição |
@@ -57,6 +39,28 @@ cor_sorteada(alpha):
 | `PImage` | imagens raster/bitmap
 | `PShape` | formas vetorais, como as descritas num SVG
 | `PVector` | vetor, usado geralmente para descrever posição, velocidade ou aceleração (em 2 ou 3 dimensões) |
+
+
+## Parâmetros e funções
+
+Os valores que uma função recebe quando invocada podem precisar ser de tipos específicos, que podem ser descobertos na documentação (no caso de funções pré-definidas ou de bibliotecas externas) ou lendo a definição da função.
+Da mesma forma os tipos dos valores devolvidos por uma função são do nosso interesse.
+
+Algumas funções não devolvem nada como `setup()`, `draw()`, `noStroke()` e `rect()`, por exemplo, sendo mais cuidadosos, veremos que em Pyhon, na verdade, essas funções retornam o valor especial `None` (que poderíamos imaginar como "nada" ou "nenhum").
+
+Já outras funções devolvem um valor. A função `color()` do Processing, por exemplo, recebe como argumentos números inteiros e devolve uma cor:
+
+`color minhaCor = color(255, 0, 0)  # A variável minhaCor aponta para uma cor vermelha na memória`
+
+Podemos construir uma outra função que devolve uma cor também:
+
+```python
+cor_sorteada(alpha):
+   R = int(random(256)
+   G = int(random(256)
+   B = int(random(256)
+   return color(R, G, B, alpha)
+```
 
 ### Glossário
 
