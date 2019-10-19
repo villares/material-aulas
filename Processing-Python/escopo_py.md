@@ -21,9 +21,11 @@ def olho(x, y, tamanho):
 
 ## Variáveis globais
 
-Traducionalmente criadas no início do *sketch*, e fora de qualquer função (incluindo `setup()` e `draw()`) as variveis globais são visíveis por qualquer parte do código. Para criar uma variável global estando dentro de uma função (ou para poder alterar a atribição de uma variável global) é preciso usar a instrução `global`.
+Tradicionalmente criadas no início do *sketch*, e fora de qualquer função (incluindo `setup()` e `draw()`) as variveis globais são visíveis por qualquer parte do código.
 
-### exemplo de uma variável global
+Para se criar uma variável global quando se está dentro de uma função (ou para poder alterar a atribição de uma variável global dentro de uma função) é preciso usar a instrução `global`.
+
+### Exemplo de uma variável global
 
 ```Python
 y = 100  # y é uma variável global, pode ser usada em qualquer ponto do programa.
