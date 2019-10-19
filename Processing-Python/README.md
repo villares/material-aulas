@@ -4,7 +4,7 @@
 - **[Para instalar em casa o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)**
 
 - [Desenho básico (linhas, retângulos e etc)](desenho-basico_py.md)
-- [Condicionais (`if` e `else`)]condicionais_py.md)
+- [Condicionais (`if` e `else`)](condicionais_py.md)
   - [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](atribuicao-e-comparacao.md)
 - [Movimento (bolinha rebatendo)](movimento_py.md)
   - [Escopo de variáveis (local e global)](escopo_py.md)
