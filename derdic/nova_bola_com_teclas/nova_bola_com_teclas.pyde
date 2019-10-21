@@ -3,6 +3,7 @@ tamanho_atual = tamanho_inicial
 px, py = 250, 250 # posição inicial pra bola
 vx = 15 # velocidade no x da bola
 cor_bola = color(200, 200, 0) # amarelo inicial
+py_alvo = 100 # onde o py vai chegar
 
 def setup(): # este é o pedaço do começo
     size(900, 500) # tamanho da tela de desenho
