@@ -40,8 +40,6 @@ def keyPressed():
     if key == "n": # tecla "n"
         cor_bola = color(200, 200, 0) # amarelo inicial
     global py_alvo # vou mudar o alvo!!!
-    if key == "1": # tecla "1"
-        py_alvo = 100
     if key == "4": # tecla "4"
         py_alvo = 400        
     if key == "1": # tecla "1"
