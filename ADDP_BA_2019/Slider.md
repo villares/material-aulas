@@ -3,6 +3,8 @@
 
 ## Como criar um slider
 
+![SLIDER1](SLIDER1.PNG)
+
 ``` python
 class Slider:
     def __init__(self,low,high,default):
@@ -13,7 +15,8 @@ class Slider:
         self.val = default
         self.clicked = False
         self.label = '' #blank label
-        
+```
+
 Para definir o posicionamento do slider no background:
 
 ``` python
@@ -24,6 +27,7 @@ def position(self,x,y):
         #the position of the rect you slide:
         self.rectx = self.x + map(self.val,self.low,self.high,0,120)
         self.recty = self.y - 10
+```
 
 Para definir a representação gráfica do slider e seus valores randômicos:
 
@@ -52,8 +56,9 @@ def value(self):
         #text label
         text(self.label,self.x + 135,self.y);
         return self.val    
+```
 
-![SLIDER1](SLIDER1.PNG)
+
 
 
 
