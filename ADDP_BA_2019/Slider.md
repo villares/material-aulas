@@ -53,7 +53,7 @@ def value(self):
         text(self.label,self.x + 135,self.y);
         return self.val    
 
-![SLIDER1](image.png)
+![SLIDER1](SLIDER1.PNG)
 
 
 
