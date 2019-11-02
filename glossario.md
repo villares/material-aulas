@@ -54,7 +54,7 @@ Uma categoria de valores. Os tipos que vimos por enquanto são números inteiros
 
 Um tipo que representa números inteiros.
 
-[**ponto flutuante**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:ponto flutuante)
+[**ponto flutuante**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:ponto%20flutuante)
 
 Um tipo que representa números com partes fracionárias.
 
@@ -62,11 +62,11 @@ Um tipo que representa números com partes fracionárias.
 
 Um tipo que representa sequências de caracteres.
 
-[**linguagem natural**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:linguagem natural)
+[**linguagem natural**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:linguagem%20natural)
 
 Qualquer linguagem que as pessoas falam e que se desenvolveu naturalmente.
 
-[**linguagem formal**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:linguagem formal)
+[**linguagem formal**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:linguagem%20formal)
 
 Qualquer linguagem que as pessoas criaram com objetivos específicos, como representar ideias matemáticas ou programas de computador; todas as linguagens de programação são linguagens formais.
 
@@ -104,7 +104,7 @@ Um nome que se refere a um valor.
 
 Uma instrução que atribui um valor a uma variável.
 
-[**diagrama de estado**](https://penseallen.github.io/PensePython2e/02-vars-expr-instr.html#termo:diagrama de estado)
+[**diagrama de estado**](https://penseallen.github.io/PensePython2e/02-vars-expr-instr.html#termo:diagrama%20de%20estado)
 
 Uma representação gráfica de um grupo de variáveis e os valores a que se referem.
 
@@ -136,7 +136,7 @@ Executar uma instrução para fazer o que ela diz.
 
 Um programa armazenado em um arquivo.
 
-[**ordem das operações**](https://penseallen.github.io/PensePython2e/02-vars-expr-instr.html#termo:ordem das operações)
+[**ordem das operações**](https://penseallen.github.io/PensePython2e/02-vars-expr-instr.html#termo:ordem%20das%20operações)
 
 As regras que governam a ordem na qual as expressões que envolvem vários operadores e operandos são avaliadas.
 
@@ -160,7 +160,7 @@ Um erro que se descobre quando o programa é executado.
 
 O significado de um programa.
 
-[**erro semântico**](https://penseallen.github.io/PensePython2e/02-vars-expr-instr.html#termo:erro semântico)
+[**erro semântico**](https://penseallen.github.io/PensePython2e/02-vars-expr-instr.html#termo:erro%20semântico)
 
 Um erro que faz com que um programa faça algo diferente do que o programador pretendia.
 
@@ -210,11 +210,11 @@ Uma variável definida dentro de uma função. Uma variável local só pode ser 
 
 O resultado de uma função. Se uma chamada de função for usada como uma expressão, o valor de retorno é o valor da expressão.
 
-[**função com resultado**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:função com resultado)
+[**função com resultado**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:função%20com%20resultado)
 
 Uma função que devolve um valor.
 
-[**função nula**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:função nula)
+[**função nula**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:função%20nula)
 
 Uma função que sempre devolve None.
 
