@@ -21,11 +21,15 @@ def desenharRetangulo(x, y, tam,level):
         level = level - 1
         desenharRetangulo(x, y, tam / 2, level)
         desenharRetangulo(x + tam, y, tam / 2, level)
+    # o caso base aqui é quando level chega a 0 (level > 1 se torna falso)
+    # e então apenas um retângulo é desenhado
 ```
 
 ### Árvore recursiva
 
-<iframe src="https://abav.lugaralgum.com/sketch-a-day/2019/sketch_191025pybr2019/index.html" style="width: 500px; height: 500px; border: 0px"></iframe>
+TODO: por imagem aqui
+
+[exemplo interativo](https://abav.lugaralgum.com/sketch-a-day/2019/sketch_191025pybr2019/index.html)
 
 ```python
 def setup():
