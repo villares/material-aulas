@@ -26,11 +26,11 @@ Os detalhes parecem diferentes em linguagens diferentes, mas algumas instruçõe
 
 ### Termos
 
-[**linguagem de alto nível**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:linguagem de alto nível)
+[**linguagem de alto nível**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:linguagem%20de%20alto%20nível)
 
 Uma linguagem de programação como Python, que foi criada com o intuito de ser fácil para os humanos escreverem e lerem.
 
-[**linguagem de baixo nível**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:linguagem de baixo nível)
+[**linguagem de baixo nível**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:linguagem%20de%20baixo%20nível)
 
 Uma linguagem de programação criada para o computador executar com facilidade; também chamada de “linguagem de máquina” ou “linguagem assembly”.
 
