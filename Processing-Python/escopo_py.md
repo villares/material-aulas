@@ -2,9 +2,9 @@
 
 ## Variáveis locais
 
-Criando um variável dentro da definição de uma função (como `setup()`, por exemplo), dizemos que a variável tem *escopo local*, isto significa que somente o código dentro da função reconhece aquele nome e enxerga os valores a ela atríbuidos.
+Quando criamos uma variável dentro da definição de uma função (como a função `setup()`, por exemplo), dizemos que a variável tem *escopo local*, isto significa que somente o código dentro da função reconhece aquele nome e enxerga os valores a ela atríbuidos.
 
-Os parâmetros que recebem os valores dos argumentos de uma função funcionan também como nomes no escopo local da função.
+Os parâmetros (que recebem os valores, ou argumentos, usados na chamada de uma função), são declarados no cabeçalho da definição da função, e são também nomes no escopo local (da função).
 
 ### Exemplo de uma variável local
 
@@ -21,9 +21,9 @@ def olho(x, y, tamanho):
 
 ## Variáveis globais
 
-Tradicionalmente criadas no início do *sketch*, e fora de qualquer função (incluindo `setup()` e `draw()`) as variveis globais são visíveis por qualquer parte do código.
+Tradicionalmente criadas no início do *sketch*, e fora de qualquer função (incluindo `setup()` e `draw()`) as variáveis globais são visíveis por qualquer parte do código.
 
-Para se criar uma variável global quando se está dentro de uma função (ou para poder alterar a atribição de uma variável global dentro de uma função) é preciso usar a instrução `global`.
+Para se criar uma variável global quando se está dentro de uma função (ou para poder alterar a atribição de uma variável global dentro de uma função) usamos a instrução `global` do Python.
 
 ### Exemplo de uma variável global
 
@@ -36,7 +36,7 @@ def setup():
     x = width / 2
 
 def draw():
-    global x # necessário para alterar a variável x
+    global x # necessário para poder alterar a variável global x aqui no draw()
     background(0)
     circle(x, y, 10) # x e y são variáveis globais
     x = x + 1
@@ -44,7 +44,9 @@ def draw():
         x = 0
 ```
 
-É comum escutarmos que devemos usar variáveis globais com parcimônia, usadas descuidadamente, elas criam o risco de alterarmos  inadvertidamente valores em pontos inesperados do programa. O uso indicriminado de variáveis globais viola certos princípios de "bom design de sofwtare", como o encapsulamento das funcionalidades em partes independentes. Em pequenos *sketches* você não deve se preocupar muito com isso!
+É comum escutarmos que devemos usar variáveis globais com parcimônia, usadas descuidadamente, elas criam o risco de alterarmos  inadvertidamente valores em pontos inesperados do programa.
+
+O uso indicriminado de variáveis globais também viola certos princípios de "bom design de sofwtare", como o encapsulamento das funcionalidades em partes independentes. Mas em pequenos *sketches* você não deve se preocupar muito com isso!
 
 #### Glossário
 
