@@ -27,11 +27,11 @@ println("Red: "+str(R))
 |`int`  |  número inteiro, como `-5`, `0` ou `42`|
 | `float`  | número com ponto flutante, como `.5` `3.` ou `6.267` (note que o separador decimal é o ponto)|
 | `boolean` |  valores `True` ou `False`|
-| `string`  | cadeia de caracteres, `“texto”` (
-| `None` | o "nenhum" é de um tipo especial único `None`e é devolvido por funções que não devolvem nada.
+| `string`  | cadeia de caracteres, `“texto”` |
+| `None` | o "nenhum" é de um tipo especial único `None`e é devolvido por funções que não devolvem nada. |
 
 
-### Alguns tipos de objetos/classes 
+### Alguns outros tipos do Processing
 
 | tipo/classe | descrição |
 | --- | --- |
