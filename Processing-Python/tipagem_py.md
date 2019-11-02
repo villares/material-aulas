@@ -3,11 +3,11 @@
 
 ## Valores
 
-Quando atribuimos um valor a uma variável, por exemplo `i = 10`, o `i` (um nome) aponta para um valor na memória do computador, `10`, e esse valor é de uma determinada categoria, tipo, neste caso, é um número inteiro que abreviamos como `int`.
+Quando atribuimos um valor a uma variável, por exemplo `i = 10`, o `i` é um nome que aponta para um valor na memória do computador, `10`, e esse valor é de uma determinada categoria, de um *tipo*, neste caso, é um número inteiro, um tipo normalmente abreviado como `int`.
 
 Já `10.5`, `0.2` ou até mesmo `10.` (dez seguido de um ponto), são considerados números de ponto flutuantes, ou `float`.
 
-Texto, que em geral aparece entre aspas quando no meio do código de um programa, como `'hello'` ou `"Eric Idle"`, que são do tipo `string` ou `str`.
+Textos, que aparecem entre aspas quando no meio do código de um programa, como por exemplo `'hello'` ou `"Eric Idle"`, são do tipo `string` (cadeia de caracteres) ou abreviadamente `str`.  
 
 Outro tipo curioso é o booleano (`boolean`), para valores que podem ser apenas `True` ou `False` (verdadeiro ou falso).
 
@@ -46,7 +46,7 @@ println("Red: "+str(R))
 Os valores que uma função recebe quando invocada podem precisar ser de tipos específicos, que podem ser descobertos na documentação (no caso de funções pré-definidas ou de bibliotecas externas) ou lendo a definição da função.
 Da mesma forma os tipos dos valores devolvidos por uma função são do nosso interesse.
 
-Algumas funções não devolvem nada como `setup()`, `draw()`, `noStroke()` e `rect()`, por exemplo, sendo mais cuidadosos, veremos que em Pyhon, na verdade, essas funções retornam o valor especial `None` (que poderíamos imaginar como "nada" ou "nenhum").
+Algumas funções apenas executam operações mas não devolvem um valor, como `setup()`, `draw()`, `noStroke()` e `rect()`, por exemplo. Na verdade, sendo mais cuidadosos, veremos que em Pyhon essas funções retornam o valor especial `None` (que poderíamos imaginar como "nada" ou "nenhum").
 
 Já outras funções devolvem um valor. A função `color()` do Processing, por exemplo, recebe como argumentos números inteiros e devolve uma cor:
 
