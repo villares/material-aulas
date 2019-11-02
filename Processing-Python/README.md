@@ -12,6 +12,7 @@
 - [Interação com teclado e mouse](input_py.md)
 - [Laços de repetição (iteração)](lacos_py.md)
 - [Declarando novas funções](funcoes_py.md)
+  - [Funções recursivas](recursao.md)
 - [Tipos de valores (inteiros, números de ponto flutuante, texto)](tipagem_py.md)
 
 
