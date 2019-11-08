@@ -1,6 +1,6 @@
-# Slider
+# eye
 
-## Slider2
+## How to creat an eye
     
 ``` python
  
