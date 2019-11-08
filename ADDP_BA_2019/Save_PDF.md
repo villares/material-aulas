@@ -13,3 +13,6 @@ add_library('pdf')
 ### Segunda opção
 
 **Menu Sketch > Importar Biblioteca > PDF Export**
+![adicionando](https://github.com/zehasni/material-aulas/blob/master/ADDP_BA_2019/Adicionando_biblioteca.png?raw=true)
+
+## Adicionando o Comando
