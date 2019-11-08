@@ -1,7 +1,7 @@
 
 # Slider
 
-## Como criar um slider
+## Como criar um slider: passos
 
 ![SLIDER1](SLIDER1.PNG)
 
