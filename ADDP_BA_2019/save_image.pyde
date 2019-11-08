@@ -1,27 +1,16 @@
-add_library('pdf')
-salvar_pdf = False
-
-def setup():
+def setup(): #cria o setup do desenho, inclusive a área da imagem
     global seed
     seed = int(random(1000))
     print(seed)
     size(500, 500)
     
-def draw():
-    if salvar_pdf:
-        beginRecord(PDF, "####.pdf")
-    
+def draw(): #define o plano de fundo e o desenho
     randomSeed(seed)
     background(240, 240, 200)
     translate(250, 300)
     galho(60)
-    
-    if salvar_pdf:
-        endRecord()
-        global salvar_pdf
-        salvar_pdf = False
-    
-def galho(tamanho):
+          
+def galho(tamanho): #definição do galho
     ang = radians(mouseX)
     reducao = .8
     strokeWeight(tamanho / 10)
@@ -39,8 +28,7 @@ def galho(tamanho):
         galho(tamanho * reducao - random(0, 2))
         popMatrix()
           
-def keyPressed():
-    global seed, salvar_pdf
+def keyPressed(): #o que acontece se você pressionar a tecla s, salva o PNG
     if keyCode == LEFT:
          seed = seed - 1
     if keyCode == RIGHT:
@@ -48,9 +36,6 @@ def keyPressed():
     if key == " ":
         seed = int(random(100000))
         print(seed)
-    if key == "p":
-        salvar_pdf = True
-        print("Salvando PDF")
     if key == "s":
         saveFrame('imagem.png')
         print("Salvando PNG")
