@@ -38,8 +38,25 @@ def objeto(x, y, LADO, LADOmenor, rot):
     translate(x, y) # inserir novo zero,zero de coordenadas 
 ```
 
-
-## How to save the coordinal's system 
+## Exemplo prático de um triângulo  azul com novo sistema de coordenadas:
 ```python
-pushMatrix() 
+def setup():
+    size(520, 500)
+    
+def draw():
+    background(255)
+    fill(30, 50, 200)
+    objeto(150, 250, 200, 100)
+    
+def objeto(x, y, LADO, LADOmenor):
+    L, l = LADO / 2, LADOmenor / 2
+    pushMatrix() 
+    translate(x, y)
+    beginShape()
+    vertex(20, -70)
+    vertex(14, -20)
+    vertex(100, -15)
+    endShape(CLOSE) 
+    popMatrix() 
 ```
+
