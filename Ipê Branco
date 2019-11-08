@@ -1,0 +1,44 @@
+### Ipê Branco 
+
+def setup():
+    global seed
+    seed = int(random(1000))
+    print(seed)
+    size(500, 500)
+    
+def draw():
+    randomSeed(seed)  
+    background(3, 5, 59 ) #cor plano de fundo
+    translate(250, 350) # posição da arvore
+    galho(70) #tamanho da arvore
+    
+def galho(tamanho):
+    ang = radians(mouseX) #angulo de rotação dos galhos 
+    reducao = .8 #sequência de redução, proporção 
+    strokeWeight(tamanho / 20) #expessura da linha
+    line(0, 0, 0, -tamanho) #composição da linha, espaçamentos  
+    if tamanho < 40:
+        noStroke()
+        circle(0, -tamanho, 5)
+    stroke(95, 76, 35) #cor da linha
+    if tamanho > 5:
+        pushMatrix()
+        translate(0, -tamanho)
+        rotate(ang) 
+        galho(tamanho * reducao - random(0, 2))
+        # rotate(-ang * 2)
+        rotate(-ang)
+        rotate(-ang)
+        # stroke(0, 0, 255)
+        galho(tamanho * reducao - random(0, 2))
+        popMatrix()
+          
+def keyPressed():
+    global seed
+    if keyCode == LEFT:
+         seed = seed - 1
+    if keyCode == RIGHT:
+         seed = seed + 1
+    if key == " ":
+        seed = int(random(100000))
+    print(seed)
