@@ -2,7 +2,7 @@
 
 ## Slider2
     
- ` ` ` phyton 
+``` python
  
  
 def setup():
@@ -24,6 +24,6 @@ def olho(x, y, largura, cor):
     fill(0)
     circle(x, y, largura / 6)
     
-     ` ` ` 
+     ``` 
 
 
