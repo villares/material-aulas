@@ -4,8 +4,6 @@ O código abaixo exemplifica como salvar uma imagem PNG de um frame. Quando uma 
 
 ## Um exemplo bem simples
 
-![frame.png](assets/frame.png)
-
 ```python
 def setup():
     size(500, 500)
@@ -19,6 +17,8 @@ def keyPressed():
     if key == 's':
         saveFrame("frame.png")
 ```
+
+![frame.png](assets/frame.png)
 
 ## Um exemplo um pouco mais longo
 
