@@ -27,7 +27,7 @@ Os parâmetros, quando existem, recebem os valores dos argumentos usados quando 
 ```python
 def setup():
     size(400, 400)
-    background(0)
+    background(0) # cor do fundo 
     olho(300, 100, random(50, 100)) # x, y, tamanho sorteado
     olho(100, 200, random(10, 150)) 
     olho(200, 300, random(10, 150))
