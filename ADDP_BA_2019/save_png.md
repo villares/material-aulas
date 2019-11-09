@@ -2,20 +2,40 @@
 
 O código abaixo exemplifica como salvar uma imagem PNG de um frame. Quando uma tecla é pressionada, é executada a função `keyPressed()` e se for identificada a tecla "s" (`key == 's'`) é execuatada a função `saveFrame()`, que grava uma imagem na pasta do *sketch*.
 
+## Um exemplo bem simples
+
+![frame.png](/assets/frame.png)
+
 ```python
-def setup(): #cria o setup do desenho, inclusive a área da imagem
+def setup():
+    size(500, 500)
+
+def draw():
+    background(0, 0, 200)
+    x, y = random(width), random(height)
+    circle(x, y, 100)
+
+def keyPressed():
+    if key == 's':
+        saveFrame("frame.png")
+```
+
+## Um exememplo um pouco mais longo
+
+```python
+def setup():
     global seed
     seed = int(random(1000))
     print(seed)
     size(500, 500)
     
-def draw(): #define o plano de fundo e o desenho
+def draw(): 
     randomSeed(seed)
     background(240, 240, 200)
     translate(250, 300)
     galho(60)
           
-def galho(tamanho): #definição do galho
+def galho(tamanho): # definição do galho/árvore
     ang = radians(mouseX)
     reducao = .8
     strokeWeight(tamanho / 10)
@@ -24,12 +44,8 @@ def galho(tamanho): #definição do galho
         pushMatrix()
         translate(0, -tamanho)
         rotate(ang)
-        # stroke(255, 0, 0)
         galho(tamanho * reducao - random(0, 2))
-        # rotate(-ang * 2)
-        rotate(-ang)
-        rotate(-ang)
-        # stroke(0, 0, 255)
+        rotate(-ang * 2)
         galho(tamanho * reducao - random(0, 2))
         popMatrix()
           
