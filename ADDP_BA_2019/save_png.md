@@ -1,5 +1,6 @@
-O código ensina como criar uma imagem de uma árvore e posteriormente ensina a salvar uma imagem PNG.
-The code show how to create an image of a tree and show how to save a PNG image.
+# Como exportar uma imagem PNG
+
+O código abaixo exemplifica como salvar uma imagem PNG de um frame. Quando uma tecla é pressionada, é executada a função `keyPressed()` e se for identificada a tecla "s" (`key == 's'`) é execuatada a função `saveFrame()`, que grava uma imagem na pasta do *sketch*.
 
 ```python
 def setup(): #cria o setup do desenho, inclusive a área da imagem
@@ -32,15 +33,16 @@ def galho(tamanho): #definição do galho
         galho(tamanho * reducao - random(0, 2))
         popMatrix()
           
-def keyPressed(): #o que acontece se você pressionar a tecla s, salva o PNG
+def keyPressed(): # executada quando uma tecla for precinada
     if keyCode == LEFT:
          seed = seed - 1
     if keyCode == RIGHT:
          seed = seed + 1
-    if key == " ":
+    if key == ' ':  # barra de espaço precionada, sorteia nova "seed"
         seed = int(random(100000))
         print(seed)
-    if key == "s":
-        saveFrame('imagem.png')
+    if key == 's':  # tecla "s" precionada, salva a imagem PNG
+        nome_arquivo = 'arvore-s{}-a{}.png'.format(seed, mouseX % 360)
+        saveFrame(nome_arquivo)
         print("Salvando PNG")
 ```
