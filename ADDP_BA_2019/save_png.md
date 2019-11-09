@@ -4,7 +4,7 @@ O código abaixo exemplifica como salvar uma imagem PNG de um frame. Quando uma 
 
 ## Um exemplo bem simples
 
-![frame.png](/assets/frame.png)
+![frame.png](assets/frame.png)
 
 ```python
 def setup():
@@ -20,7 +20,7 @@ def keyPressed():
         saveFrame("frame.png")
 ```
 
-## Um exememplo um pouco mais longo
+## Um exemplo um pouco mais longo
 
 ```python
 def setup():
