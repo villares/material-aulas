@@ -13,14 +13,14 @@ Para que isso funcione (e não caia em uma cilada conhecida como "recursão infi
 ```python
 vdef setup():
     size(500, 500)
-    desenharRetangulo(0, 0, 500, 10)
+    desenha_retangulos(0, 0, 500, 10)
 
-def desenharRetangulo(x, y, tam,level):
+def desenha_retangulos(x, y, tam,level):
     rect(x, y, tam, tam)
     if level > 1:
         level = level - 1
-        desenharRetangulo(x, y, tam / 2, level)
-        desenharRetangulo(x + tam, y, tam / 2, level)
+        desenha_retangulos(x, y, tam / 2, level)
+        desenha_retangulos(x + tam, y, tam / 2, level)
     # o caso base aqui é quando level chega a 0 (level > 1 se torna falso)
     # e então apenas um retângulo é desenhado
 ```
