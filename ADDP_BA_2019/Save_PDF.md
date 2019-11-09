@@ -2,25 +2,24 @@
 
 ## Adicionando a Biblioteca
 
-Para ter a possibilidadede de salvar em pdf a imagem gerada, é necessário adicionar a biblioteca.
-Existem duas formas de incluir a blibioteca.
+Para poder salvar uma imagem vetorial em PDF, é necessário adicionar uma biblioteca de exportação, que já vem com o Processing, acrescentando esta linha no início do *sketch*:
 
-### Primeira opção
-Escrever o seguinte comando no inicio do código:
 ``` phython
 add_library('pdf')
 ```
-### Segunda opção
+Esta linha pode ser acrescentada manualmente ou automaticamente usando o seguinte comando do IDE:
 
 **Menu Sketch > Importar Biblioteca > PDF Export**
 ![adicionando](https://github.com/zehasni/material-aulas/blob/master/ADDP_BA_2019/Adicionando_biblioteca.png?raw=true)
 
-## Exemplo
+Também é preciso acrescentar algumas linhas de código ao longo so seu *sketch*, como no exemplo abaixo.
+
+## Exemplo de exportação em PDF de um único frame
 
 ```
 add_library('pdf')
 
-salvar_pdf = False
+salvar_pdf = False  # um 'flag' (indicador) para disparar a exportação
 
 def setup():
     global seed
@@ -29,7 +28,7 @@ def setup():
     size(500, 500)
 
 def draw():
-    global salvar_pdf  # vai ser necessário no final
+    global salvar_pdf  # vai ser necessário no final para desligar o 'flag'
     if salvar_pdf:   # só executa se for acionado este 'flag'
         beginRecord(PDF, "####.pdf")  # inicia a gravação do PDF
         
@@ -39,7 +38,7 @@ def draw():
     translate(250, 300)
     galho(60)
 
-    if salvar_pdf:
+    if salvar_pdf:    # se o 'flag' está verdadeiro, gravação em curso
         endRecord()   # termina a gravação
         salvar_pdf = False  # desliga o 'flag'
 
@@ -58,11 +57,11 @@ def galho(tamanho):
         popMatrix()
 
 def keyPressed():
-    global seed, salvar_pdf
+    global seed, salvar_pdf  # variáveis globais que serão modificadas
     if key == " ":
         seed = int(random(100000))
         print(seed)
-    if key == "p":
+    if key == "p":  # A tecla 'p' aciona o 'flag' de gravação do PDF
         salvar_pdf = True
         print("salvando PDF")
         ```
