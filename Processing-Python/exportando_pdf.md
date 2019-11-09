@@ -1,22 +1,20 @@
-# Salvando em PDF
-
-## Adicionando a Biblioteca
+# Exportando PDF
 
 Para poder salvar uma imagem vetorial em PDF, é necessário adicionar uma biblioteca de exportação, que já vem com o Processing, acrescentando esta linha no início do *sketch*:
 
-``` phython
+``` python
 add_library('pdf')
 ```
 Esta linha pode ser acrescentada manualmente ou automaticamente usando o seguinte comando do IDE:
 
 **Menu Sketch > Importar Biblioteca > PDF Export**
-![adicionando](https://github.com/zehasni/material-aulas/blob/master/ADDP_BA_2019/Adicionando_biblioteca.png?raw=true)
+![adicionando](assets/pdf_export.png)
 
 Também é preciso acrescentar algumas linhas de código ao longo so seu *sketch*, como no exemplo abaixo.
 
 ## Exemplo de exportação em PDF de um único frame
 
-```
+```python
 add_library('pdf')
 
 salvar_pdf = False  # um 'flag' (indicador) para disparar a exportação
@@ -64,4 +62,4 @@ def keyPressed():
     if key == "p":  # A tecla 'p' aciona o 'flag' de gravação do PDF
         salvar_pdf = True
         print("salvando PDF")
-        ```
+```
