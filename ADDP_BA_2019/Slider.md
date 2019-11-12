@@ -13,9 +13,11 @@ Referência da aplicação de um slider em um sketch construído com python.
 Os sliders da imagem acima permitem a edição paramétrica do objeto. O primeiro botão (variação de 10 a 100) controla a escala do objeto enquanto o segundo (variação de 0 a 360), manipula a quantidade de vezes com que os galhos podem se replicar. Desse modo, desenhos diversos são gerados a partir das combinações dos botões.
 
 ![SLIDER2](SLIDER2.png)
+
 Exemplo da Combinação 1
 
 ![SLIDER3](SLIDER3.PNG)
+
 Exemplo da Combinação 2
 
 ## Construção do código - Passo a Passo:
