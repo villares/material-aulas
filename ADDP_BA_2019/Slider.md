@@ -1,9 +1,24 @@
 
 # Slider
 
-## Como criar um slider: passos
+## O que é um slider?
+
+Trata-se de um botão que é movido horizontalmente ou verticalmente para controlar uma variável.
+
+## Como fazer um slider usando phyton?
 
 ![SLIDER1](SLIDER1.PNG)
+
+Referência da aplicação de um slider em um sketch construído com python.
+Os sliders da imagem acima permitiam a edição paramétrica do objeto. O primeiro botão (variação de 10 a 100) controlava a escala do objeto enquanto o segundo (variação de 0 a 360), manipulava a quantidade de vezes com que os galhos poderiam se replicar. Desse modo, desenhos diversos são gerados a partir das combinações dos botões.
+
+![SLIDER2](SLIDER2.PNG)
+
+Exemplo da Combinação 1
+
+![SLIDER3](SLIDER3.PNG)
+
+Exemplo da Combinação 2
 
 ``` python
 class Slider:
