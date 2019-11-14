@@ -1,9 +1,41 @@
 
 # Slider
 
-## Como criar um slider: passos
+## O que é um *slider*?
 
-![SLIDER1](SLIDER1.PNG)
+Trata-se de um elemento de interface que pode ser movido para controlar um valor.
+
+## Como fazer um *slider* no Processing modo Python?
+
+![SLIDER1](assets/SLIDER1.PNG)
+
+Exemplo de aplicação de *sliders* em um *sketch* permitindo a alteração de um desenho. O primeiro slider (variando de 10 a 100) controla a escala dos galhos enquanto o segundo (variando de 0 a 360), altera o ângul entre os galhos. Desse modo, desenhos diversos são gerados a partir das combinações dos botões.
+
+![SLIDER2](assets/SLIDER2.png)
+
+Exemplo da Combinação 1
+
+![SLIDER3](assets/SLIDER3.PNG)
+
+Exemplo da Combinação 2
+
+## Exemplo de uso do Slider
+
+```python
+# TO DO: código exemplo da árvore com os sliders!!
+
+from slider import Slider
+
+# s1 = Slider(...
+# def setup() s1.position(...
+# def draw() s1.value()
+```
+
+
+
+## Funcionamento interno da classe Slider
+
+O código abaixo é utilizado na construção do elemento de interface.
 
 ``` python
 class Slider:
@@ -17,10 +49,10 @@ class Slider:
         self.label = '' #blank label
 ```
 
-Para definir o posicionamento do slider no background:
+Definição usada para estabelecer o posicionamento do elemento no canvas:
 
 ``` python
-def position(self,x,y):
+    def position(self,x,y):
         '''slider's position on screen'''
         self.x = x
         self.y = y
@@ -29,10 +61,10 @@ def position(self,x,y):
         self.recty = self.y - 10
 ```
 
-Para definir a representação gráfica do slider e seus valores randômicos:
+Método que devolve o valor do slider, desenha na tela o elemento e verificar se foi arrastado.
 
 ``` python
-def value(self):
+    def value(self):
         '''updates the slider and returns value'''
         #gray line behind slider
         strokeWeight(4)
