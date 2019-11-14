@@ -21,7 +21,15 @@ Exemplo da Combinação 2
 
 ## Exemplo de uso do Slider
 
-TODO: código da árvore com os sliders
+```python
+# TO DO: código exemplo da árvore com os sliders!!
+
+from slider import Slider
+
+# s1 = Slider(...
+# def setup() s1.position(...
+# def draw() s1.value()
+```
 
 
 
