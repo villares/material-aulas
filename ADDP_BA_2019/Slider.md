@@ -1,28 +1,33 @@
 
 # Slider
 
-## O que é um slider?
+## O que é um *slider*?
 
-Trata-se de um botão que é movido horizontalmente ou verticalmente para controlar uma variável.
+Trata-se de um elemento de interface que pode ser movido para controlar um valor.
 
-## Como fazer um slider usando phyton?
+## Como fazer um *slider* no Processing modo Python?
 
-![SLIDER1](SLIDER1.PNG)
+![SLIDER1](assets/SLIDER1.PNG)
 
-Referência da aplicação de um slider em um sketch construído com python.
-Os sliders da imagem acima permitem a edição paramétrica do objeto. O primeiro botão (variação de 10 a 100) controla a escala do objeto enquanto o segundo (variação de 0 a 360), manipula a quantidade de vezes com que os galhos podem se replicar. Desse modo, desenhos diversos são gerados a partir das combinações dos botões.
+Exemplo de aplicação de *sliders* em um *sketch* permitindo a alteração de um desenho. O primeiro slider (variando de 10 a 100) controla a escala dos galhos enquanto o segundo (variando de 0 a 360), altera o ângul entre os galhos. Desse modo, desenhos diversos são gerados a partir das combinações dos botões.
 
-![SLIDER2](SLIDER2.png)
+![SLIDER2](assets/SLIDER2.png)
 
 Exemplo da Combinação 1
 
-![SLIDER3](SLIDER3.PNG)
+![SLIDER3](assets/SLIDER3.PNG)
 
 Exemplo da Combinação 2
 
-## Construção do código - Passo a Passo:
+## Exemplo de uso do Slider
 
-O código abaixo é utilizado na construção do botão:
+TODO: código da árvore com os sliders
+
+
+
+## Funcionamento interno da classe Slider
+
+O código abaixo é utilizado na construção do elemento de interface.
 
 ``` python
 class Slider:
@@ -36,10 +41,10 @@ class Slider:
         self.label = '' #blank label
 ```
 
-Definição usada para estabelecer o posicionamento do botão no plano de fundo:
+Definição usada para estabelecer o posicionamento do elemento no canvas:
 
 ``` python
-def position(self,x,y):
+    def position(self,x,y):
         '''slider's position on screen'''
         self.x = x
         self.y = y
@@ -48,10 +53,10 @@ def position(self,x,y):
         self.recty = self.y - 10
 ```
 
-Construção utilizada para definir a representação gráfica do botão bem como os seus valores randômicos:
+Método para dretornar o valor do slider, desenhar na tela e verificar se foi arrastado.
 
 ``` python
-def value(self):
+    def value(self):
         '''updates the slider and returns value'''
         #gray line behind slider
         strokeWeight(4)
