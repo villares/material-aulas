@@ -61,7 +61,7 @@ Definição usada para estabelecer o posicionamento do elemento no canvas:
         self.recty = self.y - 10
 ```
 
-Método para dretornar o valor do slider, desenhar na tela e verificar se foi arrastado.
+Método que devolve o valor do slider, desenha na tela o elemento e verificar se foi arrastado.
 
 ``` python
     def value(self):
