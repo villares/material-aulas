@@ -7,7 +7,7 @@ Processing o eixo X tem o seu ponto de origem (zero) situa-se na extremidade do 
 Em relação ao eixo Y, o seu ponto de origem (zero) também situa-se na extremidade do canto superior esquerdo da tela, porém, irá somando ( postitivo) para baixo, resultando em algo como:
 
 ############################################## IMAGEM EIXO X e Y ######################################################
-![Coordenadas X e Y](nome_da_imagem_coordenadas.JPEG)
+![Coordenadas X e Y](coordenadas.jpg)
 
 ## Translate.
 
@@ -30,10 +30,10 @@ Sendo assim, para restaurarmos as coordenadas (originais), utilizamos o comando
 ```python
 pophMatrix()
 ```
-Como exemplo, para transformarmos os sistemas de coordenadas, considerando um *objeto* com lados *"LADO"* e *"LADOmenor"*, podemos escrever:
+Como exemplo, para transformarmos os sistemas de coordenadas, considerando um *objeto* com lados *"lado"* e *"lada_menor"*, podemos escrever:
 ```python
-def objeto(x, y, LADO, LADOmenor, rot):    
-    L, l = LADO / 2., LADOmenor / 2.
+def objeto(x, y, lado, lado_menor, rot):    
+    L, l = lado / 2., lado_menor / 2.
     pushMatrix()  # pedir para criar um novo sistema de coordenadas 
     translate(x, y) # inserir novo zero,zero de coordenadas 
 ```
@@ -48,8 +48,8 @@ def draw():
     fill(30, 50, 200)
     objeto(150, 250, 200, 100)
     
-def objeto(x, y, LADO, LADOmenor):
-    L, l = LADO / 2, LADOmenor / 2
+def objeto(x, y, lado , lado_menor):
+    L, l = lado / 2, lado_menor / 2
     pushMatrix() 
     translate(x, y)
     beginShape()
