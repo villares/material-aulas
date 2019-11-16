@@ -6,7 +6,6 @@ Ao iniciar um arquivo com o sistema de coordenadas padrão x, y, podemos identif
 Processing o eixo X tem o seu ponto de origem (zero) situa-se na extremidade do canto superior esquerdo da tela, somando (positivo) para o lado direito.
 Em relação ao eixo Y, o seu ponto de origem (zero) também situa-se na extremidade do canto superior esquerdo da tela, porém, irá somando ( postitivo) para baixo, resultando em algo como:
 
-############################################## IMAGEM EIXO X e Y ######################################################
 ![Coordenadas X e Y](coordenadas.jpg)
 
 ## Translate.
