@@ -1,8 +1,14 @@
-# Como exportar uma imagem PNG
+# Como exportar uma imagem
+
+Um *frame* é o resultado visual produzido na área de desenho do *sketch* no Processing em um determinado momento. Para salvar um *frame* em um arquivo bitmap/raster, como por exemplo PNG, TIF ou JPG, usamos a função `saveFrame()`.
+
+Passamos como argumento o nome do arquivo que deve ser salvo, e a extensão de três letras após o ponto no nome do arquivo indica o formato que deve ser salvo. Por exemplo `saveFrame("imagem.jpg")` salva um arquivo JPG na pasta do *sketch*. Se utilizarmos alguns caracteres "#" no nome do arquivo eles serão substituídos pelo número do *frame*. 
+
+O código abaixo exemplifica como salvar uma imagem PNG de um frame. Quando uma tecla é pressionada, é executada a função `keyPressed()` e se for identificada a tecla "s" (`key == 's'`) é execuatada a função saveFrame(), que grava uma imagem na pasta do sketch.
+
+### Um exemplo bem simples
 
 O código abaixo exemplifica como salvar uma imagem PNG de um frame. Quando uma tecla é pressionada, é executada a função `keyPressed()` e se for identificada a tecla "s" (`key == 's'`) é execuatada a função `saveFrame()`, que grava uma imagem na pasta do *sketch*.
-
-## Um exemplo bem simples
 
 ```python
 def setup():
@@ -16,11 +22,36 @@ def draw():
 def keyPressed():
     if key == 's':
         saveFrame("frame.png")
+        print("PNG salvo")
+```
+Reulta no aquivo "frame421.png" na pasta do *sketch*:
+
+![frame421.png](assets/frame.png)
+
+### `saveFrame()` dentro do `draw()`
+
+Usar `saveFrame()`dentro do laço principal `draw()` torna o *sketch* muito mais lento, pois salva uma imagem a cada *frame* do draw. Caso sejam usados os "#" no nome, permite salvar um número grande de frames em alguns segundos, o que deve ser feito com cuidado. Normalmente é criada uma condição que interrompe o sketch com `exit()` ou que só permite salvar um certo número de imagens.
+
+```python
+def draw():
+    # desenho
+    ...
+    saveFrame("imagem###.png")
+    if frameCount > 100:
+        exit()    
 ```
 
-![frame.png](assets/frame.png)
+ou
 
-## Um exemplo um pouco mais longo
+```python
+def draw():
+    # desenho
+    ...
+    if frameCount <= 100:
+        saveFrame("imagem###.png")
+```
+
+### Um exemplo um pouco mais longo
 
 ```python
 def setup():
@@ -60,5 +91,6 @@ def keyPressed(): # executada quando uma tecla for precinada
     if key == 's':  # tecla "s" precionada, salva a imagem PNG
         nome_arquivo = 'arvore-s{}-a{}.png'.format(seed, mouseX % 360)
         saveFrame(nome_arquivo)
-        print("Salvando PNG")
+        print("PNG salvo")
 ```
+
