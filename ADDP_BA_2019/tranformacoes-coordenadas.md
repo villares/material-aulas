@@ -7,17 +7,17 @@ Processing os eixos X e Y com origem (zero) no canto superior esquerdo da tela. 
 
 ![Coordenadas X e Y](assets/coordenadas.jpg)
 
-## translate(x, y)
+### `translate(x, y)`
 
-É possível alterar a posição de origem dos eixos, coordenadas (0, 0), utilizando `translate(x, y)` onde os argumentos (y, y) indicam as coordenadas atuais que se tornarão o novo (0, 0).
+É possível alterar a posição de origem dos eixos, coordenadas (0, 0), utilizando `translate(x, y)` onde os argumentos (x, y) indicam as coordenadas atuais que se tornarão o novo (0, 0).
 
 É importante entender que o efeito do `translate()` é cumulativo, um novo translate altera as coordenadas da origem a deslocando em relação a origem atual, e isso pode ser indesejado.
 
 Mas saiba também que ao final da execução do `draw()`, um frame do Processing, o sistema de coordenadas original é restaurado.
 
-## pushMatrix() e popMatrix()
+### `pushMatrix()` e `popMatrix()`
 
-Uma forma de lidar com os efeitos cumulativos do `translate()` é utilizando `pushMatrix()`, que permite salvar o sistema de coordenadas atual, e que deve ser mais tarde restaurarado  com `pophMatrix()`.
+Uma forma de lidar com os efeitos cumulativos do `translate()` é utilizando `pushMatrix()`, que permite salvar o sistema de coordenadas atual, o modificar com `translate()` e/ou `rotate()`, por exemplo, em seguida desenhar no novo sitema de coordenadas, e restaurar o sistema anterior mais à frente com `pophMatrix()`. É preciso cuidado para parear cada `pushMatrix()` com um `popMatrix()` equivalente ao final das etapas de desenho.
 
 ```python
 def setup():
