@@ -1,60 +1,39 @@
 # Transformação do sistema de coordenadas
 
-## Coordenadas X, Y.
+## Eixos X e Y
 
-Ao iniciar um arquivo com o sistema de coordenadas padrão x, y, podemos identificar que no 
-Processing o eixo X tem o seu ponto de origem (zero) situa-se na extremidade do canto superior esquerdo da tela, somando (positivo) para o lado direito.
-Em relação ao eixo Y, o seu ponto de origem (zero) também situa-se na extremidade do canto superior esquerdo da tela, porém, irá somando ( postitivo) para baixo, resultando em algo como:
+Ao iniciar um *sketch* com o sistema de coordenadas padrão, podemos identificar no 
+Processing os eixos X e Y com origem (zero) no canto superior esquerdo da tela. O eixo X tem seus valores positivos crescendo em direção ao lado direito da tela, já o eixo Y cresce com valors positivos em direção à parte de baixo da tela, resultando em algo como:
 
-![Coordenadas X e Y](https://user-images.githubusercontent.com/57274077/68995935-28154d00-0872-11ea-9a6d-bc2697281fd2.jpg)
+![Coordenadas X e Y](/Users/villares/material-aulas/ADDP_BA_2019/assets/coordenadas.jpg)
 
-## Translate.
+## translate(x, y)
 
-Ao criarmos uma geometria, ou desenho, para definirmos a sua origem, é necessário desvilcularmos os pontos de origem iniciais. 
-Isso porque se não alterarmos as coordenadas (zero, zero) x e y respectivamente, nossa geometria proposta estará no canto superior esquerdo:
+É possível alterar a posição de origem dos eixos, coordenadas (0, 0), utilizando `translate(x, y)` onde os argumentos (y, y) indicam as coordenadas atuais que se tornarão o novo (0, 0).
 
-Para isso é necessário utilizarmos o comando:
-```python
-translate(x,y)
-```
-## Como utilizar o comando Translate ?
+É importante entender que o efeito do `translate()` é cumulativo, um novo translate altera as coordenadas da origem a deslocando em relação a origem atual, e isso pode ser indesejado.
 
-Para alterarmos as coordenadas (utilizando o comando Translate) é necessário utilizarmos o 
-```python
-pushMatrix()
-```
-O pushMatrix é responsável por definir e salvar as coordenadas que desejamos. 
-Em seguida é necessário voltarmos as coordenadas para as originais.
-Sendo assim, para restaurarmos as coordenadas (originais), utilizamos o comando 
-```python
-pophMatrix()
-```
-Como exemplo, para transformarmos os sistemas de coordenadas, considerando um *objeto* com lados *"lado"* e *"lada_menor"*, podemos escrever:
-```python
-def objeto(x, y, lado, lado_menor, rot):    
-    L, l = lado / 2., lado_menor / 2.
-    pushMatrix()  # pedir para criar um novo sistema de coordenadas 
-    translate(x, y) # inserir novo zero,zero de coordenadas 
-```
+Mas saiba também que ao final da execução do `draw()`, um frame do Processing, o sistema de coordenadas original é restaurado.
 
-## Exemplo prático de um triângulo  azul com novo sistema de coordenadas:
+## pushMatrix() e popMatrix()
+
+Uma forma de lidar com os efeitos cumulativos do `translate()` é utilizando `pushMatrix()`, que permite salvar o sistema de coordenadas atual, e que deve ser mais tarde restaurarado  com `pophMatrix()`.
+
 ```python
 def setup():
-    size(520, 500)
+    size(500, 500)
     
 def draw():
-    background(255)
-    fill(30, 50, 200)
-    objeto(150, 250, 200, 100)
-    
-def objeto(x, y, lado , lado_menor):
-    L, l = lado / 2, lado_menor / 2
+    triangulo(100, 100, 200, 100)
+    triangulo(250, 100, 100, 100)
+
+def triangulo(x, y, lado1 , lado2):
     pushMatrix() 
     translate(x, y)
     beginShape()
-    vertex(20, -70)
-    vertex(14, -20)
-    vertex(100, -15)
+    vertex(0, 0)
+    vertex(0, lado1)
+    vertex(lado2, lado1)
     endShape(CLOSE) 
     popMatrix() 
 ```
