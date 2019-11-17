@@ -98,4 +98,3 @@ def bar(x1, y1, z1, x2, y2, z2, weight=10):
     popMatrix()
 ```
 
- (exemplo maiorzão https://github.com/villares/material-aulas/blob/master/ADDP_BA_2019/barras_3D.pyde )
