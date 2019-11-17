@@ -5,7 +5,7 @@
 Ao iniciar um *sketch* com o sistema de coordenadas padrão, podemos identificar no 
 Processing os eixos X e Y com origem (zero) no canto superior esquerdo da tela. O eixo X tem seus valores positivos crescendo em direção ao lado direito da tela, já o eixo Y cresce com valors positivos em direção à parte de baixo da tela, resultando em algo como:
 
-![Coordenadas X e Y](/Users/villares/material-aulas/ADDP_BA_2019/assets/coordenadas.jpg)
+![Coordenadas X e Y](assets/coordenadas.jpg)
 
 ## translate(x, y)
 
