@@ -66,22 +66,19 @@ def caixa(x, y, z, *tam):
 
 https://github.com/villares/Paper-objects-with-Processing-and-Python
 
-### Barra em 3D, orbit com PeasyCam
+### Desenhando uma barra em 3D
 
 ```python
-add_library('peasycam')  # é preciso baixar/instalar pelo IDE
-
 def setup():
     size(500, 500, P3D)
-    cam = PeasyCam(this, 100)
-    cam.setMinimumDistance(100)
-    cam.setMaximumDistance(200)
-    
+    hint(DISABLE_DEPTH_MASK) # https://processing.org/reference/hint_.html
+        
 def draw():
     background(200)
-    bar(0, 0, 0, 20, 10, 30, 3)
-    bar(50, 30, -30, 20, 10, 30, 3)
-    bar(0, 0, 0, 50, 30, -30, 3)
+    lights()
+    fill(255, 0, 0, 100)
+    bar(50, 50, 0, mouseX, mouseY, 250, 30)
+    bar(450, 450, 0, 250, 250, 250, 30)
 
 def bar(x1, y1, z1, x2, y2, z2, weight=10):
     """Draw a box rotated in 3D like a bar/edge."""
@@ -98,3 +95,35 @@ def bar(x1, y1, z1, x2, y2, z2, weight=10):
     popMatrix()
 ```
 
+### Exemplo da biblioteca PeasyCam, para orbitar em torno de objetos
+
+```python
+add_library('peasycam')  # é preciso baixar/instalar pelo IDE
+
+def setup():
+    global cam
+    size(500, 500, P3D)
+    cam = PeasyCam(this, 100)
+    cam.setMinimumDistance(100)
+    cam.setMaximumDistance(200)
+    
+def draw():
+    # Desenho 3D que pode ser "orbitado" com drag do mouse
+    lights()
+    background(200)
+    fill(96, 255, 0)
+    box(30)
+    pushMatrix()
+    translate(0, 0, 20)
+    fill(0, 96, 255)
+    box(5)
+    popMatrix()
+
+    cam.beginHUD()  # inicia "Heads Up Display"
+    # elementos 2D alinhados com a tela (como num vidro)
+    fill(0, 128)
+    rect(0, 0, 60, 30)
+    fill(255)
+    text("{:.2f}".format(frameRate), 10, 18)
+    cam.endHUD()  # termina o "HUD"
+```
