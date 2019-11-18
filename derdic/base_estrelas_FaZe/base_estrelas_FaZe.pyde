@@ -1,21 +1,45 @@
-
+coresC = (
+          (111, 15, 124),
+          (102, 100, 47),
+          (47, 102, 99),
+          (103, 47, 68),
+          (232, 228, 16),
+          (255, 255, 255),
+          )
 
 estrelas = []  # lista de objetos
 
 def setup():
     """ Define área de desenho e popula lista de estrelas """
     # fullScreen()
-    size(400, 400)  # área de desenho (width, height)
+    size(400, 700)  # área de desenho (width, height)
     meia_largura, meia_altura = width / 2., height / 2. # floats
     for _ in range(6):
         e = Estrela(meia_largura, meia_altura)
         estrelas.append(e)
 
 def draw():
+    colorMode(RGB)
+    if keyPressed:
+        cor1 = color(* coresC[0])
+        cor2 = color(* coresC[1])
+        cor3 = color(* coresC[2])
+    else:
+        cor1 = color(* coresC[3])
+        cor2 = color(* coresC[4])
+        cor3 = color(* coresC[5])
+    colorMode(HSB)
+    paleta = (color(hue(cor1),255,255),
+              color(hue(cor2),255,255),
+              color(0,255,255),
+              color(hue(cor1),255,255),
+              color(hue(cor2),255,255),
+              color(hue(cor3),0,255),
+              )    
     """ Limpa a tela, desenha e atualiza estrelas """
     background(0)  # atualização do desenho, fundo preto
-    for estrela in estrelas:
-        estrela.desenha(10 if mouseX > 200 else 30)
+    for i, estrela in enumerate(estrelas):
+        estrela.desenha(paleta[i]) #10 if mouseX > 200 else 30)
         estrela.anda()
 
 class Estrela():
@@ -36,10 +60,10 @@ class Estrela():
                          128 + sorteio,  # B
                          200)  # alpha
 
-    def desenha(self,pontas=30, raio1=50, raio2=100):
+    def desenha(self,cor, pontas=10, raio1=50, raio2=100):
         """ Desenha polígono em torno das coordenadas do objeto """
         noStroke()
-        fill(self.cor)
+        fill(cor)
         pushMatrix()
         translate(self.x, self.y)
         rotate(radians(frameCount))

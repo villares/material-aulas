@@ -1,5 +1,13 @@
 
 # Paleta A
+coresA = (
+          (247, 176, 142),
+          (237, 232, 69),
+          (156, 229, 234),
+          (33, 7, 90),
+          (71, 242, 238),
+          (190, 231, 232),
+          )
 
 estrelas = []  # lista de objetos
 
@@ -9,14 +17,31 @@ def setup():
     size(800, 600)  # área de desenho (width, height)
     meia_largura, meia_altura = width / 2., height / 2. # floats
     for _ in range(6):
-        e = Estrela(meia_largura, meia_altura)
+        e = Estrela(random(width), random(height))
         estrelas.append(e)
 
 def draw():
     """ Limpa a tela, desenha e atualiza estrelas """
+    colorMode(RGB)
+    if keyPressed:
+        cor1 = color(*coresA[0])
+        cor2 = color(*coresA[1])
+        cor3 = color(*coresA[2])
+    else:
+        cor1 = color(*coresA[3])
+        cor2 = color(*coresA[4])
+        cor3 = color(*coresA[5])
+    colorMode(HSB)
+    paleta = (color(hue(cor1),255,255),
+              color(hue(cor2),255,255),
+              color(hue(cor3),255,255),
+              color(hue(cor1),255,255),
+              color(hue(cor2),255,255),
+              color(hue(cor3),255,255),
+              )        
     background(0)  # atualização do desenho, fundo preto
-    for estrela in estrelas:
-        estrela.desenha()
+    for i, estrela in enumerate(estrelas):
+        estrela.desenha(paleta[i])
         estrela.anda()
 
 class Estrela():
@@ -30,17 +55,17 @@ class Estrela():
         else:
             self.tamanho = random(50, 200)
         self.vx = random(-2,2)
-        self.vy = random(-2,-4)
+        self.vy = random(-5,-1)
         sorteio = random(255)
         self.cor = color(247,  # R
                          176,  # G
                          142,  # B
                          200)  # alpha
 
-    def desenha(self,pontas=10, raio1=25, raio2=100):
+    def desenha(self, cor, pontas=10, raio1=25, raio2=100):
         """ Desenha polígono em torno das coordenadas do objeto """
         noStroke()
-        fill(self.cor)
+        fill(cor)
         pushMatrix()
         translate(self.x, self.y)
         estrela(0, 0, 4, raio1*.8, raio2*.8)
@@ -51,7 +76,7 @@ class Estrela():
     
     def anda(self):
         """ atualiza a posição do objeto e devolve do lado oposto se sair """
-        self.x += self.vx
+        self.x += 5 * sin(radians(frameCount * 2))
         self.y += self.vy
         if keyPressed and keyCode == LEFT:
             self.vx = self.vx + 0.1
