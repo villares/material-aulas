@@ -19,7 +19,7 @@
 #que também, por consequência, irá mostrar onde essa elipse estara. 
 #em seguida, vamos desenhar o interior do olho, que em desenho fica por cima da elipse branca
 #por meio de um circulo de cor a escolher (colocar a cor é só você digitar fill e escrever os parâmetros RGB dela).
-#exemplo do olho
+```python exemplo olho '''
 def setup():
     size(600, 400)
     background(0)
