@@ -4,8 +4,8 @@ estrelas = []  # lista de objetos
 
 def setup():
     """ Define área de desenho e popula lista de estrelas """
-    fullScreen()
-    # size(400, 400)  # área de desenho (width, height)
+    # fullScreen()
+    size(400, 400)  # área de desenho (width, height)
     meia_largura, meia_altura = width / 2., height / 2. # floats
     for _ in range(6):
         e = Estrela(meia_largura, meia_altura)

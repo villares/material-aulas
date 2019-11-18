@@ -1,22 +1,34 @@
-
-# Paleta A
+add_library('sound') # aviso de que vai usar o microfone
 
 estrelas = []  # lista de objetos
 
 def setup():
     """ Define área de desenho e popula lista de estrelas """
     # fullScreen()
-    size(800, 600)  # área de desenho (width, height)
+    size(600, 600)  # área de desenho (width, height)
     meia_largura, meia_altura = width / 2., height / 2. # floats
     for _ in range(6):
         e = Estrela(meia_largura, meia_altura)
         estrelas.append(e)
+    global input, loudness, waveform, samples
+    source = AudioIn(this, 0)
+    source.start()
+    loudness = Amplitude(this)
+    loudness.input(source)
+    samples = 60
+    waveform = Waveform(this, samples)
+    waveform.input(source)
+
+
 
 def draw():
     """ Limpa a tela, desenha e atualiza estrelas """
     background(0)  # atualização do desenho, fundo preto
-    for estrela in estrelas:
-        estrela.desenha()
+    volume = loudness.analyze()
+    waveform.analyze()
+    for i, estrela in enumerate(estrelas):
+        t = int(map(volume, 0, 0.5, 10, 100))
+        estrela.desenha(30, t)
         estrela.anda()
 
 class Estrela():
@@ -30,43 +42,37 @@ class Estrela():
         else:
             self.tamanho = random(50, 200)
         self.vx = random(-2,2)
-        self.vy = random(-2,-4)
-        sorteio = random(255)
-        self.cor = color(247,  # R
-                         176,  # G
-                         142,  # B
+        self.vy = random(-3,-4)
+        sorteio = random(128)
+        self.cor = color(128 + sorteio,  # R
+                         0,  # G
+                         128 + sorteio,  # B
                          200)  # alpha
 
-    def desenha(self,pontas=10, raio1=25, raio2=100):
+    def desenha(self,pontas=10, raio1=50, raio2=100):
         """ Desenha polígono em torno das coordenadas do objeto """
         noStroke()
         fill(self.cor)
         pushMatrix()
         translate(self.x, self.y)
-        estrela(0, 0, 4, raio1*.8, raio2*.8)
-        rotate(QUARTER_PI)
-        estrela(0, 0, 4, raio1, raio2)
-        # estrela(0, 0, 4, raio1 * .7, raio2 * . 7)
+        rotate(radians(frameCount))
+        estrela(0, 0, pontas, raio1, raio2)
         popMatrix()
+    
     
     def anda(self):
         """ atualiza a posição do objeto e devolve do lado oposto se sair """
         self.x += self.vx
         self.y += self.vy
-        if keyPressed and keyCode == LEFT:
-            self.vx = self.vx + 0.1
-        if keyPressed and keyCode == RIGHT:
-            self.vx = self.vx - 0.1
-
         metade = self.tamanho / 2
         if self.x > width + metade:
-            self.x = -metade
+            self.vx = -self.vx
         if self.y > height + metade:
-            self.y = -metade
+            self.vy = -self.vy
         if self.x < -metade:
-            self.x = width + metade
+            self.vx = -self.vx
         if self.y < -metade:
-            self.y = height + metade
+            self.vy = -self.vy
             
             
 def estrela(cx, cy, pontas, raio1, raio2):    
@@ -75,10 +81,11 @@ def estrela(cx, cy, pontas, raio1, raio2):
     beginShape() # comece a forma!
     for p in range(pontos): # para cada p
         angulo = radians(p * parte) # calcula angulo
+        w =  1 #int(map(waveform.data[p], -1, 1, 0.2, 2))
         if p % 2 == 0: # se for par
-            raio = raio1
+            raio = raio1 * w
         else: # senão, se for impar
-            raio = raio2
+            raio = raio2 * w
         x = cx + raio * sin(angulo)
         y = cy + raio * cos(angulo)
         vertex(x, y) # vertex é um ponto

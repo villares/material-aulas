@@ -1,5 +1,5 @@
 
-
+# Paleta B
 estrelas = []  # lista de objetos
 
 def setup():
