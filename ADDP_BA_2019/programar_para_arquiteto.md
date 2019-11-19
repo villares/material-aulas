@@ -1,4 +1,4 @@
-## Introducao à programação 
+## Introdução à programação 
 
 Entender como fracionar os objetos, o que vem na frente e o que vem atrás, como eles sao formados e como se comportam separadamente, para depois entender o conjunto final. Como arquitetos expressamos usualmente o pensamento por meio do desenho adotamos como plano de fundo deste desenho, geralmente, um plano cartesiano onde vamos interligando os pontos por meio de linhas ate formar a perspectiva final. 
 
