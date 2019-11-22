@@ -1,4 +1,4 @@
-
+# Reduzir
 # Paleta B
 coresB = [(0, 255, 77), (109, 0, 255), (255, 0, 255),
           (0, 255, 255), (255, 0, 71), (253, 255, 0)]
@@ -16,6 +16,7 @@ def setup():
 
 def draw():
     colorMode(RGB)
+    global cor1, cor2, cor3
     if keyPressed:
         cor1 = color(*coresB[0])
         cor2 = color(*coresB[1])
@@ -24,15 +25,7 @@ def draw():
         cor1 = color(*coresB[3])
         cor2 = color(*coresB[4])
         cor3 = color(*coresB[5])
-    colorMode(HSB)
-    global paleta
-    paleta = (color(hue(cor1),255,255),
-              color(hue(cor2),255,255),
-              color(hue(cor3),255,255),
-              color(hue(cor1),255,255),
-              color(hue(cor2),255,255),
-              color(hue(cor3),255,255),
-              )   
+
     """ Limpa a tela, desenha e atualiza estrelas """
     background(0)  # atualização do desenho, fundo preto
     for i, estrela in enumerate(estrelas):
@@ -51,18 +44,14 @@ class Estrela():
             self.tamanho = random(50, 200)
         self.vx = random(-2,2)
         self.vy = random(-2,-4)
-        sorteio = random(255)
-        self.cor = color(random(255),  # R
-                         random(255),  # G
-                         random(255),  # B
-                         200)  # alpha
+
 
     def desenha(self,id, pontas=10, raio1=50, raio2=100):
         """ Desenha polígono em torno das coordenadas do objeto """
         noStroke()
         # fill(self.cor)
-        stroke(paleta[id])
-        fill(paleta[(id + 1) % 6])
+        stroke(cor2)
+        fill(triangulo(cor1, cor2, cor3, map(mouseX, 0, width, 0, 360)))
         strokeWeight(5)
         strokeJoin(ROUND)
         # if keyPressed: raio2 = 300
@@ -100,3 +89,20 @@ def estrela(cx, cy, pontas, raio1, raio2):
         y = cy + raio * cos(angulo)
         vertex(x, y) # vertex é um ponto
     endShape(CLOSE) # termina forma
+    
+def triangulo(a, b, c, v):
+    if 0 <= v < 60 or v == 360:
+        return a
+    if 60 <= v < 120:
+        t = map(v, 60, 120, 0, 1)
+        return lerpColor(a, b, t)
+    if 120 <= v < 180:
+        return b
+    if 180 <= v < 240:
+        t = map(v, 180, 240, 0, 1)
+        return lerpColor(b, c, t)
+    if 240 <= v < 300:
+        return c
+    if 300 <= v < 360:
+        t = map(v, 300, 360, 0, 1)
+        return lerpColor(c, a, t)

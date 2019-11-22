@@ -22,18 +22,12 @@ def draw():
         cor1 = color(* coresC[3])
         cor2 = color(* coresC[4])
         cor3 = color(* coresC[5])
-    colorMode(HSB)
-    paleta = (color(hue(cor1),255,255),
-              color(hue(cor2),255,255),
-              color(0,255,255),
-              color(hue(cor1),255,255),
-              color(hue(cor2),255,255),
-              color(hue(cor3),0,255),
-              )    
+
     """ Limpa a tela, desenha e atualiza estrelas """
     background(0)  # atualização do desenho, fundo preto
     for i, estrela in enumerate(estrelas):
-        estrela.desenha(paleta[i]) #10 if mouseX > 200 else 30)
+        cor = (triangulo(cor1, cor2, cor3, map(mouseX, 0, width, 0, 360)))
+        estrela.desenha(cor) #10 if mouseX > 200 else 30)
         estrela.anda()
 
 class Estrela():
@@ -56,7 +50,7 @@ class Estrela():
 
     def desenha(self,cor, pontas=10, raio1=50, raio2=100):
         """ Desenha polígono em torno das coordenadas do objeto """
-        noStroke()
+        stroke(0)
         fill(cor)
         pushMatrix()
         translate(self.x, self.y)
@@ -94,3 +88,20 @@ def estrela(cx, cy, pontas, raio1, raio2):
         y = cy + raio * cos(angulo)
         vertex(x, y) # vertex é um ponto
     endShape(CLOSE) # termina forma
+    
+def triangulo(a, b, c, v):
+    if 0 <= v < 60 or v == 360:
+        return a
+    if 60 <= v < 120:
+        t = map(v, 60, 120, 0, 1)
+        return lerpColor(a, b, t)
+    if 120 <= v < 180:
+        return b
+    if 180 <= v < 240:
+        t = map(v, 180, 240, 0, 1)
+        return lerpColor(b, c, t)
+    if 240 <= v < 300:
+        return c
+    if 300 <= v < 360:
+        t = map(v, 300, 360, 0, 1)
+        return lerpColor(c, a, t)
