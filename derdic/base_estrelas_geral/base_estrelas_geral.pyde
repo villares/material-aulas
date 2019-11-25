@@ -10,9 +10,11 @@ def setup():
     setup_dados()
 
     meia_largura, meia_altura = width / 2., height / 2. # floats
+    print instrumentos
     for _ in range(len(instrumentos)):
         e = Estrela(random(width),random(height))
         estrelas.append(e)
+    print len(estrelas), len(instrumentos)
 
 def draw():
     """ Limpa a tela, desenha e atualiza estrelas """
@@ -33,18 +35,20 @@ def oscEvent(theOscMessage):
                 dados[instrumento] = (ins, tom, amp, cor)
                 if cor == 0 or amp == 0 or tom == 0:
                     print(instrumento, dados[instrumento])
+                print(instrumento, dados[instrumento])
      
 def setup_dados():
     global dados, instrumentos, oscP5
     oscP5 = OscP5(this, 12000)
     dados = dict()
-    instrumentos = ("verdesol",
-                    "laranjare",
-                    "verdefa",
-                    "vermelhodo1",
-                    "vermelhodo2",
-                    "amarelomi",
-                    "roxosi"
+    instrumentos = (
+                    # "verdesol",
+                    # "laranjare",
+                    # "verdefa",
+                    # "vermelhodo1",
+                    # "vermelhodo2",
+                    # "amarelomi",
+                    "roxosi",
                     )
     for instrumento in instrumentos:
             dados[instrumento] = (0, 100, 100, 100) 
