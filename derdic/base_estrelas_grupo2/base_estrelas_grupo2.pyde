@@ -1,5 +1,5 @@
 
-# Paleta A # TERCEIRO MOVIMENTO
+# Paleta A - grupo 2
 coresA = [(255, 82, 0), (255, 247, 0), (0, 238, 255),
           (79, 0, 255), (0, 255, 249), (255, 255, 255)]
 
