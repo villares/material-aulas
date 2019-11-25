@@ -15,7 +15,7 @@ class Estrela():
         self.vy = random(-2,-4)
 
 
-    def desenha(self,id, pontas=10, raio1=50, raio2=100):
+    def desenha(self, cor, pontas=10, raio1=50, raio2=100):
         """ Desenha polígono em torno das coordenadas do objeto """
         colorMode(RGB)
         global cor1, cor2, cor3
@@ -31,12 +31,14 @@ class Estrela():
         noStroke()
         # fill(self.cor)
         stroke(cor2)
-        fill(triangulo(cor1, cor2, cor3, map(mouseX, 0, width, 0, 360)))
+        fill(triangulo(cor1, cor2, cor3, cor))
         strokeWeight(5)
         strokeJoin(ROUND)
         # if keyPressed: raio2 = 300
-        estrela(self.x, self.y, pontas, raio1 + 50 * sin(frameCount/3.),
-                raio2 + 50 * sin(frameCount/3.))
+        # estrela(self.x, self.y, pontas, raio1 + 50 * sin(frameCount/3.),
+        #         raio2 + 50 * sin(frameCount/3.))
+        estrela(self.x, self.y, pontas, raio1, raio2)
+
         self.tamanho -=  (self.tamanho + raio2 / 5)
     
     
