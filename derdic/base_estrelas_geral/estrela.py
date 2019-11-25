@@ -30,8 +30,8 @@ class Estrela():
 
         noStroke()
         # fill(self.cor)
-        stroke(cor2)
-        fill(triangulo(cor1, cor2, cor3, cor))
+        stroke(triangulo(cor1, cor2, cor3, cor))
+        fill(0)
         strokeWeight(5)
         strokeJoin(ROUND)
         # if keyPressed: raio2 = 300
