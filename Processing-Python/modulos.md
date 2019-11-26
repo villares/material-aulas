@@ -1,12 +1,12 @@
 # Usando as abas no IDE do Processing
 
-Multiplas abas são utilizadas para organizar melhor um *sketch*  mais longo. É comum separar definições de classes e outras funções em abas "secundárias". 
+Múltiplas abas são utilizadas para organizar melhor um *sketch*  mais longo. É comum separar as definições de classes e outras funções em abas "secundárias". 
 
-As funções `setup()`,  `draw()` assim como as que são acionadas por eventos (por exemplo, `mouseDragged()` ou `keyPressed()`) precisam ficar na primeira aba.
+As funções `setup()`,  `draw()` assim como as que são acionadas por eventos, por exemplo, `mouseDragged()` ou `keyPressed()`, precisam ficar na primeira aba.
 
 ## Abas secundárias no modo Python 
 
-Diferente das abas no IDE de Processing no modo tradicional, Java (que são tratadas como uma continuidade do código na primeira aba) as abas no modo Python são arquivos `.py` e se comportam como "módulos" Python,  por isso precisam ser "importadas", sendo referenciadas com a instrução `import`.
+Diferente das abas do modo Java tradicional, que são tratadas como uma continuidade do código na primeira aba, as abas no modo Python são arquivos `.py` e se comportam como "módulos" Python,  por isso precisam ser "importadas", sendo referenciadas com a instrução `import`.
 
 Ao criar uma nova aba, por exemplo, com o nome `segunda_aba`, ela se torna o arquivo `segunda_aba.py`. Note que a primeira aba do *sketch* é um arquivo com a extensão `.pyde`, extensão que fica oculta.
 
