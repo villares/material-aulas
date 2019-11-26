@@ -11,7 +11,7 @@ for palavra in lista_de_palavras:
 
 ```
 
-Tem como resultado, impresso no console:
+O código acima apresenta como resultado, impresso no console:
 
 ```
 abacate
@@ -24,7 +24,8 @@ franco
 ```python   
 for n in range(10):
   print(n)
-  
+```
+
 Com o seguinte resultado, aqui apresentado truncado com "...", impresso no console:
 
 ```
