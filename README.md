@@ -29,3 +29,5 @@
 
   - [Usando várias abas no IDE](/Processing-Python/modulos.md)
   - [Python 2 e alguns recursos do Python 3](/Processing-Python/futuro.md)
+
+  - [Desenho 3D](/Processing-Python/desenho-3D.md)
