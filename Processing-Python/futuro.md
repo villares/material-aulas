@@ -2,7 +2,7 @@
 
 Infelizmente o Processing modo Python depende de Jython, uma implementação da linguagem Python que está presa no Python 2, é um Python do passado.
 
-É possível trazer para o nosso uso alguns poucos comportamentos de Python 3, o Python do futuro, utilizando logo na primeira linha de um *sketch*, ou de um módulo `.py`, uma instrução na forma `from __future__ impor ...`.
+É possível trazer para o nosso uso alguns poucos comportamentos de Python 3, o Python do futuro, utilizando logo na primeira linha de um *sketch*, ou de um módulo `.py`, uma instrução na forma `from __future__ import ...`.
 
 ### Literais Unicode
 
@@ -31,4 +31,3 @@ from __future__ import print_function
 
 print(a, end = ' ')
 ```
- 
