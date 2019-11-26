@@ -16,6 +16,28 @@ from __future__ import unicode_literals
 fruta = 'maça'
 ```
 
+### Divisão 
+
+No Python 2:
+```python
+a = 3 / 2  # a = 1
+
+# ou
+a = 3 / 2. # a = 1.5
+
+```
+
+No Python 3:
+
+```python
+from __future__ import division
+
+a = 3 / 2  # a = 1.5
+
+# ou
+a = 3 // 2  # a = 1
+```
+
 ### Função print()
 
 Python 2:
