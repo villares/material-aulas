@@ -2,33 +2,38 @@
 
 ## Sintaxe
 
-O `for` permite controlar uma seqüência de repetições oegando de um em um itens fornecidos (de uma coleção, de um objeto iterável ou gerador). 
+O `for` permite controlar uma seqüência de repetições olhando de um em um itens fornecidos por uma sequência (ou de uma coleção, de um objeto iterável ou ainda de um objeto gerador, mas isso não vem ao caso agora). 
 
 ```python   
 lista_de_palavras = ["abacate", "uva", "frango"]
 for palavra in lista_de_palavras:
   print(palavra)
-  
-# o resultado impresso no console:
-# abacate
-# uva
-# franco
+
 ```
 
-É muito comum ser usado em conjunto com `range()` que produz uma sequência de números.
+Tem como resultado, impresso no console:
+
+```
+abacate
+uva
+franco
+```
+
+É muito comum o `for` ser usado em conjunto com `range()` que produz uma sequência de números.
 
 ```python   
 for n in range(10):
   print(n)
   
-# o resultado impresso no console:
-# 0
-# 1
-# 2
-# ...
-# 8
-# 9
+Com o seguinte resultado, aqui apresentado truncado com "...", impresso no console:
 
+```
+0
+1
+2
+...
+8
+9
 ```
 
 ## Exemplos
