@@ -6,12 +6,15 @@ As funções `setup()`,  `draw()` assim como as que são acionadas por eventos (
 
 ## Abas secundárias no modo Python 
 
-Diferente das abas no IDE de Processing no modo tradicional, Java (que são tratadas como uma continuidade do código na primeira aba) as abas no modo Python são arquivos `.py` e se comportam como "módulos" Python,  por isso precisam ser "importadas", sendo referenciadas na primeira aba com a instrução `import`.
+Diferente das abas no IDE de Processing no modo tradicional, Java (que são tratadas como uma continuidade do código na primeira aba) as abas no modo Python são arquivos `.py` e se comportam como "módulos" Python,  por isso precisam ser "importadas", sendo referenciadas com a instrução `import`.
 
 Ao criar uma nova aba, por exemplo, com o nome `segunda_aba`, ela se torna o arquivo `segunda_aba.py`. Note que a primeira aba do *sketch* é um arquivo com a extensão `.pyde`, extensão que fica oculta.
 
-Na primeira aba, ou em qualquer aba que precise do código de um  módulo-aba, é preciso usar `from nome_aba import *` ou ainda, preferível e mais elegante:
-
+Na primeira aba, ou em qualquer aba que precise do código de outro módulo/aba, é preciso usar algo como:
+```Python
+from nome_aba import * 
+```
+Ou ainda, preferível e mais elegante:
 ```python
 from nome_aba import uma_funcao, UmaClasse
 ```
@@ -21,7 +24,7 @@ Note que o nome do módulo é escrito **sem a extensão `.py`.**
 
 *Sketches* com mais de uma aba, quando modificados não executam corretamente a menos que sejam salvos!
 
-####  Atenção 2: Se as abas secundárias tiverem caractéres não-ASCII 
+####  Atenção 2: Se as abas secundárias tiverem caracteres não-ASCII 
 
 Acrescente `# -*- coding: utf-8 -*-` na primeira linha do arquivo. 
 
