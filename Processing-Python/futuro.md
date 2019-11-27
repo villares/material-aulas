@@ -6,9 +6,9 @@ Infelizmente o Processing modo Python depende de Jython, uma implementação da 
 
 ### Literais Unicode
 
-Para poder usar *strings* cujo texto contém caracteres não-ASCII, em Python 2 é preciso prefixá-los com `u` (indicando Unicode). Como no exemplo:  `fruta = u'maçã'` 
+Para poder definir *strings* no código com texto entre aspas, chamadas *strings* literais, contendo caracteres não-ASCII, como por exemplo caracteres acentuados, é preciso prefixá-las com `u` (indicando Unicode) em Python 2. Como no exemplo: `fruta = u'maçã'` 
 
-O comportamento padrão em Python 3 é considerar os *strings* como sendo Unicode:
+Python 3 considera por padrão *strings* literasi, definidas no corpo do código com texto entre aspas, como sendo Unicode:
 
 ```python
 from __future__ import unicode_literals
