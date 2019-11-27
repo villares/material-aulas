@@ -13,7 +13,7 @@ Python 3 considera por padrão *strings* definidas no corpo do código com texto
 ```python
 from __future__ import unicode_literals
 
-fruta = 'maça'
+fruta = 'maçã'
 ```
 
 ### Divisão 
