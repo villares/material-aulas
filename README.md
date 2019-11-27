@@ -1,8 +1,8 @@
 # material-aulas
 > Material para cursos e oficinas
 
-## [Material introdutório de Python (usando Processing modo Python)](/Processing-Python/)
-> [Para instalar em casa o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)**
+### [Material introdutório de Python (usando Processing modo Python)](/Processing-Python/)
+> **[como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)**
 
 - [Desenho básico (linhas, retângulos e etc)](/Processing-Python/desenho-basico_py.md)
 
