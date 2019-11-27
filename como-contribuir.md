@@ -27,7 +27,7 @@ Para criar uma *issue*:
 - como subir arquivos (em geral)
 - como criar um arquivo Markdown (.md)
   - como se escreve markdown ou [GFM](https://github.github.com/gfm/)? 
-     - guias de markdown em português (links para referências externas!)
+     - guia de markdown em português [github.com/luong-komorebi/Markdown-Tutorial](https://github.com/luong-komorebi/Markdown-Tutorial/blob/master/README_pt-BR.md#syntax)
      - como fazer links externos `[__](__)`
      - como formata código no markdown:
          - bloco com ` ```python ___``` ` ou no meio da frase ` `` `
