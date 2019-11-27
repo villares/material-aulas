@@ -7,11 +7,13 @@ Crie uma conta no GitHub
 
 ### Issues
 Issues são a forma de registrar problemas e desejos de aprimoramento para um projeto. **Criar uma *issue* pode ser já uma boa contribuição para um projeto.**
+
 Este projeto tem suas *issues* aqui: [github.com/villares/material-aulas/issues](https://github.com/villares/material-aulas/issues)
+
 Para criar uma *issue*:
-  - leia com cuidado o material par identificar lacunas ou problemas
-  - veja se não tem uma _issue_ parecida já (você pode comentar nela algum detalhe)
-  - clique no botão verde [`New issue`](https://github.com/villares/material-aulas/issues/new)
+  - leia com cuidado o material para identificar lacunas ou problemas;
+  - veja se não tem uma _issue_ parecida já (você pode comentar nela algum detalhe);
+  - clique no botão verde [`New issue`](https://github.com/villares/material-aulas/issues/new).
   
 ### Maneiras de usar o GitHub
  - Interface web <- comece por aqui
@@ -35,6 +37,6 @@ Para criar uma *issue*:
   - o que é um PR, pra quê serve, como funciona?
   - Como é a conversa com a pessoa mantenedora? Ela pode te pedir modificações/correções!
   - Importante: Não dê `CLOSE` quando terminar de fazer as modificações pedidas!!!
-  - Como não se frustrar: calibre as suas expectativas.
+  - Como não se frustrar: como calibrar as suas expectativas.
   
-- Como atualizar o seu fork em relação ao repositório de origem!
+- Como atualizar o seu fork em relação ao repositório de origem?
