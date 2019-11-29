@@ -22,7 +22,7 @@ Desta maneira é possível desenhar os mesmos elementos 2D que utilizamos até a
 
 ### Um exemplo com objetos desenhados em 3D
 
-[imagem exemplo 3D](assets/3D.png)
+[imagem exemplo 3D](3D.png)
 
 ```python
     
