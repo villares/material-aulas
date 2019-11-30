@@ -50,10 +50,11 @@ Para criar uma *issue*:
  ### Exemplos de contribuições úteis
 
  - Procurar um material que tem um código exemplo significativo mas que não mostra o resultado visual do código: 
-     - opiar no IDE o código, ver se funciona (se não funcionar, pesquisar e possivelmente abrir um issue)
-     - capturar o resultado (de preferência em .png)
-     - subir a imagem para o seu *fork* deste repositório (de preferência em um *brach* como 'acrescentando-imagens-XXX')
-     - editar o arquivo .md com o código acrescentando a referência a imagem `![nome da imagem](assets/imagem-xxx.png)`
+     - copiar no seu IDE o código, e ver se funciona (se não funcionar, pesquisar e possivelmente abrir um issue);
+     - capturar o resultado (de preferência em .png);
+     - subir a imagem para o seu *fork* deste repositório (de preferência em um *brach* como 'acrescentando-imagens-XXX');
+     - editar o arquivo .md com o código acrescentando a referência a imagem `![nome da imagem](assets/imagem-xxx.png)`;
+     - fazer um _Pull Request_ descrevendo a sua contribuição!
 
  - Procurar uma issue que você acha que consegue "resolver", escrevendo um material novo ou corrigindo um existente
    
