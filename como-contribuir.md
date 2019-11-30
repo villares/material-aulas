@@ -18,25 +18,37 @@ Para criar uma *issue*:
 ### Maneiras de usar o GitHub
  - Interface web <- comece por aqui
  - GitHub Desktop
- - no terminal
+ - no terminal/linha de comando
 
 ### Para propor correções ou acrescentar novos materiais
 - fazer um fork (que é um repositório com o material na sua conta do GitHub)
 - criar um _branch_ (com um nome sintético da contribuição)
-- como modificar arquivos
-- como subir arquivos (em geral)
+- modificar arquivos
+- subir arquivos (em geral)
 - como criar um arquivo Markdown (.md)
   - como se escreve markdown ou [GFM](https://github.github.com/gfm/)? 
      - guia de markdown em português [github.com/luong-komorebi/Markdown-Tutorial](https://github.com/luong-komorebi/Markdown-Tutorial/blob/master/README_pt-BR.md#syntax)
-     - como fazer links externos `[__](__)`
-     - como formata código no markdown:
+     - fazer links externos `[__](__)`
+     - formatar código no markdown:
          - bloco com ` ```python ___``` ` ou no meio da frase ` `` `
-     - como inserir imagens no markdown `![__](__)`
-        - como subir arquivo de imagem (.png preferencialmente)
+     - inserir imagens no markdown `![__](__)`
+        - subir arquivo de imagem (.png preferencialmente)
 - como fazer um *Pull Request* (PR)  
   - o que é um PR, pra quê serve, como funciona?
   - Como é a conversa com a pessoa mantenedora? Ela pode te pedir modificações/correções!
   - Importante: Não dê `CLOSE` quando terminar de fazer as modificações pedidas!!!
   - Como não se frustrar: como calibrar as suas expectativas.
   
-- Como atualizar o seu fork em relação ao repositório de origem?
+ ### Exemplos de contribuições úteis
+
+ - Procurar um material que tem um código exemplo significativo mas que não mostra o resultado visual do código: 
+     - opiar no IDE o código, ver se funciona (se não funcionar, pesquisar e possivelmente abrir um issue)
+     - capturar o resultado (de preferência em .png)
+     - subir a imagem para o seu *fork* deste repositório (de preferência em um *brach* como 'acrescentando-imagens-XXX')
+     - editar o arquivo .md com o código acrescentando a referência a imagem `![nome da imagem](assets/imagem-xxx.png)`
+
+ - Procurar uma issue que você acha que consegue "resolver", escrevendo um material novo ou corrigindo um existente
+   
+ ### Como atualizar o seu fork em relação ao repositório de origem quando este já "evoluiu"?
+ 
+ - [TODO] 
