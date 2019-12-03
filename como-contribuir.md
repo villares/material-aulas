@@ -18,9 +18,9 @@ Para criar uma *issue*:
   - clique no botão verde [**New issue**](https://github.com/villares/material-aulas/issues/new).
   
 ### Maneiras de usar o GitHub
- - Interface web <- *comece por aqui mesmo usando o navegador!*
- - GitHub Desktop [falta um link para um guia para iniciantes em português]
- - no terminal/linha de comando [falta um link para um guia para iniciantes em português]
+ - use a interface web <- *comece agora mesmo usando o navegador!*
+ - ou baixe o GitHub Desktop ([Mac ou Win apenas :(](https://desktop.github.com/)) [falta um link para um guia para iniciantes em português]
+ - ou trabalhe com `git` no terminal/linha de comando se preferir. [falta um link para um guia para iniciantes em português]
 
 ### Para propor correções ou acrescentar novos materiais
 - faça um _fork_ (que é uma cópia deste repositório com o material que vai ficar na sua conta do GitHub)
