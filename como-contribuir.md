@@ -26,7 +26,7 @@ Para criar uma *issue*:
 - faça um _fork_ (que é uma cópia deste repositório com o material que vai ficar na sua conta do GitHub)
 - crie um _branch_ (que é uma espécie de marcador para uma alternativa ou variante de um projeto, algo como: 'melhoria-descrição-abc')
 - modifique arquivos (usando o botão com o lápis na interface web do GitHub)
-- suba arquivos (visitando o repositório.pasta onde vai ficar o arquivo e arrastando o arquivo sobre o navegador)
+- suba arquivos (visite a pasta do repositório onde vai ficar o arquivo e o arraste sobre a janela do navegador)
 - crie arquivos Markdown (.md), use seu editor de código preferido e suba, ou use o botão **Create New File** na interface web do GitHub. Como se escreve markdown ou [GFM](https://github.github.com/gfm/)? 
    - guia de markdown em português [github.com/luong-komorebi/Markdown-Tutorial](https://github.com/luong-komorebi/Markdown-Tutorial/blob/master/README_pt-BR.md#syntax)
    - para fazer links externos `[texto](url)`
