@@ -36,22 +36,31 @@ Usar `saveFrame()`dentro do laço principal `draw()` torna o *sketch* muito mais
 def draw():
     # desenho
     ...
-    saveFrame("imagem###.png")
-    if frameCount > 100:
-        exit()    
-```
-
-ou
-
-```python
-def draw():
-    # desenho
-    ...
-    if frameCount <= 100:
+    # salva só a cada 5 frames até o frame 100
+    if frameCount % 5 == 0 and frameCount <= 100:
         saveFrame("imagem###.png")
 ```
 
+Um exemplo com data e horário no nome do arquivo e interrupção do sketch.
+
+```python
+nome_output = "{}-{}-{}-{}-{}-frame###.png".format(year(),
+                                                   month(),
+                                                   day(),
+                                                   hour(),
+                                                   minute(),
+                                                   second())
+def draw():
+    # desenho
+    ...
+    saveFrame(nome_output)
+    if frameCount > 100:
+        exit() # interrompe a execução do sketch   
+```
+
 ### Um exemplo um pouco mais longo
+
+Neste exemplo o nome do arquivo contém a semente (_seed_) do gerador de números pseudo-aleatórios.
 
 ```python
 def setup():
