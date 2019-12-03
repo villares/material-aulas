@@ -5,12 +5,11 @@ Crie uma conta no GitHub
 - Como criar uma conta no GitHub?
   [Preencha este formulário](https://github.com/join)
 
-### Issues
-Issues são a forma de registrar problemas e desejos de aprimoramento para um projeto.
+### Issue tracking (acompanhamento de problemas)
+
+As chamadas _issues_ são registros de problemas ou desejos de aprimoramento em um projeto. Este projeto tem suas *issues* aqui: [github.com/villares/material-aulas/issues](https://github.com/villares/material-aulas/issues)
 
 **Criar uma *issue* pode ser já uma boa contribuição para um projeto.**
-
-Este projeto tem suas *issues* aqui: [github.com/villares/material-aulas/issues](https://github.com/villares/material-aulas/issues)
 
 Para criar uma *issue*:
   - leia com cuidado o material para identificar lacunas ou problemas;
