@@ -23,22 +23,20 @@ Para criar uma *issue*:
  - no terminal/linha de comando [falta um link para um guia para iniciantes em português]
 
 ### Para propor correções ou acrescentar novos materiais
-- fazer um _fork_ (que é uma cópia deste repositório com o material que vai ficar na sua conta do GitHub)
-- criar um _branch_ (com um nome sintético da contribuição, exemplo: 'melhorando-descrição-zzz')
-- modificar arquivos (usando o botão com o lápis na interface web do GitHub)
-- subir arquivos (visite o repositório.pasta onde vai ficar o arquivo e arraste sobre a janela do navegador)
-- como criar um arquivo Markdown
-  - crie um arquivo .md no seu editor de código preferido e suba, ou use o botão **Create New File** na interface web do GitHub
-  - como se escreve markdown ou [GFM](https://github.github.com/gfm/)? 
-     - guia de markdown em português [github.com/luong-komorebi/Markdown-Tutorial](https://github.com/luong-komorebi/Markdown-Tutorial/blob/master/README_pt-BR.md#syntax)
-     - para fazer links externos `[texto](url)`
-     - para formatar texto como código no markdown:
-         - bloco com ` ```python ___``` ` 
-         - no meio da frase ` `` `
-     - inserir imagens no markdown
-        - subir arquivo de imagem (.png preferencialmente)
-        - usar um link precedido de uma exclamação `![nome da imagem](local/arquivo.png)`
-- como fazer um *Pull Request* (PR)  
+- faça um _fork_ (que é uma cópia deste repositório com o material que vai ficar na sua conta do GitHub)
+- crie um _branch_ (que é uma espécie de marcador para uma alternativa ou variante de um projeto, algo como: 'melhoria-descrição-abc')
+- modifique arquivos (usando o botão com o lápis na interface web do GitHub)
+- suba arquivos (visitando o repositório.pasta onde vai ficar o arquivo e arrastando o arquivo sobre o navegador)
+- crie arquivos Markdown (.md), use seu editor de código preferido e suba, ou use o botão **Create New File** na interface web do GitHub. Como se escreve markdown ou [GFM](https://github.github.com/gfm/)? 
+   - guia de markdown em português [github.com/luong-komorebi/Markdown-Tutorial](https://github.com/luong-komorebi/Markdown-Tutorial/blob/master/README_pt-BR.md#syntax)
+   - para fazer links externos `[texto](url)`
+   - para formatar texto como código no markdown:
+       - bloco com ` ```python ___``` ` 
+       - no meio da frase ` `` `
+   - para inserir imagens no markdown
+       - suba o arquivo da imagem (.png preferencialmente)
+       - use um link precedido de uma exclamação `![nome da imagem](local/arquivo.png)`
+- faça um *Pull Request* (PR)  
   - o que é um PR, pra quê serve, como funciona? 
      - _Pull Request_ é um pedido ao mantenedor para aceitar uma contribuição/modificação no projeto
      - Se possível faça a partir de um _branch_ separado para cada contribuição
@@ -49,14 +47,14 @@ Para criar uma *issue*:
   
  ### Exemplos de contribuições úteis
 
- - Procurar um material que tem um código exemplo significativo mas que não mostra o resultado visual do código: 
+ - Procure um material que tem um código exemplo significativo mas que não mostra o resultado visual do código: 
      - copiar no seu IDE o código, e ver se funciona (se não funcionar, pesquisar e possivelmente abrir um issue);
      - capturar o resultado (de preferência em .png);
      - subir a imagem para o seu *fork* deste repositório (de preferência em um *brach* como 'acrescentando-imagens-XXX');
      - editar o arquivo .md com o código acrescentando a referência a imagem `![nome da imagem](assets/imagem-xxx.png)`;
      - fazer um _Pull Request_ descrevendo a sua contribuição!
 
- - Procurar uma issue que você acha que consegue "resolver", escrevendo um material novo ou corrigindo um existente
+ - Procure uma issue que você acha que consegue "resolver", escrevendo um material novo ou corrigindo um existente.
    
  ### Como atualizar o seu fork em relação ao repositório de origem quando este já "evoluiu"?
  
