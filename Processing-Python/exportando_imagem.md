@@ -44,12 +44,8 @@ def draw():
 Um exemplo com data e horário no nome do arquivo e interrupção do sketch.
 
 ```python
-nome_output = "{}-{}-{}-{}-{}-frame###.png".format(year(),
-                                                   month(),
-                                                   day(),
-                                                   hour(),
-                                                   minute(),
-                                                   second())
+nome_output = "{}-{}-{}-{}-{}-frame###.png".format(year(), month(), day(),
+                                                   hour(), minute(), second())
 def draw():
     # desenho
     ...
