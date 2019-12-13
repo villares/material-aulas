@@ -57,5 +57,28 @@ Para criar uma *issue*:
  - Procure uma issue que você acha que consegue "resolver", escrevendo um material novo ou corrigindo um existente.
    
  ### Como atualizar o seu fork em relação ao repositório de origem quando este já "evoluiu"?
- 
- - [TODO] 
+
+ ```shell
+ # Primeiro você precisa adicionar o remote 
+ git remote add upstream https://github.com/usuario/nome-do-repositorio.git
+
+ # depois, você recupera todos os branches daquele remote, incluindo o branch master
+ git fetch upstream
+
+ # certifique-se que localmente você está na master
+ git checkout master
+
+ # você pode re-escrever o seu branch 
+ # re-escreva a sua master, de forma que seus commits que ainda não estão na
+ # master não se percam no meio do caminho
+ git rebase upstream/master
+
+
+ # essas alterações todas são feitas apenas localmente. se você quiser atualizar
+ # o seu fork, precisa forçar o push com as alterações.
+ # o -f só precisa ser usado uma vez após o rebase
+ git push -f origin master
+ ```
+
+  - [Tutorial em português](https://blog.da2k.com.br/2014/01/19/manter-repositorio-github-forkado-sincronizado-com-o-original/)
+  - Mais informações em inglês [aqui](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork) e [aqui](https://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository)
