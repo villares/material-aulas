@@ -80,5 +80,5 @@ Para criar uma *issue*:
  git push -f origin master
  ```
 
-  - Mais informações [aqui](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork) e [aqui](https://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository) (ambas em inglês)
-  - [`git merge` vs `git rebase`](https://hackernoon.com/git-merge-vs-rebase-whats-the-diff-76413c117333)
+  - [Tutorial em português](https://blog.da2k.com.br/2014/01/19/manter-repositorio-github-forkado-sincronizado-com-o-original/)
+  - Mais informações em inglês [aqui](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork) e [aqui](https://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository)
