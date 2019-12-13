@@ -65,7 +65,8 @@ Para criar uma *issue*:
 - Usando a interface da linha de comando (aponte o terminal para a pasta local do repositório):
 
  ```shell
- # Primeiro você precisa adicionar o remote (do repositório original)
+ # Primeiro você precisa adicionar como remote o repositório original
+ 
  git remote add upstream https://github.com/usuario/nome-do-repositorio.git
 
  # depois, você recupera todos os branches daquele remote, incluindo o branch master
