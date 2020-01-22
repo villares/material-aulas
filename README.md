@@ -1,4 +1,4 @@
-## Material para cursos e oficinas - [repositório](https:/github.com/villares/material-aulas/)
+## Material para cursos e oficinas - [repositório](https://github.com/villares/material-aulas/)
 
 Processing Modo Python é uma ferramenta de programação com a sintaxe de Python, acrescentados o vocabulário, recursos de desenho e manipulação de imagens do Processing.
 
