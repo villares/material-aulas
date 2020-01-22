@@ -1,8 +1,8 @@
-## Material para cursos e oficinas
+## Material para cursos e oficinas - [repositório](https:/github.com/villares/material-aulas/)
+
+Processing Modo Python é uma ferramenta de programação com a sintaxe de Python, acrescentados o vocabulário, recursos de desenho e manipulação de imagens do Processing.
 
 **[Como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)**
-
-[Repositório deste material](https:/github.com/villares/material-aulas/)
 
 ### Assuntos
 
@@ -36,3 +36,7 @@
 
 - [Usando várias abas no IDE](/Processing-Python/modulos.md)
 - [Python 2 e alguns recursos do Python 3](/Processing-Python/futuro.md)
+
+---
+Texto e imagens: CC BY-NC-SA 4.0; Código: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
+
