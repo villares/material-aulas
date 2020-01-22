@@ -41,7 +41,7 @@ Processing Modo Python é uma ferramenta de programação com a sintaxe de Pytho
 
 #### Python
 
-- DOWNEY, Allem. [Pense em Python 2e](https://penseallen.github.io/PensePython2e/)
+- DOWNEY, Allen. [Pense em Python 2e](https://penseallen.github.io/PensePython2e/)
 - SWEIGART, Al. Automatize tarefas  maçantes com Python (traduzido pela Novatec) - [site do autor (em Inglês)](https://automatetheboringstuff.com)
 
 #### Processing
