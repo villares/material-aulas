@@ -1,4 +1,4 @@
-## Material para cursos e oficinas - [repositório](https://github.com/villares/material-aulas/)
+### Material para cursos e oficinas - [repositório](https://github.com/villares/material-aulas/)
 
 Processing Modo Python é uma ferramenta de programação com a sintaxe de Python, acrescentados o vocabulário, recursos de desenho e manipulação de imagens do Processing.
 
@@ -35,8 +35,18 @@ Processing Modo Python é uma ferramenta de programação com a sintaxe de Pytho
 #### Questões mais avançadas da ferramenta
 
 - [Usando várias abas no IDE](/Processing-Python/modulos.md)
-- [Python 2 e alguns recursos do Python 3](/Processing-Python/futuro.md)
+- [Sobre o Python 2 e alguns recursos do Python 3](/Processing-Python/futuro.md)
+
+### Outros recursos introdutórios abertos
+
+#### Python
+
+- DOWNEY, Allem. [Pense em Python 2e](https://penseallen.github.io/PensePython2e/)
+- SWEIGART, Al. Automatize tarefas  maçantes com Python (traduzido pela Novatec) - [site do autor (em Inglês)](https://automatetheboringstuff.com)
+
+#### Processing
+
+- RIZZOLLI, Monica; VILLARES, Alexandre. [Programação Criativa](http://arteprog.space/programacao-criativa)
 
 ---
 Texto e imagens: CC BY-NC-SA 4.0; Código: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
-
