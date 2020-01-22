@@ -1,8 +1,10 @@
-# material-aulas
-> Material para cursos e oficinas
+## Material para cursos e oficinas
 
-### [Material introdutório de Python (usando Processing modo Python)](/Processing-Python/)
-> **[como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)**
+**[Como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)**
+
+[Repositório deste material](https:/github.com/villares/material-aulas/)
+
+### Assuntos
 
 - [Desenho básico (linhas, retângulos e etc)](/Processing-Python/desenho-basico_py.md)
 
@@ -25,12 +27,12 @@
 
 - [Desenho 3D](/Processing-Python/desenho-3D.md)
 
-### Exportação
+#### Exportação
 
 - [Exportando imagens](/Processing-Python/exportando_imagem.md)
 - [Exportando PDF](/Processing-Python/exportando_pdf.md)
 
-### Questões mais avançadas da ferramenta
+#### Questões mais avançadas da ferramenta
 
 - [Usando várias abas no IDE](/Processing-Python/modulos.md)
 - [Python 2 e alguns recursos do Python 3](/Processing-Python/futuro.md)
