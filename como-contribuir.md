@@ -28,7 +28,9 @@ Para criar uma *issue*:
 - modifique arquivos (usando o botão com o lápis na interface web do GitHub)
 - suba arquivos (visite a pasta do repositório onde vai ficar o arquivo e o arraste sobre a janela do navegador)
 - crie arquivos Markdown (.md), use seu editor de código preferido e suba, ou use o botão **Create New File** na interface web do GitHub. Como se escreve markdown ou [GFM](https://github.github.com/gfm/)? 
-   - guia de markdown em português [github.com/luong-komorebi/Markdown-Tutorial](https://github.com/luong-komorebi/Markdown-Tutorial/blob/master/README_pt-BR.md#syntax)
+   - guias de markdown em português:
+     * [github.com/luong-komorebi/Markdown-Tutorial](https://github.com/luong-komorebi/Markdown-Tutorial/blob/master/README_pt-BR.md#syntax)
+     * [github.com/leticiadasilva/notas-de-aula](https://github.com/leticiadasilva/notas-de-aula/blob/master/markdown/anota%C3%A7oes-markdown.md)
    - para fazer links externos `[texto](url)`
    - para formatar texto como código no markdown:
        - bloco com ` ```python ___``` ` 
