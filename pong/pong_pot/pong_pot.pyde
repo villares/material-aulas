@@ -37,8 +37,8 @@ def draw():
     global x, y, vx, vy, p1y, p2y
     global game_over
     background(0)
-    p1y = arduino.analogRead(POT_AMARELO)
-    p2y = arduino.analogRead(POT_VERDE)
+    p1y = map(arduino.analogRead(POT_AMARELO), 0, 1023, 0, height)
+    p2y = map(arduino.analogRead(POT_VERDE), 0, 1023, 0, height)
     # desenha bola
     rect(x, y, TAM_BOLA, TAM_BOLA)
     # anda com a bola
