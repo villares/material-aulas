@@ -42,15 +42,15 @@ Para criar uma *issue*:
      - Se possível faça a partir de um _branch_ separado para cada contribuição
      - Seja claro no título e descrição descrevendo a natureza da contribuição
   - Como é a conversa com a pessoa mantenedora? Ela pode te pedir modificações/correções!
-  - Importante: Não dê `CLOSE` quando terminar de fazer as modificações pedidas!!!
-  - Como não se frustrar: como calibrar as suas expectativas.
+  - **Importante: Não dê `CLOSE` quando terminar de fazer as modificações pedidas (isso seria desistir do PR)!!!**
+  - [FALTA ESCREVER MELHOR] Como não se frustrar: como calibrar as suas expectativas.
   
  ### Exemplos de contribuições úteis
 
  - Procure um material que tem um código exemplo significativo mas que não mostra o resultado visual do código: 
      - copiar no seu IDE o código, e ver se funciona (se não funcionar, pesquisar e possivelmente abrir um issue);
      - capturar o resultado (de preferência em .png);
-     - subir a imagem para o seu *fork* deste repositório (de preferência em um *brach* como 'acrescentando-imagens-XXX');
+     - subir a imagem para o seu *fork* deste repositório (de preferência em um *branch* como 'acrescentando-imagens-XXX');
      - editar o arquivo .md com o código acrescentando a referência a imagem `![nome da imagem](assets/imagem-xxx.png)`;
      - fazer um _Pull Request_ descrevendo a sua contribuição!
 
