@@ -18,7 +18,8 @@ LARGURA_JOGADOR = 10
 def setup():
     size(600, 400)  # tamanho da tela
     global arduino
-    println((Arduino.list())) # Para ver a lista de portas seriais!
+    for indice, porta in enumerate(Arduino.list()):
+        print("{}: {}".format(indice, porta)) # Para ver a lista de portas seriais!
     arduino = Arduino(this, Arduino.list()[SERIAL], 57600)
 
 def draw():
