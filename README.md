@@ -29,6 +29,10 @@ Você pode colaborar com este material didático aberto! Abrindo "issues" (apont
 
 - [Desenho 3D](/Processing-Python/desenho-3D.md)
 
+#### Orientação a Objetos
+
+- [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/mestrado/bandeirinhas/)
+
 #### Exportação
 
 - [Exportando imagens](/Processing-Python/exportando_imagem.md)
