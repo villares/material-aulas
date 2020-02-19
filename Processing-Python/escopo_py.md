@@ -34,7 +34,7 @@ Os parâmetros (os nomes que recebem os valores, ou argumentos, usados na chamad
 
 ```python
 def olho(x, y, tamanho):
-    # tamanho é um parâmetro, só é conhecido aqui, como uma variável local.
+    # tamanho é um parâmetro, um nome que funciona como uma variável local.
     metade = tamanho/2  # e metade é uma variável local.
     noStroke()
     fill(255)
