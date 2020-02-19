@@ -1,10 +1,34 @@
 # Escopo: variáveis locais e globais
 
+## Variáveis globais
+
+Criamos variáveis globais quando  atribuimos um valor a um nome fora do corpo das funções do nosso programa (usualmente no começo do programa). 
+
+Essas variáveis podem ser acessadas ao longo de todo o programa. Se você desejar criar uma nova variável global, ou reatribuir (alterar) o valor de uma variável global de dentro de uma função, em Python, é necessário usar a instrução `global`. Exemplo:
+
+### Exemplo de uma variável global
+
+```Python
+x = 0
+
+def setup():
+    size(500, 500)
+
+def draw():
+    # Podemos usar/ler o valor da variável global x.
+    ellipse(x, height / 2, 10, 10)
+    
+def keyPressed():
+    # Queremos alterar o valor da variável global x. 
+    global x 
+    x = x + 1
+```
+
 ## Variáveis locais
 
 Quando criamos uma variável dentro da definição de uma função (como a função `setup()`, por exemplo), dizemos que a variável tem *escopo local*, isto significa que somente o código dentro da função reconhece aquele nome e enxerga os valores a ela atríbuidos.
 
-Os parâmetros (que recebem os valores, ou argumentos, usados na chamada de uma função), são declarados no cabeçalho da definição da função, e são também nomes no escopo local (da função).
+Os parâmetros (os nomes que recebem os valores, ou argumentos, usados na chamada de uma função), são declarados no cabeçalho da definição da função, e são também nomes do escopo local da função.
 
 ### Exemplo de uma variável local
 
@@ -19,13 +43,13 @@ def olho(x, y, tamanho):
     ellipse(x, y, metade-2, metade-2)
 ```
 
-## Variáveis globais
+#### Recapitulando
 
-Tradicionalmente criadas no início do *sketch*, e fora de qualquer função (incluindo `setup()` e `draw()`) as variáveis globais são visíveis por qualquer parte do código.
+Tradicionalmente criadas no início do *sketch*, e fora de qualquer função (incluindo `setup()` e `draw()`) as variáveis globais são conhecidas em qualquer parte do código. Varíaveis criadas dentro de uma função e também os nomes dos parâmetros de uma função pertencem ao escopo local da função.
 
 Para se criar uma variável global quando se está dentro de uma função (ou para poder alterar a atribição de uma variável global dentro de uma função) usamos a instrução `global` do Python.
 
-### Exemplo de uma variável global
+#### Mais um exemplo, com variáveis globais e locais
 
 ```Python
 y = 100  # y é uma variável global, pode ser usada em qualquer ponto do programa.
@@ -37,8 +61,10 @@ def setup():
 
 def draw():
     global x # necessário para poder alterar a variável global x aqui no draw()
+    # repare que vamos 'ler' o valor de y, mas não vamos alterar
     background(0)
-    circle(x, y, 10) # x e y são variáveis globais
+    tamanho = random(10, 50)  # tamanho é uma variável local
+    ellipse(x, y, tamanho, tamanho) # x e y são variáveis globais
     x = x + 1
     if x > width:
         x = 0
