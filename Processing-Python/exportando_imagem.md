@@ -99,3 +99,18 @@ def keyPressed(): # executada quando uma tecla for precinada
         print("PNG salvo")
 ```
 
+### Outras estratégias
+
+#### Exportando em resolução maior do que a tela
+
+```
+scale = 10:
+f = createGraphics(width * scale, height * scale)
+beginRecord(f)
+f.scale(scale)
+
+# desenho aqui
+
+endRecord()
+f​.save("file.png")
+```
