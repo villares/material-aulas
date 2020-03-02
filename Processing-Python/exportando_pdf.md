@@ -12,7 +12,9 @@ Esta linha pode ser acrescentada manualmente ou automaticamente usando o seguint
 
 Também é preciso acrescentar algumas linhas de código ao longo so seu *sketch*, como no exemplo abaixo.
 
-## Exemplo de exportação em PDF de um único frame
+## Exemplo de exportação em PDF simples (um único frame)
+
+Esta estratégia não permite capturar o produto de acumulação na tela, como acontece com a exportação de uma imagem raster da área de desenho (como acontece em `saveFrame()`).
 
 ```python
 add_library('pdf')
@@ -64,10 +66,11 @@ def keyPressed():
         print("salvando PDF")
 ```
 
-
 ### Outras estratégias
 
 #### Usando um objeto PGraphics
+
+Permite mostrar na tela o desenho mas salvar o arquivo do desenho com alguns ajustes especiais.
 
 ```python
 f = createGraphics(width, height, PDF, "file.pdf")
@@ -75,8 +78,15 @@ beginRecord(f)
 f.strokeWeight(.33)
 f.scale(10)
 
+# o seu desenho vai aqui
 
 endRecord()
 ```
 
 #### Múltiplas páginas
+
+ `TO DO`
+
+#### Acumulação no canvas
+
+ `TO DO`
