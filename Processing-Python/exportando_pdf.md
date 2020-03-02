@@ -63,3 +63,20 @@ def keyPressed():
         salvar_pdf = True
         print("salvando PDF")
 ```
+
+
+### Outras estratégias
+
+#### Usando um objeto PGraphics
+
+```python
+f = createGraphics(width, height, PDF, "file.pdf")
+beginRecord(f)
+f.strokeWeight(.33)
+f.scale(10)
+
+
+endRecord()
+```
+
+#### Múltiplas páginas
