@@ -90,3 +90,11 @@ endRecord()
 #### Acumulação no canvas
 
  `TO DO`
+
+### Outras opções
+
+````
+TO DO:
+Exportando SVG
+Link para exportação de imagens
+```
