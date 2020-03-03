@@ -103,6 +103,8 @@ def keyPressed(): # executada quando uma tecla for precinada
 
 #### Exportando em resolução maior do que a tela
 
+Um objeto PGraphics grava o resultado do desenho, podendo receber alguns ajustes especiais (aplicados apenas ao objeto, como no exemplo `.scale()`).
+
 ```
 scale = 10:
 f = createGraphics(width * scale, height * scale)
@@ -114,3 +116,11 @@ f.scale(scale)
 endRecord()
 f​.save("file.png")
 ```
+
+#### Estratégia do offscreen Buffer
+
+`TO DO`
+
+### Veja também
+
+`TO DO:  Link para exemplo de exportação vetorial`
