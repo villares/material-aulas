@@ -1,31 +1,39 @@
 # Movimento
 
+## A estruturas `setup()` e `draw()`
+
+Para gerar imagens e movimento nos valemos de uma ideia presente em todo tipo de animação, a ideia dos *frames* ou *quadros* que são imagens mostradas em uma rápida sucessão. A produção ou desenho dessas imagens acontece no processing dentro de uma função que devemos criar chamada `draw()`. Tudo que é desenhado dentro de `draw()` é na verdade redesenhado cerca de 60 vezes por segundo. 
+
+Antes do *laço principal de repetição*, que é como costumamos descrever a execução do `draw()`, é executada uma função de preparo ou configuração chamada `setup()`. E essas duas funções juntas são a forma mais comum de se estruturar um *sketch* (um programa em Processin).
+
+Resumindo, dentro do `setup()` vai aquilo que precisamos fazer apenas uma vez e no começo (como por exemplo definir a àrea de desenho com `size()` e no `draw()` vai o desenho propriamente.
+
 ## Círculo rebatendo nas bordas
 
 ```python
 raio = 50  # tamanho do raio do círculo
-vx = random(-4, 4) # sorteia velocidade horizontal inicial
-vy = random(-4, 4) # sorteia velocidade vertical inicial
+vx = random(-4, 4) # sorteia uma velocidade horizontal inicial
+vy = random(-4, 4) # sorteia uma velocidade vertical inicial
 
 def setup():
     global px, py
     size(600, 400)
-    # Definir posição inicial
+    # Define a posição inicial do círculo
     px, py = width / 2, height / 2
 
 def draw():
     global px, py, vx, vy
-    background(255)
-    # Atualizar a posição do círculo
+    background(255) # limpa o frame com um fundo branco
+    # Atualiza as variáveis da posição do círculo
     px = px + vx
     py = py + vy
     # Testa se o círculo está fora da tela,
-    # se estiver, inverte a velocidade (vira -velocidade).
+    # se estiver, inverte a velocidade (que se torna -velocidade).
     if px > width - raio or px < raio:
         vx = -vx
     if py > height - raio or py < raio:
         vy = -vy
-    # Desenhar o círculo
+    # Desenha o círculo
     fill(0)  # preenchimento preto
     noStroke()  # sem traço de contorno
     circle(px, py, raio * 2)
