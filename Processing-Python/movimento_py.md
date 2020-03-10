@@ -1,12 +1,12 @@
 # Movimento
 
-## A estruturas `setup()` e `draw()`
+## A estrutura `setup()` e `draw()`
 
-Para gerar imagens e movimento nos valemos de uma ideia presente em todo tipo de animação, a ideia dos *frames* ou *quadros* que são imagens mostradas em uma rápida sucessão. A produção ou desenho dessas imagens acontece no processing dentro de uma função que devemos criar chamada `draw()`. Tudo que é desenhado dentro de `draw()` é na verdade redesenhado cerca de 60 vezes por segundo. 
+Para gerar movimento nos valemos de uma ideia presente em todo tipo de animação, a ideia dos *frames* ou *quadros* que são imagens mostradas em uma rápida sucessão. A produção ou desenho dessas imagens acontece no Processing dentro de uma função que devemos definir chamada `draw()`. Tudo que é desenhado dentro de `draw()` é na verdade redesenhado cerca de 60 vezes por segundo. Para o efeito de uma animação de objetos "limpamos" o quadro no começo de cada `draw()` frequentemente com a instrução `background()`.
 
-Antes do *laço principal de repetição*, que é como costumamos descrever a execução do `draw()`, é executada uma função de preparo ou configuração chamada `setup()`. E essas duas funções juntas são a forma mais comum de se estruturar um *sketch* (um programa em Processin).
+Antes do *laço principal de repetição*, que é como costumamos descrever a execução do `draw()`, é executada uma função de preparo ou configuração chamada `setup()` que também precisamos definir. Essas duas funções juntas são a forma mais comum de se estruturar um *sketch* (um programa em Processing).
 
-Resumindo, dentro do `setup()` vai aquilo que precisamos fazer apenas uma vez e no começo (como por exemplo definir a àrea de desenho com `size()` e no `draw()` vai o desenho propriamente.
+Resumindo, dentro do `setup()` vai aquilo que precisamos fazer apenas uma vez e no começo (como por exemplo definir a àrea de desenho com `size()` e no `draw()` vai o desenho propriamente, em geral preceido por uma limpeza da tela ou fundo.
 
 ## Círculo rebatendo nas bordas
 
