@@ -5,7 +5,7 @@ Crie uma conta no GitHub
 - Como criar uma conta no GitHub?
   [Preencha este formulário](https://github.com/join)
 
-### Issue tracking (acompanhamento de problemas)
+### Issue tracking (acompanhamento de problemas ou questões)
 
 As chamadas _issues_ são registros de problemas ou desejos de aprimoramento em um projeto. Este projeto tem suas *issues* aqui: [github.com/villares/material-aulas/issues](https://github.com/villares/material-aulas/issues)
 
