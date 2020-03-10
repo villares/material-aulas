@@ -6,7 +6,7 @@ Para gerar movimento nos valemos de uma ideia presente em todo tipo de animaçã
 
 Antes do *laço principal de repetição*, que é como costumamos descrever a execução do `draw()`, é executada uma função de preparo ou configuração chamada `setup()` que também precisamos definir. Essas duas funções juntas são a forma mais comum de se estruturar um *sketch* (um programa em Processing).
 
-Resumindo, dentro do `setup()` vai aquilo que precisamos fazer apenas uma vez e no começo (como por exemplo definir a àrea de desenho com `size()` e no `draw()` vai o desenho propriamente, em geral preceido por uma limpeza da tela ou fundo.
+Resumindo: Dentro do `setup()` vai tudo aquilo que precisamos fazer apenas uma vez e no começo, como, por exemplo, definir a àrea de desenho com `size()`. Já no `draw()` vão principalmente as instruções de desenho propriamente dito, em geral precedidas por uma limpeza da tela ou fundo, e são acionados os cálculos de atualização dos elementos da animação.
 
 ## Círculo rebatendo nas bordas
 
