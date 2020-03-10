@@ -4,7 +4,7 @@ Processing Modo Python é uma ferramenta de programação com a sintaxe de Pytho
 
 **[Como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)**
 
-Você pode colaborar com este material didático aberto! Abrindo "issues" (apontando problemas, sugerindo assuntos e melhorias), contribuindo com "Pull Requests" no repositório ou ainda "pagando uns cafés" ([doe aqui](https://gumroad.com/villares)).
+Você pode [colaborar com este material didático aberto](/como-contrinuir.md)! Abra "issues" (apontando problemas, sugerindo assuntos e melhorias), contribua com "Pull Requests" no repositório ou ainda [faça uma pequena doação](https://gumroad.com/villares) "pagando uns cafés".
 
 ### Assuntos
 
