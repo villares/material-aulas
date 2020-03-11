@@ -2,7 +2,7 @@
 
 ## A estrutura `setup()` e `draw()`
 
-Para gerar movimento nos valemos de uma ideia presente em todo tipo de animação, a ideia dos *frames* ou *quadros* que são imagens mostradas em uma rápida sucessão. A produção ou desenho dessas imagens acontece no Processing dentro de uma função que devemos definir chamada `draw()`. Tudo que é desenhado dentro de `draw()` é na verdade redesenhado cerca de 60 vezes por segundo. Para o efeito de uma animação de objetos "limpamos" o quadro no começo de cada `draw()` frequentemente com a instrução `background()`.
+Para gerar movimento nos valemos de uma ideia presente em todo tipo de animação, a ideia dos *quadros* (*frames*) que são as imagens mostradas em uma rápida sucessão. No Processing a produção dessas imagens acontece dentro de uma função que devemos definir chamada `draw()`. Tudo que é desenhado dentro de `draw()` é na verdade redesenhado cerca de 60 vezes por segundo (o chamado *frame rate*). Para obter o efeito de uma animação de objetos que se deslocam na tela devemos "limpar" o quadro no começo de cada `draw()` frequentemente com a instrução `background()`. Se desenharmos sem essa "limpeza" da tela os desenhos "acumulam" ou "deixam um rastro".
 
 Antes do *laço principal de repetição*, que é como costumamos descrever a execução do `draw()`, é executada uma função de preparo ou configuração chamada `setup()` que também precisamos definir. Essas duas funções juntas são a forma mais comum de se estruturar um *sketch* (um programa em Processing).
 
