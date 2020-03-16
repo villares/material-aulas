@@ -3,13 +3,13 @@
 
 ## Valores
 
-Quando atribuimos um valor a uma variável, por exemplo `i = 10`, o `i` é um nome que aponta para um valor na memória do computador, `10`, e esse valor é de uma determinada categoria, de um *tipo*, neste caso, é um número inteiro, um tipo normalmente abreviado como `int`.
+Quando atribuimos um valor a uma variável, por exemplo `i = 10`, o `i` é um nome que aponta para um valor na memória do computador, `10`, e esse valor é de uma determinada categoria, de um *tipo*, neste caso, é um número inteiro, tipo *integer* que é normalmente abreviado como `int`.
 
-Já `10.5`, `0.2` ou até mesmo `10.` (dez seguido de um ponto), são considerados números de ponto flutuantes, ou `float`.
+Já `10.5`, `0.2` ou até mesmo `10.` (dez seguido de um ponto), são considerados números de ponto flutuantes, *floating point* ou abreviadamente `float`.
 
-Textos, que aparecem entre aspas quando no meio do código de um programa, como por exemplo `'hello'` ou `"Eric Idle"`, são do tipo `string` (cadeia de caracteres) ou abreviadamente `str`.  
+Textos, que aparecem entre aspas quando no meio do código de um programa, como por exemplo `'hello'` ou `"Eric Idle"`, são do tipo `string` (cadeia de caracteres em português) que abreviamos como `str`. Repare que `"1010"` é um `string` enquanto `1010` é um número `int` e `1010.0` é um `float`. 
 
-Outro tipo curioso é o booleano (`boolean`), para valores que podem ser apenas `True` ou `False` (verdadeiro ou falso).
+Outro tipo importante é o booleano (`boolean`), com apenas os dois valores `True` ou `False` (verdadeiro ou falso), é o tipo dos valores resultantes das operações lógicas (como `and`,  `or` e `not`), comparações (como `==`, `!=`,  `>`, `<`, `>=` e etc.) ou ainda valores que indicam um estado (como `mousePressed` é verdadeiro ou falso dependendo do estado dos botões do mouse).
 
 ## Conversão
 
