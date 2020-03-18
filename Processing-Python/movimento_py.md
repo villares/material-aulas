@@ -36,7 +36,7 @@ def draw():
     # Desenha o círculo
     fill(0)  # preenchimento preto
     noStroke()  # sem traço de contorno
-    circle(px, py, raio * 2)
+    ellipse(px, py, raio * 2 , raio * 2)  # em versões mais novas: circle(px, py, raio * 2)
 
 ```
 
