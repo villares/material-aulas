@@ -3,7 +3,7 @@
 ## O símbolo `=` é o operador de "atribuição" 
 
 ```python
-num = 3 # faça num ser uma referência ao valor 3`
+num = 3 # faça `num` ser uma referência ao valor 3`
 # Resultado: Modificada a variável `num`.
 ```
 
@@ -15,20 +15,20 @@ media = (a + b) / 2.
 
 # aumentando em 1 o contador
 contador = contador + 1
-contador += 1 # equivalente a expressão anterior, ousando o operador de atribuição aumentada.
+contador += 1 # equivalente a expressão anterior, usando o operador de atribuição aumentada.
 ```
 
 ## O símbolo `==` é o operador relacional que faz a "comparação de igualdade"
 
 ```python
-num == 3 # o valor de num é igual ao valor 3?`
+num == 3 # o valor de `num` é igual ao valor 3?`
 # Resultado: é devolvido o valor `True` ou `False`.
 ```
 
 Na prática  `==`  é muito usado dentro da instruçao `if` que permite a execução condicional de outras instruções.
 
 ```python
-if chances == 3:  # se valor de chances igual a 3
+if chances == 3:  # se valor de `chances` é igual a 3
     print("você tem três chances")
 ```
 
