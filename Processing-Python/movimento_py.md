@@ -27,17 +27,17 @@ def draw():
     # Atualiza as variáveis da posição do círculo
     px = px + vx
     py = py + vy
-    # Testa se o círculo está fora da tela,
-    # se estiver, inverte a velocidade (que se torna -velocidade).
+    # Testa se o círculo está fora da tela, se estiver,
+    # inverte a velocidade (que se torna -velocidade).
     if px > width - raio or px < raio:
         vx = -vx
     if py > height - raio or py < raio:
         vy = -vy
     # Desenha o círculo
     fill(0)  # preenchimento preto
-    noStroke()  # sem traço de contorno
-    ellipse(px, py, raio * 2 , raio * 2)  # em versões mais novas: circle(px, py, raio * 2)
-
+    ellipse(px, py, raio * 2 , raio * 2)
+    # em versões mais novas do Processing
+    # podemos usar circle(px, py, raio * 2)
 ```
 
 ![](https://github.com/arteprog/programacao-criativa/blob/master/assets/imagens/bounce.gif?raw=true)
