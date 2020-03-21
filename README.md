@@ -10,7 +10,7 @@ Você pode [colaborar com este material didático aberto](/como-contribuir.md)! 
 
 ### Assuntos
 
-- [Desenho básico (linhas, retângulos e etc)](/Processing-Python/desenho-basico_py.md)
+- [Primeiros passos e desenho básico](/Processing-Python/desenho-basico_py.md)
 
 - [Condicionais (`if` e `else`)](/Processing-Python/condicionais_py.md)
   - [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](/Processing-Python/atribuicao-e-comparacao.md)
