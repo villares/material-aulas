@@ -2,7 +2,7 @@
 
 ## Área de desenho e coordenadas
 
-Usamos a função `size()` para determinar o tamanho da área de desenho (sem ela é oferecida uma pequena tela de 100 por 100 pixels). Processing nos oferece duas variáveis `width` e `height` que referenciam os valores de largura e altura da área de desenho, respectivamente. 
+Usamos a função `size()` para determinar o tamanho da área de desenho (sem ela é gerada uma pequena tela de 100 por 100 pixels). Processing nos oferece automaticamente duas variáveis `width` e `height` que referenciam os valores de largura e altura da área de desenho, respectivamente.
 
 ```python
 size(600, 400) # tamanho da tela size(largura, altura) 
