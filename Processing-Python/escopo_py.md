@@ -2,9 +2,9 @@
 
 ## Variáveis globais
 
-Criamos variáveis globais quando  atribuimos um valor a um nome fora do corpo das funções do nosso programa (usualmente no começo do programa). 
+Criamos variáveis globais quando  atribuímos um valor a um nome fora do corpo das funções do nosso programa (normalmente no começo do programa). 
 
-Essas variáveis podem ser acessadas ao longo de todo o programa. Se você desejar criar uma nova variável global, ou reatribuir (alterar) o valor de uma variável global de dentro de uma função, em Python, é necessário usar a instrução `global`. Exemplo:
+Essas variáveis podem ser usadas ao longo de todo o programa. Se você desejar criar uma nova variável global, ou reatribuir (alterar) o valor de uma variável global de dentro de uma função, em Python, é necessário usar a instrução `global`. Exemplo:
 
 ### Exemplo de uma variável global
 
@@ -26,9 +26,9 @@ def keyPressed():
 
 ## Variáveis locais
 
-Quando criamos uma variável dentro da definição de uma função (como a função `setup()`, por exemplo), dizemos que a variável tem *escopo local*, isto significa que somente o código dentro da função reconhece aquele nome e enxerga os valores a ela atríbuidos.
+Quando criamos uma variável dentro da definição de uma função (como a função `setup()`, por exemplo), dizemos que a variável tem *escopo local*, isto significa que somente o código dentro da função reconhece aquele nome e pode usar os valores a ela atribuídos.
 
-Os parâmetros (os nomes que recebem os valores, ou argumentos, usados na chamada de uma função), são declarados no cabeçalho da definição da função, e são também nomes do escopo local da função.
+Os parâmetros (os nomes que recebem os valores, também conhecidos como argumentos, usados na chamada de uma função), são declarados no cabeçalho da definição da função, e são nomes do escopo local da função.
 
 ### Exemplo de uma variável local
 
@@ -45,7 +45,7 @@ def olho(x, y, tamanho):
 
 #### Recapitulando
 
-Tradicionalmente criadas no início do *sketch*, e fora de qualquer função (incluindo `setup()` e `draw()`) as variáveis globais são conhecidas em qualquer parte do código. Varíaveis criadas dentro de uma função e também os nomes dos parâmetros de uma função pertencem ao escopo local da função.
+Tradicionalmente criadas no início do *sketch*, e fora de qualquer função (incluindo `setup()` e `draw()`) as variáveis globais são conhecidas em qualquer parte do código. Variáveis criadas dentro de uma função e também os nomes dos parâmetros de uma função pertencem ao escopo local da função.
 
 Para se criar uma variável global quando se está dentro de uma função (ou para poder alterar a atribição de uma variável global dentro de uma função) usamos a instrução `global` do Python.
 
