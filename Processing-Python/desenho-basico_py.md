@@ -2,6 +2,8 @@
 
 ## Área de desenho e coordenadas
 
+Usamos a função `size()` para determinar o tamanho da área de desenho (sem ela é oferecida uma pequena tela de 100 por 100 pixels). Processing nos oferece duas variáveis `width` e `height` que referenciam os valores de largura e altura da área de desenho, respectivamente. 
+
 ```python
 size(600, 400) # tamanho da tela size(largura, altura) 
 print(width) # escreve no console largura atual da tela
@@ -28,7 +30,7 @@ circle(50, 100, 40) # círculo na posição x:50 y:100 e diâmetro:40
 
 ## Cores e atributos gráficos (preenchimento e traço de contorno)
 
-Para mudar o preenchimento branco e traço de contorno preto que é usado inicialmente para desenhar as formas, usamos inicialmente 3 números de 0 a 255 para definir uma combinação de vermelho (R), verde (G) e azul (B). 
+Para mudar as cores do preenchimento branco e do traço de contorno preto que são usadas inicialmente para desenhar as formas, indicamos inicialmente 3 números de 0 a 255 para definir uma combinação de vermelho (R), verde (G) e azul (B). 
 É preciso definir a cor *antes* de pedir o desenho de uma forma! 
 
 ```python
@@ -36,14 +38,19 @@ fill(0, 255, 0) # preenchimento verde
 ellipse(50, 50, 50, 50) # produz um círculo verde
 ```
 
-É possível ajustar a cor de preenchimento de uma forma com `fill()` a cor de traço do contorno com `stroke()`, pedir uma forma sem preenchimento com `noFill()` ou sem traço de contorno com `noStroke()`. A cor indicada pode conter além dos 3 números (R, G, B) um quarto número de transparênica (Alpha). A espessura do traço de contorno pode ser contolada com `strokeWeight()`.
+É possível ajustar a cor de preenchimento de uma forma com `fill()` a cor de traço do contorno com `stroke()`, pedir uma forma sem preenchimento com `noFill()` ou sem traço de contorno com `noStroke()`. A espessura do traço de contorno pode ser contolada com `strokeWeight()`.
+
+```python
+noFill() # sem preenchimento, formas vazadas
+stroke(0, 0, 255) # exemplo de cor do traço azul cor(R, G, B)
+strokeWeight(10) # espessura do traço de contorno 10 pixels
+noStroke() # sem traço de contorno
+```
+
+A cor indicada pode conter além dos 3 números (R, G, B) um quarto número de transparênica (Alpha). 
 
 ```python
 fill(255, 0, 0, 100) # preenchimento vermelho (R:Vermelho, G:Verde, B:Azul, Alpha:Transparência)
-noFill() # sem preenchimento, formas vazadas
-stroke(0, 0, 255) # exemplo de cor do traço azul cor(R, G, B)
-strokeWeight(10) # espessura do traço de contorno
-noStroke() # sem traço de contorno
 ```
 
 ## Fundo (*background*) e limpeza da área de desenho
@@ -54,7 +61,7 @@ O fundo também serve para apagar a área de desenho
 background(0, 255, 0) # fundo verde, limpa a tela background(R, G, B)
 ```
 
-## Como criar comentários no código em Python
+## Como criar comentários em Python
 
 ```python
 # Comentários são anotações do código, não são executados
