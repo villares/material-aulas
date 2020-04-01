@@ -56,11 +56,10 @@ Tuplas são mais 'econômicas' em termos computacionais e são bastante usadas q
 posicao = (150, 50)  #  x: 150 y: 50
 ```
 
-Podemos 'desempacotar' uma tupla transferindo os valores para variáveis, desde que o número de variáveis bata com o número de itens:
+Podemos 'desempacotar' uma tupla, atribuindo os seus valores a variáveis, desde que o número de variáveis seja igual ao número de itens:
 
 ```python
 posicao = (100, 150) 
-
 x, y = posicao # x passa a valer 100 e y 150
 ```
 
