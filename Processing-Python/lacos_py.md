@@ -1,41 +1,106 @@
-# Iteração / laços de repetição (loops)
+# Sequências e repetições
 
-## Sintaxe
+Uma das coisas mais comuns que fazemos em programção é pedir ao computador para repetir uma ação varias vezes. Para fazer isso usamos muitas vezes os chamados laços de repetição (*loops*) e o processo também é chamado de iteração (note que não é i**n**teração, que é outra coisa).
 
-O `for` permite controlar uma seqüência de repetições olhando de um em um itens fornecidos por uma sequência (ou de uma coleção, de um objeto iterável ou ainda de um objeto gerador, mas isso não vem ao caso agora). 
+Mas antes de chegar nas repetições é útil saber como criar rapidamente sequências de valores. Existe uma função que produz valores inteiros, o `range()`, que no Processing modo Python devolve uma lista (no Python 3 devolve um 'iterador' mas isso não importa agora).
 
-```python   
-lista_de_palavras = ["abacate", "uva", "frango"]
-for palavra in lista_de_palavras:
-  print(palavra)
+Se pedirmos `range(10)` teremos 10 números inteiros, você consegue imaginar quais são?
 
+A resposta é `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`
+
+Usando a estrutura `for` podemos fazer uma ação para cada item de uma sequência ou de uma coleção de valores dita 'iterável', como uma tupla ou uma lista. Em cada ciclo um item por vez da coleção é atribuido a uma variável, como neste exemplo:
+
+```python
+for n in range(10): # para cada número do range(10) 
+    print(n)
+
+# Resutado no console:
+# 0
+# 1
+# 2
+# 3
+# ... suprimi pra não ficar muito longo
+# 8
+# 9
 ```
 
-O código acima apresenta como resultado, impresso no console:
+Por vezes nem vamos usar os números! Só queremos repetir a operação, então em vez de guardar o número em uma variável `n` ou `i` usamos uma variável com o esquisito nome de `_` (*underscore*, ou como muitos falam 'underline'). Isso é uma dica de quem está escrevendo o código de que o valor vai ser desprezado. Exemplo:
 
-```
-abacate
-uva
-franco
+```python
+for _ in range(3): # repita 3 vezes!
+   print("viva!")
+   
+# resultado no console:
+# viva!
+# viva!
+# viva!
+``` 
+
+Agora vou apresentar duas estruturas usadas em Python para guardar sequencias de valores: tupla (*tuple*) e lista (*list*).
+
+Uma tupla:
+
+`tupla_sertaneja = ("Maiara", "Maraisa")`
+
+Uma lista:
+
+`meus_pockemons = ["Fomantis", "Eevee"]`
+
+A principal difereça, além do fato de que a tupla foi construída com parenteses `( ,)`e a lista com colchetes `[ ,]`, é que uma lista permite que seus itens sejam alterados, intens sejam acrescentados, removidos, ou, como um todo, reordenados.
+
+Não é possível alterar a ordem ou conteúdo de uma tupla, dizemos que ela é *imutável* (mesmo se um item dela puder ter o seu conteúdo mais interno alterado). Se for necessária uma correção, podemos criar uma nova tupla com a alteração em substituição da original.
+
+Tuplas são mais 'econômicas' em termos computacionais e são bastante usadas quando a ordem dos elementos tem significado, por exemplo podemos fazer uma tupla com coordenadas x e y, o primeiro item 'significa' a posição no eixo X e o segundo a posição no eixo Y:
+
+```python
+posicao = (150, 50)  #  x: 150 y: 50
 ```
 
-É muito comum o `for` ser usado em conjunto com `range()` que produz uma sequência de números.
+Podemos 'desempacotar' uma tupla transferindo os valores para variáveis, desde que o número de variáveis bata com o número de itens:
 
-```python   
-for n in range(10):
-  print(n)
+```python
+posicao = (100, 150) 
+
+x, y = posicao # x passa a valer 100 e y 150
 ```
 
-Com o seguinte resultado, aqui apresentado truncado com "...", impresso no console:
+E é possível fazer tuplas com tuplas dentro, listas com listas dentro, listas com tuplas dentro e etc. Vamos experimentar fazer uma lista de tuplas representando coordenadas:
 
+```python
+pontos = [(10, 10), (100, 20), (200, 50), (50, 150)]
 ```
-0
-1
-2
-...
-8
-9
+
+E finalmente vamos usar a estrutura de iteração, o loop `for` para repetir a ação de desenhar um círculo, usando as coordenadas das tuplas:
+
+```python
+def setup():
+    size(400, 400)
+    pontos = [(10, 10), (100, 20), (200, 50), (50, 150)]
+
+    for t in pontos:
+        x, y = t # 'desempacotando' a tupla (x, y)
+        ellipse(x, y, 15, 15)
 ```
+
+ou ainda podemos escrever assim:
+
+```python
+def setup():
+    size(400, 400)
+    pontos = [(50, 50), (300, 370), (200, 50), (150, 150)]
+    for x, y in pontos:
+        ellipse(x, y, 15, 15)
+```
+
+![resultado](https://i.imgur.com/TL0BBId.png)
+
+
+
+
+
+
+
+
 
 ## Exemplos
 

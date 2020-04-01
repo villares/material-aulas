@@ -13,7 +13,7 @@
 
 - [Números sorteados (pseudo-aleatórios)](numeros-aleatorios_py.md)
 - [Interação com teclado e mouse](input_py.md)
-- [Laços de repetição (iteração)](lacos_py.md)
+- [Sequências e laços de repetição (iteração)](lacos_py.md) 
 
 - [Declarando novas funções](funcoes_py.md)
   - [Funções recursivas](recursao.md)
