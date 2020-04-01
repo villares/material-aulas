@@ -12,7 +12,7 @@ Usando a estrutura `for` podemos fazer uma ação para cada item de uma sequênc
 
 ```python
 for n in range(10): # para cada número do range(10) 
-    print(n)
+    print(n)        # n vai ter um valor diferente a cada ciclo
 
 # Resutado no console:
 # 0
@@ -24,7 +24,7 @@ for n in range(10): # para cada número do range(10)
 # 9
 ```
 
-Por vezes nem vamos usar os números! Só queremos repetir a operação, então em vez de guardar o número em uma variável `n` ou `i` usamos uma variável com o esquisito nome de `_` (*underscore*, ou como muitos falam 'underline'). Isso é uma dica de quem está escrevendo o código de que o valor vai ser desprezado. Exemplo:
+Por vezes nem vamos usar os números! Só queremos repetir a operação, então em vez de guardar o número em uma variável `n` ou `i` usamos uma variável com o curioso nome`_` (*underscore*, ou como muitos falam 'underline'). Isso é uma dica de quem está escrevendo o código de que o valor da variável vai ser desprezado. Exemplo:
 
 ```python
 for _ in range(3): # repita 3 vezes!
@@ -36,21 +36,21 @@ for _ in range(3): # repita 3 vezes!
 # viva!
 ``` 
 
-Agora vou apresentar duas estruturas usadas em Python para guardar sequencias de valores: tupla (*tuple*) e lista (*list*).
+Vamos estudar agora duas estruturas de dados muito usadas em Python para guardar coleções ordenadas, ou sequências, de valores: tupla (*tuple*) e lista (*list*).
 
-Uma tupla:
+Exemplo de uma tupla:
 
 `tupla_sertaneja = ("Maiara", "Maraisa")`
 
-Uma lista:
+Exemplo de uma lista:
 
 `meus_pockemons = ["Fomantis", "Eevee"]`
 
-A principal difereça, além do fato de que a tupla foi construída com parenteses `( ,)`e a lista com colchetes `[ ,]`, é que uma lista permite que seus itens sejam alterados, intens sejam acrescentados, removidos, ou, como um todo, reordenados.
+A principal difereça, além do fato de que a tupla foi construída com parenteses `( ,)`e a lista com colchetes `[ ,]`, é que **uma lista permite que seus itens sejam alterados**, itens sejam adicionados, itens podem ser removidos, ou, os itens como um todo podem ser reordenados.
 
-Não é possível alterar a ordem ou conteúdo de uma tupla, dizemos que ela é *imutável* (mesmo se um item dela puder ter o seu conteúdo mais interno alterado). Se for necessária uma correção, podemos criar uma nova tupla com a alteração em substituição da original.
+Já **uma tupla não pode ter itens removidos, addicionados ou ser reordenada**, dizemos que ela é *imutável* (mesmo se um item puder ter o seu conteúdo mais interno alterado). Se for necessária uma correção, podemos criar uma nova tupla com a alteração em substituição da original.
 
-Tuplas são mais 'econômicas' em termos computacionais e são bastante usadas quando a ordem dos elementos tem significado, por exemplo podemos fazer uma tupla com coordenadas x e y, o primeiro item 'significa' a posição no eixo X e o segundo a posição no eixo Y:
+Tuplas são mais 'econômicas' em termos computacionais e são bastante usadas quando a ordem dos elementos tem significado, por exemplo podemos fazer uma tupla com coordenadas x e y, o primeiro item 'significa' um valor no eixo X e o segundo um valor no eixo Y:
 
 ```python
 posicao = (150, 50)  #  x: 150 y: 50
@@ -64,19 +64,18 @@ posicao = (100, 150)
 x, y = posicao # x passa a valer 100 e y 150
 ```
 
-E é possível fazer tuplas com tuplas dentro, listas com listas dentro, listas com tuplas dentro e etc. Vamos experimentar fazer uma lista de tuplas representando coordenadas:
+E é possível fazer tuplas com tuplas dentro, listas com listas dentro, listas com tuplas dentro e etc. Vamos experimentar fazer uma lista de tuplas representando as coordenadas de alguns pontos:
 
 ```python
 pontos = [(10, 10), (100, 20), (200, 50), (50, 150)]
 ```
 
-E finalmente vamos usar a estrutura de iteração, o loop `for` para repetir a ação de desenhar um círculo, usando as coordenadas das tuplas:
+Finalmente vamos usar a estrutura de iteração, o loop `for` para repetir a ação de desenhar um círculo, usando as coordenadas das tuplas:
 
 ```python
 def setup():
     size(400, 400)
     pontos = [(10, 10), (100, 20), (200, 50), (50, 150)]
-
     for t in pontos:
         x, y = t # 'desempacotando' a tupla (x, y)
         ellipse(x, y, 15, 15)
@@ -94,24 +93,16 @@ def setup():
 
 ![resultado](https://i.imgur.com/TL0BBId.png)
 
+## Outros exemplos
 
-
-
-
-
-
-
-
-## Exemplos
-
-### linhas paralelas 
+### Linhas paralelas 
 
 ```python
 for y in range(10, 80, 5):
   line(30, y, 80, y) 
 ```
 
-### laços "aninhados" par fazer uma grade
+### Laços "aninhados" par fazer uma grade
 
 ```python
 for i in range(0, 80, 10):
