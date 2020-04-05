@@ -5,8 +5,6 @@
 
 - [Primeiros passos e desenho básico (linhas, retângulos e etc)](desenho-basico_py.md)
 
-- [Textos: no programa, no console e na tela - primeiro contato](https://github.com/villares/material-aulas/blob/master/Processing-Python/strings_py.md)
-
 - [Condicionais (`if` e `else`)](condicionais_py.md)
   - [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](atribuicao-e-comparacao.md)
 
@@ -14,8 +12,12 @@
   - [Escopo de variáveis (local e global)](escopo_py.md)
 
 - [Números sorteados (pseudo-aleatórios)](numeros-aleatorios_py.md)
+
 - [Interação com teclado e mouse](input_py.md)
+
 - [Sequências e laços de repetição (iteração)](lacos_py.md) 
+
+- [Textos: no programa, no console e na tela - primeiro contato](https://github.com/villares/material-aulas/blob/master/Processing-Python/strings_py.md)
 
 - [Declarando novas funções](funcoes_py.md)
   - [Funções recursivas](recursao.md)
