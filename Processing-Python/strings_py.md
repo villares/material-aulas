@@ -49,7 +49,7 @@ Em Python 2 um `u` antes de cada literal string (string no corpo do programa) é
 from __future__ import unicode_literals
 ```
 
-Você pode ler mais sobre isso na página [Python 2 e Python 3](https://github.com/villares/material-aulas/blob/master/Processing-Python/futuro.md)).
+Você pode ler mais sobre isso na página [Python 2 e Python 3](https://github.com/villares/material-aulas/blob/master/Processing-Python/futuro.md).
 
 Em Python o `\` em uma string é chamado de 'caractere de escape' permite obter elementos especiais, por meio de uma 'sequência de escape', como por exemplo uma tabulação (`\t`) ou um sol ☀ (`\u2600`). Se precisar usar a própria barra invertida na string escreva `\\`.
 
