@@ -2,12 +2,14 @@
 
 O tipo dos valores que representam texto, palavras, letras ou glifos em geral, é chamado *string*, ou *cadeia de caracteres* numa tradução para o português acadêmica que raramente você vai ouvir.
 
+Para expressar strings no corpo de um programa podemos o envolver em aspas duplas `"`  ou aspas simples `'`, dentro de um texto envolto por aspas duplas podemos ter aspas simples e vice-versa. Também podem ser usasdas triplas de aspas: `'''` ou `"""` especialmente para strings com quebras de linha como veremos mais adiante. 
+
 ```pyde
 frase = 'Eu me chamo Alexandre'
 meu_nome = "Alexandre 'o grande' bobo"
 ```
 
-Podemos usar tanto aspas duplas `"`  como aspas simples `'`, dentro de uma string com aspas duplas podemos ter aspas simples e vice-versa. Também podem ser usasdas triplas de aspas: `'''` ou `"""` especialmente para strings com quebras de linha como veremos mais adiante. Podemos *concatenar*, isto é somar strings pela justaposição com o operador `+`:
+Podemos *concatenar*, isto é somar strings pela justaposição, com o operador `+`:
 
 ```pyde
 primeiro_nome = 'Alexandre'
