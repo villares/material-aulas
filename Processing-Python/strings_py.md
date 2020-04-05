@@ -1,4 +1,4 @@
-# Textos no programa, no console e na tela
+# Textos: no programa, no console e na tela
 
 O tipo dos valores que representam texto, palavras, letras ou glifos em geral, é chamado *string*, ou *cadeia de caracteres* numa tradução para o português acadêmica que raramente você vai ouvir.
 
