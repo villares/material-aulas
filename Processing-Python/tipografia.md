@@ -1,6 +1,6 @@
 # Tipografia
 
-## Trabalhando com fontes e texto no Processing
+## Trabalhando com fontes e outros ajustes do texto
 
 Usamos `text("Lorem Ipsum dolor", x, y)` para escrever um texto na área de desenho. O tamanho pode ser controlado, em pontos, por `textSize()`. O alinhamento pode ser alterado por `textAlign()`. A cor vem do `fill()`.
 
@@ -12,8 +12,7 @@ Adaptado do tutorial
 https://py.processing.org/tutorials/typography/
 """
 
-x = 33
-y = 60
+x, y = 33, 60
 
 def setup() :
     size(100, 100)
