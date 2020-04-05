@@ -46,7 +46,7 @@ def draw():
     println("x: " + str(mouseX) + " y: " + str(mouseY))  # convertendo o valor em string com str()
 ```
 
-### Mostando texto na tela
+### Mostando texto na área de desenho
 
 ```pyde
 def setup():
@@ -57,11 +57,13 @@ def draw():
     texto_mouse = "x: " + str(mouseX) + " y: " + str(mouseY) 
     text(texto_mouse, 50, 50) #  text("texto" , x, y) 
 ```
+![resultado](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/text-na-tela.png)
+
 <!-- Mais sobre desenhar texto na tela na página [Tipografia básica](https://github.com/villares/material-aulas/blob/master/Processing-Python/tipografia.md) -->
 
 ### Letras com acentos, caracteres especiais e outros glifos
 
-Em Python 2 um `u` antes de cada literal string (string no corpo do programa) é necessário para permitir letras acentuadas e outros caracteres não-ASCII. Uma outra solução é incluir no começo do seu programa,na primeira linha de código:
+Em Python 2  é necessário um `u` antes de cada literal string (string no corpo do programa) para permitir letras acentuadas e outros caracteres não-ASCII. Uma outra solução é incluir no começo do seu programa, logo na primeira linha, o seguinte código:
 
 ```pyde
 from __future__ import unicode_literals
@@ -69,9 +71,9 @@ from __future__ import unicode_literals
 
 Você pode ler mais sobre isso na página [Python 2 e Python 3](https://github.com/villares/material-aulas/blob/master/Processing-Python/futuro.md).
 
-Em Python o `\` em uma string é chamado de 'caractere de escape' permite obter elementos especiais, por meio de uma 'sequência de escape', como por exemplo uma tabulação (`\t`) ou um sol ☀ (`\u2600`). Se precisar usar a própria barra invertida na string escreva `\\`.
+Em Python o `\` dentro de strings é chamado de 'caractere de escape' permite obter elementos especiais, por meio de uma 'sequência de escape', como por exemplo uma tabulação (`\t`) ou um sol ☀ (`\u2600`). Se precisar usar a própria barra invertida escreva `\\`.
 
-Usamos `\n` no meio da string para obter uma quebra de linha. Como no exemplo a seguir:
+Usamos `\n` para obter uma quebra de linha. Como no exemplo a seguir:
 
 ```pyde
 print(u'frutas frescas:\nmaça\nbanana')
@@ -83,7 +85,7 @@ maçã
 banana
 ```
 
-Uma outra maneira de indicar uma string com quebras de linha é com aspas triplas `'''` ou `"""`:
+Uma outra maneira de indicar uma string com quebras de linha é fazendo uma literal en varias linhas aspas triplas `'''` ou `"""`:
 ```pyde
 print(
 u"""frutas frescas:
