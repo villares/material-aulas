@@ -54,8 +54,9 @@ def setup():
 
 def draw():
     background(100)
+    text("Oi mundo!", 50, 50) #  text(string, x, y) 
     texto_mouse = "x: " + str(mouseX) + " y: " + str(mouseY) 
-    text(texto_mouse, 50, 50) #  text("texto" , x, y) 
+    text(texto_mouse, 50, 70)
 ```
 ![resultado](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/text-na-tela.png)
 
