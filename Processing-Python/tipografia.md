@@ -63,7 +63,43 @@ font = loadFont("LetterGothicStd-32.vlw")
 Copie o arquivo descompactado **.otf*** da fonte [Garoa Hacker Clube Bold](https://garoa.net.br/wiki/Fonte_Garoa_Hacker_Clube_Bold) na sub-pasta *"""data** do seu sketch.
 
 ```pyde
+glifos = "ABCDEFGHIJKLMNOPQRSTUVWXYZ☂#$*&"
+num_glifos = len(glifos)
+passo = 25
 
+def setup():
+    global f
+    size(640, 360)
+    background(0)
+    # Copie a fonte GaroaHackerClubeBold.otf na pasta /data e substitua o
+    # "FreeSans Bold" abaixo
+    f = createFont("FreeSans Bold", 24)
+    textFont(f)
+    textAlign(CENTER, CENTER)  # Alinhamento horizontal e vertical
+    textSize(24)               # Tamanho do texto
+    noLoop()    # Este exemplo inicialmente desliga a repetiçao do draw()...
+
+
+def draw():
+    background(0)
+    for y in range(12, height - 12, passo):
+        for x in range(12, width - 12, passo):
+            sorteio = int(random(num_glifos))
+            glifo = glifos[sorteio]
+            if (glifo == 'A' or glifo == 'E' or glifo == 'I' or
+                    glifo == 'O' or glifo == 'U'):
+                fill(255, 0, 255)
+            else:
+                fill(0, 255, 0)
+
+            # Desenha a letra na tela
+            text(glifo, x, y)
+
+def mousePressed():
+    loop()
+
+def mouseReleased():
+    noLoop()
 ```
 
 ## Bibliografia
