@@ -26,12 +26,13 @@ a = '10' + 5  # TypeError: cannot concatenate 'str' and 'int' objects
 
 ### Mostrando texto no console
 
-Usamos `print()` ou `println()` para *imprimir* texto na parte de baixo do IDE, o chamado console. 
+Usamos `print()` ou `println()` para *imprimir* na parte de baixo do IDE, o chamado console. Essas funções convertem automaticamente outros tipos de valores em string, uma representação textual ou referência ao objeto passado.
 
 ```pyde
-print("Oi mundo!") # Resultado no console: Oi mundo!
-print(100 + 50)    # Resultado no console: 150
-
+def setup():           # Resultado no console:
+    print("Oi mundo!") # Oi mundo!
+    print(100 + 50)    # 150
+    print(setup)       # <function setup at 0x3>
 ```
 
 Como não podemos concatenar strings e números para mostrar de uma vez só é comum convertermos os números em strings das seguintes maneiras: 
@@ -56,6 +57,7 @@ def draw():
     texto_mouse = "x: " + str(mouseX) + " y: " + str(mouseY) 
     text(texto_mouse, 50, 50) #  text("texto" , x, y) 
 ```
+<!-- Mais sobre desenhar texto na tela na página [Tipografia básica](https://github.com/villares/material-aulas/blob/master/Processing-Python/tipografia.md) -->
 
 ### Letras com acentos, caracteres especiais e outros glifos
 
