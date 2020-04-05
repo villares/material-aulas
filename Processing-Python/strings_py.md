@@ -1,19 +1,55 @@
-# Textos no programa e na tela
+# Textos no programa, no console e na tela
 
-O tipo dos valores que representam texto, palavras, letras ou glifos em geral, é chamado *string*, ou *cadeia de caracteres* numa tradução acadêmica para o português que raramente você vai ouvir.
+O tipo dos valores que representam texto, palavras, letras ou glifos em geral, é chamado *string*, ou *cadeia de caracteres* numa tradução para o português acadêmica que raramente você vai ouvir.
 
 ```
 frase = 'Eu me chamo Alexandre'
-nome = "Alexandre 'o grande' bobo"
+meu_nome = "Alexandre 'o grande' bobo"
 ```
 
-Podemos usar tanto aspas duplas `"`  como aspas simples `'` e dentro de uma string com aspas duplas podemos ter aspas simples e vice-versa. Também podem ser usasdas triplas de aspas: `'''` ou `"""` especialmente para strings com quebras de linha como veremos mais adiante.
+Podemos usar tanto aspas duplas `"`  como aspas simples `'`, dentro de uma string com aspas duplas podemos ter aspas simples e vice-versa. Também podem ser usasdas triplas de aspas: `'''` ou `"""` especialmente para strings com quebras de linha como veremos mais adiante. Podemos *concatenar*, isto é somar strings pela justaposição com o operador `+`:
 
-### Letras com acentos e outros glifos
+```python
+primeiro_nome = 'Alexandre'
+sobrenome = 'Villares'
+nome = primeiro_nome + ' ' + sobrenome
+# resultado: nome = 'Alexandre Villares'
+```
 
-O `u` antes da string pode ser necessário para usar caracteres não-ASCII, como letras acentuadas (tem uma explicação disto [aqui](https://github.com/villares/material-aulas/blob/master/Processing-Python/futuro.md)) .
+### Mostrando texto no console
 
-### Quebras de linha e caracteres especiais 
+Usamos `print()` ou `println()` para *imprimir* texto na parte de baixo do IDE, o chamado console. Como em Python não é possível concatenas valores numéricos e strings é comum convertermos os números em strings das seguintes maneiras: 
+
+```pyde
+def setup():
+    size(400, 400)
+    println("largura da tela: {} - altura da tela: {}".format(width, height") # usando "{}".format(valor)
+
+def draw():
+    println("x: " + str(mouseX) + " y: " + str(mouseY))  # convertendo o valor em string com str()
+```
+
+### Mostando texto na tela
+
+```pyde
+def setup():
+    size(400, 400)
+
+def draw():
+    background(100)
+    texto_mouse = "x: " + str(mouseX) + " y: " + str(mouseY) 
+    text(texto_mouse, 50, 50) #  text("texto" , x, y) 
+```
+
+### Letras com acentos, caracteres especiais e outros glifos
+
+Em Python 2 um `u` antes de cada literal string (string no corpo do programa) é necessário para permitir letras acentuadas e outros caracteres não-ASCII. Uma outra solução é incluir no começo do seu programa,na primeira linha de código:
+
+```python
+from __future__ import unicode_literals
+```
+
+Você pode ler mais sobre isso na página [Python 2 e Python 3](https://github.com/villares/material-aulas/blob/master/Processing-Python/futuro.md)).
 
 Em Python o `\` em uma string é chamado de 'caractere de escape' permite obter elementos especiais, por meio de uma 'sequência de escape', como por exemplo uma tabulação (`\t`) ou um sol ☀ (`\u2600`). Se precisar usar a própria barra invertida na string escreva `\\`.
 
