@@ -3,7 +3,9 @@
 
 - **[Para instalar em casa o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)**
 
-- [Desenho básico (linhas, retângulos e etc)](desenho-basico_py.md)
+- [Primeiros passos e desenho básico (linhas, retângulos e etc)](desenho-basico_py.md)
+
+- [Textos: no programa, no console e na tela - primeiro contato](https://github.com/villares/material-aulas/blob/master/Processing-Python/strings_py.md)
 
 - [Condicionais (`if` e `else`)](condicionais_py.md)
   - [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](atribuicao-e-comparacao.md)
