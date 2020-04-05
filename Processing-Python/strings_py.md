@@ -18,7 +18,7 @@ nome = primeiro_nome + ' ' + sobrenome
 # resultado: nome = 'Alexandre Villares'
 ```
 
-Mas é impossível somar um número a um texto ou o contrário. Note neste caso como `'10'` é entendido como texto, string, e não como o número `10`:
+Mas é não é possível somar um número a um texto ou o contrário. Note neste caso como `'10'` é entendido como texto, string, e não como o número `10`:
 
 ```pyde
 a = '10' + 5  # TypeError: cannot concatenate 'str' and 'int' objects
@@ -26,7 +26,15 @@ a = '10' + 5  # TypeError: cannot concatenate 'str' and 'int' objects
 
 ### Mostrando texto no console
 
-Usamos `print()` ou `println()` para *imprimir* texto na parte de baixo do IDE, o chamado console. Como em Python não é possível concatenas valores numéricos e strings é comum convertermos os números em strings das seguintes maneiras: 
+Usamos `print()` ou `println()` para *imprimir* texto na parte de baixo do IDE, o chamado console. 
+
+```pyde
+print("Oi mundo!") # Resultado no console: Oi mundo!
+print(100 + 50)    # Resultado no console: 150
+
+```
+
+Como não podemos concatenar strings e números para mostrar de uma vez só é comum convertermos os números em strings das seguintes maneiras: 
 
 ```pyde
 def setup():
