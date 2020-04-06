@@ -9,7 +9,7 @@ Essas variáveis podem ser usadas ao longo de todo o programa. Se você desejar 
 ### Exemplo de uma variável global
 
 ```Python
-x = 0
+x = 0  # x é uma variável global
 
 def setup():
     size(500, 500)
@@ -70,9 +70,9 @@ def draw():
         x = 0
 ```
 
-É comum escutarmos que devemos usar variáveis globais com parcimônia, usadas descuidadamente, elas criam o risco de alterarmos  inadvertidamente valores em pontos inesperados do programa.
+É comum escutarmos que devemos usar variáveis globais com parcimônia, usadas descuidadamente, elas criam o risco de alterarmos inadvertidamente valores em pontos inesperados do programa.
 
-O uso indicriminado de variáveis globais também viola certos princípios de "bom design de sofwtare", como o encapsulamento das funcionalidades em partes independentes. Mas em pequenos *sketches* você não deve se preocupar muito com isso!
+O uso indicriminado de variáveis globais viola certos princípios da "boa engenharia de software", como o encapsulamento das funcionalidades em partes independentes. Em pequenos *sketches* você não deve se preocupar muito com isso!
 
 #### Glossário
 
