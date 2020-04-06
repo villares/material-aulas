@@ -35,7 +35,7 @@ def setup():           # Resultado no console:
     print(setup)       # <function setup at 0x3>
 ```
 
-Como não podemos concatenar strings e números, por exemplo, para os mostrarmos juntos, é comum convertermos outros valores em strings. Veja aqui duas maneiras: 
+Como não podemos concatenar strings e números, por exemplo, para os mostrarmos juntos, é comum convertermos os números em strings. Veja aqui duas maneiras: 
 
 ```pyde
 def setup():
@@ -55,7 +55,7 @@ def setup():
 def draw():
     background(100)
     text("Oi mundo!", 50, 50) #  text(string, x, y) 
-    texto_mouse = "x: " + str(mouseX) + " y: " + str(mouseY) 
+    texto_mouse = "x: {} y: {}".format(mouseX, mouseY)  # os valores vão nos {} {}
     text(texto_mouse, 50, 70)
 ```
 ![resultado](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/text-na-tela.png)
