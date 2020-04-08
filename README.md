@@ -4,7 +4,7 @@ Processing Modo Python é uma ferramenta de programação com a sintaxe de Pytho
 
 **[Como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)**
 
-##### Caso não possa instalar, experimente:<br>- SkulptIDE online do prof. Claudio Esperança: http://tiny.cc/processing_python<br>- Triket.io https://trinket.io/library/trinkets/cfaf743794
+##### Caso não possa instalar, experimente:<br>- SkulptIDE online do prof. Claudio Esperança: http://tiny.cc/processing_python<br>- Triket.io https://trinket.io/python/cfaf743794
 
 Você pode [colaborar com este material didático aberto](/como-contribuir.md)! Abra "issues" (apontando problemas, sugerindo assuntos e melhorias), contribua com "Pull Requests" no repositório ou ainda [faça uma pequena doação](https://gumroad.com/villares) "pagando uns cafés".
 
