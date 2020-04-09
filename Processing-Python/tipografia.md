@@ -14,13 +14,14 @@ https://py.processing.org/tutorials/typography/
 
 x, y = 33, 60
 
-def setup() :
+def setup():
     size(100, 100)
     textSize(12)
     textAlign(CENTER, BOTTOM) # pode ser usado LEFT, RIGHT no primeiro parâmetro e CENTER ou TOP no segundo
     noStroke()
 
-def draw() :
+def draw():
+    global x, y
     fill(204, 120)
     rect(0, 0, width, height)
     fill(0)
