@@ -25,8 +25,8 @@ def draw() :
     rect(0, 0, width, height)
     fill(0)
     # Se o mouse estiver sobre o texto, mova!
-    if ((mouseX >= x) and (mouseX <= x+55) and
-        (mouseY >= y-24) and (mouseY <= y)) :
+    if (x <= mouseX <= x+55 and
+        y-24 <= mouseY <= y):
         x += random(-2, 2)
         y += random(-2, 2)
     
