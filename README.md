@@ -11,10 +11,7 @@ Abra "issues" (apontando problemas, sugerindo assuntos e melhorias), contribua c
 ### Assuntos
 
 **[O que é e como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)**
-
-> Caso não possa instalar, experimente no navegador:
-> - Triket.io https://trinket.io/python/cfaf743794
-> - SkulptIDE do prof. Claudio Esperança: http://tiny.cc/processing_python
+<b>Caso não possa instalar, experimente no navegador:<br>- Triket.io https://trinket.io/python/cfaf743794<br>- SkulptIDE do prof. Claudio Esperança: http://tiny.cc/processing_python</b>
 
 - [Primeiros passos e desenho básico](/Processing-Python/desenho-basico_py.md)
 
