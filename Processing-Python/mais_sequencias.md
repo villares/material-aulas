@@ -19,7 +19,7 @@ for letra in nome:
 
 ## Consultando itens de uma sequência
 
-Tanto para sequências de letras como em listas ou tuplas podemos consultar seus itens pela posição com a notação `[ ]`:
+Tanto para sequências de letras como em listas ou tuplas podemos consultar seus itens pelo índice de posição com a notação `[índice]`, sendo que **a primeira posição é a posição 0**:
 
 ```python
 palavra = 'silly walk'
@@ -67,21 +67,43 @@ Tuplas e strings são imutáveis, não permitem este tipo de operação.
 
 ## Fatias
 
-Com a notação `[inicio:parada]`, `[:parada]`, [inicio:], ou ainda `[inicio:parada:passo]`, podemos obter subsequências de uma sequência.
+Com a notação `[inicio:parada]`, `[:parada]`, `[inicio:]`, ou ainda `[inicio:parada:passo]`, podemos obter subsequências de uma sequência.
 
 ```python
 nome = 'Saskia Freeke'
 a = nome[:6]
-b = nome[7:]
-print(a) # 'Saskia'
-print(b) # 'Freeke' 
+print(a) # resultado: 'Saskia'
 
-c = nome.split(' ')
-print(c) # resultado uma lista com dois strings:
+b = nome[7:]
+print(b) # resultado: 'Freeke' 
+
+print(nome[1:12:2]) # resultado:
+# 'akaFek'
+
+print("01234567890"[1:9:2]) # resultado:
+# '1357'
+
+c = nome.split(' ')  # .split(delimitador) devolve uma lista 
+print(c) # com os trechos entre os delimitadores:
 # ['Saskai', 'Freele']
 ```
-A notação `[:]` produz uma cópia da sequência. O que é especialmente útil para sequências mutáveis.
 
+A notação `[:]` produz uma cópia completa da sequência. O que é especialmente útil para sequências mutáveis. Uma vez que a atribuição, por exemplo de uma lista, q mais de uma variável não produz cópias, mas varios nomes apontando para a mesma lista na memória do computador:
+
+```python
+a = [0, 1, 2, 3, 4]
+b = a
+del b[3]
+print(b) # [0, 1, 2, 4] como esperado
+# mas, talvez você se surpreenda!
+print(a) # [0, 1, 2, 4]
+
+a = [0, 1, 2, 3, 4]
+b = a[:] # cria uma cópia nova da sequência
+del b[3]
+print(b) # [0, 1, 2, 4]
+print(a) # [0, 1, 2, 3, 4]
+```
 
 
 
