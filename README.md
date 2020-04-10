@@ -23,12 +23,13 @@ Você pode [colaborar com este material didático aberto](/como-contribuir.md)! 
 - [Interação com teclado e mouse](/Processing-Python/input_py.md)
 
 - [Sequências e laços de repetição (iteração)](/Processing-Python/lacos_py.md)
+  - [Mais sobre sequências e fatias](/Processing-Python/mais_sequencias.md)
+  
+- [Textos: no programa, no console e na tela](https://github.com/villares/material-aulas/blob/master/Processing-Python/strings_py.md)
+  - [Trabalhando com fontes e outros ajustes do texto](/Processing-Python/tipografia.md)
 
 - [Declarando novas funções](/Processing-Python/funcoes_py.md)
   - [Funções recursivas](/Processing-Python/recursao_py.md)
-
-- [Textos: no programa, no console e na tela](https://github.com/villares/material-aulas/blob/master/Processing-Python/strings_py.md)
-  - [Trabalhando com fontes e outros ajustes do texto](/Processing-Python/tipografia.md)
 
 - [Tipos de valores (inteiros, números de ponto flutuante, texto)](/Processing-Python/tipagem_py.md)
 
