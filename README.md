@@ -1,14 +1,20 @@
-### Material para cursos e oficinas - [repositório](https://github.com/villares/material-aulas/)
+## Material para cursos e oficinas com Processing modo Python - [repositório](https://github.com/villares/material-aulas/)
 
-Processing Modo Python é uma ferramenta de programação com a sintaxe de Python, acrescentados o vocabulário, recursos de desenho e manipulação de imagens do Processing.
+**Processing modo Python** é uma ferramenta livre de programação com a sintaxe de Python, que inclui o vocabulário, recursos de desenho e manipulação de imagens, de Processing.
 
-**[Como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)**
+#### Como colaborar/contribuir?
 
-##### Caso não possa instalar, experimente:<br>- SkulptIDE online do prof. Claudio Esperança: http://tiny.cc/processing_python<br>- Triket.io https://trinket.io/python/cfaf743794
+Este material didático é aberto. Você pode ler as [instruções para colaborar com este repositório](/como-contribuir.md)!
 
-Você pode [colaborar com este material didático aberto](/como-contribuir.md)! Abra "issues" (apontando problemas, sugerindo assuntos e melhorias), contribua com "Pull Requests" no repositório ou ainda [faça uma pequena doação](https://gumroad.com/villares) "pagando uns cafés".
+Abra "issues" (apontando problemas, sugerindo assuntos e melhorias), contribua com "Pull Requests" no repositório ou ainda [faça uma pequena doação](https://gumroad.com/villares) "pagando alguns cafés".
 
 ### Assuntos
+
+**[O que é e como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)**
+
+> Caso não possa instalar, experimente no navegador:
+> - Triket.io https://trinket.io/python/cfaf743794
+> - SkulptIDE do prof. Claudio Esperança: http://tiny.cc/processing_python
 
 - [Primeiros passos e desenho básico](/Processing-Python/desenho-basico_py.md)
 
