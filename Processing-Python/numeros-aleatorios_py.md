@@ -1,4 +1,10 @@
-# Números (pseudo)aleatórios
+# Números aleatórios
+
+## Na verdade números pseudo-aleatórios
+
+Computadores são máquinas determinísticas e não conseguem realmente 'sortear' um número, utilizamos na verdade algorítmos que produzem sequências de números praticamente indistinguíveis de sequências verdadeiramente aleatórias. Para certas aplicações é possível incluir 'fontes externas de entropia' para tornar ainda menos previsíveis os resultados.
+
+### A função `random()`
 
 Cada vez que chamamos a função `random()` com um parâmetro, como em `sorteio = random(1);` um número entre zero e o parâmetro passado, o limite superior, é "sorteado" (não incluido este limite superior no sorteio).
 
@@ -9,7 +15,7 @@ E podemos obter números inteiros convertendo o valor usando `int()`, como em `s
 
 **Atenção:** *Este é o `random()` do Processing, o random do Python é um pouquinho diferente*
 
-### Exemplos
+#### Exemplos
 ```python
 # Produz um valor entre 0 e 10 (10 não incluso)
 sorteio = random(10)
@@ -21,9 +27,15 @@ faixa = random(-5, 5)
 d20 = int(random(20)) 
 ```
 
-### Pseudo-aleatoriedade
+### Mais sobre pseudo-aleatoriedade, sementes.
 
-Os números produzidos por `random()` não são verdadeiramente aleatórios, eles são produzidos por algorítmos geradores determinísticos. É possível fixar um parâmetro inical, conhecido como semente (*seed*), para a geração de uma sequência fixa de números.
+Como os números produzidos por `random()` não são verdadeiramente aleatórios, e sim produzidos por algorítmos geradores determinísticos, é possível fixar um parâmetro inical, conhecido como semente (*seed*), o que permite reproduzir novamente a mesma sequência de números.
+
+```
+TODO:
+- Exemplo de randomSeed() e random.seed()
+- Exemplo de random.choice()
+```
 
 ---
 Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
