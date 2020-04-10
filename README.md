@@ -18,10 +18,10 @@ Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 - [Condicionais (`if` e `else`)](/Processing-Python/condicionais_py.md)
   - [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](/Processing-Python/atribuicao-e-comparacao.md)
 
-- [Movimento, uma animação simples usando `setup()` e `draw()`](/Processing-Python/movimento_py.md)
+- [Movimento: uma animação simples usando `setup()` e `draw()`](/Processing-Python/movimento_py.md)
   - [Escopo de variáveis (local e global)](/Processing-Python/escopo_py.md)
 
-- [Aleatoriedade,`random` e números 'sorteados'](/Processing-Python/numeros-aleatorios_py.md)
+- [Aleatoriedade: `random` e números 'sorteados'](/Processing-Python/numeros-aleatorios_py.md)
 
 - [Interação com teclado e mouse](/Processing-Python/input_py.md)
 
