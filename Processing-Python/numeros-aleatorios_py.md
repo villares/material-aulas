@@ -33,6 +33,7 @@ Como os números produzidos por `random()` não são verdadeiramente aleatórios
 
 ```
 TODO:
+- Exemplos visuais, caramba!
 - Exemplo de randomSeed() e random.seed()
 - Exemplo de random.choice()
 ```
