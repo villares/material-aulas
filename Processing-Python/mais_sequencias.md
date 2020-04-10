@@ -88,7 +88,7 @@ print(c) # com os trechos entre os delimitadores:
 # ['Saskai', 'Freele']
 ```
 
-A notação `[:]` produz uma cópia completa da sequência. O que é especialmente útil para sequências mutáveis. Uma vez que a atribuição, por exemplo de uma lista, q mais de uma variável não produz cópias, mas varios nomes apontando para a mesma lista na memória do computador:
+A notação `[:]` produz uma cópia completa da sequência. O que é especialmente útil para sequências mutáveis. Uma vez que a atribuição, por exemplo de uma lista, a mais de uma variável não produz cópias, mas sim varios nomes apontando para a mesma lista na memória do computador:
 
 ```python
 a = [0, 1, 2, 3, 4]
