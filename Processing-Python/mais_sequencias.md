@@ -91,7 +91,7 @@ Tuplas e strings são imutáveis, não permitem estes tipos de operação.
 
 ## Fatias
 
-Com a notação `[inicio:parada]`, `[:parada]`, `[inicio:]`, ou ainda `[inicio:parada:passo]`, podemos obter subsequências de uma sequência.
+Com a notação `[inicio:parada:passo]` podemos obter uma subsequência ou fatia (*slice*) de uma sequência. É possível deixar vazias as posições dessa notação, na forma `[inicio:parada]`, `[:parada]`, `[inicio:]`, ou ainda `[::passo]`, entre outras. Veja alguns exemplos:
 
 ```python
 nums = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, -1) # uma tupla
@@ -105,18 +105,21 @@ print(a) # resultado: 'Saskia'posição
 b = nome[7:] # início na oitava posição (7) até o final.
 print(b) # resultado: 'Freeke' 
 
-print(nome[1:12:2]) # início na segunda letra, até a décima, de duas em duas.
+print(nome[1::2]) # segunda até o final, de duas em duas.
 # resultado: 'akaFek'
+
+print(nome[:11:2]) # início até a décima, de duas em duas.
+# resultado: 'Ssi re'
 
 c = nome.split(' ')  # .split(delimitador) devolve uma lista 
 print(c)             # com os trechos de texto entre os delimitadores:
-# ['Saskai', 'Freele']
+# ['Saskia', 'Freeke']
 ```
 ### Cópias e inversões
 
 #### Uma fatia que é uma cópia da sequência
 
-A notação `[:]` produz uma cópia completa da sequência. O que é especialmente útil para sequências mutáveis. Uma vez que a atribuição, por exemplo de uma lista, a mais de uma variável não produz cópias, mas sim varios nomes apontando para a mesma lista na memória do computador:
+A notação `[:]` (fatiamento com *início* e *parada* vazios) produz uma cópia completa da sequência. O que é especialmente útil para sequências mutáveis. Uma vez que a atribuição, por exemplo de uma lista, a mais de uma variável não produz cópias, mas sim varios nomes apontando para a mesma lista na memória do computador:
 
 ```python
 a = [0, 1, 2, 3, 4]
@@ -135,7 +138,7 @@ print(a) # [0, 1, 2, 3, 4]
 
 #### Invertendo uma sequência
 
-Uma das maneiras mais comuns de se obter uma cópia invertida de uma sequência é utilizando a notação de fatiamento com um passo -1: `[::-1]
+Uma das maneiras mais comuns de se obter uma cópia invertida de uma sequência é utilizando a notação de fatiamento, com o *início* e *parada* vazios (do início ao final) mas com o *passo* -1, o que fica `[::-1]` como nos exemplos abaixo:
 
 ```python
 a = [0, 1, 2, 3, 4]
