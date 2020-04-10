@@ -71,7 +71,7 @@ background(0, 255, 0) # fundo verde, limpa a tela background(R, G, B)
 Com três aspas no começo e no final, podemos produzir strings que
 funcionam como comentários de múltiplas linhas e que quando estão
 logo após o cabeçalho de definição de uma função, no começo do corpo,
-são chamados textos de documentação (doc-strings).
+são chamados docstrings (textos de documentação).
 """
 ```
 
