@@ -44,7 +44,7 @@ for y in range(10, 80, 5): # y começa valendo 10 e termina valendo 75
     line(30, y, 80, y)     # y aumenta de 5 em 5
 ```
 
-   Você conseguiria escrever um `for` para desenhar algumas linhas na vertical?
+- Você conseguiria escrever um `for` para desenhar algumas linhas na vertical?
 
 ## Repetições simples
 
@@ -59,6 +59,7 @@ for _ in range(3): # repita 3 vezes!
 # viva!
 # viva!
 ``` 
+- Você consegue imaginar um desenho usando esse tipo de repetição e números [pseudo-aleatórios](https://github.com/villares/material-aulas/blob/master/Processing-Python/numeros-aleatorios_py.md) com `random()`?
 
 ## Um pouco sobre listas e tuplas
 
@@ -127,6 +128,11 @@ for x in range(0, 80, 10):
   for y in range(0, 80, 10): 
     ellipse(x, y, 5, 5) 
 ```
+
+### Páginas relacionadas
+
+- [Mais sobre sequências e fatias](https://github.com/villares/material-aulas/blob/master/Processing-Python/mais_sequencias.md)
+- [Desenhando Grades](https://github.com/villares/material-aulas/blob/master/Processing-Python/grades.md)
 
 ### Glossário
 
