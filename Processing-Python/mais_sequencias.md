@@ -38,11 +38,11 @@ Estruturas mutáveis como listas, podem ter seus itens alterados, incluídos ou 
 
 ```
 lista = [1976, 1980, 1988, 2013]
-print(lista[2])  # o resultado é o terceiro número:
+print(lista[2])  # o resultado é o terceiro número (índice 2):
 # 1988
 
 lista = [1976, 1980, 1988, 2013]
-lista[2] = 1994 # muda o segundo item
+lista[2] = 1994 # muda o terceiro item (índice 2)
 print(lista) # resultado:
 # [1976, 1980, 1994, 2013]
 
@@ -50,11 +50,11 @@ lista.append(2020)
 print(lista) # resultado:
 # [1976, 1980, 1994, 2013, 2020]
 
-del lista[1] # remove o segundo item
+del lista[1] # remove o segundo item (índice 1)
 print(lista) # resultado:
 # [1976, 1994, 2013, 2020]
 
-a = lista.pop() # remove e devolve o último item
+a = lista.pop() # remove e devolve o último item (índice -1)
 print(a) # 2020
 print(lista) # [1976, 1994, 2013]
 
