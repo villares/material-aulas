@@ -15,7 +15,7 @@ for letra in nome:
 # i
 # d
 # o
-```primeira
+```
 
 ## Consultando itens de uma sequência
 
@@ -38,20 +38,29 @@ Estruturas mutáveis como listas, podem ter seus itens alterados, incluídos ou 
 
 ```
 lista = [1976, 1980, 1988, 2013]
-print(lista[2])  # terceiro número: 1988
+print(lista[2])  # o resultado é o terceiro número:
+# 1988
 
 lista = [1976, 1980, 1988, 2013]
-lista[2] = 1000 # muda o segundo item
+lista[2] = 1994 # muda o segundo item
 print(lista) # resultado:
-# [1976, 1980, 1000, 2013]
+# [1976, 1980, 1994, 2013]
 
 lista.append(2020)
 print(lista) # resultado:
-# [1976, 1980, 1000, 2013, 2020]
+# [1976, 1980, 1994, 2013, 2020]
 
-del lista[1]
+del lista[1] # remove o segundo item
 print(lista) # resultado:
-# [1976, 1000, 2013, 2020]
+# [1976, 1994, 2013, 2020]
+
+a = lista.pop() # remove e devolve o último item
+print(a) # 2020
+print(lista) # [1976, 1994, 2013]
+
+b = lista.pop(1) # remove e devolve o segundo item
+print(b) # 1994
+print(lista) # [1976, 2013]
 ```
 
 Tuplas e strings são imutáveis, não permitem este tipo de operação.
@@ -62,10 +71,14 @@ Com a notação `[inicio:parada]`, `[:parada]`, [inicio:], ou ainda `[inicio:par
 
 ```python
 nome = 'Saskia Freeke'
-primeiro = nome[:6]
-ultimo = nome[7:]
-print(primeiro) # 'Saskia'
-print(ultimo) # 'Freeke' 
+a = nome[:6]
+b = nome[7:]
+print(a) # 'Saskia'
+print(b) # 'Freeke' 
+
+c = nome.split(' ')
+print(c) # resultado uma lista com dois strings:
+# ['Saskai', 'Freele']
 ```
 A notação `[:]` produz uma cópia da sequência. O que é especialmente útil para sequências mutáveis.
 
