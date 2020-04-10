@@ -1,8 +1,37 @@
 # Mais sobre sequências e fatias
 
-## Strings são sequencias de caracteres
+## Tamanho, comprimento (*lenght*)? número de itens: len()
 
-Python trata strings, texto, como uma sequências de caracteres. É possível por exemplo iterar, realizar uma ação para cada caractere de um string:
+Listas e tuplas são algumas das mais comuns estruturas de dados para manter coleções ordenadas de itens no Python. 
+
+Podemos obter o tamanho, isto é, o número de itens, de praticamente qualquer estrutura de dados em Python (ordenada ou não) usando a funçao `len()`. Por exemplo:
+
+```python
+lista_de_nomes ['Bernardo Fontes', 'John Cleese', 'Georg Nees']
+print(len(lista_de_nomes)) # imprime 3
+
+ponto = (100, 150)
+print(len(ponto))  # imprime 2
+
+n_paises = len(codigos_de_pais) # lista baseada em https://www.iso.org/obp/ui/#search
+print(n_paises) # imprime 249
+```
+
+## Consultando itens de uma sequência
+
+Quando temos uma lista, tupla ou outra coleção ordenada, podemos consultar seus itens pelo índice de posição com a notação `[i]`, sendo que **a primeira posição é a posição de índice 0**, e a última é a que tem como índice o número total de itens menos 1:
+
+```python
+alguns_pares = (2, 4, 6, 8, 10, 12, 24, 2048)
+print(alguns_pares[0])  # 2 o primeiro número
+print(alguns_pares[1])  # 4 o segundo número
+print(alguns_pares[len(alguns_pares) - 1]) # 2048 o último
+print(alguns_pares[-1]) # com o índice -1 também temos o último item!
+```
+
+## Strings são sequencias também!
+
+Python trata *strings*, texto, como um espécie de sequência de caracteres. É possível por exemplo iterar, isto é, realizar uma ação para cada caractere de um string:
 
 ```python
 nome = 'Guido'
@@ -17,21 +46,15 @@ for letra in nome:
 # o
 ```
 
-## Consultando itens de uma sequência
-
-Tanto para sequências de letras como em listas ou tuplas podemos consultar seus itens pelo índice de posição com a notação `[índice]`, sendo que **a primeira posição é a posição 0**:
+Ou consultar o caractere em uma certa posição pelo índice:
 
 ```python
-palavra = 'silly walk'
-print(palavre[0])  # 's' a primeira letra
-print(palavre[1])  # 'i' a segunda letra
-print(palavre[-1])  # 'k' a última letra
-
-alguns_pares = (2, 4, 6, 8, 10, 12)
-print(alguns_pares[0])  # 2 o primeiro número
-print(alguns_pares[1])  # 4 o segundo número
-print(alguns_pares[-1]) # 12 o último número
+frase = 'silly walk'
+print(frase[0])  # 's' a primeira letra
+print(frase[1])  # 'i' a segunda letra
+print(frase[-1])  # 'k' a última letra - posição len() - 1
 ```
+
 ## Alterando itens
 
 Estruturas mutáveis como listas, podem ter seus itens alterados, incluídos ou removidos.
@@ -54,16 +77,16 @@ del lista[1] # remove o segundo item (índice 1)
 print(lista) # resultado:
 # [1976, 1994, 2013, 2020]
 
-a = lista.pop() # remove e devolve o último item (índice -1)
+a = lista.pop() # remove e nos entrega ('devolve') o último item
 print(a) # 2020
 print(lista) # [1976, 1994, 2013]
 
-b = lista.pop(1) # remove e devolve o segundo item
+b = lista.pop(1) # remove e devolve para atribuição o segundo item
 print(b) # 1994
 print(lista) # [1976, 2013]
 ```
 
-Tuplas e strings são imutáveis, não permitem este tipo de operação.
+Tuplas e strings são imutáveis, não permitem estes tipos de operação.
 
 ## Fatias
 
