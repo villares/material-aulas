@@ -22,7 +22,7 @@ Você pode [colaborar com este material didático aberto](/como-contribuir.md)! 
 
 - [Interação com teclado e mouse](/Processing-Python/input_py.md)
 
-- [Sequências e aços de repetição (iteração)](/Processing-Python/lacos_py.md)
+- [Sequências e laços de repetição (iteração)](/Processing-Python/lacos_py.md)
 
 - [Declarando novas funções](/Processing-Python/funcoes_py.md)
   - [Funções recursivas](/Processing-Python/recursao_py.md)
