@@ -21,14 +21,15 @@ Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 - [Movimento, uma animação simples usando `setup()` e `draw()`](/Processing-Python/movimento_py.md)
   - [Escopo de variáveis (local e global)](/Processing-Python/escopo_py.md)
 
-- [Números sorteados (pseudo-aleatórios)](/Processing-Python/numeros-aleatorios_py.md)
+- [Aleatoriedade,`random` e números 'sorteados'](/Processing-Python/numeros-aleatorios_py.md)
 
 - [Interação com teclado e mouse](/Processing-Python/input_py.md)
 
 - [Sequências e laços de repetição (iteração)](/Processing-Python/lacos_py.md)
   - [Mais sobre sequências e fatias](/Processing-Python/mais_sequencias.md)
+  <!-- - [Desenhando grades com laços aninhados](/Processing-Python/grades.md) -->
   
-- [Textos: no programa, no console e na tela](https://github.com/villares/material-aulas/blob/master/Processing-Python/strings_py.md)
+- [Textos no programa, no console e na tela](https://github.com/villares/material-aulas/blob/master/Processing-Python/strings_py.md)
   - [Trabalhando com fontes e outros ajustes do texto](/Processing-Python/tipografia.md)
 
 - [Declarando novas funções](/Processing-Python/funcoes_py.md)
@@ -40,6 +41,7 @@ Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 
 #### Orientação a Objetos
 
+<!-- - [Uma classe de partículas simples](/Processing-Python/particulas.md) -->
 - [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/mestrado/bandeirinhas/)
 
 #### Exportação
