@@ -2,7 +2,7 @@
 
 ## Tamanho, comprimento (*lenght*)? número de itens: len()
 
-Listas e tuplas são algumas das mais comuns estruturas de dados para manter coleções ordenadas de itens no Python. 
+Listas e tuplas são das mais comuns estruturas de dados para coleções ordenadas de itens no Python. 
 
 Podemos obter o tamanho, isto é, o número de itens, de praticamente qualquer estrutura de dados em Python (ordenada ou não) usando a funçao `len()`. Por exemplo:
 
@@ -17,7 +17,7 @@ n_paises = len(codigos_de_pais) # lista baseada em https://www.iso.org/obp/ui/#s
 print(n_paises) # imprime 249
 ```
 
-## Consultando itens de uma sequência
+## Consultando individualmente itens de uma sequência
 
 Quando temos uma lista, tupla ou outra coleção ordenada, podemos consultar seus itens pelo índice de posição com a notação `[i]`, sendo que **a primeira posição é a posição de índice 0**, e a última é a que tem como índice o número total de itens menos 1:
 
@@ -46,13 +46,14 @@ for letra in nome:
 # o
 ```
 
-Ou consultar o caractere em uma certa posição pelo índice:
+Podemos consultar o comprimento do *string* ou o caractere em uma certa posição pelo índice:
 
 ```python
 frase = 'silly walk'
-print(frase[0])  # 's' a primeira letra
-print(frase[1])  # 'i' a segunda letra
-print(frase[-1])  # 'k' a última letra - posição len() - 1
+print(len(frase)) # 10 
+print(frase[0])   # 's' a primeira letra
+print(frase[1])   # 'i' a segunda letra
+print(frase[-1])  # 'k' a última letra - posição (len(frase) - 1)
 ```
 
 ## Alterando itens
@@ -93,6 +94,10 @@ Tuplas e strings são imutáveis, não permitem estes tipos de operação.
 Com a notação `[inicio:parada]`, `[:parada]`, `[inicio:]`, ou ainda `[inicio:parada:passo]`, podemos obter subsequências de uma sequência.
 
 ```python
+nums = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, -1) # uma tupla
+print(nums[1:9:2]) # início: 1, parada: 9 (não incluso), passo: 2
+# resultado: (1, 3, 5, 7)
+
 nome = 'Saskia Freeke'
 a = nome[:6] # do início até a sexta letra, sétimo item (6) não incluso.
 print(a) # resultado: 'Saskia'posição
@@ -103,13 +108,13 @@ print(b) # resultado: 'Freeke'
 print(nome[1:12:2]) # início na segunda letra, até a décima, de duas em duas.
 # resultado: 'akaFek'
 
-print("01234567890"[1:9:2]) # início: 1, parada: 9 (não incluso), passo: 2
-# resultado: '1357'
-
 c = nome.split(' ')  # .split(delimitador) devolve uma lista 
-print(c) # com os trechos entre os delimitadores:
+print(c)             # com os trechos de texto entre os delimitadores:
 # ['Saskai', 'Freele']
 ```
+### Cópias e inversões
+
+#### Uma fatia que é uma cópia da sequência
 
 A notação `[:]` produz uma cópia completa da sequência. O que é especialmente útil para sequências mutáveis. Uma vez que a atribuição, por exemplo de uma lista, a mais de uma variável não produz cópias, mas sim varios nomes apontando para a mesma lista na memória do computador:
 
@@ -128,5 +133,16 @@ print(b) # [0, 1, 2, 4]
 print(a) # [0, 1, 2, 3, 4]
 ```
 
+#### Invertendo uma sequência
+
+Uma das maneiras mais comuns de se obter uma cópia invertida de uma sequência é utilizando a notação de fatiamento com um passo -1: `[::-1]
+
+```python
+a = [0, 1, 2, 3, 4]
+b = a[::-1]
+print(b)  # imprime: [4, 2, 1, 0]
+
+print("Alexandre"[::-1]) # imprime: erdnaxelA
+```
 
 
