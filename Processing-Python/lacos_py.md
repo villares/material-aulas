@@ -23,8 +23,11 @@ for n in range(10): # para cada número do range(10)
 # 8
 # 9
 ```
+É tradicional usar os nomes de variável `i`, `j` e `k`  para armazenar os números de 'contadores' ou 'índices' que vão variando a cada volta do laço for. Veja mais um exemplo usando `range(10)` mas com efeito visual:
 
-Por vezes nem vamos usar os números! Só queremos repetir a operação, então em vez de guardar o número em uma variável `n` ou `i` usamos uma variável com o curioso nome`_` (*underscore*, ou como muitos falam 'underline'). Isso é uma dica de quem está escrevendo o código de que o valor da variável vai ser desprezado. Exemplo:
+![for_i](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/for_i.png)
+
+Algumas vezes nem vamos usar os números! Só queremos repetir a operação, então em vez de guardar o número em uma variável `n` ou `i` usamos uma variável com o curioso nome`_` (*underscore*, ou como muitos falam 'underline'). Isso é uma dica de quem está escrevendo o código de que o valor da variável vai ser desprezado. Exemplo:
 
 ```python
 for _ in range(3): # repita 3 vezes!
@@ -36,7 +39,7 @@ for _ in range(3): # repita 3 vezes!
 # viva!
 ``` 
 
-Vamos estudar agora duas estruturas de dados muito usadas em Python para guardar coleções ordenadas, ou sequências, de valores: tupla (*tuple*) e lista (*list*).
+Vamos estudar agora duas estruturas de dados muito usadas em Python para guardar coleções ordenadas, ou sequências de valores: tupla (*tuple*) e lista (*list*).
 
 Exemplo de uma tupla:
 
