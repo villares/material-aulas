@@ -2,7 +2,7 @@
 
 Baseado no tutorial [py.processing.org/tutorials/transform2d/](https://py.processing.org/tutorials/transform2d/)
 
-## Um primeiro exemplo
+## Um primeiro exemplo de `translate()`
 
 Veja esta versão do código de uma função que desenha uma 'casinha' somando a posição `x, y` nas coordenadas dos objetos.
 
@@ -29,10 +29,6 @@ Note que para que funcione corretamente, é preciso usar `pushMatrix()`, que 'gu
 
 Saiba que ao final da execução do `draw()`, um frame do Processing, o sistema de coordenadas original é restaurado. E isso pode ser feito a qualquer momento também com `resetMatrix()`. 
 
-## Rotação
+## Rotação com `rotate()`
 
 Além da translação que move a grade, é possível girar o sistema de coordenadas com a função `rotate()` com um ângulo em radianos. A função gira o sistema de coordenadas em torno da origem (0, 0) corrente, e por conta disso é em geral usada após e em conjunto com `pushMatrix()`, `translate()`, e sendo seguida por `popMatrix()` ao final do desenho.
-
-
-
-
