@@ -71,17 +71,17 @@ Com a notação `[inicio:parada]`, `[:parada]`, `[inicio:]`, ou ainda `[inicio:p
 
 ```python
 nome = 'Saskia Freeke'
-a = nome[:6]
-print(a) # resultado: 'Saskia'
+a = nome[:6] # do início até a sexta letra, sétimo item (6) não incluso.
+print(a) # resultado: 'Saskia'posição
 
-b = nome[7:]
+b = nome[7:] # início na oitava posição (7) até o final.
 print(b) # resultado: 'Freeke' 
 
-print(nome[1:12:2]) # resultado:
-# 'akaFek'
+print(nome[1:12:2]) # início na segunda letra, até a décima, de duas em duas.
+# resultado: 'akaFek'
 
-print("01234567890"[1:9:2]) # resultado:
-# '1357'
+print("01234567890"[1:9:2]) # início: 1, parada: 9 (não incluso), passo: 2
+# resultado: '1357'
 
 c = nome.split(' ')  # .split(delimitador) devolve uma lista 
 print(c) # com os trechos entre os delimitadores:
