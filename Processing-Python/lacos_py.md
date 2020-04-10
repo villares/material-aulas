@@ -23,7 +23,7 @@ for n in range(10): # para cada número do range(10)
 # 8
 # 9
 ```
-É tradicional usar os nomes de variável `i`, `j` e `k`  para armazenar os números de 'contadores' ou 'índices' que vão variando a cada volta do laço for. Veja mais um exemplo usando `range(10)` mas com efeito visual:
+É tradicional usar os nomes de variável `i`, `j` e `k`  para armazenar os números de 'contadores' ou 'índices' que vão variando a cada volta do laço `for`. Veja mais um exemplo usando `range()` mas com efeito visual:
 
 ![for_i](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/for_i.png)
 
