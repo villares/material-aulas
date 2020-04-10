@@ -2,16 +2,17 @@
 
 **Processing modo Python** é uma ferramenta livre de programação com a sintaxe de Python, que inclui o vocabulário, recursos de desenho e manipulação de imagens, de Processing.
 
-#### Como colaborar/contribuir?
+### Como colaborar e contribuir?
 
 Este material didático é aberto. Você pode ler as [instruções para colaborar com este repositório](/como-contribuir.md)!
 
 Abra "issues" (apontando problemas, sugerindo assuntos e melhorias), contribua com "Pull Requests" no repositório ou ainda [faça uma pequena doação](https://gumroad.com/villares) "pagando alguns cafés".
 
-### Assuntos
+### [O que é e como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)
 
-**[O que é e como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)**
-<b>Caso não possa instalar, experimente no navegador:<br>- Triket.io https://trinket.io/python/cfaf743794<br>- SkulptIDE do prof. Claudio Esperança: http://tiny.cc/processing_python</b>
+###### Caso não possa instalar, experimente no navegador:<br>- Triket.io https://trinket.io/python/cfaf743794<br>- SkulptIDE do prof. Claudio Esperança: http://tiny.cc/processing_python
+
+### Assuntos
 
 - [Primeiros passos e desenho básico](/Processing-Python/desenho-basico_py.md)
 
