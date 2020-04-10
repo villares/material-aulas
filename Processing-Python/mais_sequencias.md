@@ -1,4 +1,4 @@
-# Mais sobre sequências e suas fatias
+# Mais sobre sequências e fatias
 
 ## Strings são sequencias de caracteres
 
