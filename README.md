@@ -7,7 +7,9 @@
 
 ### Como colaborar e contribuir?
 
-Este material didático é aberto. Leia as [instruções para colaborar com este repositório](/como-contribuir.md)! Abra *issues* (apontando problemas, sugerindo assuntos e melhorias), contribua com *Pull Requests* para repositório ou ainda [faça uma pequena doação](https://gumroad.com/villares) "pagando alguns cafés".
+Este material didático é aberto. Leia as [instruções para colaborar com este repositório](/como-contribuir.md)! Abra [*issues*](https://github.com/villares/material-aulas/issues) apontando problemas, sugerindo assuntos e melhorias. Contribua com *Pull Requests* para repositório. 
+
+Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 
 ### Assuntos
 
