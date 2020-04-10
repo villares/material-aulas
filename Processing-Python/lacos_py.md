@@ -6,11 +6,11 @@ Mas antes de chegar nas repetições é útil saber como criar rapidamente sequ�
 
 ## Produzindo sequências de inteiros com `range()`
 
-Executando a função com o argumento 10, `range(10)`, vamos obter uma lista de 10 números inteiros, você consegue imaginar quais são?
+Executando a função `range()` com o argumento 10, `range(10)`, vamos obter uma lista de 10 números inteiros, você consegue imaginar quais são?
 
 A resposta é `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`
 
-Usando a estrutura `for` podemos fazer uma ação para cada item de uma sequência ou de uma coleção de valores dita 'iterável', o que inclui tuplas e listas. Em cada ciclo um item por vez da coleção é atribuido a uma variável, como neste exemplo:
+Usando a estrutura `for` podemos fazer uma ação para cada item de um 'iterável', o que inclui tuplas e listas. Em cada ciclo um item por vez da coleção é atribuido a uma variável, como neste exemplo:
 
 ```python
 for n in range(10): # para cada número do range(10) 
