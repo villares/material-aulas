@@ -23,11 +23,24 @@ for n in range(10): # para cada número do range(10)
 # 8
 # 9
 ```
-É tradicional usar os nomes de variável `i`, `j` e `k`  para armazenar os números de 'contadores' ou 'índices' que vão variando a cada volta do laço `for`. Veja mais um exemplo usando `range()` mas com efeito visual:
+É tradicional usar os nomes de variável `i`, `j` e `k`  para armazenar os números de 'contadores' ou 'índices' que vão variando a cada volta do laço `for`. Veja mais um exemplo usando `range()` mas com efeito visual (veja se consegue imaginaar a sequência em que as linhas são desenhadas):
 
-![for_i](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/for_i.png)
+```python
+for i in range(14):
+    y = 10 + 5 * i
+    line(30, y, 80, y)
+```
 
-Algumas vezes nem vamos usar os números! Só queremos repetir a operação, então em vez de guardar o número em uma variável `n` ou `i` usamos uma variável com o curioso nome`_` (*underscore*, ou como muitos falam 'underline'). Isso é uma dica de quem está escrevendo o código de que o valor da variável vai ser desprezado. Exemplo:
+![linhas paralelas](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/lines.png)
+
+A função `range()` aceita também argumentos na forma `range(início, parada, passo)`, *início* é o primeiro número fornecido, e a sequência para antes do número *parada*, aumentando com o número *passo*, veja este exemplo com o mesmo resultado visual do código anterior:
+
+```python
+for y in range(10, 80, 5): # y começa valendo 10 e termina valendo 75
+    line(30, y, 80, y)     # y aumenta de 5 em 5
+```
+
+Algumas vezes nem vamos usar os números! Só queremos repetir a operação, então em vez de guardar o número em uma variável nomeada com `x`, `y`, `n` ou `i` usamos uma variável com o curioso nome`_` (*underscore*, ou como muitos falam 'underline'). Isso é uma dica de quem está escrevendo o código de que o valor da variável vai ser desprezado. Exemplo:
 
 ```python
 for _ in range(3): # repita 3 vezes!
@@ -95,21 +108,14 @@ def setup():
 
 ![resultado](https://i.imgur.com/TL0BBId.png)
 
-## Outros exemplos
-
-### Linhas paralelas 
-
-```python
-for y in range(10, 80, 5):
-  line(30, y, 80, y) 
-```
+## Outras ideias
 
 ### Laços "aninhados" par fazer uma grade
 
 ```python
-for i in range(0, 80, 10):
-  for j in range(0, 80, 10): 
-    ellipse(i, j, 5, 5) 
+for x in range(0, 80, 10):
+  for y in range(0, 80, 10): 
+    ellipse(x, y, 5, 5) 
 ```
 
 ### Glossário
