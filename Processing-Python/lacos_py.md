@@ -136,7 +136,7 @@ def setup():
         fill(0)
         text(label, x + 15, y)
 ```
-![sketch_2020_04_10a](https://abav.lugaralgum.com/sketch-a-day/2020/sketch_2020_04_10a/sketch_2020_04_10a.png)
+![sketch_2020_04_10a](https://abav.lugaralgum.com/sketch-a-day/2020/sketch_2020_04_10a/enumerate.png)
 
 ## Outras ideia
 
