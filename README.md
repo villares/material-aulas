@@ -51,6 +51,7 @@ Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 
 #### Questões mais avançadas da ferramenta
 
+- [Exportando um aplicativo independente](https://github.com/villares/material-aulas/blob/master/Processing-Python/export_application.md)
 - [Usando várias abas no IDE](/Processing-Python/modulos.md)
 - [Sobre o Python 2 e alguns recursos do Python 3](/Processing-Python/futuro.md)
 
