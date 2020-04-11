@@ -7,10 +7,21 @@ Há mais de uma estratégia possível para exportar imgagens em movimentoe, seja
 Podemos usar `saveFrame()` dentro do `draw()`, como neste exemplo:
 
 ```pyde
+diameter = 1
+
+def setup():
+    size(200, 200)
+    smooth()
+
 def draw():
-    background(0)
-    # desenho aqui
-    if frameCount < 100:
+    # o desenho da aminação vai aqui
+    global diameter
+    ellipse(50, 50, diameter, diameter)
+    diameter = diameter + 1
+    print(frameCount)
+    
+    # e no final do draw()
+    if frameCount < 250:
         saveFrame('imagem####.tga')
     else:
         exit()
