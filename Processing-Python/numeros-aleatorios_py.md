@@ -28,9 +28,11 @@ d20 = int(random(20))
 
 ### O módulo `random` da biblioteca padrão do Python
 
-Além de prover uma função `random()`, parecida com fornecida pelo Processing, da qual não vamos tratar aqui, o módulo `random` de Python nos oferece as funções `choice()` e `sample()`, que selecionam itens de uma coleção:
+Além de prover uma função `random()`, parecida com fornecida pelo Processing, da qual não vamos tratar aqui, o módulo `random` de Python nos oferece as funções `choice()`, `sample()`, e `shuffle()`.
 
 #### selecionando um único item
+
+A função `choice(colection)` devolve um item de uma coleção (tupla, lista, conjunto).
 
 ```python
 from random import choice
@@ -48,7 +50,7 @@ def draw():um
 
 #### selecionando uma amostra (sem repetição de itens)
 
-Usamos `sample(colecao, k)` onde `k` é o número de itens (e não pode ser maior ou que tamanho da coleção).
+*Sample* significa amostra, e usamos `sample(colection, k)` onde `k` é o tamanho da amostra (e não pode ser maior que tamanho da população) para obter uma lista com `k` itens.
 
 ```python
 from random import sample
@@ -66,14 +68,35 @@ duas_cores = sample(cores, 2)
 print(len(duas_cores))  # resultado: 2
 ```
 
+#### Misturando a ordem de uma sequência mutável
+
+Ao executar `shuffle(sequence)` fazemos com que `sequence`, que não pode ser uma sequência vazia, seja reordenada.
+
+```python
+from random import shuffle
+
+letras = ['A', 'B', 'C', 'D', 'E']
+
+shuffle(letras)
+
+print(letras)
+
+# a cada execução uma ordem diferente:
+# ['C', 'B', 'D', 'A', 'E']
+# ['D', 'C', 'E', 'B', 'A']
+# ...
+```
+A coleção precisa ser ordenada e mutável, como uma lista, não pode ser uma tupla, que é imutável, ou um conjunto que não guarda a ordem dos elementos.
+
 ### Mais sobre pseudo-aleatoriedade, sementes.
 
 Como os números produzidos por `random()` não são verdadeiramente aleatórios, e sim produzidos por algorítmos geradores determinísticos, é possível fixar um parâmetro inical, conhecido como semente (*seed*), o que permite reproduzir novamente a mesma sequência de números.
 
 ```
 TODO:
-- Exemplos visuais, caramba!
+- Exemplos mais visuais, caramba!
 - Exemplo de randomSeed() e random.seed()
+- shuffle()
 ```
 
 ---
