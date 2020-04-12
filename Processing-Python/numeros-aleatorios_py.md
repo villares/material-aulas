@@ -2,7 +2,7 @@
 
 ## Mais precisamente números pseudo-aleatórios
 
-Computadores são máquinas determinísticas e não conseguem realmente 'sortear' um número, utilizamos algorítmos que produzem sequências de números praticamente indistinguíveis de sequências verdadeiramente aleatórias. Para certas aplicações de seguração, como gerar certos tipos de chaves criptográficas, é possível incluir 'fontes externas de entropia' de forma a tornar garantir resultados mais imprevisíveis.
+Computadores são máquinas determinísticas e não conseguem realmente 'sortear' um número, utilizamos algorítmos que produzem sequências de números praticamente indistinguíveis de sequências verdadeiramente aleatórias. Para aplicações de seguraçã, como gerar certos tipos de chaves criptográficas, é possível incluir 'fontes externas de entropia', de forma a garantir resultados mais imprevisíveis.
 
 ### A função `random()` do Processing
 
@@ -30,7 +30,7 @@ d20 = int(random(20))
 
 Além de prover uma função `random()`, parecida com fornecida pelo Processing, da qual não vamos tratar aqui, o módulo `random` de Python nos oferece as funções `choice()` e `sample()`, que selecionam itens de uma coleção:
 
-#### `elecionando um único item
+#### selecionando um único item
 
 ```python
 from random import choice
@@ -48,11 +48,22 @@ def draw():um
 
 #### selecionando uma amostra (sem repetição de itens)
 
+Usamos `sample(colecao, k)` onde `k` é o número de itens (e não pode ser maior ou que tamanho da coleção).
+
 ```python
 from random import sample
 
-duas_Cores = sample
+cores = (color(200, 0, 0),
+         color(200, 200, 0),
+         color(0, 200, 200),
+         color(200, 0, 200),
+         color(0, 200, 0),
+         color(0, 0, 200))
 
+# uma lista com duas cores
+duas_cores = sample(cores, 2)
+
+print(len(duas_cores))  # resultado: 2
 ```
 
 ### Mais sobre pseudo-aleatoriedade, sementes.
