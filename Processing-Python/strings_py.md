@@ -6,25 +6,25 @@ Para expressar strings no corpo de um programa podemos os envolver em aspas dupl
 
 ```pyde
 frase = 'Eu me chamo Alexandre'
-meu_nome = "Alexandre 'o grande' bobo"
+meu_nome = "Alexandre 'o grande' Tosco"
 ```
 
 Podemos *concatenar*, isto é somar strings em justaposição, com o operador `+`:
 
 ```pyde
-primeiro_nome = 'Alexandre'
-sobrenome = 'Villares'
+primeiro_nome = 'John'
+sobrenome = 'Conway'
 nome = primeiro_nome + ' ' + sobrenome
-# resultado: nome = 'Alexandre Villares'
+# resultado: nome = 'John Conway'
 ```
 
-Mas é não é possível somar um número a um texto ou o contrário. Note neste caso como `'10'` é entendido como texto, string, e não como o número `10`:
+Mas é não é possível somar um número a um texto ou o contrário. Note neste caso como `'10'` é entendido como texto, *string*, e não como o número `10`:
 
 ```pyde
 a = '10' + 5  # TypeError: cannot concatenate 'str' and 'int' objects
 ```
 
-### Mostrando texto no console
+### Mostrando valores no console
 
 Usamos `print()` ou `println()` para *imprimir* na parte de baixo do IDE, o chamado console. Essas funções convertem automaticamente outros tipos de valores em string, uma representação textual ou imprime um referência ao objeto passado.
 
