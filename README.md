@@ -46,8 +46,9 @@ Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 
 #### Exportação
 
-- [Exportando imagens](/Processing-Python/exportando_imagem.md)
-- [Exportando PDF](/Processing-Python/exportando_pdf.md)
+- [Exportando imagens (bitmap/raster](/Processing-Python/exportando_imagem.md)
+- [Exportando PDF (saída vetorial)](/Processing-Python/exportando_pdf.md) (para obter uma saída vetorial)
+- [Exportando animações (vídeos ou GIF)](/Processing-Python/exportar_animacoes.md) (para produzir vídeos ou GIFs)
 
 #### Questões mais avançadas da ferramenta
 
