@@ -23,7 +23,7 @@ Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 
 - [Aleatoriedade: `random` e números 'sorteados'](/Processing-Python/numeros-aleatorios_py.md)
 
-- [Interação com teclado e mouse](/Processing-Python/input_py.md)
+- [Interação: input com teclado e mouse](/Processing-Python/input_py.md)
 
 - [Sequências e laços de repetição (iteração)](/Processing-Python/lacos_py.md)
   - [Mais sobre sequências e fatias](/Processing-Python/mais_sequencias.md)
@@ -47,8 +47,8 @@ Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 #### Exportação
 
 - [Exportando imagens (bitmap/raster](/Processing-Python/exportando_imagem.md)
-- [Exportando PDF (saída vetorial)](/Processing-Python/exportando_pdf.md) (para obter uma saída vetorial)
-- [Exportando animações (vídeos ou GIF)](/Processing-Python/exportar_animacoes.md) (para produzir vídeos ou GIFs)
+- [Exportando PDF (saída vetorial)](/Processing-Python/exportando_pdf.md)
+- [Exportando animações (vídeos ou GIF)](/Processing-Python/exportar_animacoes.md) 
 
 #### Questões mais avançadas da ferramenta
 
