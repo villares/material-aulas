@@ -3,7 +3,7 @@
 **Processing modo Python** é uma ferramenta livre de programação com a sintaxe de Python, que inclui o vocabulário, recursos de desenho e manipulação de imagens, de Processing.
 
 #### [O que é e como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)
-###### Caso não possa instalar, experimente no navegador:<br>- Triket.io https://trinket.io/python/cfaf743794<br>- SkulptIDE do prof. Claudio Esperança: http://tiny.cc/processing_python
+###### Caso não possa instalar, experimente no navegador:<br>- Triket.io https://trinket.io/python/cfaf743794<br>- SkulptIDE do prof. Claudio Esperança: http://tiny.cc/processing_python<br>Conheça também o projeto [pyp5js](https://github.com/berinhard/pyp5js) que converte Python em JavaScript+P5js
 
 ### Como colaborar e contribuir?
 
