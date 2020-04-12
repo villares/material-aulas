@@ -96,7 +96,7 @@ Como os números produzidos por `random()` não são verdadeiramente aleatórios
 TODO:
 - Exemplos mais visuais, caramba!
 - Exemplo de randomSeed() e random.seed()
-- shuffle()
+- noise() - merece uma página especial
 ```
 
 ---
