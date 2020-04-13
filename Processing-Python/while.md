@@ -29,3 +29,5 @@ def estrela(x, y, raio_a, raio_b, num_pontas):
         ang += passo
     endShape(CLOSE)
 ```
+
+![estrela](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/estrela.png)
