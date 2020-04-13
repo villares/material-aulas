@@ -51,7 +51,7 @@ def draw():
 
 def grid(colunas, filas, tam_col=1, tam_fil=1):
     """
-    Devolve um iterator tuplas das coordenadas.
+    Devolve um iterador que gera tuplas das coordenadas.
     Exemplo de uso:
     #    for x, y in grid(10, 10, 12, 12):
     #        rect(x, y, 10, 10)
