@@ -1,14 +1,27 @@
 # Sequências e repetições
 
-Uma das coisas mais comuns que fazemos em programção é pedir ao computador para repetir uma ação varias vezes. Para fazer isso usamos muitas vezes os chamados laços de repetição (*loops*) e o processo também é chamado de iteração (note que não é i**n**teração, que é outra coisa).
+É muito comum em programação pedir ao computador que repita uma ação varias vezes, possivelmente com variações. Para fazer isso frequentemente usamos os chamados laços de repetição (*loops*) e o processo também pode ser chamado de iteração (note que não é i**n**teração, que é outra coisa).
 
-Mas antes de chegar nas repetições é útil saber como criar rapidamente sequências de valores. Existe uma função que produz valores inteiros, o `range()`, que no Processing modo Python devolve uma lista (no Python 3 devolve um 'iterador' mas isso não importa agora).
+Antes de chegar na execução de repetições propriamente, é útil saber como criar rapidamente sequências de valores. Existe uma função em Python que produz valores inteiros, o `range()`, que no Processing modo Python devolve uma lista (no Python 3 devolve um 'iterador' mas isso não importa agora).
 
 ## Produzindo sequências de inteiros com `range()`
 
-Executando a função `range()` com o argumento 10, `range(10)`, vamos obter uma lista de 10 números inteiros, você consegue imaginar quais são?
+Executando a função `range()` com o argumento 10, `range(10)`, vamos obter uma lista de 10 números inteiros.
 
-A resposta é `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`
+* você consegue imaginar quais são?
+<details>
+  <summary>clique para a resposta!</summary>
+  
+A resposta é `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`)
+</details>
+
+
+<!-- details>
+  <summary>clique para a resposta!</summary>
+  
+A resposta é `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`)
+</details -->
+
 
 ## Laços de repetição com `for`
 
