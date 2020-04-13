@@ -179,10 +179,12 @@ def setup():
 Laços "aninhados" permitem fazer grades de filas e colunas de elementos.
 
 ```python
-for x in range(0, 80, 10):
-  for y in range(0, 80, 10): 
+for x in range(5, 100, 10):  # x: 5, 15, 25, 35 ... 95
+  for y in range(5, 100, 10):  # y: 5, 15, 25, 35 ... 95
     ellipse(x, y, 5, 5) 
 ```
+![mini grade](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/mini-grade.png)
+
 #### [Laços de repetição com `while`](https://github.com/villares/material-aulas/blob/master/Processing-Python/while.md) 
 
 Uma outra estrutura de repetição.
