@@ -1,65 +1,117 @@
 # Sequências e repetições
 
-Uma das coisas mais comuns que fazemos em programção é pedir ao computador para repetir uma ação varias vezes. Para fazer isso usamos muitas vezes os chamados laços de repetição (*loops*) e o processo também é chamado de iteração (note que não é i**n**teração, que é outra coisa).
+É muito comum em programação pedir ao computador que repita uma ação varias vezes, possivelmente com variações. Para fazer isso frequentemente usamos os chamados laços de repetição (*loops*) e o processo também pode ser chamado de iteração (note que não é i**n**teração, que é outra coisa).
 
-Mas antes de chegar nas repetições é útil saber como criar rapidamente sequências de valores. Existe uma função que produz valores inteiros, o `range()`, que no Processing modo Python devolve uma lista (no Python 3 devolve um 'iterador' mas isso não importa agora).
+Antes de chegar na execução de repetições propriamente, é útil saber como criar rapidamente sequências de valores. Existe uma função em Python que produz valores inteiros, o `range()`, que no Processing modo Python devolve uma lista (no Python 3 devolve um 'iterador' mas isso não importa agora).
 
 ## Produzindo sequências de inteiros com `range()`
 
-Executando a função `range()` com o argumento 10, `range(10)`, vamos obter uma lista de 10 números inteiros, você consegue imaginar quais são?
+Executando a função `range()` com o argumento 10, `range(10)`, vamos obter uma lista de 10 números inteiros.
 
-A resposta é `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`
+#### Você consegue imaginar quais são?
+<details>
+  <summary>clique aqui para a resposta</summary>
+  
+`[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`
+</details>
+
+#### Qual você acha que é o resultado de `range(1, 11)`?
+<details>
+  <summary>clique aqui para a resposta</summary>
+  
+`[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`
+
+Podemos usar `range(parada)` ou `range(inicio, parada)`, o número início está incluso, o número de parada não é incluso.
+</details>
+
+
+## Laços de repetição com `for`
 
 Usando a estrutura `for` podemos fazer uma ação para cada item de um 'iterável', o que inclui tuplas e listas. Em cada ciclo um item por vez da coleção é atribuido a uma variável, como neste exemplo:
 
-```python
+```pyde
 for n in range(10): # para cada número do range(10) 
     print(n)        # n vai ter um valor diferente a cada ciclo
-
-# Resutado no console:
-# 0
-# 1
-# 2
-# ... suprimi pra não ficar muito longo
-# 8
-# 9
 ```
+<details>
+  <summary>Veja o resutado no console</summary>
+
+```
+0
+1
+2
+3
+4
+5
+6
+7
+7
+9
+```
+</details>
 
 É tradicional usar certos nomes de variável `i`, `j` e `k`, por exemplo, para armazenar números de 'contadores' ou 'índices' que vão variando a cada volta do laço `for`.
 
-Agora outro exemplo usando `range()` com efeito visual. Veja se consegue imaginar os valores de y e a sequência em que as linhas são desenhadas):
-
-```python
+Agora outro exemplo usando `range()` com efeito visual.
+```pyde
 for i in range(14):
     y = 10 + 5 * i
     line(30, y, 80, y)
 ```
 
+#### Quais serão os valores de y e como fica o desenho das linhas?
+<details>
+  <summary>Veja o resutado</summary>
+
 ![linhas paralelas](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/lines.png)
+```
+i: 0   y: 10 # início
+i: 1   y: 15 # 10 + 5 * 1
+i: 2   y: 20
+i: 3   y: 25
+...
+i: 13  y: 75 # final
+```
+</details>
+
+#### Você conseguiria escrever um `for` para desenhar as linhas na vertical?
+
+### Repetições simples
+
+Algumas vezes nem vamos usar os números! Só queremos repetir a operação, então em vez de guardar o número em uma variável nomeada com `x`, `y`, `n` ou `i` usamos uma variável com o curioso nome`_` (*underscore*, ou como muitos falam 'underline'). Isso é uma dica de quem está escrevendo o código de que o valor da variável vai ser desprezado. Exemplo:
+
+```pyde
+for _ in range(3): # repita 3 vezes!
+   print("viva!")
+```   
+
+<details>
+  <summary>Veja o resutado no console</summary>
+
+```
+viva!
+viva!
+viva!
+```
+</details>
+
+#### Você consegue imaginar um desenho usando esse tipo de repetição e números [pseudo-aleatórios](https://github.com/villares/material-aulas/blob/master/Processing-Python/numeros-aleatorios_py.md) com `random()`?
+
+## Mais sobre o `range()`
 
 A função `range()` aceita também argumentos na forma `range(início, parada, passo)`, *início* é o primeiro número fornecido, e a sequência para antes do número *parada*, aumentando com o número *passo*, veja este exemplo com o mesmo resultado visual do código anterior:
 
 ```python
-for y in range(10, 80, 5): # y começa valendo 10 e termina valendo 75
-    line(30, y, 80, y)     # y aumenta de 5 em 5
+for x in range(10, 80, 5): # x começa valendo 10 e termina valendo 75
+    line(x, 30, x, 80)     # x aumenta de 5 em 5
 ```
 
-- Você conseguiria escrever um `for` para desenhar algumas linhas na vertical?
+#### Você consegue imaginar o resultado visual?
+<details>
+  <summary>Veja o resutado</summary>
 
-## Repetições simples
-
-Algumas vezes nem vamos usar os números! Só queremos repetir a operação, então em vez de guardar o número em uma variável nomeada com `x`, `y`, `n` ou `i` usamos uma variável com o curioso nome`_` (*underscore*, ou como muitos falam 'underline'). Isso é uma dica de quem está escrevendo o código de que o valor da variável vai ser desprezado. Exemplo:
-
-```python
-for _ in range(3): # repita 3 vezes!
-   print("viva!")
-   
-# resultado no console:
-# viva!
-# viva!
-# viva!
-``` 
-- Você consegue imaginar um desenho usando esse tipo de repetição e números [pseudo-aleatórios](https://github.com/villares/material-aulas/blob/master/Processing-Python/numeros-aleatorios_py.md) com `random()`?
+![verticais](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/mini-verticais.png)
+</details>
 
 ## Um pouco sobre listas e tuplas
 
@@ -120,7 +172,7 @@ def setup():
 ![resultado](https://i.imgur.com/TL0BBId.png)
 
 
-## Enumerando os itens da sequência
+### Enumerando os itens da sequência
 
 Ao iterarmos por uma sequência, pode ser útil obter ao mesmo tempo que o item, o índice do item na sequência.
 Isso é chamado de enumeração, e usamos a função enumerate() como neste exemplo:
@@ -140,16 +192,17 @@ def setup():
 
 ## Assuntos relacionados
 
-
 #### [Desenhando Grades](https://github.com/villares/material-aulas/blob/master/Processing-Python/grades.md)
 
 Laços "aninhados" permitem fazer grades de filas e colunas de elementos.
 
 ```python
-for x in range(0, 80, 10):
-  for y in range(0, 80, 10): 
+for x in range(5, 100, 10):  # x: 5, 15, 25, 35 ... 95
+  for y in range(5, 100, 10):  # y: 5, 15, 25, 35 ... 95
     ellipse(x, y, 5, 5) 
 ```
+![mini grade](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/mini-grade.png)
+
 #### [Laços de repetição com `while`](https://github.com/villares/material-aulas/blob/master/Processing-Python/while.md) 
 
 Uma outra estrutura de repetição.
