@@ -10,6 +10,8 @@ Executando a função `range()` com o argumento 10, `range(10)`, vamos obter uma
 
 A resposta é `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`
 
+## Laços de repetição com `for`
+
 Usando a estrutura `for` podemos fazer uma ação para cada item de um 'iterável', o que inclui tuplas e listas. Em cada ciclo um item por vez da coleção é atribuido a uma variável, como neste exemplo:
 
 ```python
@@ -25,6 +27,8 @@ for n in range(10): # para cada número do range(10)
 # 9
 ```
 
+
+
 É tradicional usar certos nomes de variável `i`, `j` e `k`, por exemplo, para armazenar números de 'contadores' ou 'índices' que vão variando a cada volta do laço `for`.
 
 Agora outro exemplo usando `range()` com efeito visual. Veja se consegue imaginar os valores de y e a sequência em que as linhas são desenhadas):
@@ -37,16 +41,7 @@ for i in range(14):
 
 ![linhas paralelas](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/lines.png)
 
-A função `range()` aceita também argumentos na forma `range(início, parada, passo)`, *início* é o primeiro número fornecido, e a sequência para antes do número *parada*, aumentando com o número *passo*, veja este exemplo com o mesmo resultado visual do código anterior:
-
-```python
-for y in range(10, 80, 5): # y começa valendo 10 e termina valendo 75
-    line(30, y, 80, y)     # y aumenta de 5 em 5
-```
-
-- Você conseguiria escrever um `for` para desenhar algumas linhas na vertical?
-
-## Repetições simples
+### Repetições simples
 
 Algumas vezes nem vamos usar os números! Só queremos repetir a operação, então em vez de guardar o número em uma variável nomeada com `x`, `y`, `n` ou `i` usamos uma variável com o curioso nome`_` (*underscore*, ou como muitos falam 'underline'). Isso é uma dica de quem está escrevendo o código de que o valor da variável vai ser desprezado. Exemplo:
 
@@ -60,6 +55,18 @@ for _ in range(3): # repita 3 vezes!
 # viva!
 ``` 
 - Você consegue imaginar um desenho usando esse tipo de repetição e números [pseudo-aleatórios](https://github.com/villares/material-aulas/blob/master/Processing-Python/numeros-aleatorios_py.md) com `random()`?
+
+### Mais sobre o `range()`
+
+A função `range()` aceita também argumentos na forma `range(início, parada, passo)`, *início* é o primeiro número fornecido, e a sequência para antes do número *parada*, aumentando com o número *passo*, veja este exemplo com o mesmo resultado visual do código anterior:
+
+```python
+for y in range(10, 80, 5): # y começa valendo 10 e termina valendo 75
+    line(30, y, 80, y)     # y aumenta de 5 em 5
+```
+
+- Você conseguiria escrever um `for` para desenhar algumas linhas na vertical?
+
 
 ## Um pouco sobre listas e tuplas
 
@@ -120,7 +127,7 @@ def setup():
 ![resultado](https://i.imgur.com/TL0BBId.png)
 
 
-## Enumerando os itens da sequência
+### Enumerando os itens da sequência
 
 Ao iterarmos por uma sequência, pode ser útil obter ao mesmo tempo que o item, o índice do item na sequência.
 Isso é chamado de enumeração, e usamos a função enumerate() como neste exemplo:
@@ -139,7 +146,6 @@ def setup():
 ![sketch_2020_04_10a](https://abav.lugaralgum.com/sketch-a-day/2020/sketch_2020_04_10a/enumerate.png)
 
 ## Assuntos relacionados
-
 
 #### [Desenhando Grades](https://github.com/villares/material-aulas/blob/master/Processing-Python/grades.md)
 
