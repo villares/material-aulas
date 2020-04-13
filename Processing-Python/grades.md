@@ -6,21 +6,23 @@ Vamos começar com uma fila de círculos:
 
 ```pyde
 size(400, 40)
-# deslocamento inicial: 20 largura das colunas: 40 
-for x in range(20, 400, 40): (10 números de 20 a 380, incluso, de 40 em 40)
+# deslocamento (offset) inicial: 20 - largura das colunas: 40 
+for x in range(20, 400, 40): # 10 números de 20 a 380, incluso, de 40 em 40
     ellipse(x, 40, 35, 35) # círculos de diâmetro 35
 ```
 
 ![](https://github.com/villares/material-aulas/blob/master/Processing-Python/assets/fila.png?raw=true)
 
-Imagine que é possível escrever de forma parecida uma fila vertical, uma coluna de círculos. Em seguida, veremos que uma fila de colunas se torna uma grade de elementos:
+Imagine que é possível escrever de forma parecida uma fila vertical, uma coluna de círculos... `for y in range(20, 400, 40):`
+
+Em seguida, veremos que uma fila de colunas se torna uma grade de elementos:
 
 ```pyde
 size(400, 400)
-# deslocamento inicial: 20 largura das colunas: 40 ()
-for x in range(20, 400, 40): (10 números de 20 a 380, de 40 em 40)
-  # deslocamento inicial: 20 altura das filas: 40  
-  for y in range(20, 400, 40):  (10 números de 20 a 380, de 40 em 40)
+# deslocamento (offset) inicial: 20 - largura das colunas: 40 
+for x in range(20, 400, 40): # 10 números de 20 a 380, de 40 em 40
+  # deslocamento (offset) inicial: 20 - altura das filas: 40  
+  for y in range(20, 400, 40): # 10 números de 20 a 380, de 40 em 40
     ellipse(x, y, 35, 35) # círculos de diâmetro 35
 ```
 
@@ -37,8 +39,8 @@ def draw():
     background(0)
     noStroke()
     colunas, filas = 10, 10    
-    tam_coluna, tam_fila = width / colunas, height / filas
-    offset_x, offset_y = tam_coluna / 2., tam_fila / 2. 
+    tam_coluna, tam_fila = width / colunas, height / filas  # largura coluna, altura fila
+    offset_x, offset_y = tam_coluna / 2., tam_fila / 2.  # deslocamento de meio tamanho
     for i in range(colunas):
         x = i * tam_coluna + offset_x
         for j in range(filas):
@@ -65,8 +67,8 @@ def draw():
     background(0)
     noStroke()
     colunas, filas = 10, 10    
-    tam_coluna, tam_fila = width / colunas, height / filas
-    offset_x, offset_y = tam_coluna / 2., tam_fila / 2. 
+    tam_coluna, tam_fila = width / colunas, height / filas  # largura coluna, altura fila
+    offset_x, offset_y = tam_coluna / 2., tam_fila / 2.  # deslocamento de meio tamanho
     for x, y in grid(colunas, filas, tam_coluna, tam_fila):
         # desenho do elemento em x, y
         s = 25 + 15 * cos(radians(x + y))
