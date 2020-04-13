@@ -1,4 +1,4 @@
-# Grades: filas e colunas de elementos
+# Grades retangulares: filas e colunas de elementos
 
 Para produzir uma grade retangular de elementos (filas e colunas) podemos utilizar laços de repetição 'encaixados' ou 'aninhados' (*nested*).
 
