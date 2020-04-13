@@ -3,8 +3,8 @@
 Os laços de repetição baseados no `while` tem a seguinte estrutura:
 
 ```python
-while condição:
-    corpo # executado enquanto a 'condição' for avaliada True
+while condição: #  enquanto a 'condição' for verdadeira, execute:
+    corpo 
 ```
 No código do corpo é em geral necessário atualizar algum elemento da condição avaliada pelo laço, para que ela se torne falsa em algum momento, ou então invocar `break` de forma a evitar a repetição infinita.
 
