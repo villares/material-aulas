@@ -163,7 +163,7 @@ def setup():
         ellipse(x, y, 15, 15)
 ```
 
-ou ainda podemos escrever abreviadamente acliquessim:
+ou ainda podemos escrever abreviadamente assim:
 
 ```python
 def setup():
