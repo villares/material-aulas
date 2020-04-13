@@ -15,21 +15,21 @@ Executando a função `range()` com o argumento 10, `range(10)`, vamos obter uma
 </details>
 
 
-<-- details>
+<details>
   <summary>clique para a resposta!</summary>
   
 A resposta é `[1, 1, 2, 3, 4, 5, 6, 7, 8, 10]`)
-</details -->
+</details>
 
 
 ## Laços de repetição com `for`
 
 Usando a estrutura `for` podemos fazer uma ação para cada item de um 'iterável', o que inclui tuplas e listas. Em cada ciclo um item por vez da coleção é atribuido a uma variável, como neste exemplo:
 
-```python
+```pyde
 for n in range(10): # para cada número do range(10) 
     print(n)        # n vai ter um valor diferente a cada ciclo
-
+```
 <details>
   <summary>Veja o resutado no console</summary>
 
@@ -45,6 +45,8 @@ for n in range(10): # para cada número do range(10)
 7
 9
 ```
+</details>
+
 
 É tradicional usar certos nomes de variável `i`, `j` e `k`, por exemplo, para armazenar números de 'contadores' ou 'índices' que vão variando a cada volta do laço `for`.
 
