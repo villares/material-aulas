@@ -2,6 +2,32 @@
 
 Para produzir uma grade retangular de elementos (filas e colunas) podemos utilizar laços de repetição 'encaixados' ou 'aninhados' (*nested*).
 
+Vamos começar com uma fila de círculos:
+
+```pyde
+size(400, 40)
+# deslocamento inicial: 20 largura das colunas: 40 (dez números para x)
+for x in range(20, 400, 40):
+    ellipse(x, 40, 35, 35) # círculos de diâmetro 35
+```
+
+![](https://github.com/villares/material-aulas/blob/master/Processing-Python/assets/fila.png?raw=true)
+
+Imagine que é possível escrever de forma parecida uma fila vertical, uma coluna de círculos. Em seguida, veremos que uma fila de colunas se torna uma grade de elementos:
+
+```pyde
+size(400, 400)
+# deslocamento inicial: 20 largura das colunas: 40 (dez números para x)
+for x in range(20, 400, 40):
+  # deslocamento inicial: 20 altura das filas: 40  (dez números para y)
+  for y in range(20, 400, 40): 
+    ellipse(x, y, 35, 35) # círculos de diâmetro 35
+```
+
+![](https://github.com/villares/material-aulas/blob/master/Processing-Python/assets/grade.png?raw=true)
+
+Um exemplo um pouco ampliado:
+
 ```pyde
 def setup():  
     size(400, 400)
