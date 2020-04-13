@@ -9,18 +9,19 @@ Antes de chegar na execução de repetições propriamente, é útil saber como 
 Executando a função `range()` com o argumento 10, `range(10)`, vamos obter uma lista de 10 números inteiros.
 
 **Você consegue imaginar quais são?**
-
 <details>
   <summary>clique aqui para a resposta</summary>
   
-`[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`)
+`[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`
 </details>
 
 **Qual você acha que é o resultado de `range(1, 11)`?**
 <details>
   <summary>clique aqui para a resposta</summary>
   
-`[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`)
+`[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`
+
+Podemos usar `range(parada)` ou `range(inicio, parada)`, o início está incluso, a parada não inclusa.
 </details>
 
 
@@ -48,7 +49,6 @@ for n in range(10): # para cada número do range(10)
 9
 ```
 </details>
-
 
 É tradicional usar certos nomes de variável `i`, `j` e `k`, por exemplo, para armazenar números de 'contadores' ou 'índices' que vão variando a cada volta do laço `for`.
 
