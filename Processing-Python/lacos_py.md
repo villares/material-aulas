@@ -138,20 +138,25 @@ def setup():
 ```
 ![sketch_2020_04_10a](https://abav.lugaralgum.com/sketch-a-day/2020/sketch_2020_04_10a/enumerate.png)
 
-## Outras ideia
+## Assuntos relacionados
 
-### Laços "aninhados" par fazer uma grade
+
+#### [Desenhando Grades](https://github.com/villares/material-aulas/blob/master/Processing-Python/grades.md)
+
+Laços "aninhados" permitem fazer grades de filas e colunas de elementos.
 
 ```python
 for x in range(0, 80, 10):
   for y in range(0, 80, 10): 
     ellipse(x, y, 5, 5) 
 ```
+#### [Laços de repetição com `while`](https://github.com/villares/material-aulas/blob/master/Processing-Python/while.md) 
 
-### Páginas relacionadas
+Uma outra estrutura de repetição.
 
-- [Mais sobre sequências e fatias](https://github.com/villares/material-aulas/blob/master/Processing-Python/mais_sequencias.md)
-- [Desenhando Grades](https://github.com/villares/material-aulas/blob/master/Processing-Python/grades.md)
+#### [Mais sobre sequências e fatias](https://github.com/villares/material-aulas/blob/master/Processing-Python/mais_sequencias.md)
+
+Acessando e alterando itens de uma sequência.
 
 ### Glossário
 
