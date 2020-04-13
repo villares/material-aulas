@@ -8,14 +8,14 @@ Antes de chegar na execução de repetições propriamente, é útil saber como 
 
 Executando a função `range()` com o argumento 10, `range(10)`, vamos obter uma lista de 10 números inteiros.
 
-**Você consegue imaginar quais são?**
+#### Você consegue imaginar quais são?
 <details>
   <summary>clique aqui para a resposta</summary>
   
 `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`
 </details>
 
-**Qual você acha que é o resultado de `range(1, 11)`?**
+#### Qual você acha que é o resultado de `range(1, 11)`?
 <details>
   <summary>clique aqui para a resposta</summary>
   
@@ -52,15 +52,29 @@ for n in range(10): # para cada número do range(10)
 
 É tradicional usar certos nomes de variável `i`, `j` e `k`, por exemplo, para armazenar números de 'contadores' ou 'índices' que vão variando a cada volta do laço `for`.
 
-Agora outro exemplo usando `range()` com efeito visual. Veja se consegue imaginar os valores de y e a sequência em que as linhas são desenhadas):
-
+Agora outro exemplo usando `range()` com efeito visual.
 ```pyde
 for i in range(14):
     y = 10 + 5 * i
     line(30, y, 80, y)
 ```
 
+#### Quais serão os valores de y e como fica o desenho das linhas?
+<details>
+  <summary>Veja o resutado</summary>
+
 ![linhas paralelas](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/lines.png)
+```
+i: 0   y: 10 # início
+i: 1   y: 15 # 10 + 5 * 1
+i: 2   y: 20
+i: 3   y: 25
+...
+i: 13  y: 75 # final
+```
+</details>
+
+#### Você conseguiria escrever um `for` para desenhar as linhas na vertical?
 
 ### Repetições simples
 
@@ -81,19 +95,23 @@ viva!
 ```
 </details>
 
-- Você consegue imaginar um desenho usando esse tipo de repetição e números [pseudo-aleatórios](https://github.com/villares/material-aulas/blob/master/Processing-Python/numeros-aleatorios_py.md) com `random()`?
+#### Você consegue imaginar um desenho usando esse tipo de repetição e números [pseudo-aleatórios](https://github.com/villares/material-aulas/blob/master/Processing-Python/numeros-aleatorios_py.md) com `random()`?
 
-### Mais sobre o `range()`
+## Mais sobre o `range()`
 
 A função `range()` aceita também argumentos na forma `range(início, parada, passo)`, *início* é o primeiro número fornecido, e a sequência para antes do número *parada*, aumentando com o número *passo*, veja este exemplo com o mesmo resultado visual do código anterior:
 
 ```python
-for y in range(10, 80, 5): # y começa valendo 10 e termina valendo 75
-    line(30, y, 80, y)     # y aumenta de 5 em 5
+for x in range(10, 80, 5): # x começa valendo 10 e termina valendo 75
+    line(x, 30, x, 80)     # x aumenta de 5 em 5
 ```
 
-- Você conseguiria escrever um `for` para desenhar algumas linhas na vertical?
+#### Você consegue imaginar o resultado visual?
+<details>
+  <summary>Veja o resutado</summary>
 
+![verticais](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/mini-verticais.png)
+</details>
 
 ## Um pouco sobre listas e tuplas
 
