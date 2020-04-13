@@ -8,17 +8,19 @@ Antes de chegar na execução de repetições propriamente, é útil saber como 
 
 Executando a função `range()` com o argumento 10, `range(10)`, vamos obter uma lista de 10 números inteiros.
 
-* **Você consegue imaginar quais são?** <details>
-  <summary>clique para a resposta!</summary>
+**Você consegue imaginar quais são?**
+
+<details>
+  <summary>clique aqui para a resposta</summary>
   
 `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`)
 </details>
 
-
+**Qual você acha que é o resultado de `range(1, 11)`?**
 <details>
-  <summary>clique para a resposta!</summary>
+  <summary>clique aqui para a resposta</summary>
   
-A resposta é `[1, 1, 2, 3, 4, 5, 6, 7, 8, 10]`)
+`[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`)
 </details>
 
 
