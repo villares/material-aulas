@@ -8,7 +8,7 @@ while condição_principal:
 ```
 No corpo é necessário atualizar um elemento da condição principal para que ela se torne falsa em algum momento, ou então invocar `break` de forma a evitar um laço infinito.
 
-Um exemplo de usao do laço `while` em que um ângulo `ang` vai tendo o seu valor aumentado (`ang += passo`) até que não seja menor que duas vezes pi (`TWO_PI'). 
+Um exemplo de usao do laço `while` em que um ângulo `ang` vai tendo o seu valor aumentado (`ang += passo`) até que não seja menor que a constante matemática `TWO_PI` (duas vezes o número Pi). 
 
 ```pyde
 def setup():
