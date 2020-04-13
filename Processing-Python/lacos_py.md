@@ -2,7 +2,7 @@
 
 É muito comum em programação pedir ao computador que repita uma ação varias vezes, possivelmente com variações. Para fazer isso frequentemente usamos os chamados laços de repetição (*loops*) e o processo também pode ser chamado de iteração (note que não é i**n**teração, que é outra coisa).
 
-Antes de chegar na execução de repetições propriamente, é útil saber como criar rapidamente sequências de valores. Existe uma função em Python que produz valores inteiros, o `range()`, que no Processing modo Python devolve uma lista (no Python 3 devolve um 'iterador' mas isso não importa agora).
+Antes de chegar na execução das repetições com o laço `for`, propriamente, é útil saber como criar rapidamente sequências de valores. Existe uma função em Python que produz valores inteiros, o `range()`, que no Processing modo Python devolve uma lista (no Python 3 produz um 'iterador' que por sua vez devolve os valores, mas isso não importa agora).
 
 ## Produzindo sequências de inteiros com `range()`
 
@@ -11,14 +11,14 @@ Executando a função `range()` com o argumento 10, `range(10)`, vamos obter uma
 #### Você consegue imaginar quais são?
 <details>
   <summary>clique para ver a resposta</summary>
-  
+
 `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`
 </details>
 
 #### Qual você acha que é o resultado de `range(1, 11)`?
 <details>
   <summary>clique para ver a resposta</summary>
-  
+
 `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`
 
 Podemos usar `range(parada)` ou `range(inicio, parada)`, o número início está incluso, o número de parada não é incluso.
@@ -34,7 +34,7 @@ for n in range(10): # para cada número do range(10)
     print(n)        # n vai ter um valor diferente a cada ciclo
 ```
 <details>
-  <summary>>clique para ver o resutado no console</summary>
+  <summary>clique para ver o resutado no console</summary>
 
 ```
 0
@@ -61,7 +61,7 @@ for i in range(14):
 
 #### Quais serão os valores de y e como fica o desenho das linhas?
 <details>
-  <summary>>clique para ver os resultados</summary>
+  <summary>clique para ver os resultados</summary>
 
 ![linhas paralelas](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/lines.png)
 ```
@@ -85,10 +85,10 @@ Algumas vezes nem vamos usar os números! Só queremos repetir a operação, ent
 ```pyde
 for _ in range(3): # repita 3 vezes!
    print("viva!")
-```   
+```
 
 <details>
-  <summary>>clique para ver o resutado no console</summary>
+  <summary>clique para ver o resutado no console</summary>
 
 ```
 viva!
@@ -110,9 +110,9 @@ for x in range(10, 80, 5): # x começa valendo 10 e termina valendo 75
 
 #### Você consegue imaginar o resultado visual?
 <details>
-  <summary>>clique para ver o resutado visual</summary>
+  <summary>clique para ver o resutado visual</summary>
 
-![verticais](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/mini-verticais.png)
+![verticais](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/verticais.png)
 </details>
 
 ## Um pouco sobre listas e tuplas
@@ -163,7 +163,7 @@ def setup():
         ellipse(x, y, 15, 15)
 ```
 
-ou ainda podemos escrever assim:
+ou ainda podemos escrever abreviadamente acliquessim:
 
 ```python
 def setup():
@@ -178,8 +178,7 @@ def setup():
 
 ### Enumerando os itens da sequência
 
-Ao iterarmos por uma sequência, pode ser útil obter ao mesmo tempo que o item, o índice do item na sequência.
-Isso é chamado de enumeração, e usamos a função enumerate() como neste exemplo:
+Ao iterarmos por uma sequência, pode ser útil obter ao mesmo tempo que o item, o índice do item na sequência. Isso é chamado de enumeração, e usamos a função `enumerate()` como neste exemplo:
 
 ```pyde
 def setup():
@@ -196,24 +195,26 @@ def setup():
 
 ## Assuntos relacionados
 
-#### [Desenhando Grades](https://github.com/villares/material-aulas/blob/master/Processing-Python/grades.md)
-
-Laços "aninhados" permitem fazer grades de filas e colunas de elementos.
+#### Grades de filas e colunas de elementos com laços "aninhados" 
 
 ```python
-for x in range(5, 100, 10):  # x: 5, 15, 25, 35 ... 95
+for x i
+
+n range(5, 100, 10):  # x: 5, 15, 25, 35 ... 95
   for y in range(5, 100, 10):  # y: 5, 15, 25, 35 ... 95
     ellipse(x, y, 5, 5) 
 ```
 ![mini grade](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/mini-grid.png)
 
-#### [Laços de repetição com `while`](https://github.com/villares/material-aulas/blob/master/Processing-Python/while.md) 
+Veja mais em: [Desenhando Grades](https://github.com/villares/material-aulas/blob/master/Processing-Python/grades.md)
 
-Uma outra estrutura de repetição.
+#### Outra estrutura de repetição: `while`
 
-#### [Mais sobre sequências e fatias](https://github.com/villares/material-aulas/blob/master/Processing-Python/mais_sequencias.md)
+[Laços de repetição com `while`](https://github.com/villares/material-aulas/blob/master/Processing-Python/while.md) 
 
-Acessando e alterando itens de uma sequência.
+#### Acessando e alterando itens de uma sequência
+
+[Mais sobre sequências e fatias](https://github.com/villares/material-aulas/blob/master/Processing-Python/mais_sequencias.md)
 
 ### Glossário
 
