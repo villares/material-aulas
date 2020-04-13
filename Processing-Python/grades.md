@@ -1,4 +1,4 @@
-# Grades
+# Grades: filas e colunas de elementos
 
 Para produzir uma grade retangular de elementos (filas e colunas) podemos utilizar laços de repetição 'encaixados' ou 'aninhados' (*nested*).
 
@@ -24,10 +24,11 @@ def draw():
             fill(c)
             ellipse(x, y, s, s)
 ```
+![](https://github.com/villares/material-aulas/blob/master/Processing-Python/assets/sketch_2020_04_12b.png?raw=true)
 
 ### Usando um iterador (*iterator*) que devolve tuplas de coordenadas
 
-A parte central da construção da grade, os laços encaixados produzindo as coordenadas, pode ser encapsulado em uma função separada. Neste exemplo `grid()` a cada iteração devolve uma tupla (x, y) de uma grade com um certo número de filas e colunas, os dois últimos argumentos, opcionais, definem a largura da coluna e altura da fila.
+A parte central da construção da grade, os laços encaixados produzindo as coordenadas, pode ser encapsulado em uma função separada. Neste exemplo `grid()` devove um objeto que a cada iteração devolve uma tupla (x, y) de uma grade com um certo número de filas e colunas, os dois últimos argumentos, opcionais, definem a largura da coluna e altura da fila.
 
 ```pyde
 def setup():  
@@ -37,8 +38,11 @@ def setup():
 def draw():
     background(0)
     noStroke()
-    offset_x, offset_y = 20, 20 
-    for x, y in grid(10, 10, 40, 40):
+    colunas, filas = 10, 10    
+    tam_coluna, tam_fila = width / colunas, height / filas
+    offset_x, offset_y = tam_coluna / 2., tam_fila / 2. 
+    for x, y in grid(colunas, filas, tam_coluna, tam_fila):
+        # desenho do elemento em x, y
         s = 25 + 15 * cos(radians(x + y))
         h = 128 + 128 * sin(x - y)
         c = color(h, 255, 200)
@@ -58,3 +62,4 @@ def grid(colunas, filas, tam_col=1, tam_fil=1):
         for x in range_colunas:
             yield (x * tam_col, y * tam_fil)
 ```
+![](https://github.com/villares/material-aulas/blob/master/Processing-Python/assets/sketch_2020_04_12a.png?raw=true)
