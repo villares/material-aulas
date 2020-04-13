@@ -195,18 +195,16 @@ def setup():
 
 ## Assuntos relacionados
 
-#### Grades de filas e colunas de elementos com laços "aninhados" 
+#### Desenhando grades com laços "aninhados" 
 
 ```python
-for x i
-
-n range(5, 100, 10):  # x: 5, 15, 25, 35 ... 95
+for x in range(5, 100, 10):  # x: 5, 15, 25, 35 ... 95
   for y in range(5, 100, 10):  # y: 5, 15, 25, 35 ... 95
     ellipse(x, y, 5, 5) 
 ```
 ![mini grade](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/mini-grid.png)
 
-Veja mais em: [Desenhando Grades](https://github.com/villares/material-aulas/blob/master/Processing-Python/grades.md)
+Veja mais em: [Grades retangulares: filas e colunas de elementos](https://github.com/villares/material-aulas/blob/master/Processing-Python/grades.md)
 
 #### Outra estrutura de repetição: `while`
 
