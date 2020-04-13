@@ -6,8 +6,8 @@ Vamos começar com uma fila de círculos:
 
 ```pyde
 size(400, 40)
-# deslocamento inicial: 20 largura das colunas: 40 (dez números para x)
-for x in range(20, 400, 40):
+# deslocamento inicial: 20 largura das colunas: 40 
+for x in range(20, 400, 40): (10 números de 20 a 380, incluso, de 40 em 40)
     ellipse(x, 40, 35, 35) # círculos de diâmetro 35
 ```
 
@@ -17,10 +17,10 @@ Imagine que é possível escrever de forma parecida uma fila vertical, uma colun
 
 ```pyde
 size(400, 400)
-# deslocamento inicial: 20 largura das colunas: 40 (dez números para x)
-for x in range(20, 400, 40):
-  # deslocamento inicial: 20 altura das filas: 40  (dez números para y)
-  for y in range(20, 400, 40): 
+# deslocamento inicial: 20 largura das colunas: 40 ()
+for x in range(20, 400, 40): (10 números de 20 a 380, de 40 em 40)
+  # deslocamento inicial: 20 altura das filas: 40  
+  for y in range(20, 400, 40):  (10 números de 20 a 380, de 40 em 40)
     ellipse(x, y, 35, 35) # círculos de diâmetro 35
 ```
 
