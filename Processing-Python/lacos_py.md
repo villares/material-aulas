@@ -8,18 +8,17 @@ Antes de chegar na execução de repetições propriamente, é útil saber como 
 
 Executando a função `range()` com o argumento 10, `range(10)`, vamos obter uma lista de 10 números inteiros.
 
-* você consegue imaginar quais são?
-<details>
+* **Você consegue imaginar quais são?** <details>
   <summary>clique para a resposta!</summary>
   
-A resposta é `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`)
+`[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`)
 </details>
 
 
-<!-- details>
+<-- details>
   <summary>clique para a resposta!</summary>
   
-A resposta é `[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`)
+A resposta é `[1, 1, 2, 3, 4, 5, 6, 7, 8, 10]`)
 </details -->
 
 
@@ -31,22 +30,27 @@ Usando a estrutura `for` podemos fazer uma ação para cada item de um 'iteráve
 for n in range(10): # para cada número do range(10) 
     print(n)        # n vai ter um valor diferente a cada ciclo
 
-# Resutado no console:
-# 0
-# 1
-# 2
-# ... suprimi pra não ficar muito longo
-# 8
-# 9
+<details>
+  <summary>Veja o resutado no console</summary>
+
 ```
-
-
+0
+1
+2
+3
+4
+5
+6
+7
+7
+9
+```
 
 É tradicional usar certos nomes de variável `i`, `j` e `k`, por exemplo, para armazenar números de 'contadores' ou 'índices' que vão variando a cada volta do laço `for`.
 
 Agora outro exemplo usando `range()` com efeito visual. Veja se consegue imaginar os valores de y e a sequência em que as linhas são desenhadas):
 
-```python
+```pyde
 for i in range(14):
     y = 10 + 5 * i
     line(30, y, 80, y)
@@ -58,15 +62,21 @@ for i in range(14):
 
 Algumas vezes nem vamos usar os números! Só queremos repetir a operação, então em vez de guardar o número em uma variável nomeada com `x`, `y`, `n` ou `i` usamos uma variável com o curioso nome`_` (*underscore*, ou como muitos falam 'underline'). Isso é uma dica de quem está escrevendo o código de que o valor da variável vai ser desprezado. Exemplo:
 
-```python
+```pyde
 for _ in range(3): # repita 3 vezes!
    print("viva!")
-   
-# resultado no console:
-# viva!
-# viva!
-# viva!
-``` 
+```   
+
+<details>
+  <summary>Veja o resutado no console</summary>
+
+```
+viva!
+viva!
+viva!
+```
+</details>
+
 - Você consegue imaginar um desenho usando esse tipo de repetição e números [pseudo-aleatórios](https://github.com/villares/material-aulas/blob/master/Processing-Python/numeros-aleatorios_py.md) com `random()`?
 
 ### Mais sobre o `range()`
