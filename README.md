@@ -27,7 +27,8 @@ Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 
 - [Sequências e laços de repetição (iteração)](/Processing-Python/lacos_py.md)
   - [Mais sobre sequências e fatias](/Processing-Python/mais_sequencias.md)
-  <!-- - [Desenhando grades com laços aninhados](/Processing-Python/grades.md) -->
+
+- [Grades retangulares: filas e colunas de elementos](/Processing-Python/grades.md)
   
 - [Textos no programa, no console e na tela](https://github.com/villares/material-aulas/blob/master/Processing-Python/strings_py.md)
   - [Trabalhando com fontes e outros ajustes do texto](/Processing-Python/tipografia.md)
@@ -42,7 +43,7 @@ Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 #### Orientação a Objetos
 
 <!-- - [Uma classe de partículas simples](/Processing-Python/particulas.md) -->
-- [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/mestrado/bandeirinhas/)
+- [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/mestrado/bandeirinhas/) -página externa
 
 #### Exportação
 
