@@ -21,7 +21,7 @@ Executando a função `range()` com o argumento 10, `range(10)`, vamos obter uma
   
 `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`
 
-Podemos usar `range(parada)` ou `range(inicio, parada)`, o início está incluso, a parada não inclusa.
+Podemos usar `range(parada)` ou `range(inicio, parada)`, o número início está incluso, o número de parada não é incluso.
 </details>
 
 
