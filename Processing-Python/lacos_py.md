@@ -17,7 +17,7 @@ Executando a função `range()` com o argumento 10, `range(10)`, vamos obter uma
 
 #### Qual você acha que é o resultado de `range(1, 11)`?
 <details>
-  <summary>>clique para ver a resposta</summary>
+  <summary>clique para ver a resposta</summary>
   
 `[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`
 
