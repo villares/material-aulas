@@ -75,8 +75,17 @@ i: 13  y: 75 # final
 </details>
 
 #### Você conseguiria escrever um `for` para desenhar as linhas na vertical?
+<details>
+  <summary>clique para ver a resposta</summary>
 
-> resultado mais à frente
+```pyde
+for j in range(14):
+    x = 10 + 5 * j
+    line(x, 30, x, 80)
+```
+
+![verticais](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/verticais.png)
+</details>
 
 ### Repetições simples
 
