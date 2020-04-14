@@ -3,7 +3,7 @@
 
 Uma imagem digital, por vezes chamada de uma imagem bitmap, nada mais é do que uma sequência de números indicando variações de vermelho, verde e azul numa localização particular de uma grade de ***pixels***, um neologismo cunhado na década de 60 juntado *pix*, abreviação de *picture*, e *el* de *element*, é o menor elemento de uma imagem.
 
-A maior parte do tempo nós visualizamos esses pixels como retângulos miniatura justapostos na tela do computador. No entanto, com um pouco de pensamento criativo e com a manipulação dos pixels com código, podemos mostrar esta informação de inúmeras maneiras. Apesar disso, de tempos em tempos, podemos querer quebrar nossa rotina de desenho corriqueira e manipular os pixels da tela diretamente. O Processing proporciona isso através de um **array** de pixels.
+A maior parte do tempo nós visualizamos esses pixels como retângulos miniatura justapostos na tela do computador. No entanto, com um pouco de pensamento criativo e com a manipulação dos pixels com código, podemos mostrar esta informação de inúmeras maneiras. Apesar disso, de tempos em tempos, podemos querer quebrar nossa rotina de desenho corriqueira e manipular os pixels da tela diretamente. O Processing proporciona isso através de um **array** de pixels (uma estrutura de dados que lembra uma lista mas que tem todos os elementos do mesmo tipo e um tamanho predefinido).
 
 Estamos acostumados com a ideia de cada pixel na tela ter uma posição X e Y numa janela. No entanto, um array de pixels tem apenas uma dimensão, armazenado os valores de cor numa sequência linear.
         
@@ -23,9 +23,10 @@ Como os pixels são armazenados:
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | |
 
-### Acessando os pixels numa posição X e Y
 
-Use `get()` para os pixels visveis na tela ou o método `.get()` para os pixels em uma imagem `PImage`.
+
+## Um exemplo de acesso aos pixels com `.get`
+
 
 ```pyde
 
@@ -34,25 +35,23 @@ def setup():
     size(400, 400)
     noStroke()
     rectMode(CENTER)
-    img = loadImage("ale.jpg")     # carregando uma imagem da pasta /data/
+    img = loadImage("ale.jpg")  # carregando uma imagem da pasta /data/
 
 
 def draw():
     image(img, 0, 0)    # desenha a imagem (PImage, x, y, [largura, altura]*) *opcionais 
-    cor = img.get(mouseX, mouseY) # pega a cor do pixel na posição x, y
-    R = red(img.get(mouseX, mouseY)) # pega a quantidade de vermelho do pixel na posição x, y
-    G = green(img.get(mouseX, mouseY)) # pega a quantidade de verde do pixel na posição x, y
-    B = blue(img.get(mouseX, mouseY)) # pega a quantidade de azul do pixel na posição x, y
-    fill(cor)    # pede o preenchimento!
-    ellipse(mouseX, mouseY, 60, 60) # desenha um círculo
+    cor = img.get(mouseX, mouseY) # pega a cor do pixel sob o mouse
+    r = red(cor) # componente vermelho do pixel
+    g = green(cor) # componente verde do pixel
+    b = blue(cor) # componente azul do pixel
+    fill(cor)    
+    ellipse(mouseX, mouseY, 60, 60) # desenha um círculo com a cor do pixel
     fill(255, 0, 0) # vermelho
-    rect(mouseX, mouseY + 60, R, 20) 
+    rect(mouseX, mouseY + 60, r, 20) 
     fill(0, 255, 0) # verde
-    rect(mouseX, mouseY + 80, G, 20)
+    rect(mouseX, mouseY + 80, g, 20)
     fill(0, 0, 255) # azul
-    rect(mouseX, mouseY + 100, B, 20)
-
-
+    rect(mouseX, mouseY + 100, b, 20)
 ```
 
 ![](https://github.com/arteprog/programacao-criativa/blob/master/assets/imagens/get008.jpg?raw=True) ![](https://github.com/arteprog/programacao-criativa/blob/master/assets/imagens/get017.jpg?raw=True)

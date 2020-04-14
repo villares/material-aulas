@@ -40,16 +40,21 @@ Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 
 - [Desenho 3D](/Processing-Python/desenho-3D.md)
 
-#### Orientação a Objetos
+#### Lendo recursos externos
 
-<!-- - [Uma classe de partículas simples](/Processing-Python/particulas.md) -->
-- [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/mestrado/bandeirinhas/) -página externa
+[Usando arquivos de imagem (bitmap/raster)](/Processing-Python/imagens_externas.md)
+<!-- [Usando um arquivo vetorial (SVG)](/Processing-Python/usando_svg.md) -->
 
 #### Exportação
 
 - [Exportando imagens (bitmap/raster](/Processing-Python/exportando_imagem.md)
 - [Exportando PDF (saída vetorial)](/Processing-Python/exportando_pdf.md)
 - [Exportando animações (vídeos ou GIF)](/Processing-Python/exportar_animacoes.md) 
+
+#### Orientação a Objetos
+
+<!-- - [Uma classe de partículas simples](/Processing-Python/particulas.md) -->
+- [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/mestrado/bandeirinhas/) -página externa
 
 #### Questões mais avançadas da ferramenta
 
