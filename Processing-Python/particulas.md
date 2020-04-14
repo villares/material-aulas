@@ -1,15 +1,16 @@
 # Particulas (Orientação a objetos)
 
-Adaptado de:
+> Adapatdo de: VILLARES, A. B. A.; MOREIRA, D. DE C.; GOMES, M. R. [Ensino de programação em um contexto de exploração gráfica com Processing modo Python](https://villares.github.io/mestrado/VILLARES_MOREIRA_GOMES_GRAPHICA_2017). In: Anais GRAPHICA 2017 - XII International Conference on Graphics Engineering for Arts and Design. Anais…Araçatuba(SP) UNIP, 2017.
+> *Para executar [instale o Processing com o modo Python](http://villares.github.io/como-instalar-o-processing-modo-python/)*
 
-> VILLARES, A. B. A.; MOREIRA, D. DE C.; GOMES, M. R. [Ensino de programação em um contexto de exploração gráfica com Processing modo Python](https://villares.github.io/mestrado/VILLARES_MOREIRA_GOMES_GRAPHICA_2017). In: Anais GRAPHICA 2017 - XII International Conference on Graphics Engineering for Arts and Design. Anais…Araçatuba(SP) UNIP, 2017.
+Vamos ver aqui alguns conceitos introdutórios de orientação a objetos: 
 
-*Para executar [instale o Processing com o modo Python](http://villares.github.io/como-instalar-o-processing-modo-python/)*
+- Definindo uma Classe e instanciando objetos
+- Atributos (propriedades ou campos) e métodos de um um objeto
 
-Serão introduzidos conceitos de orientação a objetos: Classe, atributos de dados e métodos, instâncias e encapsulamento.
-Não são abordadadas ainda questões de herança e composição.
+Não são abordadadas ainda questões de herança ou composição.
 
-Prerequisitos:
+Prerequisitos para aproveitar melhor este material:
 * Desenho básico no Processing:
 * Declaração de variáveis e noções de tipagem;
 * Métodos de desenho `rect`, `line`, `ellipse`;
@@ -18,11 +19,12 @@ Prerequisitos:
 * Declaração de funções com e sem parâmetros;
 * Opcional: Controle do sistema de coordenadas `pushMatrix`, `translate`, `rotate`, `scale`, `popMatrix`.
 
-###  1. Redesenhando formas e atualizando variáveis no laço principal
+###  0. Começando sem orientação a objetos
+#### Redesenhando formas e atualizando variáveis no laço principal do Processing
 
-Para se obter o efeito de movimento (animação da particula) criamos um par de variáveis globais `x` e `y`, inicializadas no `setup()` com as coordenadas do meio da àrea de desenho. Note que o escopo global dessas variáveis precisa ser indicado com a palavra chave `global` quando pretendemos alterá-las.
+Para obter o efeito de movimento (animação de uma partícula) criaremos um par de variáveis globais `x` e `y`, que serão inicializadas no `setup()` com as coordenadas do meio da àrea de desenho. Note que o escopo global dessas variáveis precisa ser indicado com a palavra chave `global` quando pretendemos alterá-las.
 
-O novo `draw()` cujo nome faz parte da infraestrutura do Processing para permitir animações, terá automaticamente a execução repetida continuamente, é o "laço principal" do *sketch*. Neste bloco vamos inicialmente limpar a tela com `background()`invocar a função de desenho `particula()` na posição indicada pelas variáveis `x` e `y`, incrementar as variáveis de posição e por fim checar se estas estão além de um certo limite e precisam ser alteradas (redefinindo a posição para um novo ciclo de incrementos).
+O código que vai em `draw()` tem a execução repetida continuamente, é o "laço principal" do *sketch*. Neste bloco vamos inicialmente limpar a tela com `background()` e em seguida invocar a função de desenho `particula()` na posição indicada pelas variáveis `x` e `y`, atualizar as variáveis de posição e por fim checar se estas estão além de um certo limite e precisam ser redefinidas para um novo ciclo da animação.
 
 ```python
 def setup():
@@ -43,12 +45,17 @@ def draw():
     if y > height + 25:
         y = -25
 ```
-### 2. Primeira aproximação de uma classe
+### 1. Primeira aproximação de uma classe
+#### Definindo a classe Partícula
 
-Vamos agora obter o mesmo comportamento usando um objeto da classe `Particula`.
-A classe é definida pelo bloco `class Particula():` que começa com o método especial `__init__()` que na construção de um novo objeto da classe inicializa os atributos de dados (campos) de posição e tamanho.
-O método `desenha()` é praticamente a função que escrevemos no passo inicial, não requer mais os parâmetros de posição e tamanho, uma vez que usa os atributos de posição e tamanho do próprio objeto (instância) quando executado.
-O método `atualize()` contém o código anteriormente usado para atualizar a posição nas variáveis globais, agora atualiza os atributos de dados (campos ou variáveis de instância) de posição do objeto.
+Vamos agora obter o mesmo comportamento usando um objeto da classe definida pelo bloco `class Particula():`.
+
+A definição da classe começa com o método especial `__init__()` que inicializa os atributos de dados (campos) de posição e tamanho quando um novo objeto é criado.
+
+O método `desenha()` é praticamente a função que escrevemos no passo inicial, não requer mais os parâmetros de posição e tamanho, uma vez que usa os atributos de posição e tamanho do próprio objeto (instância do objeto) quando executado.
+
+O método `atualize()` contém o código anteriormente usado para atualizar a posição nas variáveis globais, agora atualiza os atribdutos de dados (campos ou variáveis de instância) de posição do objeto.
+
 No bloco `setup()` criamos uma instância de particula no meio da àrea de desenho com a linha`particula = Particula(width / 2, height / 2)` e o bloco `draw()` vai repetidamente limpar a tela e chamar os métodos de desenho e atualização, `particula.desenha()` e `particula.atualize()` respectivamente. 
 
 ```python
@@ -86,10 +93,10 @@ class Particula():
             self.y = -25
 ```
 
-### 3. Instanciando mais alguns objetos
+### 2. Instanciando mais objetos
+#### Criando algumas partículas
 
-
-A vantagem da estruturação e encapsulamento de termos um objeto particula criado por uma classe Particula pode começar a ser visto quando instanciamos mais de uma particula.
+A vantagem da estruturação e encapsulamento de ter uma classe Particula pode começar a fazer sentido quando instanciamos mais de uma particula.
 
 ```python
 def setup():
@@ -115,7 +122,8 @@ def draw():
 ```
 ...o código continua com a classe Particula mostrada anteriormente
 ```
-### 4. Ampliando a classe, mudando o comportamento e adicionando outras propriedades.
+### 3. Ampliando a classe Particula
+#### Mudando o comportamento e adicionando outras propriedades.
 
 O passo seguinte é dado ampliando o código da classe Particula.
 
@@ -171,7 +179,8 @@ class Particula():
             self.y = height + metade
 ```
 
-### 5. Uma lista de objetos
+### 4. Muitas partículas!
+#### Uma lista de objetos
 
 Uma estrutura de dados, no caso uma lista, pode de maneira muito simples conter referências para um grande número de objetos.
 Aqui chegamos rapidamente a um comportamento visualmente interessante instanciando 50 particulas no `setup()` e em seguida no `draw()` iteramos por estas particulas de maneira bastante típica em Python com um laço `for `*`object`*` in `*`collection_of_objects`*`:` 
