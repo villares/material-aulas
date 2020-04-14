@@ -1,6 +1,6 @@
 # Primeiros passos e desenho básico
 
-Experimente digitar o código mostrado na imagem abaixo e clicar no botão com a seta triangular (Executar/*Run*).
+Se você seguiu os passos [para instalar o Processin modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/), experimente digitar o código mostrado na imagem abaixo e clicar no botão com a seta triangular (Executar/*Run*).
 
 ![IDE](assets/01-IDE.png))
 
