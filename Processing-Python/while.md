@@ -8,7 +8,7 @@ while condição: #  enquanto a 'condição' for verdadeira, execute:
 ```
 No código do corpo é em geral necessário atualizar algum elemento da condição avaliada pelo laço, para que ela se torne falsa em algum momento, ou então invocar `break` de forma a evitar a repetição infinita.
 
-Um exemplo de usao do laço `while` em que um ângulo `ang` vai tendo o seu valor aumentado (`ang += passo`) até que não seja menor que a constante matemática `TWO_PI` (duas vezes o número Pi), dessa forma encerrando o laço. 
+Um exemplo de uso do laço `while` em que um ângulo `ang` vai tendo o seu valor aumentado (`ang += passo`) até que deixa de ser menor que 360 graus (em radianos, a constante Pi vezes dois, ou, no Processing `TWO_PI`) dessa forma encerrando o laço (e o desenho dos pontos de uma estrela). 
 
 ```pyde
 def setup():
