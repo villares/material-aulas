@@ -41,7 +41,7 @@ def draw():
     # outros desenhos sobre o fundo aqui
 ```
 
-Pode ser conveniente simplesmente `image()` para desenhar uma imagem na área de desenho logo no começo do `draw()`, caso suas dimensões não sejam iguais a área de desenho.
+Pode ser conveniente simplesmente usar a função `image()` como visto anteriormente, para desenhar a imagem na área de desenho logo no começo do `draw()`, caso suas dimensões não sejam iguais a área de desenho.
 
 ```pyde
 def setup():
@@ -55,25 +55,8 @@ def draw():
     # outros desenhos sobre o fundo aqui
 ```
 
-    background(imagem_fundo)
-    # outros desenhos sobre o fundo aqui
-```
-
-De outra forma pode-se usar simplesmente `image()` para desenhar uma imagem na área de desenho logo no começo do `draw()`.
-
-```python
-def setup():
-    size(600, 400)
-    global imagem_fundo
-    imagem_fundo = loadImage("fundo.png")
-
-def draw():
-    image(imagem_fundo, 0, 0, width, height)  # vai forçar/distorcer o tamanho na imagem
-    # outros desenhos sobre o fundo aqui
-```
-
-### Acessando um pixel da tela ou de uma imagem
-
+### Acessando a cor de um pixel da tela ou de uma imagem
+ 
 Use `get()` para os pixels visíveis na tela ou o método `.get()` para os pixels em uma imagem `PImage`. Como no exemplo abaixo:
 
 ```pyde
@@ -92,3 +75,4 @@ Use `get()` para os pixels visíveis na tela ou o método `.get()` para os pixel
     circle(mouseX, mouseY, 30)
 ```
 
+Leia mais sobre a estrutura de pixels das imagens em [Pixels e imagens](pixels.md)
