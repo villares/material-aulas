@@ -1,5 +1,11 @@
 # Primeiros passos e desenho básico
 
+Experimente digitar o código mostrado na imagem abaixo e clicar no botão com a seta triangular (Executar/*Run*).
+
+![IDE](assets/01-IDE.png))
+
+**Experimente alterar os números entre parênteses e executar novamente...**
+
 ## Área de desenho e coordenadas
 
 Usamos a função `size()` para determinar o tamanho da área de desenho (sem ela é gerada uma pequena tela de 100 por 100 pixels). Processing nos oferece automaticamente duas variáveis `width` e `height` que referenciam os valores de largura e altura da área de desenho, respectivamente.
@@ -14,7 +20,7 @@ O computador precisa saber a posição de cada ponto que desenha. Para fazer iss
 
 Note que o eixo X cresce para a direita como de costume, mas o eixo Y é 'invertido' com valores crescendo 'para baixo'. Por exemplo, um ponto em (5, 14) fica a 5 unidades da borda esquerda da tela e 14 unidades para baixo do topo. 
 
-![coor](coord.jpg)
+![Coordenadas](assets/01-coordenadas.jpg)
 
 ## Desenhando algumas formas
 
@@ -61,20 +67,25 @@ O fundo também serve para apagar a área de desenho
 background(0, 255, 0) # fundo verde, limpa a tela background(R, G, B)
 ```
 
-## Como criar comentários em Python
+## Comentários, o que são e como criar comentários em Python?
 
-```python
-# Comentários são anotações do código, não são executados
-# Comentários de uma linha só começam com #. São um jeito rápido de desativar uma linha!
+Comentários são anotações, pedaços do código que não são executados pelo computador, são ignorados.
+Comentário são feitos para as pessoas (como você, daqui a uma semana! lembrarem qual era o objetivo daquele pedaço do programa. São lembretes e explicações. Anote o seu código com comentários, mas não esqueça de mudá-los quando o código mudar.
+
+Comentários de uma linha só começam com `#`. São também um jeito rápido de desativar uma linha! Em inglês tem até uma expressão para isso: *comment out* (desativar por meio de um comentário)
+
+ ``pyde
+# Oi eu sou um comentário
+size(900, 900)  # área de desenho maior - outro comentário
+# background(0) <- desativado, pq isso aqui virou um comentário
 
 """
-Com três aspas no começo e no final, podemos produzir strings que
-funcionam como comentários de múltiplas linhas e que quando estão
-logo após o cabeçalho de definição de uma função, no começo do corpo,
-são chamados docstrings (textos de documentação).
+Extra: Com três aspas no começo e no final, podemos produzir textos (strings)
+que funcionam como comentários de múltiplas linhas e que quando estão logo
+após o cabeçalho de definição de uma função, no começo do corpo, são chamados
+docstrings (textos de documentação) - não se preocupe com isso agora.
 """
 ```
-
 ---
 Este material é baseado no material do curso [Progração Criativa](https://arteprog.space/programacao-criativa/)
 
