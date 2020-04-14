@@ -90,7 +90,7 @@ Isso equivale a:
 ```python
 if cond == True:
    n = x
- else:
+else:
    n = y
 ```
 Veja um outro exemplo:
