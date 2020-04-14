@@ -2,7 +2,7 @@
 
 No Processing, o teclado e o mouse são duas as principais formas de entrada de dados. Em outra ocasião trataremos da leitura de arquivos e outras fontes de dados. Vejamos aqui maneiras de se obter informações sobre o movimento e cliques do mouse, assim como saber sobre as teclas sendo pressionadas no teclado. 
 
-1. Variáveis de sistema 
+## 1. Variáveis de sistema 
 
 As variáveis de sistema como `mouseX`, `mouseY`, `keyPressed`e `mousePressed` contém a todo instante informações sobre o estado do teclado e mouse. Podem ser consultadas em qualquer lugar do programa e são vistas frequentemente em condicionais dentro do bloco de `draw()`.
 
@@ -40,21 +40,23 @@ def draw():
 
 ```
 
-2. Funções para tratar eventos
+## 2. Funções para tratar eventos
 
-Definidas pela pessoa criando o programa, com os nomes especiais "encomendados", como `keyPressed()`, `keyReleased()`, `mousePressed()`ou `mouseReleased()`, estas funções precisam ser definidas fora do bloco de `draw()` (note que o `draw()` precisa existir, mesmo que vazio, para garantir a execução de um laço principal do Processing) e serão executadas apenas quando seus respectivos eventos de teclado e mouse acontecerem.
+Quando definimos funções com certos nomes especiais "encomendados", como `keyPressed()`, `mousePressed()` ou alguma outra listada no quadro mais abaixo, elas serão executadas pelo Processing quando determinados "eventos" do mouse ou do teclado acontecem (veja a coluna da direita do quadro).
 
-| nome | descrição |
+As funções devem ser definidas fora do bloco de `draw()`, e note que a definição de `draw()` precisa existir, mesmo que vazio, para garantir a execução de um laço principal do Processing. 
+
+| nome da função | descrição do evento |
 | --- | --- |
-| mouseReleased()   |    função executada quando o botão do mouse é solto depois de pressionado
-| mouseWheel(event) |    função executada quando a rodinha do mouse é girada (deslocamento obtido com `event.getCount()`)
-| mouseClicked()    |    funcão executada quando o mouse é clicado (já solto o botão)
-| mouseDragged()    |    função executada quando o mouse é movido pressionado
-| mouseMoved()      |    função executada quando o mouse é movido
-| mousePressed()    |    função executada quando o botão do mouse é pressionado
-| keyPressed()      |    função executada quando uma tecla é pressionada
-| keyReleased()     |    função executada quando uma tecla é solta
-| keyTyped()        |    função executada quando uma tecla alfa-numérica é digitada
+| mouseReleased()   | executada quando o botão do mouse é solto depois de pressionado
+| mouseWheel(event) | executada quando a rodinha do mouse é girada (deslocamento obtido com `event.getCount()`)
+| mouseClicked()    | executada quando o mouse é clicado (já solto o botão)
+| mouseDragged()    | executada quando o mouse é movido pressionado
+| mouseMoved()      | executada quando o mouse é movido
+| mousePressed()    | executada quando o botão do mouse é pressionado
+| keyPressed()      | executada quando uma tecla é pressionada
+| keyReleased()     | executada quando uma tecla é solta
+| keyTyped()        | executada quando uma tecla alfa-numérica é digitada
 
 
 ### Exemplo
