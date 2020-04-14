@@ -8,12 +8,23 @@ Vamos começar com uma fila de círculos:
 size(400, 40)
 # deslocamento (offset) inicial: 20 - largura das colunas: 40 
 for x in range(20, 400, 40): # 10 números de 20 a 380, incluso, de 40 em 40
-    ellipse(x, 40, 35, 35) # círculos de diâmetro 35
+    ellipse(x, 20, 35, 35) # círculos de diâmetro 35
 ```
 
 ![](https://github.com/villares/material-aulas/blob/master/Processing-Python/assets/fila.png?raw=true)
 
-Imagine que é possível escrever de forma parecida uma fila vertical, uma coluna de círculos... `for y in range(20, 400, 40):`
+Imagine que é possível escrever de forma parecida uma fila vertical, uma coluna de círculos... 
+
+<details>
+  <summary>clique para ver a resposta</summary>
+
+```pyde
+size(400, 400)
+# deslocamento (offset) inicial: 20 - deslocamente vertical de cada círculo: 40 
+for y in range(20, 400, 40): # 10 números de 20 a 380, incluso, de 40 em 40
+    ellipse(20, y, 35, 35) # círculos de diâmetro 35
+```
+</details>
 
 Em seguida, veremos que uma fila de colunas se torna uma grade de elementos:
 
