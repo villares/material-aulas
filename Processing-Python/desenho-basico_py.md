@@ -80,7 +80,7 @@ Comentário são feitos para as pessoas (como você, daqui a uma semana! lembrar
 
 Comentários de uma linha só começam com `#`. São também um jeito rápido de desativar uma linha! Em inglês tem até uma expressão para isso: *comment out* (desativar por meio de um comentário)
 
- ``pyde
+```pyde
 # Oi eu sou um comentário
 size(900, 900)  # área de desenho maior - outro comentário
 # background(0) <- desativado, pq isso aqui virou um comentário
@@ -92,6 +92,7 @@ após o cabeçalho de definição de uma função, no começo do corpo, são cha
 docstrings (textos de documentação) - não se preocupe com isso agora.
 """
 ```
+
 ---
 Este material é baseado no material do curso [Progração Criativa](https://arteprog.space/programacao-criativa/)
 
