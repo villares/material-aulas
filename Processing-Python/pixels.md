@@ -25,7 +25,25 @@ Como os pixels são armazenados:
 
 ### Acessando os pixels numa posição X e Y
 
-Use `get()` para os pixels visveis na tela ou o método `.get()` para os pixels em uma imagem `PImage`.
+Use `get()` para os pixels visveis na tela ou o método `.get()` para os pixels em uma imagem `PImage`. Como no exemplo abaixo:
+
+```pyde
+ def setup():
+    size(500,500)
+    global imagem
+    imagem = loadImage('arquivo.png')  # carregando uma imagem da pasta /data/
+    
+ def draw():
+    iw, ih = imagem.width, imagem.height
+    print(iw, ih)
+    cor = imagem.get(mouseX, mouseY)  # cor do pixel sob o mouse
+    fill(cor)
+    noStroke()
+    image(imagem, 0, 0)
+    circle(mouseX, mouseY, 30)
+```
+
+Um exemplo ampliado:
 
 ```pyde
 
@@ -34,25 +52,23 @@ def setup():
     size(400, 400)
     noStroke()
     rectMode(CENTER)
-    img = loadImage("ale.jpg")     # carregando uma imagem da pasta /data/
+    img = loadImage("ale.jpg")  # carregando uma imagem da pasta /data/
 
 
 def draw():
     image(img, 0, 0)    # desenha a imagem (PImage, x, y, [largura, altura]*) *opcionais 
-    cor = img.get(mouseX, mouseY) # pega a cor do pixel na posição x, y
-    R = red(img.get(mouseX, mouseY)) # pega a quantidade de vermelho do pixel na posição x, y
-    G = green(img.get(mouseX, mouseY)) # pega a quantidade de verde do pixel na posição x, y
-    B = blue(img.get(mouseX, mouseY)) # pega a quantidade de azul do pixel na posição x, y
-    fill(cor)    # pede o preenchimento!
-    ellipse(mouseX, mouseY, 60, 60) # desenha um círculo
+    cor = img.get(mouseX, mouseY) # pega a cor do pixel sob o mouse
+    r = red(cor) # componente vermelho do pixel
+    g = green(cor) # componente verde do pixel
+    b = blue(cor) # componente azul do pixel
+    fill(cor)    
+    ellipse(mouseX, mouseY, 60, 60) # desenha um círculo com a cor do pixel
     fill(255, 0, 0) # vermelho
-    rect(mouseX, mouseY + 60, R, 20) 
+    rect(mouseX, mouseY + 60, r, 20) 
     fill(0, 255, 0) # verde
-    rect(mouseX, mouseY + 80, G, 20)
+    rect(mouseX, mouseY + 80, g, 20)
     fill(0, 0, 255) # azul
-    rect(mouseX, mouseY + 100, B, 20)
-
-
+    rect(mouseX, mouseY + 100, b, 20)
 ```
 
 ![](https://github.com/arteprog/programacao-criativa/blob/master/assets/imagens/get008.jpg?raw=True) ![](https://github.com/arteprog/programacao-criativa/blob/master/assets/imagens/get017.jpg?raw=True)
