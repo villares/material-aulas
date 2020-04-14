@@ -33,8 +33,6 @@ def setup():
 
 ### Desenhando uma estrela de quatro pontas
 
-![e4](assets/estrela_4_pontas.png)
-
 ```pyde
 def setup():
     size(200, 200)
@@ -54,3 +52,5 @@ def draw():
     vertex(x, y - m)
     endShape(CLOSE)
 ```
+
+![e4](assets/estrela_4_pontas.png)
