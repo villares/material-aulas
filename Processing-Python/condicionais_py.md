@@ -80,12 +80,25 @@ else:
     faz_outra_coisa()
 ```
 
-Confira também a abreviação de `if` + atribuições, o `A if C == True else B`
+Confira também a abreviação de `if` usada para atribuições ou dentro de outras expressões (conhecida como 'operador condicional ternário'): 
+
+```python
+n = x if cond else y
+```
+Isso equivale a:
+
+```python
+if cond == True:
+   n = x
+ else:
+   n = y
+```
+Veja um outro exemplo:
 
 ```python
 a = 50 if keyPressed else 100
-# a vai valer 50 se houver uma tecla pressionada
-# senão, vai valer 100
+# A variável a passa a valer 50 se houver uma tecla pressionada
+# senão, passa a valer 100
 ```
 
 ## Glossário
