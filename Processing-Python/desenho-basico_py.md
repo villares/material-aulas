@@ -1,6 +1,6 @@
 # Primeiros passos e desenho básico
 
-Se você seguiu os passos [para instalar o Processin modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/), experimente digitar o código abaixo, e, em seguida, clique no botão com a seta triangular para frente (Executar/*Run*):
+Se você seguiu os passos [para instalar o Processin modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/), experimente digitar o código abaixo no IDE (nosso editor de código), e, em seguida, clique no botão com a seta triangular para frente (Executar/*Run*):
 
 ```pyde
 size(200, 200)
@@ -13,13 +13,14 @@ rect(20, 10, 40, 80)
 
 ## Área de desenho e coordenadas
 
-Usamos a função `size()` para determinar o tamanho da área de desenho (sem ela é gerada uma pequena tela de 100 por 100 pixels). Processing nos oferece automaticamente duas variáveis `width` e `height` que referenciam os valores de largura e altura da área de desenho, respectivamente.
+Usamos a função `size()` para determinar o tamanho da área de desenho (sem ela é gerada uma pequena tela de 100 por 100 pixels). Processing nos oferece automaticamente duas variáveis, os nomes `width` e `height`, que referenciam os valores de largura e altura da área de desenho, respectivamente. Podemos mostrar na parte de baixo da janela, no Console, esses valores usando `print()`.
 
 ```python
-size(600, 400) # tamanho da tela size(largura, altura) 
-print(width) # escreve no console largura atual da tela
-print(height) # escreve no console altura atual da tela
+size(400, 200) # define o tamanho da área de deseno (w, h) 
+print(width) # imprime no console largura atual da tela
+print(height) # imprime no console altura atual da tela
 ```
+![Coordenadas](assets/01-console.png)
 
 O computador precisa saber a posição de cada ponto que desenha. Para fazer isso, normalmente usamos coordenadas cartesianas. Os eixos X e Y nos permitem especificar uma posição precisa na grade usando um par de números, normalmente o valor x seguido pelo valor y. 
 
@@ -39,7 +40,7 @@ square(100, 50, 40) # quadrado na posição x:100 y:50 e lado:40
 circle(50, 100, 40) # círculo na posição x:50 y:100 e diâmetro:40
 ```
 
-## Cores e atributos gráficos (preenchimento e traço de contorno)
+### Cores e atributos gráficos (preenchimento e traço de contorno)
 
 Para mudar as cores do preenchimento branco e do traço de contorno preto que são usadas inicialmente para desenhar as formas, indicamos inicialmente 3 números de 0 a 255 para definir uma combinação de vermelho (R), verde (G) e azul (B). 
 É preciso definir a cor *antes* de pedir o desenho de uma forma! 
