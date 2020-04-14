@@ -3,7 +3,7 @@
 
 Uma imagem digital, por vezes chamada de uma imagem bitmap, nada mais é do que uma sequência de números indicando variações de vermelho, verde e azul numa localização particular de uma grade de ***pixels***, um neologismo cunhado na década de 60 juntado *pix*, abreviação de *picture*, e *el* de *element*, é o menor elemento de uma imagem.
 
-A maior parte do tempo nós visualizamos esses pixels como retângulos miniatura justapostos na tela do computador. No entanto, com um pouco de pensamento criativo e com a manipulação dos pixels com código, podemos mostrar esta informação de inúmeras maneiras. Apesar disso, de tempos em tempos, podemos querer quebrar nossa rotina de desenho corriqueira e manipular os pixels da tela diretamente. O Processing proporciona isso através de um **array** de pixels.
+A maior parte do tempo nós visualizamos esses pixels como retângulos miniatura justapostos na tela do computador. No entanto, com um pouco de pensamento criativo e com a manipulação dos pixels com código, podemos mostrar esta informação de inúmeras maneiras. Apesar disso, de tempos em tempos, podemos querer quebrar nossa rotina de desenho corriqueira e manipular os pixels da tela diretamente. O Processing proporciona isso através de um **array** de pixels (uma estrutura de dados que lembra uma lista mas que tem todos os elementos do mesmo tipo e um tamanho predefinido).
 
 Estamos acostumados com a ideia de cada pixel na tela ter uma posição X e Y numa janela. No entanto, um array de pixels tem apenas uma dimensão, armazenado os valores de cor numa sequência linear.
         
@@ -23,27 +23,10 @@ Como os pixels são armazenados:
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | |
 
-### Acessando os pixels numa posição X e Y
 
-Use `get()` para os pixels visveis na tela ou o método `.get()` para os pixels em uma imagem `PImage`. Como no exemplo abaixo:
 
-```pyde
- def setup():
-    size(500,500)
-    global imagem
-    imagem = loadImage('arquivo.png')  # carregando uma imagem da pasta /data/
-    
- def draw():
-    iw, ih = imagem.width, imagem.height
-    print(iw, ih)
-    cor = imagem.get(mouseX, mouseY)  # cor do pixel sob o mouse
-    fill(cor)
-    noStroke()
-    image(imagem, 0, 0)
-    circle(mouseX, mouseY, 30)
-```
+## Um exemplo de acesso aos pixels com `.get`
 
-Um exemplo ampliado:
 
 ```pyde
 
