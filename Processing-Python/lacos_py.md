@@ -99,7 +99,7 @@ viva!
 
 #### Você consegue imaginar um desenho usando esse tipo de repetição e números [pseudo-aleatórios](https://github.com/villares/material-aulas/blob/master/Processing-Python/numeros-aleatorios_py.md) com `random()`?
 
-## Mais sobre o `range()`
+### Mais sobre o `range()`
 
 A função `range()` aceita argumentos na forma `range(início, parada, passo)`, *início* será o primeiro número, e a sequência para antes do número *parada*, aumentando com o número do *passo*, veja este exemplo com resultado visual com linhas:
 
@@ -115,7 +115,7 @@ for x in range(10, 80, 5): # x começa valendo 10 e termina valendo 75
 ![verticais](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/verticais.png)
 </details>
 
-## Um pouco sobre listas e tuplas
+## Um pouco sobre tuplas e listas
 
 Vamos ver agora duas estruturas de dados muito usadas em Python para guardar coleções ordenadas, ou sequências, de valores: tupla (*tuple*) e lista (*list*).
 
