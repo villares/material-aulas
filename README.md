@@ -42,7 +42,7 @@ Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 
 - [Desenho 3D](/Processing-Python/desenho-3D.md)
 
-#### Usando recursos externos
+#### Arquivos externos
 
 - [Arquivos de imagem (bitmap/raster)](/Processing-Python/imagens_externas.md)
 <!-- [Usando um arquivo vetorial (SVG)](/Processing-Python/usando_svg.md) -->
@@ -56,13 +56,19 @@ Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 #### Orientação a Objetos
 
 - [Uma classe de partículas simples](/Processing-Python/particulas.md)
-- [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/mestrado/bandeirinhas/) - página externa
+- [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/mestrado/bandeirinhas/) - Página externa
 
 #### Questões mais avançadas da ferramenta
 
 - [Exportando um aplicativo independente](https://github.com/villares/material-aulas/blob/master/Processing-Python/export_application.md)
 - [Usando várias abas no IDE](/Processing-Python/modulos.md)
 - [Sobre o Python 2 e alguns recursos do Python 3](/Processing-Python/futuro.md)
+
+#### Pequenos projetos
+
+- [`caneta_automatica_py`](caneta_automatica) - Módulo para desenhar inspirado na tartaruga de Logo
+- [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
+
 
 ### Outros recursos introdutórios abertos
 
