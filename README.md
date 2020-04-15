@@ -1,4 +1,4 @@
-## Material para cursos e oficinas com Processing modo Python - [repositório](https://github.com/villares/material-aulas/)
+## Material para cursos e oficinas com Processing modo Python<br>([repositório](https://github.com/villares/material-aulas/))
 
 **Processing modo Python** é uma ferramenta livre de programação com a sintaxe de Python, que inclui o vocabulário, recursos de desenho e manipulação de imagens, de Processing.
 
@@ -14,33 +14,24 @@ Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 ### Assuntos
 
 - [Primeiros passos e desenho básico](/Processing-Python/desenho-basico_py.md)
-  - [Desenhando polígonos](/Processing-Python/poligonos_1.md)
-  
+  - [Desenhando polígonos](/Processing-Python/poligonos_1.md)  
 - [Condicionais (`if` e `else`)](/Processing-Python/condicionais_py.md)
   - [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](/Processing-Python/atribuicao-e-comparacao.md)
-
 - [Movimento: uma animação simples usando `setup()` e `draw()`](/Processing-Python/movimento_py.md)
   - [Escopo de variáveis (local e global)](/Processing-Python/escopo_py.md)
-
 - [Aleatoriedade: `random` e números 'sorteados'](/Processing-Python/numeros-aleatorios_py.md)
-
 - [Interação: input com teclado e mouse](/Processing-Python/input_py.md)
-
 - [Sequências e laços de repetição (iteração com `for`)](/Processing-Python/lacos_py.md)
   - [Mais sobre sequências e fatias](/Processing-Python/mais_sequencias.md)
   - [Grades retangulares: filas e colunas de elementos](/Processing-Python/grades.md)
   - [Mais sobre polígonos](/Processing-Python/poligonos_2.md)
   - [Laço de repetição com `while`](/Processing-Python/while.md)
-  
 - [Textos no programa, no console e na tela](https://github.com/villares/material-aulas/blob/master/Processing-Python/strings_py.md)
   - [Trabalhando com fontes e outros ajustes do texto](/Processing-Python/tipografia.md)
-
 - [Declarando novas funções](/Processing-Python/funcoes_py.md)
   - [Funções recursivas](/Processing-Python/recursao_py.md)
-
 - [Tipos de valores (inteiros, números de ponto flutuante, texto)](/Processing-Python/tipagem_py.md)
-
-- [Desenho 3D](/Processing-Python/desenho-3D.md)
+- [Desenhando em 3D](/Processing-Python/desenho-3D.md)
 
 #### Arquivos externos
 
@@ -66,6 +57,7 @@ Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 
 #### Pequenos projetos
 
+- [Jogo PONG](https://github.com/villares/material-aulas/tree/master/pong) - Estudos para o fazer um jogo
 - [`caneta_automatica_py`](caneta_automatica) - Módulo para desenhar inspirado na tartaruga de Logo
 - [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
 
