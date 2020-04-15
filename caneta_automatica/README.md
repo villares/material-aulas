@@ -50,8 +50,8 @@ def inicie_caneta():
     caneta = True  # e apontar para o valor True 
     translate(width / 2, height / 2)  # muda o 0, 0 pro meio
     rotate(HALF_PI)  # vira o sistema de coordenadas 90 graus
+    # no estado inicial, ande(n) é translate(0, -n) é para para a direita
 ```
-
 
 As funções `suba _caneta()` e  `baixe_caneta()` vão alterar o estado da caneta mudando a variável global, indicadora do estado da caneta, `caneta`:
 
@@ -65,7 +65,13 @@ def baixe_caneta():
     caneta = True
 ```
 
-Agora a parte mais bacana! Ao andar, vamos sempre deslocar a origem (x=0, y=0 do Processing)  para a posição final da caneta (`n` para frente).  Mas primero, se a caneta estiver abaixada (`True`) vamos desenhar uma linha da posição atual (0, 0) para a posição final (0, n), onde `n` é o valor da distância que recebemos para andar:
+Agora a parte mais bacana!
+
+Se a caneta estiver abaixada (`True`) vamos desenhar uma linha da posição atual `0, 0` para a posição final `0, -n`, onde `n` é o valor da distância que recebemos para andar.
+
+Por fim, vamos deslocar a origem (o x=0, y=0 do Processing)  para a posição final da caneta com `translate(0, -n`). 
+
+Note que esse `n` é usado negativo, `-ǹ`  por conta do sistema de coordenadas original ter sido girado 90 graus na função `inicie_caneta()`, e o Y do Processing cresce para cima... logo deslocar `0, -n` no estado inicial é andar para a direita.
 
 ```pyde
 def ande(n):
@@ -74,12 +80,11 @@ def ande(n):
     translate(0, -n)
 ```
 
-Para virar,  vamos converter o ângulo em graus para radianos com `radians()`e girar o sistema de coordenadas!
+Para virar, vamos converter o ângulo em graus para radianos com `radians()`e girar o sistema de coordenadas!
 
 ```pyde
 def vire(a):
-	# inverte para que ângulo positivo fique anti-hórario
-    rotate(radians(-a))  
+    rotate(radians(-a))	# ângulo positivo fica anti-hórario
     
 def esquerda():
     vire(90)
