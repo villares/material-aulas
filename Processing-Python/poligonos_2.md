@@ -1,13 +1,14 @@
 # Desanhando polígonos - II
-### mais sobre polígonos
+### mais sobre polígonos e PShape
 
-Agora que já sabemos iterar por uma estrutura de dados, podemos usar as coordenadas das tuplas na lista que vimos anteriormente para desenhar um polígono:
+Agora que já sabemos iterar por uma estrutura de dados, podemos usar as coordenadas das tuplas na lista que vimos anteriormente para desenhar um polígono ou mais genericamente um 'forma' PShape:
 
 ```pyde
 def setup():
     size(400, 400)
     
     pontos = [(50, 50), (300, 370), (200, 50), (150, 150)]
+    
     beginShape()
     for x, y in pontos:
         vertex(x, y)
@@ -16,9 +17,16 @@ def setup():
 
 ![poligono_2](assets/poligono_2.png)
 
-Podemos inclusive encapsular e uma função a o desenho do polígono:
+Podemos inclusive encapsular em uma função a parte do código que faz o desenho do polígono:
 
 ```pyde
+def setup():
+    size(400, 400)
+    
+    pontos = [(50, 50), (300, 370), (200, 50), (150, 150)]
+    poly(pontos)
+
+
 def poly(sequencia):
     beginShape()
     for x, y in sequencia:
