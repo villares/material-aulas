@@ -41,7 +41,7 @@ flor(5, 150)
 
 ### Como o módulo `caneta_automatica.py` é feito por dentro?
 
-A função `inicie_caneta()`prepara o terreno cirando uma variável `caneta` que vai dizer se a caneta está no papel (abaixada, `True`) ou levantanda (`False`). Fazer com que ela comece abaixada e mudar as coordenadas do desenho para que o x=0 e y=0 sejam no meio da tela:
+A função `inicie_caneta()`prepara o terreno criando uma variável `caneta` que vai dizer se a caneta está no papel (abaixada, `True`) ou levantanda (`False`). Fazer com que ela comece abaixada e muda as coordenadas do  x=0 e y=0 para o meio da tela:
 
 ```pyde
 def inicie_caneta():
@@ -50,7 +50,7 @@ def inicie_caneta():
     caneta = True  # e apontar para o valor True 
     translate(width / 2, height / 2)  # muda o 0, 0 pro meio
     rotate(HALF_PI)  # vira o sistema de coordenadas 90 graus
-    # no estado inicial, ande(n) é translate(0, -n) é para para a direita
+    # no estado inicial ande(n) faz translate(0, -n), para a direita
 ```
 
 As funções `suba _caneta()` e  `baixe_caneta()` vão alterar o estado da caneta mudando a variável global, indicadora do estado da caneta, `caneta`:
@@ -71,7 +71,7 @@ Se a caneta estiver abaixada (`True`) vamos desenhar uma linha da posição atua
 
 Por fim, vamos deslocar a origem (o x=0, y=0 do Processing)  para a posição final da caneta com `translate(0, -n`). 
 
-Note que esse `n` é usado negativo, `-ǹ`  por conta do sistema de coordenadas original ter sido girado 90 graus na função `inicie_caneta()`, e o Y do Processing cresce para cima... logo deslocar `0, -n` no estado inicial é andar para a direita.
+Note que é usado `-n`  por conta do sistema de coordenadas original ter sido girado 90 graus na função `inicie_caneta()`, e o Y do Processing cresce para cima... Deslocar`translate(0, -n)`na orientação inical, andar pra frente, é andar para a direita na tela.
 
 ```pyde
 def ande(n):
