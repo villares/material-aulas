@@ -27,10 +27,6 @@ def desenha_retangulos(x, y, tam,level):
 
 ### Árvore recursiva
 
-TODO: por imagem aqui
-
-[exemplo interativo](https://abav.lugaralgum.com/sketch-a-day/2019/sketch_191025pybr2019/index.html)
-
 ```python
 def setup():
     size(500, 500)
@@ -53,6 +49,10 @@ def galho(tamanho):
         rotate(ang)
         translate(0, tamanho)
 ```
+
+[exemplo interativo com pyp5js](https://abav.lugaralgum.com/sketch-a-day/2019/sketch_191025pybr2019/index.html)
+
+<iframe src="https://abav.lugaralgum.com/sketch-a-day/2019/sketch_191025pybr2019/index.html" width=500 height=500></iframe>
 
 ---
 Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
