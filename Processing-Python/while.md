@@ -15,6 +15,7 @@ def setup():
     size(400, 400)
     background(0)
     estrela(width / 2, height / 2, 190, 100, 10)
+    
 def estrela(x, y, raio_a, raio_b, num_pontas):
     passo = TWO_PI / num_pontas
     beginShape()
