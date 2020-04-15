@@ -8,12 +8,12 @@ Para que isso funcione (e não caia em uma cilada conhecida como "recursão infi
 
 ### Exemplo 01
 
-![imagem1](https://github.com/arteprog/programacao-criativa/blob/master/assets/imagens/recursao/01recursao.jpg?raw=true)
+![imagem1](assets/recursividade.png)
 
 ```python
 def setup():
-    size(500, 500)
-    desenha_retangulos(0, 0, 500, 10)
+    size(800, 400)
+    desenha_retangulos(0, 0, height, 10)
 
 def desenha_retangulos(x, y, tam,level):
     rect(x, y, tam, tam)
