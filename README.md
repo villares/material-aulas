@@ -55,12 +55,12 @@ Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 
 ### Pequenos projetos
 
-- [caneta_automatica_py](caneta_automatica) Um módulo para desenhar inspirado na tartaruga de Logo.
+- [caneta_automatica_py](caneta_automatica) - Módulo para desenhar inspirado na tartaruga de Logo.
 
 #### Orientação a Objetos
 
 - [Uma classe de partículas simples](/Processing-Python/particulas.md)
-- [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/mestrado/bandeirinhas/) - página externa
+- [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/mestrado/bandeirinhas/) - Página externa
 
 #### Questões mais avançadas da ferramenta
 
