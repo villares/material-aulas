@@ -21,7 +21,7 @@ def desenha_retangulos(x, y, tam,level):
         level = level - 1
         desenha_retangulos(x, y, tam / 2, level)
         desenha_retangulos(x + tam, y, tam / 2, level)
-    # o caso base aqui é quando level chega a 0 (level > 1 se torna falso)
+    # o caso base aqui é quando level chega a 1 (level > 1 se torna falso)
     # e então apenas um retângulo é desenhado
 ```
 
