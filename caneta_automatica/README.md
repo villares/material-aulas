@@ -4,7 +4,9 @@
 
 > Este módulo é uma tentativa de fazer com mínimos elementos uma ferramenta de desenho inspirada na tartatuga desenhadora da linguagem Logo. Leia mais sobre Logo em  <https://pt.wikipedia.org/wiki/Logo>. Você vai precisar do [Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/).
 
-O módulo *caneta_automatica.py*  deve estar na pasta do seu *sketch* e pode ser  importado e iniciado com as seguintes linhas: 
+O módulo *caneta_automatica.py*  deve estar na pasta do seu *sketch* , se tornando uma aba do ide. Baixe o arquivo ou Copie e cole o conteúdo de [caneta_automatica.py](https://raw.githubusercontent.com/villares/material-aulas/master/caneta_automatica/caneta_automatica.py) em uma aba de nome 'caneta_automatica' (o processing acrescenta '.py' no arquivo)..
+
+Para importar e iniciar, use as seguintes linhas: 
 
 ```pyde
 form caneta_automatica import *
@@ -13,9 +15,31 @@ size(400, 400)  # área de desenho do Processing
 inicie_caneta()
 ```
 
-### Como isso foi feito?
+### Um exemplo de uso
 
-Você pode se quiser copiar e colar o conteúdo de [caneta_automatica.py](https://raw.githubusercontent.com/villares/material-aulas/master/caneta_automatica/caneta_automatica.py) em uma aba de mesmo nome, mas vamos ver aqui passo a passo como ele é construído!
+```pyde
+from caneta_automatica import *
+
+size(400, 400)
+inicie_caneta()
+
+def flor(n, tamanho):
+    for passo in range(n):
+        ande(tamanho)
+        vire(360 / n)
+        if tamanho > 5:
+            flor(n, tamanho / 3)
+
+suba_caneta()
+ande(100)
+esquerda() # equivale a 'vire(90)'  
+baixe_caneta()
+    
+flor(5, 150)
+```
+![flor](caneta_flor.png)
+
+### Como o módulo `caneta_automatica.py` é feito por dentro?
 
 A função `inicie_caneta()`prepara o terreno cirando uma variável `caneta` que vai dizer se a caneta está no papel (abaixada, `True`) ou levantanda (`False`). Fazer com que ela comece abaixada e mudar as coordenadas do desenho para que o x=0 e y=0 sejam no meio da tela:
 
@@ -54,7 +78,7 @@ Para virar,  vamos converter o ângulo em graus para radianos com `radians()`e g
 
 ```pyde
 def vire(a):
-	# inverte para que ângulo positico fique anti-hórario
+	# inverte para que ângulo positivo fique anti-hórario
     rotate(radians(-a))  
     
 def esquerda():
@@ -64,9 +88,6 @@ def direita():
     vire(-90)
 
 ```
-
-
-
 
 
 
