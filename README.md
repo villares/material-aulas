@@ -53,10 +53,6 @@ Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 - [Exportando PDF (saída vetorial)](/Processing-Python/exportando_pdf.md)
 - [Exportando animações (vídeos ou GIF)](/Processing-Python/exportar_animacoes.md) 
 
-### Pequenos projetos
-
-- [caneta_automatica_py](caneta_automatica) - Módulo para desenhar inspirado na tartaruga de Logo.
-
 #### Orientação a Objetos
 
 - [Uma classe de partículas simples](/Processing-Python/particulas.md)
@@ -67,6 +63,12 @@ Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 - [Exportando um aplicativo independente](https://github.com/villares/material-aulas/blob/master/Processing-Python/export_application.md)
 - [Usando várias abas no IDE](/Processing-Python/modulos.md)
 - [Sobre o Python 2 e alguns recursos do Python 3](/Processing-Python/futuro.md)
+
+#### Pequenos projetos
+
+- [`caneta_automatica_py`](caneta_automatica) - Módulo para desenhar inspirado na tartaruga de Logo
+- [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
+
 
 ### Outros recursos introdutórios abertos
 
