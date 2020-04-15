@@ -42,7 +42,7 @@ Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 
 - [Desenho 3D](/Processing-Python/desenho-3D.md)
 
-#### Usando recursos externos
+#### Arquivos externos
 
 - [Arquivos de imagem (bitmap/raster)](/Processing-Python/imagens_externas.md)
 <!-- [Usando um arquivo vetorial (SVG)](/Processing-Python/usando_svg.md) -->
@@ -52,6 +52,10 @@ Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 - [Exportando imagens (bitmap/raster](/Processing-Python/exportando_imagem.md)
 - [Exportando PDF (saída vetorial)](/Processing-Python/exportando_pdf.md)
 - [Exportando animações (vídeos ou GIF)](/Processing-Python/exportar_animacoes.md) 
+
+### Pequenos projetos
+
+- [caneta_automatica_py](caneta_automatica) Um módulo para desenhar inspirado na tartaruga de Logo.
 
 #### Orientação a Objetos
 
