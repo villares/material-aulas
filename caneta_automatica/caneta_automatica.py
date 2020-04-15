@@ -19,3 +19,9 @@ def ande(n):
 
 def vire(a):
     rotate(radians(-a))
+
+def esquerda():
+    vire(90)
+
+def direita():
+    vire(-90)
