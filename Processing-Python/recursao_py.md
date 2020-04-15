@@ -13,7 +13,7 @@ Para que isso funcione (e não caia em uma cilada conhecida como "recursão infi
 ```python
 def setup():
     size(800, 400)
-    desenha_retangulos(0, 0, height, 10)
+    desenha_retangulos(0, 0, 399, 10)
 
 def desenha_retangulos(x, y, tam,level):
     rect(x, y, tam, tam)
