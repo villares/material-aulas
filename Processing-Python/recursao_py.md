@@ -11,7 +11,7 @@ Para que isso funcione (e não caia em uma cilada conhecida como "recursão infi
 ![imagem1](https://github.com/arteprog/programacao-criativa/blob/master/assets/imagens/recursao/01recursao.jpg?raw=true)
 
 ```python
-vdef setup():
+def setup():
     size(500, 500)
     desenha_retangulos(0, 0, 500, 10)
 
