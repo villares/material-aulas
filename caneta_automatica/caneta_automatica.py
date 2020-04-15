@@ -1,8 +1,8 @@
 def inicie_caneta():
     global caneta
-    caneta = True
+    caneta = True  # a caneta começa abaixada
     translate(width / 2, height / 2)
-    rotate(HALF_PI)
+    rotate(HALF_PI)  # rotate(radians(90))
 
 def suba_caneta():
     global caneta
