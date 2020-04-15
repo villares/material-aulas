@@ -14,7 +14,8 @@ Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 ### Assuntos
 
 - [Primeiros passos e desenho básico](/Processing-Python/desenho-basico_py.md)
-
+  - [Desenhando polígonos](/Processing-Python/poligonos_1.md)
+  
 - [Condicionais (`if` e `else`)](/Processing-Python/condicionais_py.md)
   - [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](/Processing-Python/atribuicao-e-comparacao.md)
 
@@ -25,8 +26,10 @@ Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 
 - [Interação: input com teclado e mouse](/Processing-Python/input_py.md)
 
-- [Sequências e laços de repetição (iteração)](/Processing-Python/lacos_py.md)
+- [Sequências e laços de repetição (iteração com `for`)](/Processing-Python/lacos_py.md)
   - [Mais sobre sequências e fatias](/Processing-Python/mais_sequencias.md)
+  - [Mais sobre polígonos](/Processing-Python/poligonos_2.md)
+  - [Laço de repetição com `while`](/Processing-Python/while.md)
 
 - [Grades retangulares: filas e colunas de elementos](/Processing-Python/grades.md)
   
