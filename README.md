@@ -28,10 +28,9 @@ Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 
 - [Sequências e laços de repetição (iteração com `for`)](/Processing-Python/lacos_py.md)
   - [Mais sobre sequências e fatias](/Processing-Python/mais_sequencias.md)
-  - [Mais sobre polígonos](/Processing-Python/poligonos_2.md)
   - [Laço de repetição com `while`](/Processing-Python/while.md)
-
-- [Grades retangulares: filas e colunas de elementos](/Processing-Python/grades.md)
+  - [Grades retangulares: filas e colunas de elementos](/Processing-Python/grades.md)
+  - [Mais sobre polígonos](/Processing-Python/poligonos_2.md)
   
 - [Textos no programa, no console e na tela](https://github.com/villares/material-aulas/blob/master/Processing-Python/strings_py.md)
   - [Trabalhando com fontes e outros ajustes do texto](/Processing-Python/tipografia.md)
