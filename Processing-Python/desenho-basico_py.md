@@ -72,6 +72,9 @@ O fundo também serve para apagar a área de desenho
 ```python
 background(0, 255, 0) # fundo verde, limpa a tela background(R, G, B)
 ```
+## Onde encontrar os nomes das funções, o vocabulário, e os seus significados?
+
+O tempo todo vamos consultar o que é conhecido como *language reference* (referência da linguagem) que para o Processing modo Python esta em [py.processing.org/reference](https://py.processing.org/reference/).
 
 ## Comentários, o que são e como criar comentários em Python?
 
