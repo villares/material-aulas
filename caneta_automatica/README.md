@@ -26,7 +26,7 @@ size(400, 400)
 inicie_caneta()
 
 for i in range(4):  # repete 4 vezes: 
-    ande(100)   # anda e faz uma linha
+    ande(100)       # anda e faz uma linha
     vire(90)        # viar 90 graus à esquerda        
 ```
 
