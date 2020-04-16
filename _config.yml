@@ -1,4 +1,4 @@
-highlighter: rouge
-markdown: kramdown
-kramdown:
-  input: GFM
+
+syntax_highlighting :
+  enabled : true
+  css : syntax.css
