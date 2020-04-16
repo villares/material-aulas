@@ -19,9 +19,10 @@ def setup():
 
 ### Formas com furos
     
-Podemos criar furos dentro de formas 'PShape' pendindo uma sequênciade vértices (`vertex()`)  entre as funções `beginContour()` e `endContour()`, que por sua vez precisam estar entre `beginShape()` e `endShape()`. É preciso também que a direção dos pontos da forma interna, do furo seja contrária a da forma externa.
+Podemos criar furos dentro de formas `PShape` pendindo uma sequência de vértices, com`vertex()`, entre as funções `beginContour()` e `endContour()`, que por sua vez precisam estar entre `beginShape()` e `endShape()`.
+**Note que é preciso que a direção dos pontos da forma interna, do furo seja contrária a da forma externa.**
 
-No exemplo a seguir vamos descrever com uma lista de tuplas 3 vértices em sentido horário, e os vértices do furo no mesmo sentido. Note que para funcionar corretamente, no segundo laço `for` os pontos do furo tem sua ordem invertida com `pontos_furo[::-1]`. Experimente remover essa inversão para ver o resultado!
+No exemplo a seguir vamos descrever com uma lista de tuplas 3 vértices em sentido horário, e os vértices do furo no mesmo sentido. Para funcionar corretamente o furo, no segundo laço `for` os pontos do furo tem sua ordem invertida com `pontos_furo[::-1]`. Experimente remover essa inversão para ver o resultado!
     
 ```python
 def setup():
@@ -51,7 +52,7 @@ def setup():
 Você conseguiria encapsular em uma função a parte do código que faz o desenho do polígono?
     
 <details>    
-<summary>Avançado: Uma função que desenha polígonos a partir de sequências de pontos.</summary>
+<summary>Resposta: Uma função que desenha polígonos a partir de sequências de pontos.</summary>
 
 ```python
 def poly(points, holes=None, closed=True):
