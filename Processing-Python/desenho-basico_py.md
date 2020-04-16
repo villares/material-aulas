@@ -2,7 +2,7 @@
 
 Se você seguiu os passos [para instalar o Processin modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/), experimente digitar o código abaixo no IDE (nosso editor de código), e, em seguida, clique no botão com a seta triangular para frente (Executar/*Run*):
 
-```pyde
+```pde
 size(200, 200)
 rect(20, 10, 40, 80) 
 ``` 
@@ -15,7 +15,7 @@ rect(20, 10, 40, 80)
 
 Usamos a função `size()` para determinar o tamanho da área de desenho (sem ela é gerada uma pequena tela de 100 por 100 pixels). Processing nos oferece automaticamente duas variáveis, os nomes `width` e `height`, que referenciam os valores de largura e altura da área de desenho, respectivamente. Podemos mostrar na parte de baixo da janela, no Console, esses valores usando `print()`.
 
-```python
+```pde
 size(400, 200) # define o tamanho da área de deseno (w, h) 
 print(width) # imprime no console largura atual da tela
 print(height) # imprime no console altura atual da tela
@@ -30,7 +30,7 @@ Note que o eixo X cresce para a direita como de costume, mas o eixo Y é 'invert
 
 ## Desenhando algumas formas
 
-```python
+```pyde
 rect(20, 10, 40, 80) # retângulo (x, y, largura, altura)
 ellipse(10, 20, 50, 50) # oval (x, y, largura, altura)
 line(10, 10, 50,50) # linha do ponto 1 ao ponto 2 (x1, y1, x2, y2)
@@ -52,7 +52,7 @@ ellipse(50, 50, 50, 50) # produz um círculo verde
 
 É possível ajustar a cor de preenchimento de uma forma com `fill()` a cor de traço do contorno com `stroke()`, pedir uma forma sem preenchimento com `noFill()` ou sem traço de contorno com `noStroke()`. A espessura do traço de contorno pode ser contolada com `strokeWeight()`.
 
-```python
+```pyde
 noFill() # sem preenchimento, formas vazadas
 stroke(0, 0, 255) # exemplo de cor do traço azul cor(R, G, B)
 strokeWeight(10) # espessura do traço de contorno 10 pixels
@@ -83,7 +83,7 @@ Comentário são feitos para as pessoas (como você, daqui a uma semana! lembrar
 
 Comentários de uma linha só começam com `#`. São também um jeito rápido de desativar uma linha! Em inglês tem até uma expressão para isso: *comment out* (desativar por meio de um comentário)
 
-```pyde
+```python
 # Oi eu sou um comentário
 size(900, 900)  # área de desenho maior - outro comentário
 # background(0) <- desativado, pq isso aqui virou um comentário
