@@ -68,7 +68,7 @@ def setup():
     flor(5, 150)
 
 def flor(n, tamanho):
-    for passo in range(n):
+    for i in range(n):
         ande(tamanho)
         vire(360 / n)
         if tamanho > 5:
