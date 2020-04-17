@@ -3,7 +3,7 @@
 
 Agora que já sabemos iterar por uma estrutura de dados, podemos usar as coordenadas das tuplas na lista que vimos anteriormente para desenhar um polígono ou mais genericamente um 'forma' PShape:
 
-```pyde
+```python
 def setup():
     size(400, 400)
     
