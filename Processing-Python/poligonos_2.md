@@ -20,7 +20,8 @@ def setup():
 ### Formas com furos
     
 Podemos criar furos dentro de formas `PShape` pendindo uma sequência de vértices, com`vertex()`, entre as funções `beginContour()` e `endContour()`, que por sua vez precisam estar entre `beginShape()` e `endShape()`.
-**Note que é preciso que a direção dos pontos da forma interna, do furo seja contrária a da forma externa.**
+
+**Note que é preciso que a direção dos pontos da forma interna, do furo, seja contrária a da forma externa.**
 
 No exemplo a seguir vamos descrever com uma lista de tuplas 3 vértices em sentido horário, e os vértices do furo no mesmo sentido. Para funcionar corretamente o furo, no segundo laço `for` os pontos do furo tem sua ordem invertida com `pontos_furo[::-1]`. Experimente remover essa inversão para ver o resultado!
     
@@ -91,9 +92,9 @@ def poly(points, holes=None, closed=True):
             vertex(p[0], p[1])
         else:
             vertex(*p)  # desempacota pontos em 3d
-    if holes is None:
-        holes = []
-    elif depth(holes) == 2:  # sequência única de pontos
+    # tratamento dos furos, se houver           
+    holes = holes or []  # equivale a: holes if holes else []
+    if depth(holes) == 2:  # sequência única de pontos
         holes = (holes,)     # envolve em um tupla
     for hole in holes:  # para cada furo
         beginContour()  # inicia o furo
