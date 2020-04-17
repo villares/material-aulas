@@ -2,10 +2,10 @@
 
 Se você seguiu os passos [para instalar o Processin modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/), experimente digitar o código abaixo no IDE (nosso editor de código), e, em seguida, clique no botão com a seta triangular para frente (Executar/*Run*):
 
-```pyde
+```python
 size(200, 200)
 rect(20, 10, 40, 80) 
-``` 
+```
 
 ![IDE](assets/01-IDE.png))
 
@@ -83,7 +83,7 @@ Comentário são feitos para as pessoas (como você, daqui a uma semana! lembrar
 
 Comentários de uma linha só começam com `#`. São também um jeito rápido de desativar uma linha! Em inglês tem até uma expressão para isso: *comment out* (desativar por meio de um comentário)
 
-```pyde
+```python
 # Oi eu sou um comentário
 size(900, 900)  # área de desenho maior - outro comentário
 # background(0) <- desativado, pq isso aqui virou um comentário
