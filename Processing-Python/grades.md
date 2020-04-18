@@ -6,7 +6,7 @@ Vamos começar com uma fila de círculos:
 
 ```pyde
 size(400, 40)
-# deslocamento (offset) inicial: 20 - largura das colunas: 40 
+# deslocamento (offset) inicial: 20 - deslocamento horizontal de cada círculo: 40 
 for x in range(20, 400, 40): # 10 números de 20 a 380, incluso, de 40 em 40
     ellipse(x, 20, 35, 35) # círculos de diâmetro 35
 ```
@@ -39,7 +39,9 @@ for x in range(20, 400, 40): # 10 números de 20 a 380, de 40 em 40
 
 ![](https://github.com/villares/material-aulas/blob/master/Processing-Python/assets/grade.png?raw=true)
 
-Um exemplo um pouco ampliado:
+É possível também fazer uma "coluna de filas", mudando só a ordem de desenho, mas não o resultado visual final.
+
+Veja um exemplo, um pouco ampliado, em que a posição do elemento altera a cor e o tamanho:
 
 ```pyde
 def setup():  
