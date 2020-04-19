@@ -1,3 +1,4 @@
+
 ---
 
 ## material para cursos e oficinas ([repositório](https://github.com/villares/material-aulas/))
@@ -9,9 +10,9 @@ Este material é baseado em **Processing modo Python**, uma ferramenta livre de 
 
 ### Como colaborar e contribuir?
 
-Este material didático é aberto. Leia as [instruções para colaborar com este repositório](/como-contribuir.md)! Abra [*issues*](https://github.com/villares/material-aulas/issues) apontando problemas, sugerindo assuntos e melhorias. Contribua com *Pull Requests* para repositório. 
+Este material didático é aberto. Você pode [fazer pequenas doações](https://gumroad.com/villares)! 
 
-Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
+Leia as [instruções para colaborar com este repositório](/como-contribuir.md) e abra [*issues*](https://github.com/villares/material-aulas/issues) apontando problemas, sugerindo assuntos e melhorias, ou contribua com *Pull Requests* para o repositório.
 
 ### Assuntos
 
