@@ -6,7 +6,7 @@
 Este material é baseado em **Processing modo Python**, uma ferramenta livre de programação com a sintaxe de Python e que inclui o vocabulário, os recursos de desenho e manipulação de imagens, de Processing.
 
 #### [O que é e como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)
-<sub><b>Caso não possa instalar, experimente no navegador:<br>- [Triket.io](https://trinket.io/python/cfaf743794<br>) ou [SkulptIDE](http://tiny.cc/processing_python) do prof. Claudio Esperança.<br>- Conheça também o projeto [pyp5js](https://github.com/berinhard/pyp5js) que converte Python em JavaScript+P5js</b></sub>
+<sub><b>Caso não possa instalar, experimente no navegador:<br>- [Triket.io](https://trinket.io/python/cfaf743794) ou [SkulptIDE](http://tiny.cc/processing_python) do prof. Claudio Esperança.<br>- Conheça também o projeto [pyp5js](https://github.com/berinhard/pyp5js) que converte Python em JavaScript+P5js</b></sub>
 
 ### Como colaborar e contribuir?
 
