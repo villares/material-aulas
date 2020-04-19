@@ -1,6 +1,6 @@
 ---
 
-## Material para cursos e oficinas<br>([repositório](https://github.com/villares/material-aulas/))
+## material para cursos e oficinas ([repositório](https://github.com/villares/material-aulas/))
 
 Este material é baseado em **Processing modo Python**, uma ferramenta livre de programação com a sintaxe de Python e que inclui o vocabulário, os recursos de desenho e manipulação de imagens, de Processing.
 
