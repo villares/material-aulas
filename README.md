@@ -1,15 +1,18 @@
-## Material para cursos e oficinas com Processing modo Python<br>([repositório](https://github.com/villares/material-aulas/))
 
-**Processing modo Python** é uma ferramenta livre de programação com a sintaxe de Python, que inclui o vocabulário, recursos de desenho e manipulação de imagens, de Processing.
+---
+
+## material para cursos e oficinas ([repositório](https://github.com/villares/material-aulas/))
+
+Este material é baseado em **Processing modo Python**, uma ferramenta livre de programação com a sintaxe de Python e que inclui o vocabulário, os recursos de desenho e manipulação de imagens, de Processing.
 
 #### [O que é e como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)
-###### Caso não possa instalar, experimente no navegador:<br>- Triket.io https://trinket.io/python/cfaf743794<br>- SkulptIDE do prof. Claudio Esperança: http://tiny.cc/processing_python<br>Conheça também o projeto [pyp5js](https://github.com/berinhard/pyp5js) que converte Python em JavaScript+P5js
+<sub><b>Caso não possa instalar, experimente no navegador:<br>- [Triket.io](https://trinket.io/python/cfaf743794) ou [SkulptIDE](http://tiny.cc/processing_python) do prof. Claudio Esperança.<br>- Conheça também o projeto [pyp5js](https://github.com/berinhard/pyp5js) que converte Python em JavaScript+P5js</b></sub>
 
 ### Como colaborar e contribuir?
 
-Este material didático é aberto. Leia as [instruções para colaborar com este repositório](/como-contribuir.md)! Abra [*issues*](https://github.com/villares/material-aulas/issues) apontando problemas, sugerindo assuntos e melhorias. Contribua com *Pull Requests* para repositório. 
+Este material didático é aberto. Você pode [fazer pequenas doações](https://gumroad.com/villares)! 
 
-Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
+Leia as [instruções para colaborar com este repositório](/como-contribuir.md) e abra [*issues*](https://github.com/villares/material-aulas/issues) apontando problemas, sugerindo assuntos e melhorias, ou contribua com *Pull Requests* para o repositório.
 
 ### Assuntos
 
@@ -61,15 +64,18 @@ Você pode ainda [fazer pequenas doações](https://gumroad.com/villares)!
 - [`caneta_automatica_py`](caneta_automatica) - Módulo para desenhar inspirado na tartaruga de Logo
 - [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
 
+### Referências
 
-### Outros recursos introdutórios abertos
+[py.processing.org/reference](http://py.processing.org/reference)
 
-#### Python
+#### Outros recursos introdutórios abertos
+
+##### Python
 
 - DOWNEY, Allen. [Pense em Python 2e](https://penseallen.github.io/PensePython2e/)
-- SWEIGART, Al. Automatize tarefas  maçantes com Python (traduzido pela Novatec) - [site do autor (em Inglês)](https://automatetheboringstuff.com)
+- SWEIGART, Al. Automatize taref)as  maçantes com Python (traduzido pela Novatec) - [site do autor (em Inglês)](https://automatetheboringstuff.com)
 
-#### Processing
+##### Processing
 
 - RIZZOLLI, Monica; VILLARES, Alexandre. [Programação Criativa](http://arteprog.space/programacao-criativa)
 
