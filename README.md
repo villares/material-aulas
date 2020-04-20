@@ -64,15 +64,18 @@ Leia as [instruções para colaborar com este repositório](/como-contribuir.md)
 - [`caneta_automatica_py`](caneta_automatica) - Módulo para desenhar inspirado na tartaruga de Logo
 - [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
 
+### Referências
 
-### Outros recursos introdutórios abertos
+[py.processing.org/reference](http://py.processing.org/reference)
 
-#### Python
+#### Outros recursos introdutórios abertos
+
+##### Python
 
 - DOWNEY, Allen. [Pense em Python 2e](https://penseallen.github.io/PensePython2e/)
-- SWEIGART, Al. Automatize tarefas  maçantes com Python (traduzido pela Novatec) - [site do autor (em Inglês)](https://automatetheboringstuff.com)
+- SWEIGART, Al. Automatize taref)as  maçantes com Python (traduzido pela Novatec) - [site do autor (em Inglês)](https://automatetheboringstuff.com)
 
-#### Processing
+##### Processing
 
 - RIZZOLLI, Monica; VILLARES, Alexandre. [Programação Criativa](http://arteprog.space/programacao-criativa)
 
