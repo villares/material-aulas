@@ -1,6 +1,6 @@
 # Exortando animações
 
-Há mais de uma estratégia possível para exportar imgagens em movimentoe, seja em vídeo ou um GIFs animado. Um caminho é exportar os diversos frames e usar alguma ferramenta de conversão, o outro é usar uma biblioteca que exporte diretamente um formato desejado.
+Há mais de uma estratégia possível para exportar imgagens em movimento, seja em vídeo ou um GIFs animado. Um caminho é exportar os diversos frames e usar alguma ferramenta de conversão, o outro é usar uma biblioteca que exporte diretamente um formato desejado.
 
 ### A. Exportando frames estáticos
 
@@ -26,7 +26,11 @@ def draw():
     else:
         exit()
 ```
-Para a conversão, a própria ferramenta `Movie Maker` do IDE do Processing, Gimp a partir de 'abrir como camadas' ou outra ferramenta da sua escolha (ffmpeg na linha de comando?).
+Para a converter esses 'frames' em um vídeo ou em um GIF animado, podemos usar:
+- A ferramenta `Movie Maker` do próprio IDE do Processing (Vídeo)
+- Gimp, com o comando 'abrir como camadas' (GIF animado)
+- Ferramentas online como https://ezgif.com/ (GIF animado)
+ou outra ferramenta da sua escolha, como o `ffmpeg` na linha de comando.
 
 ### B. Biblioteca *GifAnimation*
     
@@ -129,6 +133,7 @@ def draw():
 ### C. Biblioteca *Video Export*
     
 Pode ser baixada diretamente pelo IDE, e vem com exemplos.
-    
+
+`TO DO: por um exemplo em modo Python aqui`
 
 
