@@ -64,7 +64,7 @@ print(palavra[5])   # IndexError: index out of range: 5
 
 Estruturas mutáveis como listas, podem ter seus itens alterados, incluídos ou removidos.
 
-```
+```python
 lista = [1976, 1980, 1988, 2013]
 print(lista[2])  # o resultado é o terceiro número (índice 2):
 # 1988
