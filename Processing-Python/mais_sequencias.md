@@ -48,7 +48,7 @@ for letra in nome:
 
 Podemos consultar o comprimento de um *string* ou o caractere em uma certa posição pelo índice:
 
-![indices](assets/slice.png)
+![indices](/assets/slices.png)
 
 ```python
 palavra = 'fruta'
