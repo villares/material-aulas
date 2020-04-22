@@ -48,14 +48,14 @@ for letra in nome:
 
 Podemos consultar o comprimento de um *string* ou o caractere em uma certa posição pelo índice:
 
-![indices](/assets/slices.png)
+![indices](https://github.com/villares/material-aulas/blob/master/Processing-Python/assets/slices.png)
 
 ```python
-palavra = 'fruta'
+palavra = 'FRUTA'
 print(len(palavra)) # 5 
-print(palavra[0])   # 'f' a primeira letra
-print(palavra[1])   # 'r' a segunda letra
-print(palavra[-1])  # 'a' a última letra - posição (len(frase) - 1)
+print(palavra[0])   # 'F' a primeira letra
+print(palavra[1])   # 'R' a segunda letra
+print(palavra[-1])  # 'A' a última letra - posição (len(frase) - 1)
 ```
 
 ## Alterando itens
