@@ -46,14 +46,16 @@ for letra in nome:
 # o
 ```
 
-Podemos consultar o comprimento do *string* ou o caractere em uma certa posição pelo índice:
+Podemos consultar o comprimento de um *string* ou o caractere em uma certa posição pelo índice:
+
+![indices](assets/slice.png)
 
 ```python
-frase = 'silly walk'
-print(len(frase)) # 10 
-print(frase[0])   # 's' a primeira letra
-print(frase[1])   # 'i' a segunda letra
-print(frase[-1])  # 'k' a última letra - posição (len(frase) - 1)
+palavra = 'fruta'
+print(len(palavra)) # 5 
+print(palavra[0])   # 'f' a primeira letra
+print(palavra[1])   # 'r' a segunda letra
+print(palavra[-1])  # 'a' a última letra - posição (len(frase) - 1)
 ```
 
 ## Alterando itens
