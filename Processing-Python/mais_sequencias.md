@@ -30,7 +30,7 @@ print(alguns_pares[-1]) # com o índice -1 também temos o último item!
 print(alguns_pares[8])  # ERRO: o último item tem índice 7! IndexError: index out of range: 8
 ```
 
-## Strings são sequencias também!
+## Strings são sequências também!
 
 Python trata *strings*, texto, como um espécie de sequência de caracteres. É possível por exemplo iterar, isto é, realizar uma ação para cada caractere de um string:
 
