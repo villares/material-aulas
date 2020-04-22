@@ -1,10 +1,10 @@
 # Mais sobre sequências e fatias
 
-## Tamanho, comprimento ou *lenght*? número de itens: len()
+## Número de itens, tamanho ou comprimento da sequêcia (*lenght*): `len()`
 
 Listas e tuplas são das mais comuns estruturas de dados para coleções ordenadas de itens no Python. 
 
-Podemos obter o tamanho, isto é, o número de itens, de praticamente qualquer estrutura de dados em Python (ordenada ou não) usando a funçao `len()`. Por exemplo:
+Podemos obter o tamanho, isto é, o número de itens, de praticamente qualquer estrutura de dados em Python (ordenada ou não) usando a função `len()`. Por exemplo:
 
 ```python
 lista_de_nomes ['Bernardo Fontes', 'John Cleese', 'Georg Nees']
