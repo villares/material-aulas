@@ -1,6 +1,6 @@
 # Mais sobre sequências e fatias
 
-## Tamanho, comprimento (*lenght*)? número de itens: len()
+## Tamanho, comprimento ou *lenght*? número de itens: len()
 
 Listas e tuplas são das mais comuns estruturas de dados para coleções ordenadas de itens no Python. 
 
@@ -49,7 +49,7 @@ for letra in nome:
 
 Podemos consultar o comprimento de um *string* ou o caractere em uma certa posição pelo índice:
 
-![indices](https://github.com/villares/material-aulas/blob/master/Processing-Python/assets/slices.png)
+![indices](assets/slices.png)
 
 ```python
 palavra = 'FRUTA'
