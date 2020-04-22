@@ -1,6 +1,6 @@
 # Mais sobre sequências e fatias
 
-## Número de itens, tamanho ou comprimento da sequêcia (*lenght*): `len()`
+## Número de itens, tamanho ou comprimento da sequêcia (*length*): `len()`
 
 Listas e tuplas são das mais comuns estruturas de dados para coleções ordenadas de itens no Python. 
 
