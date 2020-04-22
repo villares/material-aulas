@@ -1,6 +1,6 @@
 # Mais sobre sequências e fatias
 
-## Número de itens, tamanho ou comprimento da sequêcia (*length*): `len()`
+### Número de itens, tamanho ou comprimento da sequêcia (*length*): `len()`
 
 Listas e tuplas são das mais comuns estruturas de dados para coleções ordenadas de itens no Python. 
 
@@ -17,7 +17,7 @@ n_paises = len(codigos_de_pais) # lista baseada em https://www.iso.org/obp/ui/#s
 print(n_paises) # imprime 249
 ```
 
-## Consultando individualmente itens de uma sequência
+### Consultando individualmente itens de uma sequência
 
 Quando temos uma lista, tupla ou outra coleção ordenada, podemos consultar seus itens pelo índice de posição com a notação `[i]`, sendo que **a primeira posição é a posição de índice 0**, e a última é a que tem como índice o número total de itens menos 1:
 
@@ -30,7 +30,7 @@ print(alguns_pares[-1]) # com o índice -1 também temos o último item!
 print(alguns_pares[8])  # ERRO: o último item tem índice 7! IndexError: index out of range: 8
 ```
 
-## Strings são sequências também!
+### Strings são sequências também!
 
 Python trata *strings*, texto, como um espécie de sequência de caracteres. É possível por exemplo iterar, isto é, realizar uma ação para cada caractere de um string:
 
@@ -60,7 +60,7 @@ print(palavra[-1])  # 'A' a última letra - posição (len(frase) - 1)
 print(palavra[5])   # IndexError: index out of range: 5
 ```
 
-## Alterando itens
+### Alterando itens
 
 Estruturas mutáveis como listas, podem ter seus itens alterados, incluídos ou removidos.
 
