@@ -27,6 +27,7 @@ print(alguns_pares[0])  # 2 o primeiro número
 print(alguns_pares[1])  # 4 o segundo número
 print(alguns_pares[len(alguns_pares) - 1]) # 2048 o último
 print(alguns_pares[-1]) # com o índice -1 também temos o último item!
+print(alguns_pares[8])  # ERRO: o último item tem índice 7! IndexError: index out of range: 8
 ```
 
 ## Strings são sequencias também!
@@ -39,7 +40,7 @@ for letra in nome:
     print(letra)
     
 # resultado no console:
-# G 
+# G é 
 # u
 # i
 # d
@@ -56,6 +57,7 @@ print(len(palavra)) # 5
 print(palavra[0])   # 'F' a primeira letra
 print(palavra[1])   # 'R' a segunda letra
 print(palavra[-1])  # 'A' a última letra - posição (len(frase) - 1)
+print(palavra[5])   # IndexError: index out of range: 5
 ```
 
 ## Alterando itens
