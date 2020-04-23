@@ -27,7 +27,7 @@ print(alguns_pares[0])  # 2 o primeiro número
 print(alguns_pares[1])  # 4 o segundo número
 print(alguns_pares[len(alguns_pares) - 1]) # 2048 o último
 print(alguns_pares[-1]) # com o índice -1 também temos o último item!
-print(alguns_pares[8])  # ERRO: o último item tem índice 7! IndexError: index out of range: 8
+print(alguns_pares[8])  # ERRO: índice 7 é o último! IndexError: index out of range: 8
 ```
 
 ### Strings são sequências também!
