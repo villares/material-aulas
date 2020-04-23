@@ -22,12 +22,12 @@ print(n_paises) # imprime 249
 Quando temos uma lista, tupla ou outra coleção ordenada, podemos consultar seus itens pelo índice de posição com a notação `[i]`, sendo que **a primeira posição é a posição de índice 0**, e a última é a que tem como índice o número total de itens menos 1:
 
 ```python
-alguns_pares = (2, 4, 6, 8, 10, 12, 24, 2048)
-print(alguns_pares[0])  # 2 o primeiro número
-print(alguns_pares[1])  # 4 o segundo número
-print(alguns_pares[len(alguns_pares) - 1]) # 2048 o último
-print(alguns_pares[-1]) # com o índice -1 também temos o último item!
-print(alguns_pares[8])  # ERRO: índice 7 é o último! IndexError: index out of range: 8
+numeros = (2, 4, 6, 8, 10, 12, 24, 2048)  # alguns números
+print(numeros[0])  # 2 o primeiro número
+print(numeros[1])  # 4 o segundo número
+print(numeros[len(alguns_pares) - 1]) # 2048 o último
+print(numeros[-1]) # com o índice -1 também temos o último item!
+print(numeros[8])  # ERRO: índice 7 é o último! IndexError: index out of range: 8
 ```
 
 ### Strings são sequências também!
@@ -39,8 +39,8 @@ nome = 'Guido'
 for letra in nome:
     print(letra)
     
-# resultado no console:
-# G é 
+# resultado no console é:
+# G  
 # u
 # i
 # d
