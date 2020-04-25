@@ -1,13 +1,15 @@
 # Desenhando polígonos - I
 ### primeiro contato
 
-Processing oferece funções para desenhar triângulos `triangle()` e quadriláteros `quad()`, 3 e 4 pares de números, coordenadas para 3 e 4 vértices, respectivamente, como no exemplo a seguir:
+Processing oferece funções para desenhar triângulos `triangle()` e quadriláteros `quad()` que são chamadas usando 3 e 4 pares de números, as coordenadas para 3 e 4 vértices, respectivamente. Veja o exemplo a seguir:
 
 ![triangulo e quadrilátero](assets/triangle_quad.png)
 
-Mas e se quisermos desenhar um polígono com um número arbitrário de vértices?
+Mas e se quisermos desenhar um polígono com 5, 6 ou com um número arbitrário de vértices?
 
-Neste caso usaremos um conjuto de funções, começando com `beguinShape()`, seguido de um número de vezes da função `vertex()` para cada vértice, terminando com `endShape()`. Quando usado com a constante `CLOSE`, `endShape(CLOSE)`, produz polígonos fechados.
+Neste caso usamos um conjuto de funções!
+
+Tudo começa com `beguinShape()`, seguido da repetição da função `vertex()` para cada vértice, terminando com `endShape()`. Quando usado com a constante `CLOSE`, `endShape(CLOSE)`, produz polígonos fechados.
 
 ```pyde
 def setup():
@@ -33,6 +35,8 @@ def setup():
 
 ### Desenhando uma estrela de quatro pontas
 
+Vejamos um exemplo que combina a estrutura que vimos antes com o uso de variáveis para calcular a posição dos vértices, formando um estrela!
+
 ```pyde
 def setup():
     size(200, 200)
@@ -54,3 +58,13 @@ def draw():
 ```
 
 ![e4](assets/estrela_4_pontas.png)
+
+
+
+### Assuntos relacionados
+
+- Você pode ver [usos mais avançados de `beginShape()` na referência](https://py.processing.org/reference/beginShape.html).
+- Você pode montar os vértices a partir de [estruturas de dados com laços de repetição ou fazer polígonos com furos](https://github.com/villares/material-aulas/blob/master/Processing-Python/poligonos_2.md)
+
+- [Estrelas de muitas pontas com laços de repetição `while`](https://github.com/villares/material-aulas/blob/master/Processing-Python/while.md)
+
