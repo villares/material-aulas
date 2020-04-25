@@ -1,4 +1,4 @@
-# Números aleatórios
+# Números 'aleatórios'
 
 ## Mais precisamente números pseudo-aleatórios
 
@@ -6,7 +6,9 @@ Computadores são máquinas determinísticas e não conseguem realmente 'sortear
 
 ### A função `random()` do Processing
 
-Cada vez que chamamos a função `random()` com um valor como em `sorteio = random(1);` um número entre zero e o argumento passado, que serve de limite superior, mas não está nele incluso, é produzido. 
+> **Atenção:** Isto que vamos ver agora é a função `random()` do Processing, *random* em Python é um pouquinho diferente, como veremos mais pra frente.
+
+Cada vez que chamamos a função `random()` com um valor de argumento, como em `sorteio = random(1);` um número entre zero e o argumento passado (servindo de limite superior, mas não incluso) é produzido. 
 
 ![imagem_exemplo](assets/random1-10.png)
 
@@ -24,11 +26,12 @@ faixa = random(-5, 5)
 # Produz um valor entre 0 e 20 convertido em inteiro (0, 1, 2 … 19)
 d20 = int(random(20)) 
 ```
-**Atenção:** *Este é o `random()` do Processing, o random do Python é um pouquinho diferente*
 
 ### O módulo `random` da biblioteca padrão do Python
 
-Além de prover uma função `random()`, parecida com fornecida pelo Processing, da qual não vamos tratar aqui, o módulo `random` de Python nos oferece as funções `choice()`, `sample()`, e `shuffle()`.
+No Python `random()` precisa ser importado do módulo `random` com a instrução `from random import random`, ela não recebe argumentos (isto é não vai nada dentro dos parênteses) e devolve o equivalente a `random(1)` no Processing, por isso não nos parece tão simpática e útil. 
+
+Mas o módulo `random` de Python nos oferece outras funções muito simpáticas, quer dizer, interessantes: `choice()`, `sample()`, e `shuffle()`.
 
 #### selecionando um único item
 
@@ -70,7 +73,7 @@ print(len(duas_cores))  # resultado: 2
 
 #### Misturando a ordem de uma sequência mutável
 
-Ao executar `shuffle(sequence)` fazemos com que `sequence`, que não pode ser uma sequência vazia, seja reordenada.
+Ao executar `shuffle(minha_sequencia)` fazemos com que `minha_sequencia`, que, atenção, não pode ser uma sequência vazia, seja reordenada 'aleatoriamente'.
 
 ```python
 from random import shuffle
@@ -94,7 +97,7 @@ Como os números produzidos por `random()` não são verdadeiramente aleatórios
 
 ```
 TODO:
-- Exemplos mais visuais, caramba!
+- Exemplos mais visuais, poxa!
 - Exemplo de randomSeed() e random.seed()
 - noise() - merece uma página especial
 ```
