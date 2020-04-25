@@ -7,7 +7,7 @@ size(200, 200)
 rect(20, 10, 40, 80) 
 ```
 
-![IDE](assets/01-IDE.png))
+![IDE](assets/01-IDE.png)
 
 **Experimente alterar os números entre parênteses e executar novamente...**
 
@@ -91,7 +91,7 @@ size(900, 900)  # área de desenho maior - outro comentário
 """
 Extra: Com três aspas no começo e no final, podemos produzir textos (strings)
 que funcionam como comentários de múltiplas linhas e que quando estão logo
-após o cabeçalho de definição de uma função, no começo do corpo, são chamados
+no começo do corpo de uma definição de função ou classe, são chamados
 docstrings (textos de documentação) - não se preocupe com isso agora.
 """
 ```
