@@ -79,20 +79,24 @@ O tempo todo vamos consultar o que é conhecido como *language reference* (refer
 ## Comentários, o que são e como criar comentários em Python?
 
 Comentários são anotações, pedaços do código que não são executados pelo computador, são ignorados.
-Comentário são feitos para as pessoas (como você, daqui a uma semana! lembrarem qual era o objetivo daquele pedaço do programa. São lembretes e explicações. Anote o seu código com comentários, mas não esqueça de mudá-los quando o código mudar.
+Comentário são feitos para as pessoas (como você, daqui a uma semana!) lembrarem qual era o objetivo daquele pedaço do programa. Anote o seu código com explicações curtas e não esqueça de mudá-los quando o código mudar.
 
-Comentários de uma linha só começam com `#`. São também um jeito rápido de desativar uma linha! Em inglês tem até uma expressão para isso: *comment out* (desativar por meio de um comentário)
+Comentários começam com `#` e vão até o final da linha. Podem ser a linha inteira ou ficar depois de um trecho de código, e são também um jeito rápido de desativar uma linha de código! Em inglês tem até uma expressão para isso: *comment out* (desativar por meio de um comentário)
 
 ```python
-# Oi eu sou um comentário
-size(900, 900)  # área de desenho maior - outro comentário
-# background(0) <- desativado, pq isso aqui virou um comentário
+# Oi eu sou um comentário de uma linha inteira
+
+size(900, 900)  # área de desenho 900 por 900 pixels <- outro comentário
+
+# background(0) <- instrução desativada, isso aqui tudo virou um comentário!
 
 """
-Extra: Com três aspas no começo e no final, podemos produzir textos (strings)
-que funcionam como comentários de múltiplas linhas e que quando estão logo
-no começo do corpo de uma definição de função ou classe, são chamados
-docstrings (textos de documentação) - não se preocupe com isso agora.
+Extra: Com três aspas no começo e no final podemos produzir textos (strings)
+de várias linhas que são usados como uma espécie de comentário também, uma vez
+que contém explicações para humanos, e não executam como o resto do código.
+
+Quando ficam logo no começo do corpo de uma definição de função ou classe, são
+chamados 'docstrings' (textos de documentação), não se preocupe com isso agora!
 """
 ```
 
