@@ -43,8 +43,9 @@ Leia as [instruções para colaborar com este repositório](/como-contribuir.md)
 
 #### Exportação
 
-- [Exportando imagens (bitmap/raster](/Processing-Python/exportando_imagem.md)
+- [Exportando imagens (bitmap/raster)](/Processing-Python/exportando_imagem.md)
 - [Exportando PDF (saída vetorial)](/Processing-Python/exportando_pdf.md)
+- [Exportando SVG (saída vetorial)](/Processing-Python/exportando_svg.md)
 - [Exportando animações (vídeos ou GIF)](/Processing-Python/exportar_animacoes.md) 
 
 #### Orientação a Objetos
