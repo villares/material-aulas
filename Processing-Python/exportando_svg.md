@@ -50,6 +50,12 @@ def keyPressed():
 
 ```
 
+### Limitações
+
+  TO DO:  O que não funciona no SVG?  
+
+
+
 ### Assuntos relacionados:
 
 - [Exportando PDF](exportando_pdf.md)
