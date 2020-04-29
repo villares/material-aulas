@@ -47,7 +47,7 @@ for letra in nome:
 # o
 ```
 
-Podemos consultar o comprimento de um *string* ou o caractere em uma certa posição pelo índice:
+Podemos consultar o comprimento de um *string* usando `len(texto)` e o caractere em uma certa posição com a notação `texto[índice]`:
 
 ![indices](assets/slices.png)
 
@@ -91,7 +91,7 @@ print(b) # 1994
 print(lista) # [1976, 2013]
 ```
 
-Tuplas e strings são imutáveis, não permitem estes tipos de operação.
+Tuplas e strings são imutáveis, não permitem esses tipos de operação.
 
 ## Fatias
 
@@ -104,12 +104,12 @@ print(nums[1:9:2]) # início: 1, parada: 9 (não incluso), passo: 2
 
 nome = 'Saskia Freeke'
 a = nome[:6] # do início até a sexta letra, sétimo item (6) não incluso.
-print(a) # resultado: 'Saskia'posição
+print(a) # resultado: 'Saskia'
 
 b = nome[7:] # início na oitava posição (7) até o final.
 print(b) # resultado: 'Freeke' 
 
-print(nome[1::2]) # segunda até o final, de duas em duas.
+print(nome[1::2]) # segunda posição até o final, de duas em duas.
 # resultado: 'akaFek'
 
 print(nome[:11:2]) # início até a décima, de duas em duas.
