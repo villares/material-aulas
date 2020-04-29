@@ -16,10 +16,8 @@ Veja nos exemplos abaixo as llinhas de código que você precisa acrescentar ao 
 
 ### com acumulação no canvas de vários frames
 
-Não é possível capturar diretamente o produto da acumulação do desenho na tela, como acontece com a exportação de uma imagem raster que fazemos usando `saveFrame()`, mas é possível gravar o PDF durante vários frames, acumulando os desenhos produzidos no arquivo e na tela ao mesmo temo. Neste exemplo você  'liga' e 'desliga'  a gravação de frames no PDF usando a tecla 'p'.
+Não é possível capturar diretamente o produto da acumulação do desenho na tela, como acontece com a exportação de uma imagem raster que fazemos usando `saveFrame()`, mas é possível gravar o PDF durante vários frames, acumulando os desenhos produzidos no arquivo e na tela ao mesmo temo. Neste exemplo você  'liga' e 'desliga'  a gravação de frames no PDF usando a tecla 'p'.        
 
-![Exemplo de PDF com vários frames](assets/exemplo2.pdf)
-        
 ```python
 add_library('pdf')
 
@@ -55,11 +53,12 @@ def keyPressed():
             endRecord()   # termina a gravação
             print(u"encerrando gravação de PDF")
 ```
+[Exemplo de PDF com vários frames](assets/exemplo2.pdf)
+
+
 ###  salvando frame único do `draw()`, sem acumulação
 
 Esta estratégia também permite  a interatividade, com o uso de `draw()`, mas exige que desenho que seja realizado (reconstruído) todo em cada frame.
-
-![Exemplo de PDF com um frame](assets/exemplo.pdf)
 
 ```python
 add_library('pdf')
@@ -111,6 +110,16 @@ def keyPressed():
         print("salvando PDF")
 ```
 
+[Exemplo de PDF com um frame](assets/exemplo.pdf)
+
+## múltiplas páginas
+
+ `TO DO: Múltiplas páginas `
+
+### 
+
+
+
 ## Outras estratégias
 
 ### Usando um objeto PGraphics
@@ -129,10 +138,6 @@ f.scale(2)
 endRecord()  
 ```
 Veja um exemplo mais completo desta estratégia em [Exportando SVG](exportando_svg.md).
-
-## Múltiplas páginas
-
- `TO DO: Múltiplas páginas `
 
 
 ### Limitações
