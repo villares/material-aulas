@@ -66,12 +66,67 @@ def keyPressed():
 O que não funciona quando exportamos em SVG?
 
 - `blendMode(MULTIPLY)`ou qualquer outra variante de `blendMode()` não tem efeito no SVG (só na tela).
-- TO DO: investigar outras limitações!
+
+#### Exportação de desenho 3D em arquivos vetoriais 2D
+
+É possível exportar a geometria 3D em si (um outro assunto), mas o exemplo aqui é de como exportar desenhos tridimensionais em formato vetorial 2D, tanto em SVG como em PDF, usando `beginRaw()` e `endRaw()`.
+
+O resultado infelizmente  é  bastante limitado.
+
+```python
+"""
+Tecle 'e' para salvar um único frame e encerrar o sketch
+"""
+
+add_library('svg')
+# add_library('pdf')
+
+save_frame = False
+
+def setup():
+    global output
+    size(500, 500, P3D)  # P3D para denhar em 3D
+    output = createGraphics(width, height, SVG, "3D.svg")
+    # output = createGraphics(width, height, PDF, "3D.pdf")
+    textMode(SHAPE)
+
+def draw():
+    if save_frame:
+        beginRaw(output)  # com P3D é preciso gravar 'cru'/raw
+
+    background(200)
+    fill(0)
+    if mousePressed:
+        hint(ENABLE_DEPTH_SORT)
+        text("ENABLE_DEPTH_SORT", 20, 20)
+    else:
+        hint(DISABLE_DEPTH_SORT)
+        text("DISABLE_DEPTH_SORT", 20, 20)
+                     
+    # lights()  # não funciona na exportação :(
+    translate(250, 250)
+    rotateY(frameCount / 100.)
+    stroke(0)
+    fill(0, 0, 200)
+    box(100, 100, 100)  
+    translate(0, 0, 100)
+    # fill(200, 0, 0, 100)
+    fill(200, 0, 0)
+    box(50)
+
+    if save_frame:
+        endRaw()  # encerra a gravação do arquivo
+        exit()  # encerra o sketch
+
+def keyPressed():
+    global save_frame
+    if key == 'e':
+        save_frame = True
+```
+![](assets/3Da.svg)
+![](assets/3Db.svg)
+
 
 ### Assuntos relacionados:
 
 - [Exportando PDF](exportando_pdf.md)
-
-````
-
-````
