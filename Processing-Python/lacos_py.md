@@ -27,7 +27,11 @@ Podemos usar `range(parada)` ou `range(inicio, parada)`, o número início está
 
 ## Laços de repetição com `for`
 
-Usando a estrutura `for` podemos fazer uma ação para cada item de um 'iterável', o que inclui tuplas e listas. Em cada ciclo um item por vez da coleção é atribuido a uma variável, como neste exemplo:
+![`for i in range(10):` ](assets/for_i.png)
+
+Usando a estrutura `for` podemos fazer uma ação para cada número produzido pelo `range()` mais precisamente, para cada item de uma coleção 'iterável' como as estruturas de dados que veremos depois. 
+
+Em cada ciclo um item da coleção é atribuido a uma variável, cujo nome vem logo após o `for` e antes do `in`. No bloco indentado de código acontece a ação usando esse valor. Você consegue imaginar o resultado do código a seguir?
 
 ```pyde
 for n in range(10): # para cada número do range(10) 
