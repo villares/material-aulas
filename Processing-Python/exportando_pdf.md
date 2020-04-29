@@ -18,12 +18,8 @@ Veja nos exemplos abaixo as llinhas de código que você precisa acrescentar ao 
 
 Não é possível capturar diretamente o produto da acumulação do desenho na tela, como acontece com a exportação de uma imagem raster que fazemos usando `saveFrame()`, mas é possível gravar o PDF durante vários frames, acumulando os desenhos produzidos no arquivo e na tela ao mesmo temo. Neste exemplo você  'liga' e 'desliga'  a gravação de frames no PDF usando a tecla 'p'.
 
-<object data="assets/exemplo2.pdf" type="application/pdf" width="500px" height="500px">
-    <embed src="assets/exemplo2.pdf">
-        <p>Este browser não lê PDFs. Você pode baixá-lo aqui: <a href="assets/exemplo2.pdf">PDF exemplo</a>.</p>
-    </embed>
-</object>
-
+![Exemplo de PDF com vários frames](assets/exemplo2.pdf)
+        
 ```python
 add_library('pdf')
 
@@ -63,11 +59,7 @@ def keyPressed():
 
 Esta estratégia também permite  a interatividade, com o uso de `draw()`, mas exige que desenho que seja realizado (reconstruído) todo em cada frame.
 
-<object data="assets/exemplo.pdf" type="application/pdf" width="500px" height="500px">
-    <embed src="assets/exemplo.pdf">
-        <p>Este browser não lê PDFs. Você pode baixá-lo aqui: <a href="assets/exemplo.pdf">PDF exemplo</a>.</p>
-    </embed>
-</object>
+![Exemplo de PDF com um frame](assets/exemplo.pdf)
 
 ```python
 add_library('pdf')
