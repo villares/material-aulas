@@ -12,6 +12,8 @@ Isso pode ser feito manualmente ou pelo menu *Sketch* do Processing IDE:
 
 A estratégia mostrada a seguir permite mostrar na tela o desenho mas salvar um arquivo ajustes especiais, como por exemplo dimensões escaladas.
 
+![SVG](assets/arquivo.svg)
+
 ```python
 """
 Tecle 'e' para salvar um único frame e encerrar o sketch
@@ -53,13 +55,6 @@ def keyPressed():
         save_frame = True
 
 ```
----
-
-![SVG](assets/arquivo.svg)
-
----
-
-
 
 ### Limitações
 
@@ -71,7 +66,10 @@ O que não funciona quando exportamos em SVG?
 
 É possível exportar a geometria 3D em si (um outro assunto), mas o exemplo aqui é de como exportar desenhos tridimensionais em formato vetorial 2D, tanto em SVG como em PDF, usando `beginRaw()` e `endRaw()`.
 
-O resultado infelizmente  é  bastante limitado.
+O resultado infelizmente  é  bastante limitado. Abaixo um exemple:
+
+![a](assets/3Da.svg) ![b](assets/3Db.svg)
+
 
 ```python
 """
@@ -123,9 +121,6 @@ def keyPressed():
     if key == 'e':
         save_frame = True
 ```
-![](assets/3Da.svg)
-![](assets/3Db.svg)
-
 
 ### Assuntos relacionados:
 
