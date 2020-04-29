@@ -1,18 +1,18 @@
 # Exportando PDF
 
-Para poder salvar uma imagem vetorial em PDF, é necessário adicionar uma biblioteca de exportação, que já vem com o Processing, acrescentando esta linha no início do *sketch*:
+Para  salvar uma imagem vetorial em PDF, é necessário adicionar uma biblioteca de exportação, que já vem com o Processing, acrescentando esta linha no início do *sketch*:
 
 ``` python
 add_library('pdf')
 ```
-Esta linha pode ser acrescentada manualmente ou automaticamente usando o seguinte comando do IDE:
+Isso pode ser feito manualmente ou pelo menu * Sketch* do Processing IDE:
+***Sketch > Importar Biblioteca > PDF Export***
 
-**Menu Sketch > Importar Biblioteca > PDF Export**
 ![adicionando](assets/pdf_export.png)
 
-Também é preciso acrescentar algumas linhas de código ao longo so seu *sketch*, como no exemplo abaixo.
+Veja nos exemplos abaixo as llinhas de código que você precisa acrescentar ao longo so seu *sketch*, dependendo do que quer exportar.
 
-## Exemplo de exportação em PDF simples (um único frame)
+##  PDF simples: frame único, sem acumulação
 
 Esta estratégia não permite capturar o produto de acumulação na tela, como acontece com a exportação de uma imagem raster da área de desenho (como acontece em `saveFrame()`).
 
@@ -70,9 +70,11 @@ def keyPressed():
 
 #### Usando um objeto PGraphics
 
-Permite mostrar na tela o desenho mas salvar o arquivo do desenho com alguns ajustes especiais.
+Usando `createGraphics()` podemos mostrar na tela o desenho mas salvar o arquivo do desenho com alguns ajustes especiais.
 
 ```python
+
+
 f = createGraphics(width, height, PDF, "file.pdf")
 beginRecord(f)
 f.strokeWeight(.33)
@@ -91,10 +93,7 @@ endRecord()
 
  `TO DO`
 
-### Outras opções
+### Assuntos relacionados:
 
-````
-TO DO:
-Exportando SVG
-Link para exportação de imagens
-```
+- [Exportando SVG](exportando_svg.md)
+
