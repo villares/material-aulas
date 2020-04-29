@@ -47,7 +47,7 @@ for letra in nome:
 # o
 ```
 
-Podemos consultar o comprimento de um *string* ou o caractere em uma certa posição pelo índice:
+Podemos consultar o comprimento de um *string* usando `len(texto)` e o caractere em uma certa posição com a notação `texto[índice]`:
 
 ![indices](assets/slices.png)
 
@@ -91,7 +91,7 @@ print(b) # 1994
 print(lista) # [1976, 2013]
 ```
 
-Tuplas e strings são imutáveis, não permitem estes tipos de operação.
+Tuplas e strings são imutáveis, não permitem esses tipos de operação.
 
 ## Fatias
 
