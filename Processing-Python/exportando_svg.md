@@ -20,23 +20,27 @@ Tecle 'e' para salvar um único frame e encerrar o sketch
 add_library('svg')
 
 save_frame = False
-fator_escala = 3.78 # 500px -> 1890px ~ 500mm
+fator_escala = 3.78 # 255px -> ~255mm
 
 def setup():
     global svg_output
-    size(500, 500)
+    size(255, 255)
     svg_output = createGraphics(int(width * fator_escala),
                                 int(height * fator_escala),
                                 SVG, "arquivo.svg")
-
 def draw():
+    background(200) # antes do beginRecord() não sairá no SVG
+    
     if save_frame:
         beginRecord(svg_output)
         svg_output.strokeWeight(.33)  # linha mais fina ainda!
         svg_output.scale(fator_escala)
-        svg_output.background(200)  # sem background fica fundo transparente
+        # svg_output.background(200)  # sem background, fundo transparente no SVG
         
-    # desenho aqui, sai na tela e no arquivo
+    # desenhando aqui, sai na tela e no arquivo
+    fill(255, 0, 0, 100)
+    rect(50, 50, 100, 100)  
+    fill(0, mouseX , mouseY, 100)
     rect(100, 100, 100, 100)  
 
     if save_frame:
@@ -49,12 +53,20 @@ def keyPressed():
         save_frame = True
 
 ```
+---
+
+![SVG](assets/arquivo.svg)
+
+---
+
+
 
 ### Limitações
 
-  TO DO:  O que não funciona no SVG?  
+O que não funciona quando exportamos em SVG?
 
-
+- `blendMode(MULTIPLY)`ou qualquer outra variante de `blendMode()` não tem efeito no SVG (só na tela).
+- TO DO: investigar outras limitações!
 
 ### Assuntos relacionados:
 
