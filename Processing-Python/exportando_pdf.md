@@ -21,7 +21,7 @@ Não é possível capturar diretamente o produto da acumulação do desenho na t
 ```python
 add_library('pdf')
 
-gravando_pdf = False  # indica a gravação do PDF
+gravando_pdf = False  # 'flag'/indicador de gravação do PDF
 
 def setup():
     size(500, 500)
@@ -43,14 +43,14 @@ def draw():
 
 def keyPressed():
     global gravando_pdf 
-    if key == "p":  # A tecla 'p' aciona o 'flag' de gravação do PDF
-        gravando_pdf = not gravando_pdf    
+    if key == "p":                        # A tecla 'p' muda o 'flag' de gravação do PDF
+        gravando_pdf = not gravando_pdf   # alternando o seu estado entre True e False
         if gravando_pdf:
             beginRecord(PDF, "####.pdf")  # inicia a gravação do PDF
-            background(0) # sem isto, fundo branco... 
+            background(0)                 # sem isso, fundo branco... 
             print(u"iniciando gravação de PDF: {:04n}".format(frameCount))
         else:
-            endRecord()   # termina a gravação
+            endRecord()                   # encerra a gravação do PDF
             print(u"encerrando gravação de PDF")
 ```
 [Exemplo de PDF com vários frames](assets/exemplo2.pdf)
