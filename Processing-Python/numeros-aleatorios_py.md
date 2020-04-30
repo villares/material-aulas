@@ -2,7 +2,7 @@
 
 ## Mais precisamente números pseudo-aleatórios
 
-Computadores são máquinas determinísticas e não conseguem realmente 'sortear' um número, por isso usam algorítmos (receitas) que produzem sequências de números praticamente indistinguíveis, para a maioria dos usos[*](#footnote1), de sequências verdadeiramente aleatórias. Por conta disso ganham este nome tecnicamente mais preciso de *pseudo-aleatórios* (falsos aleatórios). 
+Computadores são máquinas determinísticas e não conseguem realmente 'sortear' um número, por isso usam algorítmos (receitas) que produzem sequências de números praticamente indistinguíveis, para a maioria dos usos[＊](#footnote1), de sequências verdadeiramente aleatórias. Por conta disso ganham este nome tecnicamente mais preciso de *pseudo-aleatórios* (falsos aleatórios). 
 
 ### A função `random()` do Processing
 
@@ -104,7 +104,7 @@ TODO:
 
 ---
 <a name="footnote1">
-* Para aplicações de seguraça da informação, como por exemplo gerar certos tipos de chaves criptográficas, é possível incluir 'fontes externas de entropia', de forma a garantir resultados mais imprevisíveis.
+＊ Para aplicações de seguraça da informação, como por exemplo gerar certos tipos de chaves criptográficas, é possível incluir 'fontes externas de entropia', de forma a garantir resultados mais imprevisíveis.
 
 ---
 Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
