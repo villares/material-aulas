@@ -165,7 +165,7 @@ pontos = [(10, 10), (100, 20), (200, 50), (50, 150)]
 
 ### Iterando pelos dados
 
-Finalmente vamos usar a estrutura de iteração, o loop `for`, para repetir a ação de desenhar um círculo, usando as coordenadas das tuplas de coordenadas na lista `pontos`:
+Finalmente vamos usar a estrutura de iteração, o *loop* `for`, para repetir a ação de desenhar um círculo, usando as coordenadas das tuplas de coordenadas na lista `pontos`:
 
 ```pyde
 def setup():
@@ -191,13 +191,15 @@ def setup():
 
 ### Enumerando os itens da sequência
 
-Ao iterarmos por uma sequência, pode ser útil obter ao mesmo tempo que o item, o índice do item na sequência. Isso é chamado de enumeração, e usamos a função `enumerate()` como neste exemplo:
+Ao iterarmos por uma sequência, pode ser útil obter ao mesmo tempo que o item, o índice da posição do item na sequência.
+Isso é chamado de enumeração, e podemos usar a função `enumerate()` para fazer como neste exemplo:
 
-```pyde
+```python
 def setup():
     size(400, 400)
     pontos = [(50, 50), (300, 370), (200, 50), (150, 150)]
-    for i, (x, y) in enumerate(pontos):
+    for i, ponto in enumerate(pontos):
+        x, y = ponto  # podiamos ter usado também "for i, (x, y) in enumerate(pontos):"
         fill(255)
         ellipse(x, y, 5 + i * 5, 5 + i * 5)
         label = "{}: {}, {}".format(i, x, y)
