@@ -58,12 +58,12 @@ def keyPressed():
 
 ###  salvando frame único do `draw()`, sem acumulação
 
-Esta estratégia também permite  a interatividade, com o uso de `draw()`, mas exige que desenho que seja realizado (reconstruído) todo em cada frame.
+A estratégia a seguir também permite a interatividade, com o uso de `draw()`, mas exige que desenho seja realizado inteiro em cada frame.
 
 ```python
 add_library('pdf')
 
-salvar_pdf = False  # um 'flag' para disparar a exportação
+salvar_pdf = False  # um indicador ('flag') dispara a exportação
 
 def setup():
     global seed
@@ -73,7 +73,7 @@ def setup():
 
 def draw():
     global salvar_pdf  # necessário para desligar o 'flag'
-    if salvar_pdf: # inicia a gravação 
+    if salvar_pdf:     # inicia a gravação 
         beginRecord(PDF, "####.pdf")         
         
     # Aqui vai o desenho a ser gravado
@@ -87,6 +87,9 @@ def draw():
         salvar_pdf = False  # desliga o 'flag'
 
 def galho(tamanho):
+    """
+    função recursiva que desenha galhos
+    """
     ang = radians(mouseX)
     reducao = .8
     strokeWeight(tamanho / 10)
@@ -105,24 +108,16 @@ def keyPressed():
     if key == " ":
         seed = int(random(100000))
         print(seed)
-    if key == "p":  # A tecla 'p' aciona o 'flag' de gravação do PDF
+    if key == "p":  # aciona o 'flag' de gravação do PDF
         salvar_pdf = True
         print("salvando PDF")
 ```
 
 [Exemplo de PDF com um frame](assets/exemplo.pdf)
 
-## múltiplas páginas
-
- `TO DO: Múltiplas páginas `
-
-### 
-
-
-
 ## Outras estratégias
 
-### Usando um objeto PGraphics
+### usando um objeto PGraphics
 
 Usando `createGraphics()` podemos mostrar na tela o desenho mas salvar o arquivo do desenho com alguns ajustes especiais. 
 
@@ -139,13 +134,18 @@ endRecord()
 ```
 Veja um exemplo mais completo desta estratégia em [Exportando SVG](exportando_svg.md).
 
+### PDF com  múltiplas páginas
 
-### Limitações
+ `TO DO: Múltiplas páginas `
 
-  `TO DO:  O que não funciona no PDF?`  
+## Limitações
 
+O que não funciona quando exportamos em PDF?
+
+- blendMode(MULTIPLY)ou qualquer outra variante de blendMode() não tem efeito no PDF (só na tela).
+
+- Para exportar desenhos em 3D, é preciso usar `beginRaw()`  e `endRaw()`  em vez de `beginRecord/endRecord` e o resultado é deficiente (veja em [Exportando SVG](exportando_svg.md)).
 
 ### Assuntos relacionados:
 
 - [Exportando SVG](exportando_svg.md)
-
