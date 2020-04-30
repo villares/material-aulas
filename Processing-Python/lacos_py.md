@@ -1,6 +1,6 @@
 # Sequências e repetições
 
-É muito comum em programação pedir ao computador que repita uma ação varias vezes, possivelmente com variações. Para fazer isso frequentemente usamos os chamados laços de repetição (*loops*) e o processo também pode ser chamado de iteração (note que não é i**n**teração, que é outra coisa).
+É muito comum em programação pedir ao computador que repita uma ação várias vezes, possivelmente com variações. Para fazer isso frequentemente usamos os chamados laços de repetição (*loops*) e o processo também pode ser chamado de iteração (note que não é i**n**teração, que é outra coisa).
 
 Antes de chegar na execução das repetições com o laço `for`, propriamente, é útil saber como criar rapidamente sequências de valores. Existe uma função em Python que produz valores inteiros, o `range()`, que no Processing modo Python devolve uma lista (no Python 3 produz um 'iterador' que por sua vez devolve os valores, mas isso não importa agora).
 
