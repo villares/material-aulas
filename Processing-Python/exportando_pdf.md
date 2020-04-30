@@ -14,7 +14,7 @@ Veja nos exemplos abaixo as llinhas de código que você precisa acrescentar ao 
 
 ##  PDF simples
 
-### com acumulação no canvas de vários frames
+### Salvando a acumulação na tela de vários frames
 
 Não é possível capturar diretamente o produto da acumulação do desenho na tela, como acontece com a exportação de uma imagem raster que fazemos usando `saveFrame()`, mas é possível gravar o PDF durante vários frames, acumulando os desenhos produzidos no arquivo e na tela ao mesmo temo. Neste exemplo você  'liga' e 'desliga'  a gravação de frames no PDF usando a tecla 'p'.        
 
@@ -56,7 +56,7 @@ def keyPressed():
 [Exemplo de PDF com vários frames](assets/exemplo2.pdf)
 
 
-###  salvando frame único do `draw()`, sem acumulação
+### Salvando um frame único do `draw()`, sem acumulação
 
 A estratégia a seguir também permite a interatividade, com o uso de `draw()`, mas exige que desenho seja realizado inteiro em cada frame.
 
@@ -117,7 +117,7 @@ def keyPressed():
 
 ## Outras estratégias
 
-### usando um objeto PGraphics
+### Usando um objeto PGraphics
 
 Usando `createGraphics()` podemos mostrar na tela o desenho mas salvar o arquivo do desenho com alguns ajustes especiais. 
 
@@ -132,9 +132,9 @@ f.scale(2)
 # encerra a gravação
 endRecord()  
 ```
-Veja um exemplo mais completo desta estratégia em [Exportando SVG](exportando_svg.md).
+Veja um exemplo mais completo desta estratégia no exemplo a seguir, que produz um PDF com várias páginas.
 
-### PDF com  múltiplas páginas
+### Salvando um PDF com múltiplas páginas
 
 ```python
 add_library('pdf')
@@ -165,9 +165,9 @@ def draw():
 
 O que não funciona quando exportamos em PDF?
 
-- blendMode(MULTIPLY)ou qualquer outra variante de blendMode() não tem efeito no PDF (só na tela).
+- A chamada `blendMode(MULTIPLY)` ou qualquer outra variante de `blendMode()` não tem efeito no PDF (só na tela).
 
-- Para exportar desenhos em 3D, é preciso usar `beginRaw()`  e `endRaw()`  em vez de `beginRecord/endRecord` e o resultado é deficiente (veja em [Exportando SVG](exportando_svg.md)).
+- Para exportar desenhos em 3D, é preciso usar `beginRaw()`  e `endRaw()` em lugar de `beginRecord/endRecord` e o resultado é um tanto deficiente (veja exemplo em [Exportando SVG](exportando_svg.md)).
 
 ### Assuntos relacionados:
 
