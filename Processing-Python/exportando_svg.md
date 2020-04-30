@@ -64,9 +64,11 @@ O que não funciona quando exportamos em SVG?
 
 #### Exportação de desenho 3D em arquivos vetoriais 2D
 
-É possível exportar a geometria 3D em si (um outro assunto), mas o exemplo aqui é de como exportar desenhos tridimensionais em formato vetorial 2D, tanto em SVG como em PDF, usando `beginRaw()` e `endRaw()`.
+É possível exportar a geometria 3D em si para arquivos DXF ou ainda outros formatos apropriados, assunto que não vamos tratar neste momento. 
 
-O resultado infelizmente  é  bastante limitado. Abaixo um exemple:
+No exemplo a seguir mostramos como exportar desenhos tridimensionais em formato vetorial 2D, o que pode ser feito tanto em SVG como em PDF, usando `beginRaw()` e `endRaw()`.
+
+O resultado, infelizmente,  é  bastante limitado, como pode ser visto abaixo:
 
 ![a](assets/3Da.svg) ![b](assets/3Db.svg)
 
