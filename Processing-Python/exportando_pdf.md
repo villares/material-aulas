@@ -136,8 +136,31 @@ Veja um exemplo mais completo desta estratégia em [Exportando SVG](exportando_s
 
 ### PDF com  múltiplas páginas
 
- `TO DO: Múltiplas páginas `
+```python
+add_library('pdf')
 
+nome_arquivo = "10_paginas.pdf"
+
+def setup():
+    global pdf
+    size(300, 400)
+    pdf = createGraphics(width * 2, height * 2, PDF, nome_arquivo)
+    beginRecord(pdf)  # inicia a gravação do arquivo
+    pdf.scale(2)
+
+def draw():
+    background(200, 200, 240)
+    t = random(50, 100)
+    x, y = random(t, width - t), random(t, height - t)
+    ellipse(x, y, t * 2, t * 2)        
+    
+    if frameCount == 10:
+        endRecord()
+        exit()
+    else:
+        pdf.nextPage()
+```     
+        
 ## Limitações
 
 O que não funciona quando exportamos em PDF?
