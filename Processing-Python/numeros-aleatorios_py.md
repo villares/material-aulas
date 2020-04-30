@@ -103,8 +103,7 @@ TODO:
 ```
 
 ---
-<a name="footnote1">
-＊ Para aplicações de seguraça da informação, como por exemplo gerar certos tipos de chaves criptográficas, é possível incluir 'fontes externas de entropia', de forma a garantir resultados mais imprevisíveis.
+<a name="footnote1" href="#mais-precisamente-números-pseudo-aleatórios">＊</a> Para aplicações de seguraça da informação, como por exemplo gerar certos tipos de chaves criptográficas, é possível incluir 'fontes externas de entropia', de forma a garantir resultados mais imprevisíveis.
 
 ---
 Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
