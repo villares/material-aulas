@@ -5,7 +5,7 @@ Para  salvar um PDF, formato que preserva informação vetorial, de maneira seme
 ``` python
 add_library('pdf')
 ```
-Isso pode ser feito manualmente ou pelo menu * Sketch* do Processing IDE:
+Isso pode ser feito manualmente ou pelo menu *Sketch* do Processing IDE:
 ***Sketch > Importar Biblioteca > PDF Export***
 
 ![adicionando](assets/pdf_export.png)
