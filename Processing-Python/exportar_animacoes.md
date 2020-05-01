@@ -36,7 +36,7 @@ Para a converter esses 'frames' em um vídeo ou em um GIF animado, podemos usar:
 - A ferramenta **Movie Maker** do próprio IDE do Processing (Vídeo)
 - [**Gimp**](https://gimp.org) ou [**Glimpse**](http://https://glimpse-editor.org/), com o comando 'abrir como camadas' (GIF animado)
 - Ferramentas online como **https://ezgif.com/** (GIF animado)
-- Alguma outra ferramenta da sua escolha, como o [**ffmpeg**](http//www.ffmpeg.org) na linha de comando (ou [via uma GUI](https%3A%2F%2Fgithub.com%2Famiaopensource%2Fffmpeg-amia-wiki%2Fwiki%2F3%29-Graphical-User-Interface-Applications-using-FFmpeg)).
+- Alguma outra ferramenta da sua escolha, como o [**ffmpeg**](http//www.ffmpeg.org) na linha de comando (ou [via uma GUI](https://github.com%2Famiaopensource%2Fffmpeg-amia-wiki%2Fwiki%2F3%29-Graphical-User-Interface-Applications-using-FFmpeg)).
 
 ### B. Biblioteca *GifAnimation*
     
