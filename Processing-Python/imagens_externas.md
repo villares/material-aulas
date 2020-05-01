@@ -1,6 +1,6 @@
 # Como usar imagens externas
 
-## Acessando a imagem com `loadImage()`
+## Acessando um arquivo com `loadImage()`
 
 Podemos carregar (*load*) na memória imagens digitais a partir de arquivos externos nos formatos PNG, JPG, GIF, TIF entre outros. Para isso usamos a função `loadImage()`, mas é preciso indicar onde está o arquivo (o chamado 'caminho completo' do arquivo), ou que ele esteja na pasta `/data/` dentro da pasta do seu *sketch* (programa).
 
@@ -75,4 +75,7 @@ Use `get()` para os pixels visíveis na tela ou o método `.get()` para os pixel
     circle(mouseX, mouseY, 30)
 ```
 
-Leia mais sobre a estrutura de pixels das imagens em [Pixels e imagens](pixels.md)
+## Assuntos relacionados
+
+- Estrutura de pixels das imagens em [Pixels e imagens](pixels.md)
+- [Exportando imagens](exportando_imagem.md)
