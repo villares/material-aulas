@@ -10,7 +10,9 @@ Cada vez que chamamos a função `random()` com um valor de argumento, como em `
 
 Se dois valores forem usados, por exemplo `random (-5, 5)` serão produzidos números entre -5 e 5 (não incluso). E podemos obter números inteiros convertendo o valor usando `int()`, como em `sorteio_inteiro = int(random(1, 11))` que 'sorteia' com igual probabilidades os números de 1 a 10.
 
-### O módulo `random` da biblioteca padrão do PythonNo Python `random()` precisa ser importado do módulo `random` com a a seguinte  instrução:
+### O módulo `random` da biblioteca padrão do Python
+
+No Python `random()` precisa ser importado do módulo `random` com a a seguinte  instrução:
 
 ```python
 from random import random
