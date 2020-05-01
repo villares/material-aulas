@@ -2,11 +2,11 @@
 
 Há mais de uma estratégia possível para exportar imgagens em movimento, seja em vídeo ou um GIFs animado. Um caminho é exportar os diversos frames e usar alguma ferramenta de conversão, o outro é usar uma biblioteca que exporte diretamente um formato desejado.
 
-### Sumário
+#### Sumário
 
-A. [Exportando frames](#a-exportando-frames)
-B. [Biblioteca *GifAnimation*](#b-biblioteca-gifanimation)
-C. [Biblioteca *Video Export*](#c-biblioteca-video-export)
+- A. [Exportando frames](#a-exportando-frames)
+- B. [Biblioteca *GifAnimation*](#b-biblioteca-gifanimation)
+- C. [Biblioteca *Video Export*](#c-biblioteca-video-export)
 
 ### A. Exportando frames
 
