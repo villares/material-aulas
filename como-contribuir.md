@@ -18,8 +18,10 @@ Para criar uma *issue*:
   
 ### Maneiras de usar o GitHub
  - use a interface web <- *comece agora mesmo usando o navegador!*
- - ou baixe o GitHub Desktop ([Mac ou Win apenas :(](https://desktop.github.com/)) [falta um link para um guia para iniciantes em português]
- - ou trabalhe com `git` no terminal/linha de comando se preferir. [falta um link para um guia para iniciantes em português]
+ - ou baixe o GitHub Desktop: [MacOS / Window](https://desktop.github.com/) ou [Linux](https://github.com/shiftkey/desktop)
+    [falta um link para um guia para iniciantes em português]s
+ - ou trabalhe com `git` no terminal/linha de comando se preferir.
+    [falta um link para um guia para iniciantes em português]
 
 ### Para propor correções ou acrescentar novos materiais
 [FALTA POR EXPLICAÇÕES AMPLIADAS COM SCREENSHOTS!]
