@@ -49,12 +49,10 @@ faixa = random(-5, 5)  # exemplos: 3.91, -2.23, -1.2, 4.25
 
 [Mais sobre pseudo-aleatoriedade, módulo `random` do Python e sementes](aleatoriedade_2.md)
 
-
+---
 
 > <a name="footnote1" href="#mais-precisamente-números-pseudo-aleatórios">＊</a> Para aplicações de segurança da informação, como por exemplo gerar certos tipos de chaves criptográficas, é possível incluir 'fontes externas de entropia', de forma a garantir resultados mais imprevisíveis.
 
 ---
-Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
 
----
 Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
