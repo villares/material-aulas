@@ -8,7 +8,7 @@ Essas variáveis podem ser usadas ao longo de todo o programa. Se você desejar 
 
 ### Exemplo de uma variável global
 
-```Python
+```python
 x = 0  # x é uma variável global
 
 def setup():
@@ -51,7 +51,7 @@ Para se criar uma variável global quando se está dentro de uma função (ou pa
 
 #### Mais um exemplo, com variáveis globais e locais
 
-```Python
+```python
 y = 100  # y é uma variável global, pode ser usada em qualquer ponto do programa.
 
 def setup():
