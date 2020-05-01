@@ -8,9 +8,9 @@ Computadores são máquinas determinísticas e não conseguem realmente 'sortear
 
 Podemos pedir ao Processing para nos entregar um número entre 0 e *n*  chamando `random(n)` ou entre *a* e *b* chamando `random(a, b)`. O número devolvido não é um número inteiro (*int*), mas pode ter a parte decimal desprezada se usarmos a função `int(random(n))`.
 
-Um exemplo tradicional e divertido é fazer um pincel de círculos com o tamanho e a cor 'sorteados'. Note que o `fill()` aceita números *float*  e os converte em *int* para nós.
+Um exemplo tradicional, e divertido, é fazer um pincel de círculos com o tamanho e a cor 'sorteados'. Note que o `fill()` aceita números *float*  e os converte em *int* para nós. O quarto argumento de `fill(r, g, b, alpha)` indica uma cor translúcida.
 
-![random_paint](random_paint.png)
+![pincel com random](assets/random_paint.png)
 
 ```python
 def setup():
