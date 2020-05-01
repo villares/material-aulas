@@ -138,7 +138,7 @@ def draw():
     
 ### C. Biblioteca *Video Export*
     
-A biblioteca *Video Export* pode ser baixada diretamente pelo IDE, e vem com vários exemplos. Será necessário instalar a ferramenta `ffmpeg` disponível em [www,ffmpeg.org](https://www.ffmpeg.org/)
+A biblioteca *Video Export* criada por Abe Pazos [@hamoid](https://github.com/hamoid) pode ser baixada diretamente pelo IDE, e vem com vários exemplos. Será necessário instalar a ferramenta `ffmpeg` disponível em [www.ffmpeg.org](https://www.ffmpeg.org/)
 
 ```python
 """
