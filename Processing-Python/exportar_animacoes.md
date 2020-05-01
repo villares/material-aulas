@@ -2,7 +2,7 @@
 
 Há mais de uma estratégia possível para exportar imgagens em movimento, seja em vídeo ou um GIFs animado. Um caminho é exportar os diversos frames e usar alguma ferramenta de conversão, o outro é usar uma biblioteca que exporte diretamente um formato desejado.
 
-### A. Exportando frames estáticos
+### A. Exportando frames
 
 Podemos usar `saveFrame()` dentro do `draw()`, como neste exemplo:
 
@@ -132,8 +132,54 @@ def draw():
     
 ### C. Biblioteca *Video Export*
     
-Pode ser baixada diretamente pelo IDE, e vem com exemplos.
+A biblioteca *Video Export* pode ser baixada diretamente pelo IDE, e vem com vários exemplos. Será necessário instalar a ferramenta `ffmpeg` disponível em [www,ffmpeg.org](https://www.ffmpeg.org/)
 
-`TO DO: por um exemplo em modo Python aqui`
+```python
+"""
+Exemplo de uso da biblioteca Video Export de Abe Pazos
+Baixe no pelo menu do IDE: Sketch > Importar Biblioteca... > Adicionar Biblioteca...
+É preciso instalar ffmpeg: https://www.ffmpeg.org/
+"""
+
+add_library('VideoExport')
+gravando = False
+
+def setup():
+    global video_export
+    size(600, 600)
+    noStroke()
+    frameRate(30)
+
+    println(u"Aperte 'r' para iniciar e parar a gravação")
+    println(u"Aperte 'q' para encerrar o programa e fechar o arquivo")
+
+    video_export = VideoExport(this, "animacao.mp4")
+    videoExport.setFrameRate(30)  # reduz a taxa de quadros (opcional)
+    frameRate(30)
+    # Qualidade máxima de vídeo: 100. Audio ótimo: 256 / muito bom: 192
+    videoExport.setQuality(70, 128)  # qualidade default de vídeo e audio
+    video_export.startMovie()
 
 
+def draw():
+    background(0)
+    t = frameCount * 0.03
+    sz = 100 + 50 * cos(t * 1.33) * cos(t * 1.84)
+    ellipse(300 + 200 * cos(t * 1.13) * cos(t * 0.21),
+            300 + 200 * cos(t * 1.71) * cos(t * 0.47),
+            sz, sz)
+    if gravando:
+        video_export.saveFrame()
+
+def keyPressed():
+    global gravando
+    if key == 'r' or key == 'R':
+        gravando = not gravando
+        println(u"A gravação está {}".format(
+            "LIGADA" if video_export else "DESLIGADA"))
+
+    if key == 'q' or key == 'Q':
+        video_export.endMovie()
+        exit()
+
+```
