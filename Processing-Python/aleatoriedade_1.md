@@ -6,7 +6,7 @@ Computadores são máquinas determinísticas e não conseguem realmente 'sortear
 
 ### Função `random()` no Processing
 
-Podemos pedir ao Processing para nos entregar um número entre 0 e *n*  chamando `random(n)` ou entre *a* e *b* chamando `random(a, b)`. O número devolvido não é um número inteiro (*int*), mas pode ter a parte decimal desprezada se usarmos a função `int(random(n))`.
+Podemos pedir ao Processing para nos entregar um número entre 0 e *n*  chamando `random(n)` ou entre *a* e *b* chamando `random(a, b)`. O número devolvido não é um número inteiro (*int*), mas podemos jogar fora a parte decimal fazendo a conversão com a função `int()`,  assim: `int(random(n))`.
 
 Um exemplo tradicional, e divertido, é fazer um pincel de círculos com o tamanho e a cor 'sorteados'. Note que o `fill()` aceita números *float*  e os converte em *int* para nós. O quarto argumento de `fill(r, g, b, alpha)` indica uma cor translúcida.
 
@@ -36,13 +36,13 @@ def keyPressed():
 #### Outros exemplos
 ```python
 # Produz um valor entre 0 e 10 (10 não incluso)
-sorteio = random(10)
+sorteio = random(10) 
 
-# Produz um valor entre 0 e 20 convertido em inteiro (0, 1, 2 … 19)
-d20 = int(random(20)) 
+# Produz um valor entre 0 e 20 (não incluso) convertido em inteiro 
+d20 = int(random(20)) # 0, 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, … 19.
 
-# números entre -5 e 5 (exemplo: 3.91, -2.23, -1.2, 4.25 …) 
-faixa = random(-5, 5)
+# Produz números entre -5 e 5 
+faixa = random(-5, 5)  # exemplos: 3.91, -2.23, -1.2, 4.25 
 ```
 
 
