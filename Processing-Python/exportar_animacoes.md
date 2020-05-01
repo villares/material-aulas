@@ -1,6 +1,6 @@
 # Exortando animações
 
-Há mais de uma estratégia possível para exportar imgagens em movimento, seja em vídeo ou um GIFs animado. Um caminho é exportar os diversos frames e usar alguma ferramenta de conversão, o outro é usar uma biblioteca que exporte diretamente um formato desejado.
+Há mais de uma estratégia possível para exportar imagens em movimento, seja em vídeo ou um GIF animado. Um caminho é exportar os diversos frames e usar alguma ferramenta de conversão, o outro é usar uma biblioteca que exporte diretamente um formato desejado.
 
 #### Sumário
 
@@ -43,9 +43,9 @@ ou outra ferramenta da sua escolha, como o `ffmpeg` na linha de comando.
 Infelizmente não está disponível para baixar pelo IDE, é preciso baixar e copiar na pasta de bibliotecas 'manualmente'.
 
 **Passo 1**
-1.0 Baixar aqui a lib: github.com/extrapixel/gif-animation/archive/3.0.zip
-1.1 deszipar
-1.2 copiar a pasta gifAnimation para dentro da pasta libraries do seu sketchbook (no linux `user/sketchbook/ibraries` no Mac/Win `user/Documents/Processing/libraries`
+- 1.0 Baixe a biblioteca em: github.com/extrapixel/gif-animation/archive/3.0.zip
+- 1.1 Deszipe o aquivo *3.0.zip*
+- 1.2 Copie a pasta *gifAnimation* para dentro da pasta libraries do seu sketchbook (no linux `user/sketchbook/ibraries` no Mac/Win `user/Documents/Processing/libraries`
 
 **Passo 2** 
 
