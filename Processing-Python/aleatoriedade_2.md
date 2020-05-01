@@ -28,7 +28,7 @@ A função `choice(colection)` devolve um item de uma coleção (tupla, lista, c
 from random import choice
 
 frutas = ("uva", "jaca", "melancia", "ubu", "pitanga")
-sorteio = choice(frutas)
+sorteio = choice(frutas)  # 'sorteia' fruta da tupla de frutas
 print(sorteio)
 # Um resultado possível no console:
 # jaca
@@ -39,10 +39,10 @@ Veja também outro exemplo, mais visual.
 ```python
 from random import choice
 
-cores = (color(200, 0, 0), color(0, 200, 0), color(0, 0, 200))
+cores = [color(200, 0, 0), color(0, 200, 0), color(0, 0, 200)]
 
 def draw():
-    c = choice(cores) # sorteia uma cor da tupla cores
+    c = choice(cores) # sorteia uma cor da lista de cores
     fill(c)
     rect(25, 25, 50, 50)
 ```
