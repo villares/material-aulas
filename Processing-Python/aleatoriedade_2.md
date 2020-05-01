@@ -8,14 +8,17 @@ Cada vez que chamamos a função `random()` com um valor de argumento, como em `
 
 ![imagem_exemplo](assets/random1-10.png)
 
-Se dois valores forem usados, por exemplo `random (-5, 5)` serão produzidos números entre -5 e 5 (não incluso).
-E podemos obter números inteiros convertendo o valor usando `int()`, como em `sorteio_inteiro = int(random(1, 11))` que 'sorteia' com igual probabilidades os números de 1 a 10.
+Se dois valores forem usados, por exemplo `random (-5, 5)` serão produzidos números entre -5 e 5 (não incluso). E podemos obter números inteiros convertendo o valor usando `int()`, como em `sorteio_inteiro = int(random(1, 11))` que 'sorteia' com igual probabilidades os números de 1 a 10.
 
-### O módulo `random` da biblioteca padrão do Python
+### O módulo `random` da biblioteca padrão do PythonNo Python `random()` precisa ser importado do módulo `random` com a a seguinte  instrução:
 
-No Python `random()` precisa ser importado do módulo `random` com a instrução `from random import random`, ela não recebe argumentos (isto é não vai nada dentro dos parênteses) e devolve o equivalente a `random(1)` no Processing, por isso não nos parece tão simpática e útil. 
+```python
+from random import random
+```
 
-Mas o módulo `random` de Python nos oferece outras funções muito simpáticas, quer dizer, interessantes: `choice()`, `sample()`, e `shuffle()`.
+É uma função que não recebe argumentos (isto é não vai nada dentro dos parênteses) e devolve o equivalente a `random(1)` no Processing, por esse motivo  não me  parece tão flexível e útil. 
+
+No entanto, o módulo `random` de Python oferece outras funções muito simpáticas, quero dizer, interessantes: `choice()`, `sample()`, e `shuffle()`.
 
 #### selecionando um único item
 
