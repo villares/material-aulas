@@ -130,7 +130,7 @@ def draw():
     cam.endHUD()  # termina o "HUD"
 ```
 
-### Documentação das opçÕes de `hint()`
+### Documentação das opções de `hint()`
 
 ```python
 # Este exemplo mostra a diferença entre as opções documentadas em:
