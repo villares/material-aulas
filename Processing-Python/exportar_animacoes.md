@@ -34,9 +34,9 @@ def draw():
 ```
 Para a converter esses 'frames' em um vídeo ou em um GIF animado, podemos usar:
 - A ferramenta `Movie Maker` do próprio IDE do Processing (Vídeo)
-- Gimp, com o comando 'abrir como camadas' (GIF animado)
+- [Gimp](https://gimp.org) ou [Glimpse](http://https://glimpse-editor.org/), com o comando 'abrir como camadas' (GIF animado)
 - Ferramentas online como https://ezgif.com/ (GIF animado)
-ou outra ferramenta da sua escolha, como o `ffmpeg` na linha de comando.
+- Alguma outra ferramenta da sua escolha, como o [`ffmpeg`](http//www.ffmpeg.org) na linha de comando (ou [via uma GUI](https://github.com/amiaopensource/ffmpeg-amia-wiki/wiki/3)-Graphical-User-Interface-Applications-using-FFmpeg)).
 
 ### B. Biblioteca *GifAnimation*
     
