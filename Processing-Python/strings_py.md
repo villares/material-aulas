@@ -64,7 +64,7 @@ Mais sobre desenhar texto na tela na página sobre tipografia básica: [Trabalha
 
 ### Letras com acentos, caracteres especiais e outros glifos
 
-Em Python 2  é necessário um `u` antes de cada literal string (string no corpo do programa) para permitir letras acentuadas e outros caracteres não-ASCII. Uma outra solução é incluir no começo do seu programa, logo na primeira linha, o seguinte código:
+Em Python 2  é necessário um `u` antes de cada *string literal* (*string* no corpo do programa) para permitir letras acentuadas e outros caracteres não-ASCII. Uma outra solução é incluir no começo do seu programa, logo na primeira linha, o seguinte código:
 
 ```pyde
 from __future__ import unicode_literals
