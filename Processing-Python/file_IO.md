@@ -47,7 +47,50 @@ def setup():
         x, y = random(40, 360), random(20, 380)             
         text(linha, x, y)    
 ```
+
 ![resultado](assets/read_lines.png)
 
+### Escolhendo um arquivo para abrir
+
+Usando o a função `selectInput()`,  você permite que a pessoa escolha um arquivo para subsequente leitura, como no exemplo anterior, com `loadStrings()`. É preciso passar dois argumentos: um texto para o título da janela de seleção, e o nome de uma função que será executada quano a pessoa terminar de selecionar o arquivo (ou cancelar a seleção). 
+
+```python
+linhas = ["tecle 'o' para abrir um arquivo",
+          "tecle 'a' para apagar a lista",
+         ]
+
+def setup():
+    size(400, 400)
+
+def draw():
+    background(0)
+    fill(100, 100, 255)
+    textAlign(LEFT, TOP)
+    textSize(20)
+    for i, linha in enumerate(linhas):
+        x = 10 + 120 * (i // 20)
+        y = i * 19 - 380 * (i // 20)            
+        text(linha, x, y) 
+        
+def keyPressed():
+    if key == 'o':
+        selectInput("escolha um arquivo:", "file_selected")
+    if key == 'a':
+        linhas[:] = []
+    if key == 's':
+        saveFrame("select_input.png")
+        
+def file_selected(selection):
+    if selection == None:
+        print(u"Seleção cancelada.")
+    else:
+        path = selection.getAbsolutePath()
+        print("Arquivo selecionado: " + path)
+        linhas.extend(loadStrings(path))         
+```
+
+![resultado](assets/select_input.png)
 
 
+
+### Escrevendo texto em arquivo
