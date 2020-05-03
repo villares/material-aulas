@@ -60,7 +60,7 @@ def draw():
 ```
 ![resultado](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/text-na-tela.png)
 
-Mais sobre desenhar texto na tela na página sobre tipografia básica: [Trabalhando com fontes e outros ajustes do texto](https://github.com/villares/material-aulas/blob/master/Processing-Python/tipografia.md)
+Mais sobre desenhar texto na tela na página sobre tipografia básica em: [Trabalhando com fontes e outros ajustes do texto](https://github.com/villares/material-aulas/blob/master/Processing-Python/tipografia.md)
 
 ### Letras com acentos, caracteres especiais e outros glifos
 
@@ -70,7 +70,7 @@ Em Python 2  é necessário um `u` antes de cada *string literal* (*string* no c
 from __future__ import unicode_literals
 ```
 
-Você pode ler mais sobre isso na página [Python 2 e Python 3](https://github.com/villares/material-aulas/blob/master/Processing-Python/futuro.md).
+Você pode ler mais sobre isso na página [sobre Python 2 e Python 3](futuro.md).
 
 Em Python o `\` dentro de strings é chamado de 'caractere de escape' permite obter elementos especiais, por meio de uma 'sequência de escape', como por exemplo uma tabulação (`\t`) ou um sol ☀ (`\u2600`). Se precisar usar a própria barra invertida escreva `\\`.
 
@@ -94,3 +94,9 @@ maçã
 banana
 """)
 ```
+
+### Assuntos relacionados
+
+- [Trabalhando com fontes e outros ajustes do texto](tipografia.md)
+- [Lendo e escrevendo texto em arquivos](file_IO.md)
+- [Sobre o Python 2 e alguns recursos do Python 3](futuro.md)
