@@ -101,6 +101,7 @@ circulos = []
 def setup():
     size(400, 400)
     fill(100, 100, 255)
+    println(u"Tecle 'W' para gravar e 'L' para carregar dados de um arquivo texto")
 
 def draw():    
     background(0)
@@ -113,7 +114,7 @@ def mouseDragged():
     circulos.append(circulo)
 
 def keyPressed():
-    if key =='s' or key == 'S':
+    if key =='w' or key == 'W':
         selectOutput("Salvar como:", "salvar_circulos")   # Argumentos: título, função chamada na conclusão           
     if key == 'l' or key == 'L':
         selectInput("Escolha um arquivo:", "carregar_circulos")      
