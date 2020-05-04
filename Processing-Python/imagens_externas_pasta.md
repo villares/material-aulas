@@ -6,7 +6,7 @@
 
 Tendo visto previamente como [ler e usar imagens de arquivos externos](imagens_externas.md) com `loadImage()` neste exemplo mais avançado vamos permitir que a pessoa escolha uma pasta e o *sketch* vai carregar todas as imagens nela encontradas.
 
-A seleção da pasta começa quando se tecla 'o' é apertada e a função `selectFolder()` é chamada. 
+A seleção da pasta começa quando a tecla 'o' é apertada e a função `selectFolder()` é chamada. 
 
 ```python
 def keyPressed():
