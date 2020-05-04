@@ -38,10 +38,9 @@ Leia as [instruções para colaborar com este repositório](/como-contribuir.md)
 - [Desenhando em 3D](/Processing-Python/desenho-3D.md)
 
 #### Arquivos externos
-
-- [Lendo arquivos de imagem (*bitmap/raster*)](/Processing-Python/imagens_externas.md)
 <!-- [Lendo um arquivo vetorial (SVG)](/Processing-Python/usando_svg.md) -->
-- [Lendo e escrevendo texto em arquivos (*file IO*)](/Processing-Python/fileIO.md)
+- [Lendo arquivos de imagem (*bitmap/raster*)](/Processing-Python/imagens_externas.md)
+- [Lendo e escrevendo texto em arquivos (*file IO*)](/Processing-Python/file_IO.md)
 
 #### Exportação
 
