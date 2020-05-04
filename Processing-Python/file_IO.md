@@ -127,22 +127,22 @@ def salvar_circulos(arquivo):
     if arquivo == None:
         print("Gravação cancelada.")
     else:
-        path_arquivo = arquivo.getAbsolutePath()
-        if not path_arquivo.endswith('.txt'):
-            path_arquivo += '.txt'
+        caminho_arquivo = arquivo.getAbsolutePath()
+        if not caminho_arquivo.endswith('.txt'):
+            caminho_arquivo += '.txt'
         linhas = []
         for circulo in circulos:
                 x, y, tamanho = circulo
                 linhas.append(u'{} {} {}'.format(x, y, tamanho))            
-        saveStrings(path_arquivo, linhas)    
+        saveStrings(caminho_arquivo, linhas)    
 
 def carregar_circulos(arquivo):
     if arquivo == None:
         print(u"Seleção cancelada.")
     else:
-        path_arquivo = arquivo.getAbsolutePath()
-        print("Arquivo selecionado: " + path_arquivo)
-        linhas = loadStrings(path_arquivo)
+        caminho_arquivo = arquivo.getAbsolutePath()
+        print("Arquivo selecionado: " + caminho_arquivo)
+        linhas = loadStrings(caminho_arquivo)
         for linha in linhas:
             str_x, str_y, str_tamanho = linha.split()
             circulo = float(str_x), float(str_y), float(str_tamanho)
@@ -170,7 +170,7 @@ Veja um trecho do arquivo gerado pelo exemplo [`output.txt`](assets/output.txt)
 A maneira mais 'universal' em Python de se escrever em um arquivo texto é usando `open(caminho_arquivo, modo)`. Que devolve um objeto com vários métodos como `.write()` e `.close()`. Mas o mais recomendado é usar um chamado 'gerenciador de contexto', com um bloco indentado que começa com `with open(caminho_arquivo, modo) as objeto_arquivo:` e cuida de fechar o arquivo para você.  Veja como ficaria no caso do exemplo anterior:
 
 ```
-with open(path_arquivo, 'w') as f:
+with open(caminho_arquivo, 'w') as f:
     for circulo in circulos:
         x, y, tamanho = circulo
         f.write(u'{} {} {}'.format(x, y, tamanho))
