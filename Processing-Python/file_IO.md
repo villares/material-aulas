@@ -20,6 +20,7 @@ jaca
 maracujá
 ```
 A leitura dos dos dados pode ser feita no Python de maneira mais 'universal', o que é útil saber para poder fazer em outros contextos de uso de Python:
+
 ```python
 # No Python - exemplo mais universal
 from io import open as io_open # melhor para ler unicode no Python 2 
@@ -164,6 +165,17 @@ Veja um trecho do arquivo gerado pelo exemplo [`output.txt`](assets/output.txt)
 103 47 33.4321708679
 ...
 ```
+#### Escrevendo arquivos no Python
+
+A maneira mais 'universal' em Python de se escrever em um arquivo texto seria assim:
+
+```
+with open(path_arquivo, 'w') as f:
+    for circulo in circulos:
+        x, y, tamanho = circulo
+        f.write(u'{} {} {}'.format(x, y, tamanho))
+ ```       
+Se quiser, leia mais sobre isso na documentação do Python: [Python 2.7 Tutorial: Reading and Writing Files](https://docs.python.org/2/tutorial/inputoutput.html#reading-and-writing-files)        
 
 ### Assuntos relacionados
 
