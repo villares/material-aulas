@@ -20,7 +20,27 @@ R = int(random(256))
 println("Red: " + str(R))  # ou println("Red: {}".format(R))
 ```
 
-### Alguns tipos de valores (classes de objetos)
+## Parâmetros e funções
+
+Os valores que uma função recebe quando invocada podem precisar ser de tipos específicos, que podem ser descobertos na documentação (no caso de funções pré-definidas ou de bibliotecas externas) ou lendo a definição da função.
+Da mesma forma os tipos dos valores devolvidos por uma função são do nosso interesse.
+
+Algumas funções apenas executam operações mas não devolvem um valor, como `setup()`, `draw()`, `noStroke()` e `rect()`, por exemplo. Na verdade, sendo mais cuidadosos, veremos que em Pyhon essas funções retornam o valor especial `None` (que poderíamos imaginar como "nada" ou "nenhum").
+
+Já outras funções devolvem um valor. A função `color()` do Processing, por exemplo, recebe como argumentos números inteiros e devolve uma cor:
+
+`minha_cor = color(255, 0, 0)  # A variável minha_cor aponta para uma cor vermelha na memória`
+
+Podemos construir uma outra função que devolve uma cor também:
+
+```python
+cor_sorteada(alpha):
+   R = int(random(256)
+   G = int(random(256)
+   B = int(random(256)
+   return color(R, G, B, alpha)
+```
+### Alguns tipos (classes de objetos)
 
 | tipo / classe | descrição |
 | ---      | --- |
@@ -38,32 +58,11 @@ println("Red: " + str(R))  # ou println("Red: {}".format(R))
 | `dict`   | dicionário um 'mapeamento' de chaves (*keys*) e valores, criado com `dict()` ou pares `{chave : valor,}` |
 | `None`   | o "nenhum" é de um tipo especial único `None`e é devolvido por funções que não devolvem nada  |
 
-## Parâmetros e funções
-
-Os valores que uma função recebe quando invocada podem precisar ser de tipos específicos, que podem ser descobertos na documentação (no caso de funções pré-definidas ou de bibliotecas externas) ou lendo a definição da função.
-Da mesma forma os tipos dos valores devolvidos por uma função são do nosso interesse.
-
-Algumas funções apenas executam operações mas não devolvem um valor, como `setup()`, `draw()`, `noStroke()` e `rect()`, por exemplo. Na verdade, sendo mais cuidadosos, veremos que em Pyhon essas funções retornam o valor especial `None` (que poderíamos imaginar como "nada" ou "nenhum").
-
-Já outras funções devolvem um valor. A função `color()` do Processing, por exemplo, recebe como argumentos números inteiros e devolve uma cor:
-
-`color minhaCor = color(255, 0, 0)  # A variável minhaCor aponta para uma cor vermelha na memória`
-
-Podemos construir uma outra função que devolve uma cor também:
-
-```python
-cor_sorteada(alpha):
-   R = int(random(256)
-   G = int(random(256)
-   B = int(random(256)
-   return color(R, G, B, alpha)
-```
-
 ### Glossário
 
 [**valor**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:valor) Uma das unidades básicas de dados, como um número ou string, que um programa manipula.
 
-[**tipo**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:tipo) Uma categoria de valores. Alguns tipos que vimos por enquanto são números inteiros (tipo int), números de ponto flutuante (tipo float) e strings (tipo str).
+[**tipo**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:tipo) Uma categoria de valores. Alguns tipos que vimos por enquanto são números inteiros (tipo `int`), números de ponto flutuante (tipo `float`) e *strings* (tipo `str`).
 
 [**inteiro**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:inteiro) Um tipo que representa números inteiros.
 

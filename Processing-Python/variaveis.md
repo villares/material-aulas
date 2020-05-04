@@ -1,6 +1,6 @@
 # Variáveis
 
-Variáveis são nomes que inventamos quando estamos escrevendo um programa, e que apontam para valores na memória do computador. Esses valores podem ser simples como números inteiros (*int*/*integer*), textos (*str*/*string*) ou entidades que chamamos de *objetos*. Em Python, como seŕá possível perceber mais pra frente, todos os valores são objetos, até mesmo os números inteiros!
+Variáveis são nomes que inventamos quando estamos escrevendo um programa, e que apontam para valores na memória do computador. Esses valores podem ser simples como números inteiros (*int*/*integer*), textos (*str*/*string*) ou entidades que chamamos de *objetos*. Em Python, como seŕá possível perceber mais pra frente, de fato todos os valores, incluindo os números inteiros, são objetos.
 
 ### Atribuição
 
@@ -8,19 +8,25 @@ Criamos uma variável, e também modificamos o valor para o qual ela aponta usan
 
 ```python
 lado = 50  # cria a variável `lado` que passa a valer 50
-rect(10, 10, lado, lado)  # desenha um retângulo com 50 de largura e 50 de altura
+rect(10, 10, lado, lado)  # desenha um retângulo com 50 de largura e 50 de alt
+
+nome = 'Guido'
+text(nome, 20, 20)  # desenha o texto de `nome` na área de desenho
 ```
+![exemplo 1](assets/variaveis_Guido.png)
 
 ```python
 a = 10  # cria a variável `a` que passa a valer 10
 rect(a, 10, 40, 40)  # desenha um retângulo em x:10, y:10
-a = a + 50  # muda o valor de a para o valor atual mais 50 (ou seja 60)
+a = a + 50  # muda o valor de `a` para o valor atual somado de 50 (ou seja 60)
 rect(a, 10, 40, 40)  # desenha um retângulo em x:60, y:10
 ```
 
+**Você consegue imaginar qual vai ser o resultado?**
+
 ### Convenções para os nomes das variáveis
 
-Nomear uma variável é alog a se pensar com cuidado, devemos pensar em algo que descreva os valores para os quais ela vai apontar. Não queremos nem um nome muito longo, que dá preguiça de digitar no programa muitas vezes, nem um nome curto que vamos esquecer daqui alguns dias do que se trata... Veja abaixo algumas regras sintáticas do Python e recomendações estilísticas:
+Nomear uma variável é algo a se pensar com cuidado, vamos inventar um nome que descreva os valores para os quais a variável vai apontar. Não queremos nem um nome muito longo, que dá preguiça de digitar no programa muitas vezes, nem um nome curto demais que vamos esquecer daqui alguns dias do que se trata... Veja abaixo algumas regras sintáticas do Python e recomendações estilísticas:
 
 ```python
 minhaidademental = 13 # correto, mas não muito legível
