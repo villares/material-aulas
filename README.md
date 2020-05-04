@@ -17,6 +17,7 @@ Leia as [instruções para colaborar com este repositório](/como-contribuir.md)
 ### Assuntos
 
 - [Primeiros passos e desenho básico](/Processing-Python/desenho-basico_py.md)
+  - [Variáveis](/Processing-Python/variaveis.md)
   - [Desenhando polígonos](/Processing-Python/poligonos_1.md)  
 - [Condicionais (`if` e `else`)](/Processing-Python/condicionais_py.md)
   - [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](/Processing-Python/atribuicao-e-comparacao.md)
