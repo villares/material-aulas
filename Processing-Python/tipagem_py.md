@@ -29,7 +29,7 @@ Algumas funções apenas executam operações mas não devolvem um valor, como `
 
 Já outras funções devolvem um valor. A função `color()` do Processing, por exemplo, recebe como argumentos números inteiros e devolve uma cor:
 
-`color minhaCor = color(255, 0, 0)  # A variável minhaCor aponta para uma cor vermelha na memória`
+`minha_cor = color(255, 0, 0)  # A variável minha_cor aponta para uma cor vermelha na memória`
 
 Podemos construir uma outra função que devolve uma cor também:
 
