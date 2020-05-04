@@ -32,7 +32,9 @@ def adicionar_imagens(selection):
 
 Saiba que o código que cuida da janela do sistema operacional para escolhermos a pasta e também esta função, chamada em seguida, são executados em *threads* separadas do *sketch* principal, e por conta disso não interrompem a repetida execução de `draw()`. Note como o carregamento das imagens é um procedimento razoavelmente lento e é possível vê-las aparecendo aos poucos na tela, conforme são acrescentadas na lista global `imagens` pela execução do laço `for` em `adicionar_imagens()`.
 
-Uma boa parte da solução está encapsulada em `list_images()`, usada em `adicionar_imagens()`, uma função que recebe o caminho completo da pasta selecionada e devolve uma lista com tuplas dos nomes dos arquivos das imagens e o caminho completo delas para ser usado no `loadImage()`. 
+Uma boa parte da solução da nossa tarefa, na verdade, está encapsulada em `list_images()`, a função que usamos em `adicionar_imagens()`. Ela recebe o caminho completo da pasta selecionada e devolve uma lista com tuplas dos nomes dos arquivos das imagens e o caminho completo delas para ser usado no `loadImage()`. 
+
+Não vai ser possível entrar em detalhes aqui, se você quiser entender melhor esta função, pode ler mais a respeito de [compreensão de listas](https://panda.ime.usp.br/pensepy/static/pensepy/09-Listas/listas.html#list-comprehensions) (a maneira compacta de produzir uma lista usada para criar a `f_list`) e [tratamento de exceções](http://turing.com.br/pydoc/2.7/tutorial/errors.html#excecoes) (o trecho dentro dentro de `try:` e  `except... :`).
 
 ```python
 def list_images(dir=None):
@@ -48,7 +50,6 @@ def list_images(dir=None):
         return []
     return f_list
 ```
-
 Repare que `list_images()` depende da pequena função `imgext()` que responde se o nome da lista produzida por `os.listdir()` tem uma terminação mencionada na tupla `extensions`.
 
 ```python
