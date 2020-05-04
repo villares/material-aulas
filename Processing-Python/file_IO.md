@@ -1,5 +1,5 @@
-## Leitura/entrada (*Input*) e escrita/saída (*Output*) de dados em arquivos
-### Lendo texto de um arquivo 
+## Lendo e escrevendo texto em arquivos (*file IO*)
+### Entrada (*input*) e saída (*output*) de dados em arquivos texto
 
 Nosso primeiro exemplo vai ser sobre como ler linhas de texto (*strings*) de um arquivo texto (*text file*).
 
@@ -164,3 +164,6 @@ Veja um trecho do arquivo gerado pelo exemplo [`output.txt`](assets/output.txt)
 ...
 ```
 
+### Assuntos relacionados
+
+* [Textos no programa, no console e na tela (*strings*)](strings_py.md)
