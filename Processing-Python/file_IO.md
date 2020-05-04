@@ -5,8 +5,8 @@ Nosso primeiro exemplo vai ser sobre como ler linhas de texto (*strings*) de um 
 
 O arquivo `frutas.txt` vai ficar dentro da pasta `/data/` dentro  do seu sketch:
 ```
-sketch_2020_04a                (pasta/folder do sketch)
-  L  sketch_2020_04a.pyde      (arquivo com o código)
+sketch_2020_05a                (pasta/folder do sketch)
+  L  sketch_2020_05a.pyde      (arquivo com o código)
   L  data                      (pasta/folder)
        L  frutas.txt           (arquivo texto)
 ```
