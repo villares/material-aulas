@@ -10,13 +10,16 @@ Nomear uma variável é uma arte, não queremos nem um nome muito longo que dá 
 minhaidademental = 13 # correto, mas não muito legível
 minhaIdadeMental = 13  # correto, muito usado por programadores Java
 minha_idade_mental = 13  # correto, muito usado por Progradores Python
-d20 = 13
-_idade = 13
-x_ = 13
+d20 = 19
+_idade = 42
+x = 100
+x_ = 200
+
 # Funciona, mas não recomendado  
 MinhaIdadeMental = 13  # Reservamos nomes com a primeira letra maiúscula para 'classes´  
+IDADE_MAXIMA = 200  # Costumamos usar só para valores que não vão mudar chamados 'constantes'
 _ = 13  # Usamos em alguns casos, quando queremos ignorar um valor
-IDADE_MAXIMA = 20  # Costumamos usar só para valores que não vão mudar chamados 'constantes'
+
 # Não funciona! Incorreto!
 minha idade mental = 13 # palavras com espaços 
 minha-idade-mental = 13 # palavra com hifens
