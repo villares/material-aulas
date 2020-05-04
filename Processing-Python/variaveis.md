@@ -9,7 +9,11 @@ Criamos uma variável, e também modificamos o valor para o qual ela aponta usan
 ```python
 lado = 50  # cria a variável `lado` que passa a valer 50
 rect(10, 10, lado, lado)  # desenha um retângulo com 50 de largura e 50 de altura
+
+nome = 'Guido'
+text(nome, 20, 20)  # desenha a palavra 'Guido' na área de desenho
 ```
+![exemplo 1](assets/variaveis_Guido.png)
 
 ```python
 a = 10  # cria a variável `a` que passa a valer 10
