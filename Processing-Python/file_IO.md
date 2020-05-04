@@ -167,16 +167,21 @@ Veja um trecho do arquivo gerado pelo exemplo [`output.txt`](assets/output.txt)
 ```
 #### Escrevendo em arquivos no Python sem a ajuda do Processing
 
-A maneira mais 'universal' em Python de se escrever em um arquivo texto é usando `open(caminho_arquivo, modo)`. Que devolve um objeto com vários métodos como `.write()` e `.close()`. Mas o mais recomendado é usar um chamado 'gerenciador de contexto', com um bloco indentado que começa com `with open(caminho_arquivo, modo) as objeto_arquivo:` e cuida de fechar o arquivo para você.  Veja como ficaria no caso do exemplo anterior:
+A maneira mais 'universal' em Python de se escrever em um arquivo texto é usando `open(caminho_arquivo, modo)`, que fornece um objeto com o método `.write()`.
+
+O mais recomendado é usar um chamado 'gerenciador de contexto', fazendo um bloco indentado que começa com `with open(caminho_arquivo, modo) as objeto_arquivo:`. Se não usar o `with open(... :` você precisa cuidar de 'fechar' o aquivo com `.close()` depois de ler ou escrever, e ainda corre o risco do arquivo ficar aberto se o seu programa encerrar no meio do caminho.
+
+Veja o caso de gravar os dados dos círculos no exemplo anterior como ficaria:
 
 ```
-with open(caminho_arquivo, 'w') as f:
+with open(caminho_arquivo, 'w') as file:
     for circulo in circulos:
         x, y, tamanho = circulo
-        f.write(u'{} {} {}'.format(x, y, tamanho))
+        file.write(u'{} {} {}'.format(x, y, tamanho))
  ```       
-Se quiser, leia mais sobre isso na documentação do Python: [Python 2.7 Tutorial: Reading and Writing Files](https://docs.python.org/2/tutorial/inputoutput.html#reading-and-writing-files)        
 
 ### Assuntos relacionados
 
 * [Textos no programa, no console e na tela (*strings*)](strings_py.md)
+* Se quiser ler mais sobre *Filie IO* na documentação do Python: [Python 2.7 Tutorial: Reading and Writing Files](https://docs.python.org/2/tutorial/inputoutput.html#reading-and-writing-files)        
+
