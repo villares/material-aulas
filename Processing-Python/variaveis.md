@@ -22,6 +22,8 @@ a = a + 50  # muda o valor de `a` para o valor atual somado de 50 (ou seja 60)
 rect(a, 10, 40, 40)  # desenha um retângulo em x:60, y:10
 ```
 
+** Você consegue imaginar qual vai ser o resultado? **
+
 ### Convenções para os nomes das variáveis
 
 Nomear uma variável é alog a se pensar com cuidado, devemos pensar em algo que descreva os valores para os quais ela vai apontar. Não queremos nem um nome muito longo, que dá preguiça de digitar no programa muitas vezes, nem um nome curto que vamos esquecer daqui alguns dias do que se trata... Veja abaixo algumas regras sintáticas do Python e recomendações estilísticas:
