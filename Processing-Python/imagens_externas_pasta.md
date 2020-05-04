@@ -4,16 +4,17 @@
 
 > Exemplo de execução carregando 110 imagens medievais coletadas pelo artista e educador [Daniel Seda](https://www.danielseda.com/home).
 
-Tendo visto previamente como  [uasr imagens externas](imagens_externas.md) com `loadImage()` neste exemplo mais avançado vamos permitir que a pessoa escolha uma pasta e o *sketch* vai carregar todas as imagens nela encontradas.
+Tendo visto previamente como [ler e usar imagens de arquivos externos](imagens_externas.md) com `loadImage()` neste exemplo mais avançado vamos permitir que a pessoa escolha uma pasta e o *sketch* vai carregar todas as imagens nela encontradas.
 
-A seleção da pasta começa quando se tecla 'o' e a função `selectFolder()` é chamada. 
+A seleção da pasta começa quando se tecla 'o' é apertada e a função `selectFolder()` é chamada. 
 
 ```python
 def keyPressed():
     if key == 'o':
-        selectFolder("Selecine uma pasta:", "adicionar_imagens")
+        selectFolder("Selecine uma pasta", "adicionar_imagens")
 ```
-Note que o primeiro argumento de `selectFolder()` é o texto que vai como título da janela de seleção, o segundo `"adicionar_imagens"` é um *string* do nome de uma função que será chamada quando a pessoa terminar de interagir com a janela de seleção de pasta (diretório / *folder*), seja escolhendo uma pasta seja cancelando. Veja a definição da função `adicionar_imagens()`:
+
+Note que o primeiro argumento de `selectFolder("Selecine uma pasta", "adicionar_imagens")` é o texto que vai como título da janela de seleção. O segundo argumento `"adicionar_imagens"` é mais curioso, trata-se de um *string* com o nome de uma função que será chamada quando a pessoa terminar de interagir com a janela de seleção de pasta (diretório / *folder*). Essa função `adicionar_imagens()` vai ser executada seja quando a pessoa terminou de escolher uma pasta ou se tiver cancelado o processo. Veja a seguir a definição da função:
 
 ```python
 def adicionar_imagens(selection):
@@ -29,9 +30,7 @@ def adicionar_imagens(selection):
         print('Número de imagens: ' + str(len(imagens)))
 ```
 
-Note que o código que cuida da janela do sistema operacional (para escolhermos a pasta) e esta função chamada em seguida, são executados em uma *thread* separada, e por conta disso não interrompe am repetida execução de `draw()`. Como o carregamento das imagens é um procedimento razoavelmente lento é possível vê-las aparecendo aos poucos na tela, conforme são acrescentadas na lista global `imagens`.
-
-
+Saiba que o código que cuida da janela do sistema operacional para escolhermos a pasta e também esta função, chamada em seguida, são executados em *threads* separadas do *sketch* principal, e por conta disso não interrompem a repetida execução de `draw()`. Note como o carregamento das imagens é um procedimento razoavelmente lento e é possível vê-las aparecendo aos poucos na tela, conforme são acrescentadas na lista global `imagens` pela execução do laço `for` em `adicionar_imagens()`.
  `
 Aqui o código completo do sketch:
 
@@ -51,6 +50,7 @@ def setup():
 def draw():
     background(0)
     contador = 0
+    # Desenha uma grade com as imagens na lista `imagens`
     for c in range(colunas):
         x = c * w
         for l in range(linhas):
