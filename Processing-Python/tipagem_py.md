@@ -23,7 +23,7 @@ println("Red: " + str(R))  # ou println("Red: {}".format(R))
 ### Alguns tipos de valores (classes de objetos)
 
 | tipo / classe | descrição |
-| ---      | !--- |
+| ---      | --- |
 |`int`     | número inteiro, como `-5`, `0` ou `42`|
 | `float`  | número com ponto flutante, como `.5` `3.` ou `6.267` (note que o separador decimal é o ponto)|
 | `boolean`| valores `True` ou `False`|
