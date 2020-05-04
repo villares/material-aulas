@@ -41,6 +41,7 @@ Leia as [instruções para colaborar com este repositório](/como-contribuir.md)
 #### Arquivos externos
 <!-- [Lendo um arquivo vetorial (SVG)](/Processing-Python/usando_svg.md) -->
 - [Lendo arquivos de imagem (*bitmap/raster*)](/Processing-Python/imagens_externas.md)
+  - [Lendo todas as imagem de uma pasta](/Processing-Python/imagens_externas_pasta.md)
 - [Lendo e escrevendo texto em arquivos (*file IO*)](/Processing-Python/file_IO.md)
 
 #### Exportação
