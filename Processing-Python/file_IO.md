@@ -146,4 +146,10 @@ def carregar_circulos(arquivo):
             circulo = float(str_x), float(str_y), float(str_tamanho)
             circulos.append(circulo)                                                              
 ```
+![circulos](output.png)
+
+Veja um trecho do arquivo gerado pelo exemplo [`output.txt`](asstes/output.txt)
+```
+
+```
 
