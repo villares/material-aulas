@@ -1,5 +1,7 @@
 ## Lendo todas as imagens de uma pasta
 
+![exemplo de grade de imagens](assets/muitas_imagens.png)
+
 Tendo visto previamente como  [uasr imagens externas](imagens_externas.md) com `loadImage()` neste exemplo mais avançado vamos permitir que a pessoa escolha uma pasta e o *sketch* vai carregar todas as imagens nela encontradas.
 
 A seleção da pasta começa quando se tecla 'o' e a função `selectFolder()` é chamada. 
