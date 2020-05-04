@@ -14,7 +14,7 @@ def keyPressed():
         selectFolder("Selecine uma pasta", "adicionar_imagens")
 ```
 
-Note que o primeiro argumento de `selectFolder("Selecine uma pasta", "adicionar_imagens")` é o texto que vai como título da janela de seleção. O segundo argumento `"adicionar_imagens"` é mais curioso, trata-se de um *string* com o nome de uma função que será chamada quando a pessoa terminar de interagir com a janela de seleção de pasta (diretório / *folder*). Essa função `adicionar_imagens()` vai ser executada seja quando a pessoa terminou de escolher uma pasta ou se tiver cancelado o processo. Veja a seguir a definição da função:
+Note que o primeiro argumento de `selectFolder()` é `"Selecine uma pasta"` o texto (*string*) que vai como título da janela de seleção. O segundo argumento `"adicionar_imagens"` é mais curioso, trata-se de um *string* com o nome de uma função que será chamada quando a pessoa terminar de interagir com a janela de seleção de pasta (diretório / *folder*). Essa função `adicionar_imagens()` vai ser executada seja quando a pessoa terminou de escolher a pasta ou se tiver cancelado o processo. Veja a seguir a definição da função:
 
 ```python
 def adicionar_imagens(selection):
