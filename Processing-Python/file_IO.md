@@ -146,10 +146,21 @@ def carregar_circulos(arquivo):
             circulo = float(str_x), float(str_y), float(str_tamanho)
             circulos.append(circulo)                                                              
 ```
-![circulos](output.png)
+![circulos](assets/output.png)
 
-Veja um trecho do arquivo gerado pelo exemplo [`output.txt`](asstes/output.txt)
+Veja um trecho do arquivo gerado pelo exemplo [`output.txt`](assets/output.txt)
 ```
-
+68 120 37.5507659912
+71 98 32.7605819702
+78 83 26.2493400574
+84 71 36.1811676025
+87 63 35.6623039246
+89 59 37.2014465332
+90 56 37.5425949097
+91 56 23.1710891724
+93 55 34.2703857422
+98 50 31.6832389832
+103 47 33.4321708679
+...
 ```
 
