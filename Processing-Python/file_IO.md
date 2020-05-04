@@ -22,13 +22,14 @@ maracujá
 A leitura dos dos dados pode ser feita no Python de maneira mais 'universal', o que é útil saber para poder fazer em outros contextos de uso de Python:
 ```python
 # No Python - exemplo mais universal
-from io import open  # melhor encoding no Python 2 
-with open("data/frutas.txt",'r') as file:
+from io import open as io_open # melhor para ler unicode no Python 2 
+with io_open("data/frutas.txt",'r') as file:
     linhas = file.readlines()
 ```
 Ou usando uma função bem simples do Processing chamada `loadStrings()`:
+
 ```python
-# No Processing - mais específico - use dentro do setup()!
+# No Processing - mais específico - não use antes do setup()!
 linhas = loadStrings("nomes.txt")  # frutas.txt na pasta /data/
 ```
 Note que em ambos os casos, ler dados de um arquivo no computador é considerada uma operação relativamente lenta e não deve ser feita repetidas vezes dentro do `draw()` pois vai ser um disperdício e deixa o seu desenho ou animação lentos.
