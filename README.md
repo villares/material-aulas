@@ -30,17 +30,18 @@ Leia as [instruções para colaborar com este repositório](/como-contribuir.md)
   - [Mais sobre polígonos](/Processing-Python/poligonos_2.md)
   - [Laço de repetição com `while`](/Processing-Python/while.md)
 - [Mais sobre aleatoriedade](/Processing-Python/aleatoriedade_2.md)
-- [Textos no programa, no console e na tela](https://github.com/villares/material-aulas/blob/master/Processing-Python/strings_py.md)
+- [Textos no programa, no console e na tela (*strings*)](https://github.com/villares/material-aulas/blob/master/Processing-Python/strings_py.md)
   - [Trabalhando com fontes e outros ajustes do texto](/Processing-Python/tipografia.md)
 - [Declarando novas funções](/Processing-Python/funcoes_py.md)
   - [Funções recursivas](/Processing-Python/recursao_py.md)
-- [Tipos de valores (inteiros, números de ponto flutuante, texto)](/Processing-Python/tipagem_py.md)
+- [Tipos de valores (inteiros, números de ponto flutuante, texto (*strings*))](/Processing-Python/tipagem_py.md)
 - [Desenhando em 3D](/Processing-Python/desenho-3D.md)
 
 #### Arquivos externos
 
-- [Arquivos de imagem (bitmap/raster)](/Processing-Python/imagens_externas.md)
-<!-- [Usando um arquivo vetorial (SVG)](/Processing-Python/usando_svg.md) -->
+- [Lendo arquivos de imagem (*bitmap/raster*)](/Processing-Python/imagens_externas.md)
+<!-- [Lendo um arquivo vetorial (SVG)](/Processing-Python/usando_svg.md) -->
+- [Lendo e escrevendo texto em arquivos (*file IO*)](/Processing-Python/fileIO.md)
 
 #### Exportação
 
