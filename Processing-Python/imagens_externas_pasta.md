@@ -31,11 +31,44 @@ def adicionar_imagens(selection):
 ```
 
 Saiba que o código que cuida da janela do sistema operacional para escolhermos a pasta e também esta função, chamada em seguida, são executados em *threads* separadas do *sketch* principal, e por conta disso não interrompem a repetida execução de `draw()`. Note como o carregamento das imagens é um procedimento razoavelmente lento e é possível vê-las aparecendo aos poucos na tela, conforme são acrescentadas na lista global `imagens` pela execução do laço `for` em `adicionar_imagens()`.
- `
+
+Uma boa parte da solução está encapsulada em `list_images()`, usada em `adicionar_imagens()`, uma função que recebe o caminho completo da pasta selecionada e devolve uma lista com tuplas dos nomes dos arquivos das imagens e o caminho completo delas para ser usado no `loadImage()`. 
+
+```python
+def list_images(dir=None):
+    from os import listdir
+    from os.path import isfile, join
+    data_path = dir or sketchPath('data')
+    try:
+        f_list = [(f, join(data_path, f)) for f in listdir(data_path)
+                  if isfile(join(data_path, f))
+                  and imgext(f)]
+    except Exception as e:
+        print("Erro ({0}): {1}".format(e.errno, e.strerror))
+        return []
+    return f_list
+```
+
+Repare que `list_images()` depende da pequena função `imgext()` que responde se o nome da lista produzida por `os.listdir()` tem uma terminação mencionada na tupla `extensions`.
+
+```python
+def imgext(file_name):
+    extensions = ('.jpg',
+                  '.png',
+                  '.jpeg',
+                  '.gif',
+                  '.tif',
+                  '.tga',
+                  )
+    for ext in extensions:
+        if file_name.endswith(ext):
+            return True
+    return False
+```
+
 Aqui o código completo do sketch:
 
 ```python
-
 from __future__ import unicode_literals , division
 
 imagens = []
@@ -75,8 +108,9 @@ def adicionar_imagens(selection):
     else:
         dir_path = selection.getAbsolutePath()
         print("Pasta selecionada: " + dir_path)
-        for img_name, img_file in list_images(dir_path):
-            img = loadImage(img_file)
+        for file_name, file_path in list_images(dir_path):
+            img = loadImage(file_path)
+            img_name = file_name.split('.')[0]
             print("imagem " + img_name + " carregada.")
             imagens.append((img_name, img))
         print('Número de imagens: ' + str(len(imagens)))
@@ -84,21 +118,20 @@ def adicionar_imagens(selection):
 
 def list_images(dir=None):
     """
-    Devolve uma a lista de tuplas com os nomes dos arquivos de imagem sem extensão e os
-    caminhos completos para cada uma das images na pasta `dir` ou na pasta /data/ do sketch.
+    Devolve uma a lista de tuplas com os nomes dos arquivos de imagem e os caminhos
+    completos para cada uma das images na pasta `dir` ou na pasta /data/ do sketch.
     Requer a função imgext() para decidir quais extensões aceitar.
     """
     from os import listdir
     from os.path import isfile, join
     data_path = dir or sketchPath('data')
     try:
-        f_list = [(f.split('.')[0], join(data_path, f)) for f in listdir(data_path)
+        f_list = [(f, join(data_path, f)) for f in listdir(data_path)
                   if isfile(join(data_path, f))
                   and imgext(f)]
     except Exception as e:
         print("Erro ({0}): {1}".format(e.errno, e.strerror))
         return []
-    # print f_list
     return f_list
 
 def imgext(file_name):
