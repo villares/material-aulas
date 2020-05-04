@@ -93,7 +93,7 @@ def file_selected(selection):
 
 ![resultado](assets/select_input.png)
 
-### Escrevendo texto em arquivo
+### Escrevendo texto em arquivos (e escolhendo onde salvar um arquivo)
 
 De maneira análoga, podemos usar `saveStrings()` para salvar em um arquivo do disco uma lista de *strings*. No exemplo abaixo usamos `selectOutput()` para disparar uma janela que pergunta o nome e local para salvar um arquivo.
 
@@ -165,9 +165,9 @@ Veja um trecho do arquivo gerado pelo exemplo [`output.txt`](assets/output.txt)
 103 47 33.4321708679
 ...
 ```
-#### Escrevendo arquivos no Python
+#### Escrevendo em arquivos no Python sem a ajuda do Processing
 
-A maneira mais 'universal' em Python de se escrever em um arquivo texto seria assim:
+A maneira mais 'universal' em Python de se escrever em um arquivo texto é usando `open(caminho_arquivo, modo)`. Que devolve um objeto com vários métodos como `.write()` e `.close()`. Mas o mais recomendado é usar um chamado 'gerenciador de contexto', com um bloco indentado que começa com `with open(caminho_arquivo, modo) as objeto_arquivo:` e cuida de fechar o arquivo para você.  Veja como ficaria no caso do exemplo anterior:
 
 ```
 with open(path_arquivo, 'w') as f:
