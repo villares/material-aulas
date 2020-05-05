@@ -59,17 +59,16 @@ Repare que usamos a pequena função `imgext()` para responder se cada nome da l
 
 ```python
 def imgext(file_name):
-    extensions = ('.jpg',  # extensões dos formatos de imagem que o Processing aceita!
-                  '.jpeg',
-                  '.png',
-                  '.gif',
-                  '.tif',
-                  '.tga',
-                  )
-    for ext in extensions:
-        if file_name.endswith(ext):
-            return True
-    return False
+    ext = file_name.split('.')[-1]
+    # extensões dos formatos de imagem que o Processing aceita!
+    valid_ext = ('jpg',
+                 'png',
+                 'jpeg',
+                 'gif',
+                 'tif',
+                 'tga',
+                 )
+    return ext.lower() in valid_ext
 ```
 
 Por fim, aqui vai o código completo do sketch, que desenha uma grade de imagens no `draw()` com os itens da lista global `imagens`:
@@ -139,17 +138,16 @@ def lista_imagens(dir=None):
     return f_list
 
 def imgext(file_name):
-    extensions = ('.jpg',  # extensões dos formatos de imagem que o Processing aceita!
-                  '.jpeg',
-                  '.png',
-                  '.gif',
-                  '.tif',
-                  '.tga',
-                  )
-    for ext in extensions:
-        if file_name.endswith(ext):
-            return True
-    return False
+    ext = file_name.split('.')[-1]
+    # extensões dos formatos de imagem que o Processing aceita!
+    valid_ext = ('jpg',
+                 'png',
+                 'jpeg',
+                 'gif',
+                 'tif',
+                 'tga',
+                 )
+    return ext.lower() in valid_ext
 ```
 
 ## Assuntos relacionados
