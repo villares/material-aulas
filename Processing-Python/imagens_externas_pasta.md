@@ -1,3 +1,4 @@
+
 ## Lendo todas as imagens de uma pasta
 
 ![exemplo de grade de imagens](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/muitas_imagens.png)
