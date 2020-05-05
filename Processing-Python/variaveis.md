@@ -4,9 +4,9 @@ Variáveis são nomes que inventamos quando estamos escrevendo um programa, e qu
 
 ### Atribuição
 
-Criamos uma variável, e também modificamos o valor para o qual ela aponta usando o operador de atribuição `=`
+Para criar uma nova variável, e também para modificar o valor para o qual uma variável existente aponta, usamos o operador de atribuição `=`.
 
-```pythono
+```python
 lado = 50  # cria a variável `lado` que passa a valer 50
 rect(10, 10, lado, lado)  # desenha um retângulo com 50 de largura e 50 de alt
 
