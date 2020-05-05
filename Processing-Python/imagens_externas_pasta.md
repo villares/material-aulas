@@ -47,8 +47,7 @@ def lista_imagens(dir=None):
     data_path = dir or sketchPath('data')
     try:
         f_list = [(f, join(data_path, f)) for f in listdir(data_path)
-                  if isfile(join(data_path, f))
-                  and imgext(f)]
+                  if isfile(join(data_path, f)) and imgext(f)]
     except Exception as e:
         print("Erro ({0}): {1}".format(e.errno, e.strerror))
         return []
@@ -60,9 +59,9 @@ Repare que usamos a pequena função `imgext()` para responder se cada nome da l
 
 ```python
 def imgext(file_name):
-    extensions = ('.jpg',
-                  '.png',
+    extensions = ('.jpg',  # extensões dos formatos de imagem que o Processing aceita!
                   '.jpeg',
+                  '.png',
                   '.gif',
                   '.tif',
                   '.tga',
@@ -133,17 +132,16 @@ def lista_imagens(dir=None):
     data_path = dir or sketchPath('data')
     try:
         f_list = [(f, join(data_path, f)) for f in listdir(data_path)
-                  if isfile(join(data_path, f))
-                  and imgext(f)]
+                  if isfile(join(data_path, f)) and imgext(f)]
     except Exception as e:
         print("Erro ({0}): {1}".format(e.errno, e.strerror))
         return []
     return f_list
 
 def imgext(file_name):
-    extensions = ('.jpg',
-                  '.png',
+    extensions = ('.jpg',  # extensões dos formatos de imagem que o Processing aceita!
                   '.jpeg',
+                  '.png',
                   '.gif',
                   '.tif',
                   '.tga',
