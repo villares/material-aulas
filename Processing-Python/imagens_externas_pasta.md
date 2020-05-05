@@ -34,9 +34,9 @@ def adicionar_imagens(selection):
         print('Número de imagens: ' + str(len(imagens)))
 ```
 
-Saiba que o código que cuida da janela do sistema operacional para escolhermos a pasta e também esta função `adicionar_imagens()`, chamada em seguida, são executados em *threads* separadas do *sketch* principal, e por conta disso não interrompem a repetida execução de `draw()`. 
+Saiba que o código que cuida da janela do sistema operacional para escolhermos a pasta, e também esta função `adicionar_imagens()`, que é chamada em seguida, são executados em *threads* separadas do *sketch* principal, e por conta disso não interrompem execução do `draw()`, o chamado 'laço principal de repetição'. 
 
-O carregamento das imagens é um procedimento razoavelmente lento e é possível vê-las aparecendo aos poucos na tela, conforme são acrescentadas na lista global `imagens` pela execução do laço `for` em `adicionar_imagens()`.
+O carregamento das imagens é um procedimento razoavelmente lento e por isso é possível vê-las aparecendo aos poucos na tela, conforme são acrescentadas na lista global `imagens` pela execução do laço `for` em `adicionar_imagens()`.
 
 Uma boa parte da solução da nossa tarefa, na verdade, está encapsulada em `lista_imagens()`, função que usamos em `adicionar_imagens()`. Ela recebe o caminho completo da pasta selecionada e devolve uma lista com tuplas dos nomes dos arquivos das imagens e o caminho completo delas para ser usado no `loadImage()`: 
 
