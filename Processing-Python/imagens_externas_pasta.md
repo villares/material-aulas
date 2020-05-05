@@ -1,6 +1,6 @@
 ## Lendo todas as imagens de uma pasta
 
-![exemplo de grade de imagens](assets/muitas_imagens.png)
+![exemplo de grade de imagens](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/muitas_imagens.png)
 
 > Exemplo de execução carregando 110 imagens medievais coletadas pelo artista e educador [Daniel Seda](https://www.danielseda.com/home).
 
