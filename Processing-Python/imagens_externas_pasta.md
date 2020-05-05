@@ -7,7 +7,7 @@
 
 Tendo visto previamente como [ler e usar imagens de arquivos externos](imagens_externas.md) com `loadImage()` neste exemplo mais avançado vamos permitir que a pessoa escolha uma pasta e o *sketch* vai carregar todas as imagens nela encontradas.
 
-A seleção da pasta começa quando a tecla 'o' é apertada e a função `selectFolder()` é chamada. 
+A seleção da pasta começa com uma chamada da função `selectFolder()`, quando pressioanda a tecla 'o' (na função de evento `keyPressed()`). 
 
 ```python
 def keyPressed():
@@ -15,7 +15,9 @@ def keyPressed():
         selectFolder("Selecine uma pasta", "adicionar_imagens")
 ```
 
-Note que o primeiro argumento de `selectFolder()` é `"Selecine uma pasta"` o texto (*string*) que vai como título da janela de seleção. O segundo argumento `"adicionar_imagens"` é mais curioso, trata-se de um *string* com o nome de uma função que será chamada quando a pessoa terminar de interagir com a janela de seleção de pasta (diretório / *folder*). Essa função `adicionar_imagens()` vai ser executada seja quando a pessoa terminou de escolher a pasta ou se tiver cancelado o processo. Veja a seguir a definição da função:
+Note que o primeiro argumento de `selectFolder()` é `"Selecine uma pasta"` o texto (*string*) que vai como título da janela de seleção. O segundo argumento `"adicionar_imagens"` é mais curioso, trata-se de um *string* com o nome de uma função que será chamada quando a pessoa terminar de interagir com a janela de seleção de pasta (diretório / *folder*). 
+
+A função `adicionar_imagens()` é executada quando a pessoa terminou de escolher uma pasta ou se tiver cancelado o processo, ela tem um parâmetro `selection` que recebe a pasta selecionada ou o valor especial `None`: 
 
 ```python
 def adicionar_imagens(selection):
@@ -24,21 +26,22 @@ def adicionar_imagens(selection):
     else:
         dir_path = selection.getAbsolutePath()
         print("Pasta selecionada: " + dir_path)
-        for img_name, img_file in list_images(dir_path):
-            img = loadImage(img_file)
+        for file_name, file_path in lista_imagens(dir_path):
+            img = loadImage(file_path)
+            img_name = file_name.split('.')[0]
             print("imagem " + img_name + " carregada.")
             imagens.append((img_name, img))
         print('Número de imagens: ' + str(len(imagens)))
 ```
 
-Saiba que o código que cuida da janela do sistema operacional para escolhermos a pasta e também esta função, chamada em seguida, são executados em *threads* separadas do *sketch* principal, e por conta disso não interrompem a repetida execução de `draw()`. Note como o carregamento das imagens é um procedimento razoavelmente lento e é possível vê-las aparecendo aos poucos na tela, conforme são acrescentadas na lista global `imagens` pela execução do laço `for` em `adicionar_imagens()`.
+Saiba que o código que cuida da janela do sistema operacional para escolhermos a pasta e também esta função `adicionar_imagens()`, chamada em seguida, são executados em *threads* separadas do *sketch* principal, e por conta disso não interrompem a repetida execução de `draw()`. 
 
-Uma boa parte da solução da nossa tarefa, na verdade, está encapsulada em `lista_imagens()`, a função que usamos em `adicionar_imagens()`. Ela recebe o caminho completo da pasta selecionada e devolve uma lista com tuplas dos nomes dos arquivos das imagens e o caminho completo delas para ser usado no `loadImage()`. 
+O carregamento das imagens é um procedimento razoavelmente lento e é possível vê-las aparecendo aos poucos na tela, conforme são acrescentadas na lista global `imagens` pela execução do laço `for` em `adicionar_imagens()`.
 
-Não vai ser possível entrar em detalhes aqui, se você quiser entender melhor esta função, pode ler mais a respeito de [compreensão de listas](https://panda.ime.usp.br/pensepy/static/pensepy/09-Listas/listas.html#list-comprehensions) (a maneira compacta de produzir uma lista usada para criar a `f_list`) e [tratamento de exceções](http://turing.com.br/pydoc/2.7/tutorial/errors.html#excecoes) (o trecho dentro dentro de `try:` e  `except... :`).
+Uma boa parte da solução da nossa tarefa, na verdade, está encapsulada em `lista_imagens()`, função que usamos em `adicionar_imagens()`. Ela recebe o caminho completo da pasta selecionada e devolve uma lista com tuplas dos nomes dos arquivos das imagens e o caminho completo delas para ser usado no `loadImage()`: 
 
 ```python
-def list_images(dir=None):
+def lista_imagens(dir=None):
     from os import listdir
     from os.path import isfile, join
     data_path = dir or sketchPath('data')
@@ -51,7 +54,9 @@ def list_images(dir=None):
         return []
     return f_list
 ```
-Repare que `lista_imagens()` depende da pequena função `imgext()` que responde se o nome da lista produzida por `os.listdir()` tem uma terminação mencionada na tupla `extensions`.
+Não vamos entrar em detalhes aqui, mas você pode querer ler mais sobre [compreensão de listas](https://panda.ime.usp.br/pensepy/static/pensepy/09-Listas/listas.html#list-comprehensions) (a maneira compacta de produzir uma lista usada para criar a `f_list`) e [tratamento de exceções](http://turing.com.br/pydoc/2.7/tutorial/errors.html#excecoes) (o trecho dentro dentro de `try:` e  `except... :`) para entender melhor a função `lista_imagens()`.
+
+Repare que usamos a pequena função `imgext()` para responder se cada nome da lista produzida por `os.listdir()` tem uma terminação mencionada na tupla `extensions`.
 
 ```python
 def imgext(file_name):
@@ -68,7 +73,7 @@ def imgext(file_name):
     return False
 ```
 
-Aqui o código completo do sketch:
+Por fim, aqui vai o código completo do sketch, que desenha uma grade de imagens no `draw()` com os itens da lista global `imagens`:
 
 ```python
 from __future__ import unicode_literals , division
@@ -98,7 +103,7 @@ def draw():
     
 def keyPressed():
     if key == 'o':
-        selectFolder("Selecine uma pasta:", "adicionar_imagens")
+        selectFolder("Selecine uma pasta", "adicionar_imagens")
     if key == ' ':
         imagens[:] = []
     if key == 'p':
@@ -116,7 +121,6 @@ def adicionar_imagens(selection):
             print("imagem " + img_name + " carregada.")
             imagens.append((img_name, img))
         print('Número de imagens: ' + str(len(imagens)))
-
 
 def lista_imagens(dir=None):
     """
