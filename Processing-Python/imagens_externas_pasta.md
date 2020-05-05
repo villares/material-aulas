@@ -15,7 +15,7 @@ def keyPressed():
         selectFolder("Selecione uma pasta", "adicionar_imagens")
 ```
 
-Note que o primeiro argumento de `selectFolder()` é `"Selecione uma pasta"` o texto (*string*) que vai como título da janela de seleção. O segundo argumento `"adicionar_imagens"` é mais curioso, trata-se de um *string* com o nome de uma função que será chamada quando a pessoa terminar de interagir com a janela de seleção de pasta (diretório / *folder*). 
+Note que o primeiro argumento de `selectFolder()` é `"Selecione uma pasta"` o texto (*string*) que vai como título da janela de seleção. O segundo argumento `"adicionar_imagens"` é mais curioso, trata-se de um *string* com o nome de uma função que será chamada quando a pessoa terminar de interagir com a janela de seleção de pasta (diretório / *folder*). Isso é uma estratégia conhecida em programação como uma *função callback*.
 
 A função `adicionar_imagens()` é executada quando a pessoa terminou de escolher uma pasta ou se tiver cancelado o processo, ela tem um parâmetro `selection` que recebe a pasta selecionada ou o valor especial `None`: 
 
@@ -34,7 +34,7 @@ def adicionar_imagens(selection):
         print('Número de imagens: ' + str(len(imagens)))
 ```
 
-Saiba que o código que cuida da janela do sistema operacional para escolhermos a pasta, e também esta função `adicionar_imagens()`, que é chamada em seguida, são executados em *threads* separadas do *sketch* principal, e por conta disso não interrompem execução do `draw()`, o chamado 'laço principal de repetição'. 
+Saiba que o código que cuida da janela do sistema operacional para escolhermos a pasta, e também esta função `adicionar_imagens()`, que é chamada em seguida, são executados em *threads* separadas do *sketch* principal, isto é, correm em separado, e por conta disso não interrompem execução do `draw()`, o chamado 'laço principal de repetição' do Processing. 
 
 O carregamento das imagens é um procedimento razoavelmente lento e por isso é possível vê-las aparecendo aos poucos na tela, conforme são acrescentadas na lista global `imagens` pela execução do laço `for` em `adicionar_imagens()`.
 
