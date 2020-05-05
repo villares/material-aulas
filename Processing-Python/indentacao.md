@@ -54,7 +54,7 @@ def draw():
     vertex(x, y - m)
     endShape(CLOSE)
 ```
-<div align="right"><iframe src="https://abav.lugaralgum.com/material-aulas/Processing-Python/assets/indentacao/" style="width: 200px; height: 200px; border: 0px"></iframe></div>
+<script align="right"><iframe src="https://abav.lugaralgum.com/material-aulas/Processing-Python/assets/indentacao/" style="width: 200px; height: 200px; border: 0px"></iframe></script>
 
 ### Assuntos relacionados
 
