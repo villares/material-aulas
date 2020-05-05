@@ -74,7 +74,7 @@ bebidas:
     água tônica
     
 comes:
-    pãohttps://github.com/villares/material-aulas/blob/master/Processing-Python/imagens_externas_pasta.md
+    pão
     cebola
     abacate
     alho
