@@ -8,12 +8,6 @@ Este material é baseado em **Processing modo Python**, uma ferramenta livre de 
 #### [O que é e como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)
 <sub><b>Caso não possa instalar, experimente no navegador:<br>- [Triket.io](https://trinket.io/python/cfaf743794) ou [SkulptIDE](http://tiny.cc/processing_python) do prof. Claudio Esperança.<br>- Conheça também o projeto [pyp5js](https://github.com/berinhard/pyp5js) que converte Python em JavaScript+P5js</b></sub>
 
-### Como colaborar e contribuir?
-
-Este material didático é aberto. Você pode [fazer pequenas doações](https://gumroad.com/villares)! 
-
-Leia as [instruções para colaborar com este repositório](/como-contribuir.md) e abra [*issues*](https://github.com/villares/material-aulas/issues) apontando problemas, sugerindo assuntos e melhorias, ou contribua com *Pull Requests* para o repositório.
-
 ### Assuntos
 
 - [Primeiros passos e desenho básico](/Processing-Python/desenho-basico_py.md)
@@ -44,7 +38,7 @@ Leia as [instruções para colaborar com este repositório](/como-contribuir.md)
   - [Lendo todas as imagem de uma pasta](/Processing-Python/imagens_externas_pasta.md)
 - [Lendo e escrevendo texto em arquivos (*file IO*)](/Processing-Python/file_IO.md)
 
-#### Exportação
+#### Exportação de imagens e outras saídas
 
 - [Exportando imagens (bitmap/raster)](/Processing-Python/exportando_imagem.md)
 - [Exportando PDF (saída vetorial)](/Processing-Python/exportando_pdf.md)
