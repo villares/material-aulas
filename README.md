@@ -70,7 +70,7 @@ Leia as [instruções para colaborar com este repositório](/como-contribuir.md)
 
 ### Referências
 
-[py.processing.org/reference](http://py.processing.org/reference)
+- [py.processing.org/reference](http://py.processing.org/reference)
 
 #### Outros recursos introdutórios abertos
 
