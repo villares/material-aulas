@@ -7,7 +7,7 @@ Variáveis são nomes que inventamos quando estamos escrevendo um programa, e qu
 Para criar uma nova variável, e também para modificar o valor para o qual uma variável existente aponta, usamos o operador de atribuição `=`.
 
 ```python
-lado = 50  # cria a variável `lado` que passa a valer 50
+lado = 50  # cria a variável `lado` que aponta para o valor 50
 rect(10, 10, lado, lado)  # desenha um retângulo com 50 de largura e 50 de alt
 
 nome = 'Guido'
@@ -16,9 +16,9 @@ text(nome, 20, 20)  # desenha o texto de `nome` na área de desenho
 ![exemplo 1](assets/variaveis_Guido.png)
 
 ```python
-a = 10  # cria a variável `a` que passa a valer 10
+a = 10  # cria a variável `a` que aponta para o valor 10
 rect(a, 10, 40, 40)  # desenha um retângulo em x:10, y:10
-a = a + 50  # muda o valor de `a` para o valor atual somado de 50 (ou seja 60)
+a = a + 50  # calcula o valor de `a + 10` e faz a variável `a` apontar para esse novo valor, ou seja 60
 rect(a, 10, 40, 40)  # desenha um retângulo em x:60, y:10
 ```
 **Você consegue imaginar qual vai ser o resultado?**
