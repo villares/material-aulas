@@ -60,7 +60,7 @@ endShape(CLOSE)
 
 ### Assuntos relacionados
 
-- Animando uma estrela com [`setup()`, `draw()` e o movimento do mouse](indentacao.md)
-- Você pode ver usos mais avançados de `beginShape()` na [referência](https://py.processing.org/reference/beginShape.html).
-- Você pode montar os vértices a partir de [estruturas de dados com laços de repetição ou fazer polígonos com furos](https://github.com/villares/material-aulas/blob/master/Processing-Python/poligonos_2.md)
-- Estrelas de muitas pontas com [laços de repetição `while`](https://github.com/villares/material-aulas/blob/master/Processing-Python/while.md)
+- Animando uma estrela com [`setup()`, `draw()` e o movimento do mouse](indentacao.md).
+- Usos mais avançados de `beginShape()` na [referência](https://py.processing.org/reference/beginShape.html).
+- [Criando os vértices a partir de estruturas de dados com laços de repetição e como fazer polígonos com furos](https://github.com/villares/material-aulas/blob/master/Processing-Python/poligonos_2.md).
+- Crie estrelas de muitas pontas usando [laços de repetição `while`](https://github.com/villares/material-aulas/blob/master/Processing-Python/while.md).
