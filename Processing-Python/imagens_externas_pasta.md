@@ -55,7 +55,7 @@ def lista_imagens(dir=None):
 ```
 Não vamos entrar em detalhes aqui, mas você pode querer ler mais sobre [compreensão de listas](https://panda.ime.usp.br/pensepy/static/pensepy/09-Listas/listas.html#list-comprehensions) (a maneira compacta de produzir uma lista usada para criar a `f_list`) e [tratamento de exceções](http://turing.com.br/pydoc/2.7/tutorial/errors.html#excecoes) (o trecho dentro dentro de `try:` e  `except... :`) para entender melhor a função `lista_imagens()`.
 
-Repare que usamos a pequena função `imgext()` para responder se cada nome da lista produzida por `os.listdir()` tem uma terminação mencionada na tupla `extensions`.
+Repare que usamos a pequena função `imgext()` para responder se  os nomes fornecidos por `os.listdir()` tem a terminação mencionada na tupla `valid_ext`.
 
 ```python
 def imgext(file_name):
