@@ -71,11 +71,18 @@ Este material é baseado em **Processing modo Python**, uma ferramenta livre de 
 ##### Python
 
 - DOWNEY, Allen. [Pense em Python 2e](https://penseallen.github.io/PensePython2e/)
+- BORGES, Luiz Eduardo. [Python para desenvolvedores 3e](https://ricardoduarte.github.io/python-para-desenvolvedores/#conteudo)
 - SWEIGART, Al. Automatize taref)as  maçantes com Python (traduzido pela Novatec) - [site do autor (em Inglês)](https://automatetheboringstuff.com)
 
-##### Processing
+##### Processing modo Python
 
-- RIZZOLLI, Monica; VILLARES, Alexandre. [Programação Criativa](http://arteprog.space/programacao-criativa)
+- [Processing.py in Ten Lessons](https://tabreturn.github.io/#processing-reverse) (em Inglês) de @tabreturn
+
+##### Processing modo Java
+
+- [Programação Criativa](http://arteprog.space/programacao-criativa) de Monica Rizzolli e Alexandre Villares
+
+
 
 ---
 Texto e imagens: CC BY-NC-SA 4.0; Código: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
