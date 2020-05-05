@@ -59,12 +59,36 @@ endShape(CLOSE)
 ![e4](assets/estrela_4_pontas.png)
 
 
-### Extra: Animando a estrela com o mouse
+### Extra: Animando a estrela com o movimento do mouse
+
+Vamos avançar mais um pouco com ideias que você vai poder ver em detalhes depois na página sobre [movimento](movimento_py.md).
+
+#### Indentação
+
+Quando fazemos uma lista de compras organizada:
+
+```
+bebidas:
+    suco de maçã
+    chá mate
+    água tônica
+    
+comes:
+    pãohttps://github.com/villares/material-aulas/blob/master/Processing-Python/imagens_externas_pasta.md
+    cebola
+    abacate
+    alho
+```
+O espaço que faz os itens ficarem 'dentro' das categorias se chama *indentação*, e é exatamente da mesma maneira que em Python criamos blocos de código que estão dentro de outros blocos. Note também o `:` antes do bloco indentado.
+
+### A função `setup()` e a função `draw()`
+
+Vamos reorganizar nosso código anterior colocando os ajustes iniciais (*setup*) dentro de uma definição função (`def`), e a parte que desenha (*draw*) em outra. A função `setup()` vai ser executada apenas uma vez no começo, e a função `draw()` fica repetindo sem parar, permitindo o movimento.
+
 
 ```python
 def setup():
     size(200, 200)
-
 
 def draw():
     background(0, 0, 200)
