@@ -68,11 +68,11 @@ Este material é baseado em **Processing modo Python**, uma ferramenta livre de 
 
 #### Outros recursos introdutórios abertos
 
-##### Python
+##### Livros de Python
 
 - DOWNEY, Allen. [Pense em Python 2e](https://penseallen.github.io/PensePython2e/)
 - BORGES, Luiz Eduardo. [Python para desenvolvedores 3e](https://ricardoduarte.github.io/python-para-desenvolvedores/#conteudo)
-- SWEIGART, Al. Automatize tarefas maçantes com Python (traduzido pela Novatec) ou [automaterheboringstuff.com](https://automatetheboringstuff.com) (site do autor em Inglês)
+- SWEIGART, Al. Automatize tarefas maçantes com Python (traduzido pela Novatec)<br> ou [automaterheboringstuff.com](https://automatetheboringstuff.com) (site do autor em Inglês)
 
 ##### Processing modo Python
 
