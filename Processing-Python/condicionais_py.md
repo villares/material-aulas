@@ -2,13 +2,21 @@
 
 ## As bifurcações no caminho de execução do código
 
+Imgine o seguinte cenário...
+
 Saindo de casa, se (`if`) está chovendo, a condição "chovendo" é verdadeira (`True`), então levo o guarda-chuva;
 
-opcionalmente defino que, senão (`else`), quando a condição "chovendo" é falsa (`False`), levo óculos de sol.
+Opcionalmente, podemos definir que, senão (`else`), quando a condição "chovendo" é falsa (`False`), devo levar óculos de sol.
 
-## Sintaxe if/else e if
+## Sintaxe `if` e `if`/`else`
 
-![condicional](https://arteprog.space/programacao-criativa/assets/imagens/condicional-com-else.jpg)
+``` python
+if chovendo:            # a condição "chovendo" é avaliada como true (verdadeiro) ou false (falso)
+    levarGuardaChuva()  # se verdadeira a condição, então este bloco de código será executado
+                        # termina o bloco do “se/então”, continua o passeio.
+```
+![condicional](https://arteprog.space/programacao-criativa/assets/imagens/condicional-sem-else.jpg)
+
 
 ``` python
 if chovendo:            # a condição "chovendo" é avaliada como True (verdadeiro) ou False (falso)
@@ -17,14 +25,8 @@ else:                   # termina o “se/então” e começa o “senão”
     levarOculos()       # este bloco será executado apenas quando "chovendo" é falso
                         # termina o bloco do “senão”, continua o passeio.
 ```
+![condicional](https://arteprog.space/programacao-criativa/assets/imagens/condicional-com-else.jpg)
 
-![condicional](https://arteprog.space/programacao-criativa/assets/imagens/condicional-sem-else.jpg)
-
-``` python
-if chovendo:            # a condição "chovendo" é avaliada como true (verdadeiro) ou false (falso)
-    levarGuardaChuva()  # se verdadeira a condição, então este bloco de código será executado
-                        # termina o bloco do “se/então”, continua o passeio.
-```
 
 ## Exemplos
 
@@ -32,7 +34,7 @@ if chovendo:            # a condição "chovendo" é avaliada como true (verdade
 
 ``` python
 def setup():
-  size(200, 200)
+    size(200, 200)
 
 def draw():
     if mouseY < 100:    # se a posição Y do mouse for menor que 100, o mouse estiver perto do topo da tela
@@ -65,10 +67,9 @@ Podem ser armazenados em variáveis, representando um *estado* no programa, e s�
 | `or` | `e1 or e2` | verrdadeiro se *e1* **ou** *e2* forem verdadeiros |
 | `not` | `not e1` | **não** *e1* verdadeiro resulta falso, e **não** *e1* falso resulta verdadeiro |
 
-## Condicionais aninhadas e outras estruturas
+## Extra: Condicionais aninhadas e outras estruturas
 
 É comum encontraramos, além da composição das condições usando operadores lógicos, `ìf` dentro de um `ìf` ou de um `else`.
-
 No caso de repetidos `if`, o 'else + if' é abreviado `elif`.
 
 ```python
@@ -80,7 +81,7 @@ else:
     faz_outra_coisa()
 ```
 
-Confira também a abreviação de `if` usada para atribuições ou dentro de outras expressões (conhecida como 'operador condicional ternário'): 
+Confira também a abreviação de `if` usada para atribuições ou dentro de outras expressões (conhecida em outras linguagens como 'operador condicional ternário'): 
 
 ```python
 n = x if cond else y
@@ -99,6 +100,17 @@ Veja um outro exemplo:
 a = 50 if keyPressed else 100
 # A variável a passa a valer 50 se houver uma tecla pressionada
 # senão, passa a valer 100
+```
+
+Você pode encontrar ainda a seguinte expressão `a = a or b`, que equivale a `a = a if a else b`. Muito usada em funções com parâmetros default:
+
+```python
+def quadrado(x, y, tamanho=None):
+    tamanho = tamanho or 10
+    # Isso significa que se tamanho for 0 ou `None` então tamanho deve passar a valer 10:
+    # Equivalente a:
+    # tamanho = tamanho if tamanho else 10
+    rect(x, y, tamanho, tamanho)
 ```
 
 ## Glossário
