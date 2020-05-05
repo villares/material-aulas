@@ -12,10 +12,10 @@ A seleção da pasta começa com uma chamada da função `selectFolder()`, quand
 ```python
 def keyPressed():
     if key == 'o':
-        selectFolder("Selecine uma pasta", "adicionar_imagens")
+        selectFolder("Selecione uma pasta", "adicionar_imagens")
 ```
 
-Note que o primeiro argumento de `selectFolder()` é `"Selecine uma pasta"` o texto (*string*) que vai como título da janela de seleção. O segundo argumento `"adicionar_imagens"` é mais curioso, trata-se de um *string* com o nome de uma função que será chamada quando a pessoa terminar de interagir com a janela de seleção de pasta (diretório / *folder*). 
+Note que o primeiro argumento de `selectFolder()` é `"Selecione uma pasta"` o texto (*string*) que vai como título da janela de seleção. O segundo argumento `"adicionar_imagens"` é mais curioso, trata-se de um *string* com o nome de uma função que será chamada quando a pessoa terminar de interagir com a janela de seleção de pasta (diretório / *folder*). 
 
 A função `adicionar_imagens()` é executada quando a pessoa terminou de escolher uma pasta ou se tiver cancelado o processo, ela tem um parâmetro `selection` que recebe a pasta selecionada ou o valor especial `None`: 
 
@@ -103,7 +103,7 @@ def draw():
     
 def keyPressed():
     if key == 'o':
-        selectFolder("Selecine uma pasta", "adicionar_imagens")
+        selectFolder("Selecione uma pasta", "adicionar_imagens")
     if key == ' ':
         imagens[:] = []
     if key == 'p':
