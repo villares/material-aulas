@@ -54,7 +54,13 @@ def draw():
     vertex(x, y - m)
     endShape(CLOSE)
 ```
-<a id=iframe-this href="https://abav.lugaralgum.com/material-aulas/Processing-Python/assets/indentacao/">Veja o resultado aqui</a>
+<a id="iframeLink" href="https://abav.lugaralgum.com/material-aulas/Processing-Python/assets/indentacao/">Veja o resultado aqui</a>
+<div id="iframeDiv">
+<script>function troca(tagaid,tagdivid) {
+endereco=document.getElementById(tagaid).href;
+document.getElementById(tagdivid).innerHTML = "<iframe src='" + endereco"' frameborder=0></iframe>";
+}
+troca('iframeLink','iframeDIv');</script>
 
 ### Assuntos relacionados
 
