@@ -19,12 +19,16 @@
       <div class="container"
       </div>
     </footer>
-    <script>function change(tagaid,tagdivid) {
-let iLink = document.getElementById(tagaid);
-document.getElementById(tagdivid).innerHTML = "<iframe src='"+iLink.href+"' frameborder=0 width=400 height=400></iframe>";
-iLink.innerHTML = "";
-}
-change('iframeLink','iframeDiv');</script>
+    <script>
+      function change(tagaid, tagimgid, tagdivid) {
+        let iLink = document.getElementById(tagaid);
+        let iDiv = document.getElementById(tagdivid);
+        let iImg = document.getElementById(tagimgid);
+        iDiv.innerHTML = "<iframe src='"+iLink.href+"' frameborder=0 width="+iImg.width+" height="+iImg.height+ "></iframe>";
+        iLink.innerHTML = "";
+      }
+      change('iframeLink','iframeImg','iframeDiv');
+    </script>
     <script src="https://abav.lugaralgum.com/assets/scripts.js"></script>
   </body>
 </html>
