@@ -27,7 +27,7 @@ export var draw = function () {
 	else {
 	}
 	background (0, 0, 200);
-	var __left0__ = tuple ([100, 100]);
+	var __left0__ = tuple ([200, 200]);
 	var x = __left0__ [0];
 	var y = __left0__ [1];
 	var mx = (mouseX < 400 ? mouseX : 400);
