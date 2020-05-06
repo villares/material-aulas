@@ -54,7 +54,7 @@ def draw():
     endShape(CLOSE)
 ```
 
-<div id="iframeDiv"><img src="assets/estrela_indentacao.png"</div>
+<div id="iframeDiv"><img src="assets/estrela_indentacao.png width=400 height=400"</div>
     
 <a id="iframeLink" href="https://abav.lugaralgum.com/material-aulas/Processing-Python/assets/indentacao/">Veja o resultado aqui</a>
 
