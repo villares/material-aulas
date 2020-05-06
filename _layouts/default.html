@@ -30,17 +30,16 @@
         muda('iframeLink','iframeDiv');
     </script>
     <script>
-      function iframeFix(aId,divId,imgId) {
+      function iframeFix(aId,divId) {
         let a = document.getElementById(aId);
         if (a != null){
         let div = document.getElementById(divId);
-        let img = document.getElementById(imgId);
         // add iframe inside <div> this also removes the image!
-        div.innerHTML = "<iframe src='"+a.href+"' frameborder=0 width="+img.width+"height="+img.height+"></iframe>";
+        div.innerHTML = "<iframe src='"+a.href+"' frameborder=0 width="+div.clientWidth+"height="+div.clientHeight+"></iframe>";
         a.innerHTML = ""; // remove link text
          }
 	}
-        iframeFix('iframe_A','iframe_DIV','iframe_IMG');
+        iframeFix('iframe_A','iframe_DIV');
     </script>
     <script src="https://abav.lugaralgum.com/assets/scripts.js"></script>
   </body>
