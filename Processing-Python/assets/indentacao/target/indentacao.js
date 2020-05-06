@@ -13,7 +13,7 @@ export var setup = function () {
 	}
 	else {
 	}
-	size (200, 200);
+	size (400, 400);
 };
 export var draw = function () {
 	if (arguments.length) {
@@ -30,9 +30,9 @@ export var draw = function () {
 	var __left0__ = tuple ([100, 100]);
 	var x = __left0__ [0];
 	var y = __left0__ [1];
-	var mx = (mouseX < 200 ? mouseX : 200);
+	var mx = (mouseX < 400 ? mouseX : 400);
 	var mx = (mouseX > 0 ? mx : 0);
-	var my = (mouseY < 200 ? mouseY : 200);
+	var my = (mouseY < 400 ? mouseY : 400);
 	var my = (mouseY > 0 ? my : 0);
 	var __left0__ = tuple ([mx / 2, my / 2]);
 	var largura_a = __left0__ [0];
