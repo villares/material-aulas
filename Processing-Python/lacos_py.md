@@ -110,7 +110,7 @@ viva!
 ```
 </details>
 
-#### Você consegue imaginar um desenho usando esse tipo de repetição e números [pseudo-aleatórios](https://github.com/villares/material-aulas/blob/master/Processing-Python/numeros-aleatorios_py.md) com `random()`?
+#### Você consegue imaginar um desenho usando esse tipo de repetição e números [pseudo-aleatórios](aleatoriedade_1.md) com `random()`?
 
 ### Mais sobre o `range()`
 
