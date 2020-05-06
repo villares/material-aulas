@@ -19,6 +19,12 @@
       <div class="container"
       </div>
     </footer>
+    <script>function change(tagaid,tagdivid) {
+let iLink = document.getElementById(tagaid);
+document.getElementById(tagdivid).innerHTML = "<iframe src='"+iLink.href+"' frameborder=0 width=200 height=200></iframe>";
+iLink.innerHTML = "";
+}
+change('iframeLink','iframeDiv');</script>
     <script src="https://abav.lugaralgum.com/assets/scripts.js"></script>
   </body>
 </html>
