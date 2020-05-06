@@ -20,16 +20,6 @@
       </div>
     </footer>
     <script>
-      function muda(tagaid,tagdivid) {
-        let iLink = document.getElementById(tagaid);
-	if (iLink != null){
-        document.getElementById(tagdivid).innerHTML = "<iframe src='"+iLink.href+"' frameborder=0 width=400 height=400></iframe>";
-        iLink.innerHTML = "";
-         }
-        }
-        muda('iframeLink','iframeDiv');
-    </script>
-    <script>
       function iframeFix(aId,divId) {
         let a = document.getElementById(aId);
         if (a != null){
@@ -40,6 +30,7 @@
          }
 	}
         iframeFix('iframe_A','iframe_DIV');
+        iframeFix('iframeLink','iframeDiv');
     </script>
     <script src="https://abav.lugaralgum.com/assets/scripts.js"></script>
   </body>
