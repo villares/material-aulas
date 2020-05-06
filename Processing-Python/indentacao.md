@@ -60,7 +60,7 @@ def draw():
 endereco=document.getElementById(tagaid).href;
 document.getElementById(tagdivid).innerHTML = "<iframe src='" + endereco"' frameborder=0></iframe>";
 }
-troca('iframeLink','iframeDIv');</script>
+troca('iframeLink','iframeDiv');</script>
 
 ### Assuntos relacionados
 
