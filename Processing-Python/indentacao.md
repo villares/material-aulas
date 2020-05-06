@@ -34,7 +34,7 @@ A função `setup()` vai ser executada apenas uma vez no começo, e a função `
 
 ```python
 def setup():
-    size(200, 200)
+    size(400, 400)
 
 def draw():
     background(0, 0, 200)  # para limpar a área de desenho
