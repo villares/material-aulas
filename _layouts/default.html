@@ -21,14 +21,13 @@
     </footer>
     <script>
     <script>
-      function change(tagaid, tagimgid, tagdivid) {
-        let iImg = document.getElementById(tagimgid);
+      function change(tagaid,tagdivid) {
         let iLink = document.getElementById(tagaid);
         let iDiv = document.getElementById(tagdivid)
-        iDiv.innerHTML = "<iframe src='"+iLink.href+"' frameborder=0 width="+iImg.width+" height="+iImg.height+ "></iframe>";
+        iDiv.innerHTML = "<iframe src='"+iLink.href+"' frameborder=0 width=400 height=400></iframe>";
         iLink.innerHTML = "";
       }
-      change('iframeLink','iframeImg','iframeDiv');
+      change('iframeLink','iframeDiv');
         </script>
     <script src="https://abav.lugaralgum.com/assets/scripts.js"></script>
   </body>
