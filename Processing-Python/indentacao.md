@@ -58,7 +58,7 @@ def draw():
 <div id="iframeDiv"></div>
 <script>function troca(tagaid,tagdivid) {
 endereco=document.getElementById(tagaid).href;
-document.getElementById(tagdivid).innerHTML = "<iframe src='" + endereco"' frameborder=0></iframe>";
+document.getElementById(tagdivid).innerHTML = "<iframe src='"+endereco+"' frameborder=0></iframe>";
 }
 troca('iframeLink','iframeDiv');</script>
 
