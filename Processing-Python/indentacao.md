@@ -34,14 +34,13 @@ A função `setup()` vai ser executada apenas uma vez no começo, e a função `
 
 ```python
 def setup():
-    size(200, 200)
+    size(400, 400)
 
 def draw():
     background(0, 0, 200)  # para limpar a área de desenho
     
-    x, y = 100, 100  # coordenadas do centro
-    largura_a, largura_b = mouseX / 2, mouseY / 2
-    mm, m = largura_a / 2, largura_b / 2
+    x, y = width / 2, height / 2  # coordenadas do centro
+    mm, m = mouseY / 4, mouseY / 4
 
     beginShape()
     vertex(x - mm, y - mm)
@@ -49,20 +48,15 @@ def draw():
     vertex(x - mm, y + mm)
     vertex(x, y + m)
     vertex(x + mm, y + mm)
-    vertex(x + m, y)
+    vertex(x + m, y) 
     vertex(x + mm, y - mm)
     vertex(x, y - m)
     endShape(CLOSE)
 ```
 
-
+<div id="iframeDiv"><img src="assets/estrela_indentacao.png" id="iframeImg" width=400 height=400></div>
+    
 <a id="iframeLink" href="https://abav.lugaralgum.com/material-aulas/Processing-Python/assets/indentacao/">Veja o resultado aqui</a>
-<div id="iframeDiv"></div>
-<script>function troca(tagaid,tagdivid) {
-endereco=document.getElementById(tagaid).href;
-document.getElementById(tagdivid).innerHTML = "<iframe src='"+endereco+"' widht=200 height=200 frameborder=0></iframe>";
-}
-troca('iframeLink','iframeDiv');</script>
 
 ### Assuntos relacionados
 
