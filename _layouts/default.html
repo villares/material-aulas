@@ -22,20 +22,24 @@
     <script>
       function muda(tagaid,tagdivid) {
         let iLink = document.getElementById(tagaid);
+	if (iLink != null){
         document.getElementById(tagdivid).innerHTML = "<iframe src='"+iLink.href+"' frameborder=0 width=400 height=400></iframe>";
         iLink.innerHTML = "";
+         }
         }
         muda('iframeLink','iframeDiv');
     </script>
     <script>
       function iframeFix(aId,divId,imgId) {
         let a = document.getElementById(aId);
+        if (a != null){
         let div = document.getElementById(divId);
         let img = document.getElementById(imgId);
         // add iframe inside <div> this also removes the image!
         div.innerHTML = "<iframe src='"+a.href+"' frameborder=0 width="+img.width+"height="+img.height+"></iframe>";
         a.innerHTML = ""; // remove link text
-        }
+         }
+	}
         iframeFix('iframe_A','iframe_DIV','iframe_IMG');
     </script>
     <script src="https://abav.lugaralgum.com/assets/scripts.js"></script>
