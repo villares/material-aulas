@@ -32,7 +32,7 @@ Podemos reorganizar o código anterior mostrado no [primeiro contato com polígo
 
 A função `setup()` vai ser executada apenas uma vez no começo, e a função `draw()` fica repetindo sem parar, permitindo o movimento. Repare como a indentação é o que determina  o que está dentro de cada função.
 
-<div id="iframeDiv" align="right"><img src="assets/estrela_indentacao.png"</div>
+<div id="iframeDiv" style="float:right"><img src="assets/estrela_indentacao.png"</div>
 
 ```python
 def setup():
