@@ -32,6 +32,8 @@ Podemos reorganizar o código anterior mostrado no [primeiro contato com polígo
 
 A função `setup()` vai ser executada apenas uma vez no começo, e a função `draw()` fica repetindo sem parar, permitindo o movimento. Repare como a indentação é o que determina  o que está dentro de cada função.
 
+<div id="iframeDiv" align="right"><img src="assets/estrela_indentacao.png"</div>
+
 ```python
 def setup():
     size(200, 200)
@@ -55,14 +57,8 @@ def draw():
     endShape(CLOSE)
 ```
 
-
 <a id="iframeLink" href="https://abav.lugaralgum.com/material-aulas/Processing-Python/assets/indentacao/">Veja o resultado aqui</a>
-<div id="iframeDiv"></div>
-<script>function troca(tagaid,tagdivid) {
-endereco=document.getElementById(tagaid).href;
-document.getElementById(tagdivid).innerHTML = "<iframe src='"+endereco+"' widht=200 height=200 frameborder=0></iframe>";
-}
-troca('iframeLink','iframeDiv');</script>
+
 
 ### Assuntos relacionados
 
