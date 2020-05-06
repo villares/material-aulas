@@ -39,9 +39,8 @@ def setup():
 def draw():
     background(0, 0, 200)  # para limpar a área de desenho
     
-    x, y = 100, 100  # coordenadas do centro
-    largura_a, largura_b = mouseX / 2, mouseY / 2
-    mm, m = largura_a / 2, largura_b / 2
+    x, y = width / 2, height / 2  # coordenadas do centro
+    mm, m = mouseY / 4, mouseY / 4
 
     beginShape()
     vertex(x - mm, y - mm)
@@ -49,7 +48,7 @@ def draw():
     vertex(x - mm, y + mm)
     vertex(x, y + m)
     vertex(x + mm, y + mm)
-    vertex(x + m, y)
+    vertex(x + m, y) 
     vertex(x + mm, y - mm)
     vertex(x, y - m)
     endShape(CLOSE)
