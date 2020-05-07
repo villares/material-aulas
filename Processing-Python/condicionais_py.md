@@ -106,7 +106,7 @@ a = 50 if keyPressed else 100
 Você pode ainda encontrar a seguinte expressão:
 
 ```
-a = a or b # equivale a:  a = a if a else b
+a = a or b # é o mesmo que: a = a if a else b
 ```
 
 Essa forma é muito usada em funções com parâmetros default:
