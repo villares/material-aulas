@@ -147,7 +147,7 @@ Uma das maneiras mais comuns de se obter uma cópia invertida de uma sequência 
 ```python
 a = [0, 1, 2, 3, 4]
 b = a[::-1]
-print(b)  # imprime: [4, 2, 1, 0]
+print(b)  # imprime: [4, 3, 2, 1, 0]
 
 print("Alexandre"[::-1]) # imprime: erdnaxelA
 ```
