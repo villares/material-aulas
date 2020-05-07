@@ -25,7 +25,9 @@ rect(a, 10, 40, 40)  # desenha um retângulo em x:60, y:10
 
 ### Metáforas para pensar sobre as variáveis
 
-Pense nas variáveis como nomes, etiquetas que você cola nos objetos que estão na memória do computador, e você usa os nomes para pedir ao computador os valores para os quais apontam. O mesmo objeto ou valor pode ter vários apelidos, nomes que apontam paa o mesmo objeto/valor na memória. Modificar uma atribuição é tirar a etiqueta de um objeto e por em outro.
+Pense nas variáveis como nomes, etiquetas que você cola nos objetos que estão na memória do computador, e você usa os nomes para pedir ao computador os valores para os quais apontam. O mesmo objeto ou valor pode ter vários apelidos, nomes que apontam pro mesmo objeto/valor na memória. 
+
+**Modificar uma variável existente é tirar a etiqueta de um objeto e por em outro.**
 
 ```python
 aluno32 = 'Alberto'
@@ -34,7 +36,7 @@ aluno_mais_antigo = aluno32
 aluno_mais_antigo = 'Fernanda'
 # Agora cada nome aponta para um texto diferente na memória
 ```
-O que acontece quando atualizamos o valor de uma variável que aponta para um número?
+O que acontece quando atualizamos uma variável que aponta para um número somando outro número?
 
 ```python
 idade = 13
@@ -73,6 +75,6 @@ a!idade = 13 # só letras e números e _ por favor!
 
 ### Assuntos relaciodados
 
+- [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](atribuicao-e-comparacao.md)
 - [Escopo de variáveis](escopo_py.md)
 - [Valores e seus tipos](tipagem_py.md)
-- [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](atribuicao-e-comparacao.md)
