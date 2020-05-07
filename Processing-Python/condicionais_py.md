@@ -49,7 +49,7 @@ def draw():
         background(200)              # Apague a tela com um fundo cinza (só executa sob as condições acima)
 ```
 
-## Comparações com operadores relacionais e operadores lógicos
+## Comparações com operadores relacionais, operadores lógicos 
 
 Os valores `True` (verdadeiro) e `False` (falso) são o resultado de expressões booleanas (*boolean*, em homenagem a [George Boole](https:#pt.wikipedia.org/wiki/George_Boole)) como as comparações com operadores relacionais, `==` (igualdade), `>` (maior que) ou ainda operações lógicas **e** (`and`), **ou** (`or`) e **não** (`not`). 
 
@@ -57,15 +57,16 @@ Podem ser armazenados em variáveis, representando um *estado* no programa, e s�
  
 |operador | uso | descrição |
 |:---:  |:---: |--- |
-| `>` | `e1 > e2` |  verdadeiro se *e1* **maior** que *e2* |
-| `>=` | `e1 >= e2` | verdadeiro se *e1* **maior ou igual** a *e2* |
-| `<` | `e1 < e2` | verdadeiro se *e1* **menor** que *e2* |
-| `<=` | `e1 <= e2` | verdadeiro se *e1* **menor ou igual** a *e2* |
-| `==` | `e1 == e2` | verdadeiro se *e1* **igual** a *e2* |
-| `!=` | `e1 != e2` | verdadeiro se *e1* **diferente** de *e2* |
-| `and` | `e1 and e2` | verdadeiro se *e1* **e** *e2* forem ambos verdadeiros |
-| `or` | `e1 or e2` | verrdadeiro se *e1* **ou** *e2* forem verdadeiros |
-| `not` | `not e1` | **não** *e1* verdadeiro resulta falso, e **não** *e1* falso resulta verdadeiro |
+| `>` | `a > b` |  verdadeiro se *a* **maior** que *b* |
+| `>=` | `a >= b` | verdadeiro se *a* **maior ou igual** a *b* |
+| `<` | `a < b` | verdadeiro se *a* **menor** que *b* |
+| `<=` | `a <= b` | verdadeiro se *a* **menor ou igual** a *b* |
+| `==` | `a == b` | verdadeiro se *a* **igual** a *b* |
+| `!=` | `a != b` | verdadeiro se *a* **diferente** de *b* |
+| `and` | `a and b` | verdadeiro se *a* **e** *b* forem ambos verdadeiros |
+| `or` | `a or b` | verrdadeiro se *a* **ou** *b* forem verdadeiros |
+| `not` | `not a` | **não** *a* verdadeiro resulta falso, e **não** *a* falso resulta verdadeiro |
+| `in` | `a in b` | verdadeiro se o elemento *a* **existe dentro** da coleção *b* |
 
 ## Extra: Condicionais aninhadas e outras estruturas
 
