@@ -24,7 +24,7 @@ def adicionar_imagens(selection):
     if selection == None:
         print("Seleção cancelada.")
     else:
-        dir_path = selection.getAbsolutePath()
+        dir_path = selehrection.getAbsolutePath()
         print("Pasta selecionada: " + dir_path)
         for file_name, file_path in lista_imagens(dir_path):
             img = loadImage(file_path)
@@ -34,7 +34,7 @@ def adicionar_imagens(selection):
         print('Número de imagens: ' + str(len(imagens)))
 ```
 
-Saiba que o código que cuida da janela do sistema operacional para escolhermos a pasta, e também esta função `adicionar_imagens()`, que é chamada em seguida, são executados em *threads* separadas do *sketch* principal, isto é, correm em separado, e por conta disso não interrompem execução do `draw()`, o chamado 'laço principal de repetição' do Processing. 
+Saiba que o código que cuida da janela do sistema operacional para escolhermos a pasta, e também esta função `adicionar_imagens()`, que é chamada em seguida, são executados em linhas de execução (threads) separadas do *sketch* principal, isto é, correm em separado, e por conta disso não interrompem execução do `draw()`, o chamado 'laço principal de repetição' do Processing. 
 
 O carregamento das imagens é um procedimento razoavelmente lento e por isso é possível vê-las aparecendo aos poucos na tela, conforme são acrescentadas na lista global `imagens` pela execução do laço `for` em `adicionar_imagens()`.
 
