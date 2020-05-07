@@ -18,10 +18,16 @@ text(nome, 20, 20)  # desenha o texto de `nome` na área de desenho
 ```python
 a = 10  # cria a variável `a` que aponta para o valor 10
 rect(a, 10, 40, 40)  # desenha um retângulo em x:10, y:10
-a = a + 50  # calcula o valor de `a + 10` e faz a variável `a` apontar para esse novo valor, ou seja 60
-rect(a, 10, 40, 40)  # desenha um retângulo em x:60, y:10
+a = a + 45  # calcula o valor de `a + 45` e faz a variável `a` apontar para esse novo valor, ou seja 55
+rect(a, 10, 40, 40)  # desenha um retângulo em x:55, y:10
 ```
 **Você consegue imaginar qual vai ser o resultado?**
+
+<details>
+  <summary>clique para ver o resultado</summary>
+![dois retângulos](assets/variaveis_2.png]
+</details>
+
 
 ### Metáforas para pensar sobre as variáveis
 
