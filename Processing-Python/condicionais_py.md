@@ -49,7 +49,7 @@ def draw():
         background(200)              # Apague a tela com um fundo cinza (só executa sob as condições acima)
 ```
 
-## Comparações com operadores relacionais, operadores lógicos e utros casos 
+## Comparações com operadores relacionais, operadores lógicos e outros casos 
 
 Os valores `True` (verdadeiro) e `False` (falso) são o resultado de expressões booleanas (*boolean*, em homenagem a [George Boole](https:#pt.wikipedia.org/wiki/George_Boole)) como as comparações com operadores relacionais, `==` (igualdade), `>` (maior que) ou ainda operações lógicas **e** (`and`), **ou** (`or`) e **não** (`not`). 
 
