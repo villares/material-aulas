@@ -25,8 +25,9 @@ rect(a, 10, 40, 40)  # desenha um retângulo em x:55, y:10
 
 <details>
   <summary>clique para ver o resultado</summary>
-  
-![dois retângulos](assets/variaveis_2.png]
+
+![dois retângulos](assets/variaveis_2.png)
+
 </details>
 
 
