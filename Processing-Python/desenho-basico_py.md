@@ -99,6 +99,12 @@ Quando ficam logo no começo do corpo de uma definição de função ou classe, 
 chamados 'docstrings' (textos de documentação), não se preocupe com isso agora!
 """
 ```
+### Próximos passos
+
+- [Variáveis](/Processing-Python/variaveis.md)
+- [Desenhando polígonos](/Processing-Python/poligonos_1.md)  
+- [O que é indentação?](/Processing-Python/indentacao.md)  
+
 
 ---
 Este material é baseado no material do curso [Progração Criativa](https://arteprog.space/programacao-criativa/)
