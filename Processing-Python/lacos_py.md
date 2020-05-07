@@ -1,4 +1,4 @@
-# Sequências e repetições
+# Sequências e laços de repetição
 
 É muito comum em programação pedir ao computador que repita uma ação várias vezes, possivelmente com variações. Para fazer isso frequentemente usamos os chamados laços de repetição (*loops*) e o processo também pode ser chamado de iteração (note que não é i**n**teração, que é outra coisa).
 
