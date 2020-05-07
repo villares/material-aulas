@@ -1,5 +1,5 @@
 # Desenhando polígonos - II
-### mais sobre polígonos e PShape
+### Mais sobre polígonos e PShape
 
 Agora que já sabemos iterar por uma estrutura de dados, podemos usar as coordenadas das tuplas na lista que vimos anteriormente para desenhar um polígono ou mais genericamente um 'forma' PShape:
 
@@ -47,8 +47,12 @@ def setup():
 
 ![furo](assets/contour_furo.png)
 
+### Assuntos relacionados
 
-### Uma função para desenhar sequências de pontos em forma de polígono
+- [Desenhando Polígonos - I](poligonos_1.html)
+- [Sequências e laços de repetição](lacos_py.html)
+
+### EXTRA: Uma função para desenhar sequências de pontos em forma de polígono
 
 Você conseguiria encapsular em uma função a parte do código que faz o desenho do polígono?
     
