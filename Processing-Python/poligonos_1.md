@@ -35,24 +35,26 @@ endShape(CLOSE)  # polígono fechado
 
 ### Desenhando uma estrela de quatro pontas
 
-Vejamos um exemplo que combina a estrutura que vimos antes com o uso de variáveis para calcular a posição dos vértices, formando um estrela!
+ Vejamos um exemplo que combina a estrutura que vimos antes com o uso de variáveis para calcular a posição dos vértices, formando um estrela!
 
 ```pyde
-size(200, 200)
+size(400, 400)
+background(0, 0, 200)  # um fundo azul
+x, y = width / 2, height / 2  # coordenadas do centro
 
-x, y = 100, 100  # coordenadas do centro
-largura_total, largura_menor = 150, 100
-mm, m = largura_total / 2, largura_menor / 2
+largura_total, largura_menor = 250, 150
+a = largura_total / 2
+b = largura_menor / 2
 
 beginShape()
-vertex(x - mm, y - mm)
-vertex(x - m, y)
-vertex(x - mm, y + mm)
-vertex(x, y + m)
-vertex(x + mm, y + mm)
-vertex(x + m, y)
-vertex(x + mm, y - mm)
-vertex(x, y - m)
+vertex(x - a, y - a)
+vertex(x - b, y)
+vertex(x - a, y + a)
+vertex(x    , y + b)
+vertex(x + a, y + a)
+vertex(x + b, y)
+vertex(x + a, y - a)
+vertex(x    , y - b)
 endShape(CLOSE)
 ```
 
