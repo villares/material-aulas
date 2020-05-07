@@ -20,7 +20,7 @@ bebes:
 ```
 O espaço que faz os itens ficarem 'dentro' das categorias é a *indentação*. Exatamente da mesma maneira, em Python, criamos blocos de código que estão 'dentro' de estruturas. Note os dois pontos (`:`) antes de um bloco indentado na lista de compras.
 
-Essa sintaxe com o espaço de indentação, e com `: ` , vai ser usada em inúmeras estruturas de Python, como `if`/`else`,  no laço de repetição `for`,  na definição de novas funções com `def`, entre outras.
+Essa sintaxe com o espaço de indentação, e com `:` , vai ser usada em inúmeras estruturas de Python, como `if`/`elif`/`else`,  nos laços de repetição `for` e `while`, na definição de novas funções com `def`, entre outras.
 
 ### Animando uma estrela com o movimento do mouse
 
