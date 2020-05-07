@@ -34,7 +34,8 @@ if chances == 3:  # se valor de `chances` é igual a 3
 
 #### Assuntos relacionados
 
-Saiba mais sobre [condicionais e outros operadores lógicos](condicionais_py.md)!
+- [Variáveis](variaveis.md)!
+- [Condicionais e outros operadores lógicos](condicionais_py.md)!
 
 #### Glossário
 
