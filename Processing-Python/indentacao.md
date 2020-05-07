@@ -18,9 +18,9 @@ bebes:
     refrigerantes:
         água tônica
 ```
-O espaço que faz os itens ficarem 'dentro' das categorias é a *indentação*, e é exatamente da mesma maneira que em Python criamos blocos de código que estão 'dentro'  de uma estrutura ou de outros blocos. Note também o `:` antes do bloco indentado na lista de compras.
+O espaço que faz os itens ficarem 'dentro' das categorias é a *indentação*. Exatamente da mesma maneira, em Python, criamos blocos de código que estão 'dentro' de estruturas. Note os dois pontos (`:`) antes de um bloco indentado na lista de compras.
 
-Essa sintaxe com o espaço de indentação, e `: ` , vai ser usada em inúmeras estruturas de Python, como `if`/`else`,  no laço de repetição `for`,  na definição de novas funções com `def`, entre outras.
+Essa sintaxe com o espaço de indentação, e com `: ` , vai ser usada em inúmeras estruturas de Python, como `if`/`else`,  no laço de repetição `for`,  na definição de novas funções com `def`, entre outras.
 
 ### Animando uma estrela com o movimento do mouse
 
