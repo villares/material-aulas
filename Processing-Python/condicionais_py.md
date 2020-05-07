@@ -49,7 +49,7 @@ def draw():
         background(200)              # Apague a tela com um fundo cinza (só executa sob as condições acima)
 ```
 
-## Comparações com operadores relacionais, operadores lógicos 
+## Comparações com operadores relacionais, operadores lógicos e utros casos 
 
 Os valores `True` (verdadeiro) e `False` (falso) são o resultado de expressões booleanas (*boolean*, em homenagem a [George Boole](https:#pt.wikipedia.org/wiki/George_Boole)) como as comparações com operadores relacionais, `==` (igualdade), `>` (maior que) ou ainda operações lógicas **e** (`and`), **ou** (`or`) e **não** (`not`). 
 
@@ -66,7 +66,7 @@ Podem ser armazenados em variáveis, representando um *estado* no programa, e s�
 | `and` | `a and b` | verdadeiro se *a* **e** *b* forem ambos verdadeiros |
 | `or` | `a or b` | verrdadeiro se *a* **ou** *b* forem verdadeiros |
 | `not` | `not a` | **não** *a* verdadeiro resulta falso, e **não** *a* falso resulta verdadeiro |
-| `in` | `a in b` | verdadeiro se o elemento *a* **existe dentro** da coleção *b* |
+| `in` | `a in b` | verdadeiro se elemento *a* **existe dentro** da coleção *b* |
 
 ## Extra: Condicionais aninhadas e outras estruturas
 
@@ -103,7 +103,13 @@ a = 50 if keyPressed else 100
 # senão, passa a valer 100
 ```
 
-Você pode encontrar ainda a seguinte expressão `a = a or b`, que equivale a `a = a if a else b`. Muito usada em funções com parâmetros default:
+Você pode ainda encontrar a seguinte expressão:
+
+```
+a = a or b # equivale a:  a = a if a else b
+```
+
+Essa forma é muito usada em funções com parâmetros default:
 
 ```python
 def quadrado(x, y, tamanho=None):
