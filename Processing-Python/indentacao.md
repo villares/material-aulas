@@ -38,19 +38,20 @@ def setup():
 
 def draw():
     background(0, 0, 200)  # para limpar a área de desenho
-    
     x, y = width / 2, height / 2  # coordenadas do centro
-    mm, m = mouseY / 4, mouseY / 4
+
+    a = mouseX / 4
+    b = mouseY / 4
 
     beginShape()
-    vertex(x - mm, y - mm)
-    vertex(x - m, y)
-    vertex(x - mm, y + mm)
-    vertex(x, y + m)
-    vertex(x + mm, y + mm)
-    vertex(x + m, y) 
-    vertex(x + mm, y - mm)
-    vertex(x, y - m)
+    vertex(x - a, y - a)
+    vertex(x - b, y)
+    vertex(x - a, y + a)
+    vertex(x    , y + b)
+    vertex(x + a, y + a)
+    vertex(x + b, y)
+    vertex(x + a, y - a)
+    vertex(x    , y - b)
     endShape(CLOSE)
 ```
 
