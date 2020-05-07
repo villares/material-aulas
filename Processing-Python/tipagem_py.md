@@ -1,5 +1,5 @@
 
-# Variáveis, parâmetros, valores e seus tipos
+# Valores e seus tipos
 
 ## Valores
 
@@ -13,33 +13,39 @@ Outro tipo importante é o booleano (`boolean`), com apenas os dois valores `Tru
 
 ## Conversão
 
-É necessário por vezes converter os dados de um tipo para outro, como por exemplo o número sorteado por uma função `random()` que é um `float` pode ser convertido em `int`, sendo truncado (encurtado) se tiver uma parte não inteira. E números podem ser convertidos em texto (`string`).
+É necessário por vezes converter os dados de um tipo para outro, como por exemplo o número sorteado por uma função `random()` que é um `float` pode ser convertido em `int`, sendo truncado (encurtado) se tiver uma parte não inteira.
+
+Números podem ser convertidos em texto (`string`) usando `str(num)` ou com `'{}'.format(num)`.
 
 ```python
 R = int(random(256))
 println("Red: " + str(R))  # ou println("Red: {}".format(R))
 ```
 
-## Parâmetros e funções
+## Tipos dos argumentos e valores devolvidos for funções
 
-Os valores que uma função recebe quando invocada podem precisar ser de tipos específicos, que podem ser descobertos na documentação (no caso de funções pré-definidas ou de bibliotecas externas) ou lendo a definição da função.
-Da mesma forma os tipos dos valores devolvidos por uma função são do nosso interesse.
+Os valores que usamos entre parênteses em uma chamada de função (argumentos, dentro da função são chamados parâmetros) frequentemente precisar ser de tipos específicos. Por exemplo `range()` só aceita como argumentos números inteiros. A função `text()`, precisa de um *string* e dois números (para as coordenadas): `text("Texto", x, y)`. 
 
-Algumas funções apenas executam operações mas não devolvem um valor, como `setup()`, `draw()`, `noStroke()` e `rect()`, por exemplo. Na verdade, sendo mais cuidadosos, veremos que em Pyhon essas funções retornam o valor especial `None` (que poderíamos imaginar como "nada" ou "nenhum").
+Para descobrir quais são os tipos dos argumentos que devemos usar com uma determinada função, precisamos ler a documentação (no caso de funções embutidas, pré-definidas, ou de bibliotecas externas) ou a definição da função. Da mesma forma é do nosso interesse saber os tipos dos valores devolvidos pelas funções.
 
-Já outras funções devolvem um valor. A função `color()` do Processing, por exemplo, recebe como argumentos números inteiros e devolve uma cor:
+Algumas funções executam operações mas não devolvem um valor, como `setup()`, `draw()`, `noStroke()` e `rect()`, por exemplo. Na verdade, sendo mais precisos, em Python, essas funções devolvem o valor especial `None` (que poderíamos imaginar como "nada" ou "nenhum").
+
+Já outras funções, devolvem algum valor como resultado. A função `color()` do Processing, por exemplo, recebe como argumentos números e devolve uma cor:
 
 `minha_cor = color(255, 0, 0)  # A variável minha_cor aponta para uma cor vermelha na memória`
 
-Podemos construir uma outra função que devolve uma cor também:
+Podemos construir uma função que devolve uma cor nós também:
 
 ```python
-cor_sorteada(alpha):
-   R = int(random(256)
-   G = int(random(256)
-   B = int(random(256)
-   return color(R, G, B, alpha)
+def cor_sorteada(alpha):
+   r = int(random(256)
+   g = int(random(256)
+   b = int(random(256)
+   return color(r, g, b, alpha)
+
+minha_cor = cor_sorteada(255) # sorteia uma cor 
 ```
+
 ### Alguns tipos (classes de objetos)
 
 | tipo / classe | descrição |
