@@ -49,8 +49,8 @@ def setup():
 
 ### Assuntos relacionados
 
-- [Desenhando Polígonos - I](poligonos_1.html)
-- [Sequências e laços de repetição](lacos_py.html)
+- [Desenhando Polígonos - I](poligonos_1.md)
+- [Sequências e laços de repetição](lacos_py.md)
 
 ### EXTRA: Uma função para desenhar sequências de pontos em forma de polígono
 
