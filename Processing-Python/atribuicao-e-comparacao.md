@@ -7,7 +7,8 @@ num = 3 # faça `num` ser uma referência ao valor 3`
 # Resultado: Modificada a variável `num`.
 ```
 
-Na prática, do lado direito aparecem expressões que produzem valores diversos e que são avaliadas primeiro!
+Na prática, do lado direito do `=` aparecem expressões que produzem algum valor, e que são avaliadas (calculadas) primeiro. Em seguida acontece a atribuição, a variável à esquerda passa apontar para o valor calculado na memória.
+
 
 ```python
 soma = a + b
@@ -27,7 +28,7 @@ num == 3 # o valor de `num` é igual ao valor 3?`
 # Ninguém escreve isso desse jeito, em geral vai dentro de outra estrutura.
 # Mas o resultado seria o valor `True` ou `False`
 # se você fizer print(num == 3), por exemplo 
-```toficinas 
+``` 
 
 Na prática  `==`  é usado dentro de estruturas como `if` (ou `while`, por exemplo) que permitem a execução condicional de outras instruções:
 
