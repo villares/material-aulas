@@ -26,7 +26,7 @@
 	  const renderIframe = (img = {}) => {
 	    const w = img.naturalWidth || 100;
 	    const h = img.naturalHeight || 100;
-	    $div.innerHTML = `<iframe src="${a.href}" frameborder=0 width="${w}" height="${h}"></iframe>`;
+	    $div.innerHTML = `<iframe src="${$a.href}" frameborder=0 width="${w}" height="${h}"></iframe>`;
 	  };
 	  if ($a !== null && $div !== null) {
 	    let img = $div.querySelector("img");
