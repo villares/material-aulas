@@ -29,7 +29,7 @@
 	    $div.innerHTML = `<iframe src="${a.href}" frameborder=0 width="${w}" height="${h}"></iframe>`;
 	  };
 	  if ($a !== null && $div !== null) {
-	    let img = div.querySelector("img");
+	    let img = $div.querySelector("img");
 	    if (img) {
 	      if (img.complete) {
 	        renderIframe(img);
