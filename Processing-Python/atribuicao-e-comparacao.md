@@ -48,8 +48,8 @@ if num != 0:  # se num não for igual a zero
 
 #### Assuntos relacionados
 
-- [Variáveis](variaveis.md)!
-- [Condicionais e outros operadores lógicos](condicionais_py.md)!
+- [Variáveis](variaveis.md)
+- [Condicionais e operadores lógicos](condicionais_py.md)
 
 #### Glossário
 
