@@ -26,7 +26,7 @@ num == 3 # o valor de `num` é igual ao valor 3?`
 # ...mas o resultado seria o valor `True` ou `False`
 ```
 
-Na prática  `==`  é usado dentro de estruturas como `if` que permitem a execução condicional de outras instruções.
+Na prática  `==`  é usado dentro de estruturas como `if` (ou `while`, por exemplo) que permitem a execução condicional de outras instruções.
 
 ```python
 if chances == 3:  # se valor de `chances` é igual a 3
