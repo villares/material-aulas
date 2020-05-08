@@ -27,7 +27,7 @@ num == 3 # o valor de `num` é igual ao valor 3?`
 # Ninguém escreve isso desse jeito, em geral vai dentro de outra estrutura.
 # Mas o resultado seria o valor `True` ou `False`
 # se você fizer print(num == 3), por exemplo 
-```
+```toficinas 
 
 Na prática  `==`  é usado dentro de estruturas como `if` (ou `while`, por exemplo) que permitem a execução condicional de outras instruções:
 
@@ -36,7 +36,7 @@ if num == 3:  # se valor de `num` for igual a 3
     print("você tem três chances")
 ```
 
-Para comparação, temos outro operador de comparação para desigualdade `!=':
+De forma análoga, temos um operador relacional que indica desigualdade `!=':
 
 ```python
 if num != 0:  # se num não for igual a zero
