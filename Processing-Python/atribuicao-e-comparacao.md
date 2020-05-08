@@ -13,24 +13,36 @@ Na prática, do lado direito aparecem expressões que produzem valores diversos 
 soma = a + b
 media = (a + b) / 2.
 
-# aumentando em 1 o contador
+# Aumentando em 1 um contador
 contador = contador + 1
-contador += 1 # equivalente a expressão anterior, usando o operador de atribuição aumentada.
+
+# Uma forma equivalente com o operador de atribuição aumentada
+contador += 1 # equivale a contador = contador + 1
 ```
 
 ## O símbolo `==` é o operador relacional que faz a "comparação de igualdade"
 
 ```python
 num == 3 # o valor de `num` é igual ao valor 3?`
-# Ninguém escreve isso desse jeito...
-# ...mas o resultado seria o valor `True` ou `False`
+# Ninguém escreve isso desse jeito, em geral vai dentro de outra estrutura.
+# Mas o resultado seria o valor `True` ou `False`
+# se você fizer print(num == 3), por exemplo 
 ```
 
-Na prática  `==`  é usado dentro de estruturas como `if` (ou `while`, por exemplo) que permitem a execução condicional de outras instruções.
+Na prática  `==`  é usado dentro de estruturas como `if` (ou `while`, por exemplo) que permitem a execução condicional de outras instruções:
 
 ```python
-if chances == 3:  # se valor de `chances` é igual a 3
+if num == 3:  # se valor de `num` for igual a 3
     print("você tem três chances")
+```
+
+Para comparação, temos outro operador de comparação para desigualdade `!=':
+
+```python
+if num != 0:  # se num não for igual a zero
+    print("você ainda tem {} chance(s)".format(num))
+
+# equivalente a: if not num == 0
 ```
 
 #### Assuntos relacionados
