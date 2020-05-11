@@ -37,9 +37,9 @@ def botao_simples(x, y, w, h, _text):
         return False
  ```
     
-Repare que o comportamento deixa um pouco a desejar em relação a um botão ao qual estamos acostumados, apresentado pela interface do sistema operacional ou em um site. Este botão que vimos é acionado no momento do pressionar do botão do mouse, os botões tradicionais são acionados no momento em que o botão do mouse é solto, completando um 'clique'.
+Repare que o comportamento deixa um pouco a desejar em relação a um botão apresentado pela interface do sistema operacional ou em um site. Esse botão que vimos é acionado no momento do pressionar do botão do mouse, os botões tradicionais são acionados no momento em que o botão do mouse é solto, completando um 'clique'.
     
-É possível obter o comportamento semelhante de acionamento com um clique completo repetindo a chamada dos botões, uma vez em `draw()` para visualização e outra na função de evento `mouseClicked()`, como no código abaixo:
+É possível obter um comportamento semelhante de acionamento com um clique completo repetindo a chamada dos botões, uma vez em `draw()` para visualização e outra na função de evento `mouseClicked()`, como no código abaixo:
     
 ```python
 fundo = color(0)
