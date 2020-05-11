@@ -60,7 +60,63 @@ def mouseDragged():  # quando o mouse é movido apertado
 
 ### Arrastando vários círculos
 
-Vamos usar uma estrutura de dados, uma lista de tuplas, para manter a posição de vários círculos, e os seus raios, permitindo que qualquer um deles seja arrastado!.
+![vários círculos sendo arrastados](arrastar_circulos.gif)
 
+
+Vamos usar uma estrutura de dados, uma lista, com tuplas dentro, para manter a posição e tamanho de vários círculos, permitindo que qualquer um deles seja arrastado!.
+
+A variável global `arrastando` não vai mais manter apenas registro da situação de arraste (como no exemplo anterior) ela vai agora apontar para um valor que representa o índice de posição de um círculo na lista `circulos`. Vamos estabelecer que o valor -1 significa não uma posição na lista (seria o último círculo) mas sim que nenhum círculo está sendo arrastado (mesmo papel do `False` no exemplo anterior). 
+
+Na função `mousePressed()` vamos checar uma a uma cada tupla da lista, contendo X, Y e diâmetro dos círculos, e caso algum deles esteja sob o mouse, vamos atalizar `arrastando` para o índice dessa tupla na lista. O primeiro círculo encontrado interrompe a busca (e só um círculo pode ser arrastado por vez, o que vier antes, o 'mais de baixo').
+
+A função `mouseReleased()` altera `arrastando` para -1.
+
+A função `mouseDragged()`, caso `arrastando` não seja -1, recria uma tupla com a posição atualizada do círculo e altera a lista.
+
+```python
+arrastando = -1  # -1 quer dizer nenhum círculo sendo arrastado
+circulos = []  # lista com coordenadas e tamanhos dos círculos
+
+def setup():
+    size(400, 400)
+    strokeWeight(3)
+    fill(0, 200) # preenchimento translúcido
+    for _ in range(5):  # vamos sortear 5 círculos
+        d = random(30, 100)
+        x = random(d, width - d)
+        y = random(d, height - d)
+        circulos.append((x, y, d))
+
+def draw():
+    background(0, 0, 200)
+    for i, circulo in enumerate(circulos):
+        x, y, d = circulo
+        if i == arrastando:
+            stroke(200, 0, 0)
+        else:
+            stroke(255)    
+        ellipse(x, y, d, d)
+
+def mousePressed():  # quando um botão do mouse é apertado
+    global arrastando
+    for i, circulo in enumerate(circulos):
+        x, y, d = circulo
+        dist_mouse_circulo = dist(mouseX, mouseY, x, y)
+        raio = d / 2
+        if  dist_mouse_circulo < raio:
+            arrastando = i
+            break  # encerra o laço
+    
+def mouseReleased():  # quando um botão do mouse é solto
+    global arrastando
+    arrastando = -1
+    
+def mouseDragged():  # quando o mouse é movido apertado
+    if arrastando != -1:
+        x, y, d = circulos[arrastando]
+        x += mouseX - pmouseX
+        y += mouseY - pmouseY
+        circulos[arrastando] = (x, y, d)
+```    
 
 
