@@ -1,6 +1,6 @@
 ## Um botão simples
 
-![botão simples](asstes/botao_simples.gif)
+![botão simples](assets/botao_simples.gif)
 
 Aqui um exemplo de um botão muito simplificado, basicamente uma função que desenha um retângulo aredondado com texto e que devolve `True` caso o mouse esteja apertado sobre ele (`False` caso contrário).
 
