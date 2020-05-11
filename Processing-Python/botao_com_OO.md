@@ -3,13 +3,13 @@
 Primeiro vamos ver como usar um botão, instanciando dois objetos da classe `Botao`. 
 
 ```python
-from botao import Botao  # precisa do módulo bota.py
+from botao import Botao  # precisa do módulo botao.py (o arquivo na pasta do sketch, uma aba no IDE)
 
 estado_inicial = True
 
 def setup():
     global b1, b2
-    size(400, 400)
+    size(400, 400) 
     b1 = Botao(100, 150, 200, 50, "clique aqui")
     b2 = Botao(100, 250, 200, 50, "de novo!")
 
