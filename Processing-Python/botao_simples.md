@@ -12,6 +12,7 @@ def setup():
 def draw():
     background(fundo)
     global fundo
+    
     if botao_simples(100, 100, 200, 50, "vermelho"):
         fundo = color(255, 0, 0)
 
