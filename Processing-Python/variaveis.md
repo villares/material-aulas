@@ -82,7 +82,7 @@ minha-idade-mental = 13 # palavra com hifens
 a!idade = 13 # só letras e números e _ por favor!
 ```
 
-### Assuntos relaciodados
+### Assuntos relacionados
 
 - [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](atribuicao-e-comparacao.md)
 - [Escopo de variáveis](escopo_py.md)
