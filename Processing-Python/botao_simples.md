@@ -34,7 +34,7 @@ def botao_simples(x, y, w, h, _text):
         return True
     else:
         return False
-    ```
+ ```
     
 Repare que o comportamento deixa um pouco a desejar em relação a um botão ao qual estamos acostumados, apresentado pela interface do sistema operacional ou em um site. Este botão que vimos é acionado no momento do pressionar do botão do mouse, os botões tradicionais são acionados no momento em que o botão do mouse é solto, completando um 'clique'.
     
