@@ -65,7 +65,7 @@ def mouseDragged():  # quando o mouse é movido apertado
 
 Vamos usar uma estrutura de dados, uma lista, com tuplas dentro, para manter a posição e tamanho de vários círculos, permitindo que qualquer um deles seja arrastado!.
 
-A variável global `arrastando` não vai mais manter apenas registro da situação de arraste (como no exemplo anterior) ela vai agora apontar para um valor que representa o índice de posição de um círculo na lista `circulos`. Vamos estabelecer que o valor -1 significa não uma posição na lista (seria o último círculo) mas sim que nenhum círculo está sendo arrastado (mesmo papel do `False` no exemplo anterior). 
+A variável global `arrastando`  vai manter registro da situação de arraste, como no exemplo anterior, só que agora também indicando o índice de posição de um círculo na lista `circulos`. Vamos estabelecer que -1 significa não uma posição na lista (que seria o último círculo) mas sim que nenhum círculo está sendo arrastado (mesmo papel do `False` no exemplo anterior).
 
 Na função `mousePressed()` vamos checar uma a uma cada tupla da lista, contendo X, Y e diâmetro dos círculos, e caso algum deles esteja sob o mouse, vamos atalizar `arrastando` para o índice dessa tupla na lista. O primeiro círculo encontrado interrompe a busca (e só um círculo pode ser arrastado por vez, o que vier antes, o 'mais de baixo').
 
