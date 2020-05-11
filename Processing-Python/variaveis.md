@@ -69,10 +69,10 @@ x = 100
 x_ = 200
 
 # Funciona, mas não recomendado  
-MinhaIdadeMental = 13  # Reservamos nomes com a primeira letra maiúscula para 'classes´  
+MinhaIdadeMental = 13  # Reservamos nomes com a 1ª letra maiúscula para 'classes´  
 
 # Casos especiais
-IDADE_MAXIMA = 200  # Costumamos usar só para valores que não vão mudar chamados 'constantes'
+IDADE_MAXIMA = 200  # Costumamos usar só para valores que não mudam, as 'constantes'
 _ = 13  # Usamos em alguns casos, quando queremos ignorar um valor
 
 # Não funciona! Incorreto!
