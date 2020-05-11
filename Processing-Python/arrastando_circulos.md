@@ -1,10 +1,12 @@
 ## Arrastando círculos
 
-![um círculo sendo arrastado](assets/arrastando_circulo.gif)
+![um círculo sendo arrastado](assets/arrastar_circulo.gif)
 
 Neste exemplo vamos usar três funções que o Processing dispara pra nós em eventos do mouse (`mousePressed()`, `mouseReleased()` e `mouseDragged()`) para criar um elemento de interação interessante, um círculo que possa ser arrastado.
 
 A ideia é que você possa adaptar este código para, por exemplo, arrastar pontos de controle de uma curva/polígono, ou então, outros 'elementos gráficos' do seu *sketch*. 
+
+### Arrastando um círculo
 
 0. Vamos precisar de um indicador de estado (*flag*) parara saber se o arraste começou, para isso vamos usar a variável global `arrastando`, e vamos precisar também duas variáveis para a posição do círculo, `x_circulo` e `y_circulo`.
 
@@ -55,3 +57,10 @@ def mouseDragged():  # quando o mouse é movido apertado
         # mouseY - pmouseY é o que o mouse foi arrastado em Y
         y_circulo += mouseY - pmouseY    
 ```
+
+### Arrastando vários círculos
+
+Vamos usar uma estrutura de dados, uma lista de tuplas, para manter a posição de vários círculos, e os seus raios, permitindo que qualquer um deles seja arrastado!.
+
+
+
