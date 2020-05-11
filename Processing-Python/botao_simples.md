@@ -13,8 +13,8 @@ def setup():
     stroke(255)
 
 def draw():
-    background(fundo)
     global fundo
+    background(fundo)
     
     if botao_simples(100, 100, 200, 50, "verde"):
         fundo = color(0, 100, 0)
