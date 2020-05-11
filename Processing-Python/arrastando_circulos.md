@@ -60,7 +60,7 @@ def mouseDragged():  # quando o mouse é movido apertado
 
 ### Arrastando vários círculos
 
-![vários círculos sendo arrastados](arrastar_circulos.gif)
+![vários círculos sendo arrastados](assets/arrastar_circulos.gif)
 
 
 Vamos usar uma estrutura de dados, uma lista, com tuplas dentro, para manter a posição e tamanho de vários círculos, permitindo que qualquer um deles seja arrastado!.
