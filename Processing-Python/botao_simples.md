@@ -1,23 +1,26 @@
 ## Um botão simples
 
+![botão simples](asstes/botao_simples.gif)
 
 Aqui um exemplo de um botão muito simplificado, basicamente uma função que desenha um retângulo aredondado com texto e que devolve `True` caso o mouse esteja apertado sobre ele (`False` caso contrário).
 
 ```python
-fundo = color(0)
+fundo = color(0, 0, 200)
 
 def setup():
     size(400, 400)
+    strokeWeight(3)
+    stroke(255)
 
 def draw():
     background(fundo)
     global fundo
     
-    if botao_simples(100, 100, 200, 50, "vermelho"):
-        fundo = color(255, 0, 0)
+    if botao_simples(100, 100, 200, 50, "verde"):
+        fundo = color(0, 100, 0)
 
-    if botao_simples(100, 250, 200, 50, "preto"):
-        fundo = color(0)
+    if botao_simples(100, 250, 200, 50, "azul"):
+        fundo = color(0, 0, 200)
 
 def botao_simples(x, y, w, h, texto):
     # mouse_over vale `True` quando o mouse está sobre a área do botão
@@ -42,25 +45,27 @@ Repare que o comportamento deixa um pouco a desejar em relação a um botão apr
 É possível obter um comportamento semelhante de acionamento com um clique completo repetindo uma chamada de função para os botões, uma vez em `draw()` para visualização e outra na função de evento `mouseClicked()`, como no código abaixo:
     
 ```python
-fundo = color(0)
+fundo = color(0, 0, 200)
 
 def setup():
     size(400, 400)
+    strokeWeight(3)
+    stroke(255)
 
 def draw():
     background(fundo)
     # desenha os botões mas ignora o resultado
-    botao_clique(100, 100, 200, 50, "vermelho")
-    botao_clique(100, 250, 200, 50, "preto")
+    botao_clique(100, 100, 200, 50, "verde")
+    botao_clique(100, 250, 200, 50, "azul")
 
 def mouseClicked():
     global fundo
-    # confere clique na posição do botão vermelho
-    if botao_clique(100, 100, 200, 50, "vermelho"): 
-        fundo = color(255, 0, 0)
-    # confere clique na posição do botão preto
-    if botao_clique(100, 250, 200, 50, "preto"): 
-        fundo = color(0)
+    # confere clique na posição do botão verde
+    if botao_clique(100, 100, 200, 50, "verde"): 
+        fundo = color(0, 100, 0)
+    # confere clique na posição do botão azul
+    if botao_clique(100, 250, 200, 50, "azul"): 
+        fundo = color(0, 0, 200)
                         
 def botao_clique(x, y, w, h, texto):
     mouse_over = (x < mouseX < x + w and y < mouseY < y + h)
