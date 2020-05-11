@@ -1,7 +1,7 @@
 ## Um botão simples
 
 
-Aqui um exemplo de um botão muito simplificado, basicamente uma função que desenha um retângulo com texto e retorna `True` caso o mouse esteja apertado sobre ele (e `False` caso contrário).
+Aqui um exemplo de um botão muito simplificado, basicamente uma função que desenha um retângulo aredondado com texto e que devolve `True` caso o mouse esteja apertado sobre ele (`False` caso contrário).
 
 ```python
 fundo = color(0)
@@ -19,18 +19,18 @@ def draw():
     if botao_simples(100, 250, 200, 50, "preto"):
         fundo = color(0)
 
-def botao_simples(x, y, w, h, _text):
-    mouse_over = (x < mouseX < x + w and
-                  y < mouseY < y + h)
+def botao_simples(x, y, w, h, texto):
+    # mouse_over vale `True` quando o mouse está sobre a área do botão
+    mouse_over = (x < mouseX < x + w and y < mouseY < y + h)
     if mouse_over:
-        fill(140)
+        fill(140)  # cinza escuro com o mouse sobre o botão
     else:
-        fill(240)
-    rect(x, y, w, h, 5)
+        fill(240)  # cinza claro sem o mouse sobre o botão
+    rect(x, y, w, h, 5)  # o último argumento, 5 é o raio dos cantos do retângulo aredondado
     fill(0)
     textAlign(CENTER, CENTER)
-    text(_text, x + w / 2, y + h / 2)
-    # Boão devolve verdadeiro se estiver com o mouse apertado sobre ele
+    text(texto, x + w / 2, y + h / 2)
+    # A função devolve verdadeiro se estiver com o mouse sobre o botão E o mouse apertado
     if mouse_over and mousePressed:
         return True
     else:
@@ -62,9 +62,8 @@ def mouseClicked():
     if botao_clique(100, 250, 200, 50, "preto"): 
         fundo = color(0)
                         
-def botao_clique(x, y, w, h, _text):
-    mouse_over = (x < mouseX < x + w and
-                  y < mouseY < y + h)
+def botao_clique(x, y, w, h, texto):
+    mouse_over = (x < mouseX < x + w and y < mouseY < y + h)
     if mouse_over:
         fill(140)
     else:
@@ -72,8 +71,8 @@ def botao_clique(x, y, w, h, _text):
     rect(x, y, w, h, 5)
     fill(0)
     textAlign(CENTER, CENTER)
-    text(_text, x + w / 2, y + h / 2)
-    # Alterado! Agora devolve verdadeiro só com mouse_over
+    text(texto, x + w / 2, y + h / 2)
+    # Alterado! Agora devolve verdadeiro com mouse_over apenas
     if mouse_over:
         return True
     else:
