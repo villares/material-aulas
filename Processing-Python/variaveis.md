@@ -23,13 +23,10 @@ rect(a, 10, 40, 40)  # desenha um retângulo em x:55, y:10
 ```
 **Você consegue imaginar qual vai ser o resultado?**
 
-<details>
-  
+<details>  
   <summary>clique para ver o resultado</summary>
   
-
-![dois retângulos](https://abav.lugaralgum.com/material-aulas/Processing-Python/assets/variaveis_2.png)
-
+![dois rects](assets/variaveis_2.png)
 
 </details>
 
