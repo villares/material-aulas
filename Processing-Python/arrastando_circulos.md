@@ -12,13 +12,13 @@ A ideia é que você possa adaptar este código para, por exemplo, arrastar pont
 
 1. Dentro de `mousePressed()` vamos checar se o mouse está sobre o círculo. A estratégia escolhida foi usar a função `dist()` para comparar a distância do mouse até o centro do círculo com o raio do círculo (se a distância for menor que o raio, o mouse está sobre o círculo). Esse tipo de checagem é conhecida em programação de jogos e interfaces como "checagem de colisão".
 
-    Neste caso estamos fazendo a checagem de colisão ponto-círculo (a posição do mouse é o ponto). Para outros casos, outros elementos gráficos, é preciso encontrar a estratégia de apropriada (veja por exemplo o exemplo do [botão simples](botao_simples.md) para ver como é uma checagem de colisão ponto-retângulo).
+    Neste caso estamos fazendo uma checagem de colisão ponto-círculo (a posição do mouse é o ponto), e para outros casos, outros elementos gráficos, é preciso encontrar a estratégia apropriada. Veja, por exemplo, o código do [botão simples](botao_simples.md) para ver como é a checagem de colisão ponto-retângulo.
 
     Caso o mouse esteja dentro do círculo quando for apertado, mudamos `arrastando` de `False` para `True`.
 
 2. Dentro de `mouseReleased()` vamos simplesmente mudar `arrastando` para `False`, isto é, sempre que um botão do mouse for solto vamos considerar que acaba qualquer gesto de arrastar o círculo que por ventura tem sido iniciado. Se não tinha nenhum gesto em andamento, nada muda.
 
-3. Dentro de `mouseDragges()` caso o mouse seja movido apertado e o indicador `arrastando` seja `True`, vamos atualizar as variáveis globais `x_circulo` e `y_circulo` com o deslocamento do mouse neste evento de 'arraste' (*drag*). O deslocamento é obtido pela diferença da posição atual do mouse,`mouseX` e `mouseY`, para a posição imediatamente anterior (*previous*) que temos com`pmouseX` e `pmouseY`.
+3. Dentro de `mouseDragged()`, executado quando o mouse é movido apertado, isto é, em 'arraste' (*drag*), se o indicador `arrastando` for `True`, indicando que o círculo estava sob o mouse, vamos atualizar as variáveis globais `x_circulo` e `y_circulo` com o deslocamento do mouse. O deslocamento é obtido pela diferença da posição atual do mouse,`mouseX` e `mouseY`, para a posição imediatamente anterior (*previous*) que temos com`pmouseX` e `pmouseY`.
 
 ```python
 arrastando = False
