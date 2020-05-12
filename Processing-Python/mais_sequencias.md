@@ -2,7 +2,7 @@
 
 Listas e tuplas são duas das mais comuns coleções ordenadas de itens no Python. *Strings* (cadeias de caracteres) ou textos, para simplificar, são coleções ordenadas também, contendo caracteres (letras, emojis ou glifos em geral).  No meio do código, uma tupla pode ser construída com parenteses `( ,)` e a lista com colchetes `[ ,]`, um *string* com aspas, simples `'  '`,  duplas `"  "`  ou trincas de aspas simples ou duplas (`'''  '''` e `"""  """`).
 
-Uma lista permite que seus itens sejam alterados, adicionados, removidos, ou, os como um todo podem ser reordenados. Dizemos que listas são mutáveis. Já uma tupla ou um *string* não podem ter itens adicionados, removidos ou ser reordenada, dizemos que são imutáveis. Se for necessária uma correção, podemos criar tuplas e *strings* novamente com a alteração em substituição a coleção original.
+Uma lista permite que seus itens sejam alterados, adicionados, removidos, ou, como um todo, os itens podem ser reordenados. Dizemos que listas são mutáveis. Já uma tupla ou um *string* não podem ter itens adicionados, removidos ou ser reordenada, dizemos que são imutáveis. Se for necessária uma correção, podemos criar tuplas e *strings* novamente com a alteração em substituição a coleção original.
 
 Saiba que tuplas são mais ‘econômicas’ em termos computacionais (em casos de grande quantidade de dados, gastam menos memória do computador) e são bastante usadas quando a ordem dos elementos tem significado, por exemplo podemos fazer uma tupla com os dados para a contrução de um círculo:
 
@@ -27,14 +27,14 @@ print(n_paises) # imprime 249
 
 ### Consultando individualmente itens de uma sequência
 
-Quando temos uma lista, tupla ou outra coleção ordenada, podemos consultar seus itens pelo índice de posição com a notação `[i]`, sendo que **a primeira posição é a posição de índice 0**, e a última é a que tem como índice o número total de itens menos 1:
+Quando temos uma lista, tupla ou outra coleção ordenada, podemos consultar seus itens pelo índice de posição com a notação `[i]`, sendo que **a primeira posição é a posição de índice 0**, e a última é a que tem como índice o *número total de itens menos 1*:
 
 ```python
 numeros = (2, 4, 6, 8, 10, 12, 24, 2048)  # alguns números
 print(numeros[0])  # 2 o primeiro número
 print(numeros[1])  # 4 o segundo número
 print(numeros[len(alguns_pares) - 1]) # 2048 o último
-print(numeros[-1]) # com o índice -1 também temos o último item!
+print(numeros[-1]) # com o índice -1 também temos o último item, 2048!
 print(numeros[8])  # ERRO: índice 7 é o último! IndexError: index out of range: 8
 ```
 
