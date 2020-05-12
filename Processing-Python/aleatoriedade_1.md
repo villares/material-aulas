@@ -45,9 +45,9 @@ d20 = int(random(20)) # 0, 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, … 19.
 faixa = random(-5, 5)  # exemplos: 3.91, -2.23, -1.2, 4.25 
 ```
 
-## assuntos relacionados
+## Assuntos relacionados
 
-[Mais sobre pseudo-aleatoriedade, módulo `random` do Python e sementes](aleatoriedade_2.md)
+- [Mais sobre pseudo-aleatoriedade, módulo `random` do Python e sementes](aleatoriedade_2.md)
 
 ---
 
