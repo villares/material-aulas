@@ -47,7 +47,7 @@ def draw():
 UP DOWN LEFT RIGHT ALT CONTROL SHIFT
 ```
 
-###Constantes para usar com key
+### Constantes para usar com key
 ```
 BACKSPACE TAB ENTER RETURN ESC DELETE
 ```
@@ -102,7 +102,7 @@ def keyPressed():          # Esta função executa uma vez quando uma tecla é p
 
 - [Um botão simples](botao_simples.md)
 - [Arrastando círculos](arrastando_circulos.md)
-- [Como ler a rodinha do mouse (*mouseWheel* ou *scrollWheel*)](rodinha_mouse.md)
+- [Como ler a rodinha do mouse (*mouse wheel* ou *scroll wheel*)](rodinha_mouse.md)
 
 ---
 Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
