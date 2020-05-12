@@ -143,7 +143,7 @@ Exemplo de uma lista:
 ```python
 meus_pokemon = ["Fomantis", "Eevee"]
 ```
-A principal difereça,além do fato de que a tupla foi construída com parenteses `( ,)`e a lista com colchetes `[ ,]`, é que **uma lista permite que seus itens sejam alterados**, itens sejam adicionados, itens podem ser removidos, ou, os itens como um todo podem ser reordenados.
+A principal difereça, além do fato de que a tupla foi construída com parenteses `( ,)`e a lista com colchetes `[ ,]`, é que **uma lista permite que seus itens sejam alterados**, itens podem ser adicionados, removidos, ou, como um todo, podem ser reordenados.
 
 ```python
 meus_pokemon = ["Fomantis", "Eevee"]
