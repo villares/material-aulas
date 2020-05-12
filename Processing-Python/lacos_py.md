@@ -134,13 +134,31 @@ Vamos ver agora duas estruturas de dados muito usadas em Python para guardar col
 
 Exemplo de uma tupla:
 
-`tupla_sertaneja = ("Maiara", "Maraisa")`
+```python
+tupla_sertaneja = ("Maiara", "Maraisa")
+```
 
 Exemplo de uma lista:
 
-`meus_pockemons = ["Fomantis", "Eevee"]`
+```python
+meus_pokemon = ["Fomantis", "Eevee"]
+```
+A principal difereça,além do fato de que a tupla foi construída com parenteses `( ,)`e a lista com colchetes `[ ,]`, é que **uma lista permite que seus itens sejam alterados**, itens sejam adicionados, itens podem ser removidos, ou, os itens como um todo podem ser reordenados.
 
-A principal difereça, além do fato de que a tupla foi construída com parenteses `( ,)`e a lista com colchetes `[ ,]`, é que **uma lista permite que seus itens sejam alterados**, itens sejam adicionados, itens podem ser removidos, ou, os itens como um todo podem ser reordenados.
+```python
+meus_pokemon = ["Fomantis", "Eevee"]
+meus_pokemon.append("Luxray")
+print(meus_pokemon) 
+# Resutado: ["Fomantis", "Eevee", "Luxray"]
+
+meus_pokemon[0] = "Bubasauro"  # 0 é o índice do primeiro item da lista
+print(meus_pokemon) 
+# Resutado: ["Bubasauro", "Eevee", "Luxray"]
+
+del(meus_pokemon[1])
+print(meus_pokemon) 
+# Resutado: ["Bubasauro", "Luxray"]
+```
 
 Já **uma tupla não pode ter itens removidos, addicionados ou ser reordenada**, dizemos que ela é *imutável* (mesmo se um item puder ter o seu conteúdo mais interno alterado). Se for necessária uma correção, podemos criar uma nova tupla com a alteração em substituição da original.
 
