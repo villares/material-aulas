@@ -40,16 +40,16 @@ for n in range(10): # para cada número do range(10)
 <details>
   <summary>clique para ver o resutado no console</summary>
 
-<code>
-0<br>
-1<br>
-2<br>
-3<br>
-4<br>
-5<br>
-6<br>
-7<br>
-8<br>
+<code></br>
+0</br>
+1</br>
+2</br>
+3</br>
+4</br>
+5</br>
+6</br>
+7</br>
+8</br>
 9
 </code>
 </details>
@@ -68,13 +68,13 @@ for i in range(14):
   <summary>clique para ver os resultados</summary>
 
 <img src= "https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/lines.png">
-<br>
+</br>
 <code>
-i: 0   y: 10 # início<br>
-i: 1   y: 15 # 10 + 5 * 1<br>
-i: 2   y: 20<br>
-i: 3   y: 25<br>
-...<br>
+i: 0   y: 10 # início</br>
+i: 1   y: 15 # 10 + 5 * 1</br>
+i: 2   y: 20</br>
+i: 3   y: 25</br>
+...</br>
 i: 13  y: 75 # final
 </code>
 </details>
@@ -83,10 +83,11 @@ i: 13  y: 75 # final
 <details>
   <summary>clique para ver a resposta</summary>
 
-<code>
-for j in range(14):<br>
-    x = 10 + 5 * j<br>
-    line(x, 30, x, 80)<br>
+<code></br>
+for j in range(14):</br>
+    x = 10 + 5 * j</br>
+    line(x, 30, x, 80)</br>
+    </br>
 </code>
 
 <img src="https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/verticais.png">
@@ -105,8 +106,8 @@ for _ in range(3): # repita 3 vezes!
   <summary>clique para ver o resutado no console</summary>
 
 <code>
-viva!<br>
-viva!<br>
+viva!</br>
+viva!</br>
 viva!
 </code>
 </details>
