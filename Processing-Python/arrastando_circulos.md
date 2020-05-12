@@ -63,7 +63,7 @@ def mouseDragged():  # quando o mouse é movido apertado
 ![vários círculos sendo arrastados](assets/arrastar_circulos.gif)
 
 
-Vamos usar uma estrutura de dados, uma lista, com tuplas dentro, para manter a posição e tamanho de vários círculos, permitindo que qualquer um deles seja arrastado!.
+Para acompanhar o próximo exemplo você precisa estar familiarizado com [sequências e laços de repetição](lacos_py.md), uma vez que vamos usar uma estrutura de dados, uma lista, com tuplas dentro, para manter a posição e tamanho de vários círculos, permitindo que qualquer um deles seja arrastado!.
 
 0. A variável global `arrastando`  vai manter registro da situação de arraste, como no exemplo anterior, só que agora também indicando o índice de posição de um círculo na lista `circulos`. Vamos estabelecer que -1 significa não uma posição na lista (que seria o último círculo) mas sim que nenhum círculo está sendo arrastado (mesmo papel do `False` no exemplo anterior).
 
