@@ -10,7 +10,7 @@ Podemos pedir ao Processing para nos entregar um número entre 0 e *n*  chamando
 
 Um exemplo tradicional, e divertido, é fazer um pincel de círculos com o tamanho e a cor 'sorteados'. Note que o `fill()` aceita números *float*  e os converte em *int* para nós. O quarto argumento de `fill(r, g, b, alpha)` indica uma cor translúcida.
 
-![pincel com random](assets/random_paint.png)
+![pincel com random](assets/pincel_aleatorio.gif)
 
 ```python
 def setup():
