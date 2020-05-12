@@ -29,9 +29,9 @@ def mouseWheel(event):
 
 ### Um exemplo mais extenso
 
-![rodinha](assets/rodinha_mouse_2.gif)
-
 O exemplo a seguir amplia o código de [arrastar círculos](arrastando_circulos.md) visto anteriormente, permitindo mudar o tamanho de cada círculo girando a rodinha do mouse com o cursor sobre ele.
+
+![rodinha](assets/rodinha_mouse_2.gif)
 
 ```python
 arrastando = -1  # -1 quer dizer nenhum círculo sendo arrastado
