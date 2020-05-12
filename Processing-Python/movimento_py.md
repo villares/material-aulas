@@ -8,22 +8,26 @@ Antes do *laço principal de repetição*, que é como costumamos descrever a ex
 
 Resumindo: Dentro do `setup()` vai tudo aquilo que precisamos fazer apenas uma vez e no começo, como, por exemplo, definir a àrea de desenho com `size()`. Já no `draw()` vão principalmente as instruções de desenho propriamente dito, em geral precedidas por uma limpeza da tela ou fundo, e são acionados os cálculos de atualização dos elementos da animação.
 
+Note que no exemplo a seguir, a posição e velocidade do círculo é mantida em algumas variáveis, `px`, `py`, `vx` e `vy`, que precisam ser 'lembradas' entre os ciclos de repetição do `draw()` e dentro dele são modificadas. Isso é o que chamamamos de *variáveis globais*, em contraste com variáveis que fossem criadas dentro do `draw()` e que seriam *variáveis locais*. Leia mais sobre isso na página [Escopo: variáveis globais e locais](escopo_py.md). 
+
 ## Círculo rebatendo nas bordas
+
+![](assets/bola_rebate.gif)
 
 ```python
 raio = 50  # tamanho do raio do círculo
-vx = random(-4, 4) # sorteia uma velocidade horizontal inicial
-vy = random(-4, 4) # sorteia uma velocidade vertical inicial
+vx = 2.5   # velocidade horizontal inicial
+vy = -1.5  # velocidade vertical inicial
 
 def setup():
     global px, py
-    size(600, 400)
+    size(400, 400)
     # Define a posição inicial do círculo
     px, py = width / 2, height / 2
 
 def draw():
     global px, py, vx, vy
-    background(255) # limpa o frame com um fundo branco
+    background(0, 0, 200) # limpa o frame com um fundo azul
     # Atualiza as variáveis da posição do círculo
     px = px + vx
     py = py + vy
@@ -34,13 +38,15 @@ def draw():
     if py > height - raio or py < raio:
         vy = -vy
     # Desenha o círculo
-    fill(0)  # preenchimento preto
+    noStroke()  # sem traço de contorno
     ellipse(px, py, raio * 2 , raio * 2)
     # em versões mais novas do Processing
     # podemos usar circle(px, py, raio * 2)
 ```
+### Assuntos relacionados
 
-![](https://github.com/arteprog/programacao-criativa/blob/master/assets/imagens/bounce.gif?raw=true)
+- [Escopo: variáveis globais e locais](escopo_py.md)
+- [Como exportar animações](exportar_animacoes.md)
 
 ---
 Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
