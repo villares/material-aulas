@@ -11,7 +11,7 @@ for x in range(20, 400, 40): # 10 números de 20 a 380, incluso, de 40 em 40
     ellipse(x, 20, 35, 35) # círculos de diâmetro 35
 ```
 
-![](https://github.com/villares/material-aulas/blob/master/Processing-Python/assets/fila.png?raw=true)
+![](assets/fila.png)
 
 Imagine que é possível escrever de forma parecida uma fila vertical, uma coluna de círculos... 
 
@@ -37,7 +37,7 @@ for x in range(20, 400, 40): # 10 números de 20 a 380, de 40 em 40
     ellipse(x, y, 35, 35) # círculos de diâmetro 35
 ```
 
-![](https://github.com/villares/material-aulas/blob/master/Processing-Python/assets/grade.png?raw=true)
+![](assets/grade.png)
 
 É possível também fazer uma "coluna de filas", mudando só a ordem de desenho, mas não o resultado visual final.
 
@@ -67,7 +67,12 @@ def draw():
 ```
 ![](https://github.com/villares/material-aulas/blob/master/Processing-Python/assets/sketch_2020_04_12b.png?raw=true)
 
-### Usando um iterador (*iterator*) que devolve tuplas de coordenadas
+### Assuntos relacionados
+
+- [Sequências e laços de repetição](lacos_py.md)
+- [Cores com HSB (Matiz, Saturação e Brilho)](cores_HSB.md)
+
+### Extra (assunto avançado): Usando um iterador (*iterator*) que devolve tuplas de coordenadas
 
 A parte central da construção da grade, os laços encaixados produzindo as coordenadas, pode ser encapsulado em uma função separada. Neste exemplo `grid()` devove um objeto que a cada iteração devolve uma tupla (x, y) de uma grade com um certo número de filas e colunas, os dois últimos argumentos, opcionais, definem a largura da coluna e altura da fila.
 
