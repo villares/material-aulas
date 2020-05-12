@@ -22,7 +22,7 @@ def draw():
     text("tamanho: {}".format(tamanho), 100, 370)
     
 def mouseWheel(event):
-    movimento_roda = event.getCount()
     global tamanho
+    movimento_roda = event.getCount()
     tamanho += movimento_roda
 ```
