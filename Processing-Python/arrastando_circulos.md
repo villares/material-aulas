@@ -16,7 +16,7 @@ A ideia é que você possa adaptar este código para, por exemplo, arrastar pont
 
     Caso o mouse esteja dentro do círculo quando for apertado, mudamos `arrastando` de `False` para `True`.
 
-2. Dentro de `mouseReleased()` vamos simplesmente mudar `arrastando` para `False`, isto é, sempre que um botão do mouse for solto vamos considerar que acaba qualquer gesto de arrastar o círculo que por ventura tem sido iniciado. Se não tinha nenhum gesto em andamento, nada muda.
+2. Dentro de `mouseReleased()` vamos só mudar `arrastando` para `False`. Isto significa que quando um botão do mouse for solto acabou qualquer arraste que por ventura estivesse em andamento. Se não havia círculo sendo arrastado, nada muda.
 
 3. Dentro de `mouseDragged()`, executado quando o mouse é movido apertado, isto é, em 'arraste' (*drag*), se o indicador `arrastando` for `True`, indicando que o círculo estava sob o mouse, vamos atualizar as variáveis globais `x_circulo` e `y_circulo` com o deslocamento do mouse. O deslocamento é obtido pela diferença da posição atual do mouse,`mouseX` e `mouseY`, para a posição imediatamente anterior (*previous*) que temos com`pmouseX` e `pmouseY`.
 
