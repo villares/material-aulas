@@ -2,19 +2,24 @@
 
 Um exemplo de como usar a rodinha do mouse para controlar o desenho, por meio da função `mouseWheel(event)`.
 
+![rodinha](assets/rodinha_mouse.gif)
+
 ```python
-tamanho = 50
+tamanho = 100
 
 def setup():
-    size(500, 500)
+    size(400, 400)
+    strokeWeight(3)
     
 def draw():
-    background(200)
+    background(0, 0, 200)
     if tamanho > 0:
-        fill(0, 0, 200)
+        fill(255)
     else:
         fill(200, 0, 0)
-    square(width / 2, height / 2, tamanho)
+    rect(100, 100, tamanho, tamanho)
+    textSize(20)
+    text("tamanho: {}".format(tamanho), 100, 370)
     
 def mouseWheel(event):
     movimento_roda = event.getCount()
