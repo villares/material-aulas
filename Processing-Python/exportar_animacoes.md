@@ -7,6 +7,7 @@ Há mais de uma estratégia possível para exportar imagens em movimento, seja e
 - A. [Exportando frames](#a-exportando-frames)
 - B. [Biblioteca *GifAnimation*](#b-biblioteca-gifanimation)
 - C. [Biblioteca *Video Export*](#c-biblioteca-video-export)
+- D. [Gravando a tela do computador](#d-gravando-a-tela-do-computador)
 
 ### A. Exportando frames
 
@@ -189,3 +190,10 @@ def keyPressed():
         exit()
 
 ```
+### D. Gravando a tela do computador
+
+Uma última estratégia que pode ser útil para documentar e compartilhar o resultado de *sketches* é gravar a tela do computador, ou parte dela.
+
+- [Peek](https://github.com/phw/peek) - Linux - exporta diretamente GIF, APNG ou MP4 
+- [LICEcap](https://www.cockos.com/licecap/) - Windows e MacOS - exporta diretamenteGIF 
+- [OBS Studio](https://obsproject.com/) - Windows, MacOS e Linux - exporta vídeo
