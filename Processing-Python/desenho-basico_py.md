@@ -101,9 +101,9 @@ chamados 'docstrings' (textos de documentação), não se preocupe com isso agor
 ```
 ### Próximos passos
 
-- [Variáveis](/Processing-Python/variaveis.md)
-- [Desenhando polígonos](/Processing-Python/poligonos_1.md)  
-- [O que é indentação?](/Processing-Python/indentacao.md)  
+- [Variáveis](Processing-Python/variaveis.md)
+- [Desenhando polígonos](Processing-Python/poligonos_1.md)  
+- [O que é indentação?](Processing-Python/indentacao.md)  
 
 
 ---
