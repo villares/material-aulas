@@ -1,6 +1,6 @@
 # Mais sobre sequências e fatias em coleções ordenadas
 
-Listas e tuplas são duas das mais comuns coleções ordenadas de itens no Python. *Strings* (cadeias de caracteres) ou textos, para simplificar, são coleções ordenadas também, contendo caracteres (letras, emojis ou glifos em geral).  No meio do código, uma tupla pode ser construída com parenteses `( ,)` e a lista com colchetes `[ ,]`, um *string* com aspas, simples `'  '`,  duplas `"  "`  ou trincas de aspas simples ou duplas (`'''  '''` e `'''  '''`).
+Listas e tuplas são duas das mais comuns coleções ordenadas de itens no Python. *Strings* (cadeias de caracteres) ou textos, para simplificar, são coleções ordenadas também, contendo caracteres (letras, emojis ou glifos em geral).  No meio do código, uma tupla pode ser construída com parenteses `( ,)` e a lista com colchetes `[ ,]`, um *string* com aspas, simples `'  '`,  duplas `"  "`  ou trincas de aspas simples ou duplas (`'''  '''` e `"""  """`).
 
 Uma lista permite que seus itens sejam alterados, adicionados, removidos, ou, os como um todo podem ser reordenados. Dizemos que listas são mutáveis. Já uma tupla ou um *string* não podem ter itens adicionados, removidos ou ser reordenada, dizemos que são imutáveis. Se for necessária uma correção, podemos criar tuplas e *strings* novamente com a alteração em substituição a coleção original.
 
