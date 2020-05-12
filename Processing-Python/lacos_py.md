@@ -12,16 +12,16 @@ Executando a função `range()` com o argumento 10, `range(10)`, vamos obter uma
 <details>
   <summary>clique para ver a resposta</summary>
 
-`[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`
+<pre>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</pre>
 </details>
 
 #### Qual você acha que é o resultado de `range(1, 11)`?
 <details>
   <summary>clique para ver a resposta</summary>
 
-`[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`
+<pre>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</pre>
 
-Podemos usar `range(parada)` ou `range(inicio, parada)`, o número início está incluso, o número de parada não é incluso.
+Podemos usar <pre>range(parada)</pre> ou <pre>range(inicio, parada)</pre>, o número início está incluso, o número de parada não está incluso.
 </details>
 
 
@@ -40,7 +40,7 @@ for n in range(10): # para cada número do range(10)
 <details>
   <summary>clique para ver o resutado no console</summary>
 
-```
+<pre>
 0
 1
 2
@@ -51,7 +51,7 @@ for n in range(10): # para cada número do range(10)
 7
 7
 9
-```
+</pre>
 </details>
 
 É tradicional usar certos nomes de variável `i`, `j` e `k`, por exemplo, para armazenar números de 'contadores' ou 'índices' que vão variando a cada volta do laço `for`.
