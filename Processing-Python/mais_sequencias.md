@@ -1,8 +1,16 @@
-# Mais sobre sequências e fatias
+# Mais sobre sequências e fatias em coleções ordenadas
+
+Listas e tuplas são duas das mais comuns coleções ordenadas de itens no Python. *Strings* (cadeias de caracteres) ou textos, para simplificar, são coleções ordenadas também, contendo caracteres (letras, emojis ou glifos em geral).  No meio do código, uma tupla pode ser construída com parenteses `( ,)` e a lista com colchetes `[ ,]`, um *string* com aspas, simples `'  '`,  duplas `"  "`  ou trincas de aspas simples ou duplas (`'''  '''` e `'''  '''`).
+
+Uma lista permite que seus itens sejam alterados, adicionados, removidos, ou, os como um todo podem ser reordenados. Dizemos que listas são mutáveis. Já uma tupla ou um *string* não podem ter itens adicionados, removidos ou ser reordenada, dizemos que são imutáveis. Se for necessária uma correção, podemos criar tuplas e *strings* novamente com a alteração em substituição a coleção original.
+
+Saiba que tuplas são mais ‘econômicas’ em termos computacionais (em casos de grande quantidade de dados, gastam menos memória do computador) e são bastante usadas quando a ordem dos elementos tem significado, por exemplo podemos fazer uma tupla com os dados para a contrução de um círculo:
+
+```python
+c = (100, 50, 40) # os númereos representam x, y, diâmetro respectivamente
+```
 
 ### Número de itens, tamanho ou comprimento da sequêcia (*length*): <code>len()</code>
-
-Listas e tuplas são das mais comuns estruturas de dados para coleções ordenadas de itens no Python. 
 
 Podemos obter o tamanho, isto é, o número de itens, de praticamente qualquer estrutura de dados em Python (ordenada ou não) usando a função `len()`. Por exemplo:
 
@@ -30,9 +38,9 @@ print(numeros[-1]) # com o índice -1 também temos o último item!
 print(numeros[8])  # ERRO: índice 7 é o último! IndexError: index out of range: 8
 ```
 
-### Strings são sequências também!
+### Strings como sequências de itens
 
-Python trata *strings*, texto, como um espécie de sequência de caracteres. É possível por exemplo iterar, isto é, realizar uma ação para cada caractere de um string:
+Uma vez que Python trata *strings*, texto, como um espécie de sequência, é possível iterar, isto é, realizar uma ação para cada caractere de um string:
 
 ```python
 nome = 'Guido'
