@@ -21,6 +21,7 @@ Este material é baseado em **Processing modo Python**, uma ferramenta livre de 
 - [Aleatoriedade: `random` e números 'sorteados'](Processing-Python/aleatoriedade_1.md)
 - [Interação: input com teclado e mouse](Processing-Python/input_py.md)
   - [Um botão simples](Processing-Python/botao_simples.md)
+  - [Arrastando círculos](Processing-Python/arrastando_circulos.md)
 - [Sequências e laços de repetição (iteração com `for`)](Processing-Python/lacos_py.md)
   - [Mais sobre sequências e fatias](Processing-Python/mais_sequencias.md)
   - [Grades retangulares: filas e colunas de elementos](Processing-Python/grades.md)
