@@ -119,4 +119,7 @@ def mouseDragged():  # quando o mouse é movido apertado
         circulos[arrastando] = (x, y, d)
 ```    
 
+### Assuntos relacionados
 
+- [Um botão simples](botao_simples.md)
+- [Sequências e laços de repetição](lacos_py.md)
