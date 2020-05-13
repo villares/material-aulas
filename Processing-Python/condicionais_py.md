@@ -17,7 +17,7 @@ if chovendo:
     levarGuardaChuva()  
 # termina o bloco do “se/então”, continua o passeio.
 ```
-<img src="https://arteprog.space/programacao-criativa/assets/imagens/condicional-sem-else.jpg" alt="exemplo de if - desenho: Monica Rizzolli">
+<img src="https://arteprog.space/programacao-criativa/assets/imagens/condicional-sem-else.jpg" title="Exemplo de if - desenho: Monica Rizzolli">
 
 ``` python
 # a condição "chovendo" é avaliada como True (verdadeiro) ou False (falso)
@@ -28,7 +28,7 @@ else:               # termina o “se/então” e começa o “senão”
     levarOculos()   # este bloco será executado apenas quando "chovendo" é falso
 # termina o bloco do “senão”, continua o passeio.
 ```
-<img src="https://arteprog.space/programacao-criativa/assets/imagens/condicional-com-else.jpg" alt="exemplo de if/else - desenho: Monica Rizzolli">
+<img src="https://arteprog.space/programacao-criativa/assets/imagens/condicional-com-else.jpg" title="Exemplo de if/else - desenho: Monica Rizzolli">
 
 ## Exemplos
 
