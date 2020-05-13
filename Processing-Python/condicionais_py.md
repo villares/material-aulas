@@ -46,7 +46,7 @@ def setup():
     background(0, 100, 0)  # fundo verde
 
 def draw():
-    # se a posição Y do mouse for menor que 128, o mouse estiver perto do topo da tela
+    # se a posição Y do mouse for menor que 128 (mouse na metade de cima da tela)
     if mouseY < 128:    
         fill(255)  # então pede preenchimento branco (se mouseY é menor que 128)
     else:          # termina o bloco “se/então” e começa o do “senão”
