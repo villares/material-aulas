@@ -52,7 +52,7 @@ def olho(x, y, tamanho):  # parâmetros x, y, tamanho
     ellipse(x, y, metade - 2, metade - 2)
 ```
 
-![olho](asstes/escopo_olho.png)
+![olho](assets/escopo_olho.png)
 
 #### Recapitulando
 
