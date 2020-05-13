@@ -3,14 +3,16 @@
 Os laços de repetição baseados no `while` tem a seguinte estrutura:
 
 ```python
-while condição: #  enquanto a 'condição' for verdadeira, execute:
+while cond: #  enquanto a condição 'cond' for verdadeira, execute:
     corpo 
 ```
 No código do corpo é em geral necessário atualizar algum elemento da condição avaliada pelo laço, para que ela se torne falsa em algum momento, ou então invocar `break` de forma a evitar a repetição infinita.
 
-Um exemplo de uso do laço `while` em que um ângulo `ang` vai tendo o seu valor aumentado (`ang += passo`) até que deixa de ser menor que 360 graus (em radianos, a constante Pi vezes dois, ou, no Processing `TWO_PI`) dessa forma encerrando o laço (e o desenho dos pontos de uma estrela). 
+No exemplo abaixo usamos o laço `while` testando se o valor de um ângulo `ang` é menor que 360 graus (em radianos, a constante Pi vezes dois, ou, no Processing `TWO_PI`).
 
-```pyde
+O corpo do laço produz os vértices, que são pontos de um polígono em forma de estrela, a cada ciclo, e `ang` vai tendo o seu valor aumentado (`ang += passo`), até deixar de ser menor, dessa forma encerrando o laço.
+
+```python
 def setup():
     size(400, 400)
     background(0)
