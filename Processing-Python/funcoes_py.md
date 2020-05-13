@@ -3,21 +3,28 @@
 >[**função**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:função)
 >Uma sequência nomeada de declarações que executa alguma operação útil. As funções podem receber argumentos ou não e podem ou não produzir algum resultado.
 
-### Sintaxe da definição de uma função
+### Sintaxe para definição de funções
 ```python
-def nome_da_função(nome_parâmetro, outro_nome_parâmetro): # esta função tem dois parâmetros
+def nome_da_funcao(a, b): # esta função tem dois parâmetros: a e b
      corpo_com_instruções_que_a_função_executa
      
-def outra_função(): # esta função não tem nenhum parâmetro
+def outra_funcao(): # esta função não tem nenhum parâmetro
      corpo_da_outra_função
+
+def funcao_com_resultado(a): # esta função tem um parâmetro
+     corpo_da_outra_função_calcula_um_resultado
+     return resultado
 ```
 
-### Sintaxe da invocação, ou chamada, de uma função
+### Sintaxe da invocação, ou chamada, de funções
 
 ```python
-nome_da_função(valor, outro_valor) # esta função precisa de dois argumentos
+nome_da_funcao(valor, outro_valor) # esta função precisa de dois argumentos
 
-outra_função() # esta função não requer argumentos
+outra_funcao() # esta função não requer argumentos
+
+a = funcao_com_resultado(valor)  # o resultado da função pode ser usado num atribuição
+
 ```
 
 Os parâmetros, quando existem, recebem os valores dos argumentos usados quando a função é chamada.
@@ -68,6 +75,8 @@ def media(a, b):
      return (a + b) / 2.
 ```
 
+
+
 #### Glossário
 
 [**encapsulamento**](https://penseallen.github.io/PensePython2e/04-caso-interface.html#termo:encapsulamento) O processo de transformar uma sequência de instruções em uma definição de função.
@@ -89,6 +98,12 @@ def media(a, b):
 [**função com resultado**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:função%20com%20resultado) Uma função que devolve um valor.
 
 [**`None`**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:None) Um valor especial apresentado por funções nulas (circularmente definidas como funções que devolvem o valor `None`, em lugar de outro valor de resultado).
+
+## Assuntos relacionados
+
+- Parâmetros padrão [TO DO]
+- [Recursividade em funções](recursao_py.md)
+
 
 ---
 Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
