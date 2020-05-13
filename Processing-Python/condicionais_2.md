@@ -1,4 +1,4 @@
-## Condicionais aninhadas e outras estruturas
+## Condicões aninhadas e outras estruturas condicionais
 
 ### Se, senão se, senão
 
@@ -14,9 +14,9 @@ else:
     faz_outra_coisa()
 ```
 
-### Atribuição condicional
+### Expressões condicionais e atribuição condicional
 
-Muitas linguagens tem uma sintaxe conhecida como *operador condicional ternário* que permite escrever uma expressão condicional abreviada. Esta forma de `if` é muito usada para atribuições ou dentro de outras expressões: 
+Muitas linguagens tem uma sintaxe conhecida como *operador condicional ternário* que permite escrever o que em Python é conhecido como uma *expressão condicional*. Esta forma de `if` é bastante usada para atribuições ou dentro de outras estruturas: 
 
 ```python
 n = x if cond else y
