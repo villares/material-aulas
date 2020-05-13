@@ -78,7 +78,7 @@ Podem ser armazenados em variáveis, representando um *estado* no programa, e s�
 
 ### Assuntos relacionados
 
-* [Condicionais aninhadas e outras estruturas](condicionais_2.md)
+* [Condições aninhadas e outras estruturas condicionais](condicionais_2.md)
 
 ## Glossáriod
 [**expressão booleana**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:expressão%20booleana) Uma expressão cujo valor é True (verdadeiro) ou False (falso).
