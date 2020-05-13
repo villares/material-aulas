@@ -41,7 +41,18 @@ a = 50 if keyPressed else 100
 
 O operador lógico `or` retorna o valor do lado esquerdo caso este seja considerado algo 'verdadeiro', de outra forma, ele retorna o valor do lado direito (que pode ou não ser algo considerado 'falso').
 
-Em Python `0` (o número zero), `""` (um *string* vazio) ou uma coleção vazia (lista, tupla, etc.) são considerados `False`. Outros valores são considerados `True`. Por conta disso, você pode se deparar com a seguinte expressão:
+Em Python `None`, `0` (o número zero), `""` (um *string* vazio) ou uma coleção vazia (lista, tupla, etc.) são considerados `False`. Outros valores são considerados `True`. 
+
+```python
+print(0 or 10)  # imprime: 10
+print(10 or 0)  # imprime: 10
+print(None or 10)  # imprime: 10
+print(10 or None)  # imprime: 10
+print(None or 0)  # imprime: 0
+print(0 or None)  # imprime: None
+```
+
+Por conta disso, você pode se deparar com a seguinte expressão:
 
 ```
 a = a or b # é o mesmo que: a = a if a else b
@@ -55,5 +66,13 @@ def quadrado(x, y, tamanho=None):
     # Isso significa que se tamanho for 0 ou `None` então tamanho deve passar a valer 10:
     # Equivalente a:
     # tamanho = tamanho if tamanho else 10
+    rect(x, y, tamanho, tamanho)
+```
+
+Se `0` for um valor válido para o tamanho, melhor usar assim:
+
+```python
+def quadrado(x, y, tamanho=None):
+    tamanho = tamanho if tamanho is not None else 10
     rect(x, y, tamanho, tamanho)
 ```
