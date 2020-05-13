@@ -58,9 +58,9 @@ def olho(x, y, tamanho):  # parâmetros x, y, tamanho
 
 #### Recapitulando
 
-- **Variáveis globais** - Tradicionalmente criadas no início do *sketch*, e fora de qualquer função (incluindo `setup()` e `draw()`) são conhecidas em qualquer parte do código. Para criar ou alterar uma variável global dentro de uma função, em Python, é preciso usar a instrução `global` antes!
+- **Variáveis globais** - Frequentemente criadas no início do *sketch*, e fora de qualquer função (incluindo `setup()` e `draw()`) são variaveis que podem ser consultadas em qualquer parte do código. É possível criar ou alterar uma variável global dentro de uma função, mas para isso, em Python, é necessária a instrução `global` antes!
 
-- **Variáveis locais** - São criadas dentro de uma função e, assim como os nomes dos parâmetros, pertencem ao escopo local da função.
+- **Variáveis locais** - Criadas dentro de uma função e, assim como os nomes dos parâmetros, variáveis locais são nomes que  pertencem ao escopo local da função em que foram criados.
 
 #### Mais um exemplo, com variáveis globais e locais
 
