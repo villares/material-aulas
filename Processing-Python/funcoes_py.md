@@ -20,14 +20,21 @@ def funcao_com_resultado(a): # esta função tem um parâmetro
 
 ```python
 nome_da_funcao(valor, outro_valor) # esta função precisa de dois argumentos
+# um exemplo que já vimos
+fill(255, 100)  # pede preenchimento branco tranlúcido
 
 outra_funcao() # esta função não requer argumentos
+# um exemplo que já vimos
+noFill()  # desliga o preenchimento das formas a ser desenhadas
 
-a = funcao_com_resultado(valor)  # o resultado da função pode ser usado num atribuição
-
+# O resultado de uma função pode ser usado numa atribuição, ou dentro de outra estrutura
+a = funcao_com_resultado(valor)
+# um exemplo que já vimos
+r = random(256)
+fill(random(256), random(256), random(256))
 ```
 
-Os parâmetros, quando existem, recebem os valores dos argumentos usados quando a função é chamada.
+Os parâmetros, quando existem, são nomes lá dentro da definição da função, que recebem os valores dos argumentos usados quando a função é chamada.
 
 ### Exemplo da função `olho()`
 
@@ -35,11 +42,13 @@ Os parâmetros, quando existem, recebem os valores dos argumentos usados quando 
 def setup():
     size(400, 400)
     background(0) # cor do fundo 
+    # chamando a função olho várias vezes
     olho(300, 100, random(50, 100)) # x, y, tamanho sorteado
     olho(100, 200, random(10, 150)) 
     olho(200, 300, random(10, 150))
 
-def olho(x, y, tamanho) :
+# definindo a função olho
+def olho(x, y, tamanho):
     """Olho precisa de 3 parâmetros"""
     noStroke()
     fill(255)
@@ -74,8 +83,6 @@ Da mesma maneira todo o tipo de manipulação de valores pode ser "encapsulada" 
 def media(a, b):
      return (a + b) / 2.
 ```
-
-
 
 #### Glossário
 
