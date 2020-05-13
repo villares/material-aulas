@@ -11,19 +11,23 @@ Opcionalmente, podemos definir que, senão (`else`), quando a condição "choven
 ## Sintaxe `if` e `if`/`else`
 
 ``` python
-if chovendo:            # a condição "chovendo" é avaliada como true (verdadeiro) ou false (falso)
-    levarGuardaChuva()  # se verdadeira a condição, então este bloco de código será executado
-                        # termina o bloco do “se/então”, continua o passeio.
+# a condição "chovendo" é avaliada como true (verdadeiro) ou false (falso)
+if chovendo:
+    # se verdadeira a condição, então este bloco de código será executado
+    levarGuardaChuva()  
+# termina o bloco do “se/então”, continua o passeio.
 ```
 ![condicional](https://arteprog.space/programacao-criativa/assets/imagens/condicional-sem-else.jpg)
 
 
 ``` python
-if chovendo:            # a condição "chovendo" é avaliada como True (verdadeiro) ou False (falso)
-    levarGuardaChuva()  # se verdadeira a condição, então este bloco de código será executado
-else:                   # termina o “se/então” e começa o “senão”
-    levarOculos()       # este bloco será executado apenas quando "chovendo" é falso
-                        # termina o bloco do “senão”, continua o passeio.
+# a condição "chovendo" é avaliada como True (verdadeiro) ou False (falso)
+if chovendo:
+    # se verdadeira a condição, então este bloco de código será executado
+    levarGuardaChuva() 
+else:               # termina o “se/então” e começa o “senão”
+    levarOculos()   # este bloco será executado apenas quando "chovendo" é falso
+# termina o bloco do “senão”, continua o passeio.
 ```
 ![condicional](https://arteprog.space/programacao-criativa/assets/imagens/condicional-com-else.jpg)
 
@@ -37,16 +41,20 @@ def setup():
     size(200, 200)
 
 def draw():
-    if mouseY < 100:    # se a posição Y do mouse for menor que 100, o mouse estiver perto do topo da tela
-        fill(255)       # então pede preenchimento branco (só executa quando mouseY é menor que 100)
-    else:               # termina o bloco “se/então” e começa o do “senão”
-        fill(100)       # preenchimento cinza 100 (só executa quando mouseY não é menor que 100)
-                        # termina o bloco do “senão”    
-    if mousePressed:                    # Se o mouse estiver pressionado
+    # se a posição Y do mouse for menor que 100, o mouse estiver perto do topo da tela
+    if mouseY < 100:    
+        fill(255)  # então pede preenchimento branco (só executa quando mouseY é menor que 100)
+    else:          # termina o bloco “se/então” e começa o do “senão”
+        fill(100)  # preenchimento cinza 100 (só executa quando mouseY não é menor que 100)
+                   # termina o bloco do “senão”
+    # Se o mouse estiver pressionado
+    if mousePressed:                    
         ellipse(mouseX, mouseY, 10, 10) # Então desenha um círculo na posição do mouse
-                                        # termina o bloco (repare que não faz nada se o mouse estiver solto)
-    if keyPressed and key == 'a':    # Se uma tecla foi precionada E a tecla foi o caractere 'a'
-        background(200)              # Apague a tela com um fundo cinza (só executa sob as condições acima)
+    # termina o bloco (repare que não faz nada se o mouse estiver solto)
+    
+    # Se uma tecla foi precionada E a tecla foi o caractere 'a'
+    if keyPressed and key == 'a':    
+        background(200)  # Apague a tela com um fundo cinza (só executa sob as condições acima)
 ```
 
 ## Comparações com operadores relacionais, operadores lógicos e outros casos 
