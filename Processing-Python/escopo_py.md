@@ -12,17 +12,21 @@ Essas variáveis podem ser usadas ao longo de todo o programa. Se você desejar 
 x = 0  # x é uma variável global
 
 def setup():
-    size(500, 500)
+    size(256, 256)
+    background(0, 0, 200)
 
 def draw():
     # Podemos usar/ler o valor da variável global x.
-    ellipse(x, height / 2, 10, 10)
+    ellipse(x, height / 2, 100, 100)
     
 def keyPressed():
     # Queremos alterar o valor da variável global x. 
     global x 
     x = x + 1
 ```
+
+![keyPressed](assets/escopo_teclado.gif)
+
 
 ## Variáveis locais
 
@@ -51,12 +55,14 @@ def olho(x, y, tamanho):  # parâmetros x, y, tamanho
 
 #### Mais um exemplo, com variáveis globais e locais
 
+![vibrando](assets/escopo.gif)
+
 ```python
 y = 100  # y é uma variável global, pode ser usada em qualquer ponto do programa.
 
 def setup():
     global x # para criar uma variável global x aqui no setup()
-    size(200, 200)
+    size(256, 256)
     x = width / 2
 
 def draw():
@@ -80,9 +86,9 @@ O uso indicriminado de variáveis globais viola certos princípios da "boa engen
 
 [**variável local**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:variável%20local) Uma variável definida dentro de uma função. Uma variável local só pode ser usada dentro da sua função.
 
-[variável global](https://penseallen.github.io/PensePython2e/11-dicionarios.html#termo:variável%20global) Variável definida fora de uma função. As variáveis globais podem ser acessadas de qualquer função.
+[**variável global**](https://penseallen.github.io/PensePython2e/11-dicionarios.html#termo:variável%20global) Variável definida fora de uma função. As variáveis globais podem ser acessadas de qualquer função.
 
-[instrução `global`](https://penseallen.github.io/PensePython2e/11-dicionarios.html#termo:instrução%20global) Instrução que declara um nome de variável global.
+[**instrução `global`**](https://penseallen.github.io/PensePython2e/11-dicionarios.html#termo:instrução%20global) Instrução que declara um nome de variável global.
 
 ---
 Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
