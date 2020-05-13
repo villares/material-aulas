@@ -86,9 +86,9 @@ def draw():
 
 É comum escutarmos que devemos usar variáveis globais com parcimônia, usadas descuidadamente, elas criam o risco de alterarmos inadvertidamente valores em pontos inesperados do programa.
 
-Em projetos grandes, e com muitos programadores, o uso de variáveis globais é evitado, com o argumento é de que seu uso viola certas "boas práticas" de engenharia de software. Por exemplo, é considerado desejável o máximo encapsulamento das partes de um programa, e sento elas independentes, não necessitam variáveis globais. Mesmo assim, em certos contextos, elas são usadas.
+Em projetos grandes, e com muitos programadores, o uso de variáveis globais é evitado, com o argumento é de que seu uso viola certas "boas práticas" de engenharia de software. Por exemplo, é considerado desejável o máximo encapsulamento das partes de um programa, e sendo elas independentes, não vão precisar de variáveis globais. Mesmo assim, em certos contextos, variáveis globais são usadas.
 
-Em pequenos *sketches* você não deve se preocupar com isso! Use variáveis globais quando precisar e só fique atento às suas modificações. Um erro comum é também criar uma variável local de mesmo nome que uma global, por esquecer de escrever a instrução `global` de Python dentro de uma função.
+Em *sketches*, programas com propósitos visuais raramente muito grandes, você não deve se preocupar com isso! Use variáveis globais quando precisar e só fique atento às suas modificações. Um erro comum é também criar uma variável local de mesmo nome que uma global, por esquecer de escrever a instrução `global` de Python dentro de uma função.
 
 #### Glossário
 
