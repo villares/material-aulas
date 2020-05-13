@@ -16,6 +16,7 @@ Este material é baseado em **Processing modo Python**, uma ferramenta livre de 
   - [O que é indentação?](Processing-Python/indentacao.md)  
 - [Condicionais (`if` e `else`)](Processing-Python/condicionais_py.md)
   - [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](Processing-Python/atribuicao-e-comparacao.md)
+  - [Condições aninhadas e outras estruturas condicionais](Processing-Python/condicionais_2.md)
 - [Movimento: uma animação simples usando `setup()` e `draw()`](Processing-Python/movimento_py.md)
   - [Escopo de variáveis (local e global)](Processing-Python/escopo_py.md)
 - [Aleatoriedade: `random` e números 'sorteados'](Processing-Python/aleatoriedade_1.md)

@@ -12,16 +12,16 @@ Executando a função `range()` com o argumento 10, `range(10)`, vamos obter uma
 <details>
   <summary>clique para ver a resposta</summary>
 
-`[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]`
+<code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</code>
 </details>
 
 #### Qual você acha que é o resultado de `range(1, 11)`?
 <details>
   <summary>clique para ver a resposta</summary>
 
-`[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`
+<code>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</code>
 
-Podemos usar `range(parada)` ou `range(inicio, parada)`, o número início está incluso, o número de parada não é incluso.
+Podemos usar <code>range(parada)</code> ou <code>range(inicio, parada)</code>, o número início está incluso, o número de parada não está incluso.
 </details>
 
 
@@ -33,14 +33,14 @@ Usando a estrutura `for` podemos fazer uma ação para cada número produzido pe
 
 Em cada ciclo um item da coleção é atribuido a uma variável, cujo nome vem logo após o `for` e antes do `in`. No bloco indentado de código acontece a ação usando esse valor. Você consegue imaginar o resultado do código a seguir?
 
-```pyde
+```python
 for n in range(10): # para cada número do range(10) 
     print(n)        # n vai ter um valor diferente a cada ciclo
 ```
 <details>
   <summary>clique para ver o resutado no console</summary>
 
-```
+<pre>
 0
 1
 2
@@ -49,15 +49,15 @@ for n in range(10): # para cada número do range(10)
 5
 6
 7
-7
+8
 9
-```
+</pre>
 </details>
 
 É tradicional usar certos nomes de variável `i`, `j` e `k`, por exemplo, para armazenar números de 'contadores' ou 'índices' que vão variando a cada volta do laço `for`.
 
 Agora outro exemplo usando `range()` com efeito visual.
-```pyde
+```python
 for i in range(14):
     y = 10 + 5 * i
     line(30, y, 80, y)
@@ -67,35 +67,36 @@ for i in range(14):
 <details>
   <summary>clique para ver os resultados</summary>
 
-![linhas paralelas](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/lines.png)
-```
+<img src= "https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/lines.png">
+
+<pre>
 i: 0   y: 10 # início
 i: 1   y: 15 # 10 + 5 * 1
 i: 2   y: 20
 i: 3   y: 25
 ...
 i: 13  y: 75 # final
-```
+</pre>
 </details>
 
 #### Você conseguiria escrever um `for` para desenhar as linhas na vertical?
 <details>
   <summary>clique para ver a resposta</summary>
 
-```pyde
+<pre>
 for j in range(14):
     x = 10 + 5 * j
     line(x, 30, x, 80)
-```
+</pre>
 
-![verticais](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/verticais.png)
+<img src="https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/verticais.png">
 </details>
 
 ### Repetições simples
 
 Algumas vezes nem vamos usar os números! Só queremos repetir a operação, então em vez de guardar o número em uma variável nomeada com `x`, `y`, `n` ou `i` usamos uma variável com o curioso nome`_` (*underscore*, ou como muitos falam 'underline'). Isso é uma dica de quem está escrevendo o código de que o valor da variável vai ser desprezado. Exemplo:
 
-```pyde
+```python
 for _ in range(3): # repita 3 vezes!
    print("viva!")
 ```
@@ -103,11 +104,11 @@ for _ in range(3): # repita 3 vezes!
 <details>
   <summary>clique para ver o resutado no console</summary>
 
-```
+<pre>
 viva!
 viva!
 viva!
-```
+</pre>
 </details>
 
 #### Você consegue imaginar um desenho usando esse tipo de repetição e números [pseudo-aleatórios](aleatoriedade_1.md) com `random()`?
@@ -116,7 +117,7 @@ viva!
 
 A função `range()` aceita argumentos na forma `range(início, parada, passo)`, *início* será o primeiro número, e a sequência para antes do número *parada*, aumentando com o número do *passo*, veja este exemplo com resultado visual com linhas:
 
-```pyde
+```python
 for x in range(10, 80, 5): # x começa valendo 10 e termina valendo 75
     line(x, 30, x, 80)     # x aumenta de 5 em 5
 ```
@@ -125,7 +126,7 @@ for x in range(10, 80, 5): # x começa valendo 10 e termina valendo 75
 <details>
   <summary>clique para ver o resutado visual</summary>
 
-![verticais](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/verticais.png)
+<img src="https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/verticais.png">
 </details>
 
 ## Um pouco sobre tuplas e listas
@@ -143,7 +144,7 @@ Exemplo de uma lista:
 ```python
 meus_pokemon = ["Fomantis", "Eevee"]
 ```
-A principal difereça,além do fato de que a tupla foi construída com parenteses `( ,)`e a lista com colchetes `[ ,]`, é que **uma lista permite que seus itens sejam alterados**, itens sejam adicionados, itens podem ser removidos, ou, os itens como um todo podem ser reordenados.
+A principal difereça, além do fato de que a tupla foi construída com parenteses `( ,)`e a lista com colchetes `[ ,]`, é que **uma lista permite que seus itens sejam alterados**, itens podem ser adicionados, removidos, ou, como um todo, podem ser reordenados.
 
 ```python
 meus_pokemon = ["Fomantis", "Eevee"]
@@ -164,20 +165,20 @@ Já **uma tupla não pode ter itens removidos, addicionados ou ser reordenada**,
 
 Tuplas são mais 'econômicas' em termos computacionais e são bastante usadas quando a ordem dos elementos tem significado, por exemplo podemos fazer uma tupla com coordenadas x e y, o primeiro item 'significa' um valor no eixo X e o segundo um valor no eixo Y:
 
-```pyde
+```python
 posicao = (150, 50)  #  x: 150 y: 50
 ```
 
 Podemos 'desempacotar' uma tupla, atribuindo os seus valores a variáveis, desde que o número de variáveis seja igual ao número de itens:
 
-```pyde
+```python
 posicao = (100, 150) 
 x, y = posicao # x passa a valer 100 e y 150
 ```
 
 E é possível fazer tuplas com tuplas dentro, listas com listas dentro, listas com tuplas dentro e etc. Vamos experimentar fazer uma lista de tuplas representando as coordenadas de alguns pontos:
 
-```pyde
+```python
 pontos = [(10, 10), (100, 20), (200, 50), (50, 150)]
 ```
 
@@ -185,7 +186,7 @@ pontos = [(10, 10), (100, 20), (200, 50), (50, 150)]
 
 Finalmente vamos usar a estrutura de iteração, o *loop* `for`, para repetir a ação de desenhar um círculo, usando as coordenadas das tuplas de coordenadas na lista `pontos`:
 
-```pyde
+```python
 def setup():
     size(400, 400)
     pontos = [(10, 10), (100, 20), (200, 50), (50, 150)]
