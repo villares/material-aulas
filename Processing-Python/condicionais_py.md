@@ -2,7 +2,7 @@
 
 ## As bifurcações no caminho de execução do código
 
-Imgine o seguinte cenário...
+Imagine o seguinte cenário...
 
 Saindo de casa, se (`if`) está chovendo, a condição "chovendo" é verdadeira (`True`), então levo o guarda-chuva;
 
@@ -36,24 +36,27 @@ else:               # termina o “se/então” e começa o “senão”
 
 ``` python
 def setup():
-    size(200, 200)
+    size(256, 256)
+    background(0, 100, 0)  # fundo verde
 
 def draw():
-    # se a posição Y do mouse for menor que 100, o mouse estiver perto do topo da tela
-    if mouseY < 100:    
-        fill(255)  # então pede preenchimento branco (só executa quando mouseY é menor que 100)
+    # se a posição Y do mouse for menor que 128, o mouse estiver perto do topo da tela
+    if mouseY < 128:    
+        fill(255)  # então pede preenchimento branco (se mouseY é menor que 128)
     else:          # termina o bloco “se/então” e começa o do “senão”
-        fill(100)  # preenchimento cinza 100 (só executa quando mouseY não é menor que 100)
+        fill(100)  # preenchimento cinza 100 (se mouseY não é menor que 128)
                    # termina o bloco do “senão”
+                   
     # Se o mouse estiver pressionado
     if mousePressed:                    
-        ellipse(mouseX, mouseY, 10, 10) # Então desenha um círculo na posição do mouse
+        ellipse(mouseX, mouseY, 50, 50) # desenha um círculo na posição do mouse
     # termina o bloco (repare que não faz nada se o mouse estiver solto)
     
     # Se uma tecla foi precionada E a tecla foi o caractere 'a'
     if keyPressed and key == 'a':    
-        background(200)  # Apague a tela com um fundo cinza (só executa sob as condições acima)
+        background(0, 100, 0)  # apague a tela com um fundo verde
 ```
+![exemplo condicional](assets/condicional.gif)
 
 ## Comparações com operadores relacionais, operadores lógicos e outros casos 
 
