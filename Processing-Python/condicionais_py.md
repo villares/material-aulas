@@ -64,7 +64,7 @@ def draw():
 ```
 ![exemplo condicional](assets/condicional.gif)
 
-## Quadro de operadores 
+### Quadro de operadores 
  
 |operador | uso | descrição |
 |:---:  |:---: |--- |
@@ -79,11 +79,12 @@ def draw():
 | `not` | `not a` | **não** *a* verdadeiro resulta falso, e **não** *a* falso resulta verdadeiro |
 | `in` | `a in b` | verdadeiro se elemento *a* **existe dentro** da coleção *b* |
 
-### Assuntos relacionados
+## Assuntos relacionados
 
 * [Condições aninhadas e outras estruturas condicionais](condicionais_2.md)
 
-## Glossáriod
+## Glossário
+
 [**expressão booleana**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:expressão%20booleana) Uma expressão cujo valor é True (verdadeiro) ou False (falso).
 
 [**operador relacional**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:operador%20relacional) Um destes operadores, que compara seus operandos: `==`, `!=`, `>`, `<`, `>=` e `<=`.
