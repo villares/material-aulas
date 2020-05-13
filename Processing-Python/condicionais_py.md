@@ -30,9 +30,15 @@ else:               # termina o “se/então” e começa o “senão”
 ```
 <img src="https://arteprog.space/programacao-criativa/assets/imagens/condicional-com-else.jpg" title="Exemplo de if/else - desenho: Monica Rizzolli">
 
-## Exemplos
+## Comparações com operadores relacionais e operadores lógicos
 
-![exemplo1](https://arteprog.space//programacao-criativa/assets/imagens/condicional1.png)
+Os valores `True` (verdadeiro) e `False` (falso) são o resultado de expressões booleanas (*boolean*, em homenagem a [George Boole](https:#pt.wikipedia.org/wiki/George_Boole)) como as comparações com operadores relacionais, `==` (igualdade), `>` (maior que) ou ainda operações lógicas **e** (`and`), **ou** (`or`) e **não** (`not`). 
+
+`True` e `False` podem ser armazenados em variáveis, representando um *estado* no programa, são os mesmos valores que obtemos quando usamos as variáveis de sistema *mousePressed* e *keyPressed*, por exemplo.
+
+### Um exemplo completo
+
+No exemplo a abaixo usamos uma estrutura `if`/ `else` para escolher a cor de preenchimento dos círculos, como resultado da comparação `mouseY < 128`. Usamos o valor booleano de `mousePressed` (`True` ou `False`) em um `if` que determina se algum círculo é desenhado ou não. Por fim usamos um `if` que combina dois valores usando `and`(**e**), `keyPressed` e a acomparação de igualdade `==`, para decidir se deve apagar o desenho (`keyPressed and key == 'a'`).
 
 ``` python
 def setup():
@@ -58,11 +64,7 @@ def draw():
 ```
 ![exemplo condicional](assets/condicional.gif)
 
-## Comparações com operadores relacionais, operadores lógicos e outros casos 
-
-Os valores `True` (verdadeiro) e `False` (falso) são o resultado de expressões booleanas (*boolean*, em homenagem a [George Boole](https:#pt.wikipedia.org/wiki/George_Boole)) como as comparações com operadores relacionais, `==` (igualdade), `>` (maior que) ou ainda operações lógicas **e** (`and`), **ou** (`or`) e **não** (`not`). 
-
-Podem ser armazenados em variáveis, representando um *estado* no programa, e são os mesmos valores obtidos quando usamos as variáveis de sistema *mousePressed* e *keyPressed*, por exemplo.
+## Quadro de operadores 
  
 |operador | uso | descrição |
 |:---:  |:---: |--- |
