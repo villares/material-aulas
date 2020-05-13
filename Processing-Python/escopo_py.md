@@ -37,6 +37,11 @@ Os parâmetros são os nomes que recebem os valores, argumentos, usados na chama
 ### Exemplo de uma variável local
 
 ```python
+def setup():
+    size(256, 256)
+    background(200, 200, 0)
+    olho(128, 128, 200)
+
 def olho(x, y, tamanho):  # parâmetros x, y, tamanho
     # 'tamanho' é um nome que funciona como uma variável local.
     metade = tamanho / 2  # 'metade' é uma variável local.
@@ -47,6 +52,8 @@ def olho(x, y, tamanho):  # parâmetros x, y, tamanho
     ellipse(x, y, metade - 2, metade - 2)
 ```
 
+![olho](asstes/escopo_olho.png)
+
 #### Recapitulando
 
 - **Variáveis globais** - Tradicionalmente criadas no início do *sketch*, e fora de qualquer função (incluindo `setup()` e `draw()`) são conhecidas em qualquer parte do código. Para criar ou alterar uma variável global dentro de uma função, em Python, é preciso usar a instrução `global` antes!
@@ -54,8 +61,6 @@ def olho(x, y, tamanho):  # parâmetros x, y, tamanho
 - **Variáveis locais** - São criadas dentro de uma função e, assim como os nomes dos parâmetros, pertencem ao escopo local da função.
 
 #### Mais um exemplo, com variáveis globais e locais
-
-![vibrando](assets/escopo.gif)
 
 ```python
 y = 100  # y é uma variável global, pode ser usada em qualquer ponto do programa.
@@ -75,10 +80,15 @@ def draw():
     if x > width:
         x = 0
 ```
+![vibrando](assets/escopo.gif)
+
+### Conselhos sobre variáveis globais
 
 É comum escutarmos que devemos usar variáveis globais com parcimônia, usadas descuidadamente, elas criam o risco de alterarmos inadvertidamente valores em pontos inesperados do programa.
 
-O uso indicriminado de variáveis globais viola certos princípios da "boa engenharia de software", como o encapsulamento das funcionalidades em partes independentes. Em pequenos *sketches* você não deve se preocupar muito com isso!
+Em projetos grandes, e com muitos programadores, o uso de variáveis globais é evitado, com o argumento é de que seu uso viola certas "boas práticas" de engenharia de software. Por exemplo, é considerado desejável o máximo encapsulamento das partes de um programa, e sento elas independentes, não necessitam variáveis globais. Mesmo assim, em certos contextos, elas são usadas.
+
+Em pequenos *sketches* você não deve se preocupar com isso! Use variáveis globais quando precisar e só fique atento às suas modificações. Um erro comum é também criar uma variável local de mesmo nome que uma global, por esquecer de escrever a instrução `global` de Python dentro de uma função.
 
 #### Glossário
 
