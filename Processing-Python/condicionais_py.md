@@ -11,7 +11,7 @@ Opcionalmente, podemos definir que, senão (`else`), quando a condição "choven
 ## Sintaxe `if` e `if`/`else`
 
 ``` python
-# a condição "chovendo" é avaliada como true (verdadeiro) ou false (falso)
+# a condição "chovendo" é avaliada como True (verdadeiro) ou False (falso)
 if chovendo:
     # se verdadeira a condição, então este bloco de código será executado
     levarGuardaChuva()  
