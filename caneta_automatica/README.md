@@ -19,6 +19,8 @@ inicie_caneta()  # precisa ser depois do 'size()'
 
 #### Desenhando um quadrado
 
+Usando o laço de repetição `for`.
+
 ```pyde
 from caneta_automatica import *
 
@@ -32,7 +34,7 @@ for i in range(4):  # repete 4 vezes:
 
 ![quadrado](quadrado.png)
 
-Equivalente, mas agora com funções.
+Equivalente, mas agora definindo mais funções.
 
 ```pyde
 from caneta_automatica import *
@@ -52,6 +54,8 @@ def quadrado(tamanho):
 ```
 
 #### Uma flor recursiva
+
+Recursividade acontece quando durante a execução de uma função nós pedimos a execução da própria função. Esta função flor, chama a função flor se o tamanho dela for maior que 5. 
 
 ```pyde
 from caneta_automatica import *
