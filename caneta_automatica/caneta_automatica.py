@@ -3,8 +3,8 @@
 # abav.lugaralgum.com/material-aulas/Processing-Python/modulos
 
 """
-Módulo caneta automática tem funções que lembram a tartaruga do logo
-permitem desenhar "arrastando uma caneta" em um papel virtual
+Módulo caneta automática tem funções que lembram a tartaruga da
+linguagem Logo, permitem desenhar "arrastando uma caneta".
 
 Cole este código numa aba chamada caneta_automatica.py
 e escreva:
