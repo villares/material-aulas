@@ -1,21 +1,21 @@
 # -*- coding: utf-8 -*-
 # Precisa ter essa linha estranha aí em cima, saiba mais em 
 # abav.lugaralgum.com/material-aulas/Processing-Python/modulos
-
 """
 Módulo caneta automática tem funções que lembram a tartaruga da
 linguagem Logo, permitem desenhar "arrastando uma caneta".
 
-Cole este código numa aba chamada caneta_automatica.py
-e escreva:
+Crie uma aba chamada caneta_automatica.py e cole este código todo
+depois escreva na primeira aba:
+
 from caneta_automatica import *
 
-- chame inicie_caneta() depois de size()
+- Use `size(__, ___)`, com o sem `def setup():`
+- Em seguida chame `inicie_caneta()`
 
-# começa com o traço ligado
+# A caneta começa com o traço ligado
 suba_caneta()  # desliga o traço
 baixe_caneta()  # volta o traço
-
 ande(passos)  # em pixels
 vire(angulo)  # em graus
 esquerda()  # 90 graus
