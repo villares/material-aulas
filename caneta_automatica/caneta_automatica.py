@@ -10,7 +10,7 @@ depois escreva na primeira aba:
 
 from caneta_automatica import *
 
-- Use `size(__, ___)`, com o sem `def setup():`
+- Use `size(__, ___)`, com ou sem `def setup():`
 - Em seguida chame `inicie_caneta()`
 
 # A caneta começa com o traço ligado
