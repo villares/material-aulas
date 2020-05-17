@@ -49,8 +49,6 @@ O operador `%` é usado para obter o resto da divisão do número do frame (`fra
 
 Por fim vejamos a função `redraw()`, que quando  usada, marca para que seja executado um único *frame* de `draw()`. No exemplo abaixo, a repetição de `draw()` está pausada por conta de `noLoop()` em `setup()`.
 
-
-
 ![](assets/no_loop_redraw.gif)
 
 > Um novo ciclo de `draw()` é executado quando o mouse for clicado.
