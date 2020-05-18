@@ -25,6 +25,7 @@ direita()  # 90 graus
 def inicie_caneta():
     global caneta
     caneta = True  # a caneta começa abaixada
+    resetMatrix()
     translate(width / 2, height / 2)
     rotate(HALF_PI)  # rotate(radians(90))
 
