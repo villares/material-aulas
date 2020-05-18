@@ -88,9 +88,11 @@ A função `inicie_caneta()`prepara o terreno criando uma variável `caneta` que
 ```pyde
 def inicie_caneta():
     global caneta  # avisa que este é um nome global
-    # vamos cria se não houver o nome 'caneta'
+    # cria se não houver o nome 'caneta'
     caneta = True  # e apontar para o valor True 
-    translate(width / 2, height / 2)  # muda o 0, 0 pro meio
+    # zera transformações anteriores e põe a origim no meio 
+    resetMatrix()
+    translate(width / 2, height / 2)  # muda o 0, 0
     rotate(HALF_PI)  # vira o sistema de coordenadas 90 graus
     # no estado inicial ande(n) faz translate(0, -n), para a direita
 ```
