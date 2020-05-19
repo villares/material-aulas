@@ -69,21 +69,21 @@ Nesta tabela apresento apenas alguns dos tipos que vamos encontrar programando c
 | ---      | --- | --- |
 | `int`     | número inteiro, como `-5`, `0` ou `42`| Py |
 | `float`  | número com ponto flutante, como `.5` `3.` ou `6.267` (note que o separador decimal é o ponto)| Py |
-| `bool`| *boolean* (booleano) é o tipo dos valores `True` ou `False`| Py |
-| `PImage` | imagens raster/bitmap, podem ser criadas/carregadas na memória com `loadImage(arquivo_de_imagem)` | P5 |
-| `PShape` | contém formas vetorais, como as descritas num SVG, pode ser criado com `loadShape(arquivo)`| P5 |
-| `PVector`| vetor, usado geralmente para descrever posição, velocidade ou aceleração (em 2 ou 3 dimensões) | P5 |
-| `string` | cadeia de caracteres, são sequencias de caracteres ou glifos, no código são criados com aspas: `“texto”` | Py |
+| `bool`| booleano é o tipo dos valores `True` ou `False`| Py |
+| `string`/`unicode` | cadeia de caracteres, são sequencias de glifos, podem ser criados com aspas: `“texto”` ou `u"maçã" (um string unicode)` | Py |
 | `list`   | lista, coleção ordenada de itens, construída com `list(itens)` ou com colchetes no código `[ ,]` | Py |
 | `tuple`  | coleção ordenada e imutável de itens, construída com `tuple(itens)` ou com parenteses no código `( ,)` | Py |
 | `set`    | conjunto não ordenado de itens 'hasheáveis', com `set(itens)` ou com chaves no código `{ ,}` | Py |
 | `dict`   | dicionário um 'mapeamento' de chaves (*keys*) e valores, criado com `dict()` ou pares `{chave : valor,}` | Py |
 | `None`   | o "nenhum" é de um tipo especial único `None`e é devolvido por funções que não devolvem nada  | Py |
+| `PImage` | imagens raster/bitmap, podem ser criadas/carregadas na memória com `loadImage(arquivo_de_imagem)` | P5 |
+| `PShape` | contém formas vetorais, como as descritas num SVG, pode ser criado com `loadShape(arquivo)`| P5 |
+| `PVector`| vetor, usado geralmente para descrever posição, velocidade ou aceleração (em 2 ou 3 dimensões) | P5 |
 | `color`<sup>＊</sup>| uma cor é um `int` disfarçado, que pode ser construídao com `color(R,G,B)` ou `color(R,G,B,Alfa)`| P5 |https://abav.lugaralgum.com/material-aulas/Processing-Python/tipagem_py.html
 
 > ＊ Preciso contar que a as cores não são um tipo 'de verdade', independente, são um jeito do Processing deixar as coisas mais elegantes pra nós, tem um termo em programação pra isso: 'açucar sintático' (*syntatic sugar*). Por baixo do capô as cores do Processing são apenas números inteiros grandes, com 4 býtes, para R, G, B e A (tansparência) respectivamente, a função `color()` monta esse número grande pra nós. É útil (mais fácil) pensar em cores como um tipo especial de valores, no Processing modo Java você declara o tipo `color` para variáveis e funções e parâmetros que vão trabalhar com cores.
 
-Existe um tipo relativamente importante que eu não mencionei aqui, `bytes` que lembra um *string* mas só com caracteres *ASCII*, e isso dá uma certa confusão, especialmente por estarmos usando Python 2, em que os *strings* não são originalmente *Unicode*, mas essa é uma discussão mais avançada que eu queria evitar neste primeiro momento.
+Existe uma discussão relativamente complexa mas na qual eu não vou entrar aqui, o tipo `bytes` do Processing lembra um *string* mas só com caracteres *ASCII*, e isso dá uma certa confusão, especialmente por estarmos usando Python 2, em que os *strings* não são necessariamente *Unicode*, como no Python 3, mas essa é uma questão avançada que eu queria evitar neste primeiro momento.
 
 ### Glossário
 
