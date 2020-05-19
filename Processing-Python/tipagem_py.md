@@ -1,8 +1,6 @@
 
 # Valores e seus tipos
 
-## Valores
-
 Quando fazemos uma atribuição, criando ou alterando uma variável, por exemplo `i = 10`, o `i` é um nome que aponta para um valor na memória do computador, `10`, e esse valor é de uma determinada categoria, de um *tipo*, neste caso, é um número inteiro, tipo *integer* que é normalmente abreviado como `int`. 
 
 Já `10.5`, `0.2` ou até mesmo `10.` (dez seguido de um ponto), são considerados números de ponto flutuante, *floating point* ou abreviadamente `float`.
@@ -11,7 +9,7 @@ Textos, que aparecem entre aspas quando no meio do código de um programa, como 
 
 Outro tipo importante que já encontramos é o booleano (*boolean*), com apenas os dois valores `True` ou `False` (verdadeiro ou falso), é o tipo dos valores resultantes das operações lógicas (como `and`,  `or` e `not`), comparações (como `==`, `!=`,  `>`, `<`, `>=` e etc.) ou ainda valores que indicam um estado (como `mousePressed` é verdadeiro ou falso dependendo do estado dos botões do mouse)
 
-### Valores, objetos, tipos e classes
+### Objetos, tipos e classes
 
 Em linguagens de programação que trabalham com a ideia de *orientação a objetos*, e especialmente em Python, os valores são *objetos* e usamos o termo *classe* e *tipo* de maneira mais ou menos intercambiável. A definição de uma classe estabelece as propriedades e comportamentos dos objetos de um certo tipo.
 
@@ -36,14 +34,14 @@ Os valores que usamos entre parênteses em uma chamada de função (argumentos, 
 É necessário então converter os dados de um tipo para outro, como por exemplo o número 'sorteado' pela função `random()` que é um `float` pode ser convertido em `int`, sendo truncado (encurtado) perdendo a parte não inteira. Números podem ser convertidos em texto (*string*) usando `str(num)` ou com `'{}'.format(num)`.
 
 ```python
-R = int(random(256))
-println("Red: " + str(R))  # ou println("Red: {}".format(R))
+r = int(random(256))
+println("Red: " + str(r))  # ou println("Red: {}".format(r))
 ```
 ### Como saber os tipos dos argumentos
 
 Para descobrir quais são os tipos dos argumentos que devemos usar com uma determinada função, precisamos ler a documentação (no caso de funções embutidas, pré-definidas, ou de bibliotecas externas) ou então olhar a definição da função. 
 
-### Tipos dos valores devolvidos por uma função
+### Tipos dos valores devolvidos
 
 Da mesma forma, é do nosso interesse saber o tipo dos valores devolvidos por uma função. Isso também pode ser descoberto lendo a documentação, a definição da função, ou ainda usando `print(type(valor))`.
 
@@ -68,7 +66,7 @@ Nesta tabela apresento apenas alguns dos tipos que vamos encontrar programando c
 | tipo / classe | descrição | origem |
 | ---      | --- | --- |
 | `int`     | número inteiro, como `-5`, `0` ou `42`| Py |
-| `float`  | número com ponto flutante, como `.5` `3.` ou `6.267` (note que o separador decimal é o ponto)| Py |
+| `float`  | número de ponto flutante, como `.5` `3.` ou `6.267` (note que o separador decimal é o ponto)| Py |
 | `bool`| booleano é o tipo dos valores `True` ou `False`| Py |
 | `string`/`unicode` | cadeia de caracteres, são sequencias de glifos, podem ser criados com aspas: `“texto”` ou `u"maçã"` (este último um string Unicode) | Py |
 | `list`   | lista, coleção ordenada de itens, construída com `list(itens)` ou com colchetes no código `[ ,]` | Py |
@@ -98,7 +96,7 @@ Existe uma discussão relativamente complexa mas na qual eu não vou entrar aqui
 [**string**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:string) Um tipo que representa sequências de caracteres.
 
 ---
-Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
+Este material é baseado no mateMrial do curso https://arteprog.space/programacao-criativa/
 
 ---
 Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
