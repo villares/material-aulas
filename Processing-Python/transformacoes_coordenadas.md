@@ -65,7 +65,7 @@ def setup():
 
 ```
 
-Este é o código para desenhar a casa alterando sua posição. Veja todos os acréscimos que você precisa acompanhar.
+Este é o código para desenhar a casa alterando sua posição. Veja todos os acréscimos que você precisa fazer.
 
 ```python
 def casa(int x, int y):
