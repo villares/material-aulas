@@ -162,8 +162,8 @@ def draw():
              frameCount * 5 % 255,
              frameCount * 7 % 255)
         pushMatrix()
-        translate(100, 100)
-        rotate(radians(frameCount * 2    % 360))
+        translate(100, 100) 
+        rotate(radians(frameCount * 2 % 360))
         rect(0, 0, 80, 20)
         popMatrix()
 ```
