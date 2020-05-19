@@ -69,7 +69,7 @@ Nesta tabela apresento apenas alguns dos tipos que vamos encontrar programando c
 | ---      | --- | --- |
 | `int`     | número inteiro, como `-5`, `0` ou `42`| Py |
 | `float`  | número com ponto flutante, como `.5` `3.` ou `6.267` (note que o separador decimal é o ponto)| Py |
-| `boolean`| valores `True` ou `False`| Py |
+| `bool`| *boolean* (booleano) é o tipo dos valores `True` ou `False`| Py |
 | `PImage` | imagens raster/bitmap, podem ser criadas/carregadas na memória com `loadImage(arquivo_de_imagem)` | P5 |
 | `PShape` | contém formas vetorais, como as descritas num SVG, pode ser criado com `loadShape(arquivo)`| P5 |
 | `PVector`| vetor, usado geralmente para descrever posição, velocidade ou aceleração (em 2 ou 3 dimensões) | P5 |
