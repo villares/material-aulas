@@ -6,13 +6,13 @@
 ### Sintaxe para definição de funções
 ```python
 def nome_da_funcao(a, b): # esta função tem dois parâmetros: a e b
-     corpo_com_instruções_que_a_função_executa
+     corpo  # instruções que a função executa, usando valores dos parâmetros
      
 def outra_funcao(): # esta função não tem nenhum parâmetro
-     corpo_da_outra_função
+     corpo  # instruçÕes que a função executa
 
 def funcao_com_resultado(a): # esta função tem um parâmetro
-     corpo_da_outra_função_calcula_um_resultado
+     corpo  # instruções que calculam um valor/resultado
      return resultado
 ```
 
@@ -24,12 +24,12 @@ nome_da_funcao(valor, outro_valor) # esta função precisa de dois argumentos
 fill(255, 100)  # pede preenchimento branco tranlúcido
 
 outra_funcao() # esta função não requer argumentos
-# um exemplo que já vimos
+# um exemplo de função que não requer parâmetros que já vimos
 noFill()  # desliga o preenchimento das formas a ser desenhadas
 
 # O resultado de uma função pode ser usado numa atribuição, ou dentro de outra estrutura
 a = funcao_com_resultado(valor)
-# um exemplo que já vimos
+# um exemplo de função que devolve resultado que já vimos
 r = random(256)
 fill(random(256), random(256), random(256))
 ```
