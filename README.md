@@ -1,4 +1,3 @@
-
 ---
 
 ## material para cursos e oficinas ([repositório](https://github.com/villares/material-aulas/))
@@ -20,6 +19,8 @@ Este material é baseado em **Processing modo Python**, uma ferramenta livre de 
 - [Movimento: uma animação simples usando `setup()` e `draw()`](Processing-Python/movimento_py.md)
   - [Escopo de variáveis (local e global)](Processing-Python/escopo_py.md)
 - [Aleatoriedade: `random` e números 'sorteados'](Processing-Python/aleatoriedade_1.md)
+- [Declarando novas funções](Processing-Python/funcoes_py.md)
+  - [Funções recursivas](Processing-Python/recursao_py.md)
 - [Sequências e laços de repetição (iteração com `for`)](Processing-Python/lacos_py.md)
   - [Mais sobre sequências e fatias](Processing-Python/mais_sequencias.md)
   - [Grades retangulares: filas e colunas de elementos](Processing-Python/grades.md)
@@ -30,16 +31,16 @@ Este material é baseado em **Processing modo Python**, uma ferramenta livre de 
   - [Arrastando círculos](Processing-Python/arrastando_circulos.md)
   - [Rodinha do mouse (*mouse wheel*)](Processing-Python/rodinha_mouse.md)
   - [Parando o `draw()`](Processing-Python/no_loop.md)
+- [Transformações do sistema de coordenadas](transformacoes_coordenadas.md) - translação, rotação e mudança de escala
 - [Mais sobre aleatoriedade](Processing-Python/aleatoriedade_2.md)
 - [Textos no programa, no console e na tela (*strings*)](https://github.com/villares/material-aulas/blob/masterProcessing-Python/strings_py.md)
   - [Trabalhando com fontes e outros ajustes do texto](Processing-Python/tipografia.md)
-- [Declarando novas funções](Processing-Python/funcoes_py.md)
-  - [Funções recursivas](Processing-Python/recursao_py.md)
 - [Tipos de valores (inteiros, números de ponto flutuante, texto (*strings*))](Processing-Python/tipagem_py.md)
 - [Desenhando em 3D](Processing-Python/desenho-3D.md)
 
 #### Arquivos externos
 <!-- [Lendo um arquivo vetorial (SVG)](Processing-Python/usando_svg.md) -->
+
 - [Lendo arquivos de imagem (*bitmap/raster*)](Processing-Python/imagens_externas.md)
   - [Lendo todas as imagem de uma pasta](Processing-Python/imagens_externas_pasta.md)
 - [Lendo e escrevendo texto em arquivos (*file IO*)](Processing-Python/file_IO.md)
