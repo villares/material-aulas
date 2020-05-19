@@ -70,7 +70,7 @@ Nesta tabela apresento apenas alguns dos tipos que vamos encontrar programando c
 | `int`     | número inteiro, como `-5`, `0` ou `42`| Py |
 | `float`  | número com ponto flutante, como `.5` `3.` ou `6.267` (note que o separador decimal é o ponto)| Py |
 | `bool`| booleano é o tipo dos valores `True` ou `False`| Py |
-| `string`/`unicode` | cadeia de caracteres, são sequencias de glifos, podem ser criados com aspas: `“texto”` ou `u"maçã" (um string unicode)` | Py |
+| `string`/`unicode` | cadeia de caracteres, são sequencias de glifos, podem ser criados com aspas: `“texto”` ou `u"maçã"` (este último um string Unicode) | Py |
 | `list`   | lista, coleção ordenada de itens, construída com `list(itens)` ou com colchetes no código `[ ,]` | Py |
 | `tuple`  | coleção ordenada e imutável de itens, construída com `tuple(itens)` ou com parenteses no código `( ,)` | Py |
 | `set`    | conjunto não ordenado de itens 'hasheáveis', com `set(itens)` ou com chaves no código `{ ,}` | Py |
