@@ -63,7 +63,7 @@ minha_cor = cor_sorteada(255) # sorteia uma cor
 
 ## Alguns tipos/classes de valores/objetos
 
-Nesta tabela apresento apenas alguns dos tipos que vamos encontrar programando com Processing modo Python, vou marcar com "Py" as que são naturais do Python, mesmo que existam equivalentes no Processing modo Java, e "P5" as que vem do Processing, e não existem no Python sozinho.
+Nesta tabela apresento apenas alguns dos tipos que vamos encontrar programando com Processing modo Python, vou marcar com *Py* os que são naturais do Python, mesmo que existam equivalentes no Processing modo Java, e *P5* os que vem do Processing, e não existem no Python sozinho.
 
 | tipo / classe | descrição | origem |
 | ---      | --- | --- |
@@ -79,9 +79,11 @@ Nesta tabela apresento apenas alguns dos tipos que vamos encontrar programando c
 | `set`    | conjunto não ordenado de itens 'hasheáveis', com `set(itens)` ou com chaves no código `{ ,}` | Py |
 | `dict`   | dicionário um 'mapeamento' de chaves (*keys*) e valores, criado com `dict()` ou pares `{chave : valor,}` | Py |
 | `None`   | o "nenhum" é de um tipo especial único `None`e é devolvido por funções que não devolvem nada  | Py |
-| `color`<sup>＊</sup>| uma cor é um `int` disfarçado, que pode ser construídao com `color(R,G,B)` ou `color(R,G,B,Alfa)`| P5 |
+| `color`<sup>＊</sup>| uma cor é um `int` disfarçado, que pode ser construídao com `color(R,G,B)` ou `color(R,G,B,Alfa)`| P5 |https://abav.lugaralgum.com/material-aulas/Processing-Python/tipagem_py.html
 
 > ＊ Preciso contar que a as cores não são um tipo 'de verdade', independente, são um jeito do Processing deixar as coisas mais elegantes pra nós, tem um termo em programação pra isso: 'açucar sintático' (*syntatic sugar*). Por baixo do capô as cores do Processing são apenas números inteiros grandes, com 4 býtes, para R, G, B e A (tansparência) respectivamente, a função `color()` monta esse número grande pra nós. É útil (mais fácil) pensar em cores como um tipo especial de valores, no Processing modo Java você declara o tipo `color` para variáveis e funções e parâmetros que vão trabalhar com cores.
+
+Existe um tipo relativamente importante que eu não mencionei aqui, `bytes` que lembra um *string* mas só com caracteres *ASCII*, e isso dá uma certa confusão, especialmente por estarmos usando Python 2, em que os *strings* não são originalmente *Unicode*, mas essa é uma discussão mais avançada que eu queria evitar neste primeiro momento.
 
 ### Glossário
 
