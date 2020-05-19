@@ -20,6 +20,7 @@ Este material é baseado em **Processing modo Python**, uma ferramenta livre de 
   - [Escopo de variáveis (local e global)](Processing-Python/escopo_py.md)
 - [Aleatoriedade: `random` e números 'sorteados'](Processing-Python/aleatoriedade_1.md)
 - [Declarando novas funções](Processing-Python/funcoes_py.md)
+  - [Transformações do sistema de coordenadas](Processing-Python/transformacoes_coordenadas.md) - translação, rotação e mudança de escala
   - [Funções recursivas](Processing-Python/recursao_py.md)
 - [Sequências e laços de repetição (iteração com `for`)](Processing-Python/lacos_py.md)
   - [Mais sobre sequências e fatias](Processing-Python/mais_sequencias.md)
@@ -31,7 +32,6 @@ Este material é baseado em **Processing modo Python**, uma ferramenta livre de 
   - [Arrastando círculos](Processing-Python/arrastando_circulos.md)
   - [Rodinha do mouse (*mouse wheel*)](Processing-Python/rodinha_mouse.md)
   - [Parando o `draw()`](Processing-Python/no_loop.md)
-- [Transformações do sistema de coordenadas](Processing-Python/transformacoes_coordenadas.md) - translação, rotação e mudança de escala
 - [Mais sobre aleatoriedade](Processing-Python/aleatoriedade_2.md)
 - [Textos no programa, no console e na tela (*strings*)](https://github.com/villares/material-aulas/blob/masterProcessing-Python/strings_py.md)
   - [Trabalhando com fontes e outros ajustes do texto](Processing-Python/tipografia.md)
