@@ -31,7 +31,7 @@ Este material é baseado em **Processing modo Python**, uma ferramenta livre de 
   - [Arrastando círculos](Processing-Python/arrastando_circulos.md)
   - [Rodinha do mouse (*mouse wheel*)](Processing-Python/rodinha_mouse.md)
   - [Parando o `draw()`](Processing-Python/no_loop.md)
-- [Transformações do sistema de coordenadas](transformacoes_coordenadas.md) - translação, rotação e mudança de escala
+- [Transformações do sistema de coordenadas](Processing-Python/transformacoes_coordenadas.md) - translação, rotação e mudança de escala
 - [Mais sobre aleatoriedade](Processing-Python/aleatoriedade_2.md)
 - [Textos no programa, no console e na tela (*strings*)](https://github.com/villares/material-aulas/blob/masterProcessing-Python/strings_py.md)
   - [Trabalhando com fontes e outros ajustes do texto](Processing-Python/tipografia.md)
