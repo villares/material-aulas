@@ -13,7 +13,7 @@ Outro tipo importante que já encontramos é o booleano (*boolean*), com apenas 
 
 ### Valores, objetos, tipos e classes
 
-Em linguagens de programação que trabalham com a ideia de *orientação a objetos*, e especialmente em Python, os valores são *objetos* e usamos o termo *classe* e *tipo* de maneira mais ou menos intercambiável. Um definição de uma classe estabelece as propriedades e comportamentos dos objetos de um certo tipo.
+Em linguagens de programação que trabalham com a ideia de *orientação a objetos*, e especialmente em Python, os valores são *objetos* e usamos o termo *classe* e *tipo* de maneira mais ou menos intercambiável. A definição de uma classe estabelece as propriedades e comportamentos dos objetos de um certo tipo.
 
 ### Inspecionando os tipos dos valores
 
