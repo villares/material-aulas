@@ -28,6 +28,7 @@ Este material é baseado em **Processing modo Python**, uma ferramenta livre de 
   - [Grades retangulares: filas e colunas de elementos](Processing-Python/grades.md)
   - [Mais sobre polígonos](Processing-Python/poligonos_2.md)
   - [Laço de repetição com `while`](Processing-Python/while.md)
+- [Tipos de valores (inteiros, números de ponto flutuante, texto (*strings*))](Processing-Python/tipagem_py.md)
 - [Interação: input com teclado e mouse](Processing-Python/input_py.md)
   - [Um botão simples](Processing-Python/botao_simples.md)
   - [Arrastando círculos](Processing-Python/arrastando_circulos.md)
@@ -36,7 +37,6 @@ Este material é baseado em **Processing modo Python**, uma ferramenta livre de 
 - [Mais sobre aleatoriedade](Processing-Python/aleatoriedade_2.md)
 - [Textos no programa, no console e na tela (*strings*)](https://github.com/villares/material-aulas/blob/masterProcessing-Python/strings_py.md)
   - [Trabalhando com fontes e outros ajustes do texto](Processing-Python/tipografia.md)
-- [Tipos de valores (inteiros, números de ponto flutuante, texto (*strings*))](Processing-Python/tipagem_py.md)
 - [Desenhando em 3D](Processing-Python/desenho-3D.md)
 
 #### Arquivos externos
