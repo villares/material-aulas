@@ -2,7 +2,7 @@
 
 ## Mais precisamente números pseudo-aleatórios
 
-Computadores são máquinas determinísticas e não conseguem realmente 'sortear' um número, por isso usam algorítmos (receitas) que produzem sequências de números praticamente indistinguíveis, para a maioria dos usos[＊](#footnote1), de sequências verdadeiramente aleatórias. Por conta disso ganham este nome tecnicamente mais preciso de *pseudo-aleatórios* (falsos aleatórios). 
+Computadores são máquinas determinísticas e não conseguem realmente 'sortear' um número, por isso usam algorítmos (receitas) que produzem sequências de números praticamente indistinguíveis, para a maioria dos usos[<sup>＊</sup>](#footnote1), de sequências verdadeiramente aleatórias. Por conta disso ganham este nome tecnicamente mais preciso de *pseudo-aleatórios* (falsos aleatórios). 
 
 ### Função `random()` no Processing
 
