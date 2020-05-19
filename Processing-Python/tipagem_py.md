@@ -11,7 +11,7 @@ Textos, que aparecem entre aspas quando no meio do código de um programa, como 
 
 Outro tipo importante que já encontramos é o booleano (*boolean*), com apenas os dois valores `True` ou `False` (verdadeiro ou falso), é o tipo dos valores resultantes das operações lógicas (como `and`,  `or` e `not`), comparações (como `==`, `!=`,  `>`, `<`, `>=` e etc.) ou ainda valores que indicam um estado (como `mousePressed` é verdadeiro ou falso dependendo do estado dos botões do mouse)
 
-### valores, objetos, tipos e classes
+### Valores, objetos, tipos e classes
 
 Em linguagens de programação que trabalham com a ideia de *orientação a objetos*, e especialmente em Python, os valores são *objetos* e usamos o termo *classe* e *tipo* de maneira mais ou menos intercambiável. Um definição de uma classe estabelece as propriedades e comportamentos dos objetos de um certo tipo.
 
@@ -33,7 +33,7 @@ print(type(a))
 
 Os valores que usamos entre parênteses em uma chamada de função (argumentos, dentro da função são chamados parâmetros) frequentemente precisar ser de tipos específicos. Por exemplo `range()` só aceita como argumentos números inteiros. A função `text()`, precisa de um *string* e dois números (para as coordenadas): `text("Texto", x, y)`. 
 
-É necessário então converter os dados de um tipo para outro, como por exemplo o número 'sorteado' pela função `random()` que é um `float` pode ser convertido em `int`, sendo truncado (encurtado) perdendo a parte não inteira. Números podem ser convertidos em texto (`string`) usando `str(num)` ou com `'{}'.format(num)`.
+É necessário então converter os dados de um tipo para outro, como por exemplo o número 'sorteado' pela função `random()` que é um `float` pode ser convertido em `int`, sendo truncado (encurtado) perdendo a parte não inteira. Números podem ser convertidos em texto (*string*) usando `str(num)` ou com `'{}'.format(num)`.
 
 ```python
 R = int(random(256))
@@ -49,7 +49,7 @@ Da mesma forma, é do nosso interesse saber o tipo dos valores devolvidos por um
 
 Algumas funções executam operações mas não devolvem nenhum valor, como `setup()`, `draw()`, `noStroke()` e `rect()`, por exemplo. Sendo mais precisos, em Python, essas funções devolvem o valor especial `None` (que poderíamos imaginar como "nada" ou "nenhum").
 
-Mas muitas funções, devolvem um valor como resultado. Além da função `random()` que devolve um número *float* como acabamos de comentar, `color()`, por exemplo, devolve um número que representa uma cor, e podemos construir funções que devolvem valores para nós também:
+Mas muitas funções devolvem algum valor como resultado. Além da função `random()` que devolve um número *float* como acabamos de comentar, `color()`, por exemplo, devolve um número que representa uma cor, e podemos nós também construir funções que devolvem valores:
 
 ```python
 def cor_sorteada(alpha):
@@ -63,7 +63,7 @@ minha_cor = cor_sorteada(255) # sorteia uma cor
 
 ## Alguns tipos/classes de valores/objetos
 
-Nesta tabela, alguns dos tipos que vamos encontrar programando com Processing modo Python, vou marcar com "Py" as que são naturais do Python, mesmo que existam equivalentes no Processing modo Java, e "P5" as que vem do Processing, e não existem no Python sozinho.
+Nesta tabela apresento apenas alguns dos tipos que vamos encontrar programando com Processing modo Python, vou marcar com "Py" as que são naturais do Python, mesmo que existam equivalentes no Processing modo Java, e "P5" as que vem do Processing, e não existem no Python sozinho.
 
 | tipo / classe | descrição | origem |
 | ---      | --- | --- |
