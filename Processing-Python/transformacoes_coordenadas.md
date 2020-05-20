@@ -3,23 +3,25 @@
 > Baseado no tutorial [2D Transformations](https://py.processing.org/tutorials/transform2d/) ([versão traduzida](http://arteprog.space/Processando-Processing/tutoriais-PT/python-transformacoes_2D)) de J. David Eisenberg
 
 
-Processing tem funções embutidas que tornam fácil você mover, girar, ecrescer ou encolher objetos em um *sketch*. Este tutorial vai apresentar você às funções `translate`, `rotate`, e `scale`. De maneira que você as possa usar nos seus *sketches*.
+Processing tem funções embutidas que tornam fácil você mover, girar, e crescer ou encolher objetos por meio da manipulação do sistema de coordenadas. Isso torna possível, por exemplo desenhar um retângulo girado na tela, uma vez que a função `rect()` só sabe desenhar retângulos com os lados alinhados com o sistema de coordenadas.
+
+Esta página apresenta funções `translate`, `rotate`, e `scale`, mas também algumas funções que permitem 'guardar' e 'devolver' o estado anterior do sistema de coordenadas (`pushMatrix()`  e `popMatrix()`).
 
 ### Translação: Movendo a grade
 
-Como você sabe, sua janela do Processing funciona como um pedaço de papel milimetrado. Quando você quer desenhar alguma coisa, especifica as cordenadas. Veja um retângulo simples desenhado com o código `rect(20, 20, 40, 40)`. O sistema de coordenadas (um nome sofisticado para o nosso "papel milimetrado") está mostrado em cinza.
+Quando você quer desenhar alguma coisa, especifica as cordenadas. Veja um retângulo simples desenhado com o código `rect(20, 20, 40, 40)`. O sistema de coordenadas é como uma espécie de grade ou papel milimetrado, e está mostrado em cinza.
 
 ![Black rectangle on gray numbered grid](https://py.processing.org/tutorials/transform2d/imgs/original.png)
 
-Se você quiser mover o retângulo 60 unidades para a direita e 80 unidades para baixo, pode mudar as coordenadas somando ao *x* e *y* do ponto inicial: `rect(20 + 60, 20 + 80, 40, 40)` e o retângulo vai aparecer em um local diferente. (Pusemos a seta aí para efeito dramático.)
+Se você quiser mover o retângulo 60 unidades para a direita e 80 unidades para baixo, pode mudar as coordenadas somando ao *x* e *y* do ponto inicial: `rect(20 + 60, 20 + 80, 40, 40)` e o retângulo vai aparecer em um local diferente. (A seta é só para efeito dramático.)
 
 ![Black rectangle on gray numbered grid, moved](https://py.processing.org/tutorials/transform2d/imgs/new_coords.png)
 
-Mas tem uma maneira mais interessante de fazer isso: **em vez disso mover o papel milimetrado**. Se você moveo o papel milimetrado 60 unidades para a direita e 80 para baixo vai obter exatamente o mesmo resultado visual. Mover o sistema de coordenadas é chamado de translação.
+Mas tem uma maneira mais interessante de fazer isso: **em vez disso mover o sistema de coordenadas**. Se você move a grado 60 unidades para a direita e 80 para baixo vai obter exatamente o mesmo resultado visual. Mover o sistema de coordenadas é chamado de translação.
 
 ![grid moved with arrow showing motion](https://py.processing.org/tutorials/transform2d/imgs/moved_grid.png)
 
-A coisa importante de se notar no diagrama anterior é que, do ponto de vista do retângulo, ele não se moveu nada. O canto superior esquerdo continual em (20,20). Quando você usa transformações, as coisas que você desenha *nunca* mudam de posição; o sistema de cordenadas muda.
+A coisa importante de se notar no diagrama anterior é que, do ponto de vista do retângulo, ele não se moveu nada. O canto superior esquerdo continua em (20,20). Quando você usa transformações, as coisas que você desenha *não mudam de posição*; o sistema de cordenadas muda.
 
 Abaixo o código que desenha o retângulo em vermelho mudando suas coordenadas, e então desenha em azul movendo a grade. Os retângulos são translúcidos de maneira que você pode ver que estão (visualmente) no mesmo lugar. Apenas o método usado para movê-los mudou. Copie este código no Processing e experimente:
 
@@ -29,21 +31,22 @@ def setup():
     background(255)
     noStroke()
 
-    # draw the original position in gray
+    # desenha na posição original em cinza
     fill(192)
     rect(20, 20, 40, 40)
     
-    # draw a translucent red rectangle by changing the coordinates
+    # vermelho translúcido mudando as coordenadas
     fill(255, 0, 0, 128)
     rect(20 + 60, 20 + 80, 40, 40)
         
-    # draw a translucent blue rectangle by translating the grid
+    # azul translúcido mudando a grade
     fill(0, 0, 255, 128)
     pushMatrix()
     translate(60, 80)
     rect(20, 20, 40, 40)
     popMatrix()
 ```
+![](assets/2d_transformations_1.gif)
 
 Vamos olhar o código de conversão em mais detalhes.`pushMatrix()` é uma função embutida que salva a posição atual do sistema de coordendas. O `translate(60, 80)` move o sistema de coordenadas 60 para direita e 80 para baixo. O `rect(20, 20, 40, 40)` desenha o retângulo no mesmo local em que estava originalmente. Lembre-se de que as coisas que você desenha não se movem - a grade se move. Por fim,`popMatrix()` restaura o sistema de coordenadas como estava antes de você fazer a translação.
 
