@@ -93,7 +93,11 @@ def keyReleased():
 
 ![](assets/teclas_simultaneas_1.gif)
 
-Nas versões finais com teclado do [jogo PONG neste repositóro](../pong), usamos exatamente essa estratégia, sem isso a experiência de jogo fica muito prejudicada.
+#### Notas
+
+- Se você soltar uma tecla quando o *foco* do seu sistema operacional não estiver na janela do *sketch* o evento `keyReleased()` não será acionado, e o *sketch* não fica sabendo que a tecla foi solta!
+
+- Nas versões finais com teclado do [jogo PONG neste repositóro](../pong), usamos exatamente essa estratégia, sem isso a experiência de jogo fica muito prejudicada.
 
 É interessante lembrar que algumas teclas são identificadas de maneira ligeiramente diferente, as ditas teclas *codificadas*. Quando `key == CODED` você precisa usar a variável `keyCode` para saber qual tecla foi apertada (ou solta), em geral comparando com uma constante numérica destas aqui:
 
@@ -114,13 +118,11 @@ DELETE    '\x7f'
 
 Mas como fazer  se o número de teclas que queremos identificar for muito grande? Temos que fazer um monte variáves globais e um monte de condicionais com `if` dentro do `keyPressed()` e do `keyReleased`? Isso não parece muito elegante!
 
-Vamos então explorar uma estratégia de guardar as teclas que foram apertadas em uma estrutura de dados chamada **conjunto** (*set*), removendo-as do conjunto quando forem soltas.
+Vamos então explorar uma estratégia de guardar as teclas que foram apertadas em uma estrutura de dados chamada **conjunto** (*set*), removendo-as do conjunto quando forem soltas. É bom notar que conjuntos não guardam a ordem em que seus itens foram adicionados, e os itens são únicos, um conjunto nunca tem itens duplicados. 
 
-É bom notar que conjuntos não guardam a ordem em que seus itens foram adicionados, e os itens são únicos, um conjunto nunca tem itens duplicados. 
+Para acrescentar um item a um conjuto usamos `conjunto.add(item)`, e para remover `conjunto.discard(item)`. Essa última operação, *discard*, não faz nada se o item não existir dentro do conjunto.
 
-Em Python, podemos saber se um item existe dentro de uma coleção (como listas, tuplas, deques e conjuntos) com a palavra chave `in` usada como um operador, e isso é computacionalmente muito mais eficiente em um conjunto grande do que em uma lista ou tupla grande!
-
-No exemplo abaixo, se `'b' in teclas_apertadas` for verdade, o fundo fica preto.
+Em Python, podemos saber se um item existe dentro de uma coleção (como listas, tuplas, deques e conjuntos) com a palavra chave `in` usada como um operador, e isso é computacionalmente muito mais eficiente em um conjunto grande do que em uma lista ou tupla grande! No exemplo abaixo, se `'b' in teclas_apertadas` for verdade, o fundo fica preto.
 
 ```python
 teclas_apertadas = set()  # conjunto (set) vazio
@@ -232,7 +234,8 @@ def keyReleased():
 ```
 ![](assets/teclas_simultaneas_3.gif)
 
-Notas:
+#### Notas
+
 - Usamos `sorted()`  para obter uma lista ordenada do conjuto de `teclas_apertadas`
 - Dentro do `keyPressed()` tem um pequeno truque que impede o *sketch*  de ser interrompido pela tecla `ESC`.
-- Coloquei no dicionário alguns códigos que vi no meu computador (com Linux), esses códigos e nomes podem variar dependendo do seu sistema operacional.
+- No dicionário esão alguns códigos que vi no meu computador (com Linux), esses códigos e nomes podem variar dependendo do seu sistema operacional.
