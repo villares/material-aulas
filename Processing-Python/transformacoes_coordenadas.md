@@ -180,7 +180,7 @@ A transformação final do sistema de coordenadas é a mudança de escala, que a
 ```python
 def setup():
     size(200,200)
-    background(255)def oscEvent(theOscMessage):
+    background(255)
         
     stroke(128)
     rect(20, 20, 40, 40)
@@ -191,6 +191,8 @@ def setup():
     rect(20, 20, 40, 40)
     popMatrix()
 ```
+![scale](assets/2d_transformations_scale.png)
+
 Primeiro, você pode ver que o quadrado parece ter se movido. Claro que não. Seu canto superior esquerdo ainda está em (20, 20) na grade escalada para cima, mas esse ponto está agora duas vezes mais distante da origem do que no sistema de coordenadas original. Você também pode ver que as linhas são mais grossas. Isso não é ilusão de ótica - as linhas realmente têm o dobro da espessura, porque o sistema de coordenadas foi dimensionado para dobrar seu tamanho.
 
 > **Desafio de programação** aumente a o tamnaho do quadrado preto, mas mantenha o cantto superior esquerdo dele no mesmo lugar do quadrado cinza. Dica: use `translate()` para mover a origem, então use `scale()`.
