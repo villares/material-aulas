@@ -96,3 +96,14 @@ def keyReleased():
 ```
 
 ![](assets/teclas_simultaneas_1.gif)
+
+Nas versões finais com teclado do [jogo PONG neste repositóro](../pong), usamos exatamente essa estratégia, de outra forma, e experiência de jogo ficaria muito prejudicada.
+
+### Um desafio maior
+
+Mas e se o número de teclas for muito grande? Temos que fazer um montão de condicionais com `if` dentro do `keyPressed()` e do `keyReleased`?
+
+
+
+
+
