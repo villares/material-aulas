@@ -2,11 +2,9 @@
 
 A questão de identificar teclas apertadas simultaneamente pode surgir quando estamos desenvolvendo um *sketch* interativo, e em especial se estamos criando um jogo, em que mais pessoas interagem simultaneamente usando o teclado, também sempre que a interface fica mais complexa e precisa de teclas em combinação. 
 
- Executando o código a seguir você vai notar que a variável `key` aponta para um valor que descreve a última tecla que foi pressionada (ou solta) no teclado.
+Executando o código a seguir você vai notar que a variável `key` aponta para um valor que descreve a última tecla que foi pressionada (ou solta) no teclado. Isso pode ser um problema se você precisar mostrar quando **a** e **b** estiverem apertadas simultaneamente.
 
-Isso pode ser um problema se você precisar mostrar quando **a** e **b** estiverem apertadas simultaneamente.
-
- Não deixe de executar e experimentar você!
+ Não deixe de executar e experimentar!
 
 ```python
 def setup():
@@ -34,7 +32,7 @@ def draw():
 
 ![](assets/teclas_simultaneas_0.gif)
 
-Uma modificação pode evitar que uma tecla seja 'indicada' no momento em que é solta e também que fique aparecendo quando já não está mais sendo apertada, mas isso ainda não resolve o problema das teclas simultâneas: 
+Uma modificação pode evitar que uma tecla seja indicada no momento em que é solta e também que fique aparecendo quando já não está mais sendo apertada, mas isso ainda não resolve o problema das teclas simultâneas: 
 
 ```python
     if keyPressed and key == 'a':
@@ -50,9 +48,7 @@ Uma modificação pode evitar que uma tecla seja 'indicada' no momento em que é
         text('b', 160, 128)
 ```
 
-A verdadeira solução para esta questão é criar uma estrutura que  guarde o estado das teclas, e indique se a tecla está apertada naquele momento, sendo modificada pelos eventos de apertar ou soltar uma tecla.
-
-Num primeiro momento, para este nosso exemplo, essa estrutura pode ser simplesmente um par de variáveis globais, usadas como indicadores (*flags*) do estado das teclas. 
+A solução para esta questão é criar uma estrutura que  guarde o estado das teclas, e indique se a tecla está apertada naquele momento, sendo modificada pelos eventos de apertar ou soltar uma tecla. Em um primeiro momento, para este nosso exemplo, a estrutura pode ser simplesmente um par de variáveis globais, usadas como indicadores (*flags*) do estado das teclas, `a_apertada` e `b_apertada`. 
 
 ```python
 
@@ -97,13 +93,13 @@ def keyReleased():
 
 ![](assets/teclas_simultaneas_1.gif)
 
-Nas versões finais com teclado do [jogo PONG neste repositóro](../pong), usamos exatamente essa estratégia, de outra forma, e experiência de jogo ficaria muito prejudicada.
+Nas versões finais com teclado do [jogo PONG neste repositóro](../pong), usamos exatamente essa estratégia, sem isso a experiência de jogo fica muito prejudicada.
 
-Por fim, gostaria de relembrar que algumas teclas são identificadas de maneira ligeiramente diferente, as ditas teclas *codificadas*. Quando `key == CODED` você precisa usar a variável `keyCode` para saber qual tecla foi apertada (ou solta), em geral comparando com uma constante numérica destas:
+É interessante lembrar que algumas teclas são identificadas de maneira ligeiramente diferente, as ditas teclas *codificadas*. Quando `key == CODED` você precisa usar a variável `keyCode` para saber qual tecla foi apertada (ou solta), em geral comparando com uma constante numérica destas aqui:
 
 `UP DOWN LEFT RIGHT ALT CONTROL SHIFT`
 
-E temos também teclas que não são codificadas, são identificáveis em `key`, mas precisam ser identificadas por constantes ou *strings* especiais:
+Temos também teclas que não são codificadas, são identificáveis em `key` mesmo, mas precisam ser identificadas por constantes ou *strings* especiais:
 
 ```
 BACKSPACE '\b'
@@ -116,9 +112,9 @@ DELETE    '\x7f'
 
 ### Um desafio um pouco maior
 
-Mas e se o número de teclas for muito grande? Temos que fazer um montão de condicionais com `if` dentro do `keyPressed()` e do `keyReleased`?
+Mas como fazer  se o número de teclas que queremos identificar for muito grande? Temos que fazer um monte variáves globais e um monte de condicionais com `if` dentro do `keyPressed()` e do `keyReleased`? Isso não parece muito elegante!
 
-Vamos explorar uma estratégia de guardar as teclas que foram apertadas em uma estrutura de dados chamada **conjunto** (*set*), removendo-as do conjunto quando forem soltas.
+Vamos então explorar uma estratégia de guardar as teclas que foram apertadas em uma estrutura de dados chamada **conjunto** (*set*), removendo-as do conjunto quando forem soltas.
 
 É bom notar que conjuntos não guardam a ordem em que seus itens foram adicionados, e os itens são únicos, um conjunto nunca tem itens duplicados. 
 
