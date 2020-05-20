@@ -99,11 +99,56 @@ def keyReleased():
 
 Nas versões finais com teclado do [jogo PONG neste repositóro](../pong), usamos exatamente essa estratégia, de outra forma, e experiência de jogo ficaria muito prejudicada.
 
-### Um desafio maior
+Por fim, gostaria de relembrar que algumas teclas são identificadas de maneira ligeiramente diferente, as ditas teclas *codificadas*. Quando `key == CODED` você precisa usar a variável `keyCode` para saber qual tecla foi apertada (ou solta), em geral comparando com uma constante numérica destas:
+
+`UP DOWN LEFT RIGHT ALT CONTROL SHIFT`
+
+E temos também teclas que não são codificadas, são identificáveis em `key`, mas precisam ser identificadas por constantes ou *strings* especiais:
+
+```
+BACKSPACE '\b'
+TAB       '\t'
+ENTER     '\n'
+RETURN    '\r'
+ESC       '\x1b'
+DELETE    '\x7f'
+```
+
+### Um desafio um pouco maior
 
 Mas e se o número de teclas for muito grande? Temos que fazer um montão de condicionais com `if` dentro do `keyPressed()` e do `keyReleased`?
 
+Vamos explorar uma estratégia de guardar as teclas que foram apertadas em uma estrutura de dados chamada **conjunto** (*set*), removendo-as do conjunto quando forem soltas.
 
+É bom notar que conjuntos não guardam a ordem em que seus itens foram adicionados, e os itens são únicos, um conjunto nunca tem itens duplicados. 
 
+```python
+teclas_apertadas = set()  # conjunto (set) vazio
 
+def setup():
+    size(512,256)
+    textAlign(CENTER, CENTER)
+    textSize(20)
+    strokeWeight(3)
+        
+def draw():
+    if 'b' in teclas_apertadas:
+        background(0)
+    else:
+        background(100, 0, 200)
+    
+    for i, k in enumerate(teclas_apertadas):
+        x = i * 64
+        fill(0, x, 255 - i * 32) 
+        rect(x, 96, 64, 64)
+        fill(255)
+        text(str(k), x + 32, 128)
+    
+def keyPressed():
+    teclas_apertadas.add(key)    
+    
+def keyReleased():
+    teclas_apertadas.discard(key)
+```
 
+![](assets/teclas_simultaneas_2.gif)
