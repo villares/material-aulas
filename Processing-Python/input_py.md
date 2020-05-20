@@ -42,7 +42,7 @@ def draw():
 | int | keyCode           |    código da última tecla 'codificada', como `SHIFT`, `UP` e etc.
 | boolean | keyPressed    |    indica se alguma tecla está pressionada com (`True`) 
 
-### Contantes para usar com keyCode (e o correspondente numérico)
+### Contantes para usar com keyCode (e o correspondente valor numérico)
 ```
 UP      38
 DOWN    40
