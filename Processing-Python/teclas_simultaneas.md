@@ -203,13 +203,15 @@ def setup():
     strokeWeight(3)
 
 def draw():
+    # em vez de 'b' agora o espaço deixa o fundo preto
     if ' ' in teclas_apertadas:
         background(0)
     else:
         background(100, 200, 0)
     
-    for i, k in enumerate(sorted(teclas_apertadas)):
-        n = nomes.get(k, k)
+    for i, tecla in enumerate(sorted(teclas_apertadas)):
+        # se houver `tecla` no dicionário pega o 'nome de mostrar'
+        n = nomes.get(tecla, tecla)  # se não tiver, mostra ela mesmo!   
         x = i * 64
         fill(0, x, 255 - i * 32)
         rect(x, 96, 64, 64)
@@ -233,3 +235,8 @@ def keyReleased():
         teclas_apertadas.discard(keyCode)
 ```
 ![](assets/teclas_simultaneas_3.gif)
+
+Notas:
+- Usamos `sorted()`  para obter uma lista ordenada do conjuto de `teclas_apertadas`
+- Dentro do `keyPressed()` tem um pequeno truque que impede o *sketch*  de ser interrompido pela tecla `ESC`.
+- Coloquei no dicionário alguns códigos que vi no meu computador (com Linux), esses códigos e nomes podem variar dependendo do seu sistema operacional.
