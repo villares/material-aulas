@@ -159,10 +159,77 @@ def keyReleased():
 
 Você viu um `65535` no meio das teclas?
 
-Significa que uma tecla *codificada* (`CODED`) foi pressionada, como `SHIFT`, por exemplo. 
-
-`TAB`, `ENTER` e algumas outras teclas *não codificadas* não são mostradas direito também.
+Significa que uma tecla *codificada* (`CODED`) foi pressionada, como `SHIFT`, por exemplo. `TAB`, `ENTER` e algumas outras teclas *não codificadas* também não são mostradas direito.
 
 Vamos fazer alguns ajustes no código para identificar e mostrar de maneira mais elegante essas teclas!
 
-Para isso vamos usar outra estrutura de dados chamada **dicionário** (*dict*).
+Para isso vamos usar outra estrutura de dados chamada **dicionário** (*dict*). Que mapeias chaves (*keys*) e valores (*values*). É muito rápido consultar um valor atrelado a uma chave em um dicionário. 
+
+Se você sabe que a chave existe no dicionário, pode consultar com a forma `dicionario[chave]` (que dá erro se a chave não existir no dicionário). Quando não se tem certeza se a chave está lá, ou é parte da  estratégia  procurar chaves que podem não estar lá, então se usa `dicionario.get(chave, valor_se_nao_tem_a_chave)`.
+
+```python
+from __future__ import unicode_literals
+
+teclas_apertadas = set()  # conjunto (set) vazio
+nomes = {UP: '↑',
+         DOWN: '↓',
+         LEFT: '←',
+         RIGHT: '→',
+         ALT: 'Alt',
+         CONTROL: 'Ctrl',
+         SHIFT: 'Shift',
+         BACKSPACE: 'Bcksp',
+         TAB: 'Tab',
+         ENTER: 'Enter',
+         RETURN: 'Return',
+         ESC: 'Esc',
+         DELETE: 'Del',
+         524: 'Meta',
+         525: 'Menu',
+         65406: 'AltGr',
+         155: 'Insert',
+         36: 'Home',
+         35: 'End',
+         33: 'PgUp',
+         34: 'PgDwn',
+         144: 'NumLk',
+         ' ': 'espaço',
+         }
+
+def setup():
+    size(512, 256)
+    textAlign(CENTER, CENTER)
+    textSize(15)
+    strokeWeight(3)
+
+def draw():
+    if ' ' in teclas_apertadas:
+        background(0)
+    else:
+        background(100, 200, 0)
+    
+    for i, k in enumerate(sorted(teclas_apertadas)):
+        n = nomes.get(k, k)
+        x = i * 64
+        fill(0, x, 255 - i * 32)
+        rect(x, 96, 64, 64)
+        fill(255)
+        text(n, x + 32, 128)
+
+def keyPressed():
+    if key != CODED:
+        teclas_apertadas.add(key)
+    else:
+        teclas_apertadas.add(keyCode)
+
+    # isso impede que o sketch seja encerrado com ESC!
+    if key == ESC:
+        this.key = ' '
+
+def keyReleased():
+    if key != CODED:
+        teclas_apertadas.discard(key)
+    else:
+        teclas_apertadas.discard(keyCode)
+```
+![](assets/teclas_simultaneas_3.gif)
