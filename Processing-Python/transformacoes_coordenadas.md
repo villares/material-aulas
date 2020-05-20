@@ -110,6 +110,8 @@ def setup():
     rect(40, 40, 40, 40)
     popMatrix()
 ```
+![retângulo girado](assets/2d_transformations_0.png)
+
 Ei o que aconteceu? Como o quadrado foi movido e cortadao A resposta é: o quadrado não se moveu. A **grade** foi girada. Aqui está o que realmente aconteceu. Como você pode ver, no sistema de coordenadas girado, o quadrado ainda tem seu canto superior esquerdo em (40, 40).
 
 ![shows grid rotated 45 degrees clockwise](https://py.processing.org/tutorials/transform2d/imgs/rotated_grid.png)
