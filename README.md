@@ -1,4 +1,3 @@
-
 ---
 
 ## material para cursos e oficinas ([repositório](https://github.com/villares/material-aulas/))
@@ -30,6 +29,7 @@ Este material é baseado em **Processing modo Python**, uma ferramenta livre de 
   - [Laço de repetição com `while`](Processing-Python/while.md)
 - [Tipos de valores (inteiros, números de ponto flutuante, texto (*strings*))](Processing-Python/tipagem_py.md)
 - [Interação: input com teclado e mouse](Processing-Python/input_py.md)
+  - [Escutando teclas simultâneas](teclas_simultaneas.md)
   - [Um botão simples](Processing-Python/botao_simples.md)
   - [Arrastando círculos](Processing-Python/arrastando_circulos.md)
   - [Rodinha do mouse (*mouse wheel*)](Processing-Python/rodinha_mouse.md)
