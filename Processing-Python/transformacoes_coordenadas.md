@@ -1,8 +1,7 @@
 # Transformando o sistema de coordenandas
 
-> Baseado no tutorial [py.processing.org/tutorials/transform2d/](https://py.processing.org/tutorials/transform2d/) de J. David Eisenberg
+> Baseado no tutorial [2D Transformations](https://py.processing.org/tutorials/transform2d/) ([versão traduzida](http://arteprog.space/Processando-Processing/tutoriais-PT/python-transformacoes_2D)) de J. David Eisenberg
 
-[Baixe os arquivos deste tutorial](https://py.processing.org/tutorials/transform2d/imgs/transform2d.zip)
 
 Processing tem funções embutidas que tornam fácil você mover, girar, ecrescer ou encolher objetos em um *sketch*. Este tutorial vai apresentar você às funções `translate`, `rotate`, e `scale`. De maneira que você as possa usar nos seus *sketches*.
 
@@ -46,7 +45,7 @@ def setup():
     popMatrix()
 ```
 
-Vamos olhar o código de conversão em mais detalhes.`pushMatrix()` é uma função embutida que salva a posição atual do sistema de coordendas. O `translate(60, 80)` movbaixo. O `rect(20, 20, 40, 40)` desenha o retângulo no mesmo local em que estava originalmente. Lembre-se de que as coisas que você desenha não se movem - a grade se move. Por fim,`popMatrix()` restaura o sistema de coordenadas como estava antes de você fazer a translação.
+Vamos olhar o código de conversão em mais detalhes.`pushMatrix()` é uma função embutida que salva a posição atual do sistema de coordendas. O `translate(60, 80)` move o sistema de coordenadas 60 para direita e 80 para baixo. O `rect(20, 20, 40, 40)` desenha o retângulo no mesmo local em que estava originalmente. Lembre-se de que as coisas que você desenha não se movem - a grade se move. Por fim,`popMatrix()` restaura o sistema de coordenadas como estava antes de você fazer a translação.
 
 Sim, você podia ter feito uma translação `translate(-60, -80)` para mover a grade de volta a sua posição original. No entanto, quando você começa a executar operações mais sofisticadas com o sistema de coordenadas, é mais fácil usar `pushMatrix()` e `popMatrix()` para salvar e restaurar o status em vez de precisar desfazer todas as suas operações. Mais adiante neste tutorial, você descobrirá por que essas funções parecem ter nomes tão estranhos.
 
@@ -238,3 +237,7 @@ Nota: Em Processing, o sistema de coordenadas é restaurado ao seu estado origin
 Se você estiver trabalhando em três dimensões, poderá chamar a função `translate()` com três argumentos para as distâncias *x*, *y*, e *z*. Da mesma forma, você vhama `scale()` com três argumentos que indicam o quanto você deseja que a grade seja redimensionada em cada uma dessas dimensões
 
 Para rotação, chame as funções `rotateX()`, `rotateY()`, ou `rotateZ()` para girar em torno de cada um dos eixos. Todas essas três funções esperam um argumento: o número de radianos a serem rotacionados.
+
+## Assuntos relacionados
+
+- Veja a [versão completa traduzida do tutorial que inspirou este material](http://arteprog.space/Processando-Processing/tutoriais-PT/python-transformacoes_2D)
