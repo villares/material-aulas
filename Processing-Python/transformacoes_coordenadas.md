@@ -46,7 +46,7 @@ def setup():
     rect(20, 20, 40, 40)
     popMatrix()
 ```
-![](assets/2d_transformations_1.gif)
+![retângulo movido](assets/2d_transformations_1.gif)
 
 Vamos olhar o código de conversão em mais detalhes.`pushMatrix()` é uma função embutida que salva a posição atual do sistema de coordendas. O `translate(60, 80)` move o sistema de coordenadas 60 para direita e 80 para baixo. O `rect(20, 20, 40, 40)` desenha o retângulo no mesmo local em que estava originalmente. Lembre-se de que as coisas que você desenha não se movem - a grade se move. Por fim,`popMatrix()` restaura o sistema de coordenadas como estava antes de você fazer a translação.
 
@@ -152,7 +152,7 @@ E aqui está um programa que gera uma roda de cores usando rotação:
 
 ```python
 def setup():
-    size(200, 200)
+    size(256, 256)
     background(255)
     smooth()
     noStroke()
@@ -163,11 +163,13 @@ def draw():
              frameCount * 5 % 255,
              frameCount * 7 % 255)
         pushMatrix()
-        translate(100, 100) 
+        translate(128, 128) 
         rotate(radians(frameCount * 2 % 360))
-        rect(0, 0, 80, 20)
-        popMatrix()
+        rect(0, 0, 100, 25)
+        popMatrix()    
 ```
+
+![roda de cores](assets/2d_transformations_2.gif)
 
 ### Escalando
 
@@ -221,6 +223,9 @@ def setup():
     rect(0, 0, 20, 20)
     popMatrix()
 ```
+
+![ordem importa](assets/2d_transformations_3.png)
+
 
 ### A matriz de transformação
 
