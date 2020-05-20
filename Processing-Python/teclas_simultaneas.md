@@ -122,6 +122,10 @@ Vamos explorar uma estratégia de guardar as teclas que foram apertadas em uma e
 
 É bom notar que conjuntos não guardam a ordem em que seus itens foram adicionados, e os itens são únicos, um conjunto nunca tem itens duplicados. 
 
+Em Python, podemos saber se um item existe dentro de uma coleção (como listas, tuplas, deques e conjuntos) com a palavra chave `in` usada como um operador, e isso é computacionalmente muito mais eficiente em um conjunto grande do que em uma lista ou tupla grande!
+
+No exemplo abaixo, se `'b' in teclas_apertadas` for verdade, o fundo fica preto.
+
 ```python
 teclas_apertadas = set()  # conjunto (set) vazio
 
@@ -152,3 +156,13 @@ def keyReleased():
 ```
 
 ![](assets/teclas_simultaneas_2.gif)
+
+Você viu um `65535` no meio das teclas?
+
+Significa que uma tecla *codificada* (`CODED`) foi pressionada, como `SHIFT`, por exemplo. 
+
+`TAB`, `ENTER` e algumas outras teclas *não codificadas* não são mostradas direito também.
+
+Vamos fazer alguns ajustes no código para identificar e mostrar de maneira mais elegante essas teclas!
+
+Para isso vamos usar outra estrutura de dados chamada **dicionário** (*dict*).
