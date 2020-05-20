@@ -42,14 +42,25 @@ def draw():
 | int | keyCode           |    código da última tecla 'codificada', como `SHIFT`, `UP` e etc.
 | boolean | keyPressed    |    indica se alguma tecla está pressionada com (`True`) 
 
-### Contantes para usar com keyCode
+### Contantes para usar com keyCode (e o correspondente numérico)
 ```
-UP DOWN LEFT RIGHT ALT CONTROL SHIFT
+UP      38
+DOWN    40
+LEFT    37
+RIGHT   39
+ALT     18
+CONTROL 17
+SHIFT   16
 ```
 
-### Constantes para usar com key
+### Constantes para usar com key (e o *string*  equivalente)
 ```
-BACKSPACE TAB ENTER RETURN ESC DELETE
+BACKSPACE '\b'
+TAB       '\t'
+ENTER     '\n'
+RETURN    '\r'
+ESC       '\x1b'
+DELETE    '\x7f'
 ```
 
 ## Funções acionadas por eventos
@@ -100,6 +111,7 @@ def keyPressed():          # Esta função executa uma vez quando uma tecla é p
 
 ## Assuntos relacionados
 
+- [Escutando teclas simultâneas](teclas_simultaneas.md)
 - [Um botão simples](botao_simples.md)
 - [Arrastando círculos](arrastando_circulos.md)
 - [Como ler a rodinha do mouse (*mouse wheel* ou *scroll wheel*)](rodinha_mouse.md)
