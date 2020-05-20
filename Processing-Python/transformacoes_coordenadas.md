@@ -50,7 +50,7 @@ def setup():
 
 Vamos olhar o código de conversão em mais detalhes.`pushMatrix()` é uma função embutida que salva a posição atual do sistema de coordendas. O `translate(60, 80)` move o sistema de coordenadas 60 para direita e 80 para baixo. O `rect(20, 20, 40, 40)` desenha o retângulo no mesmo local em que estava originalmente. Lembre-se de que as coisas que você desenha não se movem - a grade se move. Por fim,`popMatrix()` restaura o sistema de coordenadas como estava antes de você fazer a translação.
 
-Sim, você podia ter feito uma translação `translate(-60, -80)` para mover a grade de volta a sua posição original. No entanto, quando você começa a executar operações mais sofisticadas com o sistema de coordenadas, é mais fácil usar `pushMatrix()` e `popMatrix()` para salvar e restaurar o status em vez de precisar desfazer todas as suas operações. Mais adiante neste tutorial, você descobrirá por que essas funções parecem ter nomes tão estranhos.
+Sim, você podia ter feito uma translação `translate(-60, -80)` para mover a grade de volta a sua posição original. No entanto, quando você começa a executar operações mais sofisticadas com o sistema de coordenadas, é mais fácil usar `pushMatrix()` e `popMatrix()` para salvar e restaurar o status em vez de precisar desfazer todas as suas operações. Mais adiante desses nomes tão estranhos.
 
 ### Qual é a vantagem?
 
@@ -64,7 +64,6 @@ def setup():
     background(255)
     for i in xrange(10,350,50):
         casa(i, 20)
-
 ```
 
 Este é o código para desenhar a casa alterando sua posição. Veja todos os acréscimos que você precisa fazer.
@@ -94,7 +93,7 @@ Além da translação, que move a grade, é possível girar o sistema de coorden
 
 ![Degrees are measured clockwise with zero being at 3 o'clock](https://py.processing.org/tutorials/transform2d/imgs/degrees.png)
 
-Como a maioria das pessoas pensa em graus, o Processing possui uma função embutida `radians()` que recebe um número em graus como argumento e o converte para você. Ele também possui uma função    `degrees()` que converte radianos em graus. Dado esse cenário, vamos tentar girar um quadrado 45 graus no sentido horário.
+Como a maioria das pessoas pensa em graus, o Processing possui uma função embutida `radians()` que recebe um número em graus como argumento e o converte para você. Ele também possui uma função `degrees()` que converte radianos em graus. Dado esse cenário, vamos tentar girar um quadrado 45 graus no sentido horário.
 
 ```python
 def setup():
@@ -149,7 +148,7 @@ def setup():
     popMatrix()
 ```
 
-E aqui está um programa que gera uma roda de cores usando rotação. A captura de tela é reduzida para economizar espaço.
+E aqui está um programa que gera uma roda de cores usando rotação:
 
 ```python
 def setup():
@@ -177,7 +176,7 @@ A transformação final do sistema de coordenadas é a mudança de escala, que a
 ```python
 def setup():
     size(200,200)
-    background(255)
+    background(255)def oscEvent(theOscMessage):
         
     stroke(128)
     rect(20, 20, 40, 40)
@@ -192,7 +191,7 @@ Primeiro, você pode ver que o quadrado parece ter se movido. Claro que não. Se
 
 > **Desafio de programação** aumente a o tamnaho do quadrado preto, mas mantenha o cantto superior esquerdo dele no mesmo lugar do quadrado cinza. Dica: use `translate()` para mover a origem, então use `scale()`.
 
-Não tem um lei que diz que você tem que escalar as dimensões em *x* e *y* igualmente. Tente usar `scale(3.0, 0.5)` para fazer a dimensão em    *x* três vezes maior e a dimensão em *y* metado do tamanho normal.
+Não tem uma lei que diz que você tem que escalar as dimensões em *x* e *y* igualmente. Tente usar `scale(3.0, 0.5)` para fazer a dimensão em *x* três vezes maior e a dimensão em *y* metado do tamanho normal.
 
 ### A ordem importa
 
@@ -225,15 +224,18 @@ def setup():
 
 ### A matriz de transformação
 
-Sempre que você faz uma rotação, translação ou mudança de escla, as informações necessárias para a transformação são acumuladas em uma tabela de números. Essa tabela, ou matriz, possui apenas algumas linhas e colunas; no entanto, através do milagre da matemática, ela contém todas as informações necessárias para realizar qualquer série de transformações. E é por isso que `pushMatrix ()` e `popMatrix ()` têm essa palavra em seu nome.
+Sempre que você faz uma rotação, translação ou mudança de escala, as informações necessárias para a transformação são acumuladas em uma tabela de números. Essa tabela, ou matriz, possui apenas algumas linhas e colunas; no entanto, através do milagre da matemática, ela contém todas as informações necessárias para realizar qualquer série de transformações. E é por isso que `pushMatrix ()` e `popMatrix ()` têm essa palavra em seu nome.
 
 ### Push e Pop
 
-Sobre a parte *push* e *pop* dos nomes? Elas vêm de um conceito de computação conhecido como pilha, que funciona como um dispensador de bandejas com mola em uma lanchonete. Quando alguém devolve uma bandeja para a pilha, seu peso empurra a plataforma para baixo. Quando alguém precisa de uma bandeja, ela a pega da parte superior da pilha e as bandejas restantes aparecem um pouco.
+Sobre a parte *push* e *pop* dos nomes? Elas vêm de um conceito de computação conhecido como pilha, que funciona como um dispensador de bandejas com mola em uma lanchonete. Quando alguém coloca uma bandeja para a pilha, seu peso empurra a plataforma para baixo. Quando alguém precisa de uma bandeja, ela a pega da parte superior da pilha e as bandejas restantes aparecem um pouco.
 
 De maneira semelhante, `pushMatrix()` coloca o status atual do sistema de coordenadas no topo de uma área de memória, e `popMatrix()` pega de volta o status. O exemplo anterior usou `pushMatrix()` e `popMatrix()` para garantir que o sistema de coordenação estivesse "limpo" antes de cada parte do desenho. Em todos os outros exemplos, as chamadas para essas duas funções não eram realmente necessárias, mas não custa nada salvar e restaurar o status da grade.
 
-Nota: Em Processing, o sistema de coordenadas é restaurado ao seu estado original (origem na parte superior esquerda da janela, sem rotação e sem mudança de escala) toda vez que a função `draw()` é executada.
+Notas: 
+- **Sempre execute `pushMatrix()` e `popMatrix` em pares** ou você vai ter um erro!
+- Em Processing, o sistema de coordenadas é restaurado ao seu estado original (origem na parte superior esquerda da janela, sem rotação e sem mudança de escala) toda vez que a função `draw()` é executada. 
+- É possível também voltar para o estado inicial o sistema de coordenadas com `resetMatrix()`.
 
 ### Transformações Tri-dimensionais
 
@@ -243,4 +245,4 @@ Para rotação, chame as funções `rotateX()`, `rotateY()`, ou `rotateZ()` para
 
 ## Assuntos relacionados
 
-- Veja a [versão completa traduzida do tutorial que inspirou este material](http://arteprog.space/Processando-Processing/tutoriais-PT/python-transformacoes_2D)
+- Veja a [versão completa traduzida do tutorial na qual este material foi baseado](http://arteprog.space/Processando-Processing/tutoriais-PT/python-transformacoes_2D), tem um exemplo bacana de um robô que balança os braços.
