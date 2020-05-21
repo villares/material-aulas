@@ -268,6 +268,8 @@ A estratégia dos indicadores de estado para teclas, ou de adicionar e remover i
 
 Já para alternar um ajuste, algo como ligar e desligar uma opção, por exemplo (em inglês é usado o termo *toggle*), pode ser melhor usar um indicador modificado por uma condicional simples em `keyTyped()`,`keyPressed()` ou `keyReleased()`, para evitar que um toque da tecla acione mais de uma vez a ação.
 
+No exemplo abaixo, use `SHIFT` para ligar e desligar a animação da cor do fundo.
+
 ```python
 teclas_apertadas = set()  # conjunto (set) vazio
 
@@ -286,6 +288,7 @@ pb = {'x': 384, 'y': 128,
 players = (pa, pb)
 
 anima_fundo = False
+cor_fundo = 128
 
 def setup():
     size(512, 256)
@@ -294,13 +297,10 @@ def setup():
     strokeWeight(3)
 
 def draw():
-    fill(0)
+    global cor_fundo
     if anima_fundo:
-        background(64 + frameCount % 128)
-        text("SHIFT para parar o fundo", 256, 240)
-    else:
-        background(128)
-        text("SHIFT para animar o fundo", 256, 240)
+        cor_fundo = abs(cor_fundo + sin(frameCount / 60.)) % 256
+    background(cor_fundo)
 
     for p in players:
         print p
