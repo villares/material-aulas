@@ -2,6 +2,8 @@
 
 A questão de identificar teclas apertadas simultaneamente pode surgir quando estamos desenvolvendo um *sketch* interativo, e em especial se estamos criando um jogo, em que mais pessoas interagem simultaneamente usando o teclado, também sempre que a interface fica mais complexa e precisa de teclas em combinação. 
 
+### Entendendo o problema
+
 Executando o código a seguir você vai notar que a variável `key` aponta para um valor que descreve a última tecla que foi pressionada (ou solta) no teclado. Isso pode ser um problema se você precisar mostrar quando **a** e **b** estiverem apertadas simultaneamente.
 
  Não deixe de executar e experimentar!
@@ -48,7 +50,9 @@ Uma modificação pode evitar que uma tecla seja indicada no momento em que é s
         text('b', 160, 128)
 ```
 
-A solução para esta questão é criar uma estrutura que  guarde o estado das teclas, e indique se a tecla está apertada naquele momento, sendo modificada pelos eventos de apertar ou soltar uma tecla. Em um primeiro momento, para este nosso exemplo, a estrutura pode ser simplesmente um par de variáveis globais, usadas como indicadores (*flags*) do estado das teclas, `a_apertada` e `b_apertada`. 
+### Uma primeira solução
+
+As soluções para esta questão envolvem criar uma estrutura que  guarde o estado das teclas, indicando se a tecla está apertada naquele momento, e que possa ser modificada pelos eventos de apertar ou soltar uma tecla. Em um primeiro momento, para este nosso exemplo, a estrutura pode ser simplesmente um par de variáveis globais, usadas como indicadores (*flags*) do estado das teclas, `a_apertada` e `b_apertada`. 
 
 ```python
 
@@ -99,22 +103,7 @@ def keyReleased():
 
 - Nas versões finais com teclado do [jogo PONG neste repositóro](../pong), usamos exatamente essa estratégia, sem isso a experiência de jogo fica muito prejudicada.
 
-É interessante lembrar que algumas teclas são identificadas de maneira ligeiramente diferente, as ditas teclas *codificadas*. Quando `key == CODED` você precisa usar a variável `keyCode` para saber qual tecla foi apertada (ou solta), em geral comparando com uma constante numérica destas aqui:
-
-`UP DOWN LEFT RIGHT ALT CONTROL SHIFT`
-
-Temos também teclas que não são codificadas, são identificáveis em `key` mesmo, mas precisam ser identificadas por constantes ou *strings* especiais:
-
-```
-BACKSPACE '\b'
-TAB       '\t'
-ENTER     '\n'
-RETURN    '\r'
-ESC       '\x1b'
-DELETE    '\x7f'
-```
-
-### Um desafio um pouco maior
+### Um montão de teclas
 
 Mas como fazer  se o número de teclas que queremos identificar for muito grande? Temos que fazer um monte variáveis globais e um monte de condicionais com `if` dentro do `keyPressed()` e do `keyReleased`? Isso não parece muito elegante!
 
@@ -157,7 +146,20 @@ def keyReleased():
 
 Você viu um `65535` no meio das teclas?
 
-Significa que uma tecla *codificada* (`CODED`) foi pressionada, como `SHIFT`, por exemplo. `TAB`, `ENTER` e algumas outras teclas *não codificadas* também não são mostradas direito.
+Significa que uma tecla *codificada* (`CODED`) foi pressionada, como `SHIFT`, por exemplo. Precisamos lembrar que algumas teclas são identificadas de maneira ligeiramente diferente, as ditas teclas *codificadas*. Quando `key == CODED` você precisa usar a variável `keyCode` para saber qual tecla foi apertada (ou solta), em geral comparando com uma constante numérica destas aqui:
+
+`UP DOWN LEFT RIGHT ALT CONTROL SHIFT`
+
+Note que `TAB`, `ENTER` e algumas outras teclas *não codificadas* também não foram mostradas direito no exemplo anterior. Certas teclas que não são codificadas, que podem ser identificadas usando `key`, precisam ser econtradas fazendo uma comparação de `key` com constantes ou *strings* especiais:
+
+```
+BACKSPACE '\b'
+TAB       '\t'
+ENTER     '\n'
+RETURN    '\r'
+ESC       '\x1b'
+DELETE    '\x7f'
+```
 
 Vamos fazer alguns ajustes no código para identificar e mostrar de maneira mais elegante essas teclas!
 
@@ -255,7 +257,90 @@ def keyReleased():
       else:
           teclas_apertadas.discard(keyCode) 
   ```
-  Mas fique atento e teste para evitar surpresas! No meu computador o `keyCode` do `+` e `-` do teclado numérico lateral, por exemplo, aparecem como `k` e `m`.
+  Fique atento e teste para evitar surpresas! No meu computador o `keyCode` do `+` e `-` do teclado numérico lateral, por exemplo, aparecem como `k` e `m`.
 - Foi usada `sorted()` para obter uma lista ordenada a partir do conjunto `teclas_apertadas`
 - Dentro do `keyPressed()` tem um pequeno truque que impede o *sketch*  de ser interrompido pela tecla `ESC`.
-- No dicionário acrescentei alguns códigos que vi, estando no Linux, os códigos e nomes das teclas podem variar dependendo do seu sistema operacional.
+- No dicionário acrescentei alguns códigos de teclas que vi, estando no Linux, os códigos e nomes das teclas podem variar dependendo do seu sistema operacional.
+
+### Combinando estratégias
+
+A estratégia dos indicadores de estado para teclas, ou de adicionar e remover indicadores de teclas apertadas em um conjunto (*set*) usando `keyPressed()` e `keyReleased()` é boa para saber se uma tecla está apertada em um determinado momento, muito útil principalmente em controles que podem ser acionados continuamente. 
+
+Já para alternar um ajuste, algo como ligar e desligar uma opção, por exemplo (em inglês é usado o termo *toggle*), pode ser melhor usar um indicador modificado por uma condicional simples em `keyTyped()`,`keyPressed()` ou `keyReleased()`, para evitar que um toque da tecla acione mais de uma vez a ação.
+
+```python
+teclas_apertadas = set()  # conjunto (set) vazio
+
+pa = {'x': 128, 'y': 128,
+      'fill': color(0, 0, 200), 'stroke': 0,
+      'sobe': 'W', 'desce': 'S',
+      'esq': 'A', 'dir': 'D',
+      'inv': TAB}
+
+pb = {'x': 384, 'y': 128,
+      'fill': color(200, 0, 0), 'stroke': 255,
+      'sobe': UP, 'desce': DOWN,
+      'esq': LEFT, 'dir': RIGHT,
+      'inv': ENTER}
+
+players = (pa, pb)
+
+anima_fundo = False
+
+def setup():
+    size(512, 256)
+    textAlign(CENTER, CENTER)
+    textSize(15)
+    strokeWeight(3)
+
+def draw():
+    fill(0)
+    if anima_fundo:
+        background(64 + frameCount % 128)
+        text("SHIFT para parar o fundo", 256, 240)
+    else:
+        background(128)
+        text("SHIFT para animar o fundo", 256, 240)
+
+    for p in players:
+        print p
+        fill(p['fill'])
+        stroke(p['stroke'])
+        ellipse(p['x'], p['y'], 50, 50)
+
+        # Ajusta a posição dos círculos
+        if p['sobe'] in teclas_apertadas:
+            p['y'] -= 1
+        if p['desce'] in teclas_apertadas:
+            p['y'] += 1
+        if p['esq'] in teclas_apertadas:
+            p['x'] -= 1
+        if p['dir'] in teclas_apertadas:
+            p['x'] += 1
+
+def keyPressed():
+    teclas_apertadas.add(keyCode if key == CODED else chr(keyCode))
+
+    for p in players:
+        if p['inv'] in teclas_apertadas:
+            p['fill'], p['stroke'] = p['stroke'], p['fill']
+
+def keyReleased():
+    global anima_fundo
+    
+    teclas_apertadas.discard(keyCode if key == CODED else chr(keyCode))
+
+    if keyCode == SHIFT:
+        anima_fundo = not anima_fundo
+    if key == ' ':
+        pa['x'], pa['y'] = 128, 128
+        pb['x'], pb['y'] = 384, 128
+```
+
+![](assets/teclas_simultaneas_4.gif)
+
+
+
+#### Notas
+
+- As funções`keyTyped()` e`keyPressed()` são acionadas logo que a tecla é apertada, e são suscetíveis a repetição automática depois de um tempo da tecla mantida apertada, já `keyReleased()` é acionada só quando a tecla é solta.
