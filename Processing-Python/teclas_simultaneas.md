@@ -116,11 +116,11 @@ DELETE    '\x7f'
 
 ### Um desafio um pouco maior
 
-Mas como fazer  se o número de teclas que queremos identificar for muito grande? Temos que fazer um monte variáves globais e um monte de condicionais com `if` dentro do `keyPressed()` e do `keyReleased`? Isso não parece muito elegante!
+Mas como fazer  se o número de teclas que queremos identificar for muito grande? Temos que fazer um monte variáveis globais e um monte de condicionais com `if` dentro do `keyPressed()` e do `keyReleased`? Isso não parece muito elegante!
 
 Vamos então explorar uma estratégia de guardar as teclas que foram apertadas em uma estrutura de dados chamada **conjunto** (*set*), removendo-as do conjunto quando forem soltas. É bom notar que conjuntos não guardam a ordem em que seus itens foram adicionados, e os itens são únicos, um conjunto nunca tem itens duplicados. 
 
-Para acrescentar um item a um conjuto usamos `conjunto.add(item)`, e para remover `conjunto.discard(item)`. Essa última operação, *discard*, não faz nada se o item não existir dentro do conjunto.
+Para acrescentar um item em um conjunto usamos `conjunto.add(item)`, e para remover `conjunto.discard(item)`. Essa última operação, *discard*, não faz nada se o item não existir no conjunto.
 
 Em Python, podemos saber se um item existe dentro de uma coleção (como listas, tuplas, deques e conjuntos) com a palavra chave `in` usada como um operador, e isso é computacionalmente muito mais eficiente em um conjunto grande do que em uma lista ou tupla grande! No exemplo abaixo, se `'b' in teclas_apertadas` for verdade, o fundo fica preto.
 
@@ -169,6 +169,7 @@ Se você sabe que a chave existe no dicionário, pode consultar com a forma `dic
 from __future__ import unicode_literals
 
 teclas_apertadas = set()  # conjunto (set) vazio
+# dicionário {tecla: 'nome para mostrar'}
 nomes = {UP: '↑',
          DOWN: '↓',
          LEFT: '←',
@@ -208,8 +209,8 @@ def draw():
         background(100, 200, 0)
     
     for i, tecla in enumerate(sorted(teclas_apertadas)):
-        # se houver `tecla` no dicionário pega o 'nome de mostrar'
-        n = nomes.get(tecla, tecla)  # se não tiver, mostra ela mesmo!   
+        # tendo `tecla` no dicionário pega o 'nome para mostrar'
+        n = nomes.get(tecla, tecla)  # se não tiver, devolve `tecla` mesmo!   
         x = i * 64
         fill(0, x, 255 - i * 32)
         rect(x, 96, 64, 64)
@@ -222,7 +223,7 @@ def keyPressed():
     else:
         teclas_apertadas.add(keyCode)
 
-    # isso impede que o sketch seja encerrado com ESC!
+    # Impeça que o sketch seja encerrado com ESC!
     if key == ESC:
         this.key = ' '
 
@@ -236,6 +237,6 @@ def keyReleased():
 
 #### Notas
 
-- Usamos `sorted()`  para obter uma lista ordenada do conjuto de `teclas_apertadas`
+- Foi usada `sorted()` para obter uma lista ordenada a partir do conjunto `teclas_apertadas`
 - Dentro do `keyPressed()` tem um pequeno truque que impede o *sketch*  de ser interrompido pela tecla `ESC`.
-- No dicionário esão alguns códigos que vi no meu computador (com Linux), esses códigos e nomes podem variar dependendo do seu sistema operacional.
+- No dicionário acrescentei alguns códigos que vi no meu micro, com Linux, os códigos e nomes das teclas podem variar dependendo do seu sistema operacional.
