@@ -206,13 +206,13 @@ def draw():
     if ' ' in teclas_apertadas:
         background(0)
     else:
-        background(100, 200, 0)
+        background(50, 200, 50)
     
     for i, tecla in enumerate(sorted(teclas_apertadas)):
         # tendo `tecla` no dicionário pega o 'nome para mostrar'
         n = nomes.get(tecla, tecla)  # se não tiver, devolve `tecla` mesmo!   
         x = i * 64
-        fill(0, x, 255 - i * 32)
+        fill(0, x / 2, 200)
         rect(x, 96, 64, 64)
         fill(255)
         text(n, x + 32, 128)
@@ -237,6 +237,25 @@ def keyReleased():
 
 #### Notas
 
+* Uma vez que certas teclas modificam o efeito de outras, por exemplo, `SHIFT` faz a tecla `1`  aparecer como `!`, então certas sequências podem trazer resultados estranhos:
+
+  Apertar`SHIFT`, depois `1 `, soltar `SHIFT`e por fim soltar `1`. faz o sketch ficar sem ver a tecla `!` ser 'solta'. 
+  Uma solução possível é manter registro só do `keyCode` das teclas que permanece sempre o mesmo, o convertendo em algo mais legível com `chr()`:
+
+  ```python
+  def keyPressed():
+      if key != CODED:
+          teclas_apertadas.add(chr(keyCode))
+      else:
+          teclas_apertadas.add(keyCode)
+
+  def keyReleased():
+      if key != CODED:
+          teclas_apertadas.discard(chr(keyCode))
+      else:
+          teclas_apertadas.discard(keyCode) 
+  ```
+  Mas fique atento e teste para evitar surpresas! No meu computador o `keyCode` do `+` e `-` do teclado numérico lateral, por exemplo, aparecem como `k` e `m`.
 - Foi usada `sorted()` para obter uma lista ordenada a partir do conjunto `teclas_apertadas`
 - Dentro do `keyPressed()` tem um pequeno truque que impede o *sketch*  de ser interrompido pela tecla `ESC`.
-- No dicionário acrescentei alguns códigos que vi no meu micro, com Linux, os códigos e nomes das teclas podem variar dependendo do seu sistema operacional.
+- No dicionário acrescentei alguns códigos que vi, estando no Linux, os códigos e nomes das teclas podem variar dependendo do seu sistema operacional.
