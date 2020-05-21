@@ -163,7 +163,7 @@ DELETE    '\x7f'
 
 Vamos fazer alguns ajustes no código para identificar e mostrar de maneira mais elegante essas teclas!
 
-Para isso vamos usar outra estrutura de dados chamada **dicionário** (*dict*). Que mapeias chaves (*keys*) e valores (*values*). É muito rápido consultar um valor atrelado a uma chave em um dicionário. 
+Para isso vamos usar outra estrutura de dados chamada **dicionário** (*dict*). Que mapeia (cria uma correspondência entre) chaves (*keys*) e valores (*values*). É muito rápido consultar um valor atrelado a uma chave em um dicionário. 
 
 Se você sabe que a chave existe no dicionário, pode consultar com a forma `dicionario[chave]` (que dá erro se a chave não existir no dicionário). Quando não se tem certeza se a chave está lá, ou é parte da  estratégia  procurar chaves que podem não estar lá, então se usa `dicionario.get(chave, valor_se_nao_tem_a_chave)`.
 
@@ -242,7 +242,7 @@ def keyReleased():
 * Uma vez que certas teclas modificam o efeito de outras, por exemplo, `SHIFT` faz a tecla `1`  aparecer como `!`, então certas sequências podem trazer resultados estranhos:
 
   Apertar`SHIFT`, depois `1 `, soltar `SHIFT`e por fim soltar `1`. faz o sketch ficar sem ver a tecla `!` ser 'solta'. 
-  Uma solução possível é manter registro só do `keyCode` das teclas que permanece sempre o mesmo, o convertendo em algo mais legível com `chr()`:
+  Uma solução possível é manter registro só do `keyCode` das teclas que permanece sempre o mesmo, mas podemos converter o `keyCode` , que é um número, em algo mais legível, no caso das teclas não codificadas, usando chr()`:
 
   ```python
   def keyPressed():
@@ -257,7 +257,7 @@ def keyReleased():
       else:
           teclas_apertadas.discard(keyCode) 
   ```
-  Fique atento e teste para evitar surpresas! No meu computador o `keyCode` do `+` e `-` do teclado numérico lateral, por exemplo, aparecem como `k` e `m`.
+  Note que agora `a` e  `A` devem aparecer como ` A` e , `1` e `!`  como`1` . Fique atento e teste para evitar surpresas! No meu computador o `keyCode` de `+` e `-` do teclado numérico lateral, por exemplo, aparecem como `k` e `m`.
 - Foi usada `sorted()` para obter uma lista ordenada a partir do conjunto `teclas_apertadas`
 - Dentro do `keyPressed()` tem um pequeno truque que impede o *sketch*  de ser interrompido pela tecla `ESC`.
 - No dicionário acrescentei alguns códigos de teclas que vi, estando no Linux, os códigos e nomes das teclas podem variar dependendo do seu sistema operacional.
@@ -268,7 +268,7 @@ A estratégia dos indicadores de estado para teclas, ou de adicionar e remover i
 
 Já para alternar um ajuste, algo como ligar e desligar uma opção, por exemplo (em inglês é usado o termo *toggle*), pode ser melhor usar um indicador modificado por uma condicional simples em `keyTyped()`,`keyPressed()` ou `keyReleased()`, para evitar que um toque da tecla acione mais de uma vez a ação.
 
-No exemplo abaixo, use `SHIFT` para ligar e desligar a animação da cor do fundo.
+No exemplo abaixo, que dessa vez usa um dicionário para guardar um monte de informações a respeito de dois círculos, use `SHIFT` para ligar e desligar a animação da cor do fundo e a barra de espaço para voltar os círculos à posição inicial.
 
 ```python
 teclas_apertadas = set()  # conjunto (set) vazio
@@ -339,7 +339,7 @@ def keyReleased():
 
 ![](assets/teclas_simultaneas_4.gif)
 
-
+**Desafio:**  Você conseguiria adicionar um terceiro círculo ao código?
 
 #### Notas
 
