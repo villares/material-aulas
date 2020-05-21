@@ -268,25 +268,23 @@ A estratégia dos indicadores de estado para teclas, ou de adicionar e remover i
 
 Já para alternar um ajuste, algo como ligar e desligar uma opção, por exemplo (em inglês é usado o termo *toggle*), pode ser melhor usar um indicador modificado por uma condicional simples em `keyTyped()`,`keyPressed()` ou `keyReleased()`, para evitar que um toque da tecla acione mais de uma vez a ação.
 
-No exemplo abaixo, que dessa vez usa um dicionário para guardar um monte de informações a respeito de dois círculos, use `SHIFT` para ligar e desligar a animação da cor do fundo e a barra de espaço para voltar os círculos à posição inicial.
+No exemplo abaixo, vamos usar um dicionário para guardar um monte de informações a respeito de dois círculos, incluindo cores, e quais teclas podem ser usadas para alterar a posição além de uma tecla para trocar a cor de contorno pela cor de preenchimento, e vice-versa.
+
+Use `SHIFT` para ligar e desligar a animação da cor do fundo e a barra de espaço para voltar os círculos à posição inicial.
 
 ```python
 teclas_apertadas = set()  # conjunto (set) vazio
-
 pa = {'x': 128, 'y': 128,
       'fill': color(0, 0, 200), 'stroke': 0,
       'sobe': 'W', 'desce': 'S',
       'esq': 'A', 'dir': 'D',
       'inv': TAB}
-
 pb = {'x': 384, 'y': 128,
       'fill': color(200, 0, 0), 'stroke': 255,
       'sobe': UP, 'desce': DOWN,
       'esq': LEFT, 'dir': RIGHT,
       'inv': ENTER}
-
 players = (pa, pb)
-
 anima_fundo = False
 cor_fundo = 128
 
@@ -301,13 +299,11 @@ def draw():
     if anima_fundo:
         cor_fundo = abs(cor_fundo + sin(frameCount / 60.)) % 256
     background(cor_fundo)
-
     for p in players:
         print p
         fill(p['fill'])
         stroke(p['stroke'])
         ellipse(p['x'], p['y'], 50, 50)
-
         # Ajusta a posição dos círculos
         if p['sobe'] in teclas_apertadas:
             p['y'] -= 1
@@ -320,16 +316,13 @@ def draw():
 
 def keyPressed():
     teclas_apertadas.add(keyCode if key == CODED else chr(keyCode))
-
     for p in players:
         if p['inv'] in teclas_apertadas:
             p['fill'], p['stroke'] = p['stroke'], p['fill']
 
 def keyReleased():
     global anima_fundo
-    
     teclas_apertadas.discard(keyCode if key == CODED else chr(keyCode))
-
     if keyCode == SHIFT:
         anima_fundo = not anima_fundo
     if key == ' ':
@@ -339,8 +332,11 @@ def keyReleased():
 
 ![](assets/teclas_simultaneas_4.gif)
 
-**Desafio:**  Você conseguiria adicionar um terceiro círculo ao código?
-
 #### Notas
 
 - As funções`keyTyped()` e`keyPressed()` são acionadas logo que a tecla é apertada, e são suscetíveis a repetição automática depois de um tempo da tecla mantida apertada, já `keyReleased()` é acionada só quando a tecla é solta.
+
+**Desafios**
+
+-  Você conseguiria adicionar um terceiro círculo ao código?
+- Mudar a dos círculos conforme as teclas que estão apertadas?
