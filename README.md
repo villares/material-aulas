@@ -96,7 +96,6 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
 ##### Processing modo Java
 
 - [Programação Criativa](http://arteprog.space/programacao-criativa) de Monica Rizzolli e Alexandre Villares
-http://portfolio.tabreturn.com/
 - [Guia de programação em Processing](https://www.ranoya.com/aulas/designgenerativo/playgroundDocs/introProcessing.php?theme=dgen&elementos=processing), Prof. Guilherme Ranoya (UFPE).
 - [Tradução da referência da linguagem - versão 1.0 (2005)](http://www.dainf.ct.utfpr.edu.br/~merkle/processing/reference/ptBR/index.html), Prof. Luiz Merkle (UFTPR)
 
