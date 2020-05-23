@@ -5,6 +5,12 @@
 
 Este material é baseado em **Processing modo Python**, uma ferramenta livre de programação com a sintaxe de Python e que inclui o vocabulário, os recursos de desenho e manipulação de imagens, de Processing.
 
+### Como colaborar e contribuir?
+
+Este material didático é aberto. Leia as [instruções para colaborar com este repositório](/como-contribuir.md) e abra [*issues*](https://github.com/villares/material-aulas/issues) apontando problemas, sugerindo assuntos e melhorias, ou contribua com *Pull Requests* para o repositório.
+
+ Você pode também [fazer pequenas doações](https://gumroad.com/villares)! 
+
 ### Sumário
 
 - [O que é e como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)
