@@ -5,11 +5,11 @@
 
 Este material é baseado em **Processing modo Python**, uma ferramenta livre de programação com a sintaxe de Python e que inclui o vocabulário, os recursos de desenho e manipulação de imagens, de Processing.
 
-#### [O que é e como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)
-<sub><b>Caso não possa instalar, experimente no navegador:<br>- [Triket.io](https://trinket.io/python/cfaf743794) ou [SkulptIDE](http://tiny.cc/processing_python) do prof. Claudio Esperança.<br>- Conheça também o projeto [pyp5js](https://github.com/berinhard/pyp5js) que converte Python em JavaScript+P5js</b></sub>
+### Sumário
 
-### Assuntos
-
+- [O que é e como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)
+   - <sub><b>Caso não possa instalar, experimente no navegador: [Triket.io](https://trinket.io/python/cfaf743794) ou [SkulptIDE](http://tiny.cc/processing_python) do prof. Claudio Esperança.</sub>
+  - <sub>Conheça também o projeto [pyp5js](https://github.com/berinhard/pyp5js) que converte Python em JavaScript+P5js</b></sub>
 - [Primeiros passos e desenho básico](Processing-Python/desenho-basico_py.md)
   - [Variáveis](Processing-Python/variaveis.md)
   - [Desenhando polígonos](Processing-Python/poligonos_1.md)  
