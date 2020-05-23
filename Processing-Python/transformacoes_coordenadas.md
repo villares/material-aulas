@@ -2,7 +2,6 @@
 
 > Baseado no tutorial [2D Transformations](https://py.processing.org/tutorials/transform2d/) ([versão traduzida](http://arteprog.space/Processando-Processing/tutoriais-PT/python-transformacoes_2D)) de J. David Eisenberg
 
-
 Processing tem funções embutidas que tornam fácil você mover, girar, e crescer ou encolher objetos por meio da manipulação do sistema de coordenadas. Isso torna possível, por exemplo desenhar um retângulo girado na tela, uma vez que a função `rect()` só sabe desenhar retângulos com os lados alinhados com o sistema de coordenadas.
 
 Esta página apresenta funções `translate`, `rotate`, e `scale`, mas também algumas funções que permitem 'guardar' e 'devolver' o estado anterior do sistema de coordenadas (`pushMatrix()`  e `popMatrix()`).
@@ -242,7 +241,7 @@ Sobre a parte *push* e *pop* dos nomes? Elas vêm de um conceito de computação
 De maneira semelhante, `pushMatrix()` coloca o status atual do sistema de coordenadas no topo de uma área de memória, e `popMatrix()` pega de volta o status. O exemplo anterior usou `pushMatrix()` e `popMatrix()` para garantir que o sistema de coordenação estivesse "limpo" antes de cada parte do desenho. Em todos os outros exemplos, as chamadas para essas duas funções não eram realmente necessárias, mas não custa nada salvar e restaurar o status da grade.
 
 Notas: 
-- **Sempre execute `pushMatrix()` e `popMatrix()` em pares** ou você vai encotrar erros, um deles é meio que uma proteção antes que ocorra o famoso *estouro* ou *transbordamento* da pilha, *stack overflow*, `pushMatrix() cannot use push more than 32 times`. O outro é aviso de que está faltando um *push* anterior: `missing a pushMatrix() to go with that popMatrix()`.
+- **Sempre execute `pushMatrix()` e `popMatrix()` em pares** ou você vai encontrar erros, um deles é meio que uma proteção antes que ocorra o famoso *estouro* ou *transbordamento* da pilha, *stack overflow*, `pushMatrix() cannot use push more than 32 times`. O outro é aviso de que está faltando um *push* anterior: `missing a pushMatrix() to go with that popMatrix()`.
 
 - Em Processing, o sistema de coordenadas é restaurado ao seu estado original (origem na parte superior esquerda da janela, sem rotação e sem mudança de escala) toda vez que a função `draw()` é executada. 
 - É possível também voltar para o estado inicial o sistema de coordenadas com `resetMatrix()`.
