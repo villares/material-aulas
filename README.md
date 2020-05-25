@@ -68,9 +68,9 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
 
 <!-- 
 #### Funções como objetos e algumas ideias de Programação Funcional
-- Usando`map()`,`reduce()`e outras funções que recebem funções como argumentos
-- Listas e dicionários de funções
-- *Decorators*: O que são? Onde vivem? Do que se alimentam?
+- [Usando`map()`,`reduce()`e outras funções que recebem funções como argumentos](funcoes_como_objetos_1.md)
+- [Listas e dicionários de funções](funcoes_como_objetos_2.md)
+- [*Decorators*: O que são? Onde vivem? Do que se alimentam?](funcoes_decoradores.md)
 -->
 #### Questões mais avançadas da ferramenta
 
