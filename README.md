@@ -59,17 +59,24 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
 - [Exportando PDF (saída vetorial)](Processing-Python/exportando_pdf.md)
 - [Exportando SVG (saída vetorial)](Processing-Python/exportando_svg.md)
 - [Exportando animações (vídeos ou GIF)](Processing-Python/exportar_animacoes.md) 
+- [Exportando um aplicativo independente](https://github.com/villares/material-aulas/blob/masterProcessing-Python/export_application.md)
 
 #### Orientação a Objetos
 - [Um botão com orientação a objetos](Processing-Python/botao_com_OO.md)
 - [Uma classe de partículas simples](Processing-Python/particulas.md)
-- [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/mestrado/bandeirinhas/) - Página externa
+- [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/mestrado/bandeirinhas/) (página externa)
 
+<!-- 
+#### Funções como objetos e algumas ideias de Programação Funcional
+- Usando`map()`,`reduce()`e outras funções que recebem funções como argumentos
+- Listas e dicionários de funções
+- *Decorators*: O que são? Onde vivem? Do que se alimentam?
+-->
 #### Questões mais avançadas da ferramenta
 
-- [Exportando um aplicativo independente](https://github.com/villares/material-aulas/blob/masterProcessing-Python/export_application.md)
 - [Usando várias abas no IDE](Processing-Python/modulos.md)
 - [Sobre o Python 2 e alguns recursos do Python 3](Processing-Python/futuro.md)
+- Mais sobre [Python, Jython e Java](http://arteprog.space/Processando-Processing/tutoriais-PT/python-Python_Jython_e_Java) (página externa)
 
 #### Pequenos projetos
 
