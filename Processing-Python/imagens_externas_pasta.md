@@ -5,7 +5,7 @@
 
 > Exemplo de execução carregando 110 imagens medievais coletadas pelo artista e educador [Daniel Seda](https://www.danielseda.com/home).
 
-Tendo visto previamente como [ler e usar imagens de arquivos externos](imagens_externas.md) com `loadImage()` neste exemplo mais avançado vamos permitir que a pessoa escolha uma pasta e o *sketch* vai carregar todas as imagens nela encontradas.
+Tendo visto previamente como [ler e usar imagens de arquivos externos](imagens_externas.md) com `loadImage()`, e a estrutura de dados lista (`list`) neste exemplo mais avançado vamos permitir que a pessoa escolha uma pasta e o *sketch* vai carregar todas as imagens nela encontradas. 
 
 A seleção da pasta começa com uma chamada da função `selectFolder()`, quando pressioanada a tecla 'o' (na função de evento `keyPressed()`). 
 
@@ -17,6 +17,12 @@ def keyPressed():
 
 Note que o primeiro argumento de `selectFolder()` é `"Selecione uma pasta"` o texto (*string*) que vai como título da janela de seleção. O segundo argumento `"adicionar_imagens"` é mais curioso, trata-se de um *string* com o nome de uma função que será chamada quando a pessoa terminar de interagir com a janela de seleção de pasta (diretório / *folder*). Isso é uma estratégia conhecida em programação como uma *função callback*.
 
+É preciso criar uma variável global para guardar as informações dos arquivos encontrados, fazemos isso com esta linha antes do `setup()` que cria uma lista vazia e aponta o nome `imagens` para ela: 
+
+```python
+imagens = []
+```
+
 A função `adicionar_imagens()` é executada quando a pessoa terminou de escolher uma pasta ou se tiver cancelado o processo, ela tem um parâmetro `selection` que recebe a pasta selecionada ou o valor especial `None`: 
 
 ```python
@@ -24,7 +30,7 @@ def adicionar_imagens(selection):
     if selection == None:
         print("Seleção cancelada.")
     else:
-        dir_path = selehrection.getAbsolutePath()
+        dir_path = selection.getAbsolutePath()
         print("Pasta selecionada: " + dir_path)
         for file_name, file_path in lista_imagens(dir_path):
             img = loadImage(file_path)
@@ -36,7 +42,7 @@ def adicionar_imagens(selection):
 
 Saiba que o código que cuida da janela do sistema operacional para escolhermos a pasta, e também o código da função `adicionar_imagens()`, chamada em seguida, são executados em linhas de execução (*threads*) separadas do *sketch* principal, isto é correm em separado, e por conta disso não interrompem execução do `draw()`, o chamado 'laço principal de repetição' do Processing. 
 
-O carregamento das imagens é um procedimento razoavelmente lento e por isso é possível vê-las aparecendo aos poucos na tela, conforme são acrescentadas na lista global `imagens` pela execução do laço `for` em `adicionar_imagens()`.
+O carregamento das imagens é um procedimento razoavelmente lento e por isso é possível vê-las aparecendo aos poucos na tela, conforme são acrescentadas na lista `imagens` pela execução do laço `for` em `adicionar_imagens()`.
 
 Uma boa parte da solução da nossa tarefa, na verdade, está encapsulada em `lista_imagens()`, função que usamos em `adicionar_imagens()`. Ela recebe o caminho completo da pasta selecionada e devolve uma lista com tuplas dos nomes dos arquivos das imagens e o caminho completo delas para ser usado no `loadImage()`: 
 
@@ -71,7 +77,7 @@ def imgext(file_name):
     return ext.lower() in valid_ext
 ```
 
-Por fim, aqui vai o código completo do sketch, que desenha uma grade de imagens no `draw()` com os itens da lista global `imagens`:
+Por fim, aqui vai o código completo do sketch, que desenha uma grade de imagens no `draw()` com os itens da lista `imagens`:
 
 ```python
 from __future__ import unicode_literals , division
