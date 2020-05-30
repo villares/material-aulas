@@ -25,7 +25,6 @@ def setup():
 def draw():
     background(0, 0, 200)
     
-    lado = width / 2
     cinza = map(mouseX, 0, width, 0, 255)
     x = map(mouseX, 0, width, 100, 300)
     
@@ -66,7 +65,7 @@ def draw():
     xb, yb = 300, 300
     ca = color(200, 0, 0)
     cb = color(0, 0, 200)
-    n = 1+ int(mouseX / 10)
+    n = 1 + int(mouseX / 10) # podia usar 1 + int(map(mouseX, 0, width, 0, 40))
     for t in range(n + 1):
         xc = lerp(xa, xb, t / n)
         yc = lerp(ya, yb, t / n)
@@ -84,7 +83,51 @@ Em Processing podemos usar objetos da classe `PVector` para armazenar pares ou t
 
 ### O que é *easing*?
 
-A ideia por trás de easing é de que na natureza, os movimento tem variação de velocidade que raramente é linear. As funções de *easing* recebem um valor entre **0** e **1**, como `lerp()` que acabamos de ver, e retornam um valor, grosso modo na mesma faixa, o pelo menos nos extremo (podendo passar temporariamente um pouco pra fora). Em geral nessas funçõs **0** devolve **0** e **1** produz **1**, mas a variação intermediária cantece em velocidades diferentes.
+A ideia por trás de *easing* é de que na natureza, os movimento tem variação de velocidade que raramente é linear. As funções de *easing* recebem um valor entre **0** e **1**, como `lerp()` que acabamos de ver, e retornam um valor, grosso modo na mesma faixa, o pelo menos nos extremo (podendo passar temporariamente um pouco para fora). 
+
+Em uma função `easing(p)` um `p = 0` devolve **0** e `p = 1` produz **1**, mas a variação intermediária acontece em velocidades diferentes. O *não-easing* é o crescimento linear, em que o valor devolvido é exatamente o mesmo recebido pela função.
+
+Vejamos o exemplo que fizemos inicialmente com `map()` de um círculo que anda e vai de preto para branco, mas usando `lerp()` e uma função de *easing* exponencial, na saída e na chegada (*in* e *out*).
+
+```python
+def setup():
+    size(400, 400)
+    
+def draw():
+    background(0, 0, 200)
+    
+    #  cinza = map(mouseX, 0, width, 0, 255)
+    #  x = map(mouseX, 0, width, 100, 300)
+    #  pode ser expresso em forma de t para usar lerp()
+    t = map(mouseX, 0, width, 0, 1)    
+    cinza = lerp(0, 255, t)
+    x = lerp(100, 300, t)
+    fill(cinza)
+    circle(x, height * .33 , 100)
+
+    # Aplicando 'easing' em 't'
+    e = exponential_in_out(t)
+    e_cinza = lerp(0, 255, e)    
+    e_x = lerp(100, 300, e)
+    fill(e_cinza)
+    circle(e_x, height * .66 , 100)
+
+def exponential_in_out(p):
+    if p == 0.0 or p == 1.0:
+        return p
+    if p < 0.5:
+        return 0.5 * 2 ** ((20 * p) - 10)
+    else:
+        return -0.5 * 2 ** ((-20 * p) + 10) + 1
+```
+
+
+
+
+
+Veja exemplos de outras formas de easing
+
+
 
 
 
