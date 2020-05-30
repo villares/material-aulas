@@ -43,17 +43,44 @@ Isso lembra o `map()` que acabamos de ver, mas com uma faixa de origem (para o *
 
 Note que assim como em `map()` valores fora da faixa esperada de origem (no caso entre **0** e **1**) produzem valores além dos limites fornecidos.
 
-#### *Lerp* para vetores
-
-É possível fazer a interpolação linear das coordenadas de um ponto, para encontrar pontos intermediários, o mesmo vale para vetores. É comum no Processing usar objetos da classe `PVector` para armazenar pontos e vetores. Essa classe tem um método `lerp()` que pode ser muito útil.
-
-![](assets/lerp_2.gif)
 
 #### *Lerp* para cores
 
 Podemos também obter cores intermediárias com a função `lerpColor()` 
 
 ![](assets/lerp_3.gif)
+
+Veja um exemplo de uso abaixo.
+
+```python
+from __future__ import division
+
+def setup():
+    size(400, 400) 
+    strokeWeight(3)
+    noFill()
+    
+def draw():
+    background(240)
+    xa, ya = 100, 100
+    xb, yb = 300, 300
+    ca = color(200, 0, 0)
+    cb = color(0, 0, 200)
+    n = 1+ int(mouseX / 10)
+    for t in range(n + 1):
+        xc = lerp(xa, xb, t / n)
+        yc = lerp(ya, yb, t / n)
+        cc = lerpColor(ca, cb, t / n)
+        stroke(cc)    
+        ellipse(xc, yc, 200, 200)
+```
+![](assets/lerp_3b.gif)
+
+#### *Lerp* para vetores
+
+Em Processing podemos usar objetos da classe `PVector` para armazenar pares ou triplas de valores, representando coordenadas e pontos ou vetores em duas ou três dimensões. Essa classe tem um método `lerp()` que pode ser muito útil, permitindo  fazer a interpolação linear de dois vetores ou pontos, isto é, encontrar vetores ou pontos intermediários.
+
+![](assets/lerp_2.gif)
 
 ### O que é *easing*?
 
