@@ -53,7 +53,7 @@ Note que assim como em `map()` valores fora da faixa esperada de origem (no caso
 
 Podemos também obter cores intermediárias com a função `lerpColor()` 
 
-![](assets/lerpColor.gif)
+![](assets/lerp_3.gif)
 
 ### O que é *easing*?
 
