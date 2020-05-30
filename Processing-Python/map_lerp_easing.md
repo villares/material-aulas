@@ -21,9 +21,10 @@ Em um caso de uso bem simples, o `map()` podemos transformar o valor da posiçã
 ```python
 def setup():
     size(400, 400)
+    strokeWe
     
 def draw():
-    background(0, 0, 200)
+    background(200)
     
     cinza = map(mouseX, 0, width, 0, 255)
     x = map(mouseX, 0, width, 100, 300)
@@ -92,9 +93,10 @@ Vejamos o exemplo que fizemos inicialmente com `map()` de um círculo que anda e
 ```python
 def setup():
     size(400, 400)
+    strokeWeight(3)
     
 def draw():
-    background(0, 0, 200)
+    background(200)
     
     #  cinza = map(mouseX, 0, width, 0, 255)
     #  x = map(mouseX, 0, width, 100, 300)
