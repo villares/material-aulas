@@ -66,7 +66,7 @@ def draw():
     xb, yb = 300, 300
     ca = color(200, 0, 0)
     cb = color(0, 0, 200)
-    n = 1 + int(mouseX / 10) # podia usar 1 + int(map(mouseX, 0, width, 0, 40))
+    n = 1 + int(mouseX / 10) # ou 1 + int(map(mouseX, 0, width, 0, 40))
     for t in range(n + 1):
         xc = lerp(xa, xb, t / n)
         yc = lerp(ya, yb, t / n)
@@ -84,7 +84,13 @@ Em Processing podemos usar objetos da classe `PVector` para armazenar pares ou t
 
 ### O que é *easing*?
 
-A ideia por trás de *easing* é de que na natureza, os movimento tem variação de velocidade que raramente é linear. As funções de *easing* recebem um valor entre **0** e **1**, como `lerp()` que acabamos de ver, e retornam um valor, grosso modo na mesma faixa, o pelo menos nos extremo (podendo passar temporariamente um pouco para fora). 
+A ideia por trás de *easing* é a suavização da transição de um movimento, uma vez que, na natureza, os movimento tem variação de velocidade que raramente são instantâneas ou lineares. 
+
+Um movimento pode iniciar rapidamente  e parar suavemente (*easing out*), iniciar suavemente (*ease in*) ou ainda iniciar e parar suavemente (*easing in and out*).
+
+### Funções para suavização das transições
+
+A estretégia mias comum é de se usar funções de *easing* que recebem um valor entre **0** e **1** e retornam um valor, grosso modo na mesma faixa, o pelo menos nos extremo (eventualmente passado um pouco para fora). Os valores podem ser usados em conjunto com `lerp()` ou simplesmente multiplicando um outro valor.
 
 Em uma função `easing(p)` um `p = 0` devolve **0** e `p = 1` produz **1**, mas a variação intermediária acontece em velocidades diferentes. O *não-easing* é o crescimento linear, em que o valor devolvido é exatamente o mesmo recebido pela função.
 
@@ -109,8 +115,8 @@ def draw():
 
     # Aplicando 'easing' em 't'
     e = exponential_in_out(t)
-    e_cinza = lerp(0, 255, e)    
-    e_x = lerp(100, 300, e)
+    e_cinza = lerp(0, 255, e)  # ou 255 * e  
+    e_x = lerp(100, 300, e) # ou 100 + 200 * e
     fill(e_cinza)
     circle(e_x, height * .66 , 100)
 
@@ -123,13 +129,56 @@ def exponential_in_out(p):
         return -0.5 * 2 ** ((-20 * p) + 10) + 1
 ```
 
+![](assets/easing_1b.gif)
 
 
 
+#### Outros exemplos/métodos
 
-Veja exemplos de outras formas de easing
+![](assets/easing_2.gif)
 
+```python
+def linear(p):
+    # sem easing, para comparação
+    return p
 
+def cubic_ease_in(p):
+    return p ** 3
 
+def quadratic_ease_in(p):
+    return p ** 2
 
+def sine_in_out(p):
+    return -(cos(PI * p) - 1) / 2
 
+def quadratic_ease_in_out(p):
+    if p < 0.5:
+        return 2 * p ** 2
+    return -2 * p ** 2 + (4 * p) - 1
+
+def cubic_ease_in_out(p):
+    if p < 0.5:
+        return 4 * p ** 3
+    else:
+        f = ((2 * p) - 2)
+        return 0.5 * f ** 3 + 1
+
+def exponential_in_out(p):
+    if p == 0.0 or p == 1.0:
+        return p
+    if p < 0.5:
+        r = 2 ** ((20 * p) - 10) / 2
+    else:
+        r = -0.5 * 2 ** ((-20 * p) + 10) + 1
+    return r
+
+def quadratic_ease_out(p):
+    return -(p * (p - 2))
+
+def cubic_ease_out(p):
+    f = (p - 1)
+    return f ** 3 + 1
+
+def circular_ease_out(p):
+    return sqrt((2 - p) * p)
+```
