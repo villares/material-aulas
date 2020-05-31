@@ -1,4 +1,3 @@
-
 ---
 
 ## material para cursos e oficinas ([repositório](https://github.com/villares/material-aulas/))
@@ -20,6 +19,7 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
   - [Variáveis](Processing-Python/variaveis.md)
   - [Desenhando polígonos](Processing-Python/poligonos_1.md)  
   - [O que é indentação?](Processing-Python/indentacao.md)  
+  - [Divisão com números inteiros](divisao.md)
 - [Condicionais (`if` e `else`)](Processing-Python/condicionais_py.md)
   - [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](Processing-Python/atribuicao-e-comparacao.md)
   - [Condições aninhadas e outras estruturas condicionais](Processing-Python/condicionais_2.md)
