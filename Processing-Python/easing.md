@@ -54,9 +54,9 @@ def sigmoid_easing(p):
 
 ![](assets/easing_1b.gif)
 
-#### Outros exemplos/métodos
+#### Outros exemplos
 
-
+![](assets/easing_2.gif)
 
 ```python
 def cubic_ease_in(p):
