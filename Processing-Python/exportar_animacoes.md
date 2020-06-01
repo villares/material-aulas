@@ -54,17 +54,23 @@ Copie o código do 'helper', crie no seu sketch no Processing IDE uma aba chamad
 
 ```python
 """
-This is a helper for the Processing gifAnimation library
-https://github.com/extrapixel/gif-animation/tree/3.0
+# -*- coding: utf-8 -*-
 
+"""
+Alexandre B A Villares http://abav.lugaralgum.com - v2020_05_31 - Licensed under GPL v3
+Inspired by an example by Art Simon https://github.com/APCSPrinciples/AnimatedGIF/
+
+This is a helper for the Processing gifAnimation library https://github.com/extrapixel/gif-animation/tree/3.0
 Download the library from github.com/extrapixel/gif-animation/archive/3.0.zip 
 Unzip and copy the gifAnimation folder into your libraries folder, like shown below:
 user/sketchbook/libraries/gifAnimation (Linux) 
 user/Documents/Processing/libraries/gifAnimation (Mac/Windows) 
 
+# This file should be saved as a 'tab' named gif_export.py in your Processing Python Mode sketch
 # Restart the IDE and add these lines at the start of your sketch:
 add_library('gifAnimation')
 from gif_export import gif_export
+
 # then add this at the end of draw():
 gif_export(GifMaker, "filename")
 """
