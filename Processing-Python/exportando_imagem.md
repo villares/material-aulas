@@ -54,10 +54,9 @@ def draw():
         exit() # interrompe a execução do sketch   
 ```
 
-### Exportando em resolução maior do que a tela
+### Exportando em resolução maior do que a da tela
 
-Um objeto *PGraphics* é uma espécie de tela virtual que grava o resultado do desenho em paralelo à área de desenho normal, podendo receber ajustes especiais aplicados apenas a esse objeto-tela, como `.scale()` no exemplo abaixo.
-
+Um objeto *PGraphics* é uma espécie de tela virtual que grava o resultado do desenho em paralelo à área de desenho normal, podendo receber ajustes especiais aplicados apenas a esse objeto-tela, como `.scale()` no exemplo abaixo, o que permite exportar uma imagem 10 vezes maior do que a mostrada na tela. 
 ```
 def setup():
     size(50, 50)
@@ -75,8 +74,10 @@ def setup():
     
     # fim da gravação
     endRecord()
-    f.save("file.png")
+    f.save("exportando_imagem_ampliada.png")
 ```
+Repare que a espessura de linha está sendo ajustada para um valor diferente com `f.strokeWeight()`. Sem o ajuste ela ficaria 10 vezes maior que na tela, acompanhando e resto da imagem, desta maneira ela fica apenas 5 vezes maior.
+
 ![](assets/exportando_imagem_ampliada.png
 
 
