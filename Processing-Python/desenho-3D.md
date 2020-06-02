@@ -60,9 +60,12 @@ def caixa(x, y, z, *tam):
     pushMatrix()
     translate(x, y, z)
     box(*tam)
-    popMatrix()       
-                                    
+    popMatrix()                                        
 ```
+
+### Carregando recursos externos em 3D
+
+Usando `size()` com `P3D` é possível carregar arquivos OBJ com a função `loadShape('arquivo.obj')` e mostrá-los com `shape(s, x, y)`. Veja o exemplo que vem no IDE!
 
 ### Exemplo de caixa com furos (e outros)
 
