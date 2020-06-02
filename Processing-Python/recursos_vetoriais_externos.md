@@ -35,9 +35,10 @@ def draw():
 
 ![](assets/bot1.png)
 
-Confira métodos dos objetos `PShape` em https://processing.org/reference/PShape.html (a página do modo Python está incompleta mas os métodos são os mesmos).
+Os objetos `PShape` tem uma série de métodos (funções internas desses objetos) que podem ser consultados na referência do [Processing modo Java / PShape](https://processing.org/reference/PShape.html). a página do modo Python está incompleta mas os métodos são os mesmos.
 
 ### Assuntos relacionados
 
 - [Carregando imagens externas](imagens_externas.md)
 - [Exportando SVG](exportando_svg.md)
+- Para carregar objetos 3D no formato OBJ, consulte a página sobre [P3D](https://github.com/villares/material-aulas/blob/master/Processing-Python/desenho-3D.md)
