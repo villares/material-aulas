@@ -104,7 +104,7 @@ from random import seed
 seed(numero_inteiro)
 ```
 
-Neste exemplo abaixo usamos uma semente para manter o 'sorteio' entre frames do `draw()`, mantendo a interatividade de ajute do ângulo da árvore com o mouse. Quando uma imagem é exportada, o nome do arquivo contém a semente (_seed_) do gerador de números pseudo-aleatórios.
+Neste exemplo abaixo usamos uma semente para manter 'congelados' os números gerados por `random()` entre frames do `draw()`, mantendo a interatividade de ajuste do ângulo da árvore com o mouse. Quando uma imagem é exportada, o nome do arquivo contém a semente (_seed_) do gerador de números pseudo-aleatórios.
 
 ```python
 def setup():
