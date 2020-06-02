@@ -54,56 +54,11 @@ def draw():
         exit() # interrompe a execução do sketch   
 ```
 
-### Um exemplo um pouco mais longo
-
-Neste exemplo o nome do arquivo contém a semente (_seed_) do gerador de números pseudo-aleatórios.
-
-```python
-def setup():
-    global seed
-    seed = int(random(1000))
-    print(seed)
-    size(500, 500)
-    
-def draw(): 
-    randomSeed(seed)
-    background(240, 240, 200)
-    translate(250, 300)
-    galho(60)
-          
-def galho(tamanho): # definição do galho/árvore
-    ang = radians(mouseX)
-    reducao = .8
-    strokeWeight(tamanho / 10)
-    line(0, 0, 0, -tamanho)
-    if tamanho > 5:
-        pushMatrix()
-        translate(0, -tamanho)
-        rotate(ang)
-        galho(tamanho * reducao - random(0, 2))
-        rotate(-ang * 2)
-        galho(tamanho * reducao - random(0, 2))
-        popMatrix()
-          
-def keyPressed(): # executada quando uma tecla for precinada
-    if keyCode == LEFT:
-         seed = seed - 1
-    if keyCode == RIGHT:
-         seed = seed + 1
-    if key == ' ':  # barra de espaço precionada, sorteia nova "seed"
-        seed = int(random(100000))
-        print(seed)
-    if key == 's':  # tecla "s" precionada, salva a imagem PNG
-        nome_arquivo = 'arvore-s{}-a{}.png'.format(seed, mouseX % 360)
-        saveFrame(nome_arquivo)
-        print("PNG salvo")
-```
-
 ### Outras estratégias
 
 #### Exportando em resolução maior do que a tela
 
-Um objeto PGraphics grava o resultado do desenho, podendo receber alguns ajustes especiais (aplicados apenas ao objeto, como no exemplo `.scale()`).
+Um objeto *PGraphics* é uma espécie de tela virtual que grava o resultado do desenho em paralelo à área de desenho normal, podendo receber ajustes especiais aplicados apenas a esse objeto-tela, como `.scale()` no exemplo abaixo.
 
 ```
 scale = 10:
@@ -119,8 +74,6 @@ f​.save("file.png")
 
 ### Assuntos relacionados
 
-- [Desenhando fora da vista (*offscreen buffer*)](offscreen-buffer.md)
+- [Desenhando fora da vista com *PGraphics* (*offscreen buffer*)](offscreen-buffer.md)
 - [Exportando PDF](exportando_pdf.md)
 - [Exportando SVG](exportando_Svg.md)
-
-`TO DO:  Link para exemplo de exportação vetorial`
