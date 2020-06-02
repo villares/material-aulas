@@ -4,16 +4,14 @@
 
 ### Parâmetros padrão
 
-Você já reparou que a função `rect()` aceita 4, 5 ou 8 argumentos? [Confira na referência](https://py.processing.org/reference/rect.html).
-
-Você pode chamae `rect()` das seguintes maneiras:
+Você já reparou que a função `rect()` aceita 4, 5 ou 8 argumentos? Você pode invocar `rect()` das seguintes maneiras ([confira na referência se preferir](https://py.processing.org/reference/rect.html)):
 
 ```
 rect(x, y, largura, altura)
 rect(x, y, largura, altura, raio_cantos)
 rect(x, y, largura, altura, raio_sup_esq, raio_sup_dir, raio_inf_dir, raio_inf_esq)`
 ```
-Outro caso é a função `fill()` para pedir a cor de preenchimento:
+Outro caso é a função `fill()` para pedir uma cor de preenchimento:
 ```
 fill(cinza)
 fill(cinza, alpha_opacidade)
