@@ -104,7 +104,48 @@ from random import seed
 seed(numero_inteiro)
 ```
 
-[ FALTA UM EXEMPLO LEGAL]
+Neste exemplo abaixo usamos uma semente para manter o 'sorteio' entre frames do `draw()`, mantendo a interatividade de ajute do ângulo da árvore com o mouse. Quando uma imagem é exportada, o nome do arquivo contém a semente (_seed_) do gerador de números pseudo-aleatórios.
+
+```python
+def setup():
+    global seed
+    seed = int(random(1000))
+    print(seed)
+    size(500, 500)
+    
+def draw(): 
+    randomSeed(seed)
+    background(240, 240, 200)
+    translate(250, 300)
+    galho(60)
+          
+def galho(tamanho): # definição do galho/árvore
+    ang = radians(mouseX)
+    reducao = .8
+    strokeWeight(tamanho / 10)
+    line(0, 0, 0, -tamanho)
+    if tamanho > 5:
+        pushMatrix()
+        translate(0, -tamanho)
+        rotate(ang)
+        galho(tamanho * reducao - random(0, 2))
+        rotate(-ang * 2)
+        galho(tamanho * reducao - random(0, 2))
+        popMatrix()
+          
+def keyPressed(): # executada quando uma tecla for precinada
+    if keyCode == LEFT:
+         seed = seed - 1
+    if keyCode == RIGHT:
+         seed = seed + 1
+    if key == ' ':  # barra de espaço precionada, sorteia nova "seed"
+        seed = int(random(100000))
+        print(seed)
+    if key == 's':  # tecla "s" precionada, salva a imagem PNG
+        nome_arquivo = 'arvore-s{}-a{}.png'.format(seed, mouseX % 360)
+        saveFrame(nome_arquivo)
+        print("PNG salvo")
+```
 
 ---
 Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
