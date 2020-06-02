@@ -117,10 +117,10 @@ endRecord()
 f​.save("file.png")
 ```
 
-#### Estratégia do offscreen Buffer
+### Assuntos relacionados
 
-`TO DO`
-
-### Veja também
+- [Desenhando fora da vista (*offscreen buffer*)](offscreen-buffer.md)
+- [Exportando PDF](exportando_pdf.md)
+- [Exportando SVG](exportando_Svg.md)
 
 `TO DO:  Link para exemplo de exportação vetorial`
