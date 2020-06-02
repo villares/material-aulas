@@ -11,7 +11,7 @@ sketch_2020_04a                (pasta/folder do sketch)
        L  imagem.jpg           (imagem)
 ```
 
-Note que a operação de carregar o arquivo de imagem é relativamente demoradae nunca deve ser executada dentro do laço `draw()`. Em geral só precisamos carregar uma vez a imagem e fazemos isso no `setup()`. Também é comum criarmos uma variável global que faz referência à imagem, neste exemplo a variável `img`:
+Note que a operação de carregar o arquivo de imagem é relativamente demorada e nunca deve ser executada dentro do laço `draw()`. Em geral só precisamos carregar uma vez a imagem e fazemos isso no `setup()`. Também é comum criarmos uma variável global que faz referência à imagem, neste exemplo a variável `img`:
 
 ```pyde
 def setup():
@@ -56,7 +56,7 @@ def draw():
 ```
 
 ### Acessando a cor de um pixel da tela ou de uma imagem
- 
+
 Use `get()` para os pixels visíveis na tela ou o método `.get()` para os pixels em uma imagem `PImage`. Como no exemplo abaixo:
 
 ```pyde
