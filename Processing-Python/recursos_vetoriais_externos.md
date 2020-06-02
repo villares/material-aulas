@@ -33,6 +33,10 @@ def draw():
  
 ```
 
+![](assets/bot1.png)
+
+Confira métodos dos objetos `PShape` em https://processing.org/reference/PShape.html (a página do modo Python está incompleta mas os métodos são os mesmos).
+
 ### Assuntos relacionados
 
 - [Carregando imagens externas](imagens_externas.md)
