@@ -36,6 +36,8 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
   - [Mais sobre polígonos](Processing-Python/poligonos_2.md)
   - [Laço de repetição com `while`](Processing-Python/while.md)
 - [Tipos de valores (inteiros, números de ponto flutuante, texto (*strings*))](Processing-Python/tipagem_py.md)
+  - [Textos no programa, no console e na tela (*strings*)](Processing-Python/strings_py.md)
+- [Trabalhando com fontes e outros ajustes do texto](Processing-Python/tipografia.md)
 - [Interação: input com teclado e mouse](Processing-Python/input_py.md)
   - [Escutando teclas simultâneas](Processing-Python/teclas_simultaneas.md)
   - [Um botão simples](Processing-Python/botao_simples.md)
@@ -43,8 +45,6 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
   - [Rodinha do mouse (*mouse wheel*)](Processing-Python/rodinha_mouse.md)
   - [Parando o `draw()`](Processing-Python/no_loop.md)
 - [Mais sobre aleatoriedade](Processing-Python/aleatoriedade_2.md)
-- [Textos no programa, no console e na tela (*strings*)](https://github.com/villares/material-aulas/blob/masterProcessing-Python/strings_py.md)
-  - [Trabalhando com fontes e outros ajustes do texto](Processing-Python/tipografia.md)
 - [Desenhando em 3D](Processing-Python/desenho-3D.md)
 
 #### Arquivos externos
