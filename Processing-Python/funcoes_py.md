@@ -5,15 +5,17 @@
 
 ### Sintaxe para definição de funções
 ```python
-def nome_da_funcao(a, b): # esta função tem dois parâmetros: a e b
+def nome_da_funcao(a, b): # esta função tem dois parâmetros: a e b (requer dois argumentos)
      corpo  # instruções que a função executa, usando valores dos parâmetros
      
-def outra_funcao(): # esta função não tem nenhum parâmetro
+def outra_funcao(): # esta função não tem nenhum parâmetro (não requer argumentos na chamada)
      corpo  # instruçÕes que a função executa
 
 def funcao_com_resultado(a): # esta função tem um parâmetro
      corpo  # instruções que calculam um valor/resultado
      return resultado
+     
+# Podemos ter funções que não requerem argumentos (não tem parâmetros) e devolve resultado.
 ```
 
 ### Sintaxe da invocação, ou chamada, de funções
