@@ -5,7 +5,7 @@
 
 Ao programar podemos inventar vocabulário novo na linguagem que estamos usando quando definimos uma função. Essa palavra se comporta exatamente como outras palavras que já vem prontas na linguagem, e *encapsula*, empacota, alguma ação útil, por meio de um trecho de código, o corpo da função, que é executado quando *chamamos* a função em um outro momento.
 
-Leia com cuidado estes três exemplos, escritos de maneira genérica, com nomes bobos (`nome_da_funcao`, `outra_funcao`) mas que exemplificam a estrutura da definição de uma nova função. Onde está `corpo` entram na verdade as ações que a função executa.
+Leia com cuidado estes três exemplos, escritos de maneira genérica, com nomes bobos (`nome_da_funcao`, `outra_funcao`, `funcao_com_resultado`) mas que exemplificam a estrutura da definição de uma nova função. Onde está `corpo` entram indentadas em relação ao cabeçalho (a linha do `def`), as ações que a função executa.
 
 ### Sintaxe para definição de funções
 ```python
@@ -13,14 +13,15 @@ def nome_da_funcao(a, b): # esta função tem dois parâmetros: a e b (requer do
      corpo  # instruções que a função executa, usando valores dos parâmetros
      
 def outra_funcao(): # esta função não tem nenhum parâmetro (não requer argumentos na chamada)
-     corpo  # instruçÕes que a função executa
+     corpo  # instruções que a função executa
 
 def funcao_com_resultado(a): # esta função tem um parâmetro
-     corpo  # instruções que calculam um valor/resultado
-     return resultado
+     parte_do_corpo    # instruções que calculam um valor/resultado
+     return resultado  # esta linha também pertence ao corpo da função
      
 # Podemos também ter funções que não requerem argumentos (não tem parâmetros) e devolve resultado.
 ```
+
 
 ### Sintaxe da invocação, ou chamada, de funções
 
@@ -70,7 +71,11 @@ def olho(x, y, tamanho):
 
 A função `olho()` desenha um olho mas não devolve nenhum valor, na verdade ela devolve o valor especial `None` (uma espécie de "nada"), mas é comum termos funções que devolvem algum valor útil como resultado.
 
-As funções que são feitas para devolver um resultado contém a palavra `return`, seguida do resultado no seu corpo, e são interrompidas assim que essa instrução é executada. Aqui alguns exemplos:
+As funções que são feitas para devolver um resultado contém a palavra `return` no seu corpo, seguida do resultado calculado. A instrução `return` pode aparecer no meio da função, mas sempre que for executada interrompe a execucão da função, *devolvendo* o fluxo de execução para o ponto onde a função foi chamada. 
+
+<sup>Se não houver um valor depois de `return` no corpo, a função devolve o valor especial `None`, o mesmo que acontece com funções que não tem `return`, só que no ponto onde está escrito `return`.</sup>
+
+Aqui alguns exemplos:
 
 ```python
 def cor_sorteada():
