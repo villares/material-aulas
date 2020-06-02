@@ -44,7 +44,7 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
   - [O que é *easing*?](Processing-Python/easing.md) - transições de movimento
 - [Desenhando em 3D](Processing-Python/desenho-3D.md)
 
-### Mais sobre interação com o teclado e mouse
+#### Mais sobre interação com o teclado e mouse
 
 - [Escutando teclas simultâneas](Processing-Python/teclas_simultaneas.md)
 - [Um botão simples](Processing-Python/botao_simples.md)
