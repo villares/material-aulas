@@ -59,16 +59,26 @@ def draw():
 Um objeto *PGraphics* é uma espécie de tela virtual que grava o resultado do desenho em paralelo à área de desenho normal, podendo receber ajustes especiais aplicados apenas a esse objeto-tela, como `.scale()` no exemplo abaixo.
 
 ```
-scale = 10:
-f = createGraphics(width * scale, height * scale)
-beginRecord(f)
-f.scale(scale)
+def setup():
+    size(50, 50)
+    # preparo da gravação
+    scale = 10
+    f = createGraphics(width * scale, height * scale)
+    beginRecord(f) #  início da gravação
+    # ajustes que só afetam o arquivo sendo gravado
+    f.scale(scale)
+    f.strokeWeight(.5)
 
-# desenho aqui
-
-endRecord()
-f​.save("file.png")
+    # O desenho feito aqui aparece na tela e no arquivo
+    background(0, 200, 0)
+    circle(6, 6, 10)
+    
+    # fim da gravação
+    endRecord()
+    f.save("file.png")
 ```
+![](assets/exportando_imagem_ampliada.png
+
 
 ### Assuntos relacionados
 
