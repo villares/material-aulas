@@ -1,6 +1,11 @@
 ## Desenhando fora da vista (*offscreen buffer*)
 
-Aqui um exemplo de desenho feito em superfícies PGraphics (https://py.processing.org/reference/createGraphics.html) em vez de diretamente na tela (uma estratégia conhecida como _offscreen buffer).
+É possível desenhar em um objeto especial, uma espécie de tela virtual, criando superfícies *PGraphics* com a função [createGraphics()](https://py.processing.org/reference/createGraphics.html), em vez de desenhar diretamente na tela em uma estratégia conhecida como _offscreen buffer_. Depois é possível mostrar ou não essa imagem na área de desenho normal com a função `image()` (a mesma que usamos para mostrar uma imagem externa carregada carregada com `loadImage()`, uma *PImage*).
+
+Algumas vantagens dessa estratégia podem ser:
+- Desenho cumulativo em uma camada enquanto se anima elementos (com limpeza do frame) em outra camada;
+- Potencialmente mais rápido do que desenhar na tela (reaproveitando um desenho com partes já prontas, por exemplo);
+- Salvar o desenho em camadas separadas para posterior tratamento (como no exemplo mais abaixo).
 
 ```python
 def setup():
@@ -28,7 +33,6 @@ def draw():
     image(c1, 0, 0)
                     
 def keyPressed():
-    global sinalizador
     if key == 's':
         c0.save('camada0.png')
         c1.save('camada1.png')
