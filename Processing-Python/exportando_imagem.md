@@ -76,7 +76,7 @@ def setup():
     endRecord()
     f.save("exportando_imagem_ampliada.png")
 ```
-Repare que a espessura de linha está sendo ajustada para um valor diferente com `f.strokeWeight()`. Sem o ajuste ela ficaria 10 vezes maior que na tela, acompanhando e resto da imagem, desta maneira ela fica apenas 5 vezes maior.
+Repare que a espessura de linha está sendo ajustada para um valor diferente com `f.strokeWeight()`. Sem o ajuste ela ficaria 10 vezes maior no arquivo do que na área de desenho normal (acompanhando e resto da imagem) e desta maneira ela fica apenas 5 vezes maior no arquivo.
 
 ![](assets/exportando_imagem_ampliada.png)
 
