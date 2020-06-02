@@ -78,7 +78,7 @@ def setup():
 ```
 Repare que a espessura de linha está sendo ajustada para um valor diferente com `f.strokeWeight()`. Sem o ajuste ela ficaria 10 vezes maior que na tela, acompanhando e resto da imagem, desta maneira ela fica apenas 5 vezes maior.
 
-![](assets/exportando_imagem_ampliada.png
+![](assets/exportando_imagem_ampliada.png)
 
 
 ### Assuntos relacionados
