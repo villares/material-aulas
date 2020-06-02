@@ -8,7 +8,7 @@ O código abaixo exemplifica como salvar uma imagem PNG de um frame. Quando uma 
 
 ### Um exemplo bem simples
 
-O código abaixo exemplifica como salvar uma imagem PNG de um frame. Quando uma tecla é pressionada, é executada a função `keyPressed()` e se for identificada a tecla "s" (`key == 's'`) é execuatada a função `saveFrame()`, que grava uma imagem na pasta do *sketch*.
+O código abaixo exemplifica como salvar uma imagem PNG de um frame. Quando uma tecla é pressionada, é executada a função `keyPressed()` e se for identificada a tecla "s" (`key == 's'`) é executada a função `saveFrame()`, que grava uma imagem na pasta do *sketch*.
 
 ```python
 def setup():
@@ -54,9 +54,7 @@ def draw():
         exit() # interrompe a execução do sketch   
 ```
 
-### Outras estratégias
-
-#### Exportando em resolução maior do que a tela
+### Exportando em resolução maior do que a tela
 
 Um objeto *PGraphics* é uma espécie de tela virtual que grava o resultado do desenho em paralelo à área de desenho normal, podendo receber ajustes especiais aplicados apenas a esse objeto-tela, como `.scale()` no exemplo abaixo.
 
