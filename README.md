@@ -26,7 +26,6 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
   - [Condições aninhadas e outras estruturas condicionais](Processing-Python/condicionais_2.md)
 - [Movimento: uma animação simples usando `setup()` e `draw()`](Processing-Python/movimento_py.md)
   - [Escopo de variáveis (local e global)](Processing-Python/escopo_py.md)
-- [Aleatoriedade: `random` e números 'sorteados'](Processing-Python/aleatoriedade_1.md)
 - [Declarando novas funções](Processing-Python/funcoes_py.md)
   - [Alterando o sistema de coordenadas (`translate()`, `rotate()` e outras)](Processing-Python/transformacoes_coordenadas.md)
   - [Funções recursivas](Processing-Python/recursao_py.md)
@@ -35,24 +34,21 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
   - [Grades retangulares: filas e colunas de elementos](Processing-Python/grades.md)
   - [Mais sobre polígonos](Processing-Python/poligonos_2.md)
   - [Laço de repetição com `while`](Processing-Python/while.md)
+- [Interação: input com teclado e mouse](Processing-Python/input_py.md)
+- [Aleatoriedade: `random` e números 'sorteados'](Processing-Python/aleatoriedade_1.md)
+  - [Mais sobre aleatoriedade](Processing-Python/aleatoriedade_2.md)
 - [Tipos de valores (inteiros, números de ponto flutuante, texto (*strings*))](Processing-Python/tipagem_py.md)
   - [Textos no programa, no console e na tela (*strings*)](Processing-Python/strings_py.md)
-- [Trabalhando com fontes e outros ajustes do texto](Processing-Python/tipografia.md)
-- [Interação: input com teclado e mouse](Processing-Python/input_py.md)
-  - [Escutando teclas simultâneas](Processing-Python/teclas_simultaneas.md)
-  - [Um botão simples](Processing-Python/botao_simples.md)
-  - [Arrastando círculos](Processing-Python/arrastando_circulos.md)
-  - [Rodinha do mouse (*mouse wheel*)](Processing-Python/rodinha_mouse.md)
-  - [Parando o `draw()`](Processing-Python/no_loop.md)
-- [Mais sobre aleatoriedade](Processing-Python/aleatoriedade_2.md)
+  - [Trabalhando com fontes e outros ajustes do texto](Processing-Python/tipografia.md)
 - [Desenhando em 3D](Processing-Python/desenho-3D.md)
 
-#### Arquivos externos
-<!-- [Lendo um arquivo vetorial (SVG)](Processing-Python/usando_svg.md) -->
+### Mais sobre interação com o teclado e mouse
 
-- [Lendo arquivos de imagem (*bitmap/raster*)](Processing-Python/imagens_externas.md)
-  - [Lendo todas as imagem de uma pasta](Processing-Python/imagens_externas_pasta.md)
-- [Lendo e escrevendo texto em arquivos (*file IO*)](Processing-Python/file_IO.md)
+- [Escutando teclas simultâneas](Processing-Python/teclas_simultaneas.md)
+- [Um botão simples](Processing-Python/botao_simples.md)
+- [Arrastando círculos](Processing-Python/arrastando_circulos.md)
+- [Rodinha do mouse (*mouse wheel*)](Processing-Python/rodinha_mouse.md)
+- [Parando o `draw()`](Processing-Python/no_loop.md)
 
 #### Exportação de imagens e outras saídas
 
@@ -60,7 +56,13 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
 - [Exportando PDF (saída vetorial)](Processing-Python/exportando_pdf.md)
 - [Exportando SVG (saída vetorial)](Processing-Python/exportando_svg.md)
 - [Exportando animações (vídeos ou GIF)](Processing-Python/exportar_animacoes.md) 
-- [Exportando um aplicativo independente](https://github.com/villares/material-aulas/blob/masterProcessing-Python/export_application.md)
+- [Exportando um aplicativo independente](Processing-Python/export_application.md)
+
+#### Arquivos externos
+<!-- [Lendo um arquivo vetorial (SVG)](Processing-Python/usando_svg.md) -->
+- [Lendo arquivos de imagem (*bitmap/raster*)](Processing-Python/imagens_externas.md)
+  - [Lendo todas as imagem de uma pasta](Processing-Python/imagens_externas_pasta.md)
+- [Lendo e escrevendo texto em arquivos (*file IO*)](Processing-Python/file_IO.md)
 
 #### Orientação a Objetos
 - [Um botão com orientação a objetos](Processing-Python/botao_com_OO.md)
