@@ -1,7 +1,6 @@
 # Como usar recursos vetoriais externos
 
-## Acessando um arquivo com `loadShape()`
-
+## Carregando um arquivo SVG com `loadShape()`
 
 ![](assets/bot1.svg)
 
