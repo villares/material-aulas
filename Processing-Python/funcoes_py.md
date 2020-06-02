@@ -59,7 +59,9 @@ def olho(x, y, tamanho):
 
 ### Funções que devolvem resultados
 
-A função `olho()` desenha um olho mas não devolve nenhum valor, na verdade ela devolve o valor especial `None` (uma espécie de "nada"). Mas é comum termos funções que devolvem algum valor como resultado. Aqui alguns exemplos:
+A função `olho()` desenha um olho mas não devolve nenhum valor, na verdade ela devolve o valor especial `None` (uma espécie de "nada"), mas é comum termos funções que devolvem algum valor como resultado.
+
+As funções que são feitas para devolver um resultado contém a palavra `return`, seguida do resultado no seu corpo, e são interrompidas assim que essa instrução é executada. Aqui alguns exemplos:
 
 ```python
 def cor_sorteada():
