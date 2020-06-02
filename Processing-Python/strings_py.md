@@ -86,7 +86,7 @@ maçã
 banana
 ```
 
-Uma outra maneira de indicar uma string com quebras de linha é fazendo uma literal en varias linhas aspas triplas `'''` ou `"""`:
+Uma outra maneira de indicar uma *string literal* com quebras de linha é usando aspas triplas `'''` ou `"""` o que permite que ela corra por várias linha no próprio código:
 ```pyde
 print(
 u"""frutas frescas:
