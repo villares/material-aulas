@@ -28,7 +28,7 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
   - [Escopo de variáveis (local e global)](Processing-Python/escopo_py.md)
 - [Aleatoriedade: `random` e números 'sorteados'](Processing-Python/aleatoriedade_1.md)
 - [Declarando novas funções](Processing-Python/funcoes_py.md)
-  - [Alterando o sistema de coordenadas com `translate()`, `rotate()` e outras funções](Processing-Python/transformacoes_coordenadas.md)
+  - [Alterando o sistema de coordenadas (`translate()`, `rotate()` e outras)](Processing-Python/transformacoes_coordenadas.md)
   - [Funções recursivas](Processing-Python/recursao_py.md)
 - [Sequências e laços de repetição (iteração com `for`)](Processing-Python/lacos_py.md)
   - [Mais sobre sequências e fatias](Processing-Python/mais_sequencias.md)

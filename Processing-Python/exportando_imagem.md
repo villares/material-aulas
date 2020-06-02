@@ -8,7 +8,7 @@ O código abaixo exemplifica como salvar uma imagem PNG de um frame. Quando uma 
 
 ### Um exemplo bem simples
 
-O código abaixo exemplifica como salvar uma imagem PNG de um frame. Quando uma tecla é pressionada, é executada a função `keyPressed()` e se for identificada a tecla "s" (`key == 's'`) é execuatada a função `saveFrame()`, que grava uma imagem na pasta do *sketch*.
+O código abaixo exemplifica como salvar uma imagem PNG de um frame. Quando uma tecla é pressionada, é executada a função `keyPressed()` e se for identificada a tecla "s" (`key == 's'`) é executada a função `saveFrame()`, que grava uma imagem na pasta do *sketch*.
 
 ```python
 def setup():
@@ -54,73 +54,34 @@ def draw():
         exit() # interrompe a execução do sketch   
 ```
 
-### Um exemplo um pouco mais longo
+### Exportando em resolução maior do que a tela
 
-Neste exemplo o nome do arquivo contém a semente (_seed_) do gerador de números pseudo-aleatórios.
+Um objeto *PGraphics* é uma espécie de tela virtual que grava o resultado do desenho em paralelo à área de desenho normal, podendo receber ajustes especiais aplicados apenas a esse objeto-tela, como `.scale()` no exemplo abaixo.
 
-```python
+```
 def setup():
-    global seed
-    seed = int(random(1000))
-    print(seed)
-    size(500, 500)
+    size(50, 50)
+    # preparo da gravação
+    scale = 10
+    f = createGraphics(width * scale, height * scale)
+    beginRecord(f) #  início da gravação
+    # ajustes que só afetam o arquivo sendo gravado
+    f.scale(scale)
+    f.strokeWeight(.5)
+
+    # O desenho feito aqui aparece na tela e no arquivo
+    background(0, 200, 0)
+    circle(6, 6, 10)
     
-def draw(): 
-    randomSeed(seed)
-    background(240, 240, 200)
-    translate(250, 300)
-    galho(60)
-          
-def galho(tamanho): # definição do galho/árvore
-    ang = radians(mouseX)
-    reducao = .8
-    strokeWeight(tamanho / 10)
-    line(0, 0, 0, -tamanho)
-    if tamanho > 5:
-        pushMatrix()
-        translate(0, -tamanho)
-        rotate(ang)
-        galho(tamanho * reducao - random(0, 2))
-        rotate(-ang * 2)
-        galho(tamanho * reducao - random(0, 2))
-        popMatrix()
-          
-def keyPressed(): # executada quando uma tecla for precinada
-    if keyCode == LEFT:
-         seed = seed - 1
-    if keyCode == RIGHT:
-         seed = seed + 1
-    if key == ' ':  # barra de espaço precionada, sorteia nova "seed"
-        seed = int(random(100000))
-        print(seed)
-    if key == 's':  # tecla "s" precionada, salva a imagem PNG
-        nome_arquivo = 'arvore-s{}-a{}.png'.format(seed, mouseX % 360)
-        saveFrame(nome_arquivo)
-        print("PNG salvo")
+    # fim da gravação
+    endRecord()
+    f.save("file.png")
 ```
+![](assets/exportando_imagem_ampliada.png
 
-### Outras estratégias
 
-#### Exportando em resolução maior do que a tela
+### Assuntos relacionados
 
-Um objeto PGraphics grava o resultado do desenho, podendo receber alguns ajustes especiais (aplicados apenas ao objeto, como no exemplo `.scale()`).
-
-```
-scale = 10:
-f = createGraphics(width * scale, height * scale)
-beginRecord(f)
-f.scale(scale)
-
-# desenho aqui
-
-endRecord()
-f​.save("file.png")
-```
-
-#### Estratégia do offscreen Buffer
-
-`TO DO`
-
-### Veja também
-
-`TO DO:  Link para exemplo de exportação vetorial`
+- [Desenhando fora da vista com *PGraphics* (*offscreen buffer*)](offscreen-buffer.md)
+- [Exportando PDF](exportando_pdf.md)
+- [Exportando SVG](exportando_Svg.md)

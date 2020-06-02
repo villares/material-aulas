@@ -3,22 +3,29 @@
 >[**função**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:função)
 >Uma sequência nomeada de declarações que executa alguma operação útil. As funções podem receber argumentos ou não e podem ou não produzir algum resultado.
 
+Ao programar podemos inventar vocabulário novo na linguagem que estamos usando quando definimos uma função. Essa palavra se comporta exatamente como outras palavras que já vem prontas na linguagem, e *encapsula*, empacota, alguma ação útil, por meio de um trecho de código, o corpo da função, que é executado quando *chamamos* a função em um outro momento.
+
+Leia com cuidado estes três exemplos, escritos de maneira genérica, com nomes bobos (`nome_da_funcao`, `outra_funcao`, `funcao_com_resultado`) mas que exemplificam a estrutura da definição de uma nova função. Onde está `corpo` entram indentadas em relação ao cabeçalho (a linha do `def`), as ações que a função executa.
+
 ### Sintaxe para definição de funções
 ```python
 def nome_da_funcao(a, b): # esta função tem dois parâmetros: a e b (requer dois argumentos)
      corpo  # instruções que a função executa, usando valores dos parâmetros
      
 def outra_funcao(): # esta função não tem nenhum parâmetro (não requer argumentos na chamada)
-     corpo  # instruçÕes que a função executa
+     corpo  # instruções que a função executa
 
 def funcao_com_resultado(a): # esta função tem um parâmetro
-     corpo  # instruções que calculam um valor/resultado
-     return resultado
+     parte_do_corpo    # instruções que calculam um valor/resultado
+     return resultado  # esta linha também pertence ao corpo da função
      
-# Podemos ter funções que não requerem argumentos (não tem parâmetros) e devolve resultado.
+# Podemos também ter funções que não requerem argumentos (não tem parâmetros) e devolve resultado.
 ```
 
+
 ### Sintaxe da invocação, ou chamada, de funções
+
+Vamos ver agora como seria o uso dessas novas palavras, comparando com palavras da linguagem que já vimos antes.
 
 ```python
 nome_da_funcao(valor, outro_valor) # esta função precisa de dois argumentos
@@ -26,14 +33,15 @@ nome_da_funcao(valor, outro_valor) # esta função precisa de dois argumentos
 fill(255, 100)  # pede preenchimento branco tranlúcido
 
 outra_funcao() # esta função não requer argumentos
-# um exemplo de função que não requer parâmetros que já vimos
+# um exemplo de função que não tem parâmetros visto anteriormente
 noFill()  # desliga o preenchimento das formas a ser desenhadas
 
-# O resultado de uma função pode ser usado numa atribuição, ou dentro de outra estrutura
+# O resultado de uma função pode ser usado em uma atribuição, ou dentro de outra estrutura
 a = funcao_com_resultado(valor)
-# um exemplo de função que devolve resultado que já vimos
+println(funcao_com_resultado(valor))
+# um exemplo de função que devolve resultado visto anteriormente
 r = random(256)
-fill(random(256), random(256), random(256))
+fill(random(256), random(256), random(256))  # a função inteira usada como argumento de outra função!
 ```
 
 Os parâmetros, quando existem, são nomes lá dentro da definição da função, que recebem os valores dos argumentos usados quando a função é chamada.
@@ -61,9 +69,13 @@ def olho(x, y, tamanho):
 
 ### Funções que devolvem resultados
 
-A função `olho()` desenha um olho mas não devolve nenhum valor, na verdade ela devolve o valor especial `None` (uma espécie de "nada"), mas é comum termos funções que devolvem algum valor como resultado.
+A função `olho()` desenha um olho mas não devolve nenhum valor, na verdade ela devolve o valor especial `None` (uma espécie de "nada"), mas é comum termos funções que devolvem algum valor útil como resultado.
 
-As funções que são feitas para devolver um resultado contém a palavra `return`, seguida do resultado no seu corpo, e são interrompidas assim que essa instrução é executada. Aqui alguns exemplos:
+As funções que são feitas para devolver um resultado contém a palavra `return` no seu corpo, seguida do resultado calculado. A instrução `return` pode aparecer no meio da função, mas sempre que for executada interrompe a execucão da função, *devolvendo* o fluxo de execução para o ponto onde a função foi chamada. 
+
+<sup>Se não houver um valor depois de `return` no corpo, a função devolve o valor especial `None`, o mesmo que acontece com funções que não tem `return`, só que no ponto onde está escrito `return`.</sup>
+
+Aqui alguns exemplos:
 
 ```python
 def cor_sorteada():
@@ -75,17 +87,39 @@ def cor_sorteada():
     return cor # instrução que devolve a cor e retorna o fluxo de execução
 ```
 
-Uso:
+(função do exemplo anterior em uso)
+
 ```python
 fill(cor_sorteada())   # pede um preenchimento com uma cor sorteada!
 rect(10, 10, 100, 50)
 ```
 
-Da mesma maneira todo o tipo de manipulação de valores pode ser "encapsulada" em uma função.
+Da mesma maneira todo o tipo de manipulação de valores pode ser encapsulada em uma função.
 
 ```python
 def media(a, b):
      return (a + b) / 2.
+
+println(media(100, 21))
+# resultado: 60.5
+```      
+
+Mais um exemplo
+
+```python
+def menor_de_idade(idade):
+     if idade < 18:
+          return True
+     else:
+          return False
+```
+(função do exemplo anterior em uso)
+
+```python
+if menor_de_idade(idade_aluno):
+     println('quer um refri?')
+else:
+     println('quer uma cerveja?')
 ```
 
 #### Glossário
@@ -112,12 +146,8 @@ def media(a, b):
 
 ## Assuntos relacionados
 
-- Parâmetros padrão [TO DO]
+- [Parâmetros padrão e outras malandragens](funcoes_2.md)
 - [Recursividade em funções](recursao_py.md)
-
-
----
-Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
 
 ---
 Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
