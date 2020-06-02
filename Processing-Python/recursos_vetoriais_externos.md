@@ -23,13 +23,13 @@ def setup():
     global svg
     svg = loadShape("bot1.svg")  # arquivo SVG na pasta /data/
 
-
 def draw():
-    (svg, 100, 100)  # é possível forçar um tamanho com shape(svg, 0, 0, 100, 100)
-    # svg.width e svg.height são as dimensões do arquivo original
+    # shape(svg, x, y) desenha o arquivo no tamanho original
+    shape(svg, 100, 100) 
+    # shape(svg, x, y, largura, altura) força um tamanho
+    # svg.width e svg.height apontam as dimensões do arquivo original
     # podemos mostrar o recurso com metade da sua largura e altura originais assim:
-    # shape(svg, 0, 0, svg.width / 2, svg.height / 2)
- 
+    shape(svg, 0, 0, svg.width / 2, svg.height / 2)
 ```
 
 ![](assets/bot1.png)
