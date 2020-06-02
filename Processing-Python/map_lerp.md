@@ -12,11 +12,11 @@ b = map(a, a0, a1, b0, b1)
 
 Veja uma animação que tenta mostrar como funciona essa conversão de valores de uma escala ou faixa para outra.
 
+![](assets/map_2.gif)
+
 Note que se você entregar um número **`a`** fora da faixa de origem indicada (entre `a0` e `a1`) vai receber um número 'para fora' da faixa de destino entre `b0` e `b1`.
 
 Em um caso de uso bem simples, o `map()` podemos transformar o valor da posição horizontal do mouse, `mouseX`, que é um número entre **0** e a largura da área de desenho (`width`), em um valor para controlar elementos do desenho (na faixa que desejarmos).  No exemplo abaixo, cinzas entre preto e branco podem são criados com números na faixa entre **0** e **255**, e um círculo vai ser movido entre as posições **x**  de **100** a **300**.
-
-![](assets/map_1.gif)
 
 ```python
 def setup():
@@ -32,7 +32,8 @@ def draw():
     fill(cinza)
     circle(x, height / 2, 100)
 ```
-![](assets/map_2.gif)
+
+![](assets/map_1.gif)
 
 ### A função `lerp()`
 
