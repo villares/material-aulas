@@ -1,4 +1,4 @@
-## Manipulando faixas de valores com `map()` e `lerp()`
+## Manipulando números com `map()` e `lerp()`
 
 ### A função `map()` do Processing
 
