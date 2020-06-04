@@ -34,12 +34,13 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
   - [Grades retangulares: filas e colunas de elementos](Processing-Python/grades.md)
   - [Mais sobre polígonos](Processing-Python/poligonos_2.md)
   - [Laço de repetição com `while`](Processing-Python/while.md)
-- [Interação: input com teclado e mouse](Processing-Python/input_py.md)
-- [Aleatoriedade: `random` e números 'sorteados'](Processing-Python/aleatoriedade_1.md)
-  - [Mais sobre aleatoriedade](Processing-Python/aleatoriedade_2.md)
 - [Tipos de valores (inteiros, números de ponto flutuante, texto (*strings*))](Processing-Python/tipagem_py.md)
   - [Textos no programa, no console e na tela (*strings*)](Processing-Python/strings_py.md)
   - [Trabalhando com fontes e outros ajustes do texto](Processing-Python/tipografia.md)
+- [Interação: input com teclado e mouse](Processing-Python/input_py.md)
+- [Aleatoriedade: `random` e números 'sorteados'](Processing-Python/aleatoriedade_1.md)
+  - [Mais sobre aleatoriedade](Processing-Python/aleatoriedade_2.md)
+  - [*Perlin Noise* (ruído de Perlin) um tipo especial de número pseudo-aleatório](Processing-Python/noise.md)
 - [Manipulando faixas de valores com `map()` e `lerp()`](Processing-Python/map_lerp.md) - e fazendo cores intermediárias!
   - [O que é *easing*?](Processing-Python/easing.md) - transições de movimento
 - [Desenhando em 3D](Processing-Python/desenho-3D.md)
