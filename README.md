@@ -41,7 +41,7 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
 - [Aleatoriedade: `random` e números 'sorteados'](Processing-Python/aleatoriedade_1.md)
   - [Mais sobre aleatoriedade](Processing-Python/aleatoriedade_2.md)
   - [*Perlin Noise* (ruído de Perlin) um tipo especial de número pseudo-aleatório](Processing-Python/noise.md)
-- [Manipulando faixas de valores com `map()` e `lerp()`](Processing-Python/map_lerp.md) - e fazendo cores intermediárias!
+- [Manipulando números com `map()` e `lerp()`](Processing-Python/map_lerp.md) - e fazendo cores intermediárias!
   - [O que é *easing*?](Processing-Python/easing.md) - transições de movimento
 - [Desenhando em 3D](Processing-Python/desenho-3D.md)
 
