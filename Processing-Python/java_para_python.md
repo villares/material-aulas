@@ -27,6 +27,26 @@
 - As chaves precisam ser removidas, e você deve trocar cada `{ ` por `:` no começo de um bloco de instruções (isso só não vale para as definições de *arrays*, que tem chaves mas não definem um bloco de instruções, e viram uma lista ou uma tupla com `[ ]` ou` ( )` ). 
 - Remova os `;` no final das linhas.
 
+### Um quadro com equivalências para conversão
+
+Os valores booleanos em Java são `true` e `false`, o que em Python fica `True` e `False`.  Vamos fazer um quadro com os operadores lógicos e algumas outras equivalências. 
+
+| Java                                             | Python                                     |
+| ------------------------------------------------ | ------------------------------------------ |
+| `void func() { … }`                              | `def func(): …`                            |
+| `true` e `false`                                 | `True` e `False`                           |
+| ``a && b`` (**e** lógico)                        | `a and b`                                  |
+| `a || b` (**ou** lógico)                         | `a or b`                                   |
+| `!a` (**não** lógico)                            | `not a`                                    |
+| `i++` (incremento de variável)                   | `i += 1`                                   |
+| `i--`(decremento de variável)                    | `i -= 1`                                   |
+| `a <= b && b < c`                                | `a <= b < c`                               |
+| `for (int i=0; i < limite; i++){ … `             | `for i in range(limite): …`                |
+| `for (int i=inicio; i < limite; i += passo){ … ` | `for i in range(inicio, limite, passo): …` |
+| `for (Bola b : arrayListBolas){ …`               | `for b in listaBolas: …`                   |
+
+E semelhante a `null` de Java temos o valor `None` em Python os usos não são totalmente equivalentes mas é um bom palpite fazer a substituição.
+
 ### `if`, `else` e seus amigos
 
 Note que a condição do `if` no Python não tem os parênteses obrigatórios no Java. A combinação de um `else if` vira a contração `elif`.
@@ -62,6 +82,21 @@ for i in range(2, width - 2, 2):
         line(i, height / 2, i, height - 20)
 ```
 
+#### Operador ternário
+
+**Java**
+
+```java
+resultado = cond ? a : b 
+```
+**Python**
+
+```python
+ resultado = a i cond else  b 
+```
+
+#### switch & case
+
 Não existe `switch/case` no Python, você pode trocar por uma cadeia de `if/elif` ou, se for só para chamar diferentes funções, um dicionário de funções [TO DO página sobre isso].
 
 ### Variáveis globais
@@ -70,29 +105,74 @@ Se a variável for declarada e inicializada no começo do *sketch* basta remover
 
 Mas como não há em Python a declaração de uma variável sem fazer uma atribuição, se a variável é só declarada (sem ser *inicializada*, isto é ter sua primeira atribuição) no começo do *sketch* precisamos ver onde ela é inicializada e acrescentar a instrução `global nome_da variável` no início da função. 
 
-Na verdade, toda função que contém instruções que alteram a atribuição de variáveis globais precisam de instruções `global` com os nomes das variáveis que são modificadas. 
+Na verdade, toda função altera a atribuição de variáveis globais em seu corpo precisa da instrução `global` com os nomes das variáveis que são modificadas. 
 
-### Um quadro com equivalências para conversão
+Veja um exemplo.
 
-Os valores booleanos em Java são `true` e `false`, o que em Python fica `True` e `False`.  Vamos fazer um quadro com os operadores lógicos e outra equivalências. 
+**Java**
+```java
 
-| Java                                             | Python                                     |
-| ------------------------------------------------ | ------------------------------------------ |
-| `true` e `false`                                 | `True` e `False`                           |
-| ``a && b`` (**e** lógico)                        | `a and b`                                  |
-| `a || b` (**ou** lógico)                         | `a or b`                                   |
-| `!a` (**não** lógico)                            | `not a`                                    |
-| `i++` (incremento de variável)                   | `i += 1`                                   |
-| `i--`(decremento de variável)                    | `i -= 1`                                   |
-| `a <= b && b < c`                                | `a <= b < c`                               |
-| `for (int i=0; i < limite; i++){ … `             | `for i in range(limite): …`                |
-| `for (int i=inicio; i < limite; i += passo){ … ` | `for i in range(inicio, limite, passo): …` |
-| `for (Bola b : arrayListBolas){ …`               | `for b in listaBolas: …`                   |
+int rad = 60;        // Width of the shape
+float xpos, ypos;    // Starting position of shape    
+float xspeed = 2.8;  // Speed of the shape
+float yspeed = 2.2;  // Speed of the shape
+int xdirection = 1;  // Left or Right
+int ydirection = 1;  // Top to Bottom
 
-E semelhante a `null` de Java temos o valor `None` em Python os usos não são totalmente equivalentes mas é um bom palpite fazer a substituição.
+void setup() 
+{
+  size(600, 300);
+  // Set the starting position of the shape
+  xpos = width/2;
+  ypos = height/2;
+}
 
+void draw() 
+{
+  background(102);
+  xpos = xpos + ( xspeed * xdirection );
+  ypos = ypos + ( yspeed * ydirection );
+    
+  if (xpos > width-rad || xpos < rad) {
+    xdirection *= -1;
+  }
+  if (ypos > height-rad || ypos < rad) {
+    ydirection *= -1;
+  }
 
+  ellipse(xpos, ypos, rad * 2, rad * 2);
+}
+```
+**Python**
 
+```python
+
+rad = 60;        # Width of the shape
+# No original tinha: float xpos, ypos; // Starting position of shape    
+xspeed = 2.8;    # Speed of the shape
+yspeed = 2.2;    # Speed of the shape
+xdirection = 1;  # Left or Right
+ydirection = 1;  # Top to Bottom
+
+def setup():
+    size(600, 300)
+    global xpos, ypos  #  xpos, ypos são globais criadas no setup
+    noStroke()
+    xpos = width / 2
+    ypos = height / 2
+
+def draw():
+    global xpos, ypos, xdirection, ydirection  # vão ser alteradas!
+    background(102)   
+    xpos += xspeed * xdirection
+    ypos += yspeed * ydirection
+    
+    if xpos < rad or width - rad < xpos:  # note que rad não é alterada
+        xdirection *= -1
+    if ypos < rad or height - rad < ypos:
+        ydirection *= -1
+    ellipse(xpos, ypos, rad * 2, rad * 2)
+```
 ### Importando bibliotecas e as outras abas do sketch
 
 No Processing modo Java as bibliotecas são importadas com `import` mas no modo Python essa instrução é mais usada para importar *módulos* da biblioteca padrão do Python, e arquivos **.py** como as outras abas do IDE, que ao contrário do modo Java não são automaticamente parte do *sketch*.
