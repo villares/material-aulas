@@ -11,13 +11,17 @@
 - Java é uma linguagem de *tipagem estática* e Python é uma linguagem de *tipagem dinâmica*  isso significa que vamos remover todas as declarações de tipo. Remova `int `, `float`, `String`, `color` , `boolean`  das declarações de variáveis. Por exemplo,  `int i = 0; ` se torna `i = 0`.
 
 - Podemos também remover `void` ou  tipo na declaração de uma função e colocar no lugar o `def` do Python.  Depois remover a declaração de tipo dos parâmetros da função.
+
    **Java**
   ```java
-  float media(float a, float b){ return (a + b) / 2;}
+  float media(float a, float b){
+    return (a + b) / 2;
+  }
   ```
   **Python**
   ```python
-  def media(a, b): return (a + b) / 2
+  def media(a, b):
+      return (a + b) / 2
   ```
 - É comum a indentação do Java estar refletindo a hierarquia dos blocos de instruções, mesmo isso não sendo obrigatório (no Java são as chaves `{}` que mandam), use a ferramenta de auto-formatação do IDE antes de começar! 
 - As chaves precisam ser removidas, e você deve trocar cada `{ ` por `:` no começo de um bloco de instruções (isso só não vale para as definições de *arrays*, que tem chaves mas não definem um bloco de instruções, e viram uma lista ou uma tupla com `[ ]` ou` ( )` ). 
