@@ -19,6 +19,7 @@
   }
   ```
   **Python**
+  
   ```python
   def media(a, b):
       return (a + b) / 2
@@ -194,9 +195,10 @@ add_library('VideoExport')  # a mesma biblioteca Video Export
 
 #### Obtendo uma instância e acessando métodos e atributos
 
-Praticamente a única  diferença é que some a palavra chave `new` para criar uma instância de uma classe. O acesso a métodos e atributos é rigorosamente igual.
+Praticamente a única  diferença é que some a palavra chave **`new` ** que no Java é necessária para criar uma instância de uma classe. O acesso a métodos e atributos é exatamente igual.
 
 **Java**
+
 ```java
 VideoExport videoExport;
 
