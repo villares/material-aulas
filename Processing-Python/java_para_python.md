@@ -13,6 +13,7 @@
 - Podemos também remover `void` ou  tipo na declaração de uma função e colocar no lugar o `def` do Python.  Depois remover a declaração de tipo dos parâmetros da função.
 
    **Java**
+  
   ```java
   float media(float a, float b){
     return (a + b) / 2;
@@ -39,14 +40,104 @@ Os valores booleanos em Java são `true` e `false`, o que em Python fica `True` 
 | ``a && b`` (**e** lógico)                        | `a and b`                                  |
 | `a || b` (**ou** lógico)                         | `a or b`                                   |
 | `!a` (**não** lógico)                            | `not a`                                    |
-| `i++` (incremento de variável)                   | `i += 1`                                   |
-| `i--`(decremento de variável)                    | `i -= 1`                                   |
+| `i++` (incremento)                               | `i += 1`                                   |
+| `i--`(decremento)                                | `i -= 1`                                   |
 | `a <= b && b < c`                                | `a <= b < c`                               |
 | `for (int i=0; i < limite; i++){ … `             | `for i in range(limite): …`                |
 | `for (int i=inicio; i < limite; i += passo){ … ` | `for i in range(inicio, limite, passo): …` |
 | `for (Bola b : arrayListBolas){ …`               | `for b in listaBolas: …`                   |
 
 E semelhante a `null` de Java temos o valor `None` em Python os usos não são totalmente equivalentes mas é um bom palpite fazer a substituição.
+
+### Loops `for`
+
+O caso mais simples é um `for` baseado em um contador qualquer, como `for (int i=0; i < limite; i++){ … ` cuja tradução é `for i in range(limite): …` e o chamado *for each*, mostrado no quadro, também é muito direto. 
+
+Como a construção com `range()` no  Python só funciona com números inteiros, se você encontrar um loop `for` no Java com um passo não inteiro (*float*) você vai ter que convertê-lo em um loop `while`:
+
+**Java**
+
+```java
+float angleStep = TWO_PI / 18
+for (float angle=0; angle < TWO_PI; angle += angleStep){ 
+    …
+}
+```
+
+**Pyton**
+
+```python
+angleStep = TWO_PI / 18
+angle = 0
+while angle < TWO_PI:
+    …
+    angle += angleStep
+```
+
+Aqui um exemplo de laço é feito apenas para pegar objetos de uma estrutura de dados:
+
+
+```java
+for (int i = 0;  i < my_array.length; i++) {
+  something(i, my_array[i]);
+}
+```
+
+**Python**
+
+```python
+for item in my_list:
+    something(item)
+```
+ou
+```python
+for i, item in enumerate(my_list):
+    something(i, item)
+```
+
+Veja uma iteração invertida para remover itens de um *ArrayList* no Java, uma lista no Python:
+
+**Java**
+
+```java
+for (int i = particles.size()-1; i >= 0; i--) {
+  Particle p = particles.get(i);
+  p.run();
+  if (p.isDead()) {
+    particles.remove(i);
+  }
+}
+```
+
+**Python**
+
+```python
+for p in reversed(particles):
+    p.run()
+    if p.isDead():
+        del p
+```
+
+ou, se você precisar o índice:
+
+```python
+for i in reversed(range(len(particles))):
+    p = particles[i]
+    p.run()
+    if p.isDead():
+        del particles[i]
+```
+
+ou ainda:
+
+```python
+for i, p in reversed(list(enumerate(self.particles))):
+    p.run()
+    if p.isDead():
+        del p # ou del self.particles[i]
+```
+
+
 
 ### `if`, `else` e seus amigos
 
@@ -69,6 +160,7 @@ for (int i = 2; i < width-2; i += 2) {
 }
 ```
 **Python**
+
 ```python
 for i in range(2, width - 2, 2):
     # If 'i' divides by 20 with no remainder
@@ -155,7 +247,7 @@ yspeed = 2.2;    # Speed of the shape
 xdirection = 1;  # Left or Right
 ydirection = 1;  # Top to Bottom
 
-def setup():
+def setup():**Python**
     size(600, 300)
     global xpos, ypos  #  xpos, ypos são globais criadas no setup
     noStroke()
@@ -176,11 +268,12 @@ def draw():
 ```
 ### Importando bibliotecas e as outras abas do sketch
 
-No Processing modo Java as bibliotecas são importadas com `import` mas no modo Python essa instrução é mais usada para importar *módulos* da biblioteca padrão do Python, e arquivos **.py** como as outras abas do IDE, que ao contrário do modo Java não são automaticamente parte do *sketch*.
+No Processing modo Java as bibliotecas são importadas com `import` mas no modo Python essa instrução é mais usada para importar *módulos* da biblioteca padrão do Python, e arquivos **.py** das outras abas do IDE, que ao contrário do modo Java não são automaticamente parte do *sketch*.
 
-Use o comando do menu **Sketch > Importar Biblioteca.. ** (ou *Sketch > Import Library...* em inglês) para acrescrentar a linha com  `add_library()` com o argumento correto.
+Use o comando do menu **Sketch > Importar Biblioteca.. ** (ou *Sketch > Import Library...* em inglês) para acrescentar a linha com  `add_library()` com o argumento correto.
 
 **Java**
+
 ```java
 import com.hamoid.*; // biblioteca VideoExport
 ```
@@ -195,7 +288,7 @@ add_library('VideoExport')  # a mesma biblioteca Video Export
 
 #### Obtendo uma instância e acessando métodos e atributos
 
-Praticamente a única  diferença é que some a palavra chave **`new` ** que no Java é necessária para criar uma instância de uma classe. O acesso a métodos e atributos é exatamente igual.
+Java precisa da palavra chave **`new` ** para criar uma instância de uma classe, é só removê-la! O acesso a métodos e atributos é exatamente igual.
 
 **Java**
 
@@ -221,7 +314,7 @@ def  setup() :
 
 #### Declarando uma classe
 
-Já as declarações de classe mudam um pouco, grosso modo, o método `__init__(self)` faz o papel do *construtor* da classe.  Veja a classe `MRect` do exemplo **Basics > Objects > Objects** que vem no IDE do Processing.
+Já as declarações de classe mudam um pouco, grosso modo, o método `__init__(self)` faz o papel do *construtor* da classe.  Veja a classe `MRect` do exemplo **Basics > Objects > Objects** que vem no IDE do Processing. Você vai ter o trabalho de acrescentar `self` como primeiro parâmetro de todos os métodos, e vai ter que usar `self.` para acessar atributos e membros da classe. Veja um exemplo:
 
 **Java**
 
@@ -262,8 +355,6 @@ class MRect
   }
 }
 ```
-
-
 
 **Python**
 
