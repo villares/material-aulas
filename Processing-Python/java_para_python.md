@@ -92,7 +92,7 @@ resultado = cond ? a : b
 **Python**
 
 ```python
- resultado = a i cond else  b 
+ resultado = a if cond else  b 
 ```
 
 #### switch & case
@@ -101,13 +101,13 @@ Não existe `switch/case` no Python, você pode trocar por uma cadeia de `if/eli
 
 ### Variáveis globais
 
-Se a variável for declarada e inicializada no começo do *sketch* basta remover a declaração de tipo
+Se a variável for *declarada e inicializada* (definido o tipo e o valor) no começo do *sketch* basta remover a declaração de tipo.
 
-Mas como não há em Python a declaração de uma variável sem fazer uma atribuição, se a variável é só declarada (sem ser *inicializada*, isto é ter sua primeira atribuição) no começo do *sketch* precisamos ver onde ela é inicializada e acrescentar a instrução `global nome_da variável` no início da função. 
+Mas como não há em Python a declaração de uma variável sem fazer uma atribuição, quando a variável é só declarada (é indicado um tipo sem a *inicialização*, isto é ter sua primeira atribuição) no começo do *sketch* precisamos ver onde ela é calculada a primeira vez e acrescentar, no início da função, a instrução `global nome_da variável`. 
 
-Na verdade, toda função altera a atribuição de variáveis globais em seu corpo precisa da instrução `global` com os nomes das variáveis que são modificadas. 
+Na verdade, toda função que altera a atribuição de variáveis globais em seu corpo precisa da instrução `global` com os nomes das variáveis que são modificadas. 
 
-Veja um exemplo.
+Veja um exemplo:
 
 **Java**
 ```java
