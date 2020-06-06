@@ -1,4 +1,4 @@
-# Dicas para portar código de Processing modo Java para modo Python
+## Dicas para portar código de Processing modo Java para modo Python
 
 > …e possivelmente vice-versa :)
 
@@ -53,13 +53,13 @@ E semelhante a `null` de Java temos o valor `None` em Python os usos não são t
 
 O caso mais simples é um `for` baseado em um contador qualquer, como `for (int i=0; i < limite; i++){ … ` cuja tradução é `for i in range(limite): …` e o chamado *for each*, mostrado no quadro, também é muito direto. 
 
-Como a construção com `range()` no  Python só funciona com números inteiros, se você encontrar um loop `for` no Java com um passo não inteiro (*float*) você vai ter que convertê-lo em um loop `while`:
+Mas se você encontrar um loop `for` no Java com um passo não inteiro (*float*), como a construção baseada em `range()` no  Python só funciona com números inteiros, você vai ter que convertê-lo em um loop `while` como no exemplo abaixo.
 
 **Java**
 
 ```java
-float angleStep = TWO_PI / 18
-for (float angle=0; angle < TWO_PI; angle += angleStep){ 
+float passo = TWO_PI / 18
+for (float angulo=0; angulo < TWO_PI; angulo += passo){ 
     …
 }
 ```
@@ -67,32 +67,32 @@ for (float angle=0; angle < TWO_PI; angle += angleStep){
 **Pyton**
 
 ```python
-angleStep = TWO_PI / 18
-angle = 0
-while angle < TWO_PI:
+passo = TWO_PI / 18
+angulo = 0
+while angulo < TWO_PI:
     …
-    angle += angleStep
+    angulo += passo
 ```
 
 Aqui um exemplo de laço é feito apenas para pegar objetos de uma estrutura de dados:
 
 
 ```java
-for (int i = 0;  i < my_array.length; i++) {
-  something(i, my_array[i]);
+for (int i = 0;  i < meu_array.length; i++) {
+  fazendoAlgo(i, meu_array[i]);
 }
 ```
 
 **Python**
 
 ```python
-for item in my_list:
-    something(item)
+for item in minha_lista:
+    fazendoAlgo(item)
 ```
 ou
 ```python
-for i, item in enumerate(my_list):
-    something(i, item)
+for i, item in enumerate(minha_lista):
+    fazendoAlgo(i, item)
 ```
 
 Veja uma iteração invertida para remover itens de um *ArrayList* no Java, uma lista no Python:
@@ -389,7 +389,6 @@ class MRect:
 Arrays como `int[]`, `float[]` or `PVector[]` podem virar listas em Python (às vezes tuplas, se forem criadas e deixadas quietas). Um *ArrayList* é muito parecido com uma lista:
 
 **Java**
-
 ```java
 ArrayList<Bandeirinha> Bandeirinhas; // uma lista de ob Bandejetosirinha
 
@@ -401,8 +400,8 @@ void setup() {
   }
 }
 ```
-**Python**
 
+**Python**
 ```python
 Bandeirinhas = []  # uma lista de objetos Bandeirinha
 
