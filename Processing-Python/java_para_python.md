@@ -288,7 +288,7 @@ add_library('VideoExport')  # a mesma biblioteca Video Export
 
 #### Obtendo uma instância e acessando métodos e atributos
 
-Java precisa da palavra chave **`new` ** para criar uma instância de uma classe, é só removê-la! O acesso a métodos e atributos é exatamente igual.
+Java precisa da palavra chave **`new`** para criar uma instância de uma classe, é só removê-la! O acesso a métodos e atributos é exatamente igual.
 
 **Java**
 
@@ -386,7 +386,7 @@ class MRect:
 
 ### Estruturas de dados
 
-Arrays como `int[]`, `float[]` or `PVector[]` viram listas em Python (à vezes tuplas se forem criadas e deixadas quietas).  ArrayList é muito parecido com uma lista:
+Arrays como `int[]`, `float[]` or `PVector[]` podem virar listas em Python (às vezes tuplas, se forem criadas e deixadas quietas). Um *ArrayList* é muito parecido com uma lista:
 
 **Java**
 
@@ -420,6 +420,10 @@ board = new int[grid_w][grid_h]
 ```
 Uma lista de listas:
 
-```Python
+```python
 board = [[0] * grid_w for _ in range(grid_h)]
 ```
+
+---
+
+Trabalho em andamento...
