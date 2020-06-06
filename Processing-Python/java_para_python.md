@@ -314,7 +314,7 @@ def  setup() :
 
 #### Declarando uma classe
 
-Já as declarações de classe mudam um pouco, grosso modo, o método `__init__(self)` faz o papel do *construtor* da classe.  Veja a classe `MRect` do exemplo **Basics > Objects > Objects** que vem no IDE do Processing. Você vai ter o trabalho de acrescentar `self` como primeiro parâmetro de todos os métodos, e vai ter que usar `self.` para acessar atributos e membros da classe. Veja um exemplo:
+Já as declarações de classe mudam um pouco, grosso modo, o método `__init__()` faz o papel do *construtor* da classe.  Veja a classe `MRect` do exemplo **Basics > Objects > Objects** que vem no IDE do Processing. Você vai ter o trabalho de acrescentar `self` como primeiro parâmetro de todos os métodos, e vai ter que usar `self.` para acessar atributos e membros da classe. Veja um exemplo:
 
 **Java**
 
@@ -384,3 +384,42 @@ class MRect:
                  self.ypos, self.w, height * self.h)
 ```
 
+### Estruturas de dados
+
+Arrays como `int[]`, `float[]` or `PVector[]` viram listas em Python (à vezes tuplas se forem criadas e deixadas quietas).  ArrayList é muito parecido com uma lista:
+
+**Java**
+
+```java
+ArrayList<Bandeirinha> Bandeirinhas; // uma lista de ob Bandejetosirinha
+
+void setup() {
+  size(400, 400); 
+  Bandeirinhas = new ArrayList<Bandeirinha>();
+  for (int i=0; i <50; i++) {
+    Bandeirinhas.add(new Bandeirinha(100, 100, 12));
+  }
+}
+```
+**Python**
+
+```python
+Bandeirinhas = []  # uma lista de objetos Bandeirinha
+
+def setup():
+    size(400, 400); 
+    for i in range(50):
+        Bandeirinhas.append(Bandeirinha(100, 100, 12))
+```
+
+#### Arrays 2D 
+
+```java
+int[][] board;
+board = new int[grid_w][grid_h]
+```
+Uma lista de listas:
+
+```Python
+board = [[0] * grid_w for _ in range(grid_h)]
+```
