@@ -270,18 +270,22 @@ def draw():
 
 No Processing modo Java as bibliotecas são importadas com `import` mas no modo Python essa instrução é mais usada para importar *módulos* da biblioteca padrão do Python, e arquivos **.py** das outras abas do IDE, que ao contrário do modo Java não são automaticamente parte do *sketch*.
 
-Use o comando do menu **Sketch > Importar Biblioteca.. ** (ou *Sketch > Import Library...* em inglês) para acrescentar a linha com  `add_library()` com o argumento correto.
+```python
+from outra_aba import *  # aba no arquivo outra_aba.py
+```
+
+Para bibliotecas de terceiros, use o comando do menu **Sketch > Importar Biblioteca...** (ou *Sketch > Import Library...* em inglês) para acrescentar a linha com  `add_library()` e o argumento correto.
 
 **Java**
 
 ```java
-import com.hamoid.*; // biblioteca VideoExport
+import com.hamoid.*; // importa biblioteca VideoExport no modo Java
 ```
 
 **Python**
 
 ```python
-add_library('VideoExport')  # a mesma biblioteca Video Export
+add_library('VideoExport')  # a mesma biblioteca no modo Python
 ```
 
 ### Orientação a objetos
