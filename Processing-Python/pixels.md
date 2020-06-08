@@ -117,8 +117,8 @@ def draw() :
     for i in range(len(imgTemp.pixels)):
         record = -1 
         selectedPixel = i 
-        for j in range i j < imgTemp.pixels.length j+= 1) :
-            color pix     = imgTemp.pixels[j] 
+        for j in range(len(imgTemp.pixels)):
+            color pix = imgTemp.pixels[j] 
             b = hue(pix) 
             if (b > record) :
                 selectedPixel = j 
@@ -166,7 +166,7 @@ O valor de um pixel é representado no Processing (e no Java) como um número in
 
 
 | Alpha | Vermelho | Verde | Azul |
-| -= 1-    | -= 1-    | -= 1- | -= 1- |
+| ---    | ---    | --- | --- |
 | 00000000 | 00000000 |    00000000 | 00000000 |
 
 Esses valores podem ser manipulados com "bit shifting". Isso significa que para acessar uma cor, nós precisamos mexer no nível dos bits para extrair os 8 bits específicos que desejamos.    
