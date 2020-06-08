@@ -4,7 +4,7 @@ Para produzir uma grade retangular de elementos (filas e colunas) podemos utiliz
 
 Vamos começar com uma fila de círculos:
 
-```pyde
+```python
 size(400, 40)
 # deslocamento (offset) inicial: 20 - deslocamento horizontal de cada círculo: 40 
 for x in range(20, 400, 40): # 10 números de 20 a 380, incluso, de 40 em 40
@@ -16,14 +16,15 @@ for x in range(20, 400, 40): # 10 números de 20 a 380, incluso, de 40 em 40
 Imagine que é possível escrever de forma parecida uma fila vertical, uma coluna de círculos... 
 
 <details>
-  <summary>pense em como você escreveria o código e depois clique para ver a resposta</summary>
+  <summary>Pense em como você escreveria o código e depois clique para a resposta</summary>
 
 <code>
-size(400, 400)
-# deslocamento (offset) inicial: 20 - deslocamente vertical de cada círculo: 40 
-for y in range(20, 400, 40): # 10 números de 20 a 380, incluso, de 40 em 40
-    ellipse(20, y, 35, 35) # círculos de diâmetro 35
-<code>
+size(400, 400)<br />
+# deslocamento (offset) inicial: 20 - deslocamente vertical de cada círculo: 40 <br />
+for y in range(20, 400, 40): # 10 números de 20 a 380, incluso, de 40 em 40<br />
+    ellipse(20, y, 35, 35) # círculos de diâmetro 35<br />
+</code>
+
 </details>
 
 Em seguida, veremos que uma fila de colunas se torna uma grade de elementos:
