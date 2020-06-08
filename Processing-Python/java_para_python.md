@@ -35,8 +35,8 @@ Os valores booleanos em Java são `true` e `false`, o que em Python fica `True` 
 | ------------------------------------------------ | ------------------------------------------ |
 | `void func() { … }`                              | `def func(): …`                            |
 | **`true`** e **`false`**                         | **`True`** e **`False`**                   |
-| `a `**`&&`**` b` (E lógico)                  | `a `**`and`**` b`                                  |
-| <code>a **&#x7C;&#x7C;** b</code> (OU lógico)               | `a `**`or`**` b`                                   |
+|  <code>a <b>&&</b> b</code> (E lógico)                    | `a `**`and`**` b`                                  |
+| <code>a <b>&#x7C;&#x7C;</b> b</code> (OU lógico) | `a `**`or`**` b`                                   |
 | **`!`**`a` (NÃO lógico)                      | **`not`**` a`                                    |
 | `i++` (incremento)                               | `i += 1`                                   |
 | `i--`(decremento)                                | `i -= 1`                                   |
