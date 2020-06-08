@@ -388,11 +388,11 @@ class MRect:
 
 ### Estruturas de dados
 
-Arrays como `int[]`, `float[]` or `PVector[]` podem virar listas em Python (às vezes tuplas, se forem criadas e deixadas quietas). Um *ArrayList* é muito parecido com uma lista:
+Arrays como `int[]`, `float[]` ou `PVector[]` podem virar listas em Python (ou quem sabe tuplas, se forem criadas e deixadas quietas). Um *ArrayList* é muito parecido com uma lista:
 
 **Java**
 ```java
-ArrayList<Bandeirinha> Bandeirinhas; // uma lista de ob Bandejetosirinha
+ArrayList<Bandeirinha> Bandeirinhas; // uma lista de objetos da classe Bandeirinha
 
 void setup() {
   size(400, 400); 
@@ -419,7 +419,7 @@ def setup():
 int[][] board;
 board = new int[grid_w][grid_h]
 ```
-Uma lista de listas:
+Faça uma lista de listas (não, você não pode usar numpy):
 
 ```python
 board = [[0] * grid_w for _ in range(grid_h)]
