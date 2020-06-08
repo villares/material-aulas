@@ -62,7 +62,7 @@ for (float angulo=0; angulo < TWO_PI; angulo += passo){
 }
 ```
 
-**Pyton**
+**Python**
 
 ```python
 passo = TWO_PI / 18
