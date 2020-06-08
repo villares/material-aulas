@@ -74,7 +74,7 @@ def setup():
     global imgAux # define um objeto PImage chamado imagem auxiliar
     img = loadImage("flor.jpg") # carrega uma imagem
     imgAux = img # carrega a imagem auxiliar
-    surface.setSize(img.width * 2, img.height) # defini o tamanho da tela
+    surface.setSize(img.width * 2, img.height) # define o tamanho da tela
 
 def draw():
     background(255)
@@ -104,13 +104,14 @@ def keyPressed():
 ![](https://github.com/arteprog/programacao-criativa/blob/master/assets/imagens/pixel01.png?raw=True)
 
 ```pyde
-def setup() :
+def setup():
     global img, imgTemp
     size(800, 400)
     img = loadImage("monica.jpg")
     imgTemp = img.get()
+    noLoop()
 
-def draw() :
+def draw():
     scale(2)
     image(img,0,0)
     image(imgTemp, img.width, 0)
