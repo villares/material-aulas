@@ -19,10 +19,10 @@ Imagine que é possível escrever de forma parecida uma fila vertical, uma colun
   <summary>Pense em como você escreveria o código e depois clique para a resposta</summary>
 
 <pre>
-size(400, 400)<br />
-# deslocamento (offset) inicial: 20 - deslocamente vertical de cada círculo: 40 <br />
-for y in range(20, 400, 40): # 10 números de 20 a 380, incluso, de 40 em 40<br />
-    ellipse(20, y, 35, 35) # círculos de diâmetro 35<br />
+size(400, 400) 
+# deslocamento (offset) inicial: 20 - deslocamente vertical de cada círculo: 40
+for y in range(20, 400, 40): # 10 números de 20 a 380, incluso, de 40 em 40 
+    ellipse(20, y, 35, 35) # círculos de diâmetro 35 
 </pre>
 
 </details>
