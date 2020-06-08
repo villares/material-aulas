@@ -16,19 +16,19 @@ for x in range(20, 400, 40): # 10 números de 20 a 380, incluso, de 40 em 40
 Imagine que é possível escrever de forma parecida uma fila vertical, uma coluna de círculos... 
 
 <details>
-  <summary>clique para ver a resposta</summary>
+  <summary>pense em como você escreveria o código e depois clique para ver a resposta</summary>
 
-```pyde
+<code>
 size(400, 400)
 # deslocamento (offset) inicial: 20 - deslocamente vertical de cada círculo: 40 
 for y in range(20, 400, 40): # 10 números de 20 a 380, incluso, de 40 em 40
     ellipse(20, y, 35, 35) # círculos de diâmetro 35
-```
+<code>
 </details>
 
 Em seguida, veremos que uma fila de colunas se torna uma grade de elementos:
 
-```pyde
+```python
 size(400, 400)
 # deslocamento (offset) inicial: 20 - largura das colunas: 40 
 for x in range(20, 400, 40): # 10 números de 20 a 380, de 40 em 40
@@ -43,7 +43,7 @@ for x in range(20, 400, 40): # 10 números de 20 a 380, de 40 em 40
 
 Veja um exemplo, um pouco ampliado, em que a posição do elemento altera a cor e o tamanho:
 
-```pyde
+```python
 def setup():  
     size(400, 400)
     colorMode(HSB)
@@ -72,7 +72,9 @@ def draw():
 - [Sequências e laços de repetição](lacos_py.md)
 - [Cores com HSB (Matiz, Saturação e Brilho)](cores_HSB.md)
 
-### Extra (assunto avançado): Usando um iterador (*iterator*) que devolve tuplas de coordenadas
+### Extra (assunto avançado): Usando uma função geradora (*generator*) que devolve tuplas de coordenadas
+
+Em Python, se usarmos a palavra chave `yield` no lugar de `return` dentro de um laço em uma função, isso produz um maquinário todo chamado *função geradora* que suspende a execução do laço a cada encontro com o `yield` e retorna quando um novo item é pedido para esse maquinário. A função, quando invocada não devolve um item ou mesmo uma lista de itens, devolve esse maquinário, na forma de um objeto gerador (ou *generator* em inglês) que pode ser iterado como uma lista (ou outro iterável qualquer).
 
 A parte central da construção da grade, os laços encaixados produzindo as coordenadas, pode ser encapsulado em uma função separada. Neste exemplo `grid()` devove um objeto que a cada iteração devolve uma tupla (x, y) de uma grade com um certo número de filas e colunas, os dois últimos argumentos, opcionais, definem a largura da coluna e altura da fila.
 
@@ -106,6 +108,8 @@ def grid(colunas, filas, tam_col=1, tam_fil=1):
     range_colunas = range(int(colunas))
     for y in range_filas:
         for x in range_colunas:
-            yield (x * tam_col, y * tam_fil)
+            yield (x * tam_col, y * tam_fil)  # o yield no lugar de return muda tudo
+    # faz essa função como um todo devolver um objeto gerador que por sua vez vai 
+    # produzindo os resultados conforme a necessidade. Dentro de um loop, por exemplo.
 ```
 ![](https://github.com/villares/material-aulas/blob/master/Processing-Python/assets/sketch_2020_04_12a.png?raw=true)
