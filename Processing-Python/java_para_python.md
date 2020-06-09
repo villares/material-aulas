@@ -44,6 +44,8 @@ Os valores booleanos em Java são `true` e `false`, o que em Python fica `True` 
 | `for (int i=0; i < limite; i++){ … `             | `for i in range(limite): …`                |
 | `for (int i=inicio; i < limite; i += passo){ … ` | `for i in range(inicio, limite, passo): …` |
 | `for (Bola b : arrayListBolas){ …`               | `for b in listaBolas: …`                   |
+| `for (Bola b : arrayListBolas){ …`               | `for b in listaBolas: …`                   |
+| `fill(#FFCC00) // notação hexadecimal de cores`  | `fill('#FFCC00') # precisa ' ' ou " "` (não funciona com `color()`) |
 
 E semelhante a `null` de Java temos o valor `None` em Python os usos não são totalmente equivalentes mas é um bom palpite fazer a substituição.
 
