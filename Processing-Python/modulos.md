@@ -17,7 +17,7 @@ from nome_aba import *
 ```
 Ou ainda, considerado preferível e mais elegante em projetos grandes na comunidade Python:
 ```python
-from nome_aba import uma_funcao, UmaClasse
+from nome_aba import uma_funcao, outra_funcao, Uma_classe, Outra_classe
 ```
 Note que o nome do módulo é escrito **sem a extensão `.py`.**
 
