@@ -15,7 +15,7 @@ Na primeira aba, ou em qualquer aba que precise do código de outro módulo/aba,
 ```Python
 from nome_aba import * 
 ```
-Ou ainda, preferível e mais elegante:
+Ou ainda, considerado preferível e mais elegante em projetos grandes na comunidade Python:
 ```python
 from nome_aba import uma_funcao, UmaClasse
 ```
@@ -31,9 +31,11 @@ Acrescente `# -*- coding: utf-8 -*-` na primeira linha do arquivo.
 
 Veja também:  [`from __future__ import unicode_literals`](futuro.md)
 
-## Exemplo de importação de um módulo da biblioteca padrão do Python
+## Exemplo de importação da biblioteca padrão do Python
 
-O módulo `random` de Python tem uma função chamada `choice()` que é bem útil,
+A instrução `import` e suas variantes são usadas para importar ferramentas da biblioteca padrão do Python, módulos que vem junto com o interpretador Python contendo diversas funções e classes, mas que só ficam disponíveis quando requisitados.
+
+Vamos usar como exemplo aqui o módulo `random` de Python que tem uma função chamada `choice()`, que 'sorteia' um item de uma coleção (pode ser uma tupla, lista, conjunto...), e pode ser bastante útil na programação criativa.
 
 Se fizermos `import random`, temos dois problemas, matamos a função `random()` do Processing e temos que usar a forma `sorteio = random.choice(colecao)` que é muito longa. A forma `from random import *` também mata o `random()` do Processing. Uma opção melhor pode ser fazer assim:
 
@@ -44,7 +46,7 @@ colecao = ("A", "B", "C", "D")
 sorteio = choice(colecao)
 ```
  
-Um estilo muito comum, se você precisa de todos os métodos de `random`, mas não quer 'poluir' o namespace global do Processing, é fazer assim:
+Um estilo muito comum, se você precisa de todos os métodos de `random`, mas não quer 'poluir' os nomes globais do Processing, é fazer assim:
 
 ```python
 import random as rnd
