@@ -1,8 +1,9 @@
 # Usando as abas no IDE do Processing
+### TL:DR; As abas se comportam como *módulos* de Python
 
 Múltiplas abas são utilizadas para organizar melhor um *sketch*  mais longo. É comum separar as definições de classes e outras funções em abas "secundárias". 
 
-As funções `setup()`,  `draw()` assim como as que são acionadas por eventos, por exemplo, `mouseDragged()` ou `keyPressed()`, precisam ficar na primeira aba.
+**As funções `setup()`,  `draw()` assim como as que são acionadas por eventos, por exemplo, `mouseDragged()` ou `keyPressed()`, precisam ficar na primeira aba.**
 
 ## Abas secundárias no modo Python 
 
@@ -29,6 +30,28 @@ Note que o nome do módulo é escrito **sem a extensão `.py`.**
 Acrescente `# -*- coding: utf-8 -*-` na primeira linha do arquivo. 
 
 Veja também:  [`from __future__ import unicode_literals`](futuro.md)
+
+## Exemplo de importação de um módulo da biblioteca padrão do Python
+
+O módulo `random` de Python tem uma função chamada `choice()` que é bem útil,
+
+Se fizermos `import random`, temos dois problemas, matamos a função `random()` do Processing e temos que usar a forma `sorteio = random.choice(colecao)` que é muito longa. A forma `from random import *` também mata o `random()` do Processing. Uma opção melhor pode ser fazer assim:
+
+```python
+from random import choice`
+
+colecao = ("A", "B", "C", "D")
+sorteio = choice(colecao)
+```
+ 
+Um estilo muito comum, se você precisa de todos os métodos de `random`, mas não quer 'poluir' o namespace global do Processing, é fazer assim:
+
+```python
+import random as rnd
+
+colecao = ("A", "B", "C", "D")
+sorteio = rnd.choice(colecao)
+```
 
 #### Glossário
 
