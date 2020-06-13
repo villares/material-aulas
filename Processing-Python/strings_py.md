@@ -46,6 +46,54 @@ def draw():
     println("x: " + str(mouseX) + " y: " + str(mouseY))  # convertendo o valor em string com str()
 ```
 
+### Os *métodos* dos objetos *string*
+
+*Strings* são um *tipo* de dado armazenado na memória do computador, e mais, em Python, são acompanhados de uma série de funções e que podem ser acionadas com a *sintaxe do ponto* (*dot syntax*). 
+<sub>Na programação orientada a objetos veremos que funções que acompanham objetos de uma determinada classe são conhecidas como métodos.</sub>
+
+```python
+# str.lower() devolve string com a versão em caixa baixa
+print('Alexandre'.lower())  # imprime: alexandre
+
+# str.upper() devolve string com a versão em caixa alta
+print('Alexandre'.upper())  # imprime: ALEXANDRE
+
+# str.endswith(sufixo) informa se o texto termina com um certo sufixo
+nome_arquivo = "imagem3434.jpg"
+print(nome_arquivo.endswith(".jpg"))  # imprime: True
+print(nome_arquivo.endswith(".gif"))  # imprime: False
+
+# str.startswith(prefixo) informa se o texto inicia com um certo prefixo
+nome_arquivo = "imagem1212.jpg"
+print(nome_arquivo.startswith("image"))  # imprime: True
+print(nome_arquivo.startswith("a"))  # imprime: False
+
+# str.format(valor, outro) substitui valores em pontos especiais do texto
+nome = 'Alexandre'
+print(u"Olá, meu nome é {}, qual o seu?".format(nome)) 
+# imprime: Olá, meu nome é Alexandre, qual o seu?
+
+# str.split(delimitador_opcional) devolve uma lista cujos itens são trechos do texto "divididos"
+itens = "A a B b".split()  # usado sem argumentos divide nos espaços
+# itens: ['A', 'a', 'B', 'b']
+# pode ser informado um delimitador:
+# print("a/b/c".split("/"))
+# imprime: ['a', 'b', 'c']
+# Confira também str.splitlines() que divide em quebras de linha!
+
+# str.join(coisas) use um texto como delimitador para juntar uma coleção de textos!
+coisas = ('a', 'b', 'c')
+print('-'.join(coisas))
+# imprime: a-b-c
+
+# str.replace(velho, novo) # substitui todas as ocorrências de um texto dentro de outro, se houver
+frase = u'as pessoas são estranhas'.replace('as', 'a')
+frase = frase.replace(u'são', u'é')
+print(frase)  # imprime: a pessoa é estranha
+```
+
+Voocê pode ler mais na Documentação do Python sobre os [métodos de String](https://docs.python.org/pt-br/2.7/library/stdtypes.html#string-methods).
+
 ### Mostando texto na área de desenho
 
 ```pyde
@@ -64,7 +112,7 @@ Mais sobre desenhar texto na tela na página sobre tipografia básica em: [Traba
 
 ### Letras com acentos, caracteres especiais e outros glifos
 
-Em Python 2  é necessário um `u` antes de cada *string literal* (*string* no corpo do programa) para permitir letras acentuadas e outros caracteres não-ASCII. Uma outra solução é incluir no começo do seu programa, logo na primeira linha, o seguinte código:
+Em Python 2  é necessário um `u` antes de cada *string literal* (*string* no corpo do programa) para permitir letras acentuadas e outros caracteres não-ASCII, os tornando objetos de texto *unicode*. Uma outra solução é incluir no começo do seu programa, logo na primeira linha, o seguinte código:
 
 ```pyde
 from __future__ import unicode_literals
