@@ -75,9 +75,10 @@ print(u"Olá, meu nome é {}, qual o seu?".format(nome))
 
 # str.split(delimitador_opcional) devolve uma lista cujos itens são trechos do texto "divididos"
 itens = "A a B b".split()  # usado sem argumentos divide nos espaços
-# itens: ['A', 'a', 'B', 'b']
+print(itens)
+# imprime: ['A', 'a', 'B', 'b']
 # pode ser informado um delimitador:
-# print("a/b/c".split("/"))
+print("a/b/c".split("/"))
 # imprime: ['a', 'b', 'c']
 # Confira também str.splitlines() que divide em quebras de linha!
 
