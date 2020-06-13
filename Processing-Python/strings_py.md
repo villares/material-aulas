@@ -150,10 +150,7 @@ Uma outra maneira de indicar uma *string literal* com quebras de linha é usando
 print(
 u"""frutas frescas:
 maçã
-bananaitens = "A a B b".split()  # usado sem argumentos divide nos espaços
-# itens: ['A', 'a', 'B', 'b']
-# pode ser informado um delimitador:
-# print("a/b/c".split("/"))
+banana
 """)
 ```
 
