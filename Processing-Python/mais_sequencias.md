@@ -160,4 +160,8 @@ print(b)  # imprime: [4, 3, 2, 1, 0]
 print("Alexandre"[::-1]) # imprime: erdnaxelA
 ```
 
+## Assuntos relacionados
 
+- [Sequências e laços de repetição](lacos_py.md)
+- [Arrastando vários círculos](arrastando_circulos.md#arrastando-v%C3%A1rios-c%C3%ADrculos)
+- [Mais sobr *strings*](strings_py.md)
