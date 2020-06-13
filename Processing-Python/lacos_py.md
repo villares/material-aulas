@@ -115,6 +115,10 @@ viva!
 
 ### Mais sobre o `range()`
 
+![range(0, 10, 2)](assets/range_2.png)
+
+> `range(0, 10, 2)` produz os números 0, 2, 4, 6, 8
+
 A função `range()` aceita argumentos na forma `range(início, parada, passo)`, *início* será o primeiro número, e a sequência para antes do número *parada*, aumentando com o número do *passo*, veja este exemplo com resultado visual com linhas:
 
 ```python
