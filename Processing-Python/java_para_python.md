@@ -318,7 +318,11 @@ def  setup() :
 
 #### Declarando uma classe
 
-Já as declarações de classe mudam um pouco, grosso modo, o método `__init__()` faz o papel do *construtor* da classe.  Veja a classe `MRect` do exemplo **Basics > Objects > Objects** que vem no IDE do Processing. Você vai ter o trabalho de acrescentar `self` como primeiro parâmetro de todos os métodos, e vai ter que usar `self.` para acessar atributos e membros da classe. Veja um exemplo:
+Já as declarações de classe mudam um pouco, grosso modo, o método `__init__()` faz o papel do *construtor* (a definição de método que em Java tem o mesmo nome da classe e faz a inicialização de uma instância do objeto).
+
+Você vai ter o trabalho de acrescentar `self` como primeiro parâmetro de todos os métodos, e vai ter que usar `self.` para acessar atributos e membros da classe.
+
+Veja a classe `MRect` do exemplo **Basics > Objects > Objects** que vem no IDE do Processing.
 
 **Java**
 
@@ -417,15 +421,19 @@ def setup():
 
 #### Arrays 2D 
 
+Parar traduzir, arrays de duas dimensões em Java, faça uma lista de listas (não, você não pode usar numpy).
+
+**Java**
 ```java
 int[][] board;
 board = new int[grid_w][grid_h]
 ```
-Faça uma lista de listas (não, você não pode usar numpy):
-
+**Python**
 ```python
 board = [[0] * grid_w for _ in range(grid_h)]
 ```
+
+Em vez do `0` você pode usar outro valor calculado ou `None` como 'segurador de lugar' (*placeholder*) caso a estrutura vá servir para outros tipos de dados.
 
 ---
 
