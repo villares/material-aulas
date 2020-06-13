@@ -26,7 +26,7 @@ a = '10' + 5  # TypeError: cannot concatenate 'str' and 'int' objects
 
 ### Mostrando valores no console
 
-Usamos `print()` ou `println()` para *imprimir* na parte de baixo do IDE, o chamado console. Essas funções convertem automaticamente outros tipos de valores em string, uma representação textual ou imprime um referência ao objeto passado.
+Usamos `print()` ou `println()` para *imprimir* na parte de baixo do IDE, o chamado console. Essas funções convertem automaticamente outros tipos de valores em string, uma representação textual ou uma referência ao objeto passado.
 
 ```pyde
 def setup():           # Resultado no console:
@@ -48,7 +48,8 @@ def draw():
 
 ### Os *métodos* dos objetos *string*
 
-*Strings* são um *tipo* de dado armazenado na memória do computador, e mais, em Python, são acompanhados de uma série de funções e que podem ser acionadas com a *sintaxe do ponto* (*dot syntax*). 
+*Strings* são um *tipo* de dado armazenado na memória do computador, e mais, em Python, são acompanhados de uma série de funções e que podem ser acionadas com a *sintaxe do ponto* (*dot syntax*).
+
 <sub>Na programação orientada a objetos veremos que funções que acompanham objetos de uma determinada classe são conhecidas como métodos.</sub>
 
 ```python
@@ -85,9 +86,6 @@ print("a/b/c".split("/"))
 # str.join(coisas) use um texto como delimitador para juntar uma coleção de textos!
 coisas = ('a', 'b', 'c')
 print('-'.join(coisas))itens = "A a B b".split()  # usado sem argumentos divide nos espaços
-# itens: ['A', 'a', 'B', 'b']
-# pode ser informado um delimitador:
-# print("a/b/c".split("/")
 # imprime: a-b-c
 
 # str.replace(velho, novo) # substitui todas as ocorrências de um texto dentro de outro, se houver
