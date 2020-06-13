@@ -84,7 +84,10 @@ print("a/b/c".split("/"))
 
 # str.join(coisas) use um texto como delimitador para juntar uma coleção de textos!
 coisas = ('a', 'b', 'c')
-print('-'.join(coisas))
+print('-'.join(coisas))itens = "A a B b".split()  # usado sem argumentos divide nos espaços
+# itens: ['A', 'a', 'B', 'b']
+# pode ser informado um delimitador:
+# print("a/b/c".split("/")
 # imprime: a-b-c
 
 # str.replace(velho, novo) # substitui todas as ocorrências de um texto dentro de outro, se houver
@@ -92,6 +95,13 @@ frase = u'as pessoas são estranhas'.replace('as', 'a')
 frase = frase.replace(u'são', u'é')
 print(frase)  # imprime: a pessoa é estranha
 ```
+ É possível 'encadear' métodos, como no exemplo abaixo.
+ 
+ ```python
+# identifica arquivos que terminam tanto com .png como com .PNG
+if nome_arquivo.lower().endswith('.png'):
+     print("Arquivo tipo PNG")
+``` 
 
 Voocê pode ler mais na Documentação do Python sobre os [métodos de String](https://docs.python.org/pt-br/2.7/library/stdtypes.html#string-methods).
 
@@ -140,7 +150,10 @@ Uma outra maneira de indicar uma *string literal* com quebras de linha é usando
 print(
 u"""frutas frescas:
 maçã
-banana
+bananaitens = "A a B b".split()  # usado sem argumentos divide nos espaços
+# itens: ['A', 'a', 'B', 'b']
+# pode ser informado um delimitador:
+# print("a/b/c".split("/"))
 """)
 ```
 
