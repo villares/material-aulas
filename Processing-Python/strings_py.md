@@ -85,7 +85,7 @@ print("a/b/c".split("/"))
 
 # str.join(coisas) use um texto como delimitador para juntar uma coleção de textos!
 coisas = ('a', 'b', 'c')
-print('-'.join(coisas))itens = "A a B b".split()  # usado sem argumentos divide nos espaços
+print('-'.join(coisas))
 # imprime: a-b-c
 
 # str.replace(velho, novo) # substitui todas as ocorrências de um texto dentro de outro, se houver
