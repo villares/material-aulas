@@ -266,13 +266,62 @@ def draw():
         ydirection *= -1
     ellipse(xpos, ypos, rad * 2, rad * 2)
 ```
+
+### Strings
+
+
+Se o código contiver strings com caracteres *não-ASCII* (como letras acentuadas ou emojis) pode ser uma boa ideia iniciar o *sketch* com a seguinte linha:
+
+```python
+from __future__ import unicode_literals
+```
+
+De outra forma você terá que preceder cada string com `u` da seguinte maneira:  `u"maçã"`.
+
+**Tipo *char* em Java**
+
+Java tem uma tipo especial para caracteres, *char* que são representados no código com aspas simples, Python não tem essa distinção, usa-se *strings* de um caracter, e aspas simples ou duplas para *strings*. 
+
+Para obter um caractere em determinada posição de *string* em Java é preciso fazer isto:
+ 
+```Java
+String palavra = "amor";
+char c = palavra.charAt(1); // c = 'm'
+```
+O equivalente em Python, continua sendo *string*:
+
+```Python
+palavra = 'amor'
+c = palavra[1] # c = 'm'
+```
+
+**Comparando *strings* em Java**
+
+```java
+String str1 = "amor";
+String str2 = "amor";
+// Testa se str1 é igual a str2
+if (str1.equals(str2)) {
+  println("iguais"); } else {
+  println("diferentes"); 
+}
+```
+**Comparando *strings* em Python**
+
+```python
+str1 = "amor"
+str2 = "amor"
+# Testa se str1 é igual a str2
+if str1 == str2:
+  println("iguais")
+else:
+  println("diferentes")
+```
+
+
 ### Importando bibliotecas e as outras abas do sketch
 
 No Processing modo Java as bibliotecas são importadas com `import` mas no modo Python essa instrução é mais usada para importar *módulos* da biblioteca padrão do Python, e arquivos **.py** das outras abas do IDE, que ao contrário do modo Java não são automaticamente parte do *sketch*.
-
-```python
-from outra_aba import *  # aba no arquivo outra_aba.py
-```
 
 Para bibliotecas de terceiros, use o comando do menu **Sketch > Importar Biblioteca...** (ou *Sketch > Import Library...* em inglês) para acrescentar a linha com  `add_library()` e o argumento correto.
 
@@ -286,6 +335,18 @@ import com.hamoid.*; // importa biblioteca VideoExport no modo Java
 
 ```python
 add_library('VideoExport')  # a mesma biblioteca no modo Python
+```
+
+Para usar múltiplas abas no modo Python, é preciso tratá-las como módulos e trazer classes ou funções com `import`. Há mais de uma maneira de fazer isso.
+
+```python
+from outra_aba import *  # importa código do arquivo outra_aba.py
+```
+
+Se as outras abas contiverem caracteres *não-ASCII*  é necessário acrescentar como primeira linha este comentário especial:
+
+```python
+# -*- coding: utf-8 -*-
 ```
 
 ### Orientação a objetos
