@@ -1,6 +1,9 @@
-## Exemplo se análise do som do microfone
+# Usando a biblioteca *Sound* do Processing
 
 É preciso instalar a biblioteca **Sound** da fundação Processing pelo IDE.
+
+### Exemplo se análise do som do microfone
+
  <sub> Parece que no MacOS Catalina está tendo problema ouvir o microfone</sub>
 
 ![](assets/audio_in.gif)
