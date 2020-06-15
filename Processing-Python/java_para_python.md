@@ -35,9 +35,9 @@ Os valores booleanos em Java são `true` e `false`, o que em Python fica `True` 
 | ------------------------------------------------ | ------------------------------------------ |
 | `void func() { … }`                              | `def func(): …`                            |
 | **`true`** e **`false`**                         | **`True`** e **`False`**                   |
-|  <code>a <b>&&</b> b</code> (E lógico)                    | `a `**`and`**` b`                                  |
-| <code>a <b>&#x7C;&#x7C;</b> b</code> (OU lógico) | `a `**`or`**` b`                                   |
-| **`!`**`a` (NÃO lógico)                      | **`not`**` a`                                    |
+|  <code>a <b>&&</b> b</code> (E lógico)           | `a `**`and`**` b`                          |
+| <code>a <b>&#x7C;&#x7C;</b> b</code> (OU lógico) | `a `**`or`**` b`                           |
+| **`!`**`a` (NÃO lógico)                          | **`not`**` a`                              |
 | `i++` (incremento)                               | `i += 1`                                   |
 | `i--`(decremento)                                | `i -= 1`                                   |
 | `a <= b && b < c`                                | `a <= b < c`                               |
@@ -45,7 +45,7 @@ Os valores booleanos em Java são `true` e `false`, o que em Python fica `True` 
 | `for (int i=inicio; i < limite; i += passo){ … ` | `for i in range(inicio, limite, passo): …` |
 | `for (Bola b : arrayListBolas){ …`               | `for b in listaBolas: …`                   |
 | `for (Bola b : arrayListBolas){ …`               | `for b in listaBolas: …`                   |
-| `fill(#FFCC00) // notação hexadecimal de cores`  | `fill('#FFCC00') # precisa ' ' ou " "` (não funciona com `color()`) |
+| `fill(#FFCC00) // cor em notação hexadecimal  `  | `fill("#FFCC00") # precisa aspas e não funciona com `color()` |
 
 E semelhante a `null` de Java temos o valor `None` em Python os usos não são totalmente equivalentes mas é um bom palpite fazer a substituição.
 
@@ -191,6 +191,36 @@ resultado = cond ? a : b
 #### switch & case
 
 Não existe `switch/case` no Python, você pode trocar por uma cadeia de `if/elif` ou, se for só para chamar diferentes funções, um dicionário de funções [TO DO página sobre isso].
+**Java**
+```java
+char letter = 'b';
+
+switch(letter) {
+  case 'a':
+  case 'A': 
+    println("Alpha");  // Does not execute in this example
+    break;
+  case 'b':
+  case 'B': 
+    println("Bravo");  // Prints "Bravo"
+    break;
+  default:            // default is optional
+    println("Not found");  
+    break;
+}
+```
+
+**Python**
+```python
+letter = 'b'
+
+if letter == 'a' or letter == 'A':
+    println("Alpha")  # Does not execute in this example
+elif letter in ('b', 'B'):
+    println("Bravo")  # Prints "Bravo"
+else:
+    println("Not found")  
+```
 
 ### Variáveis globais
 
@@ -204,7 +234,6 @@ Veja um exemplo:
 
 **Java**
 ```java
-
 int rad = 60;        // Width of the shape
 float xpos, ypos;    // Starting position of shape    
 float xspeed = 2.8;  // Speed of the shape
