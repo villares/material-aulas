@@ -65,16 +65,16 @@ def mouseDragged():  # quando o mouse é movido apertado
 
 Para acompanhar o próximo exemplo você precisa estar familiarizado com [sequências e laços de repetição](lacos_py.md), uma vez que vamos usar uma estrutura de dados, uma lista, com tuplas dentro, para manter a posição e tamanho de vários círculos, permitindo que qualquer um deles seja arrastado!.
 
-0. A variável global `arrastando`  vai manter registro da situação de arraste, como no exemplo anterior, só que agora também indicando o índice de posição de um círculo na lista `circulos`. Vamos estabelecer que -1 significa não uma posição na lista (que seria o último círculo) mas sim que nenhum círculo está sendo arrastado (mesmo papel do `False` no exemplo anterior).
+0. A variável global `arrastando`  vai manter registro da situação de arraste, como no exemplo anterior, só que agora também indicando o índice de posição de um círculo na lista `circulos`. Vamos estabelecer que `None` significa que nenhum círculo está sendo arrastado (um papel feito por `False` no exemplo anterior).
 
 1. Na função `mousePressed()` vamos checar uma a uma cada tupla da lista, contendo X, Y e diâmetro dos círculos, e caso algum deles esteja sob o mouse, vamos atualizar a variável `arrastando` apontando o índice dessa tupla na lista. O primeiro círculo encontrado interrompe a busca, só um círculo pode ser arrastado por vez. No caso de vários círculos estarem sob o mouse, é selecionado o que vier antes na lista, por conta disso, é selecionado aquele que é desenhado primeiro, o 'mais de baixo' entre eles.
 
-2. A função `mouseReleased()` altera `arrastando` para -1. Nenhum círculo está sendo arrastado.
+2. A função `mouseReleased()` altera `arrastando` para `None`. Nenhum círculo está sendo arrastado.
 
-3. A função `mouseDragged()`, caso `arrastando` não seja -1, é criada uma nova tupla com a posição atualizada do círculo e é alterada a lista na posição indicada por `arrastando`.
+3. A função `mouseDragged()`, caso `arrastando` não seja `None`, é criada uma nova tupla com a posição atualizada do círculo e é alterada a lista na posição indicada por `arrastando`.
 
 ```python
-arrastando = -1  # -1 quer dizer nenhum círculo sendo arrastado
+arrastando = None  # None quer dizer nenhum círculo sendo arrastado
 circulos = []  # lista com coordenadas e tamanhos dos círculos
 
 def setup():
@@ -109,10 +109,10 @@ def mousePressed():  # quando um botão do mouse é apertado
     
 def mouseReleased():  # quando um botão do mouse é solto
     global arrastando
-    arrastando = -1
+    arrastando = None
     
 def mouseDragged():  # quando o mouse é movido apertado
-    if arrastando != -1:
+    if arrastando is not None:
         x, y, d = circulos[arrastando]
         x += mouseX - pmouseX
         y += mouseY - pmouseY
