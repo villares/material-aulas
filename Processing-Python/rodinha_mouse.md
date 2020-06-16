@@ -34,7 +34,7 @@ O exemplo a seguir amplia o código de [arrastar círculos](arrastando_circulos.
 ![rodinha](assets/rodinha_mouse_2.gif)
 
 ```python
-arrastando = -1  # -1 quer dizer nenhum círculo sendo arrastado
+arrastando = None  # None quer dizer nenhum círculo sendo arrastado
 circulos = []  # lista com coordenadas e tamanhos dos círculos
 NUM_CIRCULOS = 6
 
@@ -74,10 +74,10 @@ def mousePressed():  # quando um botão do mouse é apertado
     
 def mouseReleased():  # quando um botão do mouse é solto
     global arrastando
-    arrastando = -1
+    arrastando = None
     
 def mouseDragged():  # quando o mouse é movido apertado
-    if arrastando >= 0:
+    if arrastando is not None:
         x, y, d = circulos[arrastando]
         x += mouseX - pmouseX
         y += mouseY - pmouseY
