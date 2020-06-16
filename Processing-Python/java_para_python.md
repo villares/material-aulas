@@ -309,7 +309,7 @@ De outra forma você terá que preceder cada string com `u` da seguinte maneira:
 
 **Tipo *char* em Java**
 
-Java tem uma tipo especial para caracteres, *char* que são representados no código com aspas simples, Python não tem essa distinção, usa-se *strings* de um caracter, e aspas simples ou duplas para *strings*. 
+Java tem uma tipo especial para caracteres, *char* que são representados no código com aspas simples, Python não tem essa distinção, usa-se *strings* de um só caractere, e aspas simples ou duplas para *strings*. 
 
 Para obter um caractere em determinada posição de *string* em Java é preciso fazer isto:
  
