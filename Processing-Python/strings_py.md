@@ -26,7 +26,7 @@ a = '10' + 5  # TypeError: cannot concatenate 'str' and 'int' objects
 
 ### Mostrando valores no console
 
-Usamos `print()` ou `println()` para *imprimir* na parte de baixo do IDE, o chamado console. Essas funções convertem automaticamente outros tipos de valores em string, uma representação textual ou uma referência ao objeto passado.
+Usamos `print()` ou `println()` para *exibir* na parte de baixo do IDE, o chamado console. Essas funções convertem automaticamente outros tipos de valores em string, uma representação textual ou uma referência ao objeto passado.
 
 ```pyde
 def setup():           # Resultado no console:
@@ -54,44 +54,44 @@ def draw():
 
 ```python
 # str.lower() devolve string com a versão em caixa baixa
-print('Alexandre'.lower())  # imprime: alexandre
+print('Alexandre'.lower())  # exibe: alexandre
 
 # str.upper() devolve string com a versão em caixa alta
-print('Alexandre'.upper())  # imprime: ALEXANDRE
+print('Alexandre'.upper())  # exibe: ALEXANDRE
 
 # str.endswith(sufixo) informa se o texto termina com um certo sufixo
 nome_arquivo = "imagem3434.jpg"
-print(nome_arquivo.endswith(".jpg"))  # imprime: True
-print(nome_arquivo.endswith(".gif"))  # imprime: False
+print(nome_arquivo.endswith(".jpg"))  # exibe: True
+print(nome_arquivo.endswith(".gif"))  # exibe: False
 
 # str.startswith(prefixo) informa se o texto inicia com um certo prefixo
 nome_arquivo = "imagem1212.jpg"
-print(nome_arquivo.startswith("image"))  # imprime: True
-print(nome_arquivo.startswith("a"))  # imprime: False
+print(nome_arquivo.startswith("image"))  # exibe: True
+print(nome_arquivo.startswith("a"))  # exibe: False
 
 # str.format(valor, outro) substitui valores em pontos especiais do texto
 nome = 'Alexandre'
 print(u"Olá, meu nome é {}, qual o seu?".format(nome)) 
-# imprime: Olá, meu nome é Alexandre, qual o seu?
+# exibe: Olá, meu nome é Alexandre, qual o seu?
 
 # str.split(delimitador_opcional) devolve uma lista cujos itens são trechos do texto "divididos"
 itens = "A a B b".split()  # usado sem argumentos divide nos espaços
 print(itens)
-# imprime: ['A', 'a', 'B', 'b']
+# exibe: ['A', 'a', 'B', 'b']
 # pode ser informado um delimitador:
 print("a/b/c".split("/"))
-# imprime: ['a', 'b', 'c']
+# exibe: ['a', 'b', 'c']
 # Confira também str.splitlines() que divide em quebras de linha!
 
 # str.join(coisas) use um texto como delimitador para juntar uma coleção de textos!
 coisas = ('a', 'b', 'c')
 print('-'.join(coisas))
-# imprime: a-b-c
+# exibe: a-b-c
 
 # str.replace(velho, novo) # substitui todas as ocorrências de um texto dentro de outro, se houver
 frase = u'as pessoas são estranhas'.replace('as', 'a')
 frase = frase.replace(u'são', u'é')
-print(frase)  # imprime: a pessoa é estranha
+print(frase)  # exibe: a pessoa é estranha
 ```
  É possível 'encadear' métodos, como no exemplo abaixo.
  

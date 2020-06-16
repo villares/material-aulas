@@ -44,12 +44,12 @@ O operador lógico `or` retorna o valor do lado esquerdo caso este seja consider
 Em Python `None`, `0` (o número zero), `""` (um *string* vazio) ou uma coleção vazia (lista, tupla, etc.) são considerados `False`. Outros valores são considerados `True`. 
 
 ```python
-print(0 or 10)  # imprime: 10
-print(10 or 0)  # imprime: 10
-print(None or 10)  # imprime: 10
-print(10 or None)  # imprime: 10
-print(None or 0)  # imprime: 0
-print(0 or None)  # imprime: None
+print(0 or 10)  # exibe: 10
+print(10 or 0)  # exibe: 10
+print(None or 10)  # exibe: 10
+print(10 or None)  # exibe: 10
+print(None or 0)  # exibe: 0
+print(0 or None)  # exibe: None
 ```
 
 Por conta disso, você pode se deparar com a seguinte expressão:

@@ -16,13 +16,13 @@ Podemos obter o tamanho, isto é, o número de itens, de praticamente qualquer e
 
 ```python
 lista_de_nomes ['Bernardo Fontes', 'John Cleese', 'Georg Nees']
-print(len(lista_de_nomes)) # imprime 3
+print(len(lista_de_nomes)) # exibe 3
 
 ponto = (100, 150)
-print(len(ponto))  # imprime 2
+print(len(ponto))  # exibe 2
 
 n_paises = len(codigos_de_pais) # lista baseada em https://www.iso.org/obp/ui/#search
-print(n_paises) # imprime 249
+print(n_paises) # exibe 249
 ```
 
 ### Consultando individualmente itens de uma sequência
@@ -155,9 +155,9 @@ Uma das maneiras mais comuns de se obter uma cópia invertida de uma sequência 
 ```python
 a = [0, 1, 2, 3, 4]
 b = a[::-1]
-print(b)  # imprime: [4, 3, 2, 1, 0]
+print(b)  # exibe: [4, 3, 2, 1, 0]
 
-print("Alexandre"[::-1]) # imprime: erdnaxelA
+print("Alexandre"[::-1]) # exibe: erdnaxelA
 ```
 
 ## Assuntos relacionados

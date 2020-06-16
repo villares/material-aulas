@@ -17,8 +17,8 @@ Usamos a função `size()` para determinar o tamanho da área de desenho (sem el
 
 ```python
 size(400, 200) # define o tamanho da área de deseno (w, h) 
-print(width) # imprime no console largura atual da tela
-print(height) # imprime no console altura atual da tela
+print(width) # exibe no console largura atual da tela
+print(height) # exibe no console altura atual da tela
 ```
 ![Coordenadas](assets/01-console.png)
 
