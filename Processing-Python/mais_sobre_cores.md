@@ -8,5 +8,5 @@ Por padrão escolhemos cores no Processing com trincas de números entre 0 e 255
 
 ### Cores com HSB (Matiz, Saturação e Brilho)
 
-Se chamaramos a função *colorMode* com a constante **HSB**, `colorMode(HSB)`, podemos passar a usar números representando Matiz (*Hue*), Saturação (*Saturation*) e Brilho (*Brightness*). É possível reverter pra o modo **RGB** chamando `colorMode(RGB`.
+Se chamaramos a função *colorMode* com a constante **HSB**, `colorMode(HSB)`, podemos passar a usar números representando Matiz (*Hue*), Saturação (*Saturation*) e Brilho (*Brightness*). É possível reverter pra o modo **RGB** chamando `colorMode(RGB)`.
 
