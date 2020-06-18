@@ -21,7 +21,7 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
   - [Desenhando polígonos](Processing-Python/poligonos_1.md)  
   - [O que é indentação?](Processing-Python/indentacao.md)  
   - [Divisão com números inteiros](Processing-Python/divisao.md)
-  - [Mais sobre cores (RGB e HSB)]](Processing-Python/mais_sobre_cores.md)
+  - [Mais sobre cores (RGB e HSB)](Processing-Python/mais_sobre_cores.md)
 - [Condicionais (`if` e `else`)](Processing-Python/condicionais_py.md)
   - [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](Processing-Python/atribuicao-e-comparacao.md)
   - [Condições aninhadas e outras estruturas condicionais](Processing-Python/condicionais_2.md)
