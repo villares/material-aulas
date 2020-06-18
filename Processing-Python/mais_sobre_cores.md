@@ -6,7 +6,25 @@ Vamos falar aqui sobre como definir e manipular as cores, fingindo que podemos d
 
 Por padrão escolhemos cores no Processing com trincas de números entre 0 e 255 que representam valores de intensidade nos canais R (*Red*, vermelho), G (*Green*, verde) e B (*Blue*, azul). Um quarto número (*Alpha*) pode ser usado para indicar cores translúcidas (0 fica totalmente transparente, e invisível, e 255 totalmente opaca, como se não tivesse sido usado o quarto número).
 
+```python
+strokeWeight(5)
+stroke(200, 0, 0)  # traço vermelho
+fill(200, 200, 0)  # preenchimento amarelo
+rect(3, 3, 50, 50)
+
+stroke(0, 200, 0)       # traço verde
+fill(0, 200, 200, 200)  # preenchimento ciano tranlúcido
+rect(25, 25, 50, 50)
+
+stroke(0, 0, 200)       # traço azul
+fill(200, 0, 200, 200)  # preenchimento magenta translúcido
+rect(47, 47, 50, 50)
+```
+![RGB](assets/RGB.png)
+
 Uma maneira de escolher uma cor e obter os valores RGB dela é usando a ferramenta no menu do IDE, **Ferramentas > Selector de côr** (*Tools > Color Selector...*).
+
+![](assets/color_selector.png)
 
 ### Cores com HSB (Matiz, Saturação e Brilho)
 
