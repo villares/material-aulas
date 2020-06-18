@@ -32,7 +32,7 @@ Se chamaramos a função *colorMode* com a constante **HSB**, `colorMode(HSB)`, 
 
 ```python
 colorMode(HSB)
-# fila de linhas saturadas
+# fila de linhas com cores saturadas
 for x in range(100):
     stroke(x * 2.5, 255, 255)
     line(x, 0, x, 33)
