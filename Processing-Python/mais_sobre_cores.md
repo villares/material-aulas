@@ -28,7 +28,7 @@ Uma maneira de escolher uma cor e obter os valores RGB dela é usando a ferramen
 
 ### Cores com HSB (Matiz, Saturação e Brilho)
 
-Se chamaramos a função *colorMode* com a constante **HSB**, `colorMode(HSB)`, podemos passar a usar números representando Matiz (*Hue*), Saturação (*Saturation*) e Brilho (*Brightness*). É possível reverter pra o modo **RGB** chamando `colorMode(RGB)`.
+Se chamaramos a função *colorMode* com a constante **HSB**, `colorMode(HSB)`, podemos passar a usar números representando Matiz (*Hue*), Saturação (*Saturation*) e Brilho (*Brightness*). 
 
 ```python
 colorMode(HSB)
@@ -47,3 +47,5 @@ for x in range(100):
 ```
 
 ![HSB](assets/HSB.png)
+
+É possível reverter pra o modo **RGB** padrão chamando `colorMode(RGB)`.
