@@ -46,4 +46,4 @@ for x in range(100):
     line(x, 66, x, 100)
 ```
 
-![HSB](HSB.png)
+![HSB](assets/HSB.png)
