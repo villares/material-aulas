@@ -30,3 +30,20 @@ Uma maneira de escolher uma cor e obter os valores RGB dela é usando a ferramen
 
 Se chamaramos a função *colorMode* com a constante **HSB**, `colorMode(HSB)`, podemos passar a usar números representando Matiz (*Hue*), Saturação (*Saturation*) e Brilho (*Brightness*). É possível reverter pra o modo **RGB** chamando `colorMode(RGB)`.
 
+```python
+colorMode(HSB)
+# fila de linhas saturadas
+for x in range(100):
+    stroke(x * 2.5, 255, 255)
+    line(x, 0, x, 33)
+# fila de linhas com saturação reduzida
+for x in range(100):
+    stroke(x * 2.5, 128, 255)
+    line(x, 33, x, 66)
+# fila de linhas com brilho reduzido
+for x in range(100):
+    stroke(x * 2.5, 255, 128)
+    line(x, 66, x, 100)
+```
+
+![HSB](HSB.png)
