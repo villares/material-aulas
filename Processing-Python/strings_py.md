@@ -101,7 +101,15 @@ if nome_arquivo.lower().endswith('.png'):
      print("Arquivo tipo PNG")
 ``` 
 
-Voocê pode ler mais na Documentação do Python sobre os [métodos de String](https://docs.python.org/pt-br/2.7/library/stdtypes.html#string-methods).
+É possível controlar a formatação da conversão de números em string, como o número de casas decimais ou com zeros à esquerda para garantir um certo número de dígitos:
+
+```python
+print("ângulo calculado: {:02f}".format(ang)) # Exibindo valor com duas casas decimais
+
+nome_arquivo = "forma{:0>5}.svg".format(123) # Produz um nome_arquivo: "forma00123.svg"
+```
+
+Voocê pode ler mais na Documentação do Python sobre os [métodos de String](https://docs.python.org/pt-br/2.7/library/stdtypes.html#string-methods) e a [mini-linguagem de formatação](https://docs.python.org/pt-br/3.6/library/string.html#formatstrings).
 
 ### Mostando texto na área de desenho
 
