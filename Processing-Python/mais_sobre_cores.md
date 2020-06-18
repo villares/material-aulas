@@ -1,6 +1,6 @@
-## Mais sobre definir cores
+## Mais sobre cores
 
-Vamos falar aqui sobre como definir as cores, fingindo que podemos definí-las pelas emissões de frequências das 'luzinhas' no monitor ou no projetor que vai mostrar nosso trabalho, mas a verdade é de que a síntese final da cor acontece em um lugar escuro e úmido, o cérebro. A percepção de cor no final das contas depende do contexto em que ela se apresenta, um pixel que em teoria emite uma determinada cor vai ser entendido como outra dependendo do resto da imagem à sua volta. Se quiser ler mais sobre isso, procure sobre a neurociência da percepção das cores.
+Vamos falar aqui sobre como definir e manipular as cores, fingindo que podemos definí-las pelas emissões de frequências das 'luzinhas' no monitor ou no projetor que vai mostrar nosso trabalho, mas a verdade é de que a síntese final da cor acontece em um lugar escuro e úmido, o cérebro. A percepção de cor no final das contas depende do contexto em que ela se apresenta, um pixel que em teoria emite uma determinada cor vai ser entendido como outra dependendo do resto da imagem em volta. Se quiser ler mais sobre isso, procure sobre a neurociência da percepção das cores.
 
 ### Definindo cores com RGB (ou RGBA)
 
