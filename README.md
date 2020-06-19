@@ -28,7 +28,7 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
 - [Movimento: uma animação simples usando `setup()` e `draw()`](Processing-Python/movimento_py.md)
   - [Escopo de variáveis (local e global)](Processing-Python/escopo_py.md)
 - [Declarando novas funções](Processing-Python/funcoes_py.md)
-  - [Alterando o sistema de coordenadas com `translate()`, `rotate()` e além](Processing-Python/transformacoes_coordenadas.md)
+  - [Alterando o sistema de coordenadas (`translate()`, `rotate()` e mais)](Processing-Python/transformacoes_coordenadas.md)
   - [Funções recursivas](Processing-Python/recursao_py.md)
 - [Sequências e laços de repetição (iteração com `for`)](Processing-Python/lacos_py.md)
   - [Mais sobre sequências e fatias](Processing-Python/mais_sequencias.md)
