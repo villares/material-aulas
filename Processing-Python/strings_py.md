@@ -118,7 +118,7 @@ print(u"Olá, {}, você tem mesmo {} anos?".format(nome, idade))
 É possível controlar a formatação da conversão de números em string, como o número de casas decimais ou com zeros à esquerda para garantir um certo número de dígitos:
 
 ```python
-print("ângulo calculado: {:02f}".format(ang)) # Exibindo valor com duas casas decimais
+print("ângulo calculado: {:.2f}".format(ang)) # Exibindo valor com duas casas decimais
 
 nome_arquivo = "forma{:0>5}.svg".format(123) # Produz um nome_arquivo: "forma00123.svg"
 ```
