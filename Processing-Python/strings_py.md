@@ -5,8 +5,8 @@ O tipo dos valores que representam texto, palavras, letras ou glifos em geral, �
 Para expressar strings no corpo de um programa podemos os envolver em aspas duplas `"`  ou aspas simples `'`. Dentro de um texto envolto em aspas duplas podemos ter um texto que contém aspas simples, e vice-versa. Também podemos usasr triplas de aspas: `'''` ou `"""`, fazemos isso especialmente para expressar strings com quebras de linha, como veremos mais adiante. 
 
 ```pyde
-frase = 'Eu me chamo Alexandre'
-meu_nome = "Alexandre 'o grande' Tosco"
+frase = 'Ideias verdes incolores dormem furiosamente'
+autor = "Noam Chomsky"
 ```
 
 Podemos *concatenar*, isto é somar strings em justaposição, com o operador `+`:
