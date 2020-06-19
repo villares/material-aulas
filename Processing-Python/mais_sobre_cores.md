@@ -1,6 +1,6 @@
 ## Mais sobre cores
 
-Vamos falar aqui sobre como definir e manipular as cores, fingindo que podemos definí-las pelas intensidades e frequências das 'luzinhas' no monitor, ou no projetor, que vai exibir nosso trabalho. A verdade é que a síntese da cor acontece em um lugar escuro e úmido, o cérebro. A percepção de cor no final das contas depende do contexto em que ela se apresenta, um pixel que em teoria 'emite uma determinada cor' vai ser entendido como outra cor dependendo do ambiente, especialmente o restante da imagem em volta. Se quiser ler mais sobre isso, procure sobre *neurociência da percepção das cores*.
+Vamos falar aqui sobre como definir e manipular as cores, fingindo que podemos definí-las pelas intensidades e frequências das 'luzinhas' no monitor, ou no projetor, que vai exibir nosso trabalho. A verdade é que a síntese da cor acontece em um lugar escuro e úmido, o cérebro. A percepção de cor no final das contas depende do contexto em que ela se apresenta, um pixel, que em teoria produz uma determinada cor, vai ser entendido como outra cor dependendo do ambiente, especialmente o restante da imagem em volta. Se quiser ler mais sobre isso, procure sobre *neurociência da percepção das cores*.
 
 ### Definindo cores com RGB (ou RGBA)
 
@@ -66,5 +66,4 @@ for h in range(100):
 ![HSB](assets/HSB100.png)
 
 Também é possível indicar o valor máximo de cada canal **RGB** usando `colorMode(RGB, maxR, maxG, maxB)` ou no caso do modo HSB, `colorMode(HSB, maxH, maxS, maxB)`,  sendo comum usar **360** como máximo para o matiz (*hue*), e **1** para para brilho e saturação (.5 passa a significar 50% de saturação ou brilho). 
-
 
