@@ -104,7 +104,8 @@ print('\n'.joint('xyz')  # \n indica uma quebra de linha
 # exibe em 3 linhas: x\ny\n\z
 ```
 #### Substituições com `.replace()` e inserções com `.format()`
-```# str.replace(velho, novo) # substitui todas as ocorrências de um texto dentro de outro, se houver
+```python
+# str.replace(velho, novo) # substitui todas as ocorrências de um texto dentro de outro, se houver
 frase = u'as pessoas são estranhas'.replace('as', 'a')
 frase = frase.replace(u'são', u'é')
 print(frase)  # exibe: a pessoa é estranha
