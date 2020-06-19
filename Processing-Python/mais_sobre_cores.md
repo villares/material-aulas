@@ -65,5 +65,5 @@ for h in range(100):
 
 ![HSB](assets/HSB100.png)
 
-Também é possível indicar o valor máximo de cada canal **RGB** usando `colorMode(RGB, maxR, maxG, maxB)` ou no caso do modo HSB, `colorMode(HSB, maxH, maxS, maxB)`,  sendo comum usar **360** como máximo para o matiz (*hue*), e **1** para para brilho e saturação (.5 passa a significar 50% de saturação ou brilho). 
+Também é possível indicar o valor máximo de cada canal **RGB** usando `colorMode(RGB, maxR, maxG, maxB)` ou no caso do modo HSB, `colorMode(HSB, maxH, maxS, maxB)`. Você vai encontrar por aí exemplos com **360** como máximo para o matiz (*hue*), fazendo referência a distribuição de matizes em um círculo, e também outros que usam  **1** como valor máximo para brilho e saturação (assim 0.5 passa a significar 50% de saturação ou brilho, por exemplo). 
 
