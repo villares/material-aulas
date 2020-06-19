@@ -4,7 +4,8 @@
 
 ![](assets/bot1.svg)
 
->arquivo: [bot1.svg](assets/bot1.svg)
+>arquivo: [bot1.svg](assets/bot1.svg), uma ilustração de George Brower. 
+
 
 Podemos carregar (*load*) na memória dados de arquivos vetoriais externos nos formatos SVG e OBJ. Para isso usamos a função `loadShape()`, mas é preciso indicar onde está o arquivo (o chamado 'caminho completo' do arquivo), ou que ele esteja na pasta `/data/` dentro da pasta do seu *sketch* (programa).
 
@@ -35,6 +36,25 @@ def draw():
 ![](assets/bot1.png)
 
 Os objetos `PShape`, que armazenam os dados vetoriais, tem uma série de métodos (funções internas desses objetos) que podem ser consultados na referência do [Processing modo Java / PShape](https://processing.org/reference/PShape.html). A página da referência do Processing modo Python está incompleta mas os métodos de *PShape* são os mesmos.
+
+Um dos métodos mais úteis é o `.disableSyle()` que permite ignorar os atributos grágifos das formas no arquivo SVG, permitinho aplicar o traço e preenchimento por nossa conta. O `.enableStyle()` devolve o comportamento original.
+
+```python
+def setup():
+    size(400, 200)
+    bot = loadShape("bot1.svg")
+    background(102)
+    bot.disableStyle()    # Ignore as cores no SVG
+    fill(0, 102, 153)     # preenchimento azul
+    stroke(255)           # traço branco
+    strokeWeight(2)       # traço mais espesso
+    shape(bot, 5, 5, 190, 190)
+    bot.enableStyle()
+    shape(bot, 205, 5, 190, 190)
+    saveFrame("disable_style.png")
+```
+
+![](assets/disable_style.png)
 
 ### Assuntos relacionados
 
