@@ -25,7 +25,7 @@ def setup():
 def draw():
     background(0)
     translate(width / 2, height / 2)
-    rotateY(frameCount / 10.)
+    rotateY(frameCount / 100.0)
     box(height / 2)
 ```
 
