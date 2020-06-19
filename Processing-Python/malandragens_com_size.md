@@ -2,6 +2,21 @@
 
 ### Tela cheia, janela com o tamanho calculado, e redimensionando a janela no meio do caminho
 
+#### Tela cheia
+
+Se voce substituir a chamada de `size(..., ...)` por `fullScreen()` a janela do sketch toma toda a tela. É possível também usar com a indicação do *renderer* (como `fullScreen(P3D)` para desenho em 3D, por exemplo).
+
+```
+def setup():
+    fullScreen(P3D)
+
+def draw():
+    background(0)
+    translate(width / 2, height / 2)
+    rotateY(frameCount / 10.)
+    fill(255, 200, 200)
+    box(200)
+```
 
 
 #### Variáveis no `size()`, usando `settings()`
