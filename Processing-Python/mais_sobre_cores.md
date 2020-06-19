@@ -4,7 +4,7 @@ Vamos falar aqui sobre como definir e manipular as cores, fingindo que podemos d
 
 ### Definindo cores com RGB (ou RGBA)
 
-Por padrão escolhemos cores no Processing com trincas de números entre 0 e 255 que representam valores de intensidade nos canais R (*Red*, vermelho), G (*Green*, verde) e B (*Blue*, azul). Um quarto número (*Alpha*) pode ser usado para indicar cores translúcidas (0 fica totalmente transparente, e invisível, e 255 totalmente opaca, como se não tivesse sido usado o quarto número).
+Por padrão escolhemos cores no Processing com trincas de números entre **0** e **255** que representam valores de intensidade nos canais **R** (*Red*, vermelho), **G** (*Green*, verde) e **B** (*Blue*, azul). Um quarto número (*Alpha*) pode ser usado para indicar cores translúcidas (**0** fica totalmente transparente, e invisível, e **255** totalmente opaca, como se não tivesse sido usado o quarto número).
 
 ```python
 strokeWeight(5)
@@ -49,3 +49,22 @@ for x in range(100):
 ![HSB](assets/HSB.png)
 
 É possível reverter pra o modo **RGB** padrão chamando `colorMode(RGB)`.
+
+### Mudando a escala de valores
+
+Normalmente, os valores, tanto RGB como HSB são indicados em uma escala de **0** a **255**, mas isso pode ser alterado na chamada a `colorMode()` como no exemplo abaixo.
+
+```python
+# H, S e B indo de 0 a 100
+colorMode(HSB, 100)
+for h in range(100):
+  for s in range(100):
+    stroke(h, s, 100)
+    point(h, s)
+```
+
+![HSB](assets/HSB100.png)
+
+Também é possível indicar o valor máximo de cada canal **RGB** usando `colorMode(RGB, maxR, maxG, maxB)` ou no caso do modo HSB, `colorMode(HSB, maxH, maxS, maxB)`,  sendo comum usar **360** como máximo para o matiz (*hue*), e **1** para para brilho e saturação (.5 passa a significar 50% de saturação ou brilho). 
+
+
