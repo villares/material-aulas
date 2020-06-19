@@ -52,28 +52,35 @@ def draw():
 
 <sub>Na programação orientada a objetos veremos que funções que acompanham objetos de uma determinada classe são conhecidas como métodos.</sub>
 
+**Caixa alta e baixa (maiúsculas e minúsculas)**
 ```python
 # str.lower() devolve string com a versão em caixa baixa
 print('Alexandre'.lower())  # exibe: alexandre
 
 # str.upper() devolve string com a versão em caixa alta
 print('Alexandre'.upper())  # exibe: ALEXANDRE
-
-# str.endswith(sufixo) informa se o texto termina com um certo sufixo
-nome_arquivo = "imagem3434.jpg"
-print(nome_arquivo.endswith(".jpg"))  # exibe: True
-print(nome_arquivo.endswith(".gif"))  # exibe: False
-
+```
+**Prefixos e sufixos**
+```python
 # str.startswith(prefixo) informa se o texto inicia com um certo prefixo
 nome_arquivo = "imagem1212.jpg"
 print(nome_arquivo.startswith("image"))  # exibe: True
 print(nome_arquivo.startswith("a"))  # exibe: False
 
-# str.format(valor, outro) substitui valores em pontos especiais do texto
-nome = 'Alexandre'
-print(u"Olá, meu nome é {}, qual o seu?".format(nome)) 
-# exibe: Olá, meu nome é Alexandre, qual o seu?
+# str.endswith(sufixo) informa se o texto termina com um certo sufixo
+nome_arquivo = "imagem3434.jpg"
+print(nome_arquivo.endswith(".jpg"))  # exibe: True
+print(nome_arquivo.endswith(".gif"))  # exibe: False
+```
+É possível 'encadear' métodos, como no exemplo abaixo. 
+```python
+# identifica arquivos que terminam tanto com .png como com .PNG
+if nome_arquivo.lower().endswith('.png'):
+     print("Arquivo tipo PNG")
+``` 
 
+**Dividindo e juntando *strings*
+```python
 # str.split(delimitador_opcional) devolve uma lista cujos itens são trechos do texto "divididos"
 itens = "A a B b".split()  # usado sem argumentos divide nos espaços
 print(itens)
@@ -83,24 +90,24 @@ print("a/b/c".split("/"))
 # exibe: ['a', 'b', 'c']
 # Confira também str.splitlines() que divide em quebras de linha!
 
-# str.join(coisas) use um texto como delimitador para juntar uma coleção de textos!
+# str.join(coisas) use um string/caractere como delimitador para juntar uma coleção de textos!
 coisas = ('a', 'b', 'c')
 print('-'.join(coisas))
 # exibe: a-b-c
-
-# str.replace(velho, novo) # substitui todas as ocorrências de um texto dentro de outro, se houver
+print('\n'.joint('xyz')  # \n indica uma quebra de linha
+# exibe em 3 linhas: x\ny\n\z
+```
+**Substituições e inserções com `.format()`**
+```# str.replace(velho, novo) # substitui todas as ocorrências de um texto dentro de outro, se houver
 frase = u'as pessoas são estranhas'.replace('as', 'a')
 frase = frase.replace(u'são', u'é')
 print(frase)  # exibe: a pessoa é estranha
-```
- É possível 'encadear' métodos, como no exemplo abaixo.
- 
- ```python
-# identifica arquivos que terminam tanto com .png como com .PNG
-if nome_arquivo.lower().endswith('.png'):
-     print("Arquivo tipo PNG")
-``` 
 
+# str.format(valor, outro) substitui valores em pontos especiais do texto
+nome, idade = 'Alexandre', 120 # repare que o nome é <str> e a idade <int>
+print(u"Olá, {}, você tem mesmo {} anos?".format(nome, idade)) 
+# exibe: Olá, Alexandre, você tem mesmo 120 anos?
+```
 É possível controlar a formatação da conversão de números em string, como o número de casas decimais ou com zeros à esquerda para garantir um certo número de dígitos:
 
 ```python
@@ -108,7 +115,6 @@ print("ângulo calculado: {:02f}".format(ang)) # Exibindo valor com duas casas d
 
 nome_arquivo = "forma{:0>5}.svg".format(123) # Produz um nome_arquivo: "forma00123.svg"
 ```
-
 Voocê pode ler mais na Documentação do Python sobre os [métodos de String](https://docs.python.org/pt-br/2.7/library/stdtypes.html#string-methods) e a [mini-linguagem de formatação](https://docs.python.org/pt-br/3.6/library/string.html#formatstrings).
 
 ### Mostando texto na área de desenho
