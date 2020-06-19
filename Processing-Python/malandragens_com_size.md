@@ -4,9 +4,21 @@
 
 #### Tela cheia
 
-Se voce substituir a chamada de `size(..., ...)` por `fullScreen()` a janela do sketch toma toda a tela. É possível também usar com a indicação do *renderer* (como `fullScreen(P3D)` para desenho em 3D, por exemplo).
+Se voce substituir a chamada de `size()` por `fullScreen()` a janela do sketch toma toda a tela. 
 
+```python
+def setup():
+    fullScreen()
+    rectMode(CENTER)
+    
+def draw():
+    background(0)
+    rect(width / 2, height / 2, width / 2, height / 2) 
 ```
+
+Note que é possível também usar a tela cheia com a indicação do *renderer* (como `fullScreen(P3D)` para desenho em 3D, por exemplo).
+
+```python
 def setup():
     fullScreen(P3D)
 
@@ -14,10 +26,8 @@ def draw():
     background(0)
     translate(width / 2, height / 2)
     rotateY(frameCount / 10.)
-    fill(255, 200, 200)
-    box(200)
+    box(height / 2)
 ```
-
 
 #### Variáveis no `size()`, usando `settings()`
 
@@ -59,5 +69,33 @@ def draw() :
 def keyPressed():
   this.surface.setSize(int(random(200, 500)),
                        int(random(200, 500)))
+```
+
+#### Um *sketch* com duas janelas!!!
+
+```python
+def setup():
+    size(200, 300)
+    second_window = OtherWindow("2nd")  
+    
+def draw():
+    background(0)
+    ellipse(mouseX, mouseY, 10, 10)
+
+
+class OtherWindow(PApplet):  
+        
+    def __init__(self, title=""):
+        switches = ('--sketch-path=' + sketchPath(), '')
+        PApplet.runSketch(switches, self)  
+        self.surface.setTitle(title)
+        
+    def settings(self):
+        self.size(300, 200)
+        
+    def draw(self):  # este é o draw pra a segunda janela
+        self.background(255)
+        self.fill(0)
+        self.rect(self.mouseX, self.mouseY, 10, 10)
 ```
 
