@@ -2,12 +2,29 @@
 
 O tipo dos valores que representam texto, palavras, letras ou glifos em geral, é chamado *string*, ou *cadeia de caracteres* numa tradução para o português acadêmica que raramente você vai ouvir.
 
+## *Strings* no no meio do código
+
 Para expressar strings no corpo de um programa podemos os envolver em aspas duplas `"`  ou aspas simples `'`. Dentro de um texto envolto em aspas duplas podemos ter um texto que contém aspas simples, e vice-versa. Também podemos usar triplas de aspas: `'''` ou `"""`, fazemos isso especialmente para expressar strings com quebras de linha, como veremos mais adiante. 
 
 ```pyde
 frase = 'Ideias verdes incolores dormem furiosamente'
 autor = "Noam Chomsky"
 ```
+
+## Mostrando valores no console
+
+Usamos `print()` ou `println()` para *exibir* na parte de baixo do IDE, o chamado console. Essas funções convertem automaticamente outros tipos de valores em string, uma representação textual ou uma referência ao objeto passado.
+
+```pyde
+def setup():           # Resultado exibido no console:
+    print("Oi mundo!") # Oi mundo!
+    print(100 + 50)    # 150
+    print(setup)       # <function setup at 0x3>
+```
+
+## Manipulando *strings*
+
+### O mais básico, concatenar
 
 Podemos *concatenar*, isto é somar strings em justaposição, com o operador `+`:
 
@@ -22,17 +39,6 @@ Mas é não é possível somar um número a um texto ou o contrário. Note neste
 
 ```pyde
 a = '10' + 5  # TypeError: cannot concatenate 'str' and 'int' objects
-```
-
-### Mostrando valores no console
-
-Usamos `print()` ou `println()` para *exibir* na parte de baixo do IDE, o chamado console. Essas funções convertem automaticamente outros tipos de valores em string, uma representação textual ou uma referência ao objeto passado.
-
-```pyde
-def setup():           # Resultado no console:
-    print("Oi mundo!") # Oi mundo!
-    print(100 + 50)    # 150
-    print(setup)       # <function setup at 0x3>
 ```
 
 Como não podemos concatenar strings e números, por exemplo, para os mostrarmos juntos, é comum convertermos os números em strings. Veja aqui duas maneiras: 
@@ -52,7 +58,7 @@ def draw():
 
 <sub>Na programação orientada a objetos veremos que funções que acompanham objetos de uma determinada classe são conhecidas como métodos.</sub>
 
-**Caixa alta e baixa (maiúsculas e minúsculas)**
+#### Convertendo caixa alta e baixa (maiúsculas e minúsculas)
 ```python
 # str.lower() devolve string com a versão em caixa baixa
 print('Alexandre'.lower())  # exibe: alexandre
@@ -60,7 +66,7 @@ print('Alexandre'.lower())  # exibe: alexandre
 # str.upper() devolve string com a versão em caixa alta
 print('Alexandre'.upper())  # exibe: ALEXANDRE
 ```
-**Prefixos e sufixos**
+#### Checando prefixos e sufixos
 ```python
 # str.startswith(prefixo) informa se o texto inicia com um certo prefixo
 nome_arquivo = "imagem1212.jpg"
@@ -79,7 +85,7 @@ if nome_arquivo.lower().endswith('.png'):
      print("Arquivo tipo PNG")
 ``` 
 
-**Dividindo e juntando *strings*
+#### Dividindo e juntando *strings*
 ```python
 # str.split(delimitador_opcional) devolve uma lista cujos itens são trechos do texto "divididos"
 itens = "A a B b".split()  # usado sem argumentos divide nos espaços
@@ -97,7 +103,7 @@ print('-'.join(coisas))
 print('\n'.joint('xyz')  # \n indica uma quebra de linha
 # exibe em 3 linhas: x\ny\n\z
 ```
-**Substituições e inserções com `.format()`**
+#### Substituições com `.replace()` e inserções com `.format()`
 ```# str.replace(velho, novo) # substitui todas as ocorrências de um texto dentro de outro, se houver
 frase = u'as pessoas são estranhas'.replace('as', 'a')
 frase = frase.replace(u'são', u'é')
@@ -117,7 +123,7 @@ nome_arquivo = "forma{:0>5}.svg".format(123) # Produz um nome_arquivo: "forma001
 ```
 Voocê pode ler mais na Documentação do Python sobre os [métodos de String](https://docs.python.org/pt-br/2.7/library/stdtypes.html#string-methods) e a [mini-linguagem de formatação](https://docs.python.org/pt-br/3.6/library/string.html#formatstrings).
 
-### Mostando texto na área de desenho
+## Mostando texto na área de desenho
 
 ```pyde
 def setup():
@@ -133,7 +139,7 @@ def draw():
 
 Mais sobre desenhar texto na tela na página sobre tipografia básica em: [Trabalhando com fontes e outros ajustes do texto](https://github.com/villares/material-aulas/blob/master/Processing-Python/tipografia.md)
 
-### Letras com acentos, caracteres especiais e outros glifos
+## Letras com acentos, caracteres especiais e outros glifos
 
 Em Python 2  é necessário um `u` antes de cada *string literal* (*string* no corpo do programa) para permitir letras acentuadas e outros caracteres não-ASCII, os tornando objetos de texto *unicode*. Uma outra solução é incluir no começo do seu programa, logo na primeira linha, o seguinte código:
 
@@ -166,7 +172,7 @@ banana
 """)
 ```
 
-### Assuntos relacionados
+## Assuntos relacionados
 
 - [Trabalhando com fontes e outros ajustes do texto](tipografia.md)
 - [Lendo e escrevendo texto em arquivos](file_IO.md)
