@@ -6,11 +6,11 @@ Em computação existem sistemas de classificação para valores armazenados na 
 
 #### Conversão em inteiros
 
-A forma mais comum de converter um número de ponto flutuante (`float`) em inteiros (`int`) é usando a função embutida `int()`. Mas note que isso simplesmente joga fora a parte depois da vírgula (não é como outros tipos de 'arredondamento', experimente usar `round()` para ver o que acontece...).
+A forma mais comum de converter um número de ponto flutuante (`float`) em inteiros (`int`) é usando a função embutida `int()`. Mas note que isso simplesmente joga fora a parte depois da vírgula (que em programação é um ponto!) e não é como outros tipos de 'arredondamento' (experimente usar `round()` para ver o que acontece...).
 
 ```python
-a = int(10.654) 
-print(a)  # exibe como resultado: 10
+a = int(10.654)  # note que eum programação o separador decimal é um ponto (.)
+print(a)         # exibe como resultado: 10
 ```
 
 ### O problema da divisão estranha no Processing modo Python
@@ -25,19 +25,22 @@ print(a)
 # resultado: 0
 ```
 
-Isso raramente é o que queremos, então, temos algumas estratégias para obter como resultado um número *de ponto flutuante* (`float`) . Primeiro, no caso dos números estarem diretamente no código é possível indicar que os valores são `float` com um ponto decimal (`4.0` ou `4.`)  e no caso de variáveis podemos pedir uma conversão com `float()`:
+Isso raramente é o que queremos, então, temos algumas estratégias para obter como resultado um número `float`. Primeiro, no caso dos números estarem diretamente no código é possível indicar que os valores são `float` com um ponto decimal (`4.0` ou `4.`)  e no caso de variáveis podemos pedir uma conversão usando `float()`:
 
 ```python
 a = 4 / 10.0  # ou 4. / 10 ou 4. / 10. ou 4 / 10.
 print(a)
 # resultado: 0.4 
 ```
-Mas e se os números são o resultado de outras operações, vão ser referenciados por meios de variáveis, como fazer?
+Se os números são o resultado de outras operações e vão ser referenciados por meios de variáveis.
 
 ```python
 b = 10
 a = 4 / float(b)
 # resultado: 0.4 
+
+d = float(n) / float(m)
+# Para n = 5 e m = 20 o resultado é 0.25
 ```
 
 Podemos também obter o comportamento de Python 3 para a divisão utilizando, **logo na primeira linha de um *sketch***, ou de um módulo `.py`, a  linha `from __future__ import division` . Note o duplo *underscore*, `_` antes e depois da palavra  *future*, e não pode haver outras instruções antes dessa linha (exceto comentários que não contam como instruções):
@@ -126,8 +129,12 @@ Resultado (truncado, seriam 100 números):
 …
 4
 ```
+## Assuntos relacionados (para o futuro)
 
-### Glossário
+- Divisão por zero, encrenca!
+- Erros causados pela representação interna dos números decimais em binário no computador
+
+## Glossário
 
 [**tipo**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:tipo) Uma categoria de valores. Alguns tipos que vimos por enquanto são números inteiros (tipo `int`), números de ponto flutuante (tipo `float`) e *strings* (tipo `str`).
 
