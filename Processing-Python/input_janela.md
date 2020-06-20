@@ -1,8 +1,8 @@
 ## Uma janela de diálogo com um campo de texto como *input*
 
-Nas implementações mais conhecidas de Python existe uma função chamada `input()` que 'pergunta' a quem estiver executando o programa que digite um texto, que é devolvido então para o programa manipular na forma de um *string*.
+Nas implementações mais conhecidas de Python existe uma função chamada `input()` que 'pergunta' a quem estiver executando o programa um valor por meio da digitação no console, o texto digitado é devolvido então para o programa como *string*.
 
-O Processing modo Python não tem essa função, mas com o código a seguir podemos disparar uma janela de diálogo com um campo de texto para fazer o mesmo papel!
+O Processing modo Python não tem essa função, mas com o código a seguir podemos disparar uma janela de diálogo, com um campo de texto, para fazer o mesmo papel!
 
 ```python
 def input(message=''):
