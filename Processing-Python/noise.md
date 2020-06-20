@@ -51,9 +51,9 @@ Note que não é necessário usar `noiseSeed()` no `draw()` pois a semente do `n
 
 ### *Perlin Noise* em 2D, acrescentando um Y
 
-Agora acrescentanremos uma segunda dimensão, um Y, que serve de segundo argumento na função `noise()`. Ambos X e Y são multiplicados pela escala, e, no exemplo abaixo, deslocados pela posição do mouse.
+Agora acrescentaremos uma segunda dimensão, um Y, que serve de segundo argumento na função `noise()`. Ambos X e Y são multiplicados pela escala, e, no exemplo abaixo, serão deslocados pela posição do mouse.
         
-Com essa segunda dimensão, perpendicular à primeira, é como se estivéssemos movendo o corte de um terreno. O Y move o corte em uma direção perpendicular à tela, que é paralela ao corte.
+Com essa segunda dimensão, perpendicular à primeira, é como se estivéssemos movendo o corte de um terreno. O `mouseY` move o corte em uma direção perpendicular à tela, que é paralela ao corte.
 
 ```python
 escala = 0.004
