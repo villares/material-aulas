@@ -15,7 +15,7 @@ Vejamos então um exemplo de uso, em que um clique do mouse dispara a janela par
 ![](assets/input_janela.gif)
 
 ```python
-nome = "clique na janela para mudar o texto"
+texto = "clique na janela para mudar o texto"
 
 def setup():
     size(400, 400)
@@ -23,13 +23,13 @@ def setup():
     
 def draw():
     background(0, 0, 200)
-    text(nome, width / 2, height / 2)
+    text(texto, width / 2, height / 2)
     
 def mousePressed():
-    global nome
+    global texto
     resposta = input('escreva um novo texto')
     if resposta:
-        nome = resposta
+        texto = resposta
     elif resposta == "":
         println("[resposta vazia]")
     else:
