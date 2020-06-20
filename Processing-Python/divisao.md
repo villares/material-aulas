@@ -2,7 +2,7 @@
 
 ### Um pouco de contexto
 
-Em computação existem sistemas de classificação para valores armazenados na memória do computador, dizemos que os valores tem um *tipo*. Valores numéricos em Python são, na maior parte das vezes, dos tipos ***inteiro*** (abreviamos `int`), ***ponto flutuante*** (que tem uma parte fracionária, e abreviamos `float`) ou ***número complexo*** (`complex`, sendo `1j` a raiz quadrada de -1, que na escola no Brasil costumamos chamar de *i*.).
+Em computação existem sistemas de classificação para valores armazenados na memória do computador, dizemos que os valores tem um *tipo*. Valores numéricos em Python são, na maior parte das vezes, dos tipos ***inteiro*** (abreviamos `int`), ***ponto flutuante*** (que tem uma parte fracionária, e abreviamos `float`) ou ***número complexo*** (`complex`, sendo `1j` a raiz quadrada de -1, que na escola costumamos chamar de *i*).
 
 #### Conversão em inteiros
 
@@ -59,18 +59,18 @@ print(a)
 # resultado: 2
 ```
 
-### Agora a parte divertida! O resto da divisão.
+### Agora a parte divertida! O resto da divisão
 
 Em inglês a operação para obter o resto da divisão com inteiros tem o nome de *modulo* ou *modulus* o que pode causar uma grande confusão pois na matemática em português a palavra 'módulo' com a notação `|num|` é usada também para falar do valor absoluto (sem o sinal) de um número (em programação usamos `abs()` para isso).
 
 Mas estamos falando então aqui do resto da divisão com inteiros. "Quantas vezes o 3 cabe no 7? duas! e sobra quanto? 1".
-O resto da divisão inteiros de 7 por 3 é 1. Em Python obtemos esse valor com o operador `%`.
+O resto da divisão nos inteiros de 7 por 3 é 1. Em Python obtemos esse valor com o operador `%`.
 
 ```python
 resto = 7 % 3
 print(resto)  # exibe: 1
 ```
-E essa operação é **extremamente útil** em muitos casos. Para saber se um número é par ou ímpar, se é divisível por um certo número ou para produzir sequencias que se repetem!
+E essa operação é **extremamente útil**, para saber se um número é par ou ímpar, se é divisível por um certo número ou para produzir sequencias que se repetem!
 
 ##### Testando se um número é par
 ```python
