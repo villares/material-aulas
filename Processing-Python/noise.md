@@ -22,22 +22,28 @@ def draw():
         
 ```
 
+### Noise 2D
+
 ```python
         
-### NOISE 2D
+### Acrescentando um Y
+
+Com a segunda dimensão perpendicular à primeira, é como se estivéssemos movendo o corte de um terreno em uma direção perpendicular ao corte.
+```python
+escala = 0.004
+
 def draw():
     background(200)
     for x in range(width):
-        # y = random(height)
-        escala = 0.004
-        print("escala:{}".format(escala))
         n = noise((mouseX + x) * escala,
                   mouseY * escala)
         y = height * n
         line(x, height, x, height - y)
 ```
+#### Noise 2D em uma grade
 
-#### Noise 3D
+
+### Noise 3D
 
 Exemplo de Perlin Noise com três dimensões. O mouse desloca o campo em X e Y, as setas para cima e para baixo deslocam em Z.
 
@@ -102,3 +108,4 @@ def keyPressed():
     if keyCode == DOWN:
         z -=1
 ```
+![](assets/campoPerlin.gif)
