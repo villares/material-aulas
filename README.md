@@ -53,6 +53,7 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
 - [Arrastando círculos](Processing-Python/arrastando_circulos.md)
 - [Rodinha do mouse (*mouse wheel*)](Processing-Python/rodinha_mouse.md)
 - [Parando o `draw()`](Processing-Python/no_loop.md)
+- [Uma janela de diálogo com um campo de texto](Processing-Python/input_janela.md)
 
 #### Exportação de imagens e outras saídas
 
