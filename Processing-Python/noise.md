@@ -5,22 +5,46 @@
 >
 >Perlin noise has a more organic appearance because it produces a naturally ordered (“smooth”) sequence of pseudo-random numbers. The graph on the left below shows Perlin noise over time, with the x-axis representing time; note the smoothness of the curve.</i> SHIFFMAN, Daniel,[*The Nature of Code*](https://natureofcode.com/book/introduction/), 2012.
 
+### Noise 1D
+
+O primeiro exemplo, usando a função que gera um número entre **0** e **1** chamada `noise()` com apenas um argumento, e comparando o resultado com `random(1)` (na parte de cima).
+
+Note que os valores produzidos tem relação com os vizinhos (ao contrário do `random()`)  produzindo uma curva relativamente suave. Podemos experimentar mudar a `escala` que multiplica os passos dados no argumento de entrada, o X, ou ainda deslocar esse X. A amplitude é ajustada mudando o valor pelo qual multiplicamos o resultado de `noise()` ou usando `lerp()`.
+
+
 ```python
+escala = 0.01
+desloca_x = 0
+
 def setup():
-    size(600, 400)
-    # noLoop()
-    
-def draw():
-    background(200)
+    size(400, 400)   
+
+def draw():   
+    background(255)  
+    randomSeed(1001) 
     for x in range(width):
-        # y = random(height)
-        escala = 0.004
-        print("escala:{}".format(escala))
-        n = noise((mouseX + x) * escala)
-        y = height * n
-        line(x, height, x, height - y)
+        y = random(height/2)
+        line(x, 0, x, y)
         
+    for x in range(width):
+        n = noise((desloca_x + x) * escala)
+        y = lerp(height / 2, height, n)
+        # y = height / 2 + (height / 2) * n
+        line(x, height / 2, x, y)
+        
+def keyPressed():
+    global escala, desloca_x
+    if key == 'a':
+        escala += 0.001
+    if key == 'z':
+        escala -= 0.001         
+    if key == 's':
+        desloca_x += 5
+    if key == 'x':
+        desloca_x -= 5 
 ```
+
+![](assets/perlin1D.gif)
 
 ### Noise 2D
 
@@ -32,6 +56,9 @@ Com a segunda dimensão perpendicular à primeira, é como se estivéssemos move
 ```python
 escala = 0.004
 
+def setup():
+    size(400, 400)
+    
 def draw():
     background(200)
     for x in range(width):
@@ -40,8 +67,48 @@ def draw():
         y = height * n
         line(x, height, x, height - y)
 ```
+
+![](assets/perlin2D_1.gif)
+
 #### Noise 2D em uma grade
 
+```python
+escala = 0.01
+desloca_x = 100
+desloca_y = 100
+tam = 10
+
+def setup():
+    size(400, 400)   
+    noStroke()
+    
+def draw():   
+    background(0)          
+    for x in range(0, width, tam):
+        for y in range(0, height, tam):
+            n = noise((desloca_x + x) * escala,
+                      (desloca_y + y) * escala)
+            ellipse(tam / 2 + x,
+                    tam / 2 + y,
+                    2 + tam * n,
+                    2 + tam * n)
+        
+def keyPressed():
+    global escala, desloca_x, desloca_y
+    if key == 'a':
+        escala += 0.001
+    if key == 'z':
+        escala -= 0.001         
+    if keyCode == LEFT:
+        desloca_x += 5
+    if keyCode == RIGHT:
+        desloca_x -= 5         
+    if keyCode == UP:
+        desloca_y += 5
+    if keyCode == DOWN:
+        desloca_y -= 5   
+```
+![](assets/perlin2D_2.gif)
 
 ### Noise 3D
 
