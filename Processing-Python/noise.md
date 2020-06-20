@@ -19,8 +19,8 @@ def setup():
     size(400, 400)   
 
 def draw():   
-    background(100)  
-    randomSeed(1001) 
+    background(240)  
+    randomSeed(1001)  # para 'travar' o random() 
     for x in range(width):
         y = random(height/2)
         line(x, 0, x, y)
@@ -45,13 +45,16 @@ def keyPressed():
 
 ![](assets/perlin1D.gif)
 
+Co teclado estamos alterando o valor da escala e do deslocamente em X.
+
+Note que não é necessário usar `noiseSeed()` no `draw()` pois a semente do `noise()` é inicializada no início da execução do *sketch* e os valores obtidos são consultados por meio dos argumentos, deternísticos, calculados, como posições a serem consultadas em um 'campo' fixo.
+
 ### Noise 2D, acrescentando um Y
 
 Acrescentando uma segunda dimensão, um Y que serve de segundo argumento na função `noise()`. Ambos são multiplicados pela escala, e no exemplo abaixo, deslocados pela posição do mouse.
-
-```python
         
 Com a segunda dimensão perpendicular à primeira, é como se estivéssemos movendo o corte de um terreno em uma direção perpendicular ao corte.
+
 ```python
 escala = 0.004
 
