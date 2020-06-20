@@ -33,7 +33,7 @@ def mousePressed():
     elif resposta == "":
         println("[resposta vazia]")
     else:
-        println(resposta) # se diálogo cancelado imprime `None`
+        println(resposta) # se cancelada a janela exibe `None` no console
 
 def input(message=''):
     from javax.swing import JOptionPane
