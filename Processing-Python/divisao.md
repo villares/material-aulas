@@ -130,10 +130,6 @@ Resultado (truncado, seriam 100 números):
 …
 4
 ```
-## Assuntos relacionados (para o futuro)
-
-- Divisão por zero, encrenca!
-- Erros causados pela representação interna dos números decimais em binário no computador
 
 ## Glossário
 
@@ -145,7 +141,10 @@ Resultado (truncado, seriam 100 números):
 
 ## Assuntos relacionados
 
-+ [Valores e seus tipos](tipagem_py.md)
-
+- [Valores e seus tipos](tipagem_py.md)
 - Outras [diferenças entre Python 2 e Python 3](futuro.md)
 
+#### faltando...
+
+- Divisão por zero, encrenca!
+- Erros causados pela representação interna dos números decimais em binário no computador
