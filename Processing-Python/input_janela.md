@@ -1,4 +1,4 @@
-## Uma janela de diálogo e um campo de texto com *input*
+## Uma janela de diálogo com um campo de texto como *input*
 
 Nas implementações mais conhecidas de Python existe uma função chamada `input()` que 'pergunta' a quem estiver executando o programa que digite um texto, que é devolvido então para o programa manipular na forma de um *string*.
 
