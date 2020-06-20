@@ -88,8 +88,8 @@ else:
 ```
 ##### Mantendo os números circulando até um valor máximo
 
-Para qualquer valor de **a**, **a % b** sempre é menor que **b**, e nom máximo vale **b - 1**.
-Por isso usamos **n % max** em uma sequencia crescente de números **n** da seguinte maneira:
+Para qualquer valor de **a**, **a % b** sempre é menor que **b**, e no máximo vale **b - 1**.
+Podemos usar **n % max** em uma sequencia crescente de números **n** para obter uma sequência de números com repetição periódica da seguinte maneira:
 
 ```python
 for n in range(10):  # pegue um n para cada número de 0 a 9
