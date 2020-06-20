@@ -108,7 +108,7 @@ Resultado:
 0
 1
 ```
-```python
+Outro exemplo.
 ```python
 for n in range(100):  # pegue um n para cada número de 0 a 99
    print(n % 5)       # exiba no console o resto da divisão de n por 5
@@ -126,6 +126,7 @@ Resultado (truncado, seriam 100 números):
 3
 4
 0
+1
 …
 4
 ```
