@@ -11,7 +11,6 @@ O primeiro exemplo, usando a função que gera um número entre **0** e **1** ch
 
 Note que os valores produzidos tem relação com os vizinhos (ao contrário do `random()`)  produzindo uma curva relativamente suave. Podemos experimentar mudar a `escala` que multiplica os passos dados no argumento de entrada, o X, ou ainda deslocar esse X. A amplitude é ajustada mudando o valor pelo qual multiplicamos o resultado de `noise()` ou usando `lerp()`.
 
-
 ```python
 escala = 0.01
 desloca_x = 0
@@ -20,7 +19,7 @@ def setup():
     size(400, 400)   
 
 def draw():   
-    background(255)  
+    background(100)  
     randomSeed(1001) 
     for x in range(width):
         y = random(height/2)
@@ -46,12 +45,12 @@ def keyPressed():
 
 ![](assets/perlin1D.gif)
 
-### Noise 2D
+### Noise 2D, acrescentando um Y
+
+Acrescentando uma segunda dimensão, um Y que serve de segundo argumento na função `noise()`. Ambos são multiplicados pela escala, e no exemplo abaixo, deslocados pela posição do mouse.
 
 ```python
         
-### Acrescentando um Y
-
 Com a segunda dimensão perpendicular à primeira, é como se estivéssemos movendo o corte de um terreno em uma direção perpendicular ao corte.
 ```python
 escala = 0.004
@@ -71,6 +70,8 @@ def draw():
 ![](assets/perlin2D_1.gif)
 
 #### Noise 2D em uma grade
+
+Uma segunda maneira de usar o ruído de Perlin é distribuindo os valores em uma grade, usando as coordenadas como passos em X e Y.
 
 ```python
 escala = 0.01
@@ -110,7 +111,7 @@ def keyPressed():
 ```
 ![](assets/perlin2D_2.gif)
 
-### Noise 3D
+### Noise 3D, acrescentando um Z
 
 Exemplo de Perlin Noise com três dimensões. O mouse desloca o campo em X e Y, as setas para cima e para baixo deslocam em Z.
 
@@ -144,7 +145,7 @@ def keyPressed():
 ![](assets/perlin3D.gif)
 
 
-##### Campo de ruído
+##### Campo "vetorial" de ruído
 
 Um campo em que o valor do ruído Perlin gira um ângulo.
 
