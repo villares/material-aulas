@@ -91,15 +91,23 @@ def indicacoes():
 
 
 
-### `atan2()`
+###  A função `atan2()`
 
-#### Descobrindo o ângulo de um segmento de reta
+#### Como descobrir o ângulo de um segmento de reta?
 
+A função `atan()` (arco tangente) devolve um ângulo a partir da tangente de um ângulo, e é possível calcular a tangente dividindo o cateto oposto pelo cateto adjacente,  os lados paralelos aos eixos, do triângulo formado pelos pontos de uma 'linha' (como chamamos informalmente um segmento de reta definido por dois pontos). 
 
+O cateto oposto é a diferença dos valores de Y e o adjacente a diferença dos valores de X das coordenadas da linha. Só que na prática isso é uma encrenca, se a linha ficar na vertical teremos uma divisão por zero…  Muito mais prático é entregar o trabalho de dividir para uma 'versão 2' da função do arco tangente: `atan2(dy, dx)`, os dois argumentos são as medidas dos catetos e ela cuida de tudo nos devolvendo um ângulo em radianos.
+
+![](assets/atan2.gif) 
+
+Note que vamos obter ângulos entre **-π** e **π** (entre **-180** e **180** graus).
 
 
 
 #### Desenhando uma seta com `atan2()`
+
+Para demonstrar a utilidade de se saber o ângulo de uma linha, vamos desenhar uma seta!
 
 ![](assets/seta.gif)
 
@@ -110,7 +118,6 @@ def setup():
     
 def draw():
     background(0)
-    cx, cy = width / 2, height / 2
     stroke(200, 0, 200)
     seta(200, 200, mouseX, mouseY)
     stroke(0, 200, 0)
