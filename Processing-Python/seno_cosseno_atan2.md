@@ -8,7 +8,7 @@ Para começar é preciso saber que quando elas pedem um ângulo como argumento. 
 
 ### Seno e cosseno
 
-Para além da origem dessas funções nas relações matemáticas dos ângulos de um triângulo e de um círculo de raio unitário, das coisas mais úteis de se entende é que essas funções devolvem valores entre **-1** e **1** de maneira cíclica, periódica.
+Para além da origem dessas funções nas relações matemáticas dos ângulos de um triângulo e de um círculo de raio unitário, das coisas mais úteis que você pode entender facilmente é que essas funções devolvem valores entre **-1** e **1** de maneira cíclica, periódica.
 
 Vamos visualizar aqui em dois exemplos o que isso significa.
 
