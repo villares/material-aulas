@@ -16,9 +16,9 @@ Vamos visualizar aqui em alguns exemplos o que isso significa.
 
 ![](assets/seno_cosseno_0.png)
 
-Para produzir a imagem acima, pegamos em um laço um X que vai de **0** a **720** e convertemos em um ângulo em radianos, dividindo por **2** temos ângulos de **0** a **2π** (ou **0** a **360°**). 
+Para produzir a imagem acima, pegamos em um laço repetição que produz um X de **0** a **720** que convertemos em um ângulo em radianos, dividindo por **2** temos ângulos de **0** a **2π** (ou **0** a **360°**). 
 
-Vamos  multiplicar o valor do seno e do cosseno desse ângulo pela metade da altura da tela (aproveitando para inverter o sinal pois o nosso Y cresce para baixo e estamos acostumados a ver os gráficos com a parte positiva para cima) . Para deslocar a origem para baixo metade da altura da tela somamos esse mesmo valor.
+Vamos  multiplicar o valor do seno e do cosseno desse ângulo pela metade da altura da tela (aproveitando para inverter o sinal pois o nosso Y do Processing cresce para baixo e estamos acostumados a ver os gráficos com a parte positiva para cima) . Para deslocar a origem para baixo somamos esse mesmo valor de metade da altura da tela.
 
 ```python
 def setup():
@@ -34,6 +34,10 @@ def setup():
 
 ##### Outra versão com algumas indicações
 
+Desta vez o exemplo usa `translate()` e `scale()` para deslocar e inverter o eixo Y. E o X vai de **0** a aproximadamente **2π** mutiplicado por **100**
+
+
+
 ![](assets/seno_cosseno.png)
 
 ```python
@@ -47,8 +51,7 @@ def setup():
     strokeWeight(2)
     scale(1, -1)  # inverte o Y
     for x in range(width):
-        # width ~2π×100
-        a = x / 100.0
+        a = x / 100.0  # width ~2π×100
         y_cosseno = cos(a) * 100
         stroke(200, 200, 0)
         point(x, y_cosseno)
@@ -112,7 +115,7 @@ def indicacoes():
 ```
 #### Seno e cosseno fornecem as coordenadas dos pontos de um círculo!
 
-Com seno, cosseno, o raio e coordenadas do centro, é possível calcular o X e Y de um ponto para cada ângulo em um círculo, isso permite desenhar polígonos regulares e [estrelas](), por exemplo. 
+Com seno, cosseno, o raio e coordenadas do centro, é possível calcular o X e Y de um ponto para cada ângulo em um círculo, isso permite desenhar polígonos regulares e [estrelas](while.md), por exemplo. 
 
 ![](assets/seno_cosseno_p.png)
 
@@ -120,9 +123,7 @@ Com seno, cosseno, o raio e coordenadas do centro, é possível calcular o X e Y
 
 ##### Uma versão animada e com algumas indicações
 
-
-
-Vamos ver agora animando o ângulo, e com isso movendo o ponto no círculo.
+Vamos ver agora desenhar atualizando o ângulo com o tempo, dessa forma animando o ponto no círculo.
 
 ![](assets/seno_cosseno_c.gif)
 
