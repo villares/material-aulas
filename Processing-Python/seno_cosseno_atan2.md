@@ -10,20 +10,37 @@ Para começar é preciso saber que quando elas pedem um ângulo como argumento. 
 
 Para além da origem dessas funções nas relações matemáticas dos ângulos de um triângulo e de um círculo de raio unitário, das coisas mais úteis que você pode entender facilmente é que essas funções devolvem valores entre **-1** e **1** de maneira cíclica, periódica.
 
-Vamos visualizar aqui em dois exemplos o que isso significa.
+Vamos visualizar aqui em alguns exemplos o que isso significa.
 
 #### `sin()` e `cos()` no espaço
+
+![](assets/seno_cosseno_0.png)
+
+Para produzir a imagem acima, pegamos em um laço um X que vai de **0** a **720** e convertemos em um ângulo em radianos, dividindo por **2** temos ângulos de **0** a **2π** (ou **0** a **360°**). 
+
+Vamos  multiplicar o valor do seno e do cosseno desse ângulo pela metade da altura da tela (aproveitando para inverter o sinal pois o nosso Y cresce para baixo e estamos acostumados a ver os gráficos com a parte positiva para cima) . Para deslocar a origem para baixo metade da altura da tela somamos esse mesmo valor.
+
+```python
+def setup():
+    size(720, 229)  # 360×2, 4 radianos
+    for x in range(width):
+        meia_altura = height / 2  
+        ang = radians(x / 2.0)  # 720 -> 360
+        seno = sin(ang) * -meia_altura + meia_altura        
+        point(x, seno)
+        cosseno = cos(ang) * -meia_altura + meia_altura
+        point(x, cosseno)
+```
+
+##### Outra versão com algumas indicações
 
 ![](assets/seno_cosseno.png)
 
 ```python
 def setup():
-    size(628, 200)  # malandrangem 2π×100, 200 
+    size(628, 200)  # malandrangem 2π×100, 2×100 
     background(0)
     translate(0, 100) # desloca o Y meia tela
-    
-    f = createFont('FreeMono Bold', 14)
-    textFont(f)
     indicacoes()  # desenha textos e linha em π
     
     strokeWeight(2)
@@ -39,6 +56,9 @@ def setup():
         point(x, y_seno)
 
 def indicacoes():
+    # tudo bem criar fonte aqui pois não repete!
+    f = createFont('FreeMono Bold', 14)
+    textFont(f)
     fill(255)
     text(" 0", 0, 5)
     text("-1", 0, 98)
@@ -56,6 +76,8 @@ def indicacoes():
 ```
 
 #### `sin()` e `cos()` no tempo
+
+Seno e cosseno são muito úteis para fazer animações cíclicas, é muito fácil usar a contagem pronta dos quadros oferecida pelo Processing,  `frameCount` como se fosse um ângulo em graus, converta em radianos e *voi-lá*!
 
 ![](assets/seno_cosseno.gif)
 
@@ -93,9 +115,17 @@ def indicacoes():
 ```
 #### Seno e cosseno fornecem as coordenadas dos pontos de um círculo!
 
-Fornecendo o raio e coordenadas do centro, com seno e cosseno é possível calcular o X e Y de um ponto para cada ângulo em um círculo, isso permite desenhar polígonos regulares e estrelas, por exemplo. 
+Com seno, cosseno, o raio e coordenadas do centro, é possível calcular o X e Y de um ponto para cada ângulo em um círculo, isso permite desenhar polígonos regulares e [estrelas](), por exemplo. 
 
-Vamos ver como isso funciona animando o ângulo, e com isso movendo o ponto no círculo.
+![](assets/seno_cosseno_p.png)
+
+
+
+##### Uma versão animada e com algumas indicações
+
+
+
+Vamos ver agora animando o ângulo, e com isso movendo o ponto no círculo.
 
 ![](assets/seno_cosseno_c.gif)
 
