@@ -35,7 +35,7 @@ nome = primeiro_nome + ' ' + sobrenome
 # resultado: nome = 'John Conway'
 ```
 
-Mas é não é possível somar um número a um texto ou o contrário. Note neste caso como `'10'` é entendido como texto, *string*, e não como o número `10`:
+Só que não é possível somar um número a um texto ou o contrário. Note neste caso como `'10'` é entendido como texto, *string*, e não como o número `10`:
 
 ```pyde
 a = '10' + 5  # TypeError: cannot concatenate 'str' and 'int' objects
@@ -83,7 +83,7 @@ print(nome_arquivo.endswith(".gif"))  # exibe: False
 # identifica arquivos que terminam tanto com .png como com .PNG
 if nome_arquivo.lower().endswith('.png'):
      print("Arquivo tipo PNG")
-``` 
+```
 
 #### Dividindo e juntando *strings*
 ```python
