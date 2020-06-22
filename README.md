@@ -90,7 +90,7 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
 - [Sobre o Python 2 e alguns recursos do Python 3](Processing-Python/futuro.md)
 - [Dicas para portar exemplos do Processing modo Java para o modo Python](Processing-Python/java_para_python.md)
 - Mais sobre [Python, Jython e Java](http://arteprog.space/Processando-Processing/tutoriais-PT/python-Python_Jython_e_Java) (página externa)
-- Manipulando a janela (tela cheia, redimensionamento e múltiplas janelas)(Processing-Python/mais_que_size.md)
+- Manipulando a janela ([tela cheia, redimensionamento e múltiplas janelas](Processing-Python/mais_que_size.md))
 
 #### Pequenos projetos
 
