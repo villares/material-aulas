@@ -108,7 +108,7 @@ def draw():
     background(0)
     indicacoes()  # desenha textos, círculo e linhas
 
-    a = radians(frameCount)
+    a = -radians(frameCount)  # prefiro anti-horário
     x = x_centro + raio * cos(a) 
     y = y_centro + raio * sin(a)
     
