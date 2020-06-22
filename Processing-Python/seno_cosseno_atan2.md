@@ -89,8 +89,53 @@ def indicacoes():
     fill(0, 200, 200)
     text("seno", 10, 60)
 ```
+#### Seno e cosseno fornecem as coordenadas dos pontos em um círculo!
 
+Dado um ângulo, usando seno e cosseno é possível calcular o X e Y dos pontos em um círculo, o que permite desenhar polígonos regulares e estrelas, por examplo. Vamos ver como isso funciona.
 
+```python
+def setup():
+    global x_centro, y_centro, raio
+    size(400, 400)  
+    f = createFont('FreeMono Bold', 14)
+    textFont(f)
+    x_centro, y_centro = width / 2, height / 2
+    raio = 180
+    
+def draw():
+    background(0)
+    indicacoes()  # desenha textos, círculo e linhas
+
+    a = radians(frameCount)
+    x = x_centro + raio * cos(a) 
+    y = y_centro + raio * sin(a)
+    
+    stroke(200, 200, 0)
+    line(x, y_centro, x, y)  # linha cosseno
+    stroke(0, 200, 200)
+    line(x_centro, y, x, y)  # linha seno
+    
+    strokeWeight(5)
+    stroke(255)
+    point(x, y)  # o ponto no círculo 
+
+def indicacoes():
+    a = frameCount % 360 
+    stroke(255)
+    strokeWeight(1)
+    noFill()
+    circle(x_centro, y_centro, raio * 2)
+    line(x_centro, y_centro - raio,
+         x_centro, y_centro + raio)
+    line(x_centro - raio, y_centro,
+         x_centro + raio, y_centro)
+    fill(255)
+    text(u'ângulo: {:0>3}'.format(a), 10, 20)
+    fill(200, 200, 0)
+    text("cosseno", 10, 40)
+    fill(0, 200, 200)
+    text("seno", 10, 60)
+```
 
 ###  A função `atan2()`
 
