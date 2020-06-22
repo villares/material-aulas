@@ -60,6 +60,8 @@ def indicacoes():
 ```python
 def setup():
     size(628, 200)  # malandrangem 2π×100, 200
+    f = createFont('FreeMono Bold', 14)
+    textFont(f)
     
 def draw():
     background(0)
@@ -79,8 +81,6 @@ def indicacoes():
     x = radians(a) * 100  # width ~2π×100
     stroke(255)
     line(x, 0, x, height)
-    f = createFont('FreeMono Bold', 14)
-    textFont(f)
     fill(255)
     noStroke()
     text(u'ângulo: {:0>3}'.format(a), 10, 20)
