@@ -46,7 +46,7 @@ def draw():
 
 Quando definimos funções com certos nomes especiais 'encomendados', como `keyPressed()`, `mousePressed()`, ou alguma outra listada no quadro mais abaixo, elas serão executadas pelo Processing quando certos eventos do mouse ou do teclado acontecerem. 
 
-No jargão do desenvolvimento de interfaces isso é chamado de *tratamento de eventos*. Repare que não chamamos a função no nosso código, o Processing faz isso por nós nos 'eventos' apropriados, chamando a função.
+No jargão do desenvolvimento de interfaces isso é chamado de *tratamento de eventos*. Repare que não chamamos essas funções no nosso código, o Processing chama por nós as funções nos 'eventos' apropriados, caso elas tenham sido definidas.
 
 As funções precisam ser definidas fora do bloco de `draw()`, e note que a definição de `draw()` precisa existir, mesmo que vazio, para garantir a execução de um "laço principal" no Processing. 
 
