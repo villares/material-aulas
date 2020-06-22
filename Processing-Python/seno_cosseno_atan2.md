@@ -89,9 +89,11 @@ def indicacoes():
     fill(0, 200, 200)
     text("seno", 10, 60)
 ```
-#### Seno e cosseno fornecem as coordenadas dos pontos em um círculo!
+#### Seno e cosseno fornecem as coordenadas dos pontos de um círculo!
 
-Dado um ângulo, usando seno e cosseno é possível calcular o X e Y dos pontos em um círculo, o que permite desenhar polígonos regulares e estrelas, por examplo. Vamos ver como isso funciona.
+Fornecendo o raio e coordenadas do centro, com seno e cosseno é possível calcular o X e Y de um ponto para cada ângulo em um círculo, isso permite desenhar polígonos regulares e estrelas, por examplo. 
+
+Vamos ver como isso funciona animando o aumento do ângulo, e com isso movendo o ponto no círculo.
 
 ```python
 def setup():
@@ -120,7 +122,6 @@ def draw():
     point(x, y)  # o ponto no círculo 
 
 def indicacoes():
-    a = frameCount % 360 
     stroke(255)
     strokeWeight(1)
     noFill()
@@ -130,6 +131,7 @@ def indicacoes():
     line(x_centro - raio, y_centro,
          x_centro + raio, y_centro)
     fill(255)
+    a = frameCount % 360 
     text(u'ângulo: {:0>3}'.format(a), 10, 20)
     fill(200, 200, 0)
     text("cosseno", 10, 40)
@@ -154,8 +156,6 @@ Note que vamos obter ângulos entre **-π** e **π** (entre **-180** e **180** g
 Para demonstrar a utilidade de se saber o ângulo de uma linha, vamos desenhar uma seta!
 
 A estratégia é usar o ângulo para girar o sistema de coordenadas dentro da função da seta  e desenhar a cabeça de maneira mais simples.
-
-
 
 ![](assets/seta.gif)
 
