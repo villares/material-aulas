@@ -10,17 +10,20 @@ De maneira análoga, `keyPressed`, `key` e `keyCode` tratam do estado do teclado
 
 ### Exemplo
 
+![](assets/keyPressed_keyCode.gif)
+
 ```python
 def setup():
     size(400, 400)
+    background(100, 100, 200)
 
 def draw():
     if keyPressed and keyCode == SHIFT:     # se a tecla SHIFT estiver pressonada
         strokeWeight(5)                     # # usa linha mais grossa 
         stroke(255) # com traço branco
     else:           # senão, quando tecla SHIFT não estiver pressonada
-        strokeWeight(1)                     # usa linha fina grossa
-        stroke(0)  # com traço preto
+        strokeWeight(3)                     # usa linha m
+        stroke(0)   # com traço preto
     
     if mousePressed:                        # Se o mouse estiver pressionado
          line(pmouseX, pmouseY, mouseX, mouseY) # Então desenha uma linha da posição anterior do mouse até a atual
@@ -52,25 +55,28 @@ As funções precisam ser definidas fora do bloco de `draw()`, e note que a defi
 
 ### Exemplo com `mouseDragged()` e `keyPressed()`
 
-<!-- [exemplo1](/assets/imagens/condicional1.png) -->
+![](/assets/mouseDragged.gif)
 
 ```python
 def setup():
-    size(200, 200)
+    size(400, 400)
+    background(100, 200, 100)
 
-def draw(): # é necessário um draw(), mesmo que vazio, para que exista um laço principal e funcionem os eventos
+def draw(): 
+    # é necessário um draw(), mesmo que vazio, para que exista um laço principal e funcionem os eventos
     pass
     
 def mouseDragged():
+    strokeWeight(5)
     line(pmouseX, pmouseY, mouseX, mouseY) # Desenha uma linha da posição anterior do mouse até a atual
 
 def keyPressed():          # Esta função executa uma vez quando uma tecla é pressionada
     if key == 'a':         # Se a tecla do caractere 'a' foi a última pressionada
-        background(200)    # Apague a tela com um fundo cinza (só executa sob as condições acima)
+        background(100, 200, 100)  # Apague a tela com um fundo verde (só executa sob as condições acima)
     
     if keyCode == DOWN:                         # Se a seta para baixo foi precionada
         saveFrame("imagem-####.png")            # salve a imagem da tela de pintura em um arquivo PNG 
-        println("salvo o frame {}.".format(frameCount))  # mostre no console o número do frame        
+        println("salvo o frame {}.".format(frameCount))  # mostre no console o número do frame           
 ```
 
 ### Quadro das funções acionadas por eventos
