@@ -6,14 +6,13 @@ No Processing, o teclado e o mouse são duas as principais formas de entrada de 
 
 As variáveis de sistema como `mouseX`, `mouseY` e `mousePressed` contém a todo instante informações sobre o estado do mouse. Podem ser consultadas em qualquer lugar do programa e são vistas frequentemente em condicionais dentro do bloco de `draw()`.
 
-De maneira análoga, `keyPressed`, `key` e `keyCode` tratam do estado do teclado. A variável `keyPressed` indica se há uma tecla pressionada naquele instante, `key` indica qual foi a última tecla 'comum' pressionada, se for igual à constante `CODED` então é possível consultar `keyCode` par saber qual foi a última tecla 'codificada', como por exemplo `SHIFT`, ou as setas do teclado.
+De maneira análoga, `keyPressed`, `key` e `keyCode` tratam do estado do teclado. A variável `keyPressed` indica se há uma tecla pressionada naquele instante, `key` indica qual foi a última tecla 'comum' pressionada, se for igual à constante `CODED` então é possível consultar `keyCode` para saber qual foi a última tecla 'codificada', a comparando, por exemplo, com a constante `SHIFT`, ou as constantes das setas do teclado (`UP`, `DOWN`, `LEFT`, `RIGHT`), entre [algumas outras constantes listadas no final da página](#contantes-para-usar-com-keycode-e-o-correspondente-valor-numérico). 
 
 ### Exemplo
 
 ```python
 def setup():
     size(400, 400)
-
 
 def draw():
     if keyPressed and keyCode == SHIFT:     # se a tecla SHIFT estiver pressonada
@@ -38,30 +37,10 @@ def draw():
 | int | mouseY            |    informa a posição Y do mouse na tela
 | int | pmouseX           |    informa a posição X anterior do mouse na tela
 | int | pmouseY           |    informa a posição Y anterior do mouse na tela
-| string | key            |    caractere da última tecla comum pressionada, ou a constante `CODED`
+| string | key            |    caractere da última tecla 'comum' pressionada, ou a constante `CODED`
 | int | keyCode           |    código da última tecla 'codificada', como `SHIFT`, `UP` e etc.
 | boolean | keyPressed    |    indica se alguma tecla está pressionada com (`True`) 
 
-### Contantes para usar com keyCode (e o correspondente valor numérico)
-```
-UP      38
-DOWN    40
-LEFT    37
-RIGHT   39
-ALT     18
-CONTROL 17
-SHIFT   16
-```
-
-### Constantes para usar com key (e o *string*  equivalente)
-```
-BACKSPACE '\b'
-TAB       '\t'
-ENTER     '\n'
-RETURN    '\r'
-ESC       '\x1b'
-DELETE    '\x7f'
-```
 
 ## Funções acionadas por eventos
 
@@ -108,6 +87,28 @@ def keyPressed():          # Esta função executa uma vez quando uma tecla é p
 | keyReleased()     | executada quando uma tecla é solta
 | keyTyped()        | executada quando uma tecla alfa-numérica é digitada
 
+## Algumas constantes úteis
+
+### Contantes para usar com keyCode (e o correspondente valor numérico)
+```
+UP      38
+DOWN    40
+LEFT    37
+RIGHT   39
+ALT     18
+CONTROL 17
+SHIFT   16
+```
+
+### Constantes para usar com key (e o *string*  equivalente)
+```
+BACKSPACE '\b'
+TAB       '\t'
+ENTER     '\n'
+RETURN    '\r'
+ESC       '\x1b'
+DELETE    '\x7f'
+```
 
 ## Assuntos relacionados
 
