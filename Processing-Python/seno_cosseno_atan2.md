@@ -2,7 +2,7 @@
 
 ### `sin()`, `cos()` e `atan2()`
 
-As funções trigonométricas não são nenhum bicho de sete cabeças,  2 cabeças, no máximo...
+As funções trigonométricas não são nenhum bicho de sete cabeças, 2π cabeças, no máximo...
 
 Para começar é preciso saber que quando elas pedem um ângulo como argumento. elas esperam que você informe esse ângulo em *radianos*, se você pensa em graus, é só usar `radians(angulo_em_graus)` para converter. Algumas como `atan2()` devolvem um ângulo em radianos, que pode ser convertido em graus com `degrees(angulo_em_radianos)`se você precisar.
 
