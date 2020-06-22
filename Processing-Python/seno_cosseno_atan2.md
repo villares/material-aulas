@@ -2,7 +2,7 @@
 
 ### `sin()`, `cos()` e `atan2()`
 
-As funções trigonométricas não são nenhum bicho de sete cabeças, `TWO_PI / 3` no máximo...
+As funções trigonométricas não são nenhum bicho de sete cabeças,  2 cabeças, no máximo...
 
 Para começar é preciso saber que quando elas pedem um ângulo como argumento. elas esperam que você informe esse ângulo em *radianos*, se você pensa em graus, é só usar `radians(angulo_em_graus)` para converter. Algumas como `atan2()` devolvem um ângulo em radianos, que pode ser convertido em graus com `degrees(angulo_em_radianos)`se você precisar.
 
@@ -97,7 +97,9 @@ def indicacoes():
 
 A função `atan()` (arco tangente) devolve um ângulo a partir da tangente de um ângulo, e é possível calcular a tangente dividindo o cateto oposto pelo cateto adjacente,  os lados paralelos aos eixos, do triângulo formado pelos pontos de uma 'linha' (como chamamos informalmente um segmento de reta definido por dois pontos). 
 
-O cateto oposto é a diferença dos valores de Y e o adjacente a diferença dos valores de X das coordenadas da linha. Só que na prática isso é uma encrenca, se a linha ficar na vertical teremos uma divisão por zero…  Muito mais prático é entregar o trabalho de dividir para uma 'versão 2' da função do arco tangente: `atan2(dy, dx)`, os dois argumentos são as medidas dos catetos e ela cuida de tudo nos devolvendo um ângulo em radianos.
+O cateto oposto é a diferença dos valores de Y e o adjacente a diferença dos valores de X das coordenadas da linha. Só que na prática isso é uma encrenca, se a linha ficar na vertical teremos uma divisão por zero…  Muito mais prático é entregar o trabal
+
+ho de dividir para uma 'versão 2' da função do arco tangente: `atan2(dy, dx)`, os dois argumentos são as medidas dos catetos e ela cuida de tudo nos devolvendo um ângulo em radianos.
 
 ![](assets/atan2.gif) 
 
