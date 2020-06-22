@@ -1,6 +1,10 @@
 ## Manipulações avançadas da janela
 
-Exemplos de *sketch* em tela cheia, uma janela com o tamanho calculado, comopermitir o redimensionando a janela no meio da execução. O usa avançado de mais de uma janela.
+Os exemplos nesta página demonstram:
+- Um *sketch*  em 'tela cheia'
+- Janela com dimensões calculadas
+- Redimensionando da janela no meio da execução 
+- Uso avançado de mais de uma janela
 
 #### Tela cheia
 
@@ -53,7 +57,7 @@ def draw():
 ```
 
 
-#### Mudando o tamanho da janela com o sketch executando
+#### Mudando o tamanho da janela com o sketch em execução
 
 É preciso chamar `this.surface.setResizable(True)`, em geral no `setup()`, o que permite também que a pessoa redimensione manualmente a janela, e depois, é posível usar `this.surface.setSize(largura, altura)` para mudar as dimensões pelo código do próprio programa.
 
@@ -71,7 +75,7 @@ def keyPressed():
                        int(random(200, 500)))
 ```
 
-#### Um *sketch* com duas janelas!!!
+#### Um *sketch* com duas janelas
 
 ```python
 def setup():
