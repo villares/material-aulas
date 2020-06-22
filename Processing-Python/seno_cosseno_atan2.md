@@ -148,7 +148,7 @@ def setup():
 
 ##### Uma versão animada e com algumas indicações
 
-Vamos ver agora desenhar atualizando o ângulo com o tempo, dessa forma animando o ponto no círculo.
+Vamos agora desenhar atualizando o ângulo com o tempo, dessa forma animando o ponto no círculo.
 
 ![](assets/seno_cosseno_c.gif)
 
@@ -206,13 +206,15 @@ O cateto oposto é a diferença dos valores de Y e o adjacente a diferença dos 
 
 ![](assets/atan2.gif) 
 
-Note que vamos obter ângulos entre **-π** e **π** (entre **-180** e **180** graus).
+Note que vamos obter ângulos com valores entre **-π** e **π** (entre **-180** e **180** graus) em vez de **0** a **2π**. Você pode somar a constate `PI` do Processing ao valor se preferir essa segunda faixa. 
 
 #### Desenhando uma seta com `atan2()`
 
-Para demonstrar a utilidade de se saber o ângulo de uma linha, vamos desenhar uma seta!
+Para demonstrar a utilidade de se saber o ângulo de uma linha, vamos desenhar uma seta! 
 
-A estratégia é usar o ângulo para girar o sistema de coordenadas dentro da função da seta  e desenhar a cabeça de maneira mais simples.
+Na verdade saber o ângulo de uma linha da qual conhecemos as coordenadas permite desenhar todo tipo de elemento alinhado ou relacionado a ela.
+
+A estratégia mostrada inicialmente é de usar o ângulo para girar o sistema de coordenadas dentro da função da seta  e desenhar a cabeça com as coordenadas transformadas.
 
 ![](assets/seta.gif)
 
@@ -239,5 +241,21 @@ def seta(xa, ya, xb, yb):
     line(0, 0, -tc, tc)
     line(0, 0, -tc, -tc)
     popMatrix()
+```
+
+Mas, você pode querer calcular você mesma  as coordenadas dos vértices da cabeça da seta assim:
+
+```python
+def seta(xa, ya, xb, yb):
+    d = dist(xa, ya, xb, yb)
+    a = atan2(yb - ya, xb - xa)
+    line(xa, ya, xb, yb)
+    tc = d / 10 * sqrt(2)
+    xha = xb + cos(a + QUARTER_PI + PI) * tc
+    yha = yb + sin(a + QUARTER_PI + PI) * tc
+    xhb = xb + cos(a - QUARTER_PI + PI) * tc
+    yhb = yb + sin(a - QUARTER_PI + PI) * tc
+    line(xb, yb, xha, yha)
+    line(xb, yb, xhb, yhb)
 ```
 
