@@ -21,7 +21,11 @@ def setup():
     size(628, 200)  # malandrangem 2π×100, 200 
     background(0)
     translate(0, 100) # desloca o Y meia tela
+    
+    f = createFont('FreeMono Bold', 14)
+    textFont(f)
     indicacoes()  # desenha textos e linha em π
+    
     strokeWeight(2)
     scale(1, -1)  # inverte o Y
     for x in range(width):
@@ -35,8 +39,6 @@ def setup():
         point(x, y_seno)
 
 def indicacoes():
-    f = createFont('FreeMono Bold', 14)
-    textFont(f)
     fill(255)
     text(" 0", 0, 5)
     text("-1", 0, 98)
