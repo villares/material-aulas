@@ -196,7 +196,7 @@ def indicacoes():
     text("seno: {:+.2f}".format(seno), 10, 60)
 ```
 
-###  A função `atan2()`
+###  A função do arco tangente
 
 #### Como descobrir o ângulo de um segmento de reta?
 
@@ -210,11 +210,9 @@ Note que vamos obter ângulos com valores entre **-π** e **π** (entre **-180**
 
 #### Desenhando uma seta com `atan2()`
 
-Para demonstrar a utilidade de se saber o ângulo de uma linha, vamos desenhar uma seta! 
+Para demonstrar a utilidade de se saber o ângulo de uma linha, vamos desenhar uma seta! Na verdade, saber o ângulo de uma linha da qual conhecemos as coordenadas permite desenhar todo tipo de elemento alinhado ou com ângulo a ela relacionado.
 
-Na verdade saber o ângulo de uma linha da qual conhecemos as coordenadas permite desenhar todo tipo de elemento alinhado ou relacionado a ela.
-
-A estratégia mostrada inicialmente é de usar o ângulo para girar o sistema de coordenadas dentro da função da seta  e desenhar a cabeça com as coordenadas transformadas.
+A estratégia mostrada inicialmente é usar o ângulo da linha para girar o sistema de coordenadas, dentro da função `seta()`,  e desenhar a cabeça com as coordenadas transformadas.
 
 ![](assets/seta.gif)
 
