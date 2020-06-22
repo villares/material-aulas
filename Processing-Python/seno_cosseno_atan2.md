@@ -39,6 +39,7 @@ def setup():
 ```python
 def setup():
     size(628, 200)  # malandrangem 2π×100, 2×100 
+    textFont(createFont('FreeMono Bold', 14))
     background(0)
     translate(0, 100) # desloca o Y meia tela
     indicacoes()  # desenha textos e linha em π
@@ -56,9 +57,6 @@ def setup():
         point(x, y_seno)
 
 def indicacoes():
-    # tudo bem criar fonte aqui pois não repete!
-    f = createFont('FreeMono Bold', 14)
-    textFont(f)
     fill(255)
     text(" 0", 0, 5)
     text("-1", 0, 98)
@@ -84,8 +82,7 @@ Seno e cosseno são muito úteis para fazer animações cíclicas, é muito fác
 ```python
 def setup():
     size(628, 200)  # malandrangem 2π×100, 200
-    f = createFont('FreeMono Bold', 14)
-    textFont(f)
+    textFont(createFont('FreeMono Bold', 14))
     
 def draw():
     background(0)
@@ -133,27 +130,24 @@ Vamos ver agora animando o ângulo, e com isso movendo o ponto no círculo.
 def setup():
     global x_centro, y_centro, raio
     size(400, 400)  
-    f = createFont('FreeMono Bold', 14)
-    textFont(f)
+    textFont(createFont('FreeMono Bold', 14))
     x_centro, y_centro = width / 2, height / 2
-    raio = 180
+    raio = 160
     
 def draw():
     background(0)
     indicacoes()  # desenha textos, círculo e linhas
-
-    a = -radians(frameCount)  # prefiro anti-horário
-    x = x_centro + raio * cos(a) 
-    y = y_centro + raio * sin(a)
-    
-    stroke(200, 200, 0)
-    line(x, y_centro, x, y)  # linha cosseno
+    ang = -radians(frameCount)  # prefiro anti-horário
+    x = x_centro + raio * cos(ang) 
+    y = y_centro + raio * sin(ang)    
+    strokeWeight(3)
     stroke(0, 200, 200)
-    line(x_centro, y, x, y)  # linha seno
-    
+    line(x, y_centro, x, y)  # linha seno
+    stroke(200, 200, 0)
+    line(x_centro, y, x, y)  # linh cosseno
     strokeWeight(5)
     stroke(255)
-    point(x, y)  # o ponto no círculo 
+    point(x, y)  # o ponto no círculo
 
 def indicacoes():
     stroke(255)
@@ -165,12 +159,15 @@ def indicacoes():
     line(x_centro - raio, y_centro,
          x_centro + raio, y_centro)
     fill(255)
-    a = frameCount % 360 
-    text(u'ângulo: {:0>3}'.format(a), 10, 20)
+    graus = frameCount % 360 
+    ang = radians(graus)
+    seno = sin(ang)
+    cosseno = cos(ang)
+    text(u'ângulo: {:0>3}'.format(graus), 10, 20)
     fill(200, 200, 0)
-    text("cosseno", 10, 40)
+    text("cosseno: {:+.2f}".format(cosseno), 10, 40)
     fill(0, 200, 200)
-    text("seno", 10, 60)
+    text("seno: {:+.2f}".format(seno), 10, 60)
 ```
 
 ###  A função `atan2()`
