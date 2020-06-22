@@ -91,9 +91,11 @@ def indicacoes():
 ```
 #### Seno e cosseno fornecem as coordenadas dos pontos de um círculo!
 
-Fornecendo o raio e coordenadas do centro, com seno e cosseno é possível calcular o X e Y de um ponto para cada ângulo em um círculo, isso permite desenhar polígonos regulares e estrelas, por examplo. 
+Fornecendo o raio e coordenadas do centro, com seno e cosseno é possível calcular o X e Y de um ponto para cada ângulo em um círculo, isso permite desenhar polígonos regulares e estrelas, por exemplo. 
 
-Vamos ver como isso funciona animando o aumento do ângulo, e com isso movendo o ponto no círculo.
+Vamos ver como isso funciona animando o ângulo, e com isso movendo o ponto no círculo.
+
+![](assets/seno_cosseno_c.gif)
 
 ```python
 def setup():
