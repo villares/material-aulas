@@ -16,9 +16,9 @@ Vamos visualizar aqui em alguns exemplos o que isso significa.
 
 ![](assets/seno_cosseno_0.png)
 
-Para produzir a imagem acima, pegamos em um laço repetição que produz um X de **0** a **720** que convertemos em um ângulo em radianos, dividindo por **2** temos ângulos de **0** a **2π** (ou **0** a **360°**). 
+Para produzir a imagem acima, criamos um laço repetição que produz um `x` de **0** a **720** , convertido esse `x`num ângulo em radianos e dividido por **2** , temos ângulos de **0** a **2π** (ou **0** a **360°**). 
 
-Vamos  multiplicar o valor do seno e do cosseno desse ângulo pela metade da altura da tela (aproveitando para inverter o sinal pois o nosso Y do Processing cresce para baixo e estamos acostumados a ver os gráficos com a parte positiva para cima) . Para deslocar a origem para baixo somamos esse mesmo valor de metade da altura da tela.
+Vamos  multiplicar o valor do seno e do cosseno do ângulo pela metade da altura da tela (aproveitando para inverter o sinal pois o Y do Processing cresce para baixo e estamos acostumados a ver os gráficos com a parte positiva para cima) . Para deslocar a origem para baixo somamos esse mesmo valor de metade da altura da tela.
 
 ```python
 def setup():
@@ -31,6 +31,15 @@ def setup():
         cosseno = cos(ang) * -meia_altura + meia_altura
         point(x, cosseno)
 ```
+
+Qual é o seno e qual o cosseno?
+
+```python
+print(sin(0))  # exibe no console: 0.0
+print(cos(0))  # exibe no console: 1.0
+```
+
+O seno é o que começa à esquerda no **0**, na meia altura da tela, e o cosseno é o que começa no alto valendo **1**.
 
 ##### Outra versão com algumas indicações
 
@@ -113,6 +122,8 @@ def indicacoes():
     fill(0, 200, 200)
     text("seno", 10, 60)
 ```
+Note que seno ou cosseno valendo zero significa que a bolinha fica com tamanho **100**, com valor **-1** ela deseaparece e com o valor **1** ela ganha o seu diâmetro máximo de **200** pixels.
+
 #### Seno e cosseno fornecem as coordenadas dos pontos de um círculo!
 
 Com seno, cosseno, o raio e coordenadas do centro, é possível calcular o X e Y de um ponto para cada ângulo em um círculo, isso permite desenhar polígonos regulares e [estrelas](while.md), por exemplo. 
