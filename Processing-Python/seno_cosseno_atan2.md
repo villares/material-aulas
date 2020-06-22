@@ -18,13 +18,14 @@ Vamos visualizar aqui em dois exemplos o que isso significa.
 
 ```python
 def setup():
-    size(628, 200)
+    size(628, 200)  # malandrangem 2π×100, 200 
     background(0)
-    translate(0, 100)
-    indicacoes() # textos e linha em π
+    translate(0, 100) # desloca o Y meia tela
+    indicacoes()  # desenha textos e linha em π
     strokeWeight(2)
     scale(1, -1)  # inverte o Y
     for x in range(width):
+        # width ~2π×100
         a = x / 100.0
         y_cosseno = cos(a) * 100
         stroke(200, 200, 0)
@@ -58,12 +59,12 @@ def indicacoes():
 
 ```python
 def setup():
-    size(628, 200)
+    size(628, 200)  # malandrangem 2π×100, 200
     
 def draw():
     background(0)
     a = radians(frameCount)
-    indicacoes()
+    indicacoes()  # desenha textos e linha móvel
     tam_cosseno = 100 + cos(a) * 100
     fill(200, 200, 0)
     ellipse(width / 3, height / 2,
@@ -75,7 +76,7 @@ def draw():
 
 def indicacoes():
     a = frameCount % 360 
-    x = radians(a) * 100
+    x = radians(a) * 100  # width ~2π×100
     stroke(255)
     line(x, 0, x, height)
     f = createFont('FreeMono Bold', 14)
@@ -95,11 +96,9 @@ def indicacoes():
 
 #### Como descobrir o ângulo de um segmento de reta?
 
-A função `atan()` (arco tangente) devolve um ângulo a partir da tangente de um ângulo, e é possível calcular a tangente dividindo o cateto oposto pelo cateto adjacente,  os lados paralelos aos eixos, do triângulo formado pelos pontos de uma 'linha' (como chamamos informalmente um segmento de reta definido por dois pontos). 
+A função `atan()` (arco tangente) devolve o ângulo a partir da tangente desse ângulo, e é possível calcular a tangente dividindo o cateto oposto pelo cateto adjacente, no caso os lados paralelos aos eixos, do triângulo formado pelos pontos de uma 'linha' (como chamamos informalmente um segmento de reta definido por dois pontos). 
 
-O cateto oposto é a diferença dos valores de Y e o adjacente a diferença dos valores de X das coordenadas da linha. Só que na prática isso é uma encrenca, se a linha ficar na vertical teremos uma divisão por zero…  Muito mais prático é entregar o trabal
-
-ho de dividir para uma 'versão 2' da função do arco tangente: `atan2(dy, dx)`, os dois argumentos são as medidas dos catetos e ela cuida de tudo nos devolvendo um ângulo em radianos.
+O cateto oposto é a diferença dos valores de Y e o adjacente a diferença dos valores de X das coordenadas da linha. Só que na prática isso é uma encrenca, se a linha ficar na vertical teremos uma divisão por zero…  Muito mais prático é entregar o trabalho de dividir para uma 'versão 2' da função do arco tangente: `atan2(dy, dx)`, os dois argumentos são as medidas dos catetos e ela cuida de tudo nos devolvendo um ângulo em radianos.
 
 ![](assets/atan2.gif) 
 
