@@ -55,7 +55,7 @@ As funções precisam ser definidas fora do bloco de `draw()`, e note que a defi
 
 ### Exemplo com `mouseDragged()` e `keyPressed()`
 
-![](/assets/mouseDragged.gif)
+![](assets/mouseDragged.gif)
 
 ```python
 def setup():
