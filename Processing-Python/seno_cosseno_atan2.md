@@ -111,6 +111,10 @@ Note que vamos obter ângulos entre **-π** e **π** (entre **-180** e **180** g
 
 Para demonstrar a utilidade de se saber o ângulo de uma linha, vamos desenhar uma seta!
 
+A estratégia é usar o ângulo para girar o sistema de coordenadas dentro da função da seta  e desenhar a cabeça de maneira mais simples.
+
+
+
 ![](assets/seta.gif)
 
 ```python
