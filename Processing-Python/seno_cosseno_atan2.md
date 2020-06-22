@@ -130,6 +130,19 @@ Com seno, cosseno, o raio e coordenadas do centro, é possível calcular o X e Y
 
 ![](assets/seno_cosseno_p.png)
 
+```python
+def setup():
+    size(400, 400)
+    x_centro, y_centro = width / 2, height / 2
+    raio = 180
+    for graus in range(0, 360, 18):  # cada 18°
+        ang = radians(graus)
+        x = x_centro + raio * cos(ang) 
+        y = y_centro + raio * sin(ang) 
+        strokeWeight(5)
+        point(x, y)
+```
+
 
 
 ##### Uma versão animada e com algumas indicações
