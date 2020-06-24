@@ -4,9 +4,9 @@ No Processing, o teclado e o mouse são duas as principais formas de entrada de 
 
 ## Variáveis de sistema 
 
-As variáveis de sistema como `mouseX`, `mouseY` e `mousePressed` contém a todo instante informações sobre o estado do mouse. Podem ser consultadas em qualquer lugar do programa e são vistas frequentemente em condicionais dentro do bloco de `draw()`.
+As variáveis de sistema como `mouseX`, `mouseY` e `mousePressed` oferecem a todo instante informações sobre o estado do mouse. Podem ser consultadas em qualquer lugar do programa e são vistas frequentemente em condicionais dentro do bloco de `draw()`.
 
-De maneira análoga, `keyPressed`, `key` e `keyCode` tratam do estado do teclado. A variável `keyPressed` indica se há uma tecla pressionada naquele instante, `key` indica qual foi a última tecla 'comum' pressionada, se for igual à constante `CODED` então é possível consultar `keyCode` para saber qual foi a última tecla 'codificada', a comparando, por exemplo, com a constante `SHIFT`, ou as constantes das setas do teclado (`UP`, `DOWN`, `LEFT`, `RIGHT`), entre [algumas outras constantes listadas no final da página](#contantes-para-usar-com-keycode-e-o-correspondente-valor-numérico). 
+De maneira análoga, `keyPressed`, `key` e `keyCode` tratam do estado do teclado. A variável `keyPressed` indica se há uma tecla pressionada naquele instante, `key` indica qual foi a última tecla 'comum' pressionada, se for igual à constante `CODED` então é possível consultar `keyCode` para saber qual foi a última tecla 'codificada', a comparando, por exemplo, com as constantes `SHIFT`, `ALT` e `CONTROL`, ou as constantes das setas do teclado (`UP`, `DOWN`, `LEFT`, `RIGHT`), entre [algumas outras constantes listadas no final da página](#contantes-para-usar-com-keycode-e-o-correspondente-valor-numérico). 
 
 ### Exemplo
 
