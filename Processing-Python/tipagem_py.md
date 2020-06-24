@@ -85,6 +85,8 @@ Nesta tabela apresento apenas alguns dos tipos que vamos encontrar programando c
 
 Existe uma discussão relativamente complexa mas na qual eu não vou entrar aqui, o tipo `bytes` do Processing lembra um *string* mas só com caracteres *ASCII*, e isso dá uma certa confusão, especialmente por estarmos usando Python 2, em que os *strings* não são necessariamente *Unicode*, como no Python 3, mas essa é uma questão avançada que eu queria evitar neste primeiro momento.
 
+Quando você for converter em *string*, por exemplo, um objeto que descreve um nome de arquivo vindo do Java, use `unicode()` em vez de `str()`, de forma a obter um `string unicode` do Python 2.
+
 ### Glossário
 
 [**valor**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:valor) Uma das unidades básicas de dados, como um número ou *string*, que um programa manipula.
