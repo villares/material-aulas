@@ -9,15 +9,15 @@ Para começar é preciso saber que quando uma dessas funções pede um ângulo c
 
 ### Seno e cosseno
 
-Para além da origem dessas funções nas relações matemáticas dos ângulos de um triângulo e de um círculo de raio unitário, das coisas mais úteis que você pode entender facilmente é que essas funções devolvem valores entre **-1** e **1** de maneira cíclica, periódica.
+Na origem essas funções tratam das relações entre ângulos e proporções das medidas dos triângulos, sendo muito estudas, demonstradas, em triângulos retângulos ou em um círculo de raio unitário (o ciclo trigronométrico), mas para além desse contexto, das coisas mais úteis que você pode querer saber, e acredito não ser difícil demonstrar aqui, é que essas funções devolvem valores entre **-1** e **1** de maneira cíclica, periódica.
 
-Vamos visualizar aqui em alguns exemplos o que isso significa.
+Os primeiros exemplos a seguir são para visualizar como se dá o comportamento do seno e do cosseno.
 
 #### `sin()` e `cos()` no espaço
 
 ![](assets/seno_cosseno_0.png)
 
-Para produzir a imagem acima, criamos um laço repetição que produz um `x` de **0** a **720** , convertido esse `x`num ângulo em radianos e dividido por **2** , temos ângulos de **0** a **2π** (ou **0** a **360°**). 
+Para produzir a imagem acima, criamos um laço repetição que produz um `x` de **0** a **720** , convertemos esse `x`num ângulo em radianos e dividimos por **2**, de forma a obter ângulos de **0** a **2π** radianos (ou **0°** a **360°**). 
 
 Vamos  multiplicar o valor do seno e do cosseno do ângulo pela metade da altura da tela (aproveitando para inverter o sinal pois o Y do Processing cresce para baixo e estamos acostumados a ver os gráficos com a parte positiva para cima) . Para deslocar a origem para baixo somamos esse mesmo valor de metade da altura da tela.
 
@@ -26,7 +26,7 @@ def setup():
     size(720, 229)  # 360×2, 4 radianos
     for x in range(width):
         meia_altura = height / 2  
-        ang = radians(x / 2.0)  # 720 -> 360
+        ang = radians(x / 2.0)  # 720 pixels -> 360 graus
         seno = sin(ang) * -meia_altura + meia_altura        
         point(x, seno)
         cosseno = cos(ang) * -meia_altura + meia_altura
@@ -112,7 +112,7 @@ def draw():
 
 def indicacoes():
     a = frameCount % 360 
-    x = radians(a) * 100  # width ~2π×100
+    x = radians(a) * 100  # width tem aprox. 2π×100 pixels
     stroke(255)
     line(x, 0, x, height)
     fill(255)
