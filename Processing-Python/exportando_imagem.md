@@ -59,7 +59,8 @@ def draw():
 ### Exportando em resolução maior do que a da tela
 
 Um objeto *PGraphics* é uma espécie de tela virtual que pode gravar o resultado do desenho em paralelo à área de desenho normal, podendo também receber ajustes especiais aplicados apenas a esse objeto-tela, como `.scale()` no exemplo abaixo, o que permite exportar uma imagem 10 vezes maior do que a mostrada na tela. 
-```
+
+```python
 def setup():
     size(50, 50)
     # preparo da gravação
@@ -95,7 +96,7 @@ No exemplo a seguir, vamos usar a estratégia de desenhar em um objeto `PGraphic
 
 ![](assets/exportando_parcial_0.png)
 
- Ambos os textos da imagem acima, em preto e em branco, não estarão presentes no arquivo salvo, assim como toda a àrea cinza em volta ou qualquer elemento nela desenhado.
+Ambos os textos da imagem acima, em preto e em branco, não estarão presentes no arquivo salvo, assim como toda a àrea cinza em volta ou qualquer elemento nela desenhado.
 
 ```python
 salvar = False
@@ -166,9 +167,6 @@ def salva_arquivo(selection):
 ![](assets/exportando_parcial_1.png)
 
 Note o texto em vermelho que só aparece no arquivo salvo.
-
-
-
 
 ### Assuntos relacionados
 
