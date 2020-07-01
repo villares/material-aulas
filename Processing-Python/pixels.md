@@ -68,7 +68,10 @@ Use `createImage()` para criar um novo objeto `PImage` (tipo de dados para armaz
 createImage(w, h, formato)
 ```
 
-Um exemplo de inversão de uma lista de pixels (apere a tecla 1)
+Um exemplo de inversão de uma lista de pixels
+
+- Copie na pasta `data`: [desenho.gif](assets/desenho.gif)
+- Aperte a tecla **1**
 
 ```python
 
@@ -104,7 +107,8 @@ def keyPressed():
     imgAux = foto
     imgAux.updatePixels()```
 ```
-![](https://github.com/arteprog/programacao-criativa/blob/master/assets/imagens/pixel01.png?raw=True)
+![](assets/desenho_inv.png)
+
 <!-- exemplo de sorting quebrado
 
 ```python
