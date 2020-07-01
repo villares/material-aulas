@@ -71,7 +71,7 @@ createImage(w, h, formato)
 Um exemplo de inversão de uma lista de pixels
 
 - Copie na pasta `data`: [desenho.gif](assets/desenho.gif)
-- Aperte a tecla **1**
+- Aperte a tecla **i**
 
 ```python
 
@@ -95,7 +95,7 @@ def keyPressed():
     foto = createImage(img.width, img.height, RGB)
     foto.loadPixels()
 
-    if key == '1':
+    if key == 'i':
         origem = img.width * img.height
         # multiplicar a largura pela altura para encontrar o último pixel
         destino = 0     
