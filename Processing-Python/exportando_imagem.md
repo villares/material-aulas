@@ -93,7 +93,7 @@ No exemplo a seguir, vamos usar a estratégia de desenhar em um objeto `PGraphic
 - Acrescentar ajustes ou elementos apenas na imagem salva;
 - Escolher onde salvar a imagem (fora da pasta do sketch).
 
-![](/home/villares/Documentos/GitHub/material-aulas/Processing-Python/assets/exportando_parcial_0.png)
+![](assets/exportando_parcial_0.png)
 
  Ambos os textos da imagem acima, em preto e em branco, não estarão presentes no arquivo salvo, assim como toda a àrea cinza em volta ou qualquer elemento nela desenhado.
 
