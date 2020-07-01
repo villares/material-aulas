@@ -147,6 +147,8 @@ def draw():
     
 A biblioteca *Video Export* criada por Abe Pazos [@hamoid](https://github.com/hamoid) pode ser baixada diretamente pelo IDE, e vem com vários exemplos. Será necessário instalar a ferramenta `ffmpeg` disponível em [www.ffmpeg.org](https://www.ffmpeg.org/)
 
+**[Falta alertar sobre a installação do ffmpeg]**
+
 ```python
 """
 Exemplo de uso da biblioteca Video Export de Abe Pazos
@@ -167,10 +169,10 @@ def setup():
     println(u"Aperte 'q' para encerrar o programa e fechar o arquivo")
 
     video_export = VideoExport(this, "animacao.mp4")
-    videoExport.setFrameRate(30)  # reduz a taxa de quadros (opcional)
+    video_export.setFrameRate(30)  # reduz a taxa de quadros (opcional)
     frameRate(30)
     # Qualidade máxima de vídeo: 100. Audio ótimo: 256 / muito bom: 192
-    videoExport.setQuality(70, 128)  # qualidade default de vídeo e audio
+    video_export.setQuality(70, 128)  # qualidade default de vídeo e audio
     video_export.startMovie()
 
 
