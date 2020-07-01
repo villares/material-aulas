@@ -62,20 +62,22 @@ O método `loadPixels()` dá acesso a um array contendo os pixels da imagem e `u
 
 Use `createImage()` para criar um novo objeto `PImage` (tipo de dados para armazenar imagens) vazio, fornecendo assim um buffer de pixels que pode ser manipulado.
 
-```
+```pyrhon
 # w (largura em pixels), h (altura em pixels),
 # formato (RGB, ARGB ou ALPHA: canal alpha em escala de cinzas)        
 createImage(w, h, formato)
 ```
 
-```pyde
+Um exemplo de inversão de uma lista de pixels (apere a tecla 1)
+
+```python
 
 def setup():
     global img # define um objeto PImage chamado imagem 
     global imgAux # define um objeto PImage chamado imagem auxiliar
-    img = loadImage("flor.jpg") # carrega uma imagem
+    img = loadImage("desenho.gif") # carrega uma imagem
     imgAux = img # carrega a imagem auxiliar
-    surface.setSize(img.width * 2, img.height) # define o tamanho da tela
+    this.surface.setSize(img.width * 2, img.height) # define o tamanho da tela
 
 def draw():
     background(255)
@@ -84,27 +86,28 @@ def draw():
 
 
 def keyPressed():
+    global foto, imgAux 
     img.loadPixels()
     imgAux.loadPixels()
-    PImage foto = createImage(img.width, img.height, RGB)
+    foto = createImage(img.width, img.height, RGB)
     foto.loadPixels()
 
     if key == '1':
         origem = img.width * img.height
         # multiplicar a largura pela altura para encontrar o último pixel
         destino = 0     
-        for (temp = origem-1 temp>=0 temp-= 1) :
+        for temp in range(origem-1, -1, -1) :
         # origem -1 pq começamos contar do 0
             foto.pixels[destino] = img.pixels[temp]
             destino += 1
     
     imgAux = foto
-    imgAux.updatePixels()
+    imgAux.updatePixels()```
 ```
-
 ![](https://github.com/arteprog/programacao-criativa/blob/master/assets/imagens/pixel01.png?raw=True)
+<!-- exemplo de sorting quebrado
 
-```pyde
+```python
 def setup():
     global img, imgTemp
     size(800, 400)
@@ -120,7 +123,7 @@ def draw():
         record = -1 
         selectedPixel = i 
         for j in range(len(imgTemp.pixels)):
-            color pix = imgTemp.pixels[j] 
+            pix = imgTemp.pixels[j] 
             b = hue(pix) 
             if (b > record) :
                 selectedPixel = j 
@@ -132,8 +135,9 @@ def draw():
     
     imgTemp.updatePixels()
 ```
-
 ![](https://github.com/arteprog/programacao-criativa/blob/master/assets/imagens/pixe02.png?raw=True)
+
+--->
 
 ## Filtros de imagem
 
@@ -142,7 +146,7 @@ Processing oferece uma série de filtros prontos que podem ser aplicados em qual
 ### Modos disponíveis como parâmetros de filter()
 
 THRESHOLD: Converte a imagem em pixels pretos ou brancos, dependendo se eles estão acima ou abaixo do limite definido pelo parâmetro de nível. O nível deve estar entre 0,0 (preto) e 1,0 (branco). Se nenhum nível for especificado, 0,5 será usado.
-```pyde
+```python
 img = loadImage("exemplo.jpg")
 image(img, 0, 0)
 filter(THRESHOLD)
