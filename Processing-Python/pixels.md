@@ -63,8 +63,9 @@ O método `loadPixels()` dá acesso a um array contendo os pixels da imagem e `u
 Use `createImage()` para criar um novo objeto `PImage` (tipo de dados para armazenar imagens) vazio, fornecendo assim um buffer de pixels que pode ser manipulado.
 
 ```
-createImage(w, h, formato) # w (largura em pixels), h (altura em pixels),
-             # formato (RGB, ARGB ou ALPHA: canal alpha em escala de cinzas)        
+# w (largura em pixels), h (altura em pixels),
+# formato (RGB, ARGB ou ALPHA: canal alpha em escala de cinzas)        
+createImage(w, h, formato)
 ```
 
 ```pyde
