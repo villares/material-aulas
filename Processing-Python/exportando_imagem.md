@@ -163,7 +163,7 @@ def salva_arquivo(selection):
         print("operação de salvar cancelada")
 ```
 
-![](/home/villares/Documentos/GitHub/material-aulas/Processing-Python/assets/exportando_parcial_1.png)
+![](assets/exportando_parcial_1.png)
 
 Note o texto em vermelho que só aparece no arquivo salvo.
 
