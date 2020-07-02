@@ -99,3 +99,8 @@ Para criar uma *issue*:
 
   - [Tutorial em português](https://blog.da2k.com.br/2014/01/19/manter-repositorio-github-forkado-sincronizado-com-o-original/)
   - Mais informações em inglês [aqui](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork) e [aqui](https://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository)
+  
+### Contribua sobre como contribuir
+
+- Meta-contribuição! Dá pra melhorar esta página sobre como melhorar o material.
+
