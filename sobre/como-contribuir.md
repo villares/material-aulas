@@ -19,18 +19,19 @@ Para criar uma *issue*:
 ### Maneiras de usar o GitHub
  - use a interface web <- *comece agora mesmo usando o navegador!*
  - ou baixe o GitHub Desktop: [MacOS / Window](https://desktop.github.com/) ou [Linux](https://github.com/shiftkey/desktop)
-    [falta um link para um guia para iniciantes em português]s
+    [falta um link para um guia para iniciantes em português]
  - ou trabalhe com `git` no terminal/linha de comando se preferir.
     [falta um link para um guia para iniciantes em português]
 
 ### Para propor correções ou acrescentar novos materiais
-[FALTA POR EXPLICAÇÕES AMPLIADAS COM SCREENSHOTS!]
+[MERECIA EXPLICAÇÕES AMPLIADAS COM SCREENSHOTS!]
 - faça um _fork_ (que é uma cópia deste repositório com o material que vai ficar na sua conta do GitHub, e é onde você vai fazer as contribuições)
-- crie um _branch_ (_branch_ é uma espécie versão alternativa ou variante de um projeto, algo como: 'melhoria-descrição-abc')
-- modifique arquivos (usando o botão com o lápis na interface web do GitHub)
-- suba arquivos (visite a pasta do repositório onde vai ficar o arquivo e o arraste sobre a janela do navegador)
-- crie arquivos Markdown (.md), use seu editor de código preferido e suba, ou use o botão **Create New File** na interface web do GitHub. Como se escreve markdown ou [GFM](https://github.github.com/gfm/)? 
-   - guias de markdown em português:
+- crie um _branch_ (_branch_ é uma etiqueta que marca alternativas ou variantes de um projeto, use algo como: 'melhoria-descrição-abc')
+- modifique arquivos, usando o botão com o lápis na interface web do GitHub (ou com editor no *clone* do seu computador... e dê commit & push...)
+- suba arquivos (na interface web, visite a pasta do repositório onde vai ficar o arquivo e o arraste sobre a janela do navegador)
+- crie arquivos Markdown (.md), use seu editor de código preferido e suba, ou use o botão **Create New File** na interface web.
+   - Como se escreve markdown ou [GFM](https://github.github.com/gfm/)? 
+   - Guias de markdown em português:
      * [github.com/luong-komorebi/Markdown-Tutorial](https://github.com/luong-komorebi/Markdown-Tutorial/blob/master/README_pt-BR.md#syntax)
      * [github.com/leticiadasilva/notas-de-aula](https://github.com/leticiadasilva/notas-de-aula/blob/master/markdown/anota%C3%A7oes-markdown.md)
    - para fazer links externos `[texto](url)`
@@ -47,7 +48,7 @@ Para criar uma *issue*:
      - Seja claro no título e descrição descrevendo a natureza da contribuição
   - Como é a conversa com a pessoa mantenedora? Ela pode te pedir modificações/correções!
   - **Importante: Não dê `CLOSE` quando terminar de fazer as modificações pedidas (isso seria desistir do PR)!!!**
-  - [FALTA ESCREVER MELHOR] Como não se frustrar: como calibrar as suas expectativas.
+  - [FALTA ESCREVER MELHOR - Como não se frustrar: como calibrar as suas expectativas.]
   
  ### Exemplos de contribuições úteis
 
@@ -64,7 +65,7 @@ Para criar uma *issue*:
 
 - Usando a interface web
 
- `[TODO]`
+ `[Não rola muito legal - a ver]`
 
 - Usando a interface da linha de comando (aponte o terminal para a pasta local do repositório):
 
