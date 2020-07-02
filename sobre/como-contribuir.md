@@ -1,10 +1,9 @@
+## Como contribuir com este material didático
 
-
-# Como contribuir com este material didático
-
-> Ao contribuir você está doando a propriedade intelectual do material produzido por você para um projeto iniciado por Alexandre B A Villares que conta com as licenças GPL v3 para o código e CC BY-NC-SA 4.0 para texto e imagens como descrito na página inicial. Seja muito cuidadoso caso pretenda adaptar materiais de outras fontes, discutindo se isso é apropriado com as pessoas mantenedoras.
+> Ao contribuir você está doando a propriedade intelectual do material produzido para este projeto iniciado por Alexandre B A Villares, que conta com as licenças GPL v3 para o código e CC BY-NC-SA 4.0 para texto e imagens, como descrito na página inicial. Seja muito cuidadoso caso pretenda adaptar materiais de outras fontes, discutindo se isso é apropriado com as pessoas mantenedoras.
 
 ### Passo 0
+
 Crie uma conta no GitHub
 - Como criar uma conta no GitHub?
   [Preencha este formulário](https://github.com/join)
@@ -19,7 +18,7 @@ Para criar uma *issue*:
   - leia com cuidado o material para identificar lacunas ou problemas;
   - veja se não tem uma _issue_ parecida já (você pode comentar nela algum detalhe);
   - clique no botão verde [**New issue**](https://github.com/villares/material-aulas/issues/new).
-  
+
 ### Maneiras de usar o GitHub
  - use a interface web <- *comece agora mesmo usando o navegador!*
  - ou baixe o GitHub Desktop: [MacOS / Window](https://desktop.github.com/) ou [Linux](https://github.com/shiftkey/desktop)
@@ -100,7 +99,7 @@ Para criar uma *issue*:
 
   - [Tutorial em português](https://blog.da2k.com.br/2014/01/19/manter-repositorio-github-forkado-sincronizado-com-o-original/)
   - Mais informações em inglês [aqui](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork) e [aqui](https://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository)
-  
+
 ### Contribua sobre como contribuir
 
 - Meta-contribuição! Dá pra melhorar esta página sobre como melhorar o material.
