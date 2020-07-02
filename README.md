@@ -127,7 +127,7 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
 ---
 #### Licenças
 
-**Texto e imagens: ** Alexandre B A Villares - [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR), exceto onde indicado, confira atribuições em cada página para materiais adaptados/remixados de outras fontes. Agradeço aos colaboradores do repositório que doam suas contribuições nestes termos!
+**Texto e imagens:** Alexandre B A Villares - [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR), exceto onde indicado, confira atribuições em cada página para materiais adaptados/remixados de outras fontes. Agradeço aos colaboradores do repositório que doam suas contribuições nestes termos!
 
 **Código:** GNU GPL v3.0, exceto onde indicado por questões de compatibilidade (MIT/Apache e etc.)
 
