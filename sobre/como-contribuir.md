@@ -1,40 +1,43 @@
-## Como contribuir com este material didático
+# Como contribuir com este material didático
 
 > Ao contribuir você está doando a propriedade intelectual do material produzido para este projeto iniciado por Alexandre B A Villares, que conta com as licenças GPL v3 para o código e CC BY-NC-SA 4.0 para texto e imagens, como descrito na página inicial. Tenha cuidado caso pretenda adaptar materiais de outras fontes, discutindo se isso é apropriado com as pessoas mantenedoras.
 
-### Passo 0
+## Passo 0
 
 Crie uma conta no GitHub
 - Como criar uma conta no GitHub?
   [Preencha este formulário](https://github.com/join)
 
-### Issue tracking (acompanhamento de problemas ou questões)
+## Issue tracking (acompanhamento de problemas ou questões)
 
 As chamadas _issues_ são registros de problemas ou desejos de aprimoramento em um projeto. Este projeto tem suas *issues* aqui: [github.com/villares/material-aulas/issues](https://github.com/villares/material-aulas/issues)
 
 **Criar uma *issue* pode ser já uma boa contribuição para um projeto.**
 
 Para criar uma *issue*:
-  - leia com cuidado o material para identificar lacunas ou problemas;
-  - veja se não tem uma _issue_ parecida já (você pode comentar nela algum detalhe);
-  - clique no botão verde [**New issue**](https://github.com/villares/material-aulas/issues/new).
+
+- leia com cuidado o material para identificar lacunas ou problemas;
+- veja se não tem uma _issue_ parecida já (você pode comentar nela algum detalhe);
+- clique no botão verde [**New issue**](https://github.com/villares/material-aulas/issues/new).
 
 ### Maneiras de usar o GitHub
- - use a interface web <- *comece agora mesmo usando o navegador!*
- - ou baixe o GitHub Desktop: [MacOS / Window](https://desktop.github.com/) ou [Linux](https://github.com/shiftkey/desktop)
+
+- use a interface web <- *comece agora mesmo usando o navegador!*
+- ou baixe o GitHub Desktop: [MacOS / Window](https://desktop.github.com/) ou [Linux](https://github.com/shiftkey/desktop)
     [falta um link para um guia para iniciantes em português]
- - ou trabalhe com `git` no terminal/linha de comando se preferir.
+- ou trabalhe com `git` no terminal/linha de comando se preferir.
     [falta um link para um guia para iniciantes em português]
 
 ### Para propor correções ou acrescentar novos materiais
 [MERECIA EXPLICAÇÕES AMPLIADAS COM SCREENSHOTS!]
+
 - faça um _fork_ (que é uma cópia deste repositório com o material que vai ficar na sua conta do GitHub, e é onde você vai fazer as contribuições)
 - crie um _branch_ (_branch_ é uma etiqueta que marca alternativas ou variantes de um projeto, use algo como: 'melhoria-descrição-abc')
 - modifique arquivos, usando o botão com o lápis na interface web do GitHub (ou com editor no *clone* do seu computador... e dê commit & push...)
 - suba arquivos (na interface web, visite a pasta do repositório onde vai ficar o arquivo e o arraste sobre a janela do navegador)
 - crie arquivos Markdown (.md), use seu editor de código preferido e suba, ou use o botão **Create New File** na interface web.
-   - Como se escreve markdown ou [GFM](https://github.github.com/gfm/)? 
-   - Guias de markdown em português:
+  - Como se escreve markdown ou [GFM](https://github.github.com/gfm/)? 
+  - Guias de markdown em português:
      * [github.com/luong-komorebi/Markdown-Tutorial](https://github.com/luong-komorebi/Markdown-Tutorial/blob/master/README_pt-BR.md#syntax)
      * [github.com/leticiadasilva/notas-de-aula](https://github.com/leticiadasilva/notas-de-aula/blob/master/markdown/anota%C3%A7oes-markdown.md)
    - para fazer links externos `[texto](url)`
@@ -53,18 +56,18 @@ Para criar uma *issue*:
   - **Importante: Não dê `CLOSE` quando terminar de fazer as modificações pedidas (isso seria desistir do PR)!!!**
   - [FALTA ESCREVER MELHOR - Como não se frustrar: como calibrar as suas expectativas.]
   
- ### Exemplos de contribuições úteis
+### Exemplos de contribuições úteis
 
- - Procure um material que tem um código exemplo significativo mas que não mostra o resultado visual do código: 
+- Procure um material que tem um código exemplo significativo mas que não mostra o resultado visual do código: 
      - copiar no seu IDE o código, e ver se funciona (se não funcionar, pesquisar e possivelmente abrir um issue);
      - capturar o resultado (de preferência em .png);
      - subir a imagem para o seu *fork* deste repositório (de preferência em um *branch* como 'acrescentando-imagens-XXX');
      - editar o arquivo .md com o código acrescentando a referência a imagem `![nome da imagem](assets/imagem-xxx.png)`;
      - fazer um _Pull Request_ descrevendo a sua contribuição!
 
- - Procure uma issue que você acha que consegue "resolver", escrevendo um material novo ou corrigindo um existente.
+- Procure uma issue que você acha que consegue "resolver", escrevendo um material novo ou corrigindo um existente.
    
- ### Como atualizar o seu fork em relação ao repositório de origem quando este já "evoluiu"?
+### Como atualizar o seu fork em relação ao repositório de origem quando este já "evoluiu"?
 
 - Usando a interface web
 
