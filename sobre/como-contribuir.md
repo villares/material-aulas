@@ -1,4 +1,7 @@
+
 # Como contribuir com este material didático
+
+<sub>Ao contribuir você está doando a propriedade intelectual do material produzido por você para um projeto iniciado por Alexandre B A Villares que conta com as licenças GPL v3 para o código e CC BY-NC-SA 4.0 para texto e imagens como descrito na página inicial. Seja muito cuidadoso caso pretenda adaptar materiais de outras fontes, discutindo se isso é apropriado com as pessoas mantenedoras.</sub>
 
 ### Passo 0
 Crie uma conta no GitHub
