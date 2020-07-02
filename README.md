@@ -1,4 +1,3 @@
-
 ---
 
 ## material para cursos e oficinas ([repositório](https://github.com/villares/material-aulas/))
@@ -7,7 +6,7 @@ Para aprender a programar usando **Processing modo Python**, uma ferramenta livr
 
 ### Como colaborar e contribuir?
 
-Este material didático é aberto. Leia as [instruções para colaborar com este repositório](/como-contribuir.md) e abra [*issues*](https://github.com/villares/material-aulas/issues) apontando problemas, sugerindo assuntos e melhorias, ou contribua com *Pull Requests* para o repositório.
+Este material didático é aberto. Leia as [instruções para colaborar com este repositório](/sobre/como-contribuir.md) e abra [*issues*](https://github.com/villares/material-aulas/issues) apontando problemas, sugerindo assuntos e melhorias, ou contribua com *Pull Requests* para o repositório.
 
  Você pode também [fazer pequenas doações](https://gumroad.com/villares)! 
 
@@ -98,9 +97,10 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
 - [`caneta_automatica_py`](caneta_automatica) - Módulo para desenhar inspirado na tartaruga de Logo
 - [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
 
-### Referências
+### Mais referências e material de consulta
 
-- [py.processing.org/reference](http://py.processing.org/reference)
+- [py.processing.org/reference](http://py.processing.org/reference) - Referência do Processing modo Python
+- [processing.org/reference](http://processing.org/reference) - Tem algumas páginas à mais e coisas que funcionam no Python
 
 #### Outros recursos introdutórios abertos
 
@@ -120,5 +120,14 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
 - [Guia de programação em Processing](https://www.ranoya.com/aulas/designgenerativo/playgroundDocs/introProcessing.php?theme=dgen&elementos=processing), Prof. Guilherme Ranoya (UFPE).
 - [Tradução da referência da linguagem - versão 1.0 (2005)](http://www.dainf.ct.utfpr.edu.br/~merkle/processing/reference/ptBR/index.html), Prof. Luiz Merkle (UFTPR)
 
+##### Processando-Processing
+
+- [Ajude a traduzir mais coisas!](https://github.com/arteprog/processando-processing)
+
 ---
-Texto e imagens: CC BY-NC-SA 4.0; Código: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
+#### Licenças
+
+**Texto e imagens: ** Alexandre B A Villares - [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR), exceto onde indicado, confira atribuições em cada página para materiais adaptados/remixados de outras fontes. Agradeço aos colaboradores do repositório que doam suas contribuições nestes termos!
+
+**Código:** GNU GPL v3.0, exceto onde indicado por questões de compatibilidade (MIT/Apache e etc.)
+
