@@ -76,7 +76,7 @@ Para criar uma *issue*:
 
 - Usando a interface da linha de comando (aponte o terminal para a pasta local do repositório):
 
- ```shell
+```shell
  # Primeiro você precisa adicionar como remote o repositório original
  
  git remote add upstream https://github.com/usuario/nome-do-repositorio.git
@@ -99,10 +99,11 @@ Para criar uma *issue*:
  # precisa "forçar" o push com as alterações. o -f (de force) só precisa ser usado uma vez após o rebase
  
  git push -f origin master
- ```
+ 
+```
 
-  - [Tutorial em português](https://blog.da2k.com.br/2014/01/19/manter-repositorio-github-forkado-sincronizado-com-o-original/)
-  - Mais informações em inglês [aqui](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork) e [aqui](https://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository)
+- [Tutorial em português](https://blog.da2k.com.br/2014/01/19/manter-repositorio-github-forkado-sincronizado-com-o-original/)
+- Mais informações em inglês [aqui](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork) e [aqui](https://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository)
 
 ### Contribua sobre como contribuir
 
