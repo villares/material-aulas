@@ -6,7 +6,7 @@ Para aprender a programar usando **Processing modo Python**, uma ferramenta livr
 
 ### Como colaborar e contribuir?
 
-Este material didático é aberto. Leia as [instruções para colaborar com este repositório](/sobre/como-contribuir.md) e abra [*issues*](https://github.com/villares/material-aulas/issues) apontando problemas, sugerindo assuntos e melhorias, ou contribua com *Pull Requests* para o repositório.
+Este material didático é aberto. Leia as [instruções para colaborar com este repositório](https://github.com/villares/material-aulas/blob/master/sobre/como-contribuir.md) e abra [*issues*](https://github.com/villares/material-aulas/issues) apontando problemas, sugerindo assuntos e melhorias, ou contribua com *Pull Requests* para o repositório.
 
  Você pode também [fazer pequenas doações](https://gumroad.com/villares)! 
 
