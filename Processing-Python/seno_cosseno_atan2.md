@@ -46,8 +46,6 @@ O seno é o que começa à esquerda no **0**, na meia altura da tela, e o cossen
 
 Desta vez o exemplo usa `translate()` e `scale()` para deslocar e inverter o eixo Y. E o X vai de **0** a aproximadamente **2π** mutiplicado por **100**
 
-
-
 ![](assets/seno_cosseno.png)
 
 ```python
@@ -257,3 +255,45 @@ def seta(xa, ya, xb, yb):
     line(xb, yb, xhb, yhb)
 ```
 
+#### Apontando para o mouse
+
+Ampliando a estratégia mostrada na segunda versão da seta, em que a coordenada dos pontos são calculados usando seno e cosseno, é possível fazer setas de tamanho fixo, apontadas para o mouse. O ângulo continua sendo providenciado pela função do arco tangente.
+
+
+```python
+def setup():
+    size(400, 400)
+    strokeWeight(2)
+    noCursor()  # desativa a setinha do mouse
+    
+def draw():
+    background(200)
+    for i in range(10):
+        x = 20 + i * 40
+        for j in range(10):
+            y = 20 + j * 40
+            if dist(x, y, mouseX, mouseY) > 35:
+                seta_curta(x, y,
+                           mouseX, mouseY,
+                           35)  
+    
+,
+def seta_curta(xa, ya, xb, yb, tam):
+    d = dist(xa, ya, xb, yb)
+    a = atan2(yb - ya, xb - xa)
+    tc = tam / 4 * sqrt(2)
+    xnb = xa + cos(a) * tam
+    ynb = ya + sin(a) * tam
+    line(xa, ya, xnb, ynb)
+    
+    xha = xnb + cos(a + QUARTER_PI + PI) * tc
+    yha = ynb + sin(a + QUARTER_PI + PI) * tc
+    xhb = xnb + cos(a - QUARTER_PI + PI) * tc
+    yhb = ynb + sin(a - QUARTER_PI + PI) * tc
+    line(xnb, ynb, xha, yha)
+    line(xnb, ynb, xhb, yhb)
+```
+
+![](assets/seta_curta.gif)
+
+Note que ocultei a setinha do mouse com `noCursor()`, é possível voltar com o cursor, e escolher outros formatos ou até uma imagem como cursor, consulte a documentação de [`cursor()`](https://py.processing.org/reference/cursor.html).
