@@ -19,21 +19,20 @@ Os primeiros exemplos a seguir são para visualizar como se dá o comportamento 
 
 Para produzir a imagem acima, criamos um laço repetição que produz um `x` de **0** a **720** , convertemos esse `x`num ângulo em radianos e dividimos por **2**, de forma a obter ângulos de **0** a **2π** radianos (ou **0°** a **360°**). 
 
-Vamos  multiplicar o valor do seno e do cosseno do ângulo pela metade da altura da tela (aproveitando para inverter o sinal pois o Y do Processing cresce para baixo e estamos acostumados a ver os gráficos com a parte positiva para cima) . Para deslocar a origem para baixo somamos esse mesmo valor de metade da altura da tela.
+Vamos  multiplicar o valor do seno e do cosseno do ângulo pela metade da altura da tela (aproveitando para inverter o sinal pois o eixo Y do Processing cresce para baixo e estamos acostumados a ver os gráficos com a parte positiva para cima). Para deslocar a origem para baixo somamos esse mesmo valor de metade da altura da tela.
 
 ```python
-def setup():
-    size(720, 229)  # 360×2, 4 radianos
-    for x in range(width):
-        meia_altura = height / 2  
-        ang = radians(x / 2.0)  # 720 pixels -> 360 graus
-        seno = sin(ang) * -meia_altura + meia_altura        
-        point(x, seno)
-        cosseno = cos(ang) * -meia_altura + meia_altura
-        point(x, cosseno)
+size(720, 229)  # 360×2, 4 radianos
+for x in range(width):
+    meia_altura = height / 2  
+    ang = radians(x / 2.0)  # 720 pixels -> 360 graus
+    seno = sin(ang) * -meia_altura + meia_altura        
+    point(x, seno)
+    cosseno = cos(ang) * -meia_altura + meia_altura
+    point(x, cosseno)
 ```
 
-Qual é o seno e qual o cosseno?
+Qual é o seno e qual o cosseno? Veja o resultado das instruções a seguir.
 
 ```python
 print(sin(0))  # exibe no console: 0.0
@@ -130,19 +129,16 @@ Com seno, cosseno, o raio e coordenadas do centro, é possível calcular o X e Y
 ![](assets/seno_cosseno_p.png)
 
 ```python
-def setup():
-    size(400, 400)
-    x_centro, y_centro = width / 2, height / 2
-    raio = 180
-    for graus in range(0, 360, 18):  # cada 18°
-        ang = radians(graus)
-        x = x_centro + raio * cos(ang) 
-        y = y_centro + raio * sin(ang) 
-        strokeWeight(5)
-        point(x, y)
+size(400, 400)
+x_centro, y_centro = width / 2, height / 2
+raio = 180
+for graus in range(0, 360, 18):  # cada 18°
+    ang = radians(graus)
+    x = x_centro + raio * cos(ang) 
+    y = y_centro + raio * sin(ang) 
+    strokeWeight(5)
+    point(x, y)
 ```
-
-
 
 ##### Uma versão animada e com algumas indicações
 
@@ -227,15 +223,15 @@ def draw():
     seta(100, 200, 300, 300)    
 
 def seta(xa, ya, xb, yb):
-    d = dist(xa, ya, xb, yb)
-    a = atan2(yb - ya, xb - xa)
+    tam_seta = dist(xa, ya, xb, yb)
+    ang = atan2(yb - ya, xb - xa)
     line(xa, ya, xb, yb)
     pushMatrix() 
     translate(xb, yb)
-    rotate(a)
-    tc = d / 10
-    line(0, 0, -tc, tc)
-    line(0, 0, -tc, -tc)
+    rotate(ang)
+    tam_ponta = tam_seta / 10 
+    line(0, 0, -tam_ponta, tam_ponta)
+    line(0, 0, -tam_ponta, -tam_ponta)
     popMatrix()
 ```
 
@@ -243,16 +239,16 @@ Mas, você pode querer calcular você mesma  as coordenadas dos vértices da cab
 
 ```python
 def seta(xa, ya, xb, yb):
-    d = dist(xa, ya, xb, yb)
-    a = atan2(yb - ya, xb - xa)
+    tam_seta = dist(xa, ya, xb, yb)
+    ang = atan2(yb - ya, xb - xa)
     line(xa, ya, xb, yb)
-    tc = d / 10 * sqrt(2)
-    xha = xb + cos(a + QUARTER_PI + PI) * tc
-    yha = yb + sin(a + QUARTER_PI + PI) * tc
-    xhb = xb + cos(a - QUARTER_PI + PI) * tc
-    yhb = yb + sin(a - QUARTER_PI + PI) * tc
-    line(xb, yb, xha, yha)
-    line(xb, yb, xhb, yhb)
+    tam_ponta = tam_seta / 10 * sqrt(2)
+    xpe = xb + cos(ang + QUARTER_PI + PI) * tam_ponta
+    ype = yb + sin(ang + QUARTER_PI + PI) * tam_ponta
+    # line(xb, yb, xpe, ype) # parte esquerda da ponta
+    xpd = xb + cos(ang - QUARTER_PI + PI) * tam_ponta
+    ypd = yb + sin(ang - QUARTER_PI + PI) * tam_ponta
+    line(xb, yb, xpd, ypd) # parte direita da ponta
 ```
 
 #### Apontando para o mouse
@@ -273,25 +269,20 @@ def draw():
         for j in range(10):
             y = 20 + j * 40
             if dist(x, y, mouseX, mouseY) > 35:
-                seta_curta(x, y,
-                           mouseX, mouseY,
-                           35)  
+                seta_tam_fixo(x, y, mouseX, mouseY, 35)  
     
-,
-def seta_curta(xa, ya, xb, yb, tam):
-    d = dist(xa, ya, xb, yb)
-    a = atan2(yb - ya, xb - xa)
-    tc = tam / 4 * sqrt(2)
-    xnb = xa + cos(a) * tam
-    ynb = ya + sin(a) * tam
-    line(xa, ya, xnb, ynb)
-    
-    xha = xnb + cos(a + QUARTER_PI + PI) * tc
-    yha = ynb + sin(a + QUARTER_PI + PI) * tc
-    xhb = xnb + cos(a - QUARTER_PI + PI) * tc
-    yhb = ynb + sin(a - QUARTER_PI + PI) * tc
-    line(xnb, ynb, xha, yha)
-    line(xnb, ynb, xhb, yhb)
+def seta_tam_fixo(xa, ya, xb, yb, tam):
+    ang = atan2(yb - ya, xb - xa)
+    tam_ponta = tam / 4 * sqrt(2)
+    xp = xa + cos(ang) * tam
+    yp = ya + sin(ang) * tam
+    line(xa, ya, xp, yp)  # corpo com tamanho fixo
+    xpe = xp + cos(ang + QUARTER_PI + PI) * tam_ponta
+    ype = yp + sin(ang + QUARTER_PI + PI) * tam_ponta
+    line(xp, yp, xpe, ype)  # parte esquerda da ponta
+    xpd = xp + cos(ang - QUARTER_PI + PI) * tam_ponta
+    ypd = yp + sin(ang - QUARTER_PI + PI) * tam_ponta
+    line(xp, yp, xpd, ypd)  # parte direita da ponta
 ```
 
 ![](assets/seta_curta.gif)
