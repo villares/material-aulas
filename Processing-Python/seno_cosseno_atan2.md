@@ -162,9 +162,9 @@ def draw():
     y = y_centro + raio * sin(ang)    
     strokeWeight(3)
     stroke(0, 200, 200)
-    line(x, y_centro, x, y)  # linha seno
+    line(x, y_centro, x, y)  # linha do seno
     stroke(200, 200, 0)
-    line(x_centro, y, x, y)  # linh cosseno
+    line(x_centro, y, x, y)  # linha do cosseno
     strokeWeight(5)
     stroke(255)
     point(x, y)  # o ponto no círculo
@@ -192,7 +192,7 @@ def indicacoes():
 
 ###  A função do arco tangente
 
-#### Como descobrir o ângulo de um segmento de reta?
+#### Como descobrir a inclinação de um segmento de reta?
 
 A função `atan()` (arco tangente) devolve o ângulo a partir da tangente desse ângulo, e é possível calcular a tangente dividindo o cateto oposto pelo cateto adjacente, no caso os lados paralelos aos eixos, do triângulo formado pelos pontos de uma 'linha' (como chamamos informalmente um segmento de reta definido por dois pontos). 
 
@@ -245,7 +245,7 @@ def seta(xa, ya, xb, yb):
     tam_ponta = tam_seta / 10 * sqrt(2)
     xpe = xb + cos(ang + QUARTER_PI + PI) * tam_ponta
     ype = yb + sin(ang + QUARTER_PI + PI) * tam_ponta
-    # line(xb, yb, xpe, ype) # parte esquerda da ponta
+    line(xb, yb, xpe, ype) # parte esquerda da ponta
     xpd = xb + cos(ang - QUARTER_PI + PI) * tam_ponta
     ypd = yb + sin(ang - QUARTER_PI + PI) * tam_ponta
     line(xb, yb, xpd, ypd) # parte direita da ponta
