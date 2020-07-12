@@ -14,7 +14,7 @@ Podemos visualizá-los como pontos ou como segmentos de reta orientados (como um
 
 #### `PVector`
 
-Os vetores 2-D e 3-D, de duas e três dimensões, podem ser expressos no Processing como objetos da classe `PVector`, construídos com `PVector(x, y)`e `PVector(x, y, z)`, respectivamente. E, acredito que você vai concordar em breve, eles vão facilitar muito fazer operações, contas e transformações, com vetores, o que é especialmente útil para animar partículas e calcular diversas geometrias.
+Os vetores 2-D e 3-D, de duas e três dimensões, podem ser expressos no Processing como objetos da classe `PVector`, construídos com `PVector(x, y)`e `PVector(x, y, z)`, respectivamente. Acredito que em breve você vai concordar comigo que essa classe vai facilitar muito fazer operações, contas e transformações, com vetores, o que é especialmente útil para animar partículas e calcular diversas geometrias.
 
 
 
