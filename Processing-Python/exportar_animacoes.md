@@ -143,6 +143,8 @@ def draw():
     gif_export(GifMaker, frames=250)
 ```
     
+![exemplo de exportação de gif](assets/exported.gif) 
+    
 ### C. Biblioteca *Video Export*
     
 A biblioteca *Video Export* criada por Abe Pazos [@hamoid](https://github.com/hamoid) pode ser baixada diretamente pelo IDE, e vem com vários exemplos. Será necessário instalar a ferramenta `ffmpeg` disponível em [www.ffmpeg.org](https://www.ffmpeg.org/)
