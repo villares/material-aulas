@@ -1,7 +1,7 @@
 
 # Como contribuir com este material
 
-> Ao contribuir você está doando a propriedade intelectual do material produzido para este projeto iniciado por Alexandre B A Villares, que conta com as licenças GPL v3 para o código e CC BY-NC-SA 4.0 para texto e imagens, como descrito na página inicial. Tenha cuidado caso pretenda adaptar materiais de outras fontes, discutindo se isso é apropriado com as pessoas mantenedoras.
+> **Antes de contribuir com *Pull Request*, converse em uma  issue!** Ao contribuir você está doando a propriedade intelectual do material produzido para este projeto iniciado por Alexandre B A Villares, que conta com as licenças GPL v3 para o código e CC BY-NC-SA 4.0 para texto e imagens, como descrito na página inicial. Tenha cuidado caso pretenda adaptar materiais de outras fontes, discutindo se isso é apropriado com as pessoas mantenedoras.
 
 ## Passo 0
 
@@ -30,8 +30,8 @@ Para criar uma *issue*:
     [falta um link para um guia para iniciantes em português]
 
 ### Para propor correções ou acrescentar novos materiais
-[MERECIA EXPLICAÇÕES AMPLIADAS COM SCREENSHOTS!]
 
+- **Sempre converse antes com as ṕessoas mantenedoras por meio de uma issue antes de propor uma contribuição (*Pull Request*).**
 - faça um _fork_ (que é uma cópia deste repositório com o material que vai ficar na sua conta do GitHub, e é onde você vai fazer as contribuições)
 - crie um _branch_ (_branch_ é uma etiqueta que marca alternativas ou variantes de um projeto, use algo como: 'melhoria-descrição-abc')
 - modifique arquivos, usando o botão com o lápis na interface web do GitHub (ou com editor no *clone* do seu computador... e dê commit & push...)
