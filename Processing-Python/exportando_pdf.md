@@ -14,51 +14,9 @@ Veja nos exemplos abaixo as llinhas de código que você precisa acrescentar ao 
 
 ##  PDF simples
 
-### Salvando a acumulação na tela de vários frames
-
-Não é possível capturar diretamente o produto da acumulação do desenho na tela, como acontece com a exportação de uma imagem raster que fazemos usando `saveFrame()`, mas é possível gravar o PDF durante vários frames, acumulando os desenhos produzidos no arquivo e na tela ao mesmo tempo. Neste exemplo você  'liga' e 'desliga'  a gravação de frames no PDF usando a tecla 'p'.        
-
-```python
-add_library('pdf')
-
-gravando_pdf = False  # 'flag'/indicador de gravação do PDF
-
-def setup():
-    size(500, 500)
-    background(0)
-
-def draw():
-    colorMode(HSB)    # se puser ajustes no setup não entram na gravação!
-    rectMode(CENTER)  # fazendo o PDF ficar diferente do resultado na tela
-    if mousePressed:
-        fill(random(255), 200, 200, 100)
-        rect(mouseX, mouseY, 50, 50)
-
-    if not gravando_pdf:
-        textSize(18)
-        fill(255)
-        text(u"Não está gravando o PDF\n" + 
-             u"aperte 'p' para começar e parar a gravação",
-             20, 20)
-
-def keyPressed():
-    global gravando_pdf 
-    if key == "p":                        # A tecla 'p' muda o 'flag' de gravação do PDF
-        gravando_pdf = not gravando_pdf   # alternando o seu estado entre True e False
-        if gravando_pdf:
-            beginRecord(PDF, "####.pdf")  # inicia a gravação do PDF
-            background(0)                 # sem isso, fundo branco... 
-            print(u"iniciando gravação de PDF: {:04n}".format(frameCount))
-        else:
-            endRecord()                   # encerra a gravação do PDF
-            print(u"encerrando gravação de PDF")
-```
-[Exemplo de PDF com vários frames](assets/exemplo2.pdf)
-
-
 ### Salvando um frame único do `draw()`, sem acumulação
 
-A estratégia a seguir também permite a interatividade, com o uso de `draw()`, mas exige que desenho seja realizado inteiro em cada frame.
+A estratégia a seguir permite a interatividade, com o uso de `draw()`, mas exige que desenho seja realizado inteiro em cada frame.
 
 ```python
 add_library('pdf')
@@ -114,6 +72,49 @@ def keyPressed():
 ```
 
 [Exemplo de PDF com um frame](assets/exemplo.pdf)
+
+### Salvando a acumulação na tela de vários frames
+
+Não é possível capturar diretamente o produto da acumulação do desenho na tela, como acontece com a exportação de uma imagem raster que fazemos usando `saveFrame()`, mas é possível gravar o PDF durante vários frames, acumulando os desenhos produzidos no arquivo e na tela ao mesmo tempo. Neste exemplo você  'liga' e 'desliga'  a gravação de frames no PDF usando a tecla 'p'.        
+
+```python
+add_library('pdf')
+
+gravando_pdf = False  # 'flag'/indicador de gravação do PDF
+
+def setup():
+    size(500, 500)
+    background(0)
+
+def draw():
+    colorMode(HSB)    # se puser ajustes no setup não entram na gravação!
+    rectMode(CENTER)  # fazendo o PDF ficar diferente do resultado na tela
+    if mousePressed:
+        fill(random(255), 200, 200, 100)
+        rect(mouseX, mouseY, 50, 50)
+
+    if not gravando_pdf:
+        textSize(18)
+        fill(255)
+        text(u"Não está gravando o PDF\n" + 
+             u"aperte 'p' para começar e parar a gravação",
+             20, 20)
+
+def keyPressed():
+    global gravando_pdf 
+    if key == "p":                        # A tecla 'p' muda o 'flag' de gravação do PDF
+        gravando_pdf = not gravando_pdf   # alternando o seu estado entre True e False
+        if gravando_pdf:
+            beginRecord(PDF, "####.pdf")  # inicia a gravação do PDF
+            background(0)                 # sem isso, fundo branco... 
+            print(u"iniciando gravação de PDF: {:04n}".format(frameCount))
+        else:
+            endRecord()                   # encerra a gravação do PDF
+            print(u"encerrando gravação de PDF")
+```
+[Exemplo de PDF com vários frames](assets/exemplo2.pdf)
+
+
 
 ## Outras estratégias
 
