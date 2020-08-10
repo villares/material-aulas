@@ -2,7 +2,7 @@
 
 É possível desenhar em um objeto especial, uma espécie de tela virtual, criando superfícies *PGraphics* com a função [createGraphics()](https://py.processing.org/reference/createGraphics.html), em vez de desenhar diretamente na tela em uma estratégia conhecida como _offscreen buffer_. Depois é possível mostrar ou não essa imagem na área de desenho normal com a função `image()` (a mesma que usamos para mostrar uma imagem externa carregada carregada com `loadImage()`, uma *PImage*).
 
-**Atenção:** Não esqueça de usar `.beginDraw()` e `.endDraw()` ou você será brindado com uma `NullPointerExeption`
+**Atenção:** Não esqueça de usar `.beginDraw()` e `.endDraw()` ou você será brindado com uma `NullPointerException`
 
 Algumas vantagens dessa estratégia podem ser:
 - Desenho cumulativo em uma camada enquanto se anima elementos (com limpeza do frame) em outra camada;
