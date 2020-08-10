@@ -56,6 +56,49 @@ def keyPressed():
 
 ```
 
+#### Permitindo que a pessoa escolha onde salvar
+
+```python
+from java.io import File
+
+add_library('svg')
+
+save_frame = False
+fator_escala = 3
+
+def setup():
+    size(400, 400)
+
+def draw():
+    global save_frame
+    if (save_frame):
+        beginRecord(output)
+        output.scale(fator_escala)    
+    
+    # Desenho aqui
+    background(200, 255, 255)
+    rect(100, 100, 100, 100)
+
+    if save_frame:
+        endRecord()
+        save_frame = False
+
+def salvaSVG(selection, ):
+     if selection == None:
+        println("Salvar cancelado.")
+     else:
+        println("Salvando em: " + selection.getAbsolutePath())
+        output = createGraphics(int(width * fator_escala),
+                                int(height * fator_escala),
+                                SVG, selection.getAbsolutePath())
+        save_frame = True
+    
+def keyPressed():
+    if key == 's':
+        sugestao = File("exemplo.svg")
+        selectOutput("Salvar:", "salvaSVG", sugestao)
+```
+
 ### Limitações
 
 O que não funciona quando exportamos em SVG?
