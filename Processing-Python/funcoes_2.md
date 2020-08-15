@@ -1,8 +1,7 @@
 
-## Parâmetros padrão e outras malandragens
+## Argumentos padrão
 
-
-### Parâmetros padrão
+### Argumentos opcionais em funções que conhecemos
 
 Você já reparou que a função `rect()` aceita 4, 5 ou 8 argumentos? Você pode invocar `rect()` das seguintes maneiras ([confira na referência se preferir](https://py.processing.org/reference/rect.html)):
 
@@ -19,9 +18,11 @@ fill(r, g, b)
 fill(r, g, b, alpha_opacidade)
 ```
 
-Em Python é possível obter esse mesmo tipo de comportamento em uma função que nós estamos definindo. Há mais de uma estratégia para fazer isso, vamos explorar aqui uma das mais simples.
+### Como fazer isso nas funções que definimos?
 
-Partindo do exemplo de uma função que devolve cores geradas com `random()`, cuja primeira versão era mais ou menos assim:
+Em Python é possível obter esse mesmo tipo de comportamento que vimos acima em uma função que nós estamos definindo. Há mais de uma estratégia para fazer isso, vamos explorar aqui uma das mais simples.
+
+Vamos partir do exemplo de uma função que devolve cores geradas com `random()`, cuja primeira versão era mais ou menos assim:
 
 ```python
 def cor_sorteada():
@@ -32,7 +33,7 @@ def cor_sorteada():
     return color(r, g, b)
 ```
 
-Vamos imaginar que gostaríamos de especificar um valor de opacidade (*alpha*) opcional. Caso nenhum argumento seja usado na chamada da função, `alpha` recebe um valor *default* (padrão), `alpha=None`. O que permite agir de maneira diferente com ou sem o argumento. 
+Agora imagine que gostaríamos de especificar um valor de opacidade (*alpha*) opcionalmente. Caso nenhum argumento seja usado na chamada da função, `alpha` recebe um valor *default* (padrão), `alpha=None`. O que permite agir de maneira diferente com ou sem o argumento. 
 
 ```python
 def cor_sorteada(alpha=None):
