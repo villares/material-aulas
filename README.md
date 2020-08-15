@@ -30,6 +30,7 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
 - [Declarando novas funções](Processing-Python/funcoes_py.md)
   - [Modificando as coordenadas com `translate()`, `rotate()` e mais!](Processing-Python/transformacoes_coordenadas.md)
   - [Funções recursivas](Processing-Python/recursao_py.md)
+  - [Funções com argumentos padrão (ou opcionais)](Processing-Python/funcoes_2.md)
 - [Sequências e laços de repetição (iteração com `for`)](Processing-Python/lacos_py.md)
   - [Mais sobre sequências e fatias](Processing-Python/mais_sequencias.md)
   - [Grades retangulares: filas e colunas de elementos](Processing-Python/grades.md)
