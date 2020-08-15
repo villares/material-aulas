@@ -10,7 +10,7 @@ Mas e se quisermos desenhar um polígono com 5, 6 ou com um número arbitrário 
 
 Neste caso usamos um conjuto de funções!
 
-Tudo começa com `beguinShape()`, seguido da repetição da função `vertex()` para cada vértice, terminando com `endShape()`. Quando usado com a constante `CLOSE`, `endShape(CLOSE)`, produz polígonos fechados.
+Tudo começa com `beginShape()`, seguido da repetição da função `vertex()` para cada vértice, terminando com `endShape()`. Quando usado com a constante `CLOSE`, `endShape(CLOSE)`, produz polígonos fechados.
 
 ```pyde
 size(400, 200)
