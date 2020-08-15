@@ -54,7 +54,7 @@ def cor_sorteada(alpha=255):
     r = random(256)
     g = random(256)
     b = random(256)
-    return color(r, g, b, 255)
+    return color(r, g, b, alpha)
 ```
 
 
