@@ -95,16 +95,23 @@ contem_a = 'a' in 'abacaxi'  # True
 contem_1 = 1 in [0, 1, 2, 3]  # True
 nao_contem_4 = 4 not in [0, 1, 2, 3] # True
 ```
-Para efeitos de operações lógicas e no uso com `if`, `0`, `None`, `""` (string vazio), `[]` lista vazia, ou qualquer coleção vazia, são considerados como "falso" (`False`), mas se comparados entre si não a mema coisa!
 
+Sobre o operador `is`, veja os exemplos a seguir.
 ```python
-ponto_a = (10, 10)
-ponto_b = (10, 10)
+ponto_a = (10, 20)
+ponto_b = (10, 20)
 ponto_c = ṕonto_a  # ponto_c é um outro "apelido" (alias) para o objeto que chamamos de ponto_a
 
 print(ponto_a == ponto_b)  # exibe True, as coordenadas são iguais
 print(ponto_a is ponto_b)  # exibe False, são objetos diferentes na memória 
 print(ponto_a is ponto_c)  # exibe True, são o mesmo objeto na memória
+```
+
+Para efeitos de operações lógicas e no uso com `if`, `0`, `None`, `""` (string vazio), `[]` lista vazia, ou qualquer coleção vazia, são considerados como "falso" (`False`), mas se comparados entre si não a mema coisa!
+
+```python
+if not tamanho:   # será acionado se tamanho for 0 ou None, por exemplo
+   tamanho = 10
 ```
 
 ## Assuntos relacionados
