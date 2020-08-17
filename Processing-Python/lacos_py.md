@@ -160,7 +160,7 @@ meus_pokemon[0] = "Bubasauro"  # 0 é o índice do primeiro item da lista
 print(meus_pokemon) 
 # Resutado: ["Bubasauro", "Eevee", "Luxray"]
 
-del(meus_pokemon[1])
+del meus_pokemon[1]
 print(meus_pokemon) 
 # Resutado: ["Bubasauro", "Luxray"]
 ```
