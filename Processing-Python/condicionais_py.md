@@ -108,7 +108,7 @@ contem_1 = 1 in [0, 1, 2, 3]  # True
 nao_contem_4 = 4 not in [0, 1, 2, 3] # True
 ```
 
-Para efeitos de operações lógicas, e no uso com `if`, por exemplo, os valores `0`, `None`, `""` (string vazio), `[]` lista vazia, ou qualquer coleção vazia, são considerados como "falso" (`False`), mas se comparados entre si não a mesma coisa!
+Para efeitos de operações lógicas, e no uso com `if`, por exemplo, os valores `0`, `None`, `""` (string vazio), `[]` lista vazia, ou qualquer coleção vazia, são considerados como "falso" (`False`), mas se comparados diretamente entre si não são a mesma coisa!
 
 ```python
 tamanho = 0  # ou tamanho = None
@@ -119,7 +119,7 @@ print(bool(tamanho) == False)  # exibe True
 if not tamanho:   # será acionado se tamanho for 0 ou None
    tamanho = 10
    
-print(bool(""))    # exibe False  (um string vazio)
+print(bool(""))    # exibe False  (um string, texto, vazio)
 print(bool("oi"))  # exibe True   (qualquer outro string)
 print(bool(0))     # exibe False  (o número zero)
 print(bool(2))     # exibe True   (qualquer outro número)
