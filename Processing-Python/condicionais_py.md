@@ -83,14 +83,26 @@ def draw():
 ### Alguns exemplos e considerações
 
 ```python
-maior_que_10 = 12 > 10  # True
-maior_que_10 = 5 > 10  # False
-maior_ou_ingual_a_10 = 10 >= 10  # True
-menor_que_10 = 5 < 10 # True
-menor_ou_igual_a_5 = 10 <= 5  # False
-numeros_iguais = 10 == 10.0  # True 
-numeros_diferentes = 10 != 10.0  # False
-numeros_diferentes = 10 != 11  # True
+# maior que
+n = 12
+n_maior_que_10 = n > 10  # True
+n = 5
+n_maior_que_10 = n > 10  # False
+# maior ou igual a
+n = 10
+n_maior_ou_ingual_a_10 = n >= 10  # True
+# menor que / menor ou igual a
+n = 5
+n_menor_que_10 = n < 10 # True
+n_menor_ou_igual_a_4 = n <= 4  # False
+
+# igualdade e diferença
+n, m = 10, 10.0    # n é int, m é float
+numeros_iguais = n == m  # True  10 é igual a 10.0
+numeros_diferentes = n != m  # False
+numeros_diferentes = n != 11  # True, 10 não é igual a 11
+
+# operador in (contido em, existe em)
 contem_a = 'a' in 'abacaxi'  # True
 contem_1 = 1 in [0, 1, 2, 3]  # True
 nao_contem_4 = 4 not in [0, 1, 2, 3] # True
