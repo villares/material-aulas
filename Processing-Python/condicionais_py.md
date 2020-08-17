@@ -78,6 +78,24 @@ def draw():
 | `or` | `a or b` | verdadeiro se *a* **ou** *b* forem verdadeiros |
 | `not` | `not a` | **não** *a* verdadeiro resulta falso, e **não** *a* falso resulta verdadeiro |
 | `in` | `a in b` | verdadeiro se elemento *a* **existe dentro** da coleção *b* |
+| `is` | `a is b` | verdadeiro se *a* **é o mesmo objeto** do que *b*, não bastando serem iguais |
+
+### Alguns exemplos e considerações
+
+```python
+maior = 10 > 0  # True
+maior = 10 > 12  # False
+maior_ou_ingual = 10 >= 10  # True
+menor = 5 < 10 # True
+menor_ou_igual = 10 <= 5  # False
+iguais = 10 == 10.0  # True 
+diferente = 10 != 10.0  # False
+diferente = 10 != 11  # True
+contem_a = 'a' in 'abacaxi'  # True
+contem_1 = 1 in [0, 1, 2, 3]  # True
+nao_contem_4 = 4 not in [0, 1, 2, 3] # True
+```
+Para efeitos de operações lógicas e no uso com `if`, `0`, `None`, `""` (string vazio), `[]` lista vazia, entre outros, são considerados como "falso" (`False`), mas se comparados entre si não são consideradas a mema coisa!
 
 ## Assuntos relacionados
 
