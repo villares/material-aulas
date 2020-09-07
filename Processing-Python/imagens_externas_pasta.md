@@ -15,7 +15,9 @@ def keyPressed():
         selectFolder("Selecione uma pasta", "adicionar_imagens")
 ```
 
-Note que o primeiro argumento de `selectFolder()` é `"Selecione uma pasta"` o texto (*string*) que vai como título da janela de seleção. O segundo argumento `"adicionar_imagens"` é mais curioso, trata-se de um *string* com o nome de uma função que será chamada quando a pessoa terminar de interagir com a janela de seleção de pasta (diretório / *folder*). Isso é uma estratégia conhecida em programação como designar uma "função de retorno" ou, em inglês, *callback*. Essa função é chamada para nós quando algume vento acontece. Neste caso, a função `adicionar_imagens()` é chamada depois de encerrada a janela de selecionar pastas aberta pelo Processing.
+Note que o primeiro argumento de `selectFolder()` é `"Selecione uma pasta"` o texto (*string*) que vai como título da janela de seleção. O segundo argumento `"adicionar_imagens"` é mais curioso, trata-se de um *string* com o nome de uma função que será chamada quando a pessoa terminar de interagir com a janela de seleção de pasta (diretório / *folder*). Isso é uma estratégia conhecida em programação como designar uma "função de retorno" ou, em inglês, *callback*. 
+
+Na estratégia com *callback* uma função definida é chamada para nós quando algum evento acontece. Neste nosso caso, a função `adicionar_imagens()` é chamada no encerramento da janela de selecionar pastas (esta parte de abrir a janela para selecionar pastas é iniciada com a execução de `selectFolder()`, mas o momento do encerramento depende da pessoa usando o programa).
 
 É preciso criar uma variável global para guardar as informações dos arquivos encontrados, fazemos isso com esta linha antes do `setup()` que cria uma lista vazia e aponta o nome `imagens` para ela: 
 
