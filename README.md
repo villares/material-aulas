@@ -9,7 +9,7 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
  Você pode também [fazer pequenas doações](https://gumroad.com/villares)! 
 
 <details>
- <summary><h3>Processing modo Python</h3></summary>
+ <h3><summary>Processing modo Python</summary></h3>
 
 - [O que é e como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)
    - <sub>Caso não possa instalar, experimente no navegador: [Triket.io](https://trinket.io/python/cfaf743794) ou [SkulptIDE](http://tiny.cc/processing_python) do prof. Claudio Esperança.</sub>
