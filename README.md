@@ -90,16 +90,25 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
 - Mais sobre [Python, Jython e Java](http://arteprog.space/Processando-Processing/tutoriais-PT/python-Python_Jython_e_Java) (página externa)
 - Manipulando a janela ([tela cheia, redimensionamento e múltiplas janelas](Processing-Python/mais_que_size.md))
 
+
+#### Processing modo Python
+
+- [py.processing.org/reference](http://py.processing.org/reference) - Referência do Processing modo Python
+- [Processing.py in Ten Lessons](https://tabreturn.github.io/#processing-reverse) (em Inglês) de [Tristan B. @tabreturn](http://portfolio.tabreturn.com/)
+
+##### Processing modo Java
+
+- [processing.org/reference](http://processing.org/reference) - Tem algumas páginas à mais e coisas que funcionam no Python
+- [Programação Criativa](http://arteprog.space/programacao-criativa) de Monica Rizzolli e Alexandre Villares
+- [Guia de programação em Processing](https://www.ranoya.com/aulas/designgenerativo/playgroundDocs/introProcessing.php?theme=dgen&elementos=processing), Prof. Guilherme Ranoya (UFPE).
+- [Tradução da referência da linguagem - versão 1.0 (2005)](http://www.dainf.ct.utfpr.edu.br/~merkle/processing/reference/ptBR/index.html), Prof. Luiz Merkle (UFTPR)
+
 ### Pequenos projetos
 
 - [Jogo PONG](https://github.com/villares/material-aulas/tree/master/pong) - Estudos para o fazer um jogo
 - [`caneta_automatica_py`](caneta_automatica) - Módulo para desenhar inspirado na tartaruga de Logo
 - [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
 
-### Mais referências e material de consulta
-
-- [py.processing.org/reference](http://py.processing.org/reference) - Referência do Processing modo Python
-- [processing.org/reference](http://processing.org/reference) - Tem algumas páginas à mais e coisas que funcionam no Python
 
 ### Outros recursos introdutórios abertos
 
@@ -108,16 +117,6 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
 - DOWNEY, Allen. [Pense em Python 2e](https://penseallen.github.io/PensePython2e/)
 - BORGES, Luiz Eduardo. [Python para desenvolvedores 3e](https://ricardoduarte.github.io/python-para-desenvolvedores/#conteudo)
 - SWEIGART, Al. Automatize tarefas maçantes com Python (traduzido pela Novatec)<br> ou [automatetheboringstuff.com](https://automatetheboringstuff.com) (site do autor em Inglês)
-
-#### Processing modo Python
-
-- [Processing.py in Ten Lessons](https://tabreturn.github.io/#processing-reverse) (em Inglês) de [Tristan B. @tabreturn](http://portfolio.tabreturn.com/)
-
-##### Processing modo Java
-
-- [Programação Criativa](http://arteprog.space/programacao-criativa) de Monica Rizzolli e Alexandre Villares
-- [Guia de programação em Processing](https://www.ranoya.com/aulas/designgenerativo/playgroundDocs/introProcessing.php?theme=dgen&elementos=processing), Prof. Guilherme Ranoya (UFPE).
-- [Tradução da referência da linguagem - versão 1.0 (2005)](http://www.dainf.ct.utfpr.edu.br/~merkle/processing/reference/ptBR/index.html), Prof. Luiz Merkle (UFTPR)
 
 ### Processando-Processing
 
