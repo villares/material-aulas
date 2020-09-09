@@ -8,7 +8,8 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
 
  Você pode também [fazer pequenas doações](https://gumroad.com/villares)! 
 
-### Processing modo Python
+<details>
+ <summary>### Processing modo Python</summary>
 
 - [O que é e como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)
    - <sub>Caso não possa instalar, experimente no navegador: [Triket.io](https://trinket.io/python/cfaf743794) ou [SkulptIDE](http://tiny.cc/processing_python) do prof. Claudio Esperança.</sub>
@@ -90,8 +91,9 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
 - Mais sobre [Python, Jython e Java](http://arteprog.space/Processando-Processing/tutoriais-PT/python-Python_Jython_e_Java) (página externa)
 - Manipulando a janela ([tela cheia, redimensionamento e múltiplas janelas](Processing-Python/mais_que_size.md))
 
+#### Recursos externos
 
-#### Processing modo Python
+##### Processing modo Python
 
 - [py.processing.org/reference](http://py.processing.org/reference) - Referência do Processing modo Python
 - [Processing.py in Ten Lessons](https://tabreturn.github.io/#processing-reverse) (em Inglês) de [Tristan B. @tabreturn](http://portfolio.tabreturn.com/)
@@ -109,6 +111,7 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
 - [`caneta_automatica_py`](caneta_automatica) - Módulo para desenhar inspirado na tartaruga de Logo
 - [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
 
+</details>
 
 ### Outros recursos introdutórios abertos
 
