@@ -1,7 +1,5 @@
 ## material para cursos e oficinas ([repositório](https://github.com/villares/material-aulas/))
 
-Para aprender a programar usando **Processing modo Python**, uma ferramenta livre de programação com a sintaxe de Python e que inclui o vocabulário, os recursos de desenho e manipulação de imagens, de Processing.
-
 ### Como colaborar e contribuir?
 
 Este material didático é aberto. Leia as [instruções para colaborar com este repositório](https://github.com/villares/material-aulas/blob/master/sobre/como-contribuir.md) e abra [*issues*](https://github.com/villares/material-aulas/issues) apontando problemas, sugerindo assuntos e melhorias, ou contribua com *Pull Requests* para o repositório.
@@ -9,6 +7,8 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
  Você pode também [fazer pequenas doações](https://gumroad.com/villares)! 
 
 ### Processing modo Python
+
+Para aprender a programar usando **Processing modo Python**, uma ferramenta livre de programação com a sintaxe de Python e que inclui o vocabulário, os recursos de desenho e manipulação de imagens, de Processing.
 
 #### Material principal
 
