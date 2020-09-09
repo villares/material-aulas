@@ -1,6 +1,3 @@
-
----
-
 ## material para cursos e oficinas ([repositório](https://github.com/villares/material-aulas/))
 
 Para aprender a programar usando **Processing modo Python**, uma ferramenta livre de programação com a sintaxe de Python e que inclui o vocabulário, os recursos de desenho e manipulação de imagens, de Processing.
@@ -11,7 +8,7 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
 
  Você pode também [fazer pequenas doações](https://gumroad.com/villares)! 
 
-### Sumário
+### Processing modo Python
 
 - [O que é e como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)
    - <sub>Caso não possa instalar, experimente no navegador: [Triket.io](https://trinket.io/python/cfaf743794) ou [SkulptIDE](http://tiny.cc/processing_python) do prof. Claudio Esperança.</sub>
@@ -93,7 +90,7 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
 - Mais sobre [Python, Jython e Java](http://arteprog.space/Processando-Processing/tutoriais-PT/python-Python_Jython_e_Java) (página externa)
 - Manipulando a janela ([tela cheia, redimensionamento e múltiplas janelas](Processing-Python/mais_que_size.md))
 
-#### Pequenos projetos
+### Pequenos projetos
 
 - [Jogo PONG](https://github.com/villares/material-aulas/tree/master/pong) - Estudos para o fazer um jogo
 - [`caneta_automatica_py`](caneta_automatica) - Módulo para desenhar inspirado na tartaruga de Logo
@@ -104,15 +101,15 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
 - [py.processing.org/reference](http://py.processing.org/reference) - Referência do Processing modo Python
 - [processing.org/reference](http://processing.org/reference) - Tem algumas páginas à mais e coisas que funcionam no Python
 
-#### Outros recursos introdutórios abertos
+### Outros recursos introdutórios abertos
 
-##### Livros de Python
+#### Livros de Python
 
 - DOWNEY, Allen. [Pense em Python 2e](https://penseallen.github.io/PensePython2e/)
 - BORGES, Luiz Eduardo. [Python para desenvolvedores 3e](https://ricardoduarte.github.io/python-para-desenvolvedores/#conteudo)
 - SWEIGART, Al. Automatize tarefas maçantes com Python (traduzido pela Novatec)<br> ou [automatetheboringstuff.com](https://automatetheboringstuff.com) (site do autor em Inglês)
 
-##### Processing modo Python
+#### Processing modo Python
 
 - [Processing.py in Ten Lessons](https://tabreturn.github.io/#processing-reverse) (em Inglês) de [Tristan B. @tabreturn](http://portfolio.tabreturn.com/)
 
@@ -122,12 +119,12 @@ Este material didático é aberto. Leia as [instruções para colaborar com este
 - [Guia de programação em Processing](https://www.ranoya.com/aulas/designgenerativo/playgroundDocs/introProcessing.php?theme=dgen&elementos=processing), Prof. Guilherme Ranoya (UFPE).
 - [Tradução da referência da linguagem - versão 1.0 (2005)](http://www.dainf.ct.utfpr.edu.br/~merkle/processing/reference/ptBR/index.html), Prof. Luiz Merkle (UFTPR)
 
-##### Processando-Processing
+### Processando-Processing
 
 - [Ajude a traduzir mais coisas!](https://github.com/arteprog/processando-processing)
 
 ---
-#### Licenças
+### Licenças
 
 **Texto e imagens:** Alexandre B A Villares - [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR), exceto onde indicado, confira atribuições em cada página para materiais adaptados/remixados de outras fontes. Agradeço aos colaboradores do repositório que doam suas contribuições nestes termos!
 
