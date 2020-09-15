@@ -1,9 +1,8 @@
 """ 
- based on:
- ControlP5::addListener() (v1.2)
- GoToLoop (2018-Jun-20)
- https://Discourse.Processing.org/t/
- how-to-active-controlevent-in-controlp5-python-mode/1113/8
+Exemplo para criar dois sliders
+
+Baseado em:
+ControlP5::addListener() (v1.2) GoToLoop (2018-Jun-20) https://Discourse.Processing.org/t/how-to-active-controlevent-in-controlp5-python-mode/1113/8
 """
 
 add_library('controlP5')
