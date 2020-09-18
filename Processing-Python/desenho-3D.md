@@ -198,3 +198,5 @@ def apply_hints():
         hint(enable_const if status else disable_const)
 
 ```
+# se der pau na sua placa de vídeo , veja essa dica: 
+ToDO
