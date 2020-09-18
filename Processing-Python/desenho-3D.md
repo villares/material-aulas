@@ -199,4 +199,10 @@ def apply_hints():
 
 ```
 # se der pau na sua placa de vídeo , veja essa dica: 
-ToDO
+
+Se você estiver no Linux com uma placa intel integrada, tente acrescentar isto no início do seu sketch
+
+```python 
+from java.lang import System 
+System.setProperty("jogl.disable.openglcore", "false")
+```
