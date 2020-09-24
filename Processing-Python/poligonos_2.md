@@ -98,7 +98,7 @@ def poly(points, holes=None, closed=True):
             vertex(*p)  # desempacota pontos em 3d
     # tratamento dos furos, se houver           
     holes = holes or []  # equivale a: holes if holes else []
-    if depth(holes) == 2:  # sequência única de pontos
+    if holes and depth(holes) == 2:  # sequência única de pontos
         holes = (holes,)     # envolve em um tupla
     for hole in holes:  # para cada furo
         beginContour()  # inicia o furo
