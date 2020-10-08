@@ -8,17 +8,18 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 
 ### Processing modo Python
 
-Para aprender a programar usando **Processing modo Python**, uma ferramenta livre de programação com a sintaxe de Python e que inclui o vocabulário, os recursos de desenho e manipulação de imagens, de Processing.
-
-#### Material principal
+> Para aprender a programar usando **Processing modo Python**, uma ferramenta livre de programação com a sintaxe de Python e que inclui o vocabulário, os recursos de desenho e manipulação de imagens, de Processing.
 
 - [O que é e como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)
    - <sub>Caso não possa instalar, experimente no navegador: [Triket.io](https://trinket.io/python/cfaf743794) ou [SkulptIDE](http://tiny.cc/processing_python) do prof. Claudio Esperança.</sub>
   - <sub>Conheça também o projeto [pyp5js](https://github.com/berinhard/pyp5js) que converte Python em JavaScript+P5js</sub>
+
+#### Elementos fundamentais
+
 - [Primeiros passos e desenho básico](Processing-Python/desenho-basico_py.md)
   - [Variáveis](Processing-Python/variaveis.md)
-  - [Desenhando polígonos](Processing-Python/poligonos_1.md)  
-  - [O que é indentação?](Processing-Python/indentacao.md)  
+  - [Desenhando polígonos](Processing-Python/poligonos_1.md) 
+  - [O que é indentação?](Processing-Python/indentacao.md) 
   - [Divisão com números inteiros](Processing-Python/divisao.md)
   - [Mais sobre cores (RGB e HSB)](Processing-Python/mais_sobre_cores.md)
 - [Condicionais (`if` e `else`)](Processing-Python/condicionais_py.md)
