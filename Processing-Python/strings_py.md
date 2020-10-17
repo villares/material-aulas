@@ -115,6 +115,9 @@ nome, idade = 'Alexandre', 120 # repare que o nome é <str> e a idade <int>
 print(u"Olá, {}, você tem mesmo {} anos?".format(nome, idade)) 
 # exibe: Olá, Alexandre, você tem mesmo 120 anos?
 ```
+
+#### Convertendo númeors em texto para mostrar
+
 É possível controlar a formatação da conversão de números em string, como o número de casas decimais ou com zeros à esquerda para garantir um certo número de dígitos:
 
 ```python
@@ -122,6 +125,17 @@ print("ângulo calculado: {:.2f}".format(ang)) # Exibindo valor com duas casas d
 
 nome_arquivo = "forma{:0>5}.svg".format(123) # Produz um nome_arquivo: "forma00123.svg"
 ```
+Veja mais alguns exemplos.
+
+```python
+print(u"π: {:+n}".format(PI)) # com sinal, exibe π: +3.14159
+print("{:.20f}".format(PI)) # com vinte posições decimais, exibe 3.14159274101257324219
+print("{:.4f}".format(PI)) # com quatro posições decimais, exibe 3.1416
+print("{:07.4f}".format(PI)) # preenche com zeros até 8 caracteres, exibe 003.1416
+print("{:.4%}".format(PI)) # interpreta o número como uma porcentagem e exibe 314.1593%
+```
+
+
 Voocê pode ler mais na Documentação do Python sobre os [métodos de String](https://docs.python.org/pt-br/2.7/library/stdtypes.html#string-methods) e a [mini-linguagem de formatação](https://docs.python.org/pt-br/3.6/library/string.html#formatstrings).
 
 ## Mostando texto na área de desenho
