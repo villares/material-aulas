@@ -1,4 +1,4 @@
-# Os *métodos* dos objetos *string*
+# Métodos dos objetos *string*
 
 *Strings* são um *tipo* de dado armazenado na memória do computador, e mais, em Python, são acompanhados de uma série de funções e que podem ser acionadas com a *sintaxe do ponto* (*dot syntax*).
 
