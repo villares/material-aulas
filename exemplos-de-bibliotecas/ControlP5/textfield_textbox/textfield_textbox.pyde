@@ -1,3 +1,10 @@
+"""
+Este exemplo mostra:
+- textField (um campo de texto de uma linha)
+
+Fonte: Exemplo ControP5 + exemplo Tabreturn
+"""
+
 add_library('controlP5')
 
 def setup():
