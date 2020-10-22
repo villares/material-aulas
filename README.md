@@ -93,6 +93,12 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 - Mais sobre [Python, Jython e Java](http://arteprog.space/Processando-Processing/tutoriais-PT/python-Python_Jython_e_Java) (página externa)
 - Manipulando a janela ([tela cheia, redimensionamento e múltiplas janelas](Processing-Python/mais_que_size.md))
 
+#### Pequenos projetos
+
+- [Jogo PONG](https://github.com/villares/material-aulas/tree/master/pong) - Estudos para o fazer um jogo
+- [`caneta_automatica_py`](caneta_automatica) - Módulo para desenhar inspirado na tartaruga de Logo
+- [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
+
 #### Recursos externos
 
 ##### Processing modo Python
@@ -109,13 +115,6 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 - [Guia de programação em Processing](https://www.ranoya.com/aulas/designgenerativo/playgroundDocs/introProcessing.php?theme=dgen&elementos=processing), Prof. Guilherme Ranoya (UFPE).
 - [Tradução da referência da linguagem - versão 1.0 (2005)](http://www.dainf.ct.utfpr.edu.br/~merkle/processing/reference/ptBR/index.html), Prof. Luiz Merkle (UFTPR)
 
-### Pequenos projetos
-
-- [Jogo PONG](https://github.com/villares/material-aulas/tree/master/pong) - Estudos para o fazer um jogo
-- [`caneta_automatica_py`](caneta_automatica) - Módulo para desenhar inspirado na tartaruga de Logo
-- [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
-
-
 ### Outros recursos introdutórios abertos
 
 #### Livros de Python
@@ -124,7 +123,7 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 - BORGES, Luiz Eduardo. [Python para desenvolvedores 3e](https://ricardoduarte.github.io/python-para-desenvolvedores/#conteudo)
 - SWEIGART, Al. Automatize tarefas maçantes com Python (traduzido pela Novatec)<br> ou [automatetheboringstuff.com](https://automatetheboringstuff.com) (site do autor em Inglês)
 
-### Processando-Processing
+#### Processando-Processing
 
 - [Ajude a traduzir mais coisas!](https://github.com/arteprog/processando-processing)
 
