@@ -71,7 +71,7 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 #### Arquivos externos
 - [Lendo um arquivo vetorial (SVG)](Processing-Python/recursos_vetoriais_externos.md)
 - [Lendo arquivos de imagem (*bitmap/raster*)](Processing-Python/imagens_externas.md)
-  - [Lendo todas as imagem de uma pasta](Processing-Python/imagens_externas_pasta.md)
+  - [Lendo todas as imagens de uma pasta](Processing-Python/imagens_externas_pasta.md)
 - [Lendo e escrevendo texto em arquivos (*file IO*)](Processing-Python/file_IO.md)
 
 #### Orientação a Objetos
