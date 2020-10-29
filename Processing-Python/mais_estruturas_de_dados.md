@@ -52,7 +52,7 @@ d['a'] = 10   #  chave: 'a'  valor 10
 
 ### Outras estruturas para você pesquisar
 
-- deque
+- *deque*
 - *frozenset*
 
 ### Assuntos relacionados
