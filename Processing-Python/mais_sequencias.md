@@ -153,11 +153,15 @@ print(a) # [0, 1, 2, 3, 4]
 Uma das maneiras mais comuns de se obter uma cópia invertida de uma sequência é utilizando a notação de fatiamento, com o *início* e *parada* vazios (do início ao final) mas com o *passo* -1, o que fica `[::-1]` como nos exemplos abaixo:
 
 ```python
+print("Alexandre"[::-1]) # exibe: erdnaxelA
+
 a = [0, 1, 2, 3, 4]
 b = a[::-1]
 print(b)  # exibe: [4, 3, 2, 1, 0]
 
-print("Alexandre"[::-1]) # exibe: erdnaxelA
+c = reversed(a)  # você também pode usar reversed()!
+print(c)         # exibe <reversediterator object at 0xNN> onde NN varia
+print(list(c))   # exibe: [4, 3, 2, 1, 0]
 ```
 
 ## Assuntos relacionados
