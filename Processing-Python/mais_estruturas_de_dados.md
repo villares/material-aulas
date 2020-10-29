@@ -1,6 +1,6 @@
 # Estruturas de dados
 
-Coleção é o nome genérico para diversaas estruturas de dados, as sequências são coleções preservam (guardam) a ordem dos itens, como uma lista (*list*) ou tupla (*tuple*). Outras coleções não são sequências, pois não guardam a ordem dos itens, como um conjunto (*set*) ou dicionário (*dict*).
+Coleção é o nome genérico para diversas estruturas de dados, as sequências são coleções preservam (guardam) a ordem dos itens, como uma lista (*list*) ou tupla (*tuple*). Outras coleções não são sequências, pois não guardam a ordem dos itens, como um conjunto (*set*) ou dicionário (*dict*).
 
 ### Listas
 
