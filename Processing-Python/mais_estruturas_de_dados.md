@@ -8,7 +8,7 @@ Coleção é o nome genérico para diversas estruturas de dados, as sequências 
 frutas = ["manga", "manga", "morango", "abacaxi"]  # uma lista de frutas
 ```
 
-Python usa `[ ]` colchetes (*square brackets*) para listas, sequências mutáveis e heterogêneas de itens (preservam a ordem, mas você pode trocar itens e reordenar). As listas Lembram um pouco *ArrayList* e *Array* em outras linguagens, mas que eum geral só podem ter itens de um único tipo (são struturas homogêneas) e podem ou não o seu tamanho alterado.
+Python usa `[ ]` colchetes (*square brackets*) para listas, sequências mutáveis e heterogêneas de itens (preservam a ordem, mas você pode trocar itens e reordenar). As listas Lembram um pouco *ArrayList* e *Array* em outras linguagens, só que em geral *arrays* só podem ter itens de um único tipo, sãoe struturas homogêneas, e podem ou não o seu tamanho alterado (em Python as listas podem ser aumentadas ou reduzidas).
 
 Em Python moderno podemos usar a biblioteca *numpy* para obter estruturas sofisticadas como matrizes de muitas dimensões, para o nosso uso mais elementar, uma primeira aproximação destas estruturas pode ser feita usando listas de listas para representar matrizes!
 
