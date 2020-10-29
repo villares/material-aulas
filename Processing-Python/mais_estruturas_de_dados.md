@@ -8,16 +8,16 @@ Coleção é o nome genérico para diversaas estruturas de dados, as sequências
 frutas = ["manga", "manga", "morango", "abacaxi"]  # uma lista de frutas
 ```
 
-Python usa `[` colchete (*square brackets*) para listas, sequências mutáveis e heterogêneas de itens (preservam a ordem, mas você pode trocar itens e reordenar).
-As listas Lembram um pouco *ArrayList* e *Array* em outras linguagens, mas que eum geral só podem ter itens de um único tipo (são struturas homogêneas).
+Python usa `[ ]` colchetes (*square brackets*) para listas, sequências mutáveis e heterogêneas de itens (preservam a ordem, mas você pode trocar itens e reordenar). As listas Lembram um pouco *ArrayList* e *Array* em outras linguagens, mas que eum geral só podem ter itens de um único tipo (são struturas homogêneas) e podem ou não o seu tamanho alterado.
 
-Em Python moder podemos usar a biblioteca *numpy* para obter estruturas sofisticadas como matrizes de muitas dimensões. É possível uma primeira aproximação destas estruturas usando listas de listas para representar matrizes!
+Em Python moderno podemos usar a biblioteca *numpy* para obter estruturas sofisticadas como matrizes de muitas dimensões, para o nosso uso mais elementar, uma primeira aproximação destas estruturas pode ser feita usando listas de listas para representar matrizes!
 
 ```python
-[[0, 12, 2, 3],
- [1, 22, 3, 4],
- [1, 22, 3, 4],
- [1, 22, 3, 4]]
+m = [[0, 12, 2, 3],
+     [1, 22, 3, 4],
+     [1, 10, 3, 4],
+     [1, 22, 3, 4],
+     ]
 ```
 
 ### Tuplas
@@ -25,15 +25,16 @@ Em Python moder podemos usar a biblioteca *numpy* para obter estruturas sofistic
 ```python    
 ponto = (120, 34)
 ```
-Uma tupla pode ser construída com `( )` parenteses, para fazer uma tupla de um item só precisa acrescentar uma vírgula: `(item, )`
-Tuplas são sequências imutáveis (preservam a ordem, mas não dá pra reordenar ou trocar itens)
+Tuplas são sequências imutáveis (preservam a ordem, mas não dá pra reordenar ou trocar itens). Uma tupla pode ser construída com `( )` parenteses, para fazer uma tupla de um item só precisamos acrescentar uma vírgula, assim: `(item, )`
 
 ### Conjuntos
 
 ```python
 numeros_feios = {2342345, 3454674567, 2346234623463, 2473565656457}
 ```
-Os conjuntos eliminam repetições automáticamente! Conjunto não preserva a ordem, os itens tem que ser "hasheáveis", em geral só itens imutáveis!
+Os conjuntos são estruturas muito interessantes, eliminam repetições de itens automáticamente! Um conjunto não preserva a ordem, e os itens tem que ser "hasheáveis", em geral, simplificando, isso significa itens imutáveis como números, *strings*, tuplas, *frozensets*, por exemplo. 
+
+Use `s = set()` para produzir um conjunto vazio (no qual você pode acrescentar itens depois com `.add()`)
 
 ### Dicionários
 
@@ -46,4 +47,15 @@ Não mantém a ordem, chave precisa ser hasheável (em geral imutável) números
 
 ```python
 d = {}  # cria um dicionário vazio    
+d['a'] = 10   #  chave: 'a'  valor 10
 ```
+
+### Outras estruturas para você pesquisar
+
+- deque
+- *frozenset*
+
+### Assuntos relacionados
+
+- [Mais sobre sequências e fatias em coleções ordenadas](mais_sequencias.md)
+
