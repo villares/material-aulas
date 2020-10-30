@@ -50,6 +50,16 @@ if nome_arquivo.lower().endswith('.png'):
      print("Arquivo tipo PNG")
 ```
 
+### Procurando sub-strings
+
+Trecho da documentação:
+> `str.find(sub[, start[, end]])`
+> Retorna o índice mais baixo na String onde a substring sub é encontrado dentro da fatia s[start:end]. Argumntos opcionais como start e end são interpretados como umanotação de fatiamento. Retorna -1 se sub não for localizado. Nota: O método find() deve ser usado apenas se precisarmos conhecer a posição de sub. Para verificar se sub é ou não uma substring, use o operador `in`.
+> 
+> `str.count(sub[, start[, end]])`
+> Retorna o número de ocorrências da sub-string sub que não se sobrepõem no intervalo [start, end]. Argumentos opcionais start e end são interpretados como na notação de fatias.
+
+
 ### Dividindo e juntando *strings*
 ```python
 # str.split(delimitador_opcional) devolve uma lista cujos itens são trechos do texto "divididos"
