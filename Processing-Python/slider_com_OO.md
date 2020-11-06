@@ -3,7 +3,7 @@
 ### Como usar uma classe `Slider`
 
 ```python
-from slider.py import Slider
+from slider import Slider  # slider é o arquivo slider.py
 
 def setup():
     global seed, t, a, ang
@@ -37,12 +37,14 @@ def galho(tamanho):
         rotate(-ang * 2)
         galho(tamanho * reducao - random(0, 2))
         popMatrix()
-        ```
+ ```
         
  ### Como é a classe `Slider` por dentro?       
+ 
+Uma aba **slider** é um arquivo `slider.py`
         
-        ```python
-        class Slider:
+```python
+class Slider:
 
     def __init__(self, low, high, default):
         """
