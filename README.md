@@ -76,6 +76,7 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 
 #### Orientação a Objetos
 - [Um botão com orientação a objetos](Processing-Python/botao_com_OO.md)
+- [Um *slider* com orientação a objetos](Processing-Python/slider_com_OO.md)
 - [Uma classe de partículas simples](Processing-Python/particulas.md)
 - [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/mestrado/bandeirinhas/) (página externa)
 
