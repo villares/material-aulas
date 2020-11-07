@@ -11,8 +11,8 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 > Para aprender a programar usando **Processing modo Python**, uma ferramenta livre de programação com a sintaxe de Python e que inclui o vocabulário, os recursos de desenho e manipulação de imagens, de Processing.
 
 - [O que é e como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)
-   - <sub>Caso não possa instalar, experimente no navegador: [Triket.io](https://trinket.io/python/cfaf743794) ou [SkulptIDE](http://tiny.cc/processing_python) do prof. Claudio Esperança.</sub>
-  - <sub>Conheça também o projeto [pyp5js](https://github.com/berinhard/pyp5js) que converte Python em JavaScript+P5js</sub>
+   - <sub>Conheça também o [*editor online*](https://berinhard.github.io/pyp5js/pyodide/) do projeto [pyp5js](https://github.com/berinhard/pyp5js).</sub>
+   - <sub>Ou ainda, o [Triket.io](https://trinket.io/python/cfaf743794) e o [SkulptIDE](http://tiny.cc/processing_python) do prof. Claudio Esperança.</sub>
 
 #### Elementos fundamentais
 
