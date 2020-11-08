@@ -14,6 +14,18 @@ O Python 3 e o GLFW tem instruções específicas de instalação para cada plat
 
 ### Linux
 
+Instalando o OpenGL (Graphics Library Framework), que é uma biblioteca open-source que permite criar e gerenciar janelas, assim como interagir com objetos utilizando mouse e teclado.
+
+```
+$ sudo apt-get install libglfw3
+```
+
+E para a instalação automatica da bilbioteca p5 e todas as suas dependencias.
+
+```
+$ pip install p5 --user
+```
+
 ### macOS
 
 Para o macOS, é fundamental ter o Homebrew, que é um gerenciador de pacotes que te permite instalar o Python 3 e o GLFW.
@@ -29,16 +41,14 @@ brew install python3
 # Para instalar o GLFW
 brew install glfw
 ```
- 
 
-### Windows
-
-
-### Instalação comum
-
-Ao final, para instalar o p5py, execute o seguinte comando no Terminal ou Prompt de Comando: 
+Ao final, para instalar o `p5py`, execute o seguinte comando no Terminal ou Prompt de Comando: 
 
 ```
 pip install p5
 ```
+
+### Windows
+
+
  
