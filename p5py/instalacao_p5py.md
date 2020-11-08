@@ -1,5 +1,6 @@
 # O que é e como instalar o p5py
 
+O projeto [p5py](https://github.com/p5py/p5) é uma versão nova (experimental ainda) das ideias do Processing implementadas em Python 3. Você pode usar com um editor de código / IDE de sua preferência (em oposição ao IDE do Processing), mas precisa ter um Python 3 instalado no seu computador.
 
 ## Como instalar
 
