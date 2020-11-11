@@ -72,6 +72,29 @@ def draw():
 
 ![](assets/perlin2D_1.gif)
 
+Agora o mesmo exemplo desenhando um único polígono com `beginShape()` e `endShape()`
+
+```python
+escala = 0.004
+
+def setup():
+    size(400, 400)
+    
+def draw():
+    background(200)
+    strokeWeight(3)
+    noFill()
+    beginShape()    
+    for x in range(width):
+        n = noise((mouseX + x) * escala,
+                  mouseY * escala)
+        y = height * n
+        vertex(x, height - y)
+    endShape() 
+```
+
+![](assets/perlin2D_3.gif)
+
 #### *Perlin Noise* em uma grade 2D
 
 Uma segunda maneira de usar o ruído de Perlin é distribuindo os valores em uma grade, de maneira que as coordenadas no plano da tela informam os passos tanto em X como em Y.
