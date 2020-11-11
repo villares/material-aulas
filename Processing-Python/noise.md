@@ -170,6 +170,56 @@ def keyPressed():
 ```
 ![](assets/perlin3D.gif)
 
+Agora, praticamente a mesma ideia mas visualizada em 3D
+
+```python
+escala_noise = 0.1
+xo = yo = zo = 0
+
+def setup():
+    size(400, 400, P3D)
+    # noStroke()
+    colorMode(HSB)
+
+def draw():
+    background(0)
+    translate(width / 2, height / 2, -height * 1.3)
+    rotateY(QUARTER_PI * .9)
+    translate(-width / 2, -height / 2)
+    translate(-width / 2, 0)
+    cols = 30
+    tam = width / cols
+    for x in range(cols):
+        for y in range(cols):
+            for z in range(cols):
+                n = noise((xo + x) * escala_noise,
+                          (yo + y) * escala_noise,
+                          (zo + z) * escala_noise)
+                fill(240 * n, 255, 255)
+                push()
+                translate(tam / 2 + x * tam,
+                          tam / 2 + y * tam,
+                          tam / 2 + z * tam)
+                box(tam - tam * n)
+                pop()
+
+def keyPressed():
+    global xo, yo, zo
+    if keyCode == UP:
+        zo += 1
+    if keyCode == DOWN:
+        zo -= 1
+    if keyCode == LEFT:
+        xo += 1
+    if keyCode == RIGHT:
+        xo -= 1
+    if keyCode == SHIFT:
+        yo += 1
+    if keyCode == CONTROL:
+        yo -= 1
+```
+
+![](assets/perlin3D_3D.gif)
 
 ##### Campo "vetorial" de ruído
 
