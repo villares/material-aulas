@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Precisa ter essa linha estranha aí em cima, saiba mais em 
+# Precisa a linha acima exatamente asssim, não remova o '#'!
 # abav.lugaralgum.com/material-aulas/Processing-Python/modulos
 """
 Módulo caneta automática tem funções que lembram a tartaruga da
