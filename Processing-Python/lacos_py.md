@@ -231,8 +231,8 @@ def setup():
         text(label, x + 15, y)
 
 # Você também pode encontrar escrito assim «for i, (x, y) in enumerate(pontos):»
-# E a construção «label = "{}: {}, {}".format(i, x, y)» para o formar texto
-# o método o format() injeta os passados valores nas posições marcadas com {} 
+# E a construção «label = "{}: {}, {}".format(i, x, y)» para o formar texto (string)
+# o método o format() injeta os valores passados como argumentos nas posições marcadas com {} 
 ```
 ![sketch_2020_04_10a](https://abav.lugaralgum.com/sketch-a-day/2020/sketch_2020_04_10a/enumerate.png)
 
