@@ -222,12 +222,17 @@ def setup():
     size(400, 400)
     pontos = [(50, 50), (300, 370), (200, 50), (150, 150)]
     for i, ponto in enumerate(pontos):
-        x, y = ponto  # podiamos ter usado também "for i, (x, y) in enumerate(pontos):"
+        # enumerate vai nos entregar uma sequência de tuplas: (índice, item_da_coleção)
+        x, y = ponto  
         fill(255)
         ellipse(x, y, 5 + i * 5, 5 + i * 5)
-        label = "{}: {}, {}".format(i, x, y)
+        label = str(i) + ": " + str(x) + ", " + str(y)  # monta um string no formato «i:  x, y»
         fill(0)
         text(label, x + 15, y)
+
+# Você também pode encontrar escrito assim «for i, (x, y) in enumerate(pontos):»
+# E a construção «label = "{}: {}, {}".format(i, x, y)» para o formar texto
+# o método o format() injeta os passados valores nas posições marcadas com {} 
 ```
 ![sketch_2020_04_10a](https://abav.lugaralgum.com/sketch-a-day/2020/sketch_2020_04_10a/enumerate.png)
 
