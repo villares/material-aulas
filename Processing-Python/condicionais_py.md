@@ -38,7 +38,7 @@ Os valores `True` (verdadeiro) e `False` (falso) são o resultado de expressões
 
 ### Um exemplo completo
 
-No exemplo a abaixo usamos uma estrutura `if`/ `else` para escolher a cor de preenchimento dos círculos, como resultado da comparação `mouseY < 128`. Usamos o valor booleano de `mousePressed` (`True` ou `False`) em um `if` que determina se algum círculo é desenhado ou não. Por fim usamos um `if` que combina dois valores usando `and`(**e**), `keyPressed` e a acomparação de igualdade `==`, para decidir se deve apagar o desenho (`keyPressed and key == 'a'`).
+No exemplo a abaixo usamos uma estrutura `if`/ `else` para escolher a cor de preenchimento dos círculos, como resultado da comparação `mouseY < 128`. Usamos o valor booleano de `mousePressed` (`True` ou `False`) em um `if` que determina se algum círculo é desenhado ou não. Por fim usamos um `if` que combina dois valores usando `and`(**e**), `keyPressed` e a comparação de igualdade `==`, para decidir se deve apagar o desenho (`keyPressed and key == 'a'`).
 
 ``` python
 def setup():
