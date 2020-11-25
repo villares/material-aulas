@@ -4,7 +4,7 @@ Listas e tuplas são duas das mais comuns coleções ordenadas de itens no Pytho
 
 Uma lista permite que seus itens sejam alterados, adicionados, removidos, ou, como um todo, os itens podem ser reordenados. Dizemos que listas são mutáveis. Já uma tupla ou um *string* não podem ter itens adicionados, removidos ou ser reordenada, dizemos que são imutáveis. Se for necessária uma correção, podemos criar tuplas e *strings* novamente com a alteração em substituição a coleção original.
 
-Saiba que tuplas são mais ‘econômicas’ em termos computacionais (em casos de grande quantidade de dados, gastam menos memória do computador) e são bastante usadas quando a ordem dos elementos tem significado, por exemplo podemos fazer uma tupla com os dados para a contrução de um círculo:
+Saiba que tuplas são mais ‘econômicas’ em termos computacionais (em casos de grande quantidade de dados, gastam menos memória do computador) e são bastante usadas quando a ordem dos elementos tem significado, por exemplo podemos fazer uma tupla com os dados para a construção de um círculo:
 
 ```python
 c = (100, 50, 40) # os númereos representam x, y, diâmetro respectivamente
