@@ -47,7 +47,7 @@ def keyPressed():
 
 Com o teclado estamos alterando o valor da escala e do deslocamente em X.
 
-Note que não é necessário usar `noiseSeed()` no `draw()` pois a semente do `noise()` é inicializada no início da execução do *sketch* e os valores obtidos são consultados por meio dos argumentos, deternísticos, calculados, como posições a serem consultadas em um 'campo' fixo.
+Note que não é necessário usar `noiseSeed()` no `draw()` pois a semente do `noise()` é inicializada no início da execução do *sketch* e os valores obtidos são consultados por meio dos argumentos, determinísticos, calculados, como posições a serem consultadas em um 'campo' fixo.
 
 ### *Perlin Noise* em 2D, acrescentando um Y
 
