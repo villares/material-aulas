@@ -53,7 +53,7 @@ Sim, você podia ter feito uma translação `translate(-60, -80)` para mover a g
 
 ### Qual é a vantagem?
 
-Você pode estar pensando que pegar o sistema de coordenadas e movê-lo é muito mais complicado do que apenas adicionar às coordenadas. Para um exemplo simples, como o retângulo, você está correto. Mas vamos dar um exemplo de onde o `translate()` pode facilitar a vida. Aqui está um código que desenha uma fileira de casas. Ele usa um loop que chama a função chamada `casa()`, que recebe o *x* e *y* da posição do canto superioe esquerdo da casa como parâmetros.
+Você pode estar pensando que pegar o sistema de coordenadas e movê-lo é muito mais complicado do que apenas adicionar às coordenadas. Para um exemplo simples, como o retângulo, você está correto. Mas vamos dar um exemplo de onde o `translate()` pode facilitar a vida. Aqui está um código que desenha uma fileira de casas. Ele usa um loop que chama a função chamada `casa()`, que recebe o *x* e *y* da posição do canto superior esquerdo da casa como parâmetros.
 
 ![Row of stick-figure casas](https://py.processing.org/tutorials/transform2d/imgs/houses.png)
 
