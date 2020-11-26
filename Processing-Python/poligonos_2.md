@@ -90,7 +90,7 @@ def draw_poly(points, holes=None, closed=True):
 
 </details>   
 
-**Avançado:** Agora imagine uma funcção que desenha um polígono ou um PShape com furos se mandarmos uma lista de furos com polígonos dentro.
+**Avançado:** Agora imagine uma função que desenha um PShape com furos se mandarmos uma lista de pontos, mais uma lista de furos com polígonos dentro.
 
 <details>    
 <summary>Resposta: Uma função que desenha polígonos com furos.</summary>
