@@ -52,12 +52,48 @@ def setup():
 - [Desenhando Polígonos - I](poligonos_1.md)
 - [Sequências e laços de repetição](lacos_py.md)
 
-### EXTRA: Uma função para desenhar sequências de pontos em forma de polígono
+### EXTRA: Funções para desenhar sequências de pontos em forma de polígono
 
 Você conseguiria encapsular em uma função a parte do código que faz o desenho do polígono?
-    
+
+
 <details>    
 <summary>Resposta: Uma função que desenha polígonos a partir de sequências de pontos.</summary>
+
+```
+def setup():
+    size(400, 400)
+    pontos_shape = [(20, 20), (330, 50), (300, 370)]
+    draw_poly(pontos_shape)
+
+def draw_poly(points, holes=None, closed=True):
+    """
+    Aceita como pontos sequencias de tuplas, lista ou vetores com (x, y) ou (x, y, z).
+    Por default faz um polígono fechado.
+    """
+    beginShape()  # inicia o PShape
+    for p in points:
+        vertex(p[0], p[1])    
+    # encerra o PShape
+    if closed:
+        endShape(CLOSE)
+    else:
+        endShape()
+        
+    # Para aceitar pontos em 2D ou 3D
+    # for p in points:
+    #     if len(p) == 2 or p[2] == 0:
+    #         vertex(p[0], p[1])
+    #     else:
+    #         vertex(*p)  # desempacota pontos em 3d
+```
+
+</details>   
+
+**Avançado:** Agora imagine uma funcção que desenha um polígono ou um PShape com furos se mandarmos uma lista de furos com polígonos dentro.
+
+<details>    
+<summary>Resposta: Uma função que desenha polígonos com furos.</summary>
 
 ```python
 def setup():
@@ -66,12 +102,12 @@ def setup():
     pontos_shape = [(20, 20), (330, 50), (300, 370)]
     pontos_furo = [(290, 300), (300, 60), (100, 40)]
 
-    poly(pontos_shape, [pontos_furo])
-    # poly(pontos_shape, pontos_furo)  # tabém funciona
+    poly_and_holes(pontos_shape, [pontos_furo])
+    # poly_and_holes(pontos_shape, pontos_furo)  # tabém funciona
 
     saveFrame('contour_furo.png')
 
-def poly(points, holes=None, closed=True):
+def poly_and_holes(points, holes=None, closed=True):
     """
     Aceita como pontos sequencias de tuplas, lista ou vetores com (x, y) ou (x, y, z).
     Note que `holes` espera uma sequencias de sequencias ou uma única sequencia de
