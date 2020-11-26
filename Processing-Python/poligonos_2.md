@@ -52,15 +52,15 @@ def setup():
 - [Desenhando Polígonos - I](poligonos_1.md)
 - [Sequências e laços de repetição](lacos_py.md)
 
+
 ### EXTRA: Funções para desenhar sequências de pontos em forma de polígono
 
-Você conseguiria encapsular em uma função a parte do código que faz o desenho do polígono?
-
+**Desafio:** Você conseguiria encapsular em uma função a parte do código que faz o desenho do polígono?
 
 <details>    
 <summary>Resposta: Uma função que desenha polígonos a partir de sequências de pontos.</summary>
 
-```
+```python
 def setup():
     size(400, 400)
     pontos_shape = [(20, 20), (330, 50), (300, 370)]
