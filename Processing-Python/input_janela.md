@@ -5,9 +5,9 @@ Nas implementações mais conhecidas de Python existe uma função chamada `inpu
 O Processing modo Python não tem essa função, mas com o código a seguir podemos disparar uma janela de diálogo, com um campo de texto, para fazer o mesmo papel!
 
 ```python
-def input(message=''):
+def input(question='', suggestion=''):
     from javax.swing import JOptionPane
-    return JOptionPane.showInputDialog(frame, message)
+    return JOptionPane.showInputDialog(None, question, suggestion)
 ```
 
 Vejamos então um exemplo de uso, em que um clique do mouse dispara a janela para o input textual.
@@ -35,9 +35,9 @@ def mousePressed():
     else:
         println(resposta) # se cancelada a janela exibe `None` no console
 
-def input(message=''):
+def input(question='', suggestion=''):
     from javax.swing import JOptionPane
-    return JOptionPane.showInputDialog(frame, message)
+    return JOptionPane.showInputDialog(None, question, suggestion)
 
 ```
 
