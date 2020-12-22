@@ -82,7 +82,7 @@ def draw_poly(points, holes=None, closed=True):
         
     # Para aceitar pontos em 2D ou 3D
     # for p in points:
-    #     if len(p) == 2 or p[2] == 0:
+    #     if len(p) == 2:
     #         vertex(p[0], p[1])
     #     else:
     #         vertex(*p)  # desempacota pontos em 3d
@@ -128,7 +128,7 @@ def poly_and_holes(points, holes=None, closed=True):
 
     beginShape()  # inicia o PShape
     for p in points:
-        if len(p) == 2 or p[2] == 0:
+        if len(p) == 2:
             vertex(p[0], p[1])
         else:
             vertex(*p)  # desempacota pontos em 3d
@@ -139,7 +139,7 @@ def poly_and_holes(points, holes=None, closed=True):
     for hole in holes:  # para cada furo
         beginContour()  # inicia o furo
         for p in hole:
-            if len(p) == 2 or p[2] == 0:
+            if len(p) == 2:
                 vertex(p[0], p[1])
             else:
                 vertex(*p)
