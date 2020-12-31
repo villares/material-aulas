@@ -339,4 +339,4 @@ def keyReleased():
 **Desafios**
 
 -  Você conseguiria adicionar um terceiro círculo ao código?
-- Mudar a dos círculos conforme as teclas que estão apertadas?
+- Mudar a cor ou o tamanho dos círculos conforme as teclas que estão apertadas?
