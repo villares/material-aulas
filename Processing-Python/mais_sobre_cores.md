@@ -69,7 +69,7 @@ Também é possível indicar o valor máximo de cada canal **RGB** usando `color
 
 ### Sobre a notação hexadecimal com `#`
 
-Dá para usar a notação com `#` (cor hexa), apreciada por web-designers, e comum também no Processing Java, mas só entre aspas, como em `fill("#FFAA00"`) nas funções `fill()`,  `background()` e `stroke()` quando estamos no Processing modo Python. Mas infelizmente isso não funciona com a função `color()` e o que pode ser útil na hora de traduzir certos exemplos
+Dá para usar a notação com `#` (cor hexa), apreciada por web-designers, e comum também no Processing Java, mas só entre aspas, como em `fill("#FFAA00"`) nas funções `fill()`,  `background()` e `stroke()` quando estamos no Processing modo Python. Mas infelizmente isso não funciona com a função `color()` e o que pode ser chato na hora de traduzir certos exemplos. Por conta disso preparei esta pequena função-ajudante `color_hex()` abaixo.
 
 ```python
 def setup():
