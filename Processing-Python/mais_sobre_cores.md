@@ -67,3 +67,29 @@ for h in range(100):
 
 Também é possível indicar o valor máximo de cada canal **RGB** usando `colorMode(RGB, maxR, maxG, maxB)` ou no caso do modo HSB, `colorMode(HSB, maxH, maxS, maxB)`. Você vai encontrar por aí exemplos com **360** como máximo para o matiz (*hue*), fazendo referência a distribuição de matizes em um círculo, e também outros que usam  **1** como valor máximo para brilho e saturação (assim 0.5 passa a significar 50% de saturação ou brilho, por exemplo). 
 
+### Sobre a notação hexadecimal com `#`
+
+Dá para usar a notação com `#` (cor hexa), apreciada por web-designers, e comum também no Processing Java, mas só entre aspas, como em `fill("#FFAA00"`) nas funções `fill()`,  `background()` e `stroke()` quando estamos no Processing modo Python. Mas infelizmente isso não funciona com a função `color()` e o que pode ser útil na hora de traduzir certos exemplos
+
+```python
+def setup():
+    verde = color_hex('#00FF00')
+    fill(verde)
+    rect(0, 0, 50, 100)
+    azul = color_hex('0000FF')
+    fill(azul)
+    rect(50, 0, 50, 100)
+    
+def color_hex(s):
+    """
+    No Processing tradicional (Java) podemos indicar cores com a notação hexadecimal  #AABBCC
+    No modo Python é possivel usar essa notação entre aspas em fill(), stroke() e
+    background(), mas não é possível fazer isso com a função color().
+    Esta função permite usar cores a partir de um string com a notação hexa no modo Python
+    """
+    if s.startswith('#'):
+        s = s[1:]
+    return color(int(s[:2], 16), int(s[2:4], 16), int(s[4:6], 16))
+```
+
+
