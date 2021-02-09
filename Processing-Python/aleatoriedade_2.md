@@ -71,7 +71,7 @@ def draw():
 
 ![random_choice](assets/random_choice.gif)
 
-#### selecionando uma amostra (sem repetição de itens)
+#### Selecionando uma amostra (sem repetição de itens)
 
 *Sample* significa amostra, e usamos `sample(colection, k)` onde `k` é o tamanho da amostra (e não pode ser maior que tamanho da população) para obter uma lista com `k` itens.
 
