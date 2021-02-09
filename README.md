@@ -44,7 +44,7 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
   - [Trabalhando com fontes e outros ajustes do texto](Processing-Python/tipografia.md)
 - [Interação: input com teclado e mouse](Processing-Python/input_py.md)
 - [Aleatoriedade: `random` e números 'sorteados'](Processing-Python/aleatoriedade_1.md)
-  - [Mais sobre aleatoriedade](Processing-Python/aleatoriedade_2.md)
+  - [Mais sobre aleatoriedade e as diferenças ente o `random` de Processing e de Python](Processing-Python/aleatoriedade_2.md)
   - [*Perlin Noise* (ruído de Perlin) um tipo especial de número pseudo-aleatório](Processing-Python/noise.md)
 - [Como usar seno `sin()`, cosseno `cos()` e arco tangente `atan2()`](Processing-Python/seno_cosseno_atan2.md)
 - [Manipulando números com `map()` e `lerp()`](Processing-Python/map_lerp.md) - e fazendo cores intermediárias!
