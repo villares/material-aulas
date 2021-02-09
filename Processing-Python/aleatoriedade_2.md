@@ -1,8 +1,8 @@
 # Mais aleatoriedade
 
-### A função `random()` do Processing
+Vamos começar revisando a  função `random()` do Processing, que produz números pseudo-aleatórios e já vimos anteriormente, em seguida vamos ver um pouco do módulo *random* de Python que pode ser *importado* (com a instrução `import` no início do código), que e tem uma função `random()` e algumas outras funções relacionadas.
 
-Vamos começar revisando a  função `random()` do Processing, uma vez que o *random* em Python é um pouquinho diferente, como veremos mais abaixo.
+### A função `random()` do Processing
 
 Cada vez que chamamos a função `random()` com um valor de argumento, como em `sorteio = random(1);` um número entre zero e o argumento passado (servindo de limite superior, mas não incluso) é produzido. 
 
@@ -12,13 +12,18 @@ Se dois valores forem usados, por exemplo `random (-5, 5)` serão produzidos nú
 
 ### O módulo `random` da biblioteca padrão do Python
 
-No Python `random()` precisa ser importado do módulo `random` com a a seguinte  instrução:
+No Python a funçao `random()` precisa ser importado do módulo `random` com a a seguinte  instrução:
 
 ```python
 from random import random
 ```
+> Mas, se fizermos isso "matamos" o `random()` do Processing. Uma alternativa é escrever
+> `from random import random as py_random  # e aí usamos py_random()
+> ou ainda só
+> `import random as rnd`
+> e aí usamos `rnd.random()`
 
-É uma função que não recebe argumentos (isto é não vai nada dentro dos parênteses) e devolve o equivalente a `random(1)` no Processing, por esse motivo  não me  parece tão flexível e útil. 
+Essa é uma função que não recebe argumentos (isto é não vai nada dentro dos parênteses) e devolve o equivalente a `random(1)` no Processing, por esse motivo  não me  parece tão flexível e útil. 
 
 No entanto, o módulo `random` de Python oferece outras funções muito simpáticas, quero dizer, interessantes: `choice()`, `sample()`, e `shuffle()`.
 
