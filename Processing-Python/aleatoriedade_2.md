@@ -18,10 +18,10 @@ No Python a funçao `random()` precisa ser importada do módulo `random` com a a
 from random import random
 ```
 > Mas, se fizermos isso "matamos" o `random()` do Processing. Uma alternativa, se quisermos manter as duas, é escrever:</br>
-> `from random import random as py_random  # e aí usamos py_random()`</br>
-> ou ainda só</br>
+> `from random import random as py_random`</br>
+> e aí usaremos o nome `py_random()`, uma outra opção ainda importar o módulo todo com outro nome</br>
 > `import random as rnd`</br>
-> e nesse caso usreamos `rnd.random()`</br>
+> e nesse caso usaremos `rnd.random()`, por exemplo.</br>
 
 A função `random()` em Python não recebe argumentos (isto é não vai nada dentro dos parênteses) e devolve o equivalente a `random(1)` no Processing, por esse motivo  não me  parece tão flexível e útil. 
 
