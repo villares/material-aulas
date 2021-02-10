@@ -51,9 +51,9 @@ E semelhante a `null` de Java temos o valor `None` em Python os usos não são t
 
 ### Loops `for`
 
-O caso mais simples é um `for` baseado em um contador qualquer, como `for (int i=0; i < limite; i++){ … ` cuja tradução é `for i in range(limite): …` e o chamado *for each*, mostrado no quadro, também é muito direto. 
+O caso mais simples é um `for` baseado em um contador qualquer, como `for (int i=0; i < limite; i++){ … `  e a tradução é `for i in range(limite): …`
 
-Mas se você encontrar um loop `for` no Java com um passo não inteiro (*float*), como a construção baseada em `range()` no  Python só funciona com números inteiros, você vai ter que implementar un `frange()` ou convertê-lo em um loop `while`, como no exemplo abaixo. 
+O chamado *for each*, mostrado no quadro, também é muito direto, mas se você encontrar um loop `for` no Java com um passo não inteiro (*float*), como a construção baseada em `range()` no  Python só funciona com números inteiros, você vai ter que implementar um range 'especia', como mostrado abaixo com `frange()` ou então convertê-lo em um loop `while`:
 
 **Java**
 
@@ -74,7 +74,7 @@ while angulo < TWO_PI:
     angulo += passo
 ```
 
-Implementando um range com passos não-inteiros: 
+Implementando um range com passos não inteiros: 
 
 ```python
 def frange(start, stop, step):
