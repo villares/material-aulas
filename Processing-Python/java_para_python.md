@@ -502,26 +502,35 @@ Arrays como `int[]`, `float[]` ou `PVector[]` podem virar listas em Python (ou q
 
 **Java**
 ```java
-ArrayList<Bandeirinha> Bandeirinhas; // uma lista de objetos da classe Bandeirinha
+ArrayList<Bandeirinha> bandeirinhas; // uma lista de objetos da classe Bandeirinha
 
 void setup() {
   size(400, 400); 
-  Bandeirinhas = new ArrayList<Bandeirinha>();
+  bandeirinhas = new ArrayList<Bandeirinha>();
   for (int i=0; i <50; i++) {
-    Bandeirinhas.add(new Bandeirinha(100, 100, 12));
+    bandeirinhas.add(new Bandeirinha(100, 100, 12));
   }
 }
 ```
 
 **Python**
 ```python
-Bandeirinhas = []  # uma lista de objetos Bandeirinha
-
+bandeirinhas = []  # uma lista de objetos Bandeirinha
 def setup():
     size(400, 400); 
     for i in range(50):
-        Bandeirinhas.append(Bandeirinha(100, 100, 12))
+        bandeirinhas.append(Bandeirinha(100, 100, 12))
 ```
+
+ou
+
+```python
+def setup():
+    global bandeirinhas
+    size(400, 400); 
+    bandeirinhas = [Bandeirinha(100, 100, 12) for i in range(50)]  # uma compreensão de lista de objetos Bandeirinha
+```
+
 
 #### Arrays 2D 
 
