@@ -53,7 +53,7 @@ E semelhante a `null` de Java temos o valor `None` em Python os usos não são t
 
 O caso mais simples é um `for` baseado em um contador qualquer, como `for (int i=0; i < limite; i++){ … ` cuja tradução é `for i in range(limite): …` e o chamado *for each*, mostrado no quadro, também é muito direto. 
 
-Mas se você encontrar um loop `for` no Java com um passo não inteiro (*float*), como a construção baseada em `range()` no  Python só funciona com números inteiros, você vai ter que convertê-lo em um loop `while` como no exemplo abaixo.
+Mas se você encontrar um loop `for` no Java com um passo não inteiro (*float*), como a construção baseada em `range()` no  Python só funciona com números inteiros, você vai ter que implementar un `frange()` ou convertê-lo em um loop `while`, como no exemplo abaixo. 
 
 **Java**
 
@@ -74,6 +74,19 @@ while angulo < TWO_PI:
     angulo += passo
 ```
 
+Implementando um range com passos não-inteiros: 
+
+```python
+def frange(start, stop, step):
+    from itertools import count, takewhile
+    return takewhile(lambda x: x < stop, count(start, step))
+
+passo = TWO_PI / 18
+for angulo in frange(0, TWO_PI, passo):
+    …    
+
+```
+
 Aqui um exemplo de laço é feito apenas para pegar objetos de uma estrutura de dados:
 
 
@@ -90,6 +103,7 @@ for item in minha_lista:
     fazendoAlgo(item)
 ```
 ou
+
 ```python
 for i, item in enumerate(minha_lista):
     fazendoAlgo(i, item)
