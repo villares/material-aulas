@@ -67,10 +67,10 @@ Repare que usamos a pequena função `has_image_ext()` para responder se  os nom
 
 ```python
 def has_image_ext(file_name):
-        # extensões dos formatos de imagem que o Processing aceita!
-        valid_ext = ('jpg', 'png', 'jpeg', 'gif', 'tif', 'tga')
-        file_ext = file_name.split('.')[-1]
-        return file_ext.lower() in valid_ext
+    # extensões dos formatos de imagem que o Processing aceita!
+    valid_ext = ('jpg', 'png', 'jpeg', 'gif', 'tif', 'tga')
+    file_ext = file_name.split('.')[-1]
+    return file_ext.lower() in valid_ext
 ```
 
 Por fim, aqui vai o código completo do sketch, que desenha uma grade de imagens no `draw()` com os itens da lista `imagens`:
