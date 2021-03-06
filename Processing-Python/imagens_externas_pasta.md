@@ -63,20 +63,14 @@ def lista_imagens(dir=None):
 ```
 Não vamos entrar em detalhes aqui, mas você pode querer ler mais sobre [compreensão de listas](https://panda.ime.usp.br/pensepy/static/pensepy/09-Listas/listas.html#list-comprehensions) (a maneira compacta de produzir uma lista usada para criar a `f_list`) e [tratamento de exceções](http://turing.com.br/pydoc/2.7/tutorial/errors.html#excecoes) (o trecho dentro dentro de `try:` e  `except... :`) para entender melhor a função `lista_imagens()`.
 
-Repare que usamos a pequena função `imgext()` para responder se  os nomes fornecidos por `os.listdir()` tem a terminação mencionada na tupla `valid_ext`.
+Repare que usamos a pequena função `has_image_ext()` para responder se  os nomes fornecidos por `os.listdir()` tem a terminação mencionada na tupla `valid_ext`.
 
 ```python
-def imgext(file_name):
-    ext = file_name.split('.')[-1]
-    # extensões dos formatos de imagem que o Processing aceita!
-    valid_ext = ('jpg',
-                 'png',
-                 'jpeg',
-                 'gif',
-                 'tif',
-                 'tga',
-                 )
-    return ext.lower() in valid_ext
+def has_image_ext(file_name):
+        # extensões dos formatos de imagem que o Processing aceita!
+        valid_ext = ('jpg', 'png', 'jpeg', 'gif', 'tif', 'tga')
+        file_ext = file_name.split('.')[-1]
+        return file_ext.lower() in valid_ext
 ```
 
 Por fim, aqui vai o código completo do sketch, que desenha uma grade de imagens no `draw()` com os itens da lista `imagens`:
@@ -132,30 +126,24 @@ def lista_imagens(dir=None):
     """
     Devolve uma a lista de tuplas com os nomes dos arquivos de imagem e os caminhos
     completos para cada uma das images na pasta `dir` ou na pasta /data/ do sketch.
-    Requer a função imgext() para decidir quais extensões aceitar.
+    Requer a função has_image_ext() para decidir quais extensões aceitar.
     """
     from os import listdir
     from os.path import isfile, join
     data_path = dir or sketchPath('data')
     try:
         f_list = [(f, join(data_path, f)) for f in listdir(data_path)
-                  if isfile(join(data_path, f)) and imgext(f)]
+                  if isfile(join(data_path, f)) and has_image_ext(f)]
     except Exception as e:
         print("Erro ({0}): {1}".format(e.errno, e.strerror))
         return []
     return f_list
 
-def imgext(file_name):
-    ext = file_name.split('.')[-1]
+def has_image_ext(file_name):
     # extensões dos formatos de imagem que o Processing aceita!
-    valid_ext = ('jpg',
-                 'png',
-                 'jpeg',
-                 'gif',
-                 'tif',
-                 'tga',
-                 )
-    return ext.lower() in valid_ext
+    valid_ext = ('jpg', 'png', 'jpeg', 'gif', 'tif', 'tga')
+    file_ext = file_name.split('.')[-1]
+    return file_ext.lower() in valid_ext
 ```
 
 ## Assuntos relacionados
