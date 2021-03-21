@@ -1275,26 +1275,27 @@ def setup():
 
 def draw():
     background(200) # limpa a tela (fundo)
-    translate(width / 2, height / 2) # 0, 0 no meio da tela
+	# mudar o 0, 0 para o meio da tela
+    translate(width / 2, height / 2) 
     if mouseIsPressed:  # mousePressed no py,processing.org
         desenho(frameCount % num_frames)
     else:
-        scale(0.5)
+        scale(0.5) # encolhe os desenhos em 50%
         for i in range(num_frames):
-            rotate(TWO_PI / num_frames)
-            translate(0, width * 0.75)
+            rotate(TWO_PI / num_frames) # giro em torno do centro
+            translate(0, width * 0.75)  # move para o lado
             desenho(i)
-            translate(0, -width * 0.75)
+            translate(0, -width * 0.75) # desfaz movimento para o lado
     
 def desenho(frame):  
-    # Red/Vermelho 0-255, Gree/Verde, Blue/Az  
+    # Cores com números de 0 a 255: Red/Vermelho, Green/Verde, Blue/Azul  
     fill(200, 0, 0) 
     tamanho_quadrado = map(frame, 0, num_frames - 1, 200, 0)
     rectMode(CENTER)
     square(0, 0, tamanho_quadrado)
     fill(0, 0, 200)
-    radius = map(frame, 0, 8, 0, 200)
-    ellipse(0, 0, radius, radius)
+    raio = map(frame, 0, 8, 0, 200)
+    circulo(0, 0, raio)
 `;
 
     languagePluginLoader.then(() => {
