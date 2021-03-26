@@ -16,10 +16,16 @@ text(nome, 20, 20)  # desenha o texto de `nome` na área de desenho
 ![exemplo 1](assets/variaveis_Guido.png)
 
 ```python
+# você tentar usar a variável `a` aqui, antes de criar, vai ter um erro!
+
 a = 10  # cria a variável `a` que aponta para o valor 10
 rect(a, 10, 40, 40)  # desenha um retângulo em x:10, y:10
-a = a + 45  # calcula o valor de `a + 45` e faz a variável `a` apontar para o novo valor
+
+a = a + 45  # calcula o valor de `a + 45` e faz a variável `a` apontar para o novo valor*
 rect(a, 10, 40, 40)  # desenha um retângulo em x:55, y:10
+
+# *ou, em outras palavras: "veja quanto está valendo `a` agora, some 45 e este é o novo valor de `a`
+# isso também pode ser escrito assim: a += 45
 ```
 **Você consegue imaginar qual vai ser o resultado?**
 
