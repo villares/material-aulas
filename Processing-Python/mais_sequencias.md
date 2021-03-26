@@ -33,7 +33,7 @@ Quando temos uma lista, tupla ou outra coleção ordenada, podemos consultar seu
 numeros = (2, 4, 6, 8, 10, 12, 24, 2048)  # alguns números
 print(numeros[0])  # 2 o primeiro número
 print(numeros[1])  # 4 o segundo número
-print(numeros[len(alguns_pares) - 1]) # 2048 o último
+print(numeros[len(numeros) - 1]) # 2048 o último
 print(numeros[-1]) # com o índice -1 também temos o último item, 2048!
 print(numeros[8])  # ERRO: índice 7 é o último! IndexError: index out of range: 8
 ```
