@@ -167,11 +167,13 @@ print(meus_pokemon)
 
 Já **uma tupla não pode ter itens removidos, addicionados ou ser reordenada**, dizemos que ela é *imutável* (mesmo se um item puder ter o seu conteúdo mais interno alterado). Se for necessária uma correção, podemos criar uma nova tupla com a alteração em substituição da original.
 
-Tuplas são mais 'econômicas' em termos computacionais e são bastante usadas quando a ordem dos elementos tem significado, por exemplo podemos fazer uma tupla com coordenadas x e y, o primeiro item 'significa' um valor no eixo X e o segundo um valor no eixo Y:
+Tuplas são mais 'econômicas' em termos computacionais e são bastante usadas quando a ordem dos elementos tem significado, por exemplo podemos fazer uma tupla com coordenadas x e y, a primeira posição 'significa' (a ordem indica) um valor no eixo X e a segunda posição indica um valor no eixo Y:
 
 ```python
 posicao = (150, 50)  #  x: 150 y: 50
 ```
+
+Um outro termo usado para se referir a uma coleção em que a ordem importa e não faz sentido reordenar é 'registro', se temos tuplas com nomes, emails e telefones, por exemplo, como uma linha em uma planilha.
 
 Podemos 'desempacotar' uma tupla, atribuindo os seus valores a variáveis, desde que o número de variáveis seja igual ao número de itens:
 
@@ -222,17 +224,19 @@ def setup():
     size(400, 400)
     pontos = [(50, 50), (300, 370), (200, 50), (150, 150)]
     for i, ponto in enumerate(pontos):
-        # enumerate vai nos entregar uma sequência de tuplas: (índice, item_da_coleção)
+        # enumerate vai nos entregar uma sequência de tuplas:
+        # (índice, item_da_coleção)
         x, y = ponto  
         fill(255)
         ellipse(x, y, 5 + i * 5, 5 + i * 5)
-        label = str(i) + ": " + str(x) + ", " + str(y)  # monta um string no formato «i:  x, y»
+        # legenda em um string no formato «i:  x, y»
+        legenda = str(i) + ": " + str(x) + ", " + str(y)  
         fill(0)
-        text(label, x + 15, y)
+        text(legenda, x + 15, y)
 
-# Você também pode encontrar escrito assim «for i, (x, y) in enumerate(pontos):»
-# E a construção «label = "{}: {}, {}".format(i, x, y)» para o formar texto (string)
-# o método o format() injeta os valores passados como argumentos nas posições marcadas com {} 
+# Você também pode encontrar escrito assim: «for i, (x, y) in enumerate(pontos):»
+# E a construção «legenda = "{}: {}, {}".format(i, x, y)» para o formar texto
+# o método .format() injeta valores passados como argumentos em posições marcadas com {} 
 ```
 ![sketch_2020_04_10a](https://abav.lugaralgum.com/sketch-a-day/2020/sketch_2020_04_10a/enumerate.png)
 
@@ -247,15 +251,15 @@ for x in range(5, 100, 10):  # x: 5, 15, 25, 35 ... 95
 ```
 ![mini grade](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/mini-grid.png)
 
-Veja mais em: [Grades retangulares: filas e colunas de elementos](https://github.com/villares/material-aulas/blob/master/Processing-Python/grades.md)
+Veja mais em: [Grades retangulares: filas e colunas de elementos](grades.md)
 
 #### Outra estrutura de repetição: `while`
 
-[Laços de repetição com `while`](https://github.com/villares/material-aulas/blob/master/Processing-Python/while.md) 
+[Laços de repetição com `while`](while.md) 
 
 #### Acessando e alterando itens de uma sequência
 
-[Mais sobre sequências e fatias](https://github.com/villares/material-aulas/blob/master/Processing-Python/mais_sequencias.md)
+[Mais sobre sequências e fatias](mais_sequencias.md)
 
 ### Glossário
 
