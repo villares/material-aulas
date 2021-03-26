@@ -34,7 +34,7 @@ else:               # termina o “se/então” e começa o “senão”
 
 Os valores `True` (verdadeiro) e `False` (falso) são o resultado de expressões booleanas (*boolean*, em homenagem a [George Boole](https:#pt.wikipedia.org/wiki/George_Boole)) como as comparações com operadores relacionais, `==` (igualdade), `>` (maior que) ou ainda operações lógicas **e** (`and`), **ou** (`or`) e **não** (`not`). 
 
-`True` e `False` podem ser armazenados em variáveis, representando um *estado* no programa, são os mesmos valores que obtemos quando usamos as variáveis de sistema *mousePressed* e *keyPressed*, por exemplo.
+Valores `True` e `False` podem ser atribuidos a variáveis, muitas vezes representando um *estado* no programa, são os valores que obtemos quando usamos as variáveis de sistema *mousePressed* e *keyPressed*, por exemplo. É comum termos variáveis indicadoras (*flags*) que apontam para um estado da operação do programa: `gravando = True`,  `soma_concluida = False`.
 
 ### Um exemplo completo
 
@@ -108,7 +108,9 @@ contem_1 = 1 in [0, 1, 2, 3]  # True
 nao_contem_4 = 4 not in [0, 1, 2, 3] # True
 ```
 
-Para efeitos de operações lógicas, e no uso com `if`, por exemplo, os valores `0`, `None`, `""` (string vazio), `[]` lista vazia, ou qualquer coleção vazia, são considerados como "falso" (`False`), mas se comparados diretamente entre si não são a mesma coisa!
+Para efeitos de operações lógicas, e no uso com `if`, por exemplo, os valores `0` (zero), `None`, `""` (string vazio), `[]` lista vazia, ou qualquer coleção vazia, são considerados como "falsos" (`False`), já qualquer outro número, texto (string) ou coleção com itens, são considerados "verdadeiros" (`True`). 
+
+A função `bool()` converte valores ou expressões entre os parenteses em `True` ou `False` (os chamados valores booleanos) nos permitindo investigar como Python os interpreta! Note que se comparados diretamente entre si zero, `None`, um string vazio e uma lista vazia não são a mesma coisa, mas se convertidos com `bool()` são todos convertidos no valor `False`. Já `1`,`200` ou `"Unicamp"`, serão convertidos com `bool()` em `True`. 
 
 ```python
 tamanho = 0  # ou tamanho = None
