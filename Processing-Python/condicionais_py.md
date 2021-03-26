@@ -134,7 +134,7 @@ Sobre o operador `is`, não acredito que você vá precisar dele tão cedo (na d
 ```python
 ponto_a = (10, 20)
 ponto_b = (10, 20)
-ponto_c = ṕonto_a  # ponto_c é um outro "apelido" (alias) para o objeto que chamamos de ponto_a
+ponto_c = ponto_a  # ponto_c é um outro "apelido" (alias) para o objeto que chamamos de ponto_a
 
 print(ponto_a == ponto_b)  # exibe True, as coordenadas são iguais
 print(ponto_a is ponto_b)  # exibe False, são objetos diferentes na memória 
