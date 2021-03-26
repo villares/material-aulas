@@ -16,7 +16,7 @@ text(nome, 20, 20)  # desenha o texto de `nome` na área de desenho
 ![exemplo 1](assets/variaveis_Guido.png)
 
 ```python
-# você tentar usar a variável `a` aqui, antes de criar, vai ter um erro!
+# Se você tentar usar a variável `a` aqui, antes de criar, vai ter um erro do tipo NameError (não conheço `a`)
 
 a = 10  # cria a variável `a` que aponta para o valor 10
 rect(a, 10, 40, 40)  # desenha um retângulo em x:10, y:10
