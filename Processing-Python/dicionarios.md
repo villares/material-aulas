@@ -6,9 +6,9 @@ Conjunto (*set*) e dicionário (*dict*) são duas das mais importantes estrutura
 > 
 > E se tudo fosse uma pilha (*stack*)? Forth
 >
-> E se tudo fossem ponteiros? C
+> E se tudo fosse um ponteiro? C
 > 
-> E se tudo fossem dicionários? Python!
+> E se tudo fosse um dicionário? Python!
 
 Ou ainda este meme aqui:
 
