@@ -119,12 +119,12 @@ def label(n, vertical=False):
         text(n, meia_casa, pos)
     else:
         text(n, pos, height - meia_casa)
-``
-
-
 
 ```
 
+  TODO: [imagem do tabuleiro aqui]
+
+```
 # TODO: Exemplo de diconário com dicionários dentro??
 estados = {'MG': {'capital':'Belo Horizonte', 'pop': 80000000},
            'AC': {'capital':'Rio Branco', 'pop': 880000},
