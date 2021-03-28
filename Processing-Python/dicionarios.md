@@ -68,26 +68,28 @@ Podemos usar como chaves objetos ditos *imutáveis*, como números, texto (*stri
 > Uma explicação mais detalhadas sobre as limitações técnicas dos tipos que podemos usar nos dicionários não cabe neste texto introdutório, mas a sua curiosidade pode fazer você querer ler mais sobre eles em [Estruturas de dados (na documentação do Python)](https://docs.python.org/pt-br/3/tutorial/datastructures.html#dictionaries).
 
 ```
-# TODO: Exemplo de diconário com uma tupla como chave - batalha naval
+# Exemplo de diconário com uma tupla como chave - batalha naval
 
 tam_tabuleiro = 15
 tam_casa = 35
 meia_casa = tam_casa / 2
 borda = 36
-tabuleiro_a = {(1, 1): "C",
-                (2, 1): "C",
-                (3, 1): "C",
-                (4, 1): "C",
-                (6, 6): "S",
-                (10, 6): "H",
-                (11, 7): "H",
-                (12, 6): "H",
-               }
+tabuleiro_a = {
+    (1, 1): "C",
+    (2, 1): "C",
+    (3, 1): "C",
+    (4, 1): "C",
+    (6, 6): "S",
+    (10, 6): "H",
+    (11, 7): "H",
+    (12, 6): "H",
+   }
 
-cores = {"C": color(100, 0, 0),
-         "S": color(0, 0, 100),
-         "H": color(0, 100, 0),
-         }
+cores = {
+    "C": color(100, 0, 0),
+    "S": color(0, 0, 100),
+    "H": color(0, 100, 0),
+    }
 
 def setup():
     size(600, 600)
@@ -105,12 +107,13 @@ def draw():
             else:
                 fill(cores[c])
             square(i * tam_casa + borda, 
-                       j * tam_casa + borda, 
-                       tam_casa)
+                   j * tam_casa + borda, 
+                   tam_casa)
             if c:
                 fill(255)
-                text(c, i * tam_casa + borda + meia_casa, 
-                        j * tam_casa + borda + meia_casa) 
+                text(c,
+                     i * tam_casa + borda + meia_casa, 
+                     j * tam_casa + borda + meia_casa) 
      
 def label(n, vertical=False):
     fill(0)
