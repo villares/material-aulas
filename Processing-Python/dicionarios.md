@@ -3,9 +3,12 @@
 Conjunto (*set*) e dicionário (*dict*) são duas das mais importantes estruturas de dados em Python, dicionários em especial são tão poderosos e flexíveis que são usados internamente para fazer funcionar a linguagem Python, e por isso existem piadas sobre linguagens de programação que são mais ou menos assim:
 
 > E se tudo fosse uma lista? LISP
+> 
 > E se tudo fosse uma pilha (*stack*)? Forth
+>
 > E se tudo fossem ponteiros? C
-> E se tudo fossem dicionários? Python
+> 
+> E se tudo fossem dicionários? Python!
 
 Ou ainda este meme aqui:
 
