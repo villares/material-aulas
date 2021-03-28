@@ -122,7 +122,7 @@ def label(n, vertical=False):
 
 ```
 
-  TODO: [imagem do tabuleiro aqui]
+![imagem do tabuleiro aqui](assets/batalha-naval.png)
 
 ```
 # TODO: Exemplo de diconário com dicionários dentro??
