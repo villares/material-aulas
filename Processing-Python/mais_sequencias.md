@@ -48,7 +48,7 @@ Uma vez que Python trata *strings*, texto, como um espécie de sequência, é po
 nome = 'Guido'
 for letra in nome:
     print(letra)
-    
+
 # resultado no console é:
 # G  
 # u
@@ -129,6 +129,7 @@ c = nome.split(' ')  # .split(delimitador) devolve uma lista
 print(c)             # com os trechos de texto entre os delimitadores:
 # ['Saskia', 'Freeke']
 ```
+
 ### Cópias e inversões
 
 #### Uma fatia que é uma cópia da sequência
@@ -169,7 +170,9 @@ print(list(c))   # exibe: [4, 3, 2, 1, 0]
 ## Assuntos relacionados
 
 - [Sequências e laços de repetição](lacos_py.md) - o primeiro contato com este assunto das coleções.
-- Você pode ler mais sobre o que as listas sabem fazer em [5.1. Mais sobre listas](https://docs.python.org/pt-br/2.7/tutorial/datastructures.html#more-on-lists) (na documentação do Python) como por exemplo:
-> 
+
+- [Mais sobre listas e seus métodos](list_methods.md) (inserir itens no meio, encontrar o índice de um item e muito mais)
+
 - [Arrastando vários círculos](arrastando_circulos.md#arrastando-v%C3%A1rios-c%C3%ADrculos)
-- [Mais sobr *strings*](strings_py.md)
+
+- [Mais sobre *strings*](strings_py.md) e [métodos dos objetos *string*](string_methods.md)
