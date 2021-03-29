@@ -22,20 +22,21 @@ Vejamos uma descrição em abstrato de algumas dessas estratégias (que podem in
 ```python
 «é criada uma variável-contador» 
 while «condição que depende do contador»:
-    «corpo» 
-    «atualização ou incremento do contador»     
+    «corpo do laço, deve incluir 
+    atualização ou incremento do contador»     
 ```
 
 ```python
 «é criada uma estrutura de dados» 
 while «condição que envolve a estrutura de dados»:
-    «corpo modifica a estrutura de dados»      
+    «corpo do laço, deve incluir
+    modificação da estrutura de dados»      
 ```
 
 ```python
-
 while True: # um laço inicialmente infinito
-    «corpo produz efeito que modifica condição de saída» 
+    «corpo do laço, deve incluir
+    efeito que afeta a condição de saída»
     if «condição de saída»:
         break # saída do laço    
 ```
