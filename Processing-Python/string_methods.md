@@ -13,6 +13,7 @@ print("ângulo calculado: {:.2f}".format(ang)) # Exibe valor com duas casas deci
 
 nome_arquivo = "arq{:0>5}.svg".format(123) # Produz um string para nome_arquivo: "arq00123.svg"
 ```
+
 Veja mais alguns exemplos.
 
 ```python
@@ -24,6 +25,7 @@ print("{:.4%}".format(PI)) # interpreta o número como uma porcentagem e exibe 3
 ```
 
 ### Convertendo caixa alta e baixa (maiúsculas e minúsculas)
+
 ```python
 # str.lower() devolve string com a versão em caixa baixa
 print('Alexandre'.lower())  # exibe: alexandre
@@ -31,7 +33,9 @@ print('Alexandre'.lower())  # exibe: alexandre
 # str.upper() devolve string com a versão em caixa alta
 print('Alexandre'.upper())  # exibe: ALEXANDRE
 ```
+
 ### Checando prefixos e sufixos
+
 ```python
 # str.startswith(prefixo) informa se o texto inicia com um certo prefixo
 nome_arquivo = "imagem1212.jpg"
@@ -43,7 +47,9 @@ nome_arquivo = "imagem3434.jpg"
 print(nome_arquivo.endswith(".jpg"))  # exibe: True
 print(nome_arquivo.endswith(".gif"))  # exibe: False
 ```
+
 É possível 'encadear' métodos, como no exemplo abaixo. 
+
 ```python
 # identifica arquivos que terminam tanto com .png como com .PNG
 if nome_arquivo.lower().endswith('.png'):
@@ -53,14 +59,15 @@ if nome_arquivo.lower().endswith('.png'):
 ### Procurando sub-strings
 
 Trecho da documentação:
+
 > `str.find(sub[, start[, end]])`
 > Retorna o índice mais baixo na String onde a substring sub é encontrado dentro da fatia s[start:end]. Argumntos opcionais como start e end são interpretados como umanotação de fatiamento. Retorna -1 se sub não for localizado. Nota: O método find() deve ser usado apenas se precisarmos conhecer a posição de sub. Para verificar se sub é ou não uma substring, use o operador `in`.
 > 
 > `str.count(sub[, start[, end]])`
 > Retorna o número de ocorrências da sub-string sub que não se sobrepõem no intervalo [start, end]. Argumentos opcionais start e end são interpretados como na notação de fatias.
 
-
 ### Dividindo e juntando *strings*
+
 ```python
 # str.split(delimitador_opcional) devolve uma lista cujos itens são trechos do texto "divididos"
 itens = "A a B b".split()  # usado sem argumentos divide nos espaços
@@ -78,7 +85,9 @@ print('-'.join(coisas))
 print('\n'.joint('xyz')  # \n indica uma quebra de linha
 # exibe em 3 linhas: x\ny\n\z
 ```
+
 ### Substituições com `.replace()` e inserções com `.format()`
+
 ```python
 # str.replace(velho, novo) # substitui todas as ocorrências de um texto dentro de outro, se houver
 frase = u'as pessoas são estranhas'.replace('as', 'a')
