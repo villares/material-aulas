@@ -168,6 +168,8 @@ print(list(c))   # exibe: [4, 3, 2, 1, 0]
 
 ## Assuntos relacionados
 
-- [Sequências e laços de repetição](lacos_py.md)
+- [Sequências e laços de repetição](lacos_py.md) - o primeiro contato com este assunto das coleções.
+- Você pode ler mais sobre o que as listas sabem fazer em [5.1. Mais sobre listas](https://docs.python.org/pt-br/2.7/tutorial/datastructures.html#more-on-lists) (na documentação do Python) como por exemplo:
+> 
 - [Arrastando vários círculos](arrastando_circulos.md#arrastando-v%C3%A1rios-c%C3%ADrculos)
 - [Mais sobr *strings*](strings_py.md)
