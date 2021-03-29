@@ -74,13 +74,14 @@ while angulo < TWO_PI:
     angulo += passo
 ```
 
-Implementando um range com passos não inteiros: 
+###### Implementando um range com passos não inteiros:
 
 ```python
 def frange(start, stop, step):
     from itertools import count, takewhile
     return takewhile(lambda x: x < stop, count(start, step))
 
+# em uso no exemplo...
 passo = TWO_PI / 18
 for angulo in frange(0, TWO_PI, passo):
     …    
