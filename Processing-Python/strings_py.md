@@ -66,6 +66,7 @@ def draw():
     texto_mouse = "x: {} y: {}".format(mouseX, mouseY)  # os valores vão nos {} {}
     text(texto_mouse, 50, 70)
 ```
+
 ![resultado](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/text-na-tela.png)
 
 Mais sobre desenhar texto na tela na página sobre tipografia básica em: [Trabalhando com fontes e outros ajustes do texto](https://github.com/villares/material-aulas/blob/master/Processing-Python/tipografia.md)
@@ -87,7 +88,9 @@ Usamos `\n` para obter uma quebra de linha. Como no exemplo a seguir:
 ```pyde
 print(u'frutas frescas:\nmaça\nbanana')
 ```
+
 Resultado:
+
 ```
 frutas frescas:
 maçã
@@ -95,6 +98,7 @@ banana
 ```
 
 Uma outra maneira de indicar uma *string literal* com quebras de linha é usando aspas triplas `'''` ou `"""` o que permite que ela corra por várias linha no próprio código:
+
 ```pyde
 print(
 u"""frutas frescas:
