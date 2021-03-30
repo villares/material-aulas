@@ -89,4 +89,28 @@ def setup():
              rect(x * 10, y * 10, 10, 10)
     print(len(squares))    
 ```
+
 ![estrela](assets/while_set.png)
+
+##### Um terceiro exemplo
+
+Neste terceiro exemplo queremo acumular retângulos de larguras aleatórias até uma determinada largura máxima. No corpo do `while()`
+há um mecanismo que checa se a adição da largura da vez passa do limite, e ajusta apropriadamente a última largura.
+
+```python
+def setup():
+    size(400, 400)
+    background(0)
+    colorMode(HSB)
+    total = 0
+    while total < 400:
+        largura = int(random(1, 32))
+        if total + largura > 400:
+            largura = 400 - total
+        fill(largura * 8, 200, 200)
+        rect(total, 0, largura, height)
+        total += largura
+        print(total)
+```
+
+![estrela](assets/while_add.png)
