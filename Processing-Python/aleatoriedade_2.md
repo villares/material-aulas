@@ -99,17 +99,43 @@ Ao executar `shuffle(minha_sequencia)` fazemos com que `minha_sequencia`, que, a
 from random import shuffle
 
 letras = ['A', 'B', 'C', 'D', 'E']
-
 shuffle(letras)
-
 print(letras)
-
 # a cada execução uma ordem diferente:
 # ['C', 'B', 'D', 'A', 'E']
 # ['D', 'C', 'E', 'B', 'A']
 # ...
 ```
 A coleção precisa ser ordenada e mutável, como uma lista, não pode ser uma tupla, que é imutável, ou um conjunto que não guarda a ordem dos elementos.
+
+Veja um outro exemplo de `shuffle()`, embaralhando uma lista de tuplas que representam as posições em uma grade. As cores e os números são relativos à ordem dos elementos na lista (0, vermelho) é o primeiro quadrado da lista.
+
+```python
+from random import shuffle 
+
+tam = 80
+
+def setup():
+    size(400, 400)
+    textAlign(CENTER, CENTER)
+    colorMode(HSB)  # matiz, saturacao, brilho
+    frameRate(1)
+
+def draw():
+    posicoes = []  # lista vazia
+    for y in range(0, height, tam):
+        for x in range(0, width, tam): 
+            posicoes.append((x, y))  # tupla (x, y)
+    
+    shuffle(posicoes)  # Embaralha a lista gerada 
+    
+    for i, (x, y) in enumerate(posicoes):  # desenha os quadrados 
+        fill(i * 10, 200, 200) # i influencia o matiz
+        rect(x, y, tam, tam)
+        fill(0)
+        text(i, x + tam / 2, y + tam / 2) # escrevendo o números   
+```
+![random_choice](assets/shuffle.gif)
 
 ###  Sementes dos geradores pseudo-aleatórios (*randomSeed*)
 
