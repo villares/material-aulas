@@ -68,7 +68,7 @@ def estrela(x, y, raio_a, raio_b, num_pontas):
     endShape(CLOSE)
 ```
 
-![estrela](/assets/estrela.png)
+![estrela](assets/estrela.png)
 
 
 ###### Um exemplo com um conjunto
@@ -89,4 +89,4 @@ def setup():
              rect(x * 10, y * 10, 10, 10)
     print(len(squares))    
 ```
-![estrela](/assets/while_set.png)
+![estrela](assets/while_set.png)
