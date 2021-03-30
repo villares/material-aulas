@@ -17,6 +17,7 @@ No Python a funçao `random()` precisa ser importada do módulo `random` com a a
 ```python
 from random import random
 ```
+
 > Mas, se fizermos isso "matamos" o `random()` do Processing. Uma alternativa, se quisermos manter as duas, é escrever: </br>
 > `from random import random as py_random` </br>
 > e aí usaremos o nome `py_random()`, uma outra opção ainda importar o módulo todo com outro nome </br>
@@ -40,7 +41,6 @@ for _ in range(100):
 
 # Resultado: produz 100 valores de 1 a 5, INCLUI O 5!!!
 ```
-
 
 #### Selecionando um único item com `choice()`
 
@@ -106,6 +106,7 @@ print(letras)
 # ['D', 'C', 'E', 'B', 'A']
 # ...
 ```
+
 A coleção precisa ser ordenada e mutável, como uma lista, não pode ser uma tupla, que é imutável, ou um conjunto que não guarda a ordem dos elementos.
 
 Veja um outro exemplo de `shuffle()`, embaralhando uma lista de tuplas que representam as posições em uma grade. As cores e os números são relativos à ordem dos elementos na lista (0, vermelho) é o primeiro quadrado da lista.
@@ -126,18 +127,19 @@ def draw():
     for y in range(0, height, tam):
         for x in range(0, width, tam): 
             posicoes.append((x, y))  # tupla (x, y)
-    
+
     shuffle(posicoes)  # Embaralha a lista gerada 
-    
+
     for i, (x, y) in enumerate(posicoes):  # desenha os quadrados 
         fill(i * 10, 200, 200) # i influencia o matiz
         rect(x, y, tam, tam)
         fill(0)
         text(i, x + tam / 2, y + tam / 2) # escrevendo o números   
 ```
+
 ![random_choice](assets/shuffle.gif)
 
-###  Sementes dos geradores pseudo-aleatórios (*randomSeed*)
+### Sementes dos geradores pseudo-aleatórios (*randomSeed*)
 
 Como os números produzidos por `random()` não são verdadeiramente aleatórios, e sim produzidos por algorítmos geradores determinísticos, é possível fixar um parâmetro inical, conhecido como semente (*seed*), o que permite reproduzir novamente a mesma sequência de números.
 
@@ -158,13 +160,13 @@ def setup():
     seed = int(random(1000))
     print(seed)
     size(500, 500)
-    
+
 def draw(): 
     randomSeed(seed)
     background(240, 240, 200)
     translate(250, 300)
     galho(60)
-          
+
 def galho(tamanho): # definição do galho/árvore
     ang = radians(mouseX)
     reducao = .8
@@ -178,7 +180,7 @@ def galho(tamanho): # definição do galho/árvore
         rotate(-ang * 2)
         galho(tamanho * reducao - random(0, 2))
         popMatrix()
-          
+
 def keyPressed(): # executada quando uma tecla for precinada
     if keyCode == LEFT:
          seed = seed - 1
@@ -194,4 +196,5 @@ def keyPressed(): # executada quando uma tecla for precinada
 ```
 
 ---
+
 Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
