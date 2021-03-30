@@ -68,4 +68,25 @@ def estrela(x, y, raio_a, raio_b, num_pontas):
     endShape(CLOSE)
 ```
 
-![estrela](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/estrela.png)
+![estrela](/assets/estrela.png)
+
+
+###### Um exemplo com um conjunto
+
+Imagine uma grade com 6400 posições, vocẽ quer sortear exatamente 3200 quadrados,mas não quer sobreposições.
+
+```python
+squares = set()  # conjunto, coleção que não preserva a ordem
+
+def setup():
+    size(400, 400)
+    background(0, 0, 100)
+    while len(squares) < 5000:
+        x = int(random(width) / 5)
+        y = int(random(height) / 5)
+        if (x, y) not in squares:   # esta operação é rápida em conjuntos
+             squares.add((x, y))    # note .add() e não .append()
+             rect(x * 10, y * 10, 10, 10)
+    print(len(squares))    
+```
+![estrela](/assets/while_set.png)
