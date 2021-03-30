@@ -94,7 +94,7 @@ def setup():
 
 ##### Um terceiro exemplo
 
-Neste terceiro exemplo queremo acumular retângulos de larguras aleatórias até uma determinada largura máxima. No corpo do `while()`
+Neste terceiro exemplo queremos acumular retângulos de larguras aleatórias até uma determinada largura total máxima. No corpo do `while()`
 há um mecanismo que checa se a adição da largura da vez passa do limite, e ajusta apropriadamente a última largura.
 
 ```python
