@@ -35,7 +35,7 @@ def draw():
 
 #### Variáveis no `size()`, usando `settings()`
 
-Por questões de implementação do Processing, não é possível usar variáveis nos argumentos do size, quando este está, como de costume, no `setup()`. A solução é usar uma função chamada `settings()` que se for definida, o Processing chama, antes do `setup()`.
+Por questões de implementação do Processing, não é recomendado usar variáveis nos argumentos do size, quando este está, como de costume, no `setup()` (as vezes até funciona!). A solução é usar uma função chamada `settings()` que se for definida, o Processing chama, antes do `setup()`.
 
 ```python
 def settings():
