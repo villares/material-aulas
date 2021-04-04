@@ -22,7 +22,7 @@ def draw():
     g = random(256)
     b = random(256)
     tamanho = random(20, 60)
-    fill(r, g, b, 100)  # cor 'sorteada' translúcida
+    fill(r, g, b, 128)  # cor 'sorteada' 50% translúcida
     if mousePressed:
         ellipse(mouseX, mouseY, tamanho, tamanho)
         
