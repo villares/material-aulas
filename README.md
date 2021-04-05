@@ -38,6 +38,7 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
   - [Mais sobre sequências e fatias](Processing-Python/mais_sequencias.md)
   - [Grades retangulares: filas e colunas de elementos](Processing-Python/grades.md)
   - [Mais sobre polígonos](Processing-Python/poligonos_2.md)
+  - [Desenhamos dormas curvas](Processing-Python/curvas.md) 
   - [Laço de repetição com `while`](Processing-Python/while.md)
 - [Tipos de valores (inteiros, números de ponto flutuante, texto (*strings*))](Processing-Python/tipagem_py.md)
   - [Textos no programa, no console e na tela (*strings*)](Processing-Python/strings_py.md)
