@@ -68,7 +68,7 @@ def setup():
 Este é o código para desenhar a casa alterando sua posição. Veja todos os acréscimos que você precisa fazer.
 
 ```python
-def casa(int x, int y):
+def casa(x, y):
     triangle(x + 15, y, x, y + 15, x + 30, y + 15)
     rect(x, y + 15, 30, 30)
     rect(x + 12, y + 30, 10, 15)
