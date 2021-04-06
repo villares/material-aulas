@@ -1,8 +1,34 @@
 # Desenhando curvas - I
 
+Agora que já sabemos desenhar um polígonos com `beginShape()` e `endShape()` ou `endShape(CLOSE)` podemos experimentar formas curvas.
+
+### Curvas Bezier com `bezierVertex()`
+
+As famosas curvas Bezier levam o nome de Pierre Bézier, que as desenvolveu em seus trabalhos na década de 1960 na indústria automotiva, elas descrevem curvas a partir das coordenadas de pontos, ou âncoras, que delimitam o início e o fim de uma curva, mas também precisam de "pontos de controle" que em geral ficam fora da curva, mas controlam o seu comportamento.
+
+Você pode usar um ou mais vértices *Bezier* entre o `beginShape()` e o `endShape()`, e ela pode ser aberta ou fechada (com `endShape(CLOSE)`), mas antes de cada `bezierVertex()` é preciso que haja algum outro vértice, um ponto âncora, que marca o início e que pode ser feito com `vertex()`, como neste exemplo a seguir.
+
+No `bezierVertex()` propriamente dito, os quatro primeiros argumentos são as cordenadas de dois pontos de controle e o último é o ponto (que pode servir de âncora inicial para um próximo vértice Bezier).
+
+```
+ beginShape()
+    vertex(100, 50)         # 0: âncora inicial 
+    bezierVertex(150, 150,  # 1: primeiro ponto de controle do primeiro vértice
+                 250, 100,  # 2: segundo ponto de controle do primeiro vértice
+                 250, 200), # 3: vértice final da primeira curva, âncora da segunda
+    bezierVertex(150, 250,  # 4: primeiro ponto de controle do segundo vértice
+                 50, 200,   # 5: segundo ponto de controle do segundo vértice
+                 50, 100)   # 6: segundo vértice bezier (final)
+    endShape(),
+```
+
+![errada](assets/curve_bezier.png)
+
 ### `curveVertex()`
 
-Agora que já sabemos iterar por uma estrutura de dados, e como usar as coordenadas das tuplas para desenhar um polígono, podemos experimentar com outros típos de vértice. O `curveVertex()` tem a curiosa propriedade de ser influenciado pelos pontos que vem antes e depois dele.
+Agora que já sabemos iterar por uma estrutura de dados, e como usar as coordenadas das tuplas para desenhar um polígono, podemos experimentar a mesma estratégia com outros típos de vértice. 
+
+Agora veremos o `curveVertex()`,que não tem pontos de controle como Bezier, mas tem a curiosa propriedade de ser influenciado pelos pontos que vem antes e depois dele.
 
 Considere esta lista de pontos:
 
