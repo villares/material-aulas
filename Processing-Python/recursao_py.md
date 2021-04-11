@@ -6,7 +6,7 @@ A ideia central de recursão é de que uma função pode chamar outras funções
 
 Para que isso funcione (e não caia em uma cilada conhecida como "recursão infinita") é preciso que a função em certas condições chegue em uma opção de execução que não requer chamar ela mesma, é o chamado "caso base".
 
-### Um primeiro exemple
+### Um primeiro exemplo
 
 ![imagem1](assets/recursividade.png)
 
