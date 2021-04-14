@@ -1,4 +1,11 @@
 # Laço de repetição `while`
+Este é um laço de repetição indeterminado, vejamos alguns exemplos:
+
+#### Sumário
+
+- [Estrutura Geral](#a)
+
+
 
 Um laço de repetição com `while` pode ser conveniente quando:
 
