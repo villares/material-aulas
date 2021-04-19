@@ -2,7 +2,13 @@
 
 Agora que já sabemos desenhar um polígonos com `beginShape()` e `endShape()` ou `endShape(CLOSE)` podemos experimentar formas curvas.
 
-### Curvas Bezier com `bezierVertex()`
+### Sumário
+
+[Curvas Bezier](#curvas-bezier-com-beziervertex)
+
+
+
+## Curvas Bezier com `bezierVertex()`
 
 As famosas curvas Bezier levam o nome de Pierre Bézier, que as desenvolveu em seus trabalhos na década de 1960 na indústria automotiva, elas descrevem curvas a partir das coordenadas de pontos, ou âncoras, que delimitam o início e o fim de uma curva, mas também precisam de "pontos de controle" que em geral ficam fora da curva, mas controlam o seu comportamento.
 
