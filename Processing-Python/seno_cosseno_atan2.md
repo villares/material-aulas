@@ -1,6 +1,8 @@
 
 ## Um pouco de ângulos, com seno, cosseno e arco tangente
 
+#### Sumário
+
 ### `sin()`, `cos()` e `atan2()`
 
 As funções trigonométricas não são nenhum bicho de sete cabeças, 2π cabeças, no máximo...
