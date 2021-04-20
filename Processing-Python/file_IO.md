@@ -173,7 +173,7 @@ O mais recomendado é usar um chamado 'gerenciador de contexto', fazendo um bloc
 
 Veja o caso de gravar os dados dos círculos no exemplo anterior como ficaria:
 
-```
+```python
 from codecs import open # para poder usar unicode="utf-8" no Python 2 
 with open(caminho_arquivo, "w", encoding="utf-8") as file:
     for circulo in circulos:
