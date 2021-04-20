@@ -23,8 +23,8 @@ A leitura dos dos dados pode ser feita no Python de maneira mais 'universal', o 
 
 ```python
 # No Python - exemplo mais universal
-from io import open as io_open # melhor para ler unicode no Python 2 
-with io_open("data/frutas.txt",'r') as file:
+from codecs import open # para poder usar unicode="utf-8" no Python 2 
+with open("data/frutas.txt", "r", encoding="utf-8") as file:
     linhas = file.readlines()
 ```
 Ou usando uma função bem simples do Processing chamada `loadStrings()`:
@@ -174,7 +174,8 @@ O mais recomendado é usar um chamado 'gerenciador de contexto', fazendo um bloc
 Veja o caso de gravar os dados dos círculos no exemplo anterior como ficaria:
 
 ```
-with open(caminho_arquivo, 'w') as file:
+from codecs import open # para poder usar unicode="utf-8" no Python 2 
+with open(caminho_arquivo, "w", encoding="utf-8") as file:
     for circulo in circulos:
         x, y, tamanho = circulo
         file.write(u'{} {} {}'.format(x, y, tamanho))
