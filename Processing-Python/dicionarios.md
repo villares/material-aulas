@@ -72,7 +72,7 @@ roxo = cores.get('roxo', color(200))  # se não houver 'roxo' cinza claro
 fill(roxo)  # enquanto não houver 'roxo' no dicionário teremos color(200)
 ```
 
-### Um exemplo com tuplas como chaves, um tabuleiro.
+### Um exemplo com tuplas como chaves: um tabuleiro
 
 ```python
 # Exemplo de diconário com uma tupla como chave - batalha naval
@@ -135,9 +135,9 @@ def label(n, vertical=False):
 ![imagem do tabuleiro aqui](assets/batalha-naval.png)
 
 
-### Exemplo de diconário com dicionários dentr
+### Exemplo de diconário com dicionários dentro
 
-Não é incomum termos como valores de um dicionário, outros dicionários. O formato de intercâmbio de infomações JSON (lê-se *djeizon*, vem de JavaScript Object Notation), é praticamente uma porção de dicionários aninhados.
+Não é incomum termos como valores de um dicionário, outros dicionários. O formato de intercâmbio de infomações JSON (lê-se *djeizon*, vem de *JavaScript Object Notation*), é praticamente uma porção de dicionários aninhados.
 
 ```python
 estados = {'MG': {'capital':'Belo Horizonte', 'pop': 80000000},
