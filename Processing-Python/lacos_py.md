@@ -27,11 +27,16 @@ Podemos usar <code>range(parada)</code> ou <code>range(inicio, parada)</code>, o
 
 ## Laços de repetição com `for`
 
-![`for i in range(10):` ](assets/for_i.png)
+Usando a estrutura `for` podemos fazer uma ação para cada item de uma coleção 'iterável', como as estruturas de dados que veremos depois, ou ainda para cada item produzido por um gerador (uma linha de um leitor de arquivos, por exemplo) e para cada número produzido pelo `range(). 
 
-Usando a estrutura `for` podemos fazer uma ação para cada número produzido pelo `range()` mais precisamente, para cada item de uma coleção 'iterável' como as estruturas de dados que veremos depois. 
+Em cada ciclo um item é atribuido a uma variável, cujo nome vem logo após o `for` e antes do `in`. No bloco indentado de código, também conhecido como o *corpo*, acontecem ações, quase sempre usando o valor do item atribuído à variável no início de cada ciclo. 
 
-Em cada ciclo um item da coleção é atribuido a uma variável, cujo nome vem logo após o `for` e antes do `in`. No bloco indentado de código acontece a ação usando esse valor. Você consegue imaginar o resultado do código a seguir?
+```
+for «variavel» in «iterável»:
+    «códido do laço / corpo»
+```
+
+Você consegue imaginar o resultado do código a seguir?
 
 ```python
 for n in range(10): # para cada número do range(10) 
@@ -54,9 +59,14 @@ for n in range(10): # para cada número do range(10)
 </pre>
 </details>
 
+### Sobre os nomes das variáveis usadas no `for`
+
 É tradicional usar certos nomes de variável `i`, `j` e `k`, por exemplo, para armazenar números de 'contadores' ou 'índices' que vão variando a cada volta do laço `for`.
 
+![`for i in range(10):` ](assets/for_i.png)
+
 Agora outro exemplo usando `range()` com efeito visual.
+
 ```python
 for i in range(14):
     y = 10 + 5 * i
