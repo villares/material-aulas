@@ -21,13 +21,13 @@ Executando a função `range()` com o argumento 10, `range(10)`, vamos obter uma
 
 <code>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</code>
 
-Podemos usar <code>range(parada)</code> ou <code>range(inicio, parada)</code>, o número início está incluso, o número de parada não está incluso.
-</details>
+Podemos usar <code>range(parada)</code> ou <code>range(inicio, parada)</code>, o número início está incluso, o número de parada não está incluso. Há ainda a forma  <code>range(inicio, parada, passo)</code> que veremos mais adiante.
 
+</details>
 
 ## Laços de repetição com `for`
 
-Usando a estrutura `for` podemos fazer uma ação para cada item de uma coleção 'iterável', como as estruturas de dados que veremos depois, ou ainda para cada item produzido por um gerador (uma linha de um leitor de arquivos, por exemplo) e para cada número produzido pelo `range(). 
+Usando a estrutura `for` podemos fazer uma ação para cada item de uma coleção 'iterável', como as estruturas de dados que veremos depois, ou ainda para cada item produzido por um gerador (como uma linha de um leitor de arquivos, por exemplo) e para cada número produzido pelo `range()`. 
 
 Em cada ciclo um item é atribuido a uma variável, cujo nome vem logo após o `for` e antes do `in`. No bloco indentado de código, também conhecido como o *corpo*, acontecem ações, quase sempre usando o valor do item atribuído à variável no início de cada ciclo. 
 
