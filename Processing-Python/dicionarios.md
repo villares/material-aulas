@@ -155,11 +155,14 @@ Vale notar que até pouco tempo atrás os dicionários comuns em Python não gua
 
 ## Conjuntos
 
-Conjuntos (sets) são estruturas para guardar coleções de itens sem se preocupar com a ordem (por isso não nos referimos a eles como sequências como as tuplas e listas). São super eficientes para a consulta de existência ou não de um item  (temos X neste conjunto?) assim como operações de subtração, união e intersecção de conjuntos. 
+Conjuntos (sets) são estruturas para guardar coleções de itens sem se preocupar com a ordem (por isso não nos referimos a eles como sequências como as tuplas e listas). 
 
-Converter uma coleção em conjunto garante que não temos repetição de itens (mas perderemos a ordem se originalmente tínhamos uma coleção ordenada, uma sequência)
+- Converter uma coleção em conjunto garante que não temos repetição de itens (mas perderemos a ordem se originalmente tínhamos uma coleção ordenada, uma sequência)
+- São super eficientes para a consulta de existência ou não de um item  (temos X neste conjunto?) assim como operações de subtração, união e intersecção de conjuntos. 
 
-Uma das formas mais simples de se eliminar duplicações em uma lista, é transformá-la em um conjunto e depois de volta em uma lista (perde-se a ordem dos elementos).
+### Eliminando repetições com conjuntos
+
+Uma das formas mais simples de se eliminar duplicações, items repetidos, em uma lista, é transformá-la em um conjunto e depois de volta em uma lista (perde-se a ordem dos elementos).
 
 ```python
 frutas = ['banana', 'uva', 'uva', 'banana', 'kiwi', 'jaca', 'uva']
@@ -167,5 +170,49 @@ frutas = ['banana', 'uva', 'uva', 'banana', 'kiwi', 'jaca', 'uva']
 frutas_sem_repetir = list(set(frutas)) # resultado: ['banana', 'uva', 'kiwi', 'jaca']
 ```
 
+### Operações com conjuntos
 
+```
+conjunto_a = {"azul", "sonolento",}
+conjunto_b = {"vermelho", "sonolento"}
+
+uniao = conjunto_a | conjunto_b            # {"azul", "sonolento", "vermelho"} 
+interseccao = conjunto_a & conjunto_b      # {"sonolento"}
+diferenca_simetrica = conjunto_a ^ conjunto_b   #{"azul", "vermelho"} 
+```
+
+Um exemplo visual
+
+```python
+def setup():
+    size(600, 400)
+    background(100, 0, 0)
+    noStroke()
+    
+    conjunto1 = set()
+    conjunto2 = set()
+    
+    c1x, c1y = 200, 200
+    c2x, c2y = 400, 200
+    
+    for i in range(1000):
+        x = random(width)
+        y = random(height)
+        if dist(x, y, c1x, c1y) < 150:
+            conjunto1.add((x, y))
+        if dist(x, y, c2x, c2y) < 150:
+            conjunto2.add((x, y))
+                    
+    draw_conjunto(conjunto1, 15, color(200, 200, 0))
+    draw_conjunto(conjunto2, 10, color(0, 200, 200))
+    conjunto3 = conjunto1 ^ conjunto2
+    draw_conjunto(conjunto3, 5, color(200, 0, 200))
+    conjunto4 = conjunto1 & conjunto2
+    # draw_conjunto(conjunto4, 5, color(0, 255, 0))
+                    
+def draw_conjunto(conjunto, tam, cor):
+    fill(cor)
+    for x, y in conjunto:
+        circle(x, y, tam)
+```
 
