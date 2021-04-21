@@ -105,9 +105,7 @@ def setup():
 def draw():
     background(200)
     for i in range(tam_tabuleiro):
-        label(i)
         for j in range(tam_tabuleiro):
-            label(j, vertical=True)
             c = tabuleiro_a.get((i, j))
             if not c:
                 fill(255)
@@ -121,15 +119,12 @@ def draw():
                 text(c,
                      i * tam_casa + borda + meia_casa, 
                      j * tam_casa + borda + meia_casa) 
-     
-def label(n, vertical=False):
+    
     fill(0)
-    pos =  n * tam_casa + borda + meia_casa 
-    if vertical:
+    for n in range(tam_tabuleiro):
+        pos =  n * tam_casa + borda + meia_casa 
         text(n, meia_casa, pos)
-    else:
         text(n, pos, height - meia_casa)
-
 ```
 
 ![imagem do tabuleiro aqui](assets/batalha-naval.png)
