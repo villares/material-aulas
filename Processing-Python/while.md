@@ -6,7 +6,7 @@ Um laço de repetição com `while` pode ser conveniente quando:
 
 - O número de de iterações (voltas do laço) é indeterminado, isto é, não é conhecido com antecedência, você só descobre a hora de parar no meio do processo de repetições.
 
-###### A estrutura/sintaxe dos laços `while`
+## A estrutura/sintaxe dos laços `while`
 
 De forma geral os laços de repetição baseados no `while` tem a seguinte estrutura: 
 
@@ -41,7 +41,7 @@ while True: # um laço inicialmente infinito
         break # saída do laço    
 ```
 
-###### Um primeiro exemplo
+### Primeiro exemplo, incrementando um valor não-inteiro, um ângulo 
 
 No exemplo abaixo usaremos o laço `while` testando se o valor de um ângulo `ang` é menor que 360 graus (em radianos, a constante Pi vezes dois, ou, no Processing `TWO_PI`). 
 
@@ -70,7 +70,7 @@ def estrela(x, y, raio_a, raio_b, num_pontas):
 
 ![estrela](assets/estrela.png)
 
-###### Um exemplo que adiciona tuplas sorteadas à uma lista, depenendendo de uma regra/restrição
+### Adicionando tuplas sorteadas à uma lista, dependendo de uma regra, a restrição da distância
 
 Suponha que você quer uma coleção de 1000 pontos, descritos por tuplas (x, y), produzidos (pseudo-)aleatoriamente, mas que cumpram um requisito, no caso estar a uma certa distância do centro do desenho. A cada ciclo do laço é "sorteada" uma posição, mas ela é adicionada à lista apenas se cumprir o requisito. Como garantir que são adicionadas exatamente 1000 posições, uma vez que podem ser sorteadas posições que não atendem o requisito em alguns ciclos? A resposta é este uso de `while`.
 
@@ -92,7 +92,7 @@ def setup():
 
 Note que neste exemplo, muito simples, não garantimos que não teremos posições sobrepostas. Isto pode ser resolvido consultando se a posição "sorteada" já existr na estrutura de dados. Para listas isso é algo não eficiente. Veja o exemplo a seguir, que resolve este problema, mas se trata de um desenho diferente, e a não-sobreposição é a única restrição.
 
-###### Um exemplo com um conjunto - sorteando elementos que não se sobrepõe (as posições não repetem)
+### Sorteando elementos que não se sobrepõe, as posições não repetem, usando um conjunto/set
 
 Imagine uma grade com 6400 posições, vocẽ quer sortear exatamente 3200 quadrados,mas não quer sobreposições.
 
@@ -113,7 +113,7 @@ def setup():
 
 ![quadrados não sobretostos while](assets/while_set.png)
 
-##### Um terceiro exemplo, acumulando elementos de largura variável
+### Acumulando elementos de largura variável
 
 Neste terceiro exemplo queremos acumular retângulos de larguras aleatórias até uma determinada largura total máxima. No corpo do `while()`
 há um mecanismo que checa se a adição da largura da vez passa do limite, e ajusta apropriadamente a última largura.
