@@ -76,13 +76,13 @@ def draw():
         
 def keyPressed():
     if key == 'o':
-        selectInput("escolha um arquivo:", "file_selected")
+        selectInput("escolha um arquivo:", "select_file")
     if key == 'a':
         linhas[:] = []
     if key == 's':
         saveFrame("select_input.png")
         
-def file_selected(selection):
+def select_file(selection):
     if selection == None:
         print(u"Seleção cancelada.")
     else:
