@@ -34,11 +34,9 @@ No `bezierVertex()` propriamente dito, os quatro primeiros argumentos são as co
 
 ## Curvas com `curveVertex()`
 
-Agora que já sabemos iterar por uma estrutura de dados, e como usar as coordenadas das tuplas para desenhar um polígono, podemos experimentar a mesma estratégia com outros típos de vértice. 
+Vejamos agora o `curveVertex()`, uma forma de descrever curvas que não tem os pontos de controle como as Bezier, mas tem a curiosa propriedade dos pontos/vértices serem influenciados pelos pontos que vem antes e depois deles.
 
-Agora veremos o `curveVertex()`,que não tem pontos de controle como Bezier, mas tem a curiosa propriedade de ser influenciado pelos pontos que vem antes e depois dele.
-
-Considere esta lista de pontos:
+Vamos iterar por uma estrutura de dados, e usar as coordenadas de tuplas, da mesma forma que fizemos para desenhar um polígono, só que desta vez vamos experimentar essa estratégia com outros típos de vértice, os vértices de curva, que acabmos me mencionar. Considere esta lista de pontos:
 
 ```python
 pontos = [
