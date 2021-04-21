@@ -70,8 +70,29 @@ def estrela(x, y, raio_a, raio_b, num_pontas):
 
 ![estrela](assets/estrela.png)
 
+###### Um exemplo que adiciona tuplas sorteadas à uma lista, depenendendo de uma regra/restrição
 
-###### Um exemplo com um conjunto
+Suponha que você quer uma coleção de 1000 pontos, descritos por tuplas (x, y), produzidos (pseudo-)aleatoriamente, mas que cumpram um requisito, no caso estar a uma certa distância do centro do desenho. A cada ciclo do laço é "sorteada" uma posição, mas ela é adicionada à lista apenas se cumprir o requisito. Como garantir que são adicionadas exatamente 1000 posições, uma vez que podem ser sorteadas posições que não atendem o requisito em alguns ciclos? A resposta é este uso de `while`.
+
+```python
+posicoes = []  # uma lista para guardar tuplas de posições
+
+def setup():
+    size(400, 400)
+    background(0, 0, 100)
+    while len(posicoes) < 1000:
+        x = int(random(width / 5)) * 5
+        y = int(random(height / 5)) * 5
+        if dist(x, y, 200, 200) < 195: 
+             posicoes.append((x, y))   
+             circle(x, y, 5)
+    print(len(posicoes))    
+```
+![pontos limitados pela distância](assets/while_distancia.png)
+
+Note que neste exemplo, muito simples, não garantimos que não teremos posições sobrepostas. Isto pode ser resolvido consultando se a posição "sorteada" já existr na estrutura de dados. Para listas isso é algo não eficiente. Veja o exemplo a seguir, que resolve este problema, mas se trata de um desenho diferente, e a não-sobreposição é a única restrição.
+
+###### Um exemplo com um conjunto - sorteando elementos que não se sobrepõe (as posições não repetem)
 
 Imagine uma grade com 6400 posições, vocẽ quer sortear exatamente 3200 quadrados,mas não quer sobreposições.
 
@@ -90,9 +111,9 @@ def setup():
     print(len(squares))    
 ```
 
-![estrela](assets/while_set.png)
+![quadrados não sobretostos while](assets/while_set.png)
 
-##### Um terceiro exemplo
+##### Um terceiro exemplo, acumulando elementos de largura variável
 
 Neste terceiro exemplo queremos acumular retângulos de larguras aleatórias até uma determinada largura total máxima. No corpo do `while()`
 há um mecanismo que checa se a adição da largura da vez passa do limite, e ajusta apropriadamente a última largura.
