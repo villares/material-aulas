@@ -33,7 +33,7 @@ Em cada ciclo um item é atribuido a uma variável, cujo nome vem logo após o `
 
 ```python
 for «variavel» in «iterável»:
-    «código do laço / corpo»
+    «corpo»
 ```
 
 Você consegue imaginar o resultado do código a seguir?
