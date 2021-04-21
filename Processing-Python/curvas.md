@@ -4,9 +4,11 @@ Agora que já sabemos desenhar um polígonos com `beginShape()` e `endShape()` o
 
 ### Sumário
 
-[Curvas Bezier](#curvas-bezier-com-beziervertex)
-
-
+- [Curvas Bezier com `bezierVertex()`](#curvas-bezier-com-beziervertex)
+- [Curvas com `curveVertex()`](#curvas-com-curvevertex)
+- [Simulando arcos e filetes com Bezier](#simulando-arcos-e-filetes-com-bezier)
+- [Assuntos relacionados](#assuntos-relacionados)
+- [Extra: Um testador de curvas interativo](#extra-um-testador-de-curvas-interativo)
 
 ## Curvas Bezier com `bezierVertex()`
 
@@ -30,7 +32,7 @@ No `bezierVertex()` propriamente dito, os quatro primeiros argumentos são as co
 
 ![errada](assets/curve_bezier.png)
 
-### `curveVertex()`
+## Curvas com `curveVertex()`
 
 Agora que já sabemos iterar por uma estrutura de dados, e como usar as coordenadas das tuplas para desenhar um polígono, podemos experimentar a mesma estratégia com outros típos de vértice. 
 
@@ -102,13 +104,20 @@ Veja como ficaria acrescentando-se o `CLOSE` em `endShape(CLOSE)`
 
 ![aberta normal](assets/curve_closed.png)
 
-### Assuntos relacionados
+## Simulando arcos e filetes com Bezier 
+
+Repositório externo:
+- [Uma aproximação de arcos com Bezier](https://github.com/villares/arc_tangents_and_bezier_studies/blob/master/villares_bezier_arc_aproximation/villares_bezier_arc_aproximation.pyde)
+- [Polígonos filetados e "aumentados com arcos"](https://github.com/villares/arc_tangents_and_bezier_studies/)
+
+
+## Assuntos relacionados
 
 - [Desenhando Polígonos - I](poligonos_1.md)
 - [Desenhando Polígonos - II](poligonos_2.md)
 - [Sequências e laços de repetição](lacos_py.md)
 
-### EXTRA: Um testador de curvas interativo
+## Extra: Um testador de curvas interativo
 
 **Desafio:** Você conseguiria escrever o código que permite testar as curvas arrastando os pontos com o mouse?
 
