@@ -231,7 +231,7 @@ Isso é chamado de enumeração, e podemos usar a função `enumerate()`.
 
 ```python
 for «variável_para_índice», «variável_para_item» in enumerate(«sequência»):
-    «código do laço / corpo»
+    «corpo»
 ```
 
 Veja usado no contexto do exemplo anterior.
