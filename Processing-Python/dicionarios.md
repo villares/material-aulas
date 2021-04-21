@@ -170,9 +170,9 @@ frutas = ['banana', 'uva', 'uva', 'banana', 'kiwi', 'jaca', 'uva']
 frutas_sem_repetir = list(set(frutas)) # resultado: ['banana', 'uva', 'kiwi', 'jaca']
 ```
 
-### Operações com conjuntos
+### Operações com conjuntos e seus métodos
 
-```
+```python
 conjunto_a = {"azul", "sonolento",}
 conjunto_b = {"vermelho", "sonolento"}
 
