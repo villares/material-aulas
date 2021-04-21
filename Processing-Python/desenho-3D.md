@@ -135,6 +135,8 @@ def draw():
 
 ### Documentação das opções de `hint()`
 
+É possível controlar alguns aspectos do cálculo da apresentação 3D, meio que um ajuste fino, que tem impacto na performance (velocidade de execução) e aparência. Este código exemplo abaixo permite testar os ajustes, conhecidos como *hints* da máquina de apresentação (*render engine*).  
+
 ```python
 # Este exemplo mostra a diferença entre as opções documentadas em:
 # https://processing.org/reference/hint_.html
@@ -198,7 +200,8 @@ def apply_hints():
         hint(enable_const if status else disable_const)
 
 ```
-# se der pau na sua placa de vídeo , veja essa dica: 
+
+### Se der pau na sua placa de vídeo, tente isto: 
 
 Se você estiver no Linux com uma placa intel integrada, tente acrescentar isto no início do seu sketch
 
