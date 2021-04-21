@@ -81,12 +81,12 @@ def setup():
     size(400, 400)
     background(0, 0, 100)
     while len(posicoes) < 1000:
-        x = int(random(width / 5)) * 5
-        y = int(random(height / 5)) * 5
+        x = random(width)
+        y = random(height)
         if dist(x, y, 200, 200) < 195: 
              posicoes.append((x, y))   
              circle(x, y, 5)
-    print(len(posicoes))    
+    print(len(posicoes))  # exibe: 1000
 ```
 ![pontos limitados pela distância](assets/while_distancia.png)
 
@@ -97,18 +97,18 @@ Note que neste exemplo, muito simples, não garantimos que não teremos posiçõ
 Imagine uma grade com 6400 posições, vocẽ quer sortear exatamente 3200 quadrados,mas não quer sobreposições.
 
 ```python
-squares = set()  # conjunto, coleção que não preserva a ordem
+quadrados = set()  # conjunto, coleção que não preserva a ordem
 
 def setup():
     size(400, 400)
     background(0, 0, 100)
-    while len(squares) < 5000:
+    while len(quadrados) < 3200:
         x = int(random(width) / 5)
         y = int(random(height) / 5)
         if (x, y) not in squares:   # esta operação é rápida em conjuntos
-             squares.add((x, y))    # note .add() e não .append()
+             quadrados.add((x, y))    # note .add() e não .append()
              rect(x * 10, y * 10, 10, 10)
-    print(len(squares))    
+    print(len(quadrados))  # exibe: 3200
 ```
 
 ![quadrados não sobretostos while](assets/while_set.png)
