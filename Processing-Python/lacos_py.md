@@ -21,17 +21,22 @@ Executando a função `range()` com o argumento 10, `range(10)`, vamos obter uma
 
 <code>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</code>
 
-Podemos usar <code>range(parada)</code> ou <code>range(inicio, parada)</code>, o número início está incluso, o número de parada não está incluso.
-</details>
+Podemos usar <code>range(parada)</code> ou <code>range(inicio, parada)</code>, o número início está incluso, o número de parada não está incluso. Há ainda a forma  <code>range(inicio, parada, passo)</code> que veremos mais adiante.
 
+</details>
 
 ## Laços de repetição com `for`
 
-![`for i in range(10):` ](assets/for_i.png)
+Usando a estrutura `for` podemos fazer uma ação para cada item de uma coleção 'iterável', como as estruturas de dados que veremos depois, ou ainda para cada item produzido por um gerador (como uma linha de um leitor de arquivos, por exemplo) e para cada número produzido pelo `range()`. 
 
-Usando a estrutura `for` podemos fazer uma ação para cada número produzido pelo `range()` mais precisamente, para cada item de uma coleção 'iterável' como as estruturas de dados que veremos depois. 
+Em cada ciclo um item é atribuido a uma variável, cujo nome vem logo após o `for` e antes do `in`. No bloco indentado de código, também conhecido como o *corpo*, acontecem ações, quase sempre usando o valor do item atribuído à variável no início de cada ciclo. 
 
-Em cada ciclo um item da coleção é atribuido a uma variável, cujo nome vem logo após o `for` e antes do `in`. No bloco indentado de código acontece a ação usando esse valor. Você consegue imaginar o resultado do código a seguir?
+```python
+for «variavel» in «iterável»:
+    «corpo»
+```
+
+Você consegue imaginar o resultado do código a seguir?
 
 ```python
 for n in range(10): # para cada número do range(10) 
@@ -54,9 +59,33 @@ for n in range(10): # para cada número do range(10)
 </pre>
 </details>
 
+### Sobre os nomes das variáveis usadas no `for` e "repetições simples"
+
 É tradicional usar certos nomes de variável `i`, `j` e `k`, por exemplo, para armazenar números de 'contadores' ou 'índices' que vão variando a cada volta do laço `for`.
 
+![`for i in range(10):` ](assets/for_i.png)
+
+Algumas vezes nem vamos usar os itens! Só queremos repetir a operação, então em vez de guardar o valor em uma variável nomeada com `x`, `y`, `n` ou `i` usamos uma variável com o curioso nome`_` (*underscore*, ou como muitos falam 'underline'). Isso é uma dica de quem está escrevendo o código de que o valor da variável vai ser desprezado. Exemplo:
+
+```python
+for _ in range(3): # repita 3 vezes!
+   print("viva!")
+```
+
+<details>
+  <summary>clique para ver o resutado no console</summary>
+
+<pre>
+viva!
+viva!
+viva!
+</pre>
+</details>
+
+## Mais exemplos (com o resultado oculto para você tentar resolver antes de olhar)
+
 Agora outro exemplo usando `range()` com efeito visual.
+
 ```python
 for i in range(14):
     y = 10 + 5 * i
@@ -90,25 +119,6 @@ for j in range(14):
 </pre>
 
 <img src="https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/verticais.png">
-</details>
-
-### Repetições simples
-
-Algumas vezes nem vamos usar os números! Só queremos repetir a operação, então em vez de guardar o número em uma variável nomeada com `x`, `y`, `n` ou `i` usamos uma variável com o curioso nome`_` (*underscore*, ou como muitos falam 'underline'). Isso é uma dica de quem está escrevendo o código de que o valor da variável vai ser desprezado. Exemplo:
-
-```python
-for _ in range(3): # repita 3 vezes!
-   print("viva!")
-```
-
-<details>
-  <summary>clique para ver o resutado no console</summary>
-
-<pre>
-viva!
-viva!
-viva!
-</pre>
 </details>
 
 #### Você consegue imaginar um desenho usando esse tipo de repetição e números [pseudo-aleatórios](aleatoriedade_1.md) com `random()`?
@@ -217,7 +227,15 @@ def setup():
 ### Enumerando os itens da sequência
 
 Ao iterarmos por uma sequência, pode ser útil obter ao mesmo tempo que o item, o índice da posição do item na sequência.
-Isso é chamado de enumeração, e podemos usar a função `enumerate()` para fazer como neste exemplo:
+Isso é chamado de enumeração, e podemos usar a função `enumerate()`.
+
+```python
+for «variável_para_índice», «variável_para_item» in enumerate(«sequência»):
+    «corpo»
+```
+
+Veja usado no contexto do exemplo anterior.
+
 
 ```python
 def setup():
