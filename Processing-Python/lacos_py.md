@@ -31,7 +31,7 @@ Usando a estrutura `for` podemos fazer uma ação para cada item de uma coleçã
 
 Em cada ciclo um item é atribuido a uma variável, cujo nome vem logo após o `for` e antes do `in`. No bloco indentado de código, também conhecido como o *corpo*, acontecem ações, quase sempre usando o valor do item atribuído à variável no início de cada ciclo. 
 
-```
+```python
 for «variavel» in «iterável»:
     «códido do laço / corpo»
 ```
