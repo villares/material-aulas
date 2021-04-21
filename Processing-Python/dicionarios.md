@@ -183,7 +183,7 @@ diferenca_simetrica = conjunto_a ^ conjunto_b   #{"azul", "vermelho"}
 
 Um exemplo visual
 
-![imagem do tabuleiro aqui](assets/conjuntos.png)
+![conjuntos](assets/conjuntos.png)
 
 ```python
 from __future__ import unicode_literals
