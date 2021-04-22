@@ -171,8 +171,8 @@ frutas_sem_repetir = list(set(frutas)) # resultado: ['banana', 'uva', 'kiwi', 'j
 conjunto_a = {"mar", "vento",}
 conjunto_b = {"fogo", "vento"}
 
-uniao = conjunto_a | conjunto_b            # {"mar", "vento", "fogo"} 
-interseccao = conjunto_a & conjunto_b      # {"vento"}
+uniao = conjunto_a | conjunto_b                 # {"mar", "vento", "fogo"} 
+interseccao = conjunto_a & conjunto_b           # {"vento"}
 diferenca_simetrica = conjunto_a ^ conjunto_b   # {"mar", "fogo"} 
 diferenca_a_menos_b = conjunto_a - conjunto_b   # {"mar"}
 diferenca_b_menos_a = conjunto_b - conjunto_a   # {"fogo"}
