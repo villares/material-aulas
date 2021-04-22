@@ -135,3 +135,8 @@ def setup():
 ```
 
 ![estrela](assets/while_add.png)
+
+
+# Assuntos relacionados
+
+- [Dicionários e conjuntos](dicionarios.md)
