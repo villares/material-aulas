@@ -176,7 +176,7 @@ interseccao = conjunto_a & conjunto_b      # {"sonolento"}
 diferenca_simetrica = conjunto_a ^ conjunto_b   #{"azul", "vermelho"} 
 ```
 
-Um exemplo visual
+Um exemplo visual, interativo
 
 ![conjuntos](assets/conjuntos.png)
 
@@ -231,3 +231,4 @@ def mouseClicked():
             c['visible'] = not c['visible']
 ```
 
+Execute o código acima para poder com o mouse ligar e desligar cada um dos conjuntos calculados pelas operações demonstradas (clicando na legenda).
