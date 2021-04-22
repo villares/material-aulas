@@ -135,12 +135,14 @@ def draw():
 Não é incomum termos como valores de um dicionário, outros dicionários. O formato de intercâmbio de infomações JSON (lê-se *djeizon*, vem de *JavaScript Object Notation*), é praticamente uma porção de dicionários aninhados.
 
 ```python
+# Exemplo tosco, era bom arrumar os dados
+
 estados = {'MG': {'capital':'Belo Horizonte', 'pop': 80000000},
            'AC': {'capital':'Rio Branco', 'pop': 880000},
            'RJ': {'capital':'Rio de Janeiro', 'pop': 70000000}, 
            }
 
-estados['SP'] = {'capital':u'São Paulo', 'pop':44000000}
+estados['SP'] = {'capital':u'São Paulo', 'pop':44000000}  # Acrescenta estado, a chave é a sigla, o valor um outro dicionário
    
 ```
 
