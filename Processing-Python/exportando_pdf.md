@@ -1,6 +1,10 @@
 # Exportando PDF
 
-Para  salvar um PDF, formato que preserva informação vetorial, de maneira semelhante ao SVG, é necessário adicionar uma biblioteca de exportação que já vem com o Processing, acrescentando esta linha no início do *sketch*:
+Saver salvar um PDF é muito útil, pois é formato que preserva informação vetorial, de maneira semelhante ao SVG (recomendo a leitura da página sobre exportar SVG também).
+
+## Preparação - importando a biblioteca
+
+Primeiro é necessário adicionar uma biblioteca de exportação que já vem com o Processing, acrescentando esta linha no início do *sketch*:
 
 ``` python
 add_library('pdf')
@@ -169,6 +173,16 @@ O que não funciona quando exportamos em PDF?
 - A chamada `blendMode(MULTIPLY)` ou qualquer outra variante de `blendMode()` não tem efeito no PDF (só na tela).
 
 - Para exportar desenhos em 3D, é preciso usar `beginRaw()`  e `endRaw()` em lugar de `beginRecord/endRecord` e o resultado é um tanto deficiente (veja exemplo em [Exportando SVG](exportando_svg.md)).
+
+## O que pode dar errado? Algumas considerações finais
+
+Se não estiver funcionando, confira se não está esquecendo algo sobre exportação de PDF:
+
+- Pense com cuidado se seu sketch precisa salvar apenas um frame ou acumular frames (muda a estratégia um pouco)
+- Não esqueça que só aparecem na gravação ações e ajustes feitos depois do beginRecord() ou beginRaw() e isso é bastante crítico em relação a:
+    - `background()`
+    - ajustes como `colorMode()`, `rectMode()` ou outros ajustes de atributos
+- não esqueça de declarar com `global` o flag/indicador tanto no `draw()` como no `keyPressed()`, se apropriado, para alterar o estado ou início da gravação.
 
 ### Assuntos relacionados:
 
