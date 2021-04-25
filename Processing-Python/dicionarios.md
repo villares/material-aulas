@@ -216,7 +216,7 @@ def setup():
             set1.add((x, y))
         if dist(x, y, c2x, c2y) < 270:
             set2.add((x, y))
-    conjuntos = (
+    conjuntos = (   # Atenção, `conjuntos` é uma tupla de dicionários! Contém conjuntos na chave 'set'
         {'set' : set1 - set2,'label' : 'set1 - set2 (diferença)',
         'visible': True, 'diameter': 20, 'color' : color(200, 0, 0)},                  
         {'set' : set2 - set1,'label' : 'set2 - set1 (diferença)',
