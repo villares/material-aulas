@@ -21,7 +21,7 @@ Veja se você consegue identificar, nos exemplos acima, os elementos do seguinte
 ```python
 nova_lista = []
 for «valor» in «iterável»:
-      resultado.append(«novo_elemento»)  # o novo elemento é acrescentado (podendo ou não depender do valor)
+      resultado.append(«novo_elemento»)  # o novo elemento é acrescentado
 ```
 
 E a forma reescrita:
@@ -36,7 +36,7 @@ nova_lista = [«novo_elemento» for «valor» in «iterável»]
 nova_lista = []
 for «valor» in «iterável»:
     if  «condição»:  # a condição depende do valor
-        resultado.append(«novo_elemento»)  # o novo elemento depende do valor
+        resultado.append(«novo_elemento»)  # o novo elemento é acrescentado
 ```
 Que pode ser reescrito assim:
 
