@@ -82,7 +82,7 @@ soma_quadrados = sum(n * n for n in range(100) if n % 2 == 0) # 161700
 ```python
 dimensoes_retangulos = [(10, 20), (20, 30), (10, 30), (30, 30), (30, 10), (5, 40)]
 areas_sem_repetir = {a * b for a, b in dimensoes_retangulos}
-print(areas_sem_repetir) # set
+print(areas_sem_repetir) #  set([900, 200, 300, 600])
 ```
 
 Um dicionário "pré-calculado" das áreas
