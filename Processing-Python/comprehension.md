@@ -2,7 +2,7 @@
 
 É muito comum usarmos um laço de repetição para produzir e acumular elementos em uma estrutura de dados, vamos ver um exemplo genérico de um `for` que acrescenta itens em uma lista:
 
-```.python
+```python
 pontos = []
 for i in range(10):
     x = i * 10
