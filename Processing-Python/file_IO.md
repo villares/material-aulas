@@ -23,7 +23,7 @@ A leitura dos dos dados pode ser feita no Python de maneira mais 'universal', o 
 
 ```python
 # No Python - exemplo mais universal
-from codecs import open # para poder usar unicode="utf-8" no Python 2 
+from codecs import open # desnecessário no Python 3, isto é para poder usar unicode="utf-8" no Python 2 
 with open("data/frutas.txt", "r", encoding="utf-8") as file:
     linhas = file.readlines()
 ```
