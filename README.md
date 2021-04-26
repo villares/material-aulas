@@ -1,4 +1,4 @@
-## material para cursos e oficinas ([repositório](https://github.com/villares/material-aulas/))
+## Material para cursos e oficinas ([repositório](https://github.com/villares/material-aulas/))
 
 ### Como colaborar e contribuir?
 
