@@ -44,7 +44,9 @@ Que pode ser reescrito assim:
 nova_lista = [«novo_elemento» for «valor» in «iterável» if «condição»]
 ```
 
-Vamos ver alguns exemplos concretos!
+### Mais exemplos
+
+Sem "filtragem"
 
 ```python
 dimensoes_retangulos = [(10, 20), (20, 30), (10, 30), (30, 30), (30, 10)]
@@ -55,7 +57,7 @@ for a, b in demensoes_retangulos:
 areas = [a * b for a, b in dimensoes]
 ```
 
-Números divisíveis por 3
+Com "filtragem", números divisíveis por 3
 
 ```python
 divisivel_por_3 = []
@@ -65,6 +67,7 @@ for n in range(1000):
 
 divisivel_por_3 = [n for n in range(1000) if n % 3 == 0]
 ```
+### Expressões geradoras
 
 Se você não precisa dessa coleção de valores mais de uma vez, pode evitar que ela seja guardada na memória, usando expressões geradoras (generator expressions) substituindo os colchetes por parêntes:
 
@@ -73,6 +76,24 @@ Se você não precisa dessa coleção de valores mais de uma vez, pode evitar qu
 soma_quadrados = sum(n * n for n in range(100) if n % 2 == 0) # 161700
 
 ```
+
+## Compreensão de conjuntos e dicionários
+
+```python
+dimensoes_retangulos = [(10, 20), (20, 30), (10, 30), (30, 30), (30, 10), (5, 40)]
+areas_sem_repetir = {a * b for a, b in dimensoes_retangulos}
+print(areas_sem_repetir) # set
+```
+
+Um dicionário "pré-calculado" das áreas
+
+```
+areas_dict = {(a, b): a * b for a, b in dimensoes_retangulos}
+# {(30, 30): 900, (20, 30): 600, (10, 30): 300,
+#  (10, 20): 200, (30, 10): 300, (5, 40): 200
+# }
+```
+
 
 ###### Veja no livto Pense em Python
 
