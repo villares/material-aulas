@@ -1,6 +1,6 @@
 # Dicionários e conjuntos
 
-Conjunto (*set*) e dicionário (*dict*) são duas das mais importantes estruturas de dados em Python. Vamos começar pelos dicionários. 
+Dicionário (*dict*) e conjunto (*set*) e são duas das mais importantes estruturas de dados em Python. Vamos começar pelos dicionários.
 
 ## Dicionários
 
