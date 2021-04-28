@@ -21,6 +21,7 @@ De forma geral os laços de repetição baseados no `while` tem a seguinte estru
 while «condição»: #  enquanto a condição for verdadeira, execute:
     «corpo» 
 ```
+No caso da estrutura if, a condição é avaliada como True (verdadeiro) ou False (falso) e o bloco de códigos é executado uma única vez. No caso do while, o bloco de códigos será executado enquanto a condição for verdadeira, resultando em um loop infinito. Para evitar essa repetição infinita é necessário modificar o código do corpo de modo que:
 
 No código do corpo é necessário que seja modificada de alguma forma a condição avaliada pelo laço, para que ela se torne `False` (falsa) em determinado momento, ou então invocar `break`. Uma dessas duas coisas é necessária para evitar uma repetição infinita.
 
@@ -47,6 +48,25 @@ while True: # um laço inicialmente infinito
     if «condição de saída»:
         break # saída do laço    
 ```
+###### Exemplo do uso de while e else: 
+
+x = 0
+while(x<10):
+    print(x) # quando a condição for verdadeira
+    x+=1;
+else: # quando a condição for falsa
+    print("False")
+
+x = 0
+while(x<10):
+    print(x) # quando a condição for verdadeira
+    x+=1;
+    break # saída do laço
+else: # quando a condição for falsa
+    print("False") # não será executado
+
+O break interrompe a execução de todo o ciclo e, nesse caso, o bloco do condicionante else, isto é, o bloco de códigos executado quando a condição não é verdadeira, não será executado.
+
 
 ###### Um primeiro exemplo
 
