@@ -1,4 +1,9 @@
-## Manipulando números com `map()` e `lerp()`
+# Manipulando números com `map()` e `lerp()`
+
+## Sumário
+  ### [Função `map()`](#a-função-map-do-processing)
+  ### [Função `lerp()`](#a-função-lerp)
+  ### [Função `lerpColor()`](#lerp-para-cores)
 
 ### A função `map()` do Processing
 
@@ -46,7 +51,7 @@ Isso lembra o `map()` que acabamos de ver, mas com uma faixa de origem (para o *
 Note que assim como em `map()` valores fora da faixa esperada de origem (no caso entre **0** e **1**) produzem valores além dos limites fornecidos.
 
 
-#### *Lerp* para cores
+### *Lerp* para cores
 
 Podemos também obter cores intermediárias com a função `lerpColor()` 
 
