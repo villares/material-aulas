@@ -1,5 +1,10 @@
 # Instruções condicionais e operadores lógicos
 
+
+###  Sumário
+
+[Sintaxe](#sintaxe-if-e-ifelse)
+
 ## As bifurcações no caminho de execução do código
 
 Imagine o seguinte cenário...
