@@ -1,9 +1,10 @@
 # Manipulando números com `map()` e `lerp()`
 
 ## Sumário
-  ### [Função `map()`](#a-função-map-do-processing)
-  ### [Função `lerp()`](#a-função-lerp)
-  ### [Função `lerpColor()`](#lerp-para-cores)
+
+[Função `map()`](#a-função-map-do-processing)
+[Função `lerp()`](#a-função-lerp)
+[Função `lerpColor()`](#lerp-para-cores)
 
 ### A função `map()` do Processing
 
