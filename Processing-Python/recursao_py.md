@@ -27,6 +27,9 @@ def desenha_retangulos(x, y, tamamho, nivel):
     # e então apenas o retângulo no início da função é desenhado.
 ```
 
+> Este exemplo foi adaptado material de curso em [arteprog.space/programacao-criativa](https://arteprog.space/programacao-criativa/).
+
+
 ### Árvore recursiva
 
 ```python
@@ -35,21 +38,21 @@ def setup():
  
 def draw():
     background(240, 240, 200)
-    translate(250, 300)
+    translate(250, 300)  # desloca a origem, o 0,0 das coordenadas
     galho(60)
     
 def galho(tamanho):
     ang = radians(mouseX)
-    encurtar = .8
+    encurtar = 0.8
     line(0, 0, 0, -tamanho)  
-    if tamanho > 5:
-        translate(0, -tamanho)
+    if tamanho > 5:  # caso base quando tamanho não é maior que 5
+        translate(0, -tamanho)  # desloca origem para ponta do galho
         rotate(ang)
         galho(tamanho * encurtar)  
         rotate(2 * -ang)
         galho(tamanho * encurtar) 
-        rotate(ang)
-        translate(0, tamanho)
+        rotate(ang)            # desfaz rotação
+        translate(0, tamanho)  # desfaz deslocamento da origem
 ```
 
 [exemplo interativo com pyp5js](https://abav.lugaralgum.com/sketch-a-day/2019/sketch_191025pybr2019/index.html)
@@ -86,8 +89,6 @@ def grade(xg, yg, wg, n=None):
 
 ![](assets/grade_recursiva.png)
 
----
-Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
 
 ---
 Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
