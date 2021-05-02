@@ -153,6 +153,9 @@ def mouseWheel(e):
  ```
 ![grade](assets/zen.gif)
 
-## Bibliografia
+## Sugestão de leitutra
 
-REAS, C. FRY, B. Processing: a programming handbook for visual designers and artists. Cambridge, Mass: MIT Press, 2007. 
+Tutoriais em:
+
+- https://processing.org/tutorials/typography/ (Java)
+- https://py.processing.org/tutorials/text/ (Python)
