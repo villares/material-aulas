@@ -53,54 +53,65 @@ Uma aba **slider** é um arquivo `slider.py`
 ```python
 class Slider:
 
-    def __init__(self, low, high, default):
+    template = "{:.1f}"  # para formatar como mostra o valor
+    label_align = CENTER
+
+    def __init__(self, low, high, default, label=''):
         """
         slider has range from low to high
         and is set to default
         """
         self.low = low
         self.high = high
-        self.val = default
-        self.label = ''  # blank label
+        self.value = default
+        self.label = label
         self.w, self.h = 120, 20
+        self.x, self.y = 20, 20  # default position
+        self.rectx = self.x + map(self.value, self.low, self.high, 0, self.w)
 
     def position(self, x, y):
-        """slider's position on screen"""
+        """set position on screen"""
         self.x = x
         self.y = y
         # the position of the rect you slide:
-        self.rectx = self.x + map(self.val, self.low, self.high, 0, self.w)
-        self.recty = self.y
+        self.rectx = self.x + map(self.value, self.low, self.high, 0, self.w)
 
-    def value(self):
+    def update(self):
         """updates the slider and returns value"""
-        pushStyle()
-        pushMatrix()
+        # mousePressed moves slider
+        if mousePressed and dist(mouseX, mouseY, self.rectx, self.y) < self.h:
+            self.rectx = mouseX
+        # constrain rectangle
+        self.rectx = constrain(self.rectx, self.x, self.x + self.w)
+        self.value = map(self.rectx,
+                         self.x, self.x + self.w,
+                         self.low, self.high)
+        self.display()
+        return self.value
+        
+    def display(self):
+        push()  # combines pushMatrix() and pushStyle()
         resetMatrix()
         rectMode(CENTER)
         # gray line behind slider
         strokeWeight(4)
         stroke(200)
         line(self.x, self.y, self.x + 120, self.y)
-        # press mouse to move slider
-        if mousePressed and dist(mouseX, mouseY, self.rectx, self.recty) < self.h:
-            self.rectx = mouseX
-        # constrain rectangle
-        self.rectx = constrain(self.rectx, self.x, self.x + self.w)
         # draw rectangle
         strokeWeight(1)
         stroke(0)
         fill(255)
-        rect(self.rectx, self.recty, self.w / 12, self.h)
-        self.val = map(self.rectx, self.x, self.x + self.w, self.low, self.high)
+        rect(self.rectx, self.y, self.w / 12, self.h)
         # draw value
         fill(0)
         textSize(10)
         textAlign(CENTER, CENTER)
-        text(int(self.val), self.rectx, self.recty + self.h)
-        # text label
-        text(self.label, self.x + self.w / 2, self.y - self.h)
-        popMatrix()
-        popStyle()
-        return self.val
+        text(self.template.format(self.value), self.rectx, self.y + self.h)
+        # draw label
+        if self.label_align == LEFT:
+            textAlign(self.label_align)
+            text(self.label, self.x, self.y - self.h)
+        else:
+            text(self.label, self.x + self.w / 2, self.y - self.h)
+        pop()  # popStyle() and popMat
 ```
