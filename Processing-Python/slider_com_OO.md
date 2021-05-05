@@ -6,7 +6,6 @@
 from __future__ import unicode_literals
 from slider import Slider  # slider é o arquivo slider.py
 
-
 def setup():
     global s1, s2, s3
     global seed
@@ -47,7 +46,9 @@ def galho(tamanho):
         popMatrix()
  ```
         
- ### Como é a classe `Slider` por dentro?       
+![slider](assets/slider.png) 
+        
+### Como é a classe `Slider` por dentro?       
  
 Uma aba **slider** é um arquivo `slider.py`
         
@@ -93,8 +94,7 @@ class Slider:
         stroke(0)
         fill(255)
         rect(self.rectx, self.recty, self.w / 12, self.h)
-        self.val = map(
-            self.rectx, self.x, self.x + self.w, self.low, self.high)
+        self.val = map(self.rectx, self.x, self.x + self.w, self.low, self.high)
         # draw value
         fill(0)
         textSize(10)
