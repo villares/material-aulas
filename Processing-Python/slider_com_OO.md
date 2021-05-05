@@ -3,46 +3,47 @@
 ### Como usar uma classe `Slider`
 
 ```python
+from __future__ import unicode_literals
 from slider import Slider  # slider é o arquivo slider.py
 
+
 def setup():
-    global seed, tam, ang, rnd
+    global s1, s2, s3
+    global seed
     seed = int(random(1000))
     print(seed)
     size(500, 500)
-    tam = Slider(10, 80, 50)
-    tam.position(10, 30)
-    tam.label = 'tamanho'
-    ang = Slider(0, 180, 45)
-    ang.position(160, 30)
-    ang.label = u'ângulo'
-    rnd = Slider(0, 10, 0)
-    rnd.position(320, 30)    
-    rnd.label = u'variação aleatória'
+    s1 = Slider(0, 90, 50, 'tamanho')
+    s1.position(20, 30)
+    s2 = Slider(0, 180, 45, 'ângulo')
+    s2.position(190, 30)
+    s3 = Slider(0, 10, 0, 'variação aleatória')
+    s3.position(360, 30)    
                 
 def draw():
-    global angulo, m_random
+    global angulo, rndvar
     randomSeed(seed)
     background(240, 240, 200)
     
-    tamanho = tam.value()
-    angulo = radians(ang.value())
-    m_random = rnd.value() / 10
+    tamanho = s1.update()
+    angulo = radians(s2.update())
+    rndvar = s3.update() / 10
 
-    translate(250, 430)
+    translate(250, 440)
     galho(tamanho)   
      
 def galho(tamanho):
-    reducao = .8
-    strokeWeight(tamanho / 10)
+    reducao = 0.75
+    sw = tamanho / 10
+    strokeWeight(sw)
     line(0, 0, 0, -tamanho)
     if tamanho > 5:
         pushMatrix()
         translate(0, -tamanho)
         rotate(angulo)
-        galho(tamanho * reducao - random(-2, 4) * m_random)
+        galho(tamanho * reducao - random(-sw, sw) * rndvar)
         rotate(-angulo * 2)
-        galho(tamanho * reducao - random(-2, 4) * m_random)
+        galho(tamanho * reducao - random(-sw, sw) * rndvar)
         popMatrix()
  ```
         
