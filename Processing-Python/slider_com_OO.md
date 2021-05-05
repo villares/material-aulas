@@ -23,12 +23,10 @@ def draw():
     global angulo, rndvar
     randomSeed(seed)
     background(240, 240, 200)
-    
+    translate(250, 440)    
     tamanho = s1.update()
     angulo = radians(s2.update())
     rndvar = s3.update() / 10
-
-    translate(250, 440)
     galho(tamanho)   
      
 def galho(tamanho):
