@@ -66,8 +66,7 @@ class Slider:
         self.value = default
         self.label = label
         self.w, self.h = 120, 20
-        self.x, self.y = 20, 20  # default position
-        self.rectx = self.x + map(self.value, self.low, self.high, 0, self.w)
+        self.position(20, 20)  # default position
 
     def position(self, x, y):
         """set position on screen"""
