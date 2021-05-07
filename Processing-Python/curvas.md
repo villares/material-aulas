@@ -9,10 +9,10 @@ Agora que já sabemos [desenhar um polígonos com `beginShape()` e `endShape()` 
 
 [Curvas com `curveVertex()`](#curvas-com-curvevertex)
 - [Exemplo 1: Comportamento inesperado](#curvas-com-curvevertex#exemplo-1-comportamento-inesperado)
-- [Exemplo 2: Fechando a curva corretamente](#curvas-com-curvevertex#exemplo-2-fechando-a-curva-corretamente)
-- [Exemplo 3: Curva aberta](#curvas-com-curvevertex#exemplo-3-curva-aberta)
-- [Exemplo 4: Curva aberta usando diferentes pontos](#curvas-com-curvevertex#exemplo-4-curva-aberta-usando-diferentes-pontos)
-- [Exemplo 5: Usando `endShape(CLOSE)`](#curvas-com-curvevertex#exemplo-5-usando-`endShape(CLOSE)`)
+- [Exemplo 2: Fechando a curva corretamente](#exemplo-2-fechando-a-curva-corretamente)
+- [Exemplo 3: Curva aberta](#exemplo-3-curva-aberta)
+- [Exemplo 4: Curva aberta usando diferentes pontos](#exemplo-4-curva-aberta-usando-diferentes-pontos)
+- [Exemplo 5: Usando `endShape(CLOSE)`](#exemplo-5-usando-endshapeclose)
 
 [Simulando arcos e filetes com Bezier](#simulando-arcos-e-filetes-com-bezier)
 
