@@ -1,0 +1,7 @@
+newmtl cube
+Ka 1.000 1.000 1.000
+Kd 1.000 1.000 1.000
+Ks 0.000 0.000 0.000
+d 1.0
+map_Ka cube.png
+map_Kd cube.png

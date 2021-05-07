@@ -1,10 +1,10 @@
-## Lendo e escrevendo dados em arquivos (*file IO*)
+## Lendo e escrevendo dados em arquivos CSV
 
-### Entrada (*input*) e saída (*output*) de dados em arquivos
+### *Comma Separated Values*, um formato de intercâmbio primitivo, porém ainda útil
 
-Nosso primeiro exemplo vai ser sobre como ler e escrever dados simples em um arquivo CSV (*comma separated values*, um arquivo texto com valores separados por vígula).
+Vamos agora falar sobre como ler e escrever dados simples em um arquivo CSV, um arquivo texto com valores separados por vígula. Tanto o Processing como  o a biblioteca padrão do Python tem ferramentas para ajudar a lidar com este formato.
 
-O arquivo `dados.csv` vai ficar dentro da pasta `/data/` dentro  do seu sketch:
+Em preparação para o nosso primeiro exemplo, note que precisaremos de um arquivo `dados.csv` que deve ficar dentro da pasta `/data/` dentro  do seu sketch:
 
 ```
 sketch_2020_05a                (pasta/folder do sketch)
@@ -16,7 +16,7 @@ sketch_2020_05a                (pasta/folder do sketch)
 Conteúdo do aquivo:
 
 ```
-maçã
+/maçã
 abacaxi
 pêra
 banana

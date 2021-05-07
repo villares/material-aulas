@@ -1,10 +1,8 @@
 ## Compreensão de listas (*list comprehension*)
 
+É muito comum usarmos um laço de repetição para produzir e acumular elementos em uma estrutura de dados, vamos ver um exemplo genérico de um `for` que acrescenta itens em uma lista:
 
-
-É muito comum usarmos um laço de repetição para produzir e acumular elementos  em uma estrutura de dados, vamos ver um exemplo genérico de um `for` que acrescenta itens em uma lista:
-
-```.python
+```python
 pontos = []
 for i in range(10):
     x = i * 10
@@ -17,4 +15,91 @@ Existe um maneira alternativa de fazer isso usando a sintaxe chamada *compreens�
 ```python
 pontos = [(i * 10, random(-100, 100)) for i in range(10)]
 ```
+
+Veja se você consegue identificar, nos exemplos acima, os elementos do seguinte padrão geral, que usa um laço de repetição para construir a lista: 
+
+```python
+nova_lista = []
+for «valor» in «iterável»:
+      resultado.append(«novo_elemento»)  # o novo elemento é acrescentado
+```
+
+E a forma reescrita:
+
+```python
+nova_lista = [«novo_elemento» for «valor» in «iterável»]
+```
+
+É possível ainda "filtrar", usar uma condição que permite ou não produzir novos elementos.
+
+```python
+nova_lista = []
+for «valor» in «iterável»:
+    if  «condição»:  # a condição depende do valor
+        resultado.append(«novo_elemento»)  # o novo elemento é acrescentado
+```
+Que pode ser reescrito assim:
+
+```python
+nova_lista = [«novo_elemento» for «valor» in «iterável» if «condição»]
+```
+
+### Mais exemplos
+
+Sem "filtragem"
+
+```python
+dimensoes_retangulos = [(10, 20), (20, 30), (10, 30), (30, 30), (30, 10)]
+areas = []
+for a, b in demensoes_retangulos:
+    areas.append(a * b)
+
+areas = [a * b for a, b in dimensoes]
+```
+
+Com "filtragem", números divisíveis por 3
+
+```python
+divisivel_por_3 = []
+for n in range(1000):
+    if n % 3 == 0:
+        divisivel_por_3.append(n)
+
+divisivel_por_3 = [n for n in range(1000) if n % 3 == 0]
+```
+### Expressões geradoras
+
+Se você não precisa dessa coleção de valores mais de uma vez, pode evitar que ela seja guardada na memória, usando expressões geradoras (generator expressions) substituindo os colchetes por parêntes:
+
+```python
+# soma os quadrados dos números pares entre 0 e 98 (o 100 não está incluso).
+soma_quadrados = sum(n * n for n in range(100) if n % 2 == 0) # 161700
+
+```
+
+## Compreensão de conjuntos e dicionários
+
+```python
+dimensoes_retangulos = [(10, 20), (20, 30), (10, 30), (30, 30), (30, 10), (5, 40)]
+areas_sem_repetir = {a * b for a, b in dimensoes_retangulos}
+print(areas_sem_repetir) #  set([900, 200, 300, 600])
+```
+
+Um dicionário "pré-calculado" das áreas
+
+```
+areas_dict = {(a, b): a * b for a, b in dimensoes_retangulos}
+# {(30, 30): 900, (20, 30): 600, (10, 30): 300,
+#  (10, 20): 200, (30, 10): 300, (5, 40): 200
+# }
+```
+
+
+###### Veja no livto Pense em Python
+
+- [Abrangência de listas](https://github.com/villares/PensePython2e/blob/master/docs/19-extra.md#192---abrang%C3%AAncia-de-listas)
+- [Expressões geradoras](https://github.com/villares/PensePython2e/blob/master/docs/19-extra.md#193---express%C3%B5es-geradoras)
+
+
+
 

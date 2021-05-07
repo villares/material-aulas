@@ -6,7 +6,7 @@ Um laço de repetição com `while` pode ser conveniente quando:
 
 - O número de de iterações (voltas do laço) é indeterminado, isto é, não é conhecido com antecedência, você só descobre a hora de parar no meio do processo de repetições.
 
-###### A estrutura/sintaxe dos laços `while`
+## A estrutura/sintaxe dos laços `while`
 
 De forma geral os laços de repetição baseados no `while` tem a seguinte estrutura: 
 
@@ -41,7 +41,7 @@ while True: # um laço inicialmente infinito
         break # saída do laço    
 ```
 
-###### Um primeiro exemplo
+### Primeiro exemplo, incrementando um valor não-inteiro, um ângulo 
 
 No exemplo abaixo usaremos o laço `while` testando se o valor de um ângulo `ang` é menor que 360 graus (em radianos, a constante Pi vezes dois, ou, no Processing `TWO_PI`). 
 
@@ -70,29 +70,50 @@ def estrela(x, y, raio_a, raio_b, num_pontas):
 
 ![estrela](assets/estrela.png)
 
+### Adicionando tuplas sorteadas à uma lista, dependendo de uma regra, a restrição da distância
 
-###### Um exemplo com um conjunto
-
-Imagine uma grade com 6400 posições, vocẽ quer sortear exatamente 3200 quadrados,mas não quer sobreposições.
+Suponha que você quer uma coleção de 1000 pontos, descritos por tuplas (x, y), produzidos (pseudo-)aleatoriamente, mas que cumpram um requisito, no caso estar a uma certa distância do centro do desenho. A cada ciclo do laço é "sorteada" uma posição, mas ela é adicionada à lista apenas se cumprir o requisito. Como garantir que são adicionadas exatamente 1000 posições, uma vez que podem ser sorteadas posições que não atendem o requisito em alguns ciclos? A resposta é este uso de `while`.
 
 ```python
-squares = set()  # conjunto, coleção que não preserva a ordem
+posicoes = []  # uma lista para guardar tuplas de posições
 
 def setup():
     size(400, 400)
     background(0, 0, 100)
-    while len(squares) < 5000:
+    while len(posicoes) < 1000:
+        x = random(width)
+        y = random(height)
+        if dist(x, y, 200, 200) < 195: 
+             posicoes.append((x, y))   
+             circle(x, y, 5)
+    print(len(posicoes))  # exibe: 1000
+```
+![pontos limitados pela distância](assets/while_distancia.png)
+
+Note que neste exemplo, muito simples, não garantimos que não teremos posições sobrepostas. Isto pode ser resolvido consultando se a posição "sorteada" já existir na estrutura de dados. Para listas isso é algo não eficiente. Veja o exemplo a seguir, que resolve este problema, mas se trata de um desenho diferente, e a não-sobreposição é a única restrição.
+
+### Sorteando elementos que não se sobrepõe, as posições não repetem, usando um conjunto/set
+
+Imagine uma grade com 6400 posições, vocẽ quer sortear exatamente 3200 quadrados,mas não quer sobreposições.
+
+```python
+quadrados = set()  # conjunto, coleção que não preserva a ordem
+
+def setup():
+    size(400, 400)
+    background(0, 0, 100)
+    while len(quadrados) < 3200:
         x = int(random(width) / 5)
         y = int(random(height) / 5)
         if (x, y) not in squares:   # esta operação é rápida em conjuntos
-             squares.add((x, y))    # note .add() e não .append()
+             quadrados.add((x, y))    # note .add() e não .append()
              rect(x * 10, y * 10, 10, 10)
-    print(len(squares))    
+    print(len(quadrados))  # exibe: 3200
 ```
 
-![estrela](assets/while_set.png)
+![quadrados não sobretostos while](assets/while_set.png)
 
-##### Um terceiro exemplo
+### Acumulando elementos de largura variável
 
 Neste terceiro exemplo queremos acumular retângulos de larguras aleatórias até uma determinada largura total máxima. No corpo do `while()`
 há um mecanismo que checa se a adição da largura da vez passa do limite, e ajusta apropriadamente a última largura.
@@ -114,3 +135,8 @@ def setup():
 ```
 
 ![estrela](assets/while_add.png)
+
+
+# Assuntos relacionados
+
+- [Dicionários e conjuntos](dicionarios.md)

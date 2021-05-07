@@ -21,8 +21,6 @@ Agora que já sabemos desenhar um polígonos com `beginShape()` e `endShape()` o
 
 [Extra: Um testador de curvas interativo](curvas.html#extra-um-testador-de-curvas-interativo)
 
-
-
 ## Curvas Bezier com `bezierVertex()`
 
 As famosas curvas Bezier levam o nome de Pierre Bézier, que as desenvolveu em seus trabalhos na década de 1960 na indústria automotiva, elas descrevem curvas a partir das coordenadas de pontos, ou âncoras, que delimitam o início e o fim de uma curva, mas também precisam de "pontos de controle" que em geral ficam fora da curva, mas controlam o seu comportamento.
@@ -92,9 +90,9 @@ def draw():
 
 Agora que já sabemos iterar por uma estrutura de dados, e como usar as coordenadas das tuplas para desenhar um polígono, podemos experimentar a mesma estratégia com outros típos de vértice. 
 
-Agora veremos o `curveVertex()`,que não tem pontos de controle como Bezier, mas tem a curiosa propriedade de ser influenciado pelos pontos que vem antes e depois dele.
+Vejamos agora o `curveVertex()`, uma forma de descrever curvas que não tem os pontos de controle como as Bezier, mas tem a curiosa propriedade dos pontos/vértices serem influenciados pelos pontos que vem antes e depois deles.
 
-Considere esta lista de pontos:
+Vamos iterar por uma estrutura de dados, e usar as coordenadas de tuplas, da mesma forma que fizemos para desenhar um polígono, só que desta vez vamos experimentar essa estratégia com outros típos de vértice, os vértices de curva, que acabmos me mencionar. Considere esta lista de pontos:
 
 
 ```python
@@ -317,11 +315,14 @@ def draw():
 </pre>
 </details>
 
+
 ### Exemplo 5: Usando `endShape(CLOSE)`
 
 Veja como ficaria acrescentando-se o `CLOSE` em `endShape(CLOSE)`
 
 ![aberta normal](assets/curve_closed.png)
+
+## Extra: Um testador de curvas interativo
 
 <details>
 <summary>Código completo para reproduzir a imagem acima</summary>
@@ -360,7 +361,7 @@ def draw():
 </pre>
 </details>
 
-### Assuntos relacionados
+## Assuntos relacionados
 
 - [Desenhando Polígonos - I](poligonos_1.md)
 - [Desenhando Polígonos - II](poligonos_2.md)
