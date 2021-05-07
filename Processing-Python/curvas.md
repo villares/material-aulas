@@ -1,14 +1,25 @@
+
 # Desenhando curvas - I
 
 Agora que já sabemos desenhar um polígonos com `beginShape()` e `endShape()` ou `endShape(CLOSE)` podemos experimentar formas curvas.
 
-### Sumário
+## Sumário
+[Assunto anterior: desenhando polígonos (beginShape e endShape)](poligonos_2)
 
-- [Curvas Bezier com `bezierVertex()`](#curvas-bezier-com-beziervertex)
-- [Curvas com `curveVertex()`](#curvas-com-curvevertex)
-- [Simulando arcos e filetes com Bezier](#simulando-arcos-e-filetes-com-bezier)
-- [Assuntos relacionados](#assuntos-relacionados)
-- [Extra: Um testador de curvas interativo](#extra-um-testador-de-curvas-interativo)
+[Curvas Bezier com `bezierVertex()`](curvas.html#curvas-bezier-com-beziervertex)
+
+[Curvas com `curveVertex()`](curvas.html#curvas-com-curvevertex)
+- [Exemplo 1: Comportamento inesperado](curvas.html#curvas-com-curvevertex#exemplo-1-comportamento-inesperado)
+- [Exemplo 2: Fechando a curva corretamente](curvas.html#curvas-com-curvevertex#exemplo-2-fechando-a-curva-corretamente)
+- [Exemplo 3: Curva aberta](curvas.html#curvas-com-curvevertex#exemplo-3-curva-aberta)
+- [Exemplo 4: Curva aberta usando diferentes pontos](curvas.html#curvas-com-curvevertex#exemplo-4-curva-aberta-usando-diferentes-pontos)
+- [Exemplo 5: Usando `endShape(CLOSE)`](curvas.html#curvas-com-curvevertex#exemplo-5-usando-`endShape(CLOSE)`)
+
+[Simulando arcos e filetes com Bezier](curvas.html#simulando-arcos-e-filetes-com-bezier)
+
+[Assuntos relacionados](curvas.html#assuntos-relacionados)
+
+[Extra: Um testador de curvas interativo](curvas.html#extra-um-testador-de-curvas-interativo)
 
 ## Curvas Bezier com `bezierVertex()`
 
@@ -32,11 +43,57 @@ No `bezierVertex()` propriamente dito, os quatro primeiros argumentos são as co
 
 ![errada](assets/curve_bezier.png)
 
+<details>
+<summary>Código completo para reproduzir a imagem acima</summary>
+<pre>
+
+pontos = [
+    (100, 50),          
+    (150, 150),
+    (250, 100),
+    (250, 200),
+    (150, 250),
+    (50, 200),
+    (50, 100),
+    ] 
+
+ def setup():
+    size(300, 300)
+
+def draw():
+    background(100)
+    strokeWeight(3)
+    stroke(0)
+    noFill()
+    
+    beginShape()
+    vertex(100, 50)          
+    bezierVertex(150, 150,  
+                    250, 100,  
+                    250, 200), 
+    bezierVertex(150, 250,  
+                    50, 200,   
+                    50, 100)
+    endShape()
+    strokeWeight(1)
+    for i, ponto in enumerate(pontos):
+        x, y = ponto
+        fill(255)
+        ellipse(x, y, 5, 5)
+        t = "{}: {:03}, {:03}".format(i, x, y) 
+        text(t, x+5, y-5) 
+
+</pre>
+</details> 
+
 ## Curvas com `curveVertex()`
+
+Agora que já sabemos iterar por uma estrutura de dados, e como usar as coordenadas das tuplas para desenhar um polígono, podemos experimentar a mesma estratégia com outros típos de vértice. 
 
 Vejamos agora o `curveVertex()`, uma forma de descrever curvas que não tem os pontos de controle como as Bezier, mas tem a curiosa propriedade dos pontos/vértices serem influenciados pelos pontos que vem antes e depois deles.
 
 Vamos iterar por uma estrutura de dados, e usar as coordenadas de tuplas, da mesma forma que fizemos para desenhar um polígono, só que desta vez vamos experimentar essa estratégia com outros típos de vértice, os vértices de curva, que acabmos me mencionar. Considere esta lista de pontos:
+
 
 ```python
 pontos = [
@@ -50,6 +107,8 @@ pontos = [
     ]  
 ```
 
+### Exemplo 1: Comportamento inesperado
+
 Se chamarmos uma vez `curveVertex()` para cada vértice dentro de um contexto de `beginShape()` e `endShape(CLOSE)`obteremos o seguinte resultado, esquisito (estou aqui omitindo parte do código que controla os atributos gráficos e mostra os texto com os índices dos pontos):
 
 ```python
@@ -60,6 +119,44 @@ endShape(CLOSE)
 ```
 
 ![errada](assets/curve_wrong.png)
+
+<details>
+<summary>Código completopara reproduzir a imagem acima</summary>
+ 
+ <pre>
+ pontos = [
+    (100, 50),          
+    (150, 100),
+    (250, 100),
+    (250, 200),
+    (150, 200),
+    (50, 200),
+    (50, 100),
+    ]
+
+def setup():
+    size(300, 300)
+    
+def draw():
+    background(100)
+    strokeWeight(3)
+    stroke(0)
+    noFill()
+    
+    beginShape()
+    for x, y in pontos:
+        curveVertex(x, y)
+    endShape(CLOSE)
+    strokeWeight(1)
+    for i, ponto in enumerate(pontos):
+        x, y = ponto
+        fill(255)
+        ellipse(x, y, 5, 5)
+        text(i, x+5, y-5)
+</pre>
+</details>
+
+### Exemplo 2: Fechando a curva corretamente
 
 Para obter o resultado esperado (ou, caro leitor, pelo menos o que eu esperava) temos que acrescentar uma chamada com as coordenadas do último vértice antes do primeiro, e do primeiro vértice depois do último! Diga lá se não é estranho isso!
 
@@ -73,6 +170,47 @@ endShape(CLOSE)
 
 ![fechada](assets/curve_closed_smooth.png)
 
+<details>
+<summary>Código completo</summary>
+ 
+ <pre>
+pontos = [
+    (100, 50),          
+    (150, 100),
+    (250, 100),
+    (250, 200),
+    (150, 200),
+    (50, 200),
+    (50, 100),
+    ] 
+
+def setup():
+    size(300, 300)
+    
+def draw():
+    background(100)
+    strokeWeight(3)
+    stroke(0)
+    noFill()
+
+    beginShape()
+    curveVertex(pontos[-1][0], pontos[-1][1])
+    for x, y in pontos:
+        curveVertex(x, y)
+    curveVertex(pontos[0][0], pontos[0][1])
+    endShape(CLOSE)
+    strokeWeight(1)
+    for i, ponto in enumerate(pontos):
+        x, y = ponto
+        fill(255)
+        ellipse(x, y, 5, 5)
+        text(i, x+5, y-5)
+
+</pre>
+</details>
+
+### Exemplo 3: Curva aberta
+
 É possível fazer uma curva aberta com os mesmo pontos e a mesma influência do último ponto no primeiro, e do primeiro no último, omitindo o `CLOSE`:
 
 ```python
@@ -84,6 +222,48 @@ endShape()
 ```
 
 ![aberta com a forma da fechada](assets/curve_smooth.png)
+
+<details>
+<summary>Código completo para reproduzir a imagem acima</summary>
+<pre>
+pontos = [
+    (100, 50),          
+    (150, 100),
+    (250, 100),
+    (250, 200),
+    (150, 200),
+    (50, 200),
+    (50, 100),
+    ] 
+
+def setup():
+    size(600, 600)
+    
+def draw():
+    background(100)
+    strokeWeight(3)
+    stroke(0)
+    noFill()
+
+    beginShape()
+    curveVertex(pontos[-1][0], pontos[-1][1])
+    for x, y in pontos:
+        curveVertex(x, y)
+    curveVertex(pontos[0][0], pontos[0][1])
+    endShape()
+    strokeWeight(1)
+    for i, ponto in enumerate(pontos):
+        x, y = ponto
+        fill(255)
+        ellipse(x, y, 5, 5)
+        text(i, x+5, y-5)
+        
+</pre>
+</details>
+ 
+
+
+### Exemplo 4: Curva aberta usando diferentes pontos
 
 Agora se não queremos essa influência da curva fechada, é preciso repetir o primeiro e o último vértice.
 
@@ -98,34 +278,9 @@ endShape()
 
 ![aberta normal](assets/curve.png)
 
-Veja como ficaria acrescentando-se o `CLOSE` em `endShape(CLOSE)`
-
-![aberta normal](assets/curve_closed.png)
-
-## Simulando arcos e filetes com Bezier 
-
-Repositório externo:
-- [Uma aproximação de arcos com Bezier](https://github.com/villares/arc_tangents_and_bezier_studies/blob/master/villares_bezier_arc_aproximation/villares_bezier_arc_aproximation.pyde)
-- [Polígonos filetados e "aumentados com arcos"](https://github.com/villares/arc_tangents_and_bezier_studies/)
-
-
-## Assuntos relacionados
-
-- [Desenhando Polígonos - I](poligonos_1.md)
-- [Desenhando Polígonos - II](poligonos_2.md)
-- [Sequências e laços de repetição](lacos_py.md)
-
-## Extra: Um testador de curvas interativo
-
-**Desafio:** Você conseguiria escrever o código que permite testar as curvas arrastando os pontos com o mouse?
-
-![errada](assets/curves_animate.gif)
-
-<details>    
-<summary>Resposta: Usando a mesma estratégia de "arrastar círculos".</summary>
-
-```python
-arrastando = None 
+<details>
+<summary>Código completo para reproduzir a imagem acima</summary>
+<pre>
 pontos = [
     (100, 50),          
     (150, 100),
@@ -134,54 +289,155 @@ pontos = [
     (150, 200),
     (50, 200),
     (50, 100),
-    ]
+    ] 
 
 def setup():
-    size(300, 300)
-
+    size(600, 600)
+    
 def draw():
     background(100)
     strokeWeight(3)
     stroke(0)
     noFill()
+
     beginShape()
-    curveVertex(pontos[-1][0], pontos[-1][1])
+    curveVertex(pontos[0][0], pontos[0][1])
     for x, y in pontos:
         curveVertex(x, y)
+    curveVertex(pontos[-1][0], pontos[-1][1])
+    endShape()
+    strokeWeight(1)
+    for i, ponto in enumerate(pontos):
+        x, y = ponto
+        fill(255)
+        ellipse(x, y, 5, 5)
+        text(i, x+5, y-5)
+</pre>
+</details>
+
+
+### Exemplo 5: Usando `endShape(CLOSE)`
+
+Veja como ficaria acrescentando-se o `CLOSE` em `endShape(CLOSE)`
+
+![aberta normal](assets/curve_closed.png)
+
+## Extra: Um testador de curvas interativo
+
+<details>
+<summary>Código completo para reproduzir a imagem acima</summary>
+<pre>
+pontos = [
+    (100, 50),          
+    (150, 100),
+    (250, 100),
+    (250, 200),
+    (150, 200),
+    (50, 200),
+    (50, 100),
+    ] 
+
+def setup():
+    size(600, 600)
+    
+def draw():
+    background(100)
+    strokeWeight(3)
+    stroke(0)
+    noFill()
+
+    beginShape()
     curveVertex(pontos[0][0], pontos[0][1])
+    for x, y in pontos:
+        curveVertex(x, y)
+    curveVertex(pontos[-1][0], pontos[-1][1])
     endShape(CLOSE)
     strokeWeight(1)
     for i, ponto in enumerate(pontos):
         x, y = ponto
-        if i == arrastando:
-            fill(200, 0, 0)
-        else:
-            fill(255)   
+        fill(255)
         ellipse(x, y, 5, 5)
-        text(i, x + 5, y - 5)
+        text(i, x+5, y-5)
+</pre>
+</details>
 
-def mousePressed():  # quando um botão do mouse é apertado
+## Assuntos relacionados
+
+- [Desenhando Polígonos - I](poligonos_1.md)
+- [Desenhando Polígonos - II](poligonos_2.md)
+- [Sequências e laços de repetição](lacos_py.md)
+
+### EXTRA: Um testador de curvas interativo
+
+**Desafio:** Você conseguiria escrever o código que permite testar as curvas arrastando os pontos com o mouse?
+
+![errada](assets/curves_animate.gif)
+
+<details>    
+<summary>Resposta: Usando a mesma estratégia de "arrastar círculos".</summary>
+<pre>
+arrastando = None
+
+pontos = [ 
+    (100, 50),
+    (150, 100), 
+    (250, 100),
+    (250, 200), 
+    (150, 200), 
+    (50, 200), 
+    (50, 100)] 
+    
+def setup(): 
+    size(300, 300) 
+
+def draw(): 
+    background(100) 
+    strokeWeight(3) 
+    stroke(0) 
+    noFill() 
+    
+    beginShape() 
+    global pontos
     global arrastando
-    for i, ponto in enumerate(pontos):
+    curveVertex(pontos[-1][0], pontos[-1][1])
+    for x, y in pontos: 
+        curveVertex(x, y) 
+    curveVertex(pontos[0][0], pontos[0][1]) 
+    endShape(CLOSE) 
+    strokeWeight(1) 
+    for i, ponto in enumerate(pontos): 
+        x, y = ponto 
+        if i == arrastando: 
+            fill(200, 0, 0)             
+        else:
+            fill(255)
+        ellipse(x, y, 5, 5) 
+        t = "{}: {:03}, {:03}".format(i, x, y)
+        text(t, x + 5, y - 5) 
+    
+def mousePressed():            # quando um botão do mouse é apertado 
+    global arrastando 
+    for i, ponto in enumerate(pontos): 
         x, y = ponto
-        dist_mouse_ponto = dist(mouseX, mouseY, x, y)
-        if  dist_mouse_ponto < 10:
-            arrastando = i
-            break  # encerra o laço
+        dist_mouse_ponto = dist(mouseX, mouseY, x, y) 
+        if dist_mouse_ponto < 10: 
+            arrastando = i 
+            break # encerra o laço 
 
-def mouseReleased():  # quando um botão do mouse é solto
-    global arrastando
-    arrastando = None
-
-def mouseDragged():  # quando o mouse é movido apertado
-    if arrastando is not None:
-        x, y = pontos[arrastando]
-        x += mouseX - pmouseX
-        y += mouseY - pmouseY
+def mouseReleased(): 
+    # quando um botão do mouse é solto 
+    global arrastando 
+    arrastando = None 
+        
+def mouseDragged():
+     # quando o mouse é movido apertado 
+     global pontos
+     global arrastando
+     if arrastando is not None: 
+        x, y = pontos[arrastando] 
+        x += mouseX - pmouseX 
+        y += mouseY - pmouseY 
         pontos[arrastando] = (x, y)
 
-def keyPressed():
-    saveFrame("curve_smooth.png")
-```
-
+</pre>
 </details>
