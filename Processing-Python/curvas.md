@@ -6,15 +6,14 @@ Agora que já sabemos desenhar um polígonos com `beginShape()` e `endShape()` o
 ## Sumário
 [Assunto anterior: desenhando polígonos (beginShape e endShape)](poligonos_2)
 
-[Curvas Bezier com bezierVertex()](curvas.html#curvas-bezier-com-beziervertex)
-- [Exemplo 1](curvas.html#curvas-bezier-com-beziervertex#exemplo-1)
+[Curvas Bezier com `bezierVertex()`](curvas.html#curvas-bezier-com-beziervertex)
 
-[Curvas com curveVertex()](curvas.html#curvas-com-curvevertex)
-- [Exemplo 1](curvas.html#curvas-com-curvevertex#exemplo-1)
-- [Exemplo 2](curvas.html#curvas-com-curvevertex#exemplo-2)
-- [Exemplo 3](curvas.html#curvas-com-curvevertex#exemplo-3)
-- [Exemplo 4](curvas.html#curvas-com-curvevertex#exemplo-4)
-- [Exemplo 5](curvas.html#curvas-com-curvevertex#exemplo-5)
+[Curvas com `curveVertex()`](curvas.html#curvas-com-curvevertex)
+- [Exemplo 1: Comportamento inesperado](curvas.html#curvas-com-curvevertex#exemplo-1-comportamento-inesperado)
+- [Exemplo 2: Fechando a curva corretamente](curvas.html#curvas-com-curvevertex#exemplo-2-fechando-a-curva-corretamente)
+- [Exemplo 3: Curva aberta](curvas.html#curvas-com-curvevertex#exemplo-3-curva-aberta)
+- [Exemplo 4: Curva aberta usando diferentes pontos](curvas.html#curvas-com-curvevertex#exemplo-4-curva-aberta-usando-diferentes-pontos)
+- [Exemplo 5: Usando `endShape(CLOSE)`](curvas.html#curvas-com-curvevertex#exemplo-5-usando-`endShape(CLOSE)`)
 
 [Simulando arcos e filetes com Bezier](curvas.html#simulando-arcos-e-filetes-com-bezier)
 
@@ -32,8 +31,6 @@ Você pode usar um ou mais vértices *Bezier* entre o `beginShape()` e o `endSha
 
 No `bezierVertex()` propriamente dito, os quatro primeiros argumentos são as cordenadas de dois pontos de controle e os últimos dois são as coordenadas do vértice (que pode servir de âncora inicial para um próximo vértice Bezier).
 
-### Exemplo 1
-
 ```
  beginShape()
     vertex(100, 50)         # 0: âncora inicial 
@@ -49,7 +46,7 @@ No `bezierVertex()` propriamente dito, os quatro primeiros argumentos são as co
 ![errada](assets/curve_bezier.png)
 
 <details>
-<summary>Código completo</summary>
+<summary>Código completo para reproduzir a imagem acima</summary>
 <pre>
 
 pontos = [
@@ -112,7 +109,7 @@ pontos = [
     ]  
 ```
 
-### Exemplo 1
+### Exemplo 1: Comportamento inesperado
 
 Se chamarmos uma vez `curveVertex()` para cada vértice dentro de um contexto de `beginShape()` e `endShape(CLOSE)`obteremos o seguinte resultado, esquisito (estou aqui omitindo parte do código que controla os atributos gráficos e mostra os texto com os índices dos pontos):
 
@@ -126,7 +123,7 @@ endShape(CLOSE)
 ![errada](assets/curve_wrong.png)
 
 <details>
-<summary>Código completo</summary>
+<summary>Código completopara reproduzir a imagem acima</summary>
  
  <pre>
  pontos = [
@@ -161,7 +158,7 @@ def draw():
 </pre>
 </details>
 
-### Exemplo 2
+### Exemplo 2: Fechando a curva corretamente
 
 Para obter o resultado esperado (ou, caro leitor, pelo menos o que eu esperava) temos que acrescentar uma chamada com as coordenadas do último vértice antes do primeiro, e do primeiro vértice depois do último! Diga lá se não é estranho isso!
 
@@ -214,7 +211,7 @@ def draw():
 </pre>
 </details>
 
-### Exemplo 3
+### Exemplo 3: Curva aberta
 
 É possível fazer uma curva aberta com os mesmo pontos e a mesma influência do último ponto no primeiro, e do primeiro no último, omitindo o `CLOSE`:
 
@@ -229,7 +226,7 @@ endShape()
 ![aberta com a forma da fechada](assets/curve_smooth.png)
 
 <details>
-<summary>Código completo</summary>
+<summary>Código completo para reproduzir a imagem acima</summary>
 <pre>
 pontos = [
     (100, 50),          
@@ -268,7 +265,7 @@ def draw():
  
 
 
-### Exemplo 4
+### Exemplo 4: Curva aberta usando diferentes pontos
 
 Agora se não queremos essa influência da curva fechada, é preciso repetir o primeiro e o último vértice.
 
@@ -284,7 +281,7 @@ endShape()
 ![aberta normal](assets/curve.png)
 
 <details>
-<summary>Código completo</summary>
+<summary>Código completo para reproduzir a imagem acima</summary>
 <pre>
 pontos = [
     (100, 50),          
@@ -320,14 +317,14 @@ def draw():
 </pre>
 </details>
 
-### Exemplo 5
+### Exemplo 5: Usando `endShape(CLOSE)`
 
 Veja como ficaria acrescentando-se o `CLOSE` em `endShape(CLOSE)`
 
 ![aberta normal](assets/curve_closed.png)
 
 <details>
-<summary>Código completo</summary>
+<summary>Código completo para reproduzir a imagem acima</summary>
 <pre>
 pontos = [
     (100, 50),          
