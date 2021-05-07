@@ -1,25 +1,24 @@
 
 # Desenhando curvas - I
 
-Agora que já sabemos desenhar um polígonos com `beginShape()` e `endShape()` ou `endShape(CLOSE)` podemos experimentar formas curvas.
+Agora que já sabemos [desenhar um polígonos com `beginShape()` e `endShape()` ou `endShape(CLOSE)`](poligonos_2.md) podemos experimentar formas curvas.
 
 ## Sumário
-[Assunto anterior: desenhando polígonos (beginShape e endShape)](poligonos_2)
 
-[Curvas Bezier com `bezierVertex()`](curvas.html#curvas-bezier-com-beziervertex)
+[Curvas Bezier com `bezierVertex()`](#curvas-bezier-com-beziervertex)
 
-[Curvas com `curveVertex()`](curvas.html#curvas-com-curvevertex)
-- [Exemplo 1: Comportamento inesperado](curvas.html#curvas-com-curvevertex#exemplo-1-comportamento-inesperado)
-- [Exemplo 2: Fechando a curva corretamente](curvas.html#curvas-com-curvevertex#exemplo-2-fechando-a-curva-corretamente)
-- [Exemplo 3: Curva aberta](curvas.html#curvas-com-curvevertex#exemplo-3-curva-aberta)
-- [Exemplo 4: Curva aberta usando diferentes pontos](curvas.html#curvas-com-curvevertex#exemplo-4-curva-aberta-usando-diferentes-pontos)
-- [Exemplo 5: Usando `endShape(CLOSE)`](curvas.html#curvas-com-curvevertex#exemplo-5-usando-`endShape(CLOSE)`)
+[Curvas com `curveVertex()`](#curvas-com-curvevertex)
+- [Exemplo 1: Comportamento inesperado](#curvas-com-curvevertex#exemplo-1-comportamento-inesperado)
+- [Exemplo 2: Fechando a curva corretamente](#curvas-com-curvevertex#exemplo-2-fechando-a-curva-corretamente)
+- [Exemplo 3: Curva aberta](#curvas-com-curvevertex#exemplo-3-curva-aberta)
+- [Exemplo 4: Curva aberta usando diferentes pontos](#curvas-com-curvevertex#exemplo-4-curva-aberta-usando-diferentes-pontos)
+- [Exemplo 5: Usando `endShape(CLOSE)`](#curvas-com-curvevertex#exemplo-5-usando-`endShape(CLOSE)`)
 
-[Simulando arcos e filetes com Bezier](curvas.html#simulando-arcos-e-filetes-com-bezier)
+[Simulando arcos e filetes com Bezier](#simulando-arcos-e-filetes-com-bezier)
 
-[Assuntos relacionados](curvas.html#assuntos-relacionados)
+[Assuntos relacionados](#assuntos-relacionados)
 
-[Extra: Um testador de curvas interativo](curvas.html#extra-um-testador-de-curvas-interativo)
+[Extra: Um testador de curvas interativo](#extra-um-testador-de-curvas-interativo)
 
 ## Curvas Bezier com `bezierVertex()`
 
