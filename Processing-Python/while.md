@@ -1,10 +1,14 @@
 # Laço de repetição `while`
 Este é um laço de repetição indeterminado, vejamos alguns exemplos:
 
-#### Sumário
+## Sumário
 
-- [Estrutura Geral](#a)
-
+- [A estrutura/sintaxe dos laços while](#a-estrutura/sintaxe-dos-laços-while)
+- [While e else](#while-e-else)
+- [Primeiro exemplo](#primeiro-exemplo)
+- [Exemplo derivado do primeiro](#exemplo-derivado-do-primeiro)
+- [Segundo exemplo com um conjunto](#segundo-exemplo-com-um-conjunto)
+- [Terceiro exemplo](#terceiro-exemplo)
 
 
 Um laço de repetição com `while` pode ser conveniente quando:
@@ -13,7 +17,7 @@ Um laço de repetição com `while` pode ser conveniente quando:
 
 - O número de de iterações (voltas do laço) é indeterminado, isto é, não é conhecido com antecedência, você só descobre a hora de parar no meio do processo de repetições.
 
-###### A estrutura/sintaxe dos laços `while`
+### A estrutura/sintaxe dos laços `while`
 
 De forma geral os laços de repetição baseados no `while` tem a seguinte estrutura: 
 
@@ -48,27 +52,29 @@ while True: # um laço inicialmente infinito
     if «condição de saída»:
         break # saída do laço    
 ```
-###### Exemplo do uso de while e else: 
+### While e else: 
 
+```python
 x = 0
-while(x<10):
+while(x < 10):
     print(x) # quando a condição for verdadeira
-    x+=1;
+    x += 1;
 else: # quando a condição for falsa
-    print("False")
+    print ("False")
 
 x = 0
-while(x<10):
-    print(x) # quando a condição for verdadeira
+while (x < 10):
+    print (x) # quando a condição for verdadeira
     x+=1;
     break # saída do laço
 else: # quando a condição for falsa
-    print("False") # não será executado
+    print ("False") # não será executado
+```
 
 O break interrompe a execução de todo o ciclo e, nesse caso, o bloco do condicionante else, isto é, o bloco de códigos executado quando a condição não é verdadeira, não será executado.
 
 
-###### Um primeiro exemplo
+#### Primeiro exemplo
 
 No exemplo abaixo usaremos o laço `while` testando se o valor de um ângulo `ang` é menor que 360 graus (em radianos, a constante Pi vezes dois, ou, no Processing `TWO_PI`). 
 
@@ -97,10 +103,31 @@ def estrela(x, y, raio_a, raio_b, num_pontas):
 
 ![estrela](assets/estrela.png)
 
+#### Exemplo derivado do primeiro
 
-###### Um exemplo com um conjunto
+```python
+def setup ():
+    size(600, 600)
+    background(0)
+    mandala(width/2, height/2, 100, 10)
+    
+def mandala( x, y, raio, num_petalas): 
+    passo = TWO_PI/num_petalas
+    ang = 0
+        
+    while ang < TWO_PI:
+        sx = cos(ang) * raio
+        sy = sin(ang) * raio
+        fill(255, 255, 255 , 50)
+        circle((x + sx), (y + sy), raio*2)
+        
+        ang = ang + passo
+```
+![estrela](assets/while_set.png)
 
-Imagine uma grade com 6400 posições, vocẽ quer sortear exatamente 3200 quadrados,mas não quer sobreposições.
+#### Segundo exemplo com um conjunto
+
+Imagine uma grade com 6400 posições, vocẽ quer sortear exatamente 3200 quadrados, mas não quer sobreposições.
 
 ```python
 squares = set()  # conjunto, coleção que não preserva a ordem
@@ -119,7 +146,7 @@ def setup():
 
 ![estrela](assets/while_set.png)
 
-##### Um terceiro exemplo
+#### Terceiro exemplo
 
 Neste terceiro exemplo queremos acumular retângulos de larguras aleatórias até uma determinada largura total máxima. No corpo do `while()`
 há um mecanismo que checa se a adição da largura da vez passa do limite, e ajusta apropriadamente a última largura.
