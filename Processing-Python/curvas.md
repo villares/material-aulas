@@ -56,7 +56,7 @@ pontos = [
     (50, 100),
     ] 
 
- def setup():
+def setup():
     size(300, 300)
 
 def draw():
@@ -79,7 +79,7 @@ def draw():
         x, y = ponto
         fill(255)
         ellipse(x, y, 5, 5)
-        t = "{}: {:03}, {:03}".format(i, x, y) 
+        t = "{}: {:3}, {:3}".format(i, x, y) 
         text(t, x+5, y-5) 
 
 </pre>
@@ -87,11 +87,11 @@ def draw():
 
 ## Curvas com `curveVertex()`
 
-Agora que já sabemos iterar por uma estrutura de dados, e como usar as coordenadas das tuplas para desenhar um polígono, podemos experimentar a mesma estratégia com outros típos de vértice. 
+Agora que já sabemos iterar por uma estrutura de dados, e como usar as coordenadas das tuplas para desenhar um polígono, podemos experimentar a mesma estratégia com outros tipos de vértice. 
 
 Vejamos agora o `curveVertex()`, uma forma de descrever curvas que não tem os pontos de controle como as Bezier, mas tem a curiosa propriedade dos pontos/vértices serem influenciados pelos pontos que vem antes e depois deles.
 
-Vamos iterar por uma estrutura de dados, e usar as coordenadas de tuplas, da mesma forma que fizemos para desenhar um polígono, só que desta vez vamos experimentar essa estratégia com outros típos de vértice, os vértices de curva, que acabmos me mencionar. Considere esta lista de pontos:
+Vamos iterar por uma estrutura de dados, e usar as coordenadas de tuplas, da mesma forma que fizemos para desenhar um polígono, só que desta vez vamos experimentar essa estratégia com outros tipos de vértice, os vértices de curva, que acabamos de mencionar. Considere esta lista de pontos:
 
 
 ```python
@@ -120,7 +120,7 @@ endShape(CLOSE)
 ![errada](assets/curve_wrong.png)
 
 <details>
-<summary>Código completopara reproduzir a imagem acima</summary>
+<summary>Código completo para reproduzir a imagem acima</summary>
  
  <pre>
  pontos = [
@@ -170,7 +170,7 @@ endShape(CLOSE)
 ![fechada](assets/curve_closed_smooth.png)
 
 <details>
-<summary>Código completo</summary>
+<summary>Código completo para reproduzir a imagem acima</summary>
  
  <pre>
 pontos = [
@@ -320,8 +320,6 @@ def draw():
 Veja como ficaria acrescentando-se o `CLOSE` em `endShape(CLOSE)`
 
 ![aberta normal](assets/curve_closed.png)
-
-## Extra: Um testador de curvas interativo
 
 <details>
 <summary>Código completo para reproduzir a imagem acima</summary>
