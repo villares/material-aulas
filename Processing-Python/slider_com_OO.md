@@ -49,7 +49,56 @@ def galho(tamanho):
 ### Como é a classe `Slider` por dentro?       
  
 Uma aba **slider** é um arquivo `slider.py`
+    
+Uma primeira versão da classe Slider
+
+```python
+class Slider:
+
+    def __init__(self, low, high, default, label=''):
+        self.low , self.high = low, high
+        self.value = default
+        self.label = label
+        self.w, self.h = 120, 20
+        self.position(20, 20)  # default position
+
+    def position(self, x, y):
+        self.x, self.y = x, y
+        self.y = y
+        self.rectx = self.x + map(self.value, self.low, self.high, 0, self.w)
+
+    def update(self):
+        if mousePressed and dist(mouseX, mouseY, self.rectx, self.y) < self.h:
+            self.rectx = mouseX
+        self.rectx = constrain(self.rectx, self.x, self.x + self.w)
+        self.value = map(self.rectx, self.x, self.x + self.w, self.low, self.high)
+        self.display()
+        return self.value
         
+    def display(self):
+        push()  # combina pushMatrix() and pushStyle()
+        resetMatrix()
+        rectMode(CENTER)
+        strokeWeight(4)
+        stroke(200)
+        line(self.x, self.y, self.x + 120, self.y)
+        strokeWeight(1)
+        # stroke(0)
+        fill(255)
+        stroke(0)
+        rect(self.rectx, self.y, self.w / 12, self.h)
+        fill(0)
+        textAlign(CENTER, CENTER)
+        text("{:.1f}".format(self.value), self.rectx, self.y + self.h)
+        text(self.label, self.x + self.w / 2, self.y - self.h)
+        pop()  # popStyle() and popMat
+```
+    
+    
+    
+    
+Acrescentando alguns extras e comentários à classe Slider
+
 ```python
 class Slider:
 
@@ -58,8 +107,8 @@ class Slider:
 
     def __init__(self, low, high, default, label=''):
         """
-        slider has range from low to high
-        and is set to default
+        Slider needs range from low to high
+        and and a default value. Label is optional.
         """
         self.low = low
         self.high = high
@@ -69,14 +118,14 @@ class Slider:
         self.position(20, 20)  # default position
 
     def position(self, x, y):
-        """set position on screen"""
+        """Set position on screen, and the rectx 'handle' position"""
         self.x = x
         self.y = y
         # the position of the rect you slide:
         self.rectx = self.x + map(self.value, self.low, self.high, 0, self.w)
 
     def update(self):
-        """updates the slider and returns value"""
+        """Updates the slider and returns value. Calls display()"""
         # mousePressed moves slider
         if mousePressed and dist(mouseX, mouseY, self.rectx, self.y) < self.h:
             self.rectx = mouseX
@@ -89,6 +138,7 @@ class Slider:
         return self.value
         
     def display(self):
+        """Display sliner on screen, using orginal Processing coordinates."""
         push()  # combines pushMatrix() and pushStyle()
         resetMatrix()
         rectMode(CENTER)
