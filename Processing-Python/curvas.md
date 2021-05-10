@@ -46,16 +46,6 @@ No `bezierVertex()` propriamente dito, os quatro primeiros argumentos são as co
 <summary>Código completo para reproduzir a imagem acima</summary>
 <pre>
 
-pontos = [
-    (100, 50),          
-    (150, 150),
-    (250, 100),
-    (250, 200),
-    (150, 250),
-    (50, 200),
-    (50, 100),
-    ] 
-
 def setup():
     size(300, 300)
 
@@ -74,6 +64,17 @@ def draw():
                     50, 200,   
                     50, 100)
     endShape()
+    
+    
+    pontos = [
+        (100, 50),          
+        (150, 150),
+        (250, 100),
+        (250, 200),
+        (150, 250),
+        (50, 200),
+        (50, 100),
+        ]     
     strokeWeight(1)
     for i, ponto in enumerate(pontos):
         x, y = ponto
