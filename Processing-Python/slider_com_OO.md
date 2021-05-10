@@ -64,7 +64,6 @@ class Slider:
 
     def position(self, x, y):
         self.x, self.y = x, y
-        self.y = y
         self.rectx = self.x + map(self.value, self.low, self.high, 0, self.w)
 
     def update(self):
