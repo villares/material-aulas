@@ -78,15 +78,15 @@ O tempo todo vamos consultar o que é conhecido como *language reference* (refer
 
 ## Comentários, o que são e como criar comentários em Python?
 
-Comentários são anotações, pedaços do código que não são executados pelo computador, são ignorados.
-Comentário são feitos para as pessoas (como você, daqui a uma semana!) lembrarem qual era o objetivo daquele pedaço do programa. Anote o seu código com explicações curtas e não esqueça de mudá-los quando o código mudar.
+Comentários são anotações, pedaços de texto no código que não são executados pelo computador, são ignorados. Em Python, comentários começam com `#` e vão até o final da linha. Podem ser a linha inteira ou ficar depois de um trecho de código, e são também um jeito rápido de desativar uma linha de código! Em inglês tem até uma expressão para isso: *comment out* (desativar por meio de um comentário).
 
-Comentários começam com `#` e vão até o final da linha. Podem ser a linha inteira ou ficar depois de um trecho de código, e são também um jeito rápido de desativar uma linha de código! Em inglês tem até uma expressão para isso: *comment out* (desativar por meio de um comentário)
+Os Comentários são feitos principalmente para o benefício as pessoas que colaboram com você e estão lendo o código, como, por exemplo, uma pessoa muito importante que é você-daqui-a-uma-semana, entender qual era o objetivo daquele pedaço do programa. Os comentários que você está vendo neste material didático talvez não sejam um exemplo muito bom de comentários pois eles estão explicando funcionamento muito elementar das funções e experessões usadas, idealmente, anote o seu código com explicações curtas que falem mais do motivo ou objetivo daquele bloco e não esqueça de mudá-los quando o objetivo e o código mudar.
+
 
 ```python
 # Oi eu sou um comentário de uma linha inteira
 
-size(900, 900)  # área de desenho 900 por 900 pixels <- outro comentário
+size(900, 900)  # área de desenho 900 por 900 pixels para caber no meu site <- outro comentário
 
 # background(0) <- instrução desativada, isso aqui tudo virou um comentário!
 
