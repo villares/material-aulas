@@ -96,7 +96,7 @@ de várias linhas que são usados como uma espécie de comentário também, uma 
 que contém explicações para humanos, e não executam como o resto do código.
 
 Quando ficam logo no começo do corpo de uma definição de função ou classe, são
-chamados 'docstrings' (textos de documentação), não se preocupe com isso agora!
+chamados 'docstrings' (textos de documentação).
 """
 ```
 ### Próximos passos
