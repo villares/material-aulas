@@ -76,7 +76,7 @@ class Slider:
         
     def display(self):
         push()  # combina pushMatrix() and pushStyle()
-        resetMatrix()
+        resetMatrix()  # remova caso P3D e não use o slider no meio das transformações
         rectMode(CENTER)
         strokeWeight(4)
         stroke(200)
@@ -139,7 +139,7 @@ class Slider:
     def display(self):
         """Display sliner on screen, using orginal Processing coordinates."""
         push()  # combines pushMatrix() and pushStyle()
-        resetMatrix()
+        resetMatrix()  # remova caso P3D e não use o slider no meio das transformações
         rectMode(CENTER)
         # gray line behind slider
         strokeWeight(4)
