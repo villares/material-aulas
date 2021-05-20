@@ -5,7 +5,7 @@
 - [A função `map()` do Processing](#a-função-map-do-processing)
 - [A função `lerp()`: interpolação linerar](#a-função-lerp-interpolação-linear)
 - [A função `lerpColor()`: interpolando cores](#a-função-lerpcolor-interpolando-cores)
-=
+
 ### A função `map()` do Processing
 
 > No Processing modo Python temos uma situação um pouco curiosa, por ser uma ferramenta híbrida com elementos de Processing e de Python. Essas duas linguagens tem funções de nome `map()` mas com comportamentos/significados totalmente distintos. Nesta página vamos explorar o comportamento do `map()` do Processing (mas é possível obter o comportamento de `map()` do Python também, que explicaremos em outra página).
@@ -52,7 +52,7 @@ Isso lembra o `map()` que acabamos de ver, mas com uma faixa de origem (para o *
 Note que assim como em `map()` valores fora da faixa esperada de origem (no caso entre **0** e **1**) produzem valores além dos limites fornecidos.
 
 
-### A funcção `lerpColor()`: interpolando cores
+### A função `lerpColor()`: interpolando cores
 
 Podemos também obter cores intermediárias com a função `lerpColor()`, um *lerp* especial para cores.
 
