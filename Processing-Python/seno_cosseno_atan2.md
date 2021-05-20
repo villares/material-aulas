@@ -9,7 +9,15 @@ Para começar é preciso saber que quando uma dessas funções pede um ângulo c
 
 #### Sumário
 - [seno e cosseno](#seno-e-cosseno)
-- [seno e cosseno no espaço](#sin-e-cos-no-espaço)
+- [`sin()` e `cos()` no espaço](#sin-e-cos-no-espaço)
+- [outra versão com algumas indicações](#outra-versão-com-algumas-indicações)
+- [`sin()` e `cos()` no tempo](#sin-e-cos-no-tempo)
+- [Seno e cosseno fornecem as coordenadas dos pontos de um círculo!](#seno-e-cosseno-fornecem-as-coordenadas-dos-pontos-de-um-círculo)
+- [Uma versão animada e com algumas indicações](#uma-versão-animada-e-com-algumas-indicações)
+- [A função do arco tangente](#a-função-do-arco-tangente)
+- [Como descobrir a inclinação de um segmento de reta?](#como-descobrir-a-inclinação-de-um-segmento-de-reta)
+- [Desenhando uma seta com `atan2()`](#desenhando-uma-seta-com-atan2)
+- [Apontando para o mouse](#apontando-para-o-mouse)
 
 ### Seno e cosseno
 
