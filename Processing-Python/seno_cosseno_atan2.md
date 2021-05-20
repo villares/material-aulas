@@ -1,11 +1,23 @@
 
 ## Um pouco de ângulos, com seno, cosseno e arco tangente
 
-### `sin()`, `cos()` e `atan2()`
+## `sin()`, `cos()` e `atan2()`
 
 As funções trigonométricas não são nenhum bicho de sete cabeças, 2π cabeças, no máximo...
 
 Para começar é preciso saber que quando uma dessas funções pede um ângulo como argumento (o valor entre parênteses), espera que você informe esse ângulo em *radianos*, por isso, se você pensa em graus, use `radians(angulo_em_graus)` para converter. Outras funções, como `atan2()`, que vamos ver nesta página, devolvem um ângulo, em radianos, que por sua vez pode ser convertido em graus com `degrees(angulo_em_radianos)`se você precisar.
+
+#### Sumário
+- [seno e cosseno](#seno-e-cosseno)
+- [`sin()` e `cos()` no espaço](#sin-e-cos-no-espaço)
+- [outra versão com algumas indicações](#outra-versão-com-algumas-indicações)
+- [`sin()` e `cos()` no tempo](#sin-e-cos-no-tempo)
+- [Seno e cosseno fornecem as coordenadas dos pontos de um círculo!](#seno-e-cosseno-fornecem-as-coordenadas-dos-pontos-de-um-círculo)
+- [Uma versão animada e com algumas indicações](#uma-versão-animada-e-com-algumas-indicações)
+- [A função do arco tangente](#a-função-do-arco-tangente)
+- [Como descobrir a inclinação de um segmento de reta?](#como-descobrir-a-inclinação-de-um-segmento-de-reta)
+- [Desenhando uma seta com `atan2()`](#desenhando-uma-seta-com-atan2)
+- [Apontando para o mouse](#apontando-para-o-mouse)
 
 ### Seno e cosseno
 
