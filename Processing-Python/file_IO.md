@@ -23,8 +23,9 @@ A leitura dos dos dados pode ser feita no Python de maneira mais 'universal', o 
 
 ```python
 # No Python - exemplo mais universal
+from os.path import join
 from codecs import open # desnecessário no Python 3, isto é para poder usar unicode="utf-8" no Python 2 
-with open("data/frutas.txt", "r", encoding="utf-8") as file:
+with open(join('data', 'frutas.txt', 'r', encoding='utf-8') as file:
     linhas = file.readlines()
 ```
 Ou usando uma função bem simples do Processing chamada `loadStrings()`:
@@ -180,6 +181,7 @@ with open(caminho_arquivo, "w", encoding="utf-8") as file:
         x, y, tamanho = circulo
         file.write(u'{} {} {}'.format(x, y, tamanho))
  ```       
+
 
 ### Assuntos relacionados
 
