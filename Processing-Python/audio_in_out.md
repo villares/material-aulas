@@ -37,10 +37,8 @@ def draw():
 
 ### Exemplo de osciladores (geradores de onda) com análise frequência grádica (FFT)
 
-```
-"""
-Inspect the frequency spectrum of different simple oscillators.
-"""
+```python
+# Inspect the frequency spectrum of different simple oscillators.
 
 add_library('sound') 
 
@@ -49,7 +47,7 @@ current_oscillator = 0
 fftBands = 512
 
 def setup():
-    global fft
+    global fft  
     size(640, 360)
     background(255)
 
