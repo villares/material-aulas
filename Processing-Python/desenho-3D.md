@@ -77,7 +77,7 @@ Usando `size()` com `P3D` é possível carregar arquivos OBJ com a função `loa
 
 https://github.com/villares/Paper-objects-with-Processing-and-Python
 
-### Desenhando uma barra em 3D
+### Desenhando uma caixa girada em 3D, em torno de um eixo definido por dois pontos
 
 ```python
 def setup():
@@ -104,6 +104,60 @@ def bar_line(x1, y1, z1, x2, y2, z2, weight=10):
     rotateY(phi)
     box(weight, weight, dist_p1_p2)
     popMatrix()
+```
+
+### Desenhando um prisma girado em 3D
+
+```python
+def prism_line(x1, y1, z1, x2, y2, z2, radius=10, num_points=6):
+    """
+    Desenha um prisma girado em 3D como uma barra.
+    Requer as funções auxiliares draw_face, z_circle e rotate_p.
+    """
+    p1, p2 = (x1, y1, z1), (x2, y2, z2)
+    dist_p1_p2 = dist(x1, y1, z1, x2, y2, z2)
+    v1 = (x2 - x1, y2 - y1, z2 - z1)
+    rho = sqrt(v1[0] ** 2 + v1[1] ** 2 + v1[2] ** 2)
+    phi, the  = acos(v1[2] / rho), atan2(v1[1], v1[0])
+    pushMatrix()
+    translate(x1 + v1[0] / 2.0, y1 + v1[1] / 2.0, z1 + v1[2] / 2.0)
+    rotateZ(the)
+    rotateY(phi)
+    # box(radius, radius, dist_p1_p2) # antiga barra
+    rotateX(HALF_PI) # deixa circlulos perpendiculares a direção da barra
+    base = z_circle(0, -dist_p1_p2 / 2.0, radius, num_points)
+    draw_face(base)  # fechamento base
+    top = z_circle(0, dist_p1_p2 / 2.0, radius, num_points)
+    draw_face(top)  # fechamento topo
+    pairs = zip(top, base)
+    for i, (point_a, point_b) in enumerate(pairs):
+        point_c, point_d = pairs[i -1]
+        face = (point_a, point_b, point_d, point_c)
+        draw_face(face) # faces laterais
+    popMatrix()
+    
+def draw_face(points):
+    beginShape()
+    for x, y, z in points:
+        vertex(x, y, z)
+    endShape(CLOSE)    
+    
+def z_circle(x, y, radius, num_points=16):
+    passo = TWO_PI / num_points
+    ang = 0
+    pts = []
+    while ang < TWO_PI:  # enquanto o ângulo for menor que 2 * PI:
+        sx = x + cos(ang) * radius
+        sz = 0 + sin(ang) * radius
+        pts.append((sx, y, sz))
+        ang += passo  # aumente o ângulo um passo
+    return pts
+
+def rotate_p(xp, yp, angle, x0=0, y0=0):
+    x, y = xp - x0, yp - y0  # translate to origin
+    xr = x * cos(angle) - y * sin(angle)
+    yr = y * cos(angle) + x * sin(angle)
+    return (xr + x0, yr + y0)
 ```
 
 ### Exemplo da biblioteca PeasyCam, para orbitar em torno de objetos
