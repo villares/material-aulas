@@ -112,7 +112,7 @@ def bar_line(x1, y1, z1, x2, y2, z2, weight=10):
 def prism_line(x1, y1, z1, x2, y2, z2, radius=10, num_points=6):
     """
     Desenha um prisma girado em 3D como uma barra.
-    Requer as funções auxiliares draw_face, z_circle e rotate_p.
+    Requer as funções auxiliares draw_face e z_circle.
     """
     p1, p2 = (x1, y1, z1), (x2, y2, z2)
     dist_p1_p2 = dist(x1, y1, z1, x2, y2, z2)
@@ -124,7 +124,7 @@ def prism_line(x1, y1, z1, x2, y2, z2, radius=10, num_points=6):
     rotateZ(the)
     rotateY(phi)
     # box(radius, radius, dist_p1_p2) # antiga barra
-    rotateX(HALF_PI) # deixa círclulos perpendiculares a direção da barra
+    rotateX(HALF_PI) # deixa circlulos perpendiculares a direção da barra
     base = z_circle(0, -dist_p1_p2 / 2.0, radius, num_points)
     draw_face(base)  # fechamento base
     top = z_circle(0, dist_p1_p2 / 2.0, radius, num_points)
@@ -143,21 +143,9 @@ def draw_face(points):
     endShape(CLOSE)    
     
 def z_circle(x, y, radius, num_points=16):
-    passo = TWO_PI / num_points
-    ang = 0
-    pts = []
-    while ang < TWO_PI:  # enquanto o ângulo for menor que 2 * PI:
-        sx = x + cos(ang) * radius
-        sz = 0 + sin(ang) * radius
-        pts.append((sx, y, sz))
-        ang += passo  # aumente o ângulo um passo
-    return pts
-
-def rotate_p(xp, yp, angle, x0=0, y0=0):
-    x, y = xp - x0, yp - y0  # translate to origin
-    xr = x * cos(angle) - y * sin(angle)
-    yr = y * cos(angle) + x * sin(angle)
-    return (xr + x0, yr + y0)
+    a = TWO_PI / num_points
+    return [(x + cos(a * i) * radius, y, sin(a * i) * radius)
+             for i in range(num_points)]
 ```
 
 ### Exemplo da biblioteca PeasyCam, para orbitar em torno de objetos
