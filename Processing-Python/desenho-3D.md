@@ -124,7 +124,7 @@ def prism_line(x1, y1, z1, x2, y2, z2, radius=10, num_points=6):
     rotateZ(the)
     rotateY(phi)
     # box(radius, radius, dist_p1_p2) # antiga barra
-    rotateX(HALF_PI) # deixa circlulos perpendiculares a direção da barra
+    rotateX(HALF_PI) # deixa círclulos perpendiculares a direção da barra
     base = z_circle(0, -dist_p1_p2 / 2.0, radius, num_points)
     draw_face(base)  # fechamento base
     top = z_circle(0, dist_p1_p2 / 2.0, radius, num_points)
