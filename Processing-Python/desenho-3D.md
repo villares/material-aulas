@@ -88,21 +88,21 @@ def draw():
     background(200)
     lights()
     fill(255, 0, 0, 100)
-    bar(50, 50, 0, mouseX, mouseY, 250, 30)
-    bar(450, 450, 0, 250, 250, 250, 30)
+    bar_line(50, 50, 0, mouseX, mouseY, 250, 30)
+    bar_line(450, 450, 0, 250, 250, 250, 30)
 
-def bar(x1, y1, z1, x2, y2, z2, weight=10):
-    """Draw a box rotated in 3D like a bar/edge."""
-    p1, p2 = PVector(x1, y1, z1), PVector(x2, y2, z2)
-    v1 = p2 - p1
-    rho = sqrt(v1.x ** 2 + v1.y ** 2 + v1.z ** 2)
-    phi, the  = acos(v1.z / rho), atan2(v1.y, v1.x)
-    v1.mult(0.5)
+def bar_line(x1, y1, z1, x2, y2, z2, weight=10):
+    """Draw a box rotated in 3D like a bar_line/edge."""
+    p1, p2 = (x1, y1, z1), (x2, y2, z2)
+    dist_p1_p2 = dist(x1, y1, z1, x2, y2, z2)
+    v1 = (x2 - x1, y2 - y1, z2 - z1)
+    rho = sqrt(v1[0] ** 2 + v1[1] ** 2 + v1[2] ** 2)
+    phi, the  = acos(v1[2] / rho), atan2(v1[1], v1[0])
     pushMatrix()
-    translate(x1 + v1.x, y1 + v1.y, z1 + v1.z)
+    translate(x1 + v1[0] / 2.0, y1 + v1[1] / 2.0, z1 + v1[2] / 2.0)
     rotateZ(the)
     rotateY(phi)
-    box(weight, weight, p1.dist(p2))
+    box(weight, weight, dist_p1_p2)
     popMatrix()
 ```
 
