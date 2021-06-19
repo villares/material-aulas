@@ -77,7 +77,7 @@ Usando `size()` com `P3D` é possível carregar arquivos OBJ com a função `loa
 
 https://github.com/villares/Paper-objects-with-Processing-and-Python
 
-### Desenhando uma caixa girada em 3D, em torno de um eixo definido por dois pontos
+### Desenhando uma "caixa", *box()*, girada em 3D, em eixo definido por dois pontos
 
 ```python
 def setup():
