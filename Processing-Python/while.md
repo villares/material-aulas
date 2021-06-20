@@ -1,12 +1,23 @@
 # Laço de repetição `while`
+Este é um laço de repetição indeterminado, vejamos alguns exemplos!
+
+## Sumário
+
+- [Sintaxe dos laços while](#a-estrutura/sintaxe-dos-laços-while)
+- [Primeiro exemplo](#primeiro-exemplo)
+- [Uma variante com círculos](#uma-variante-com-círculos)
+- [Acumulando itens em um conjunto](#acumulando-itens-em-um-conjunto)
+- [Somando larguras variáveis](#somando-larguras-variáveis)
+- [While e else](#while-e-else)
+
+[Assuntos relacionados](#assuntos-relacionados)
 
 Um laço de repetição com `while` pode ser conveniente quando:
 
 - Você precisa de contadores, ou uma sequênica de números, não-inteiros, e a forma `for i in range(inicio, parada, passo)` só funciona com inteiros. Isso pode ser resolvido implementando um [`frange()`](java_para_python.md#implementando-um-range-com-passos-não-inteiros) mas também pode ser feito com `while`
-
 - O número de de iterações (voltas do laço) é indeterminado, isto é, não é conhecido com antecedência, você só descobre a hora de parar no meio do processo de repetições.
 
-## A estrutura/sintaxe dos laços `while`
+### Sintaxe dos laços `while`
 
 De forma geral os laços de repetição baseados no `while` tem a seguinte estrutura: 
 
@@ -14,6 +25,7 @@ De forma geral os laços de repetição baseados no `while` tem a seguinte estru
 while «condição»: #  enquanto a condição for verdadeira, execute:
     «corpo» 
 ```
+No caso da estrutura if, a condição é avaliada como True (verdadeiro) ou False (falso) e o bloco de códigos é executado uma única vez. No caso do while, o bloco de códigos será executado enquanto a condição for verdadeira, resultando em um loop infinito. Para evitar essa repetição infinita é necessário modificar o código do corpo de modo que:
 
 No código do corpo é necessário que seja modificada de alguma forma a condição avaliada pelo laço, para que ela se torne `False` (falsa) em determinado momento, ou então invocar `break`. Uma dessas duas coisas é necessária para evitar uma repetição infinita.
 
@@ -41,7 +53,7 @@ while True: # um laço inicialmente infinito
         break # saída do laço    
 ```
 
-### Primeiro exemplo, incrementando um valor não-inteiro, um ângulo 
+### Primeiro exemplo
 
 No exemplo abaixo usaremos o laço `while` testando se o valor de um ângulo `ang` é menor que 360 graus (em radianos, a constante Pi vezes dois, ou, no Processing `TWO_PI`). 
 
@@ -70,7 +82,29 @@ def estrela(x, y, raio_a, raio_b, num_pontas):
 
 ![estrela](assets/estrela.png)
 
-### Adicionando tuplas sorteadas à uma lista, dependendo de uma regra, a restrição da distância
+### Uma variante com círculos
+
+```python
+def setup ():
+    size(600, 600)
+    background(0)
+    mandala(width / 2, height / 2, 100, 10)
+   
+def mandala(x, y, raio, num_petalas): 
+    passo = TWO_PI / num_petalas
+    angulo = 0
+    while angulo < TWO_PI:
+        sx = x + cos(angulo) * raio
+        sy = y + sin(angulo) * raio
+        fill(255, 255, 255 , 50)
+        circle(sx, sy, raio * 2)
+        angulo += passo
+```
+![estrela](assets/while_set.png)
+
+### Acumulando itens em um conjunto
+
+##### Adicionando tuplas sorteadas à uma lista, dependendo de uma regra, a restrição da distância.
 
 Suponha que você quer uma coleção de 1000 pontos, descritos por tuplas (x, y), produzidos (pseudo-)aleatoriamente, mas que cumpram um requisito, no caso estar a uma certa distância do centro do desenho. A cada ciclo do laço é "sorteada" uma posição, mas ela é adicionada à lista apenas se cumprir o requisito. Como garantir que são adicionadas exatamente 1000 posições, uma vez que podem ser sorteadas posições que não atendem o requisito em alguns ciclos? A resposta é este uso de `while`.
 
@@ -92,9 +126,9 @@ def setup():
 
 Note que neste exemplo, muito simples, não garantimos que não teremos posições sobrepostas. Isto pode ser resolvido consultando se a posição "sorteada" já existir na estrutura de dados. Para listas isso é algo não eficiente. Veja o exemplo a seguir, que resolve este problema, mas se trata de um desenho diferente, e a não-sobreposição é a única restrição.
 
-### Sorteando elementos que não se sobrepõe, as posições não repetem, usando um conjunto/set
+##### Sorteando elementos que não se sobrepõe, as posições não repetem, usando um conjunto/set
 
-Imagine uma grade com 6400 posições, vocẽ quer sortear exatamente 3200 quadrados,mas não quer sobreposições.
+Imagine uma grade com 6400 posições, vocẽ quer sortear exatamente 3200 quadrados, mas não quer sobreposições.
 
 ```python
 quadrados = set()  # conjunto, coleção que não preserva a ordem
@@ -113,7 +147,7 @@ def setup():
 
 ![quadrados não sobretostos while](assets/while_set.png)
 
-### Acumulando elementos de largura variável
+### Somando larguras variáveis
 
 Neste terceiro exemplo queremos acumular retângulos de larguras aleatórias até uma determinada largura total máxima. No corpo do `while()`
 há um mecanismo que checa se a adição da largura da vez passa do limite, e ajusta apropriadamente a última largura.
@@ -136,7 +170,39 @@ def setup():
 
 ![estrela](assets/while_add.png)
 
+### `While` e else 
 
-# Assuntos relacionados
+```python
+while True: # um laço inicialmente infinito
+    «corpo do laço, deve incluir
+    efeito que afeta a condição de saída»
+    if «condição de saída»:
+        break # saída do laço    
+else:
+     «código que só executa se o while não foi interrompido»
+```
+
+```python
+x = 0
+while(x < 10):
+    print(x) # quando a condição for verdadeira
+    x += 1;
+else: # quando a condição for falsa
+    print ("False")
+
+x = 0
+while (x < 10):
+    print (x) # quando a condição for verdadeira
+    x += 1;
+    break # saída do laço
+else: # quando a condição for falsa
+    print ("False") # não será executado
+```
+
+O break interrompe a execução de todo o ciclo e, nesse caso, o bloco do condicionante else, isto é, o bloco de códigos executado quando a condição não é verdadeira, não será executado.
+
+
+## Assuntos relacionados
 
 - [Dicionários e conjuntos](dicionarios.md)
+
