@@ -185,7 +185,7 @@ else:
      «código que só executa se o while não foi interrompido»
 ```
 
-Dois exemplos e, abstrato, que demonstram o comportamento.
+Dois exemplos, em abstrato, que demonstram este comportamento.
 
 ```python
 x = 0
