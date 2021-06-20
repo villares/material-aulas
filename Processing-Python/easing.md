@@ -8,7 +8,7 @@ Um movimento pode iniciar rapidamente  e parar suavemente (*easing out*), inicia
 
 Para o conteúdo a seguir vamos precisar [manipular faixas de valores com `map()` e `lerp()`](map_lerp.md)
 
-Uma estratégia muito comum é  usar funções de *easing* que recebem um valor entre **0** e **1** e retornam um valor, grosso modo na mesma faixa, o pelo menos nos extremo (eventualmente passado um pouco para fora). Os valores podem ser usados em conjunto com `lerp()` ou simplesmente multiplicando um outro valor.
+Uma estratégia muito comum é  usar funções de *easing* que recebem um valor entre **0** e **1** e retornam um valor, grosso modo na mesma faixa, o pelo menos nos extremos (eventualmente passado um pouco para fora). Os valores podem ser usados em conjunto com `lerp()` ou simplesmente multiplicando um outro valor.
 
 Em uma função `easing(p)` um `p = 0` devolve **0** e `p = 1` produz **1**, mas a variação intermediária acontece em velocidades diferentes. O *não-easing* é o crescimento linear, em que o valor devolvido é exatamente o mesmo recebido pela função.
 

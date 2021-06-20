@@ -1,4 +1,4 @@
-## material para cursos e oficinas ([repositório](https://github.com/villares/material-aulas/))
+## Material para cursos e oficinas ([repositório](https://github.com/villares/material-aulas/))
 
 ### Como colaborar e contribuir?
 
@@ -50,8 +50,10 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 - [Como usar seno `sin()`, cosseno `cos()` e arco tangente `atan2()`](Processing-Python/seno_cosseno_atan2.md)
 - [Manipulando números com `map()` e `lerp()`](Processing-Python/map_lerp.md) - e fazendo cores intermediárias!
   - [O que é *easing*?](Processing-Python/easing.md) - transições de movimento
-- [Outras estruturas de dados: dicionário (_dict_) e conjunto (_set_)](Processing-Python/dicionarios.md)
 
+#### Mais sobre estruturas de dados
+- [Outras estruturas de dados: dicionário (_dict_) e conjunto (_set_)](Processing-Python/dicionarios.md)
+- [Compreensão de listas e outras *comprehensions*](Processing-Python/comprehension.md)
 #### Desenhando em 3D
 
 - [Primeiros passos com `size(…, …, P3D)`](Processing-Python/desenho-3D.md)

@@ -23,8 +23,9 @@ A leitura dos dos dados pode ser feita no Python de maneira mais 'universal', o 
 
 ```python
 # No Python - exemplo mais universal
-from io import open as io_open # melhor para ler unicode no Python 2 
-with io_open("data/frutas.txt",'r') as file:
+from os.path import join
+from codecs import open # desnecessário no Python 3, isto é para poder usar unicode="utf-8" no Python 2 
+with open(join('data', 'frutas.txt', 'r', encoding='utf-8') as file:
     linhas = file.readlines()
 ```
 Ou usando uma função bem simples do Processing chamada `loadStrings()`:
@@ -76,13 +77,13 @@ def draw():
         
 def keyPressed():
     if key == 'o':
-        selectInput("escolha um arquivo:", "file_selected")
+        selectInput("escolha um arquivo:", "select_file")
     if key == 'a':
         linhas[:] = []
     if key == 's':
         saveFrame("select_input.png")
         
-def file_selected(selection):
+def select_file(selection):
     if selection == None:
         print(u"Seleção cancelada.")
     else:
@@ -173,12 +174,14 @@ O mais recomendado é usar um chamado 'gerenciador de contexto', fazendo um bloc
 
 Veja o caso de gravar os dados dos círculos no exemplo anterior como ficaria:
 
-```
-with open(caminho_arquivo, 'w') as file:
+```python
+from codecs import open # para poder usar unicode="utf-8" no Python 2 
+with open(caminho_arquivo, "w", encoding="utf-8") as file:
     for circulo in circulos:
         x, y, tamanho = circulo
         file.write(u'{} {} {}'.format(x, y, tamanho))
  ```       
+
 
 ### Assuntos relacionados
 

@@ -1,5 +1,18 @@
 # Como desenhar em 3D
 
+Nessa página vamos ver como desenhar objetos tridimensionais, ou ainda objetos 2D no espaço. 
+
+### Sumário
+
+- [Primeiros passos](#primeiros-passos)
+- [Alguns objetos desenhados em 3D](#alguns-objetos-desenhados-em-3d)
+- [Desenhando uma caixa entre dois pontos](#desenhando-uma-caixa-entre-dois-pontos)
+- [Desenhando um prisma girado em 3D](#desenhando-um-prisma-girado-em-3d)
+- [Carregando arquivos OBJ externos](#carregando-arquivos-obj-externos)
+- [PeasyCam, uma biblioteca que permite orbitar em torno dos objetos](#peasycam-uma-biblioteca-que-permite-orbitar-em-torno-dos-objetos)
+- [Explorando ajustes avançados com a função `hint()`](#explorando-ajustes-avançados-com-a-função-hint)
+- [Assuntos relacionados](#assuntos-relacionados)
+
 ## Primeiros passos
 
 Para começar, dentro do `setup()` é preciso usar o argumento `P3D` em `size()`, como neste exemplo:
@@ -19,8 +32,10 @@ Desta maneira é possível desenhar os mesmos elementos 2D que utilizamos até a
 
 - A função `box(w, h, d)` desenha um paralelepípedo, ou um cubo com `box(side)`, sempre na origem (0, 0, 0) do sistema de coordenadas, sendo então em geral acompanhada de uma estrutura com `pushMatrix()`/`popMatrix()` e `translate(x, y, z)` para que seja posicionada no lugar desejado.
 
+- A função `sphere(raio)` desenha uma aproximação de uma esfera, também na origem. O numero de faces da esfera pode ser controlado pela função [`sphereDetail()`](https://py.processing.org/reference/sphereDetail.html). 
 
-### Um exemplo com objetos desenhados em 3D
+
+### Alguns objetos desenhados em 3D
 
 ![imagem exemplo 3D](assets/passos3D.gif)
 
@@ -63,15 +78,11 @@ def caixa(x, y, z, *tam):
     popMatrix()                                        
 ```
 
-### Carregando recursos externos em 3D
 
-Usando `size()` com `P3D` é possível carregar arquivos OBJ com a função `loadShape('arquivo.obj')` e mostrá-los com `shape(s, x, y)`. Veja o exemplo que vem no IDE!
 
-### Exemplo de caixa com furos (e outros)
+### Desenhando uma caixa entre dois pontos
 
-https://github.com/villares/Paper-objects-with-Processing-and-Python
-
-### Desenhando uma barra em 3D
+Usando um volume *box() girado em 3D.
 
 ```python
 def setup():
@@ -82,25 +93,73 @@ def draw():
     background(200)
     lights()
     fill(255, 0, 0, 100)
-    bar(50, 50, 0, mouseX, mouseY, 250, 30)
-    bar(450, 450, 0, 250, 250, 250, 30)
+    bar_line(50, 50, 0, mouseX, mouseY, 250, 30)
+    bar_line(450, 450, 0, 250, 250, 250, 30)
 
-def bar(x1, y1, z1, x2, y2, z2, weight=10):
-    """Draw a box rotated in 3D like a bar/edge."""
-    p1, p2 = PVector(x1, y1, z1), PVector(x2, y2, z2)
-    v1 = p2 - p1
-    rho = sqrt(v1.x ** 2 + v1.y ** 2 + v1.z ** 2)
-    phi, the  = acos(v1.z / rho), atan2(v1.y, v1.x)
-    v1.mult(0.5)
+def bar_line(x1, y1, z1, x2, y2, z2, weight=10):
+    """Draw a box rotated in 3D like a bar_line/edge."""
+    p1, p2 = (x1, y1, z1), (x2, y2, z2)
+    dist_p1_p2 = dist(x1, y1, z1, x2, y2, z2)
+    v1 = (x2 - x1, y2 - y1, z2 - z1)
+    phi, the  = acos(v1[2] / dist_p1_p2), atan2(v1[1], v1[0])
     pushMatrix()
-    translate(x1 + v1.x, y1 + v1.y, z1 + v1.z)
+    translate(x1 + v1[0] / 2.0, y1 + v1[1] / 2.0, z1 + v1[2] / 2.0)
     rotateZ(the)
     rotateY(phi)
-    box(weight, weight, p1.dist(p2))
+    box(weight, weight, dist_p1_p2)
     popMatrix()
 ```
 
-### Exemplo da biblioteca PeasyCam, para orbitar em torno de objetos
+### Desenhando um prisma girado em 3D
+
+```python
+def prism_line(x1, y1, z1, x2, y2, z2, radius=10, num_points=6):
+    """
+    Desenha um prisma girado em 3D como uma barra.
+    Requer as funções auxiliares draw_face e z_circle.
+    """
+    p1, p2 = (x1, y1, z1), (x2, y2, z2)
+    dist_p1_p2 = dist(x1, y1, z1, x2, y2, z2)
+    v1 = (x2 - x1, y2 - y1, z2 - z1)
+    phi, the  = acos(v1[2] / dist_p1_p2), atan2(v1[1], v1[0])
+    pushMatrix()
+    translate(x1 + v1[0] / 2.0, y1 + v1[1] / 2.0, z1 + v1[2] / 2.0)
+    rotateZ(the)
+    rotateY(phi)
+    # box(radius, radius, dist_p1_p2) # antiga barra
+    rotateX(HALF_PI) # deixa circlulos perpendiculares a direção da barra
+    base = z_circle(0, -dist_p1_p2 / 2.0, radius, num_points)
+    draw_face(base)  # fechamento base
+    top = z_circle(0, dist_p1_p2 / 2.0, radius, num_points)
+    draw_face(top)  # fechamento topo
+    pairs = zip(top, base)
+    for i, (point_a, point_b) in enumerate(pairs):
+        point_c, point_d = pairs[i -1]
+        face = (point_a, point_b, point_d, point_c)
+        draw_face(face) # faces laterais
+    popMatrix()
+    
+def draw_face(points):
+    beginShape()
+    for x, y, z in points:
+        vertex(x, y, z)
+    endShape(CLOSE)    
+    
+def z_circle(x, y, radius, num_points=16):
+    a = TWO_PI / num_points
+    return [(x + cos(a * i) * radius, y, sin(a * i) * radius)
+             for i in range(num_points)]
+```
+
+### Carregando arquivos OBJ externos
+
+Usando `size()` com `P3D` é possível carregar arquivos OBJ com a função `loadShape('arquivo.obj')` e mostrá-los com `shape(s, x, y)`.
+Procure o exemplo que vem no IDE na janela de exemplos: `Basic > Shape > LoadDisplayOBJ`.
+
+
+### PeasyCam, uma biblioteca que permite orbitar em torno dos objetos
+
+É possível baixar e instalar pelo IDE uma biblioteca chamada **PeasyCam** que acrescenta com poucas linhas a funcionalidade de uma câmera que com o arrastar do mouse clicado 'orbita' em torno dos elementos desenhados, a câmera também oferece zoom com a rodinha do mouse. Note que o uso desta biblioteca desloca o sistema de coordenadas levando a origem para o centro da área de desenho.
 
 ```python
 add_library('peasycam')  # é preciso baixar/instalar pelo IDE
@@ -133,7 +192,9 @@ def draw():
     cam.endHUD()  # termina o "HUD"
 ```
 
-### Documentação das opções de `hint()`
+### Explorando ajustes avançados com a função `hint()`
+
+É possível controlar alguns aspectos do cálculo da apresentação 3D, meio que um ajuste fino, que tem impacto na performance (velocidade de execução) e aparência. Este código exemplo abaixo permite testar os ajustes, conhecidos como *hints* da máquina de apresentação (*render engine*).  
 
 ```python
 # Este exemplo mostra a diferença entre as opções documentadas em:
@@ -198,7 +259,8 @@ def apply_hints():
         hint(enable_const if status else disable_const)
 
 ```
-# se der pau na sua placa de vídeo , veja essa dica: 
+
+### Se der pau na sua placa de vídeo, tente isto: 
 
 Se você estiver no Linux com uma placa intel integrada, tente acrescentar isto no início do seu sketch
 
@@ -206,3 +268,9 @@ Se você estiver no Linux com uma placa intel integrada, tente acrescentar isto 
 from java.lang import System 
 System.setProperty("jogl.disable.openglcore", "false")
 ```
+
+## Assuntos relacionados
+
+### Exemplos de caixa com furos e outros sólidos desenhados em 3D e desdobrados em 2D
+
+- https://github.com/villares/Paper-objects-with-Processing-and-Python

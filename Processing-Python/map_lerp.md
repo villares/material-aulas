@@ -1,4 +1,10 @@
-## Manipulando números com `map()` e `lerp()`
+# Manipulando números com `map()` e `lerp()`
+
+## Sumário
+
+- [A função `map()` do Processing](#a-função-map-do-processing)
+- [A função `lerp()`: interpolação linerar](#a-função-lerp-interpolação-linear)
+- [A função `lerpColor()`: interpolando cores](#a-função-lerpcolor-interpolando-cores)
 
 ### A função `map()` do Processing
 
@@ -35,7 +41,7 @@ def draw():
 
 ![](assets/map_1.gif)
 
-### A função `lerp()`
+### A função `lerp()`: interpolação linear
 
 O nome vem, de  <i>**l**inear int**erp**olation</i> (interpolação linear) e a função permite obter um número intermediário ente do outros números `v0` e `v1` de maneira proporcional a um parâmetro **`t`**. Você pode interpretar **`t`** como uma porcentagem, **0** faz `lerp()` devolver o primeiro número, `v0`, e **1**  produz o segundo, `v1`.  Com o **`t`**  valendo  **0.5** (50%) o valor devolvido fica bem no meio do caminho entre os dois números (uma média aritmética).
 
@@ -46,9 +52,9 @@ Isso lembra o `map()` que acabamos de ver, mas com uma faixa de origem (para o *
 Note que assim como em `map()` valores fora da faixa esperada de origem (no caso entre **0** e **1**) produzem valores além dos limites fornecidos.
 
 
-#### *Lerp* para cores
+### A função `lerpColor()`: interpolando cores
 
-Podemos também obter cores intermediárias com a função `lerpColor()` 
+Podemos também obter cores intermediárias com a função `lerpColor()`, um *lerp* especial para cores.
 
 ![](assets/lerp_3.gif)
 

@@ -1,16 +1,19 @@
-## Lendo e escrevendo dados em arquivos (*file IO*)
+## Lendo e escrevendo dados em arquivos CSV
 
-### Entrada (*input*) e saída (*output*) de dados em arquivos
+### *Comma Separated Values*, um formato de intercâmbio primitivo, porém ainda útil
 
-Nosso primeiro exemplo vai ser sobre como ler e escrever dados simples em um arquivo CSV (*comma separated values*, um arquivo texto com valores separados por vígula).
+Vamos agora falar sobre como ler e escrever dados simples em um arquivo CSV, um arquivo texto com valores separados por vígula. Tanto o Processing como o a biblioteca padrão do Python tem ferramentas para ajudar a lidar com este formato.
 
-O arquivo `dados.csv` vai ficar dentro da pasta `/data/` dentro  do seu sketch:
+*AVISO:*  Infelizmente o módulo `csv` da biblioteca padrão do Jython, o Python 2 que estamos usando, não entende de Unicode então vamos usar uma biblioteca chamada [`unicodecsv`](https://raw.githubusercontent.com/villares/material-aulas/main/Processing-Pythoy) que resolve isso para nós.
+
+Em preparação para o nosso primeiro exemplo, note que precisaremos de um arquivo `dados.csv` que deve ficar dentro da pasta `/data/` dentro  do seu sketch:
 
 ```
 sketch_2020_05a                (pasta/folder do sketch)
   L  sketch_2020_05a.pyde      (arquivo com o código)
+  L  unicodecsv.py             (biblioteca de ajuda)
   L  data                      (pasta/folder)
-       L  dados.csv           (arquivo texto)
+       L  dados.csv            (arquivo CSV)
 ```
 
 Conteúdo do aquivo:
@@ -23,55 +26,58 @@ banana
 jaca
 maracujá
 ```
-
-A leitura dos dos dados pode ser feita no Python de maneira mais 'universal', o que é útil saber para poder fazer em outros contextos de uso de Python:
-
-```python
-# No Python - exemplo mais universal
-from io import open as io_open # melhor para ler unicode no Python 2 
-with io_open("data/dados.txt",'r') as file:
-    linhas = file.readlines()
-```
-
-Ou usando uma função bem simples do Processing chamada `loadStrings()`:
+Exemplo que escreve e depois lê do mesmo arquivo
 
 ```python
-# No Processing - mais específico - não use antes do setup()!
-linhas = loadStrings("nomes.txt")  # dados.txt na pasta /data/
-```
+from __future__ import unicode_literals, print_function
+import unicodecsv as csv
+import os
 
-Note que em ambos os casos, ler dados de um arquivo no computador é considerada uma operação relativamente lenta e não deve ser feita repetidas vezes dentro do `draw()` pois vai ser um disperdício e deixa o seu desenho ou animação lentos.
+# Define dados
+data = [
+    (1, "maçã,", 1.0),
+    (42, "manga, uva", 2.0),
+    (1337, "jaca", -1),
+    (0, "kiwi", 123),
+    (-2, "Nada.", 3),
+    #(float("NaN"), None, ""),
+    #(float("infinity"), True, False),
+]
 
-```python
 def setup():
-    size(400, 400)
-    background(0)
-    # dados.txt na pasta /data/
-    linhas = loadStrings("fdadostxt")  
-
-    fill(100, 100, 255)
-    textAlign(CENTER, CENTER)
-    textSize(24)
-    for linha in linhas:
-        x, y = random(40, 360), random(20, 380)             
-        text(linha, x, y)    
-```
-
-![resultado](assets/read_lines.png)
-
-#### Escrevendo em arquivos no Python sem a ajuda do Processing
-
-A maneira mais 'universal' em Python de se escrever em um arquivo texto é usando `open(caminho_arquivo, modo)`, que fornece um objeto com o método `.write()`.
-
-O mais recomendado é usar um chamado 'gerenciador de contexto', fazendo um bloco indentado que começa com `with open(caminho_arquivo, modo) as objeto_arquivo:`. Se não usar o `with open(... :` você precisa cuidar de 'fechar' o aquivo com `.close()` depois de ler ou escrever, e ainda corre o risco do arquivo ficar aberto se o seu programa encerrar no meio do caminho.
-
-Veja o caso de gravar os dados dos círculos no exemplo anterior como ficaria:
-
-```
-with open(caminho_arquivo, 'w') as file:
-    for circulo in circulos:
-        x, y, tamanho = circulo
-        file.write(u'{} {} {}'.format(x, y, tamanho))
+    size(600, 600)
+    background(0, 100, 0)
+    # textSize(24)
+    textFont(createFont('Source Code Pro', 24))
+    # Write CSV file
+    caminho_pasta_data = sketchPath('data')
+    if not os.path.exists(caminho_pasta_data):
+        os.mkdir(caminho_pasta_data) # cria pasta se não existir
+    caminho_arquivo = os.path.join("data", "test.csv")
+    with open(caminho_arquivo, "w") as fp:
+        writer = csv.writer(fp)
+        # writer.writerow(["your", "header", "foo"])  # write header
+        writer.writerows(data)
+    
+    # Read CSV file
+    with open(caminho_arquivo) as fp:
+        reader = csv.reader(fp)
+        # next(reader, None)  # skip the headers
+        data_read = [row for row in reader]
+        x, y = 20, 20
+        for row in data_read:
+            for item in row:
+                print(item.ljust(12), end='')
+                textSize(24)
+                text(item.ljust(12), x, y)
+                pushStyle()
+                textSize(12)
+                text(str(type(item)), x, y + 32)
+                popStyle()
+                x += textWidth(item.ljust(12))
+            y += 64
+            x = 20
+            print()
 ```
 
 ### Assuntos relacionados
