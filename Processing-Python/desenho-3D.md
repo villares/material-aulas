@@ -10,7 +10,7 @@ Nessa página vamos ver como desenhar objetos tridimensionais, ou ainda objetos 
 - [Desenhando um prisma girado em 3D](#desenhando-um-prisma-girado-em-3d)
 - [Carregando arquivos OBJ externos](#carregando-arquivos-obj-externos)
 - [PeasyCam, uma biblioteca que permite orbitar em torno dos objetos](#peasycam-uma-biblioteca-que-permite-orbitar-em-torno-dos-objetos)
-- [Explorando ajustes avançados com a função `hint()`](#explorando-ajustes-avancados-com-a-funcao-hint)
+- [Explorando ajustes avançados com a função `hint()`](#explorando-ajustes-avançados-com-a-função-hint)
 - [Assuntos relacionados](#assuntos-relacionados)
 
 ## Primeiros passos
@@ -155,7 +155,7 @@ Usando `size()` com `P3D` é possível carregar arquivos OBJ com a função `loa
 Procure o exemplo que vem no IDE na janela de exemplos: `Basic > Shape > LoadDisplayOBJ`.
 
 
-### PeayCam, uma biblioteca que permite orbitar em torno dos objetos
+### PeasyCam, uma biblioteca que permite orbitar em torno dos objetos
 
 É possível baixar e instalar pelo IDE uma biblioteca chamada **PeasyCam** que acrescenta com poucas linhas a funcionalidade de uma câmera que com o arrastar do mouse clicado 'orbita' em torno dos elementos desenhados, a câmera também oferece zoom com a rodinha do mouse. Note que o uso desta biblioteca desloca o sistema de coordenadas levando a origem para o centro da área de desenho.
 
