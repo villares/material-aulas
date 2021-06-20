@@ -3,7 +3,7 @@ Este é um laço de repetição indeterminado, vejamos alguns exemplos!
 
 ## Sumário
 
-- [Sintaxe dos laços while](#a-estrutura/sintaxe-dos-laços-while)
+- [Sintaxe dos laços while](#sintaxe-dos-laços-while)
 - [Primeiro exemplo](#primeiro-exemplo)
 - [Uma variante com círculos](#uma-variante-com-círculos)
 - [Acumulando itens em um conjunto](#acumulando-itens-em-um-conjunto)
@@ -100,7 +100,8 @@ def mandala(x, y, raio, num_petalas):
         circle(sx, sy, raio * 2)
         angulo += passo
 ```
-![estrela](assets/while_set.png)
+
+![mandala](https://user-images.githubusercontent.com/3694604/117585995-e3c3df80-b0eb-11eb-9f13-0a6ae1660408.png)
 
 ### Acumulando itens em um conjunto
 
@@ -170,7 +171,9 @@ def setup():
 
 ![estrela](assets/while_add.png)
 
-### `While` e else 
+### `While` e `else` 
+
+Uma sintaxe que pode ser usada também nos laços `for`, é uma cláusula `else` após o laço, o código neste bloco só executa se o laço transcorreu até o fim sem interrupção (sem um `break`).
 
 ```python
 while True: # um laço inicialmente infinito
@@ -182,25 +185,26 @@ else:
      «código que só executa se o while não foi interrompido»
 ```
 
+Dois exemplos e, abstrato, que demonstram o comportamento.
+
 ```python
 x = 0
 while(x < 10):
     print(x) # quando a condição for verdadeira
     x += 1;
-else: # quando a condição for falsa
-    print ("False")
+else: # quando a condição for falsa e o loop terminou
+    print ("False: o x não é mais menor que 10")
 
 x = 0
 while (x < 10):
     print (x) # quando a condição for verdadeira
     x += 1;
-    break # saída do laço
+    break # interrompe o laço!
 else: # quando a condição for falsa
-    print ("False") # não será executado
+    print ("False: o x não é mais menor que 10") # não será executado!
 ```
 
-O break interrompe a execução de todo o ciclo e, nesse caso, o bloco do condicionante else, isto é, o bloco de códigos executado quando a condição não é verdadeira, não será executado.
-
+No segundo exemplo, `break` interrompe a execução de ciclos e, nesse caso, o bloco do `else`, isto é, o bloco de instruções executadas quando a condição não é mais verdadeira, não será executado.
 
 ## Assuntos relacionados
 
