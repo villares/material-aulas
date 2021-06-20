@@ -3,13 +3,12 @@ Este é um laço de repetição indeterminado, vejamos alguns exemplos:
 
 ## Sumário
 
-- [A estrutura/sintaxe dos laços while](#a-estrutura/sintaxe-dos-laços-while)
-- [While e else](#while-e-else)
+- [Sintaxe dos laços while](#a-estrutura/sintaxe-dos-laços-while)
 - [Primeiro exemplo](#primeiro-exemplo)
-- [Exemplo derivado do primeiro](#exemplo-derivado-do-primeiro)
-- [Segundo exemplo com um conjunto](#segundo-exemplo-com-um-conjunto)
-- [Terceiro exemplo](#terceiro-exemplo)
-
+- [Uma variante com círculos](#uma-variante-com-círculos)
+- [Acumulando itens em um conjunto](#acumulando-itens-em-um-conjunto)
+- [Somando larguras variáveis](#somando-larguras-variáveis)
+- [While e else](#while-e-else)
 
 Um laço de repetição com `while` pode ser conveniente quando:
 
@@ -17,7 +16,7 @@ Um laço de repetição com `while` pode ser conveniente quando:
 
 - O número de de iterações (voltas do laço) é indeterminado, isto é, não é conhecido com antecedência, você só descobre a hora de parar no meio do processo de repetições.
 
-### A estrutura/sintaxe dos laços `while`
+### Sintaxe dos laços `while`
 
 De forma geral os laços de repetição baseados no `while` tem a seguinte estrutura: 
 
@@ -52,27 +51,6 @@ while True: # um laço inicialmente infinito
     if «condição de saída»:
         break # saída do laço    
 ```
-### While e else: 
-
-```python
-x = 0
-while(x < 10):
-    print(x) # quando a condição for verdadeira
-    x += 1;
-else: # quando a condição for falsa
-    print ("False")
-
-x = 0
-while (x < 10):
-    print (x) # quando a condição for verdadeira
-    x+=1;
-    break # saída do laço
-else: # quando a condição for falsa
-    print ("False") # não será executado
-```
-
-O break interrompe a execução de todo o ciclo e, nesse caso, o bloco do condicionante else, isto é, o bloco de códigos executado quando a condição não é verdadeira, não será executado.
-
 
 #### Primeiro exemplo
 
@@ -103,29 +81,27 @@ def estrela(x, y, raio_a, raio_b, num_pontas):
 
 ![estrela](assets/estrela.png)
 
-#### Exemplo derivado do primeiro
+#### Uma variante com círculos
 
 ```python
 def setup ():
     size(600, 600)
     background(0)
-    mandala(width/2, height/2, 100, 10)
-    
-def mandala( x, y, raio, num_petalas): 
-    passo = TWO_PI/num_petalas
-    ang = 0
-        
-    while ang < TWO_PI:
-        sx = cos(ang) * raio
-        sy = sin(ang) * raio
+    mandala(width / 2, height / 2, 100, 10)
+   
+def mandala(x, y, raio, num_petalas): 
+    passo = TWO_PI / num_petalas
+    angulo = 0
+    while angulo < TWO_PI:
+        sx = x + cos(angulo) * raio
+        sy = y + sin(angulo) * raio
         fill(255, 255, 255 , 50)
-        circle((x + sx), (y + sy), raio*2)
-        
-        ang = ang + passo
+        circle(sx, sy, raio * 2)
+        angulo += passo
 ```
 ![estrela](assets/while_set.png)
 
-#### Segundo exemplo com um conjunto
+#### Acumulando itens em um conjunto
 
 Imagine uma grade com 6400 posições, vocẽ quer sortear exatamente 3200 quadrados, mas não quer sobreposições.
 
@@ -146,7 +122,7 @@ def setup():
 
 ![estrela](assets/while_set.png)
 
-#### Terceiro exemplo
+#### Somando larguras variáveis
 
 Neste terceiro exemplo queremos acumular retângulos de larguras aleatórias até uma determinada largura total máxima. No corpo do `while()`
 há um mecanismo que checa se a adição da largura da vez passa do limite, e ajusta apropriadamente a última largura.
@@ -168,3 +144,34 @@ def setup():
 ```
 
 ![estrela](assets/while_add.png)
+
+### `While` e else 
+
+```python
+while True: # um laço inicialmente infinito
+    «corpo do laço, deve incluir
+    efeito que afeta a condição de saída»
+    if «condição de saída»:
+        break # saída do laço    
+else:
+     «código que só executa se o while não foi interrompido»
+```
+
+```python
+x = 0
+while(x < 10):
+    print(x) # quando a condição for verdadeira
+    x += 1;
+else: # quando a condição for falsa
+    print ("False")
+
+x = 0
+while (x < 10):
+    print (x) # quando a condição for verdadeira
+    x += 1;
+    break # saída do laço
+else: # quando a condição for falsa
+    print ("False") # não será executado
+```
+
+O break interrompe a execução de todo o ciclo e, nesse caso, o bloco do condicionante else, isto é, o bloco de códigos executado quando a condição não é verdadeira, não será executado.
