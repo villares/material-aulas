@@ -32,6 +32,8 @@ Desta maneira é possível desenhar os mesmos elementos 2D que utilizamos até a
 
 - A função `box(w, h, d)` desenha um paralelepípedo, ou um cubo com `box(side)`, sempre na origem (0, 0, 0) do sistema de coordenadas, sendo então em geral acompanhada de uma estrutura com `pushMatrix()`/`popMatrix()` e `translate(x, y, z)` para que seja posicionada no lugar desejado.
 
+- A função `sphere(raio)` desenha uma aproximação de uma esfera, também na origem. O numero de faces da esfera pode ser controlado pela função [`sphereDetail()`](https://py.processing.org/reference/sphereDetail.html). 
+
 
 ### Alguns objetos desenhados em 3D
 
