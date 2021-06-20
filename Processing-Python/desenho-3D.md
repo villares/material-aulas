@@ -7,9 +7,9 @@ Nessa página vamos ver como desenhar objetos tridimensionais, ou ainda objetos 
 - [Primeiros passos](#primeiros-passos)
 - [Alguns objetos desenhados em 3D](#alguns-objetos-desenhados-em-3d)
 - [Desenhando uma caixa entre dois pontos](#desenhando-uma-caixa-entre-dois-pontos)
-- [Desenhando um prisma girado em 3D](#desenhando-um-prisma-girado-em-3D)
+- [Desenhando um prisma girado em 3D](#desenhando-um-prisma-girado-em-3d)
 - [Carregando arquivos OBJ externos](#carregando-arquivos-obj-externos)
-- [PeayCam, uma biblioteca que permite orbitar em torno dos objetos](#peasycam-uma-biblioteca-que-permite-orbitar-em-torno-dos-objetos)
+- [PeasyCam, uma biblioteca que permite orbitar em torno dos objetos](#peasycam-uma-biblioteca-que-permite-orbitar-em-torno-dos-objetos)
 - [Explorando ajustes avançados com a função `hint()`](#explorando-ajustes-avancados-com-a-funcao-hint)
 - [Assuntos relacionados](#assuntos-relacionados)
 
