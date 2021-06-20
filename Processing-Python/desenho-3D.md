@@ -4,7 +4,14 @@ Nessa página vamos ver como desenhar objetos tridimensionais, ou ainda objetos 
 
 ### Sumário
 
-[Primeiros passos](#primeiros-passos)
+- [Primeiros passos](#primeiros-passos)
+- [Alguns objetos desenhados em 3D](#alguns-objetos-desenhados-em-3d)
+- [Desenhando uma caixa entre dois pontos](#desenhando-uma-caixa-entre-dois-pontos)
+- [Desenhando um prisma girado em 3D](#desenhando-um-prisma-girado-em-3D)
+- [Carregando arquivos OBJ externos](#carregando-arquivos-obj-externos)
+- [PeayCam, uma biblioteca que permite orbitar em torno dos objetos](#peasycam-uma-biblioteca-que-permite-orbitar-em-torno-dos-objetos)
+- [Explorando ajustes avançados com a função `hint()`](#explorando-ajustes-avancados-com-a-funcao-hint)
+- [Assuntos relacionados](#assuntos-relacionados)
 
 ## Primeiros passos
 
@@ -26,7 +33,7 @@ Desta maneira é possível desenhar os mesmos elementos 2D que utilizamos até a
 - A função `box(w, h, d)` desenha um paralelepípedo, ou um cubo com `box(side)`, sempre na origem (0, 0, 0) do sistema de coordenadas, sendo então em geral acompanhada de uma estrutura com `pushMatrix()`/`popMatrix()` e `translate(x, y, z)` para que seja posicionada no lugar desejado.
 
 
-### Um exemplo com objetos desenhados em 3D
+### Alguns objetos desenhados em 3D
 
 ![imagem exemplo 3D](assets/passos3D.gif)
 
@@ -69,15 +76,11 @@ def caixa(x, y, z, *tam):
     popMatrix()                                        
 ```
 
-### Carregando recursos externos em 3D
 
-Usando `size()` com `P3D` é possível carregar arquivos OBJ com a função `loadShape('arquivo.obj')` e mostrá-los com `shape(s, x, y)`. Veja o exemplo que vem no IDE!
 
-### Exemplo de caixa com furos (e outros)
+### Desenhando uma caixa entre dois pontos
 
-https://github.com/villares/Paper-objects-with-Processing-and-Python
-
-### Desenhando uma "caixa", *box()*, girada em 3D, em eixo definido por dois pontos
+Usando um volume *box() girado em 3D.
 
 ```python
 def setup():
@@ -146,7 +149,15 @@ def z_circle(x, y, radius, num_points=16):
              for i in range(num_points)]
 ```
 
-### Exemplo da biblioteca PeasyCam, para orbitar em torno de objetos
+### Carregando arquivos OBJ externos
+
+Usando `size()` com `P3D` é possível carregar arquivos OBJ com a função `loadShape('arquivo.obj')` e mostrá-los com `shape(s, x, y)`.
+Procure o exemplo que vem no IDE na janela de exemplos: `Basic > Shape > LoadDisplayOBJ`.
+
+
+### PeayCam, uma biblioteca que permite orbitar em torno dos objetos
+
+É possível baixar e instalar pelo IDE uma biblioteca chamada **PeasyCam** que acrescenta com poucas linhas a funcionalidade de uma câmera que com o arrastar do mouse clicado 'orbita' em torno dos elementos desenhados, a câmera também oferece zoom com a rodinha do mouse. Note que o uso desta biblioteca desloca o sistema de coordenadas levando a origem para o centro da área de desenho.
 
 ```python
 add_library('peasycam')  # é preciso baixar/instalar pelo IDE
@@ -179,7 +190,7 @@ def draw():
     cam.endHUD()  # termina o "HUD"
 ```
 
-### Documentação das opções de `hint()`
+### Explorando ajustes avançados com a função `hint()`
 
 É possível controlar alguns aspectos do cálculo da apresentação 3D, meio que um ajuste fino, que tem impacto na performance (velocidade de execução) e aparência. Este código exemplo abaixo permite testar os ajustes, conhecidos como *hints* da máquina de apresentação (*render engine*).  
 
@@ -255,3 +266,9 @@ Se você estiver no Linux com uma placa intel integrada, tente acrescentar isto 
 from java.lang import System 
 System.setProperty("jogl.disable.openglcore", "false")
 ```
+
+## Assuntos relacionados
+
+### Exemplos de caixa com furos e outros sólidos desenhados em 3D e desdobrados em 2D
+
+- https://github.com/villares/Paper-objects-with-Processing-and-Python
