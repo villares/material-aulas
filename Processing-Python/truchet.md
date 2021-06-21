@@ -1,8 +1,11 @@
-# Módulos ou azulejos Truchet
+# Módulos ou mosaicos de Truchet
 
 ![image](https://user-images.githubusercontent.com/3694604/119920020-f8a0cf80-bf41-11eb-9238-c30eac1efebd.png)
 
-Veremos aqui uma variante usando arcos que, ao que parece, foi inicalmente popularizada pelo trabalho de Cyril Stanley Smith and Pauline Boucher, [The Tiling Patterns of Sebastien Truchet and the Topology of Structural Hierarchy](https://www.jstor.org/stable/1578535?origin=crossref&seq=1#metadata_info_tab_contents)
+A tesselação (isto é o recobrimento de uma superfícies) por um padrão de quadrados decorados com desenhos que não tem simetria rotacional foi explorada pelo padre dominicano francês Sébastien Truchet. 
+
+Veremos aqui uma variante dessa ideia usando arcos que, ao que parece, foi popularizada pelo trabalho de Cyril Stanley Smith and Pauline Boucher, [The Tiling Patterns of Sebastien Truchet and the Topology of Structural Hierarchy](https://www.jstor.org/stable/1578535?origin=crossref&seq=1#metadata_info_tab_contents) em um exemplo traduzido para Processing modo Python do original em Processing Java no livro [Processing: Creative Coding and Generative Art in Processing 2](https://rd.springer.com/book/10.1007/978-1-4302-4465-3).
+
 
 ```python
 # Translated to Processing Python mode from the Java example at
