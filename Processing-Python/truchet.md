@@ -28,7 +28,6 @@ def setup():
             color_swap(i, j)
             tiles[i][j].display()
         
-    
 def color_swap(i, j):
     if i > 0 and j == 0:   # first tile of a row, starting from the 2nd row
         # same orientation as tile directly above
@@ -38,12 +37,10 @@ def color_swap(i, j):
         else:
             # set to same coloring of my neighbor above
             tiles[i][0].swapped_colors = tiles[i-1][0].swapped_colors
-        
     if j > 0:  # subsequent tiles in a row, including the first
         # same orientation as tile to the left
         if (tiles[i][j-1].intorient == tiles[i][j].intorient):
             # set to opposite coloring of my neighbor to the left
-            
             tiles[i][j].swapped_colors = not tiles[i][j-1].swapped_colors
         else:
             # set to same coloring of my neighbor to the left 
