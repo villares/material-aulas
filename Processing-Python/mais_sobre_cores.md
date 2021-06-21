@@ -76,11 +76,11 @@ def setup():
     verde = color_hex('#00FF00')
     fill(verde)
     rect(0, 0, 50, 100)
-    azul = color_hex('0000FF')
+    azul = hex_color('0000FF')
     fill(azul)
     rect(50, 0, 50, 100)
     
-def color_hex(s):
+def hex_color(s):
     """
     No Processing tradicional (Java) podemos indicar cores com a notação hexadecimal  #AABBCC
     No modo Python é possivel usar essa notação entre aspas em fill(), stroke() e
