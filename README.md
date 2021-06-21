@@ -102,8 +102,9 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 - [Mais sobre atributos gráficos](Processing-Python/mais_atributos_graficos.md)
 - Manipulando a janela ([tela cheia, redimensionamento e múltiplas janelas](Processing-Python/mais_que_size.md))
 
-#### Pequenos projetos
+#### Pequenos projetos e outros exemplos
 
+- [Módulos ou mosaicos de Truchet](Processing-Python/truchet.md)
 - [Jogo PONG](https://github.com/villares/material-aulas/tree/master/pong) - Estudos para o fazer um jogo
 - [`caneta_automatica_py`](caneta_automatica) - Módulo para desenhar inspirado na tartaruga de Logo
 - [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
