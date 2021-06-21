@@ -11,13 +11,12 @@ Veremos aqui uma variante dessa ideia usando arcos que, ao que parece, foi popul
 # Translated to Processing Python mode from the Java example at
 # "Processing: Creative Coding and Generative Art in Processing 2" by Ira Greenberg, Dianna Xu, Deepak Kumar 
 
-tileSize = 50 # tamanho_grid = 50
-rows = 50 # n_linhas = 50
-cols = 50 # n_colunas = 50
+tile_size = 50 
+rows = 50
+cols = 50
 
-# grid = [[None] * n_linhas for in _ range(n_colunas)]
 tiles = [[None] * rows for _ in range(cols)]
-ic = color(100, 125, 0)        # orange # ic = color(100, 125, 0)
+ic = color(100, 125, 0)     # orange # ic = color(100, 125, 0)
 oc = color(20, 150, 255)    # blue # oc = color(20, 150, 255)
 
 def setup(): 
@@ -25,30 +24,30 @@ def setup():
     smooth()
     for i in range(rows):
         for j in range(cols):
-            tiles[i][j] = Tile(j*tileSize, i*tileSize, tileSize, ic, oc)
-            colorSwap(i, j)
+            tiles[i][j] = Tile(j * tile_size, i * tile_size, tile_size, ic, oc)
+            color_swap(i, j)
             tiles[i][j].display()
         
     
-def colorSwap(i,j):
+def color_swap(i, j):
     if i > 0 and j == 0:   # first tile of a row, starting from the 2nd row
         # same orientation as tile directly above
         if (tiles[i-1][0].intorient == tiles[i][0].intorient):                    
             # set to opposite coloring of my neighbor above
-            tiles[i][0].swapColors = not tiles[i-1][0].swapColors
+            tiles[i][0].swapped_colors = not tiles[i-1][0].swapped_colors
         else:
             # set to same coloring of my neighbor above
-            tiles[i][0].swapColors = tiles[i-1][0].swapColors
+            tiles[i][0].swapped_colors = tiles[i-1][0].swapped_colors
         
     if j > 0:  # subsequent tiles in a row, including the first
         # same orientation as tile to the left
         if (tiles[i][j-1].intorient == tiles[i][j].intorient):
             # set to opposite coloring of my neighbor to the left
             
-            tiles[i][j].swapColors = not tiles[i][j-1].swapColors
+            tiles[i][j].swapped_colors = not tiles[i][j-1].swapped_colors
         else:
             # set to same coloring of my neighbor to the left 
-            tiles[i][j].swapColors = tiles[i][j-1].swapColors
+            tiles[i][j].swapped_colors = tiles[i][j-1].swapped_colors
             
 class Tile:
 
@@ -61,31 +60,27 @@ class Tile:
         self.orient = random(1, 3)  # orientation of tile
         self.intorient = int(self.orient)  # orientation of tile
         # whether we should swap inside and outside colors
-        self.swapColors = False
+        self.swapped_colors = False
 
     def display(self):
         pushMatrix()
         # move to tile's x-y location (upper left corner)
         translate(self.x, self.y)
         noStroke()
-        if (self.swapColors):
+        if (self.swapped_colors):
             fill(self.ic)
         else:
             fill(self.oc)
-
         rect(0, 0, self.sz, self.sz)  # draw background square
-
         translate(self.sz / 2, self.sz / 2)  # move to the center of the tile
         rotate(self.intorient * PI / 2)  # rotate by the appropriate angle
-        # move back to the upper left corner
-        translate(-self.sz / 2, -self.sz / 2)
+        translate(-self.sz / 2, -self.sz / 2) # back to the upper left corner
         stroke(255)
         strokeWeight(3)
-        if self.swapColors:
+        if self.swapped_colors:
             fill(self.oc)
         else:
             fill(self.ic)
-
         arc(0, 0, self.sz, self.sz, 0, PI / 2)
         arc(self.sz, self.sz, self.sz, self.sz, PI, 3 * PI / 2)
         popMatrix()
