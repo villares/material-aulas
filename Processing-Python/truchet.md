@@ -85,3 +85,8 @@ class Tile:
             fill(self.oc)
         else:
             fill(self.ic)
+
+        arc(0, 0, self.sz, self.sz, 0, PI / 2)
+        arc(self.sz, self.sz, self.sz, self.sz, PI, 3 * PI / 2)
+        popMatrix()
+```
