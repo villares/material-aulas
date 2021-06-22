@@ -170,6 +170,6 @@ Note o texto em vermelho que só aparece no arquivo salvo.
 
 ### Assuntos relacionados
 
-- [Desenhando fora da vista com *PGraphics* (*offscreen buffer*)](offscreen-buffer.md)
+- [Desenhando fora da vista com *PGraphics* (*offscreen buffer*)](offscreen_buffer.md)
 - [Exportando PDF](exportando_pdf.md)
 - [Exportando SVG](exportando_Svg.md)
