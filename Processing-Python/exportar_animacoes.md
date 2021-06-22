@@ -213,3 +213,4 @@ Uma última estratégia que pode ser útil para documentar e compartilhar o resu
 - [Peek](https://github.com/phw/peek) - Linux - exporta diretamente GIF, APNG ou MP4 
 - [LICEcap](https://www.cockos.com/licecap/) - Windows e MacOS - exporta diretamenteGIF 
 - [OBS Studio](https://obsproject.com/) - Windows, MacOS e Linux - exporta vídeo
+- [GifCam](https://gifcam.br.uptodown.com/windows) - Windows - exporta e edita diretamenteGIF
