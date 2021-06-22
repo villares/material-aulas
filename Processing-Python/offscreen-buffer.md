@@ -1,4 +1,4 @@
-## Desenhando fora da vista (*offscreen buffer*)
+## Desenhando em um espaço fora da tela (*offscreen buffer*)
 
 É possível desenhar em um objeto especial, uma espécie de tela virtual, criando superfícies *PGraphics* com a função [createGraphics()](https://py.processing.org/reference/createGraphics.html), em vez de desenhar diretamente na tela em uma estratégia conhecida como _offscreen buffer_. Depois é possível mostrar ou não essa imagem na área de desenho normal com a função `image()` (a mesma que usamos para mostrar uma imagem externa carregada carregada com `loadImage()`, uma *PImage*).
 
@@ -7,7 +7,10 @@
 Algumas vantagens dessa estratégia podem ser:
 - Desenho cumulativo em uma camada enquanto se anima elementos (com limpeza do frame) em outra camada;
 - Potencialmente mais rápido do que desenhar na tela (reaproveitando um desenho com partes já prontas, por exemplo);
-- Salvar o desenho em camadas separadas para posterior tratamento (como no exemplo mais abaixo).
+- Salvar o imagens em camadas separadas para posterior tratamento.
+- Aplicação de máscaras de recorte ou outros tratamentos
+
+### Camadas que podem ser salvas em separado
 
 ```python
 def setup():
@@ -43,3 +46,49 @@ def keyPressed():
 ![camada0](https://user-images.githubusercontent.com/3694604/70395381-dc6f4280-19dc-11ea-8f64-fad20e2c0993.png)
 ![camada1](https://user-images.githubusercontent.com/3694604/70395382-dc6f4280-19dc-11ea-9d9b-d8a371a1c7d8.png)
 ![combinadas](https://user-images.githubusercontent.com/3694604/70395383-dd07d900-19dc-11ea-9671-4cf6eb2d510e.png)
+
+
+### Recortando imagens com uma máscara
+
+```python
+def setup():
+    global offscreen, clip_mask
+    size(500, 500)
+    offscreen = createGraphics(width, height)
+    offscreen.beginDraw()
+    offscreen.clear() # fundo transparente
+    # offscreen.background(0, 200, 0, 100)  # é possível fundo translúcido
+    offscreen.fill(255, 0, 0, 128)  # vermelho translúcido
+    for _ in range(100):
+        offscreen.rect(random(width), random(height), 50, 50)
+    offscreen.endDraw()
+                                         
+def draw():
+    background(150, 150, 200)
+    y = frameCount % height
+    line(0, y, width, y)
+    
+    clip_mask = createGraphics(width, height)
+    clip_mask.beginDraw()   
+    clip_mask.fill(255)
+    clip_mask.circle(mouseX, mouseY, 250)    
+    clip_mask.endDraw()
+ 
+    result = offscreen.copy()
+    # sem o mouse apertado é mais rápido (desconsidera alpha da imagem original)
+    if mousePressed:
+        result.mask(min_alphas(offscreen, clip_mask))
+    else:
+        result.mask(clip_mask) # máscara normal
+    image(result, 0, 0)  # desenha na tela a imagem com a máscara aplicada
+ 
+def min_alphas(img1, img2):
+    """Devolve pixels com alfa do mais transparente de cada par de pixels"""
+    img1.loadPixels()
+    img2.loadPixels()
+    return [min(pix1 >> 24 & 0xFF, pix2 >> 24 & 0xFF) # dark magic, don't ask
+            for pix1, pix2 in zip(img1.pixels, img2.pixels)]
+    
+``` 
+
+
