@@ -91,4 +91,4 @@ def min_alphas(img1, img2):
     
 ``` 
 
-
+![offscreen buffer](assets/offscreen_buffer.gif)
