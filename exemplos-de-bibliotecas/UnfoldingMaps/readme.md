@@ -8,3 +8,7 @@ The offical site does not shot the Processing 3.0 compativle library... so, from
 4. Quit and re-open Processing it is running;
 5. From the Sketch menu > Import Library > Unfolding Maps.
 
+### References
+
+http://unfoldingmaps.org/tutorials/basic-how-to-use-unfolding (Java)
+
