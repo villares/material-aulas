@@ -20,9 +20,9 @@ Ou ainda este meme aqui:
 
 ### Uma metáfora para dicionários
 
-Em uma metáfora simplificadora, imagine um dicionário como uma tabela de duas colunas, que permite que busquemos um item pela coluna da esquerda, a **chave**, e uma vez encontranda podemos consultar na coluna da direita um **valor** correspondente. Um dicionário é feito de pares chave-valor. 
+Imagine um dicionário como uma tabela de duas colunas que permite que busquemos um item, que chamamos de **chave**, o procurando na coluna da esquerda. Se o enconcontrarmos podemos consultar na coluna da direita um **valor** correspondente. Um dicionário é feito de pares chave-valor. 
 
-Podemos usar como chaves objetos ditos *imutáveis*, como números, texto (*strings*) ou tuplas cujos elementos internos também sejam imutáveis. Não podemos usar listas, uma vez que são *mutáveis*. Já os valores podem ser qualquer tipo de objeto/valor de Python, incluido listas e até mesmo outros dicionários!
+Como regra simplificada, podemos usar como chaves objetos *imutáveis*, como números, texto (*strings*) ou tuplas cujos elementos internos também sejam imutáveis. Não podemos usar listas, uma vez que são *mutáveis*. Já os valores podem ser qualquer tipo de objeto/valor de Python, incluido listas e até mesmo outros dicionários!
 
 > Uma explicação mais detalhadas sobre as limitações técnicas dos tipos que podemos usar nos dicionários não cabe neste texto introdutório, mas a sua curiosidade pode fazer você querer ler mais sobre eles em [Estruturas de dados (na documentação do Python)](https://docs.python.org/pt-br/3/tutorial/datastructures.html#dictionaries).
 
