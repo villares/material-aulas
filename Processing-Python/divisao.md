@@ -59,11 +59,11 @@ print(a)
 # resultado: 2
 ```
 
-### O problema da divisão por zero (e um pouco sobre tratamento de excessões)
+### O problema da divisão por zero (e um pouco sobre tratamento de exceções)
 
-Provavelmente você se lembra que o resultaddo de dividir um número por zero é em geral considerado um valor "indefinido" na maior parte dos contextos matemáticos. Em Python se o seu programa for obrigado a avaliar essa conta ele vai parar tudo e "levantar uma excessão" chamada `ZeroDivisionError`.
+Provavelmente você se lembra que o resultaddo de dividir um número por zero é em geral considerado um valor "indefinido" na maior parte dos contextos matemáticos. Em Python se o seu programa for obrigado a avaliar essa conta ele vai parar tudo e "levantar uma exceção" chamada `ZeroDivisionError`.
 
-> Excessões são um tipo de erro que é diferente dos erros de sintaxe, você também pode encontrá-as descritas como "erros em tempo de execução". Lidar com elas é às vezes insescapável, um procedimento conhecido como "captura" ou "tratamento" de excessões. Pra dar uma idea do que estamos falando, imagine que você pediu ao Python para gravar um arquivo no seu computador, mas o sistema operacional avisou que não foi possível (acabou o espaço, por exemplo, ou o caminho indicado da pasta não existe), acontecerá um `IOError`, e se o programa não foi preparado para tratar esse tipo de excessão graciosamente com um aviso para a pessoa que pediu a gravação, sua execução vai ser interrompida.
+> Exceções são um tipo de erro que é diferente dos erros de sintaxe, você também pode encontrá-as descritas como "erros em tempo de execução". Lidar com elas é às vezes insescapável, um procedimento conhecido como "captura" ou "tratamento" de exceções. Pra dar uma idea do que estamos falando, imagine que você pediu ao Python para gravar um arquivo no seu computador, mas o sistema operacional avisou que não foi possível (acabou o espaço, por exemplo, ou o caminho indicado da pasta não existe), acontecerá um `IOError`, e se o programa não foi preparado para tratar esse tipo de exceção graciosamente com um aviso para a pessoa que pediu a gravação, sua execução vai ser interrompida.
 
 Voltando para a questão da divisão por zero, como se proteger da interupção do seu programa?
 
