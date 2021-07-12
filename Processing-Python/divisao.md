@@ -65,9 +65,19 @@ Provavelmente você se lembra que o resultaddo de dividir um número por zero é
 
 > Exceções são um tipo de erro que é diferente dos erros de sintaxe, você também pode encontrá-as descritas como "erros em tempo de execução". Lidar com elas é às vezes inescapável, um procedimento conhecido como "captura" ou "tratamento" de exceções. Pra dar uma idea do que estamos falando, imagine que você pediu ao Python para gravar um arquivo no seu computador, mas o sistema operacional avisou que não foi possível (acabou o espaço, por exemplo, ou o caminho indicado da pasta não existe), acontecerá um `IOError`, e se o programa não foi preparado para tratar esse tipo de exceção graciosamente com um aviso para a pessoa que pediu a gravação, sua execução vai ser interrompida.
 
-Voltando para a questão da divisão por zero, como se proteger da interupção do seu programa?
+Voltando para a questão da divisão por zero, imagine que você tem no meio do seu programa uma divisão mas o número que divide, o denominador, é variável e de vez em quando ele pode ser zero, como se proteger da interupção do seu programa?
 
-Uma maneira simples é testar antes de qualquer divisão cujo denominador varia, é calculado em outra parte do programa ou depende de dados externos e propor uma execução que não dependa dessa operação de divisão:
+Isso pode acontecer, do denominador variar por diversos motivos, ele é resultado de uma outra conta que varia, ele depende de dados externos, da posição do mouse ou de uma resposta da pessoa usando o programa ou ainda de um sorteio, por exemplo.
+
+Uma maneira de resolver é testar antes de qualquer divisão cujo denominador varia, se ele vale 0 (ou se não vale 0) e propor uma execução que não dependa dessa operação de divisão caso ele seja 0:
+
+```
+if denomidador == 0:   # se denominador é igual a 0
+    resultado = 1000000 
+else:
+    resultado = 10 / denominador
+```
+Ou o equivalente
 
 ```python
 if denomidador != 0:   # se denominador não é igual a 0, != significa "é diferente de"
@@ -76,7 +86,7 @@ else:
     resultado = 1000000
 ```
 
-Usando uma extrutura para exceções do Python que vai servir para casos como erros na manipulação de arquivos e muitos outros:
+Uma outra maneira, talvez mais sofisticada, é usar uma extrutura para exceções do Python, que futuramente vai servir em casos como erros na manipulação de arquivos e outros em que você precisa "tentar" fazer a operação que pode não funcionar (que pode "levantar uma exceção"):
 
 ```python
 try:
