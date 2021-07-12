@@ -67,9 +67,9 @@ Provavelmente você se lembra que o resultaddo de dividir um número por zero é
 
 Voltando para a questão da divisão por zero, imagine que você tem no meio do seu programa uma divisão mas o número que divide, o denominador, é variável e de vez em quando ele pode ser zero, como se proteger da interupção do seu programa?
 
-Isso pode acontecer, do denominador variar por diversos motivos, ele é resultado de uma outra conta que varia, ele depende de dados externos, da posição do mouse ou de uma resposta da pessoa usando o programa ou ainda de um sorteio, por exemplo.
+Isso pode acontecer, do denominador variar, por diversos motivos, por ele ser resultado de uma outra conta que varia, por depender de dados externos, da posição do mouse ou de uma resposta da pessoa usando o programa!
 
-Uma maneira de resolver é testar antes de qualquer divisão cujo denominador varia, se ele vale 0 (ou se não vale 0) e propor uma execução que não dependa dessa operação de divisão caso ele seja 0:
+Uma maneira de resolver é testar antes de qualquer divisão cujo denominador varia se ele vale 0 (ou se não vale 0) e propor uma execução que não dependa dessa operação de divisão caso ele seja 0:
 
 ```python
 if denomidador == 0:   # se denominador é igual a 0
