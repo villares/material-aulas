@@ -70,7 +70,7 @@ Voltando para a questão da divisão por zero, como se proteger da interupção 
 Uma maneira simples é testar antes de qualquer divisão cujo denominador varia, é calculado em outra parte do programa ou depende de dados externos e propor uma execução que não dependa dessa operação de divisão:
 
 ```python
-if denomidador != 0:
+if denomidador != 0:   # se denominador não é igual a 0, != significa "é diferente de"
     resultado = 10 / denominador
 else:
     resultado = 1000000
