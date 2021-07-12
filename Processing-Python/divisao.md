@@ -59,6 +59,32 @@ print(a)
 # resultado: 2
 ```
 
+### O problema da divisão por zero (e um pouco sobre tratamento de excessões)
+
+Provavelmente você se lembra que o resultaddo de dividir um número por zero é em geral considerado um valor "indefinido" na maior parte dos contextos matemáticos. Em Python se o seu programa for obrigado a avaliar essa conta ele vai parar tudo e "levantar uma excessão" chamada `ZeroDivisionError`.
+
+> Excessões são um tipo de erro que é diferente dos erros de sintaxe, você também pode encontrá-as descritas como "erros em tempo de execução". Lidar com elas é às vezes insescapável, num procedimento conhecido como "captura" ou "tratamento" de excessões. Pra dar uma idea do que estamos falando, imagine que você pediu ao Python para gravar um arquivo no seu computador, mas o sistema operacional avisou que não foi possível (acabou o espaço, por exemplo, ou o caminho indicado da pasta não existe), acontecerá um `IOError` se o programa não foi preparado para tratar esse tipo de excessão graciosamente com um aviso para a pessoa que pediu a gravação.
+
+Voltando para a questão da divisão por zero, como se proteger da interupção do seu programa?
+
+Uma maneira simples é testar antes de qualquer divisão cujo denominador varia, é calculado em outra parte do programa ou depende de dados externos e propor uma execução que não dependa dessa operação de divisão:
+
+```python
+if denomidador != 0:
+    resultado = 10 / denominador
+else:
+    resultado = 1000000
+```
+
+Usando uma extrutura para exceções do Python que vai servir para casos como erros na manipulação de arquivos e muitos outros:
+
+```python
+try:
+    resultado = 10 / denominador
+except ZeroDivisionError:
+    resultado = 1000000
+```
+
 ### Agora a parte divertida! O resto da divisão
 
 Em inglês a operação para obter o resto da divisão com inteiros tem o nome de *modulo* ou *modulus* o que pode causar uma grande confusão pois na matemática em português a palavra 'módulo' com a notação `|num|` é usada também para falar do valor absoluto (sem o sinal) de um número (em programação usamos `abs()` para isso), e em Python módulo é o nome de pedaço organizado de uma *biblioteca de funções de programação*, em geral um arquivo `.py`.
@@ -146,5 +172,4 @@ Resultado (truncado, seriam 100 números):
 
 #### faltando...
 
-- Divisão por zero, encrenca!
 - Erros causados pela representação interna dos números decimais em binário no computador
