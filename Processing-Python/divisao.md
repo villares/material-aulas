@@ -94,6 +94,15 @@ try:
 except ZeroDivisionError:
     resultado = 1000000
 ```
+##### Uma outra maneira, malandra
+
+Quando você sabe que os valores do denomidador nunca ficam negativos, e o resultado da divisão pode ser um número aproximado, é possível somar algum valor que apenas impeça o denomidador de ser zero.
+
+```python
+tangente_aproximada = dy / (0.01 + distancia)
+
+fator_de_crescimento = 1 / (1 + mouseX)  # o resultado é no mínimo 1 e sem divisão por zero se mouseX nunca for negativo
+```
 
 ### Agora a parte divertida! O resto da divisão
 
