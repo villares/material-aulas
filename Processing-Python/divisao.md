@@ -45,7 +45,7 @@ d = float(n) / float(m)
 
 Podemos também obter o comportamento de Python 3 para a divisão utilizando, **logo na primeira linha de um *sketch***, ou de um módulo (um arquivo `.py`), a  linha `from __future__ import division` . Note o duplo *underscore*, `_` antes e depois da palavra  *future*, e não pode haver outras instruções antes dessa linha (exceto comentários que não contam como instruções):
 
-```
+```python
 # Exemplo de como fazer a divisão ficar como no Python 3
 from __future__ import division
 
@@ -71,7 +71,7 @@ Isso pode acontecer, do denominador variar por diversos motivos, ele é resultad
 
 Uma maneira de resolver é testar antes de qualquer divisão cujo denominador varia, se ele vale 0 (ou se não vale 0) e propor uma execução que não dependa dessa operação de divisão caso ele seja 0:
 
-```
+```python
 if denomidador == 0:   # se denominador é igual a 0
     resultado = 1000000 
 else:
