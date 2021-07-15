@@ -1,6 +1,6 @@
 # Variáveis
 
-Variáveis são nomes que inventamos quando estamos escrevendo um programa, e que apontam para valores na memória do computador. Esses valores podem ser simples como números inteiros (*int*/*integer*), textos (*str*/*string*) ou entidades que chamamos de *objetos*. Em Python, como vai ser possível perceber futuramente, de fato todos os valores, incluindo os números inteiros, são objetos.
+Variáveis são nomes que inventamos quando estamos escrevendo um programa, e que apontam para valores na memória do computador. Esses valores podem ser simples como números inteiros (*int*/*integer*), textos (*str*/*string*) ou, de maneira genérica, a entidades que chamamos de *objetos*. Em Python, como vai ser possível perceber futuramente, há muitos tipos de objetos e sempre podemos fazer referência a eles por meio de variáveis.
 
 ### Atribuição
 
