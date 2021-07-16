@@ -108,7 +108,7 @@ chamados 'docstrings' (textos de documentação).
 
 ---
 
-Este material é parcialmente baseado nos materiais criados para ocurso [Progração Criativa](https://arteprog.space/programacao-criativa/)
+Este material é parcialmente baseado nos materiais criados para o curso [Progração Criativa](https://arteprog.space/programacao-criativa/)
 
 ---
 
