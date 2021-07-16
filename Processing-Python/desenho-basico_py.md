@@ -107,7 +107,9 @@ chamados 'docstrings' (textos de documentação).
 
 
 ---
-Este material é baseado no material do curso [Progração Criativa](https://arteprog.space/programacao-criativa/)
+
+Este material é parcialmente baseado nos materiais criados para ocurso [Progração Criativa](https://arteprog.space/programacao-criativa/)
 
 ---
-Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
+
+Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado.
