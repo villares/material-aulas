@@ -50,7 +50,7 @@ fill(0, 255, 0) # preenchimento verde
 ellipse(50, 50, 50, 50) # produz um círculo verde
 ```
 
-É possível ajustar a cor de preenchimento de uma forma com `fill()` a cor de traço do contorno com `stroke()`, pedir uma forma sem preenchimento com `noFill()` ou sem traço de contorno com `noStroke()`. A espessura do traço de contorno pode ser contolada com `strokeWeight()`.
+É possível ajustar a cor de preenchimento de uma forma com `fill()` a cor de traço do contorno com `stroke()`, pedir uma forma sem preenchimento com `noFill()` ou sem traço de contorno com `noStroke()`. A espessura do traço de contorno pode ser controlada com `strokeWeight()`.
 
 ```python
 noFill() # sem preenchimento, formas vazadas
