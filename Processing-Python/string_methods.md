@@ -4,13 +4,6 @@
 
 <sub>Na programação orientada a objetos veremos que funções que acompanham objetos de uma determinada classe são conhecidas como métodos.</sub>
 
-```python
-nome = 'Santos-Dumont'
-lista = nome.split('-')  # .split(delimitador) devolve uma lista 
-print(lista)             # com os trechos de texto entre os delimitadores:
-# ['Santos', 'Dumont']
-```
-
 ### Convertendo números em texto
 
 É possível controlar a formatação da conversão de números em string, como o número de casas decimais ou com zeros à esquerda para garantir um certo número de dígitos, usando o método `.format()` e um string com uma notação especial entre as chaves `{}`:
@@ -77,18 +70,26 @@ Trecho da documentação:
 
 ```python
 # str.split(delimitador_opcional) devolve uma lista cujos itens são trechos do texto "divididos"
+# Confira também str.splitlines() que divide em quebras de linha!
+
+nome = 'Santos-Dumont'
+lista = nome.split('-')  # .split(delimitador) devolve uma lista 
+print(lista)             # com os trechos de texto entre os delimitadores:
+# ['Santos', 'Dumont']
+
+print("a/b/c".split("/"))
+# exibe: ['a', 'b', 'c']
+
 itens = "A a B b".split()  # usado sem argumentos divide nos espaços
 print(itens)
 # exibe: ['A', 'a', 'B', 'b']
-# pode ser informado um delimitador:
-print("a/b/c".split("/"))
-# exibe: ['a', 'b', 'c']
-# Confira também str.splitlines() que divide em quebras de linha!
 
 # str.join(coisas) use um string/caractere como delimitador para juntar uma coleção de textos!
+
 coisas = ('a', 'b', 'c')
 print('-'.join(coisas))
 # exibe: a-b-c
+
 print('\n'.joint('xyz')  # \n indica uma quebra de linha
 # exibe em 3 linhas: x\ny\n\z
 ```
