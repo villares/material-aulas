@@ -1,10 +1,5 @@
 # Instruções condicionais e operadores lógicos
 
-
-###  Sumário
-
-[Sintaxe](#sintaxe-if-e-ifelse)
-
 ## As bifurcações no caminho de execução do código
 
 Imagine o seguinte cenário...
@@ -12,6 +7,16 @@ Imagine o seguinte cenário...
 Saindo de casa, se (`if`) está chovendo, a condição "chovendo" é verdadeira (`True`), então levo o guarda-chuva;
 
 Opcionalmente, podemos definir que, senão (`else`), quando a condição "chovendo" é falsa (`False`), devo levar óculos de sol.
+
+
+###  Sumário
+
+- [Sintaxe](#sintaxe-if-e-ifelse)
+- [Comparações: operadores relacionais e operadores lógicos](#comparações-operadores-relacionais-e-operadores-lógicos)
+   - [Um exemplo completo](#um-exemplo-completo)
+- [Quadro de operadores](#quadro-de-operadores)
+   - [Alguns exemplos e comentários](#alguns-exemplos-e-comentários)
+- [Assuntos relacionados](#assuntos-relacionados)
 
 ## Sintaxe `if` e `if`/`else`
 
@@ -35,7 +40,7 @@ else:               # termina o “se/então” e começa o “senão”
 ```
 <img src="https://arteprog.space/programacao-criativa/assets/imagens/condicional-com-else.jpg" title="Exemplo de if/else - desenho: Monica Rizzolli">
 
-## Comparações com operadores relacionais e operadores lógicos
+## Comparações: operadores relacionais e operadores lógicos
 
 Os valores `True` (verdadeiro) e `False` (falso) são o resultado de expressões booleanas (*boolean*, em homenagem a [George Boole](https:#pt.wikipedia.org/wiki/George_Boole)) como as comparações com operadores relacionais, `==` (igualdade), `>` (maior que) ou ainda operações lógicas **e** (`and`), **ou** (`or`) e **não** (`not`). 
 
@@ -69,7 +74,7 @@ def draw():
 ```
 ![exemplo condicional](assets/condicional.gif)
 
-### Quadro de operadores 
+## Quadro de operadores 
  
 |operador | uso | descrição |
 |:---:  |:---: |--- |
@@ -85,8 +90,7 @@ def draw():
 | `in` | `a in b` | verdadeiro se elemento *a* **existe dentro** da coleção *b* |
 | `is` | `a is b` | verdadeiro se *a* **é o mesmo objeto** do que *b*, não bastando serem iguais |
 
-### Alguns exemplos e considerações
-
+### Alguns exemplos e comentários
 ```python
 # maior que
 n = 12
