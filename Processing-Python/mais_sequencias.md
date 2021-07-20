@@ -125,10 +125,6 @@ print(nome[1::2]) # segunda posição até o final, de duas em duas.
 
 print(nome[:11:2]) # início até a décima, de duas em duas.
 # resultado: 'Ssi re'
-
-c = nome.split(' ')  # .split(delimitador) devolve uma lista 
-print(c)             # com os trechos de texto entre os delimitadores:
-# ['Saskia', 'Freeke']
 ```
 
 ### Cópias e inversões
