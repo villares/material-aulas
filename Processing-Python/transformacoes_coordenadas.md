@@ -6,6 +6,9 @@ Processing tem funções embutidas que tornam fácil você mover, girar, e cresc
 
 Esta página apresenta funções `translate`, `rotate`, e `scale`, mas também algumas funções que permitem 'guardar' e 'devolver' o estado anterior do sistema de coordenadas (`pushMatrix()`  e `popMatrix()`).
 
+#### sumário
+[Qual é a vantagem?](#qual-é-a-vantagem)
+
 ### Translação: Movendo a grade
 
 Quando você quer desenhar alguma coisa, especifica as cordenadas. Veja um retângulo simples desenhado com o código `rect(20, 20, 40, 40)`. O sistema de coordenadas é como uma espécie de grade ou papel milimetrado, e está mostrado em cinza.
