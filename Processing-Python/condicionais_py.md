@@ -1,13 +1,5 @@
 # Instruções condicionais e operadores lógicos
-
 ## As bifurcações no caminho de execução do código
-
-Imagine o seguinte cenário...
-
-Saindo de casa, se (`if`) está chovendo, a condição "chovendo" é verdadeira (`True`), então levo o guarda-chuva;
-
-Opcionalmente, podemos definir que, senão (`else`), quando a condição "chovendo" é falsa (`False`), devo levar óculos de sol.
-
 
 ###  Sumário
 
@@ -19,6 +11,10 @@ Opcionalmente, podemos definir que, senão (`else`), quando a condição "choven
 - [Assuntos relacionados](#assuntos-relacionados)
 
 ## Sintaxe `if` e `if`/`else`
+
+Imagine o seguinte cenário...
+Saindo de casa, se (`if`) está chovendo, a condição "chovendo" é verdadeira (`True`), então levo o guarda-chuva;
+Opcionalmente, podemos definir que, senão (`else`), quando a condição "chovendo" é falsa (`False`), devo levar óculos de sol.
 
 ``` python
 # a condição "chovendo" é avaliada como True (verdadeiro) ou False (falso)
