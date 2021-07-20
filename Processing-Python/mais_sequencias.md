@@ -11,6 +11,7 @@ Saiba que tuplas são mais ‘econômicas’ em termos computacionais (em casos 
 ```python
 c = (100, 50, 40) # os númereos representam x, y, diâmetro respectivamente
 ```
+Não faz sentido nenhum reordendar, acrescentar ou remover elementos de uma tupla como essa que descreve o círculo, ela funciona como um "registro" (_record_ em inglês) cujos campos não tem nomes explícitos mas tem significado pela posição, e Se precisar alterar o círculo você recria a tupla que o descreve.
 
 ### Número de itens, tamanho ou comprimento da sequêcia (*length*): <code>len()</code>
 
