@@ -4,6 +4,13 @@
 
 <sub>Na programação orientada a objetos veremos que funções que acompanham objetos de uma determinada classe são conhecidas como métodos.</sub>
 
+```python
+nome = 'Santos-Dumont'
+lista = nome.split('-')  # .split(delimitador) devolve uma lista 
+print(lista)             # com os trechos de texto entre os delimitadores:
+# ['Santos', 'Dumont']
+```
+
 ### Convertendo números em texto
 
 É possível controlar a formatação da conversão de números em string, como o número de casas decimais ou com zeros à esquerda para garantir um certo número de dígitos, usando o método `.format()` e um string com uma notação especial entre as chaves `{}`:
