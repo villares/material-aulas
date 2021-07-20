@@ -7,7 +7,12 @@ Processing tem funções embutidas que tornam fácil você mover, girar, e cresc
 Esta página apresenta funções `translate`, `rotate`, e `scale`, mas também algumas funções que permitem 'guardar' e 'devolver' o estado anterior do sistema de coordenadas (`pushMatrix()`  e `popMatrix()`).
 
 #### sumário
-[Qual é a vantagem?](#qual-é-a-vantagem)
+[Translação: Movendo a grade](#translação-movendo-a-grade)
+ - [Qual é a vantagem?](#qual-é-a-vantagem)
+[Rotação](#rotação)
+[Escalando](#escalando)
+[A matriz de transformação](#a-matriz-de-transformação)
+- [O significado de *push* e *pop*](#o-significado-de-push-e-pop)
 
 ### Translação: Movendo a grade
 
@@ -89,7 +94,7 @@ def casa(int x, int y):
     popMatrix()
 ```
 
-### Rotação
+## Rotação
 
 Além da translação, que move a grade, é possível girar o sistema de coordenadas com a função `rotate()`. Essa função tem um parâmetro ou argumento, um número de *radianos* que você quer rodar. Em graus, um círculo tem 360°. Quando descrevemos os ângulos em radianos, a circuferência completa tem 2π radianos. Eis aqui um diagrama de como Processing mede ângulos em graus (preto) e radianos (vermelho).
 
@@ -175,7 +180,7 @@ def draw():
 
 ![roda de cores](assets/2d_transformations_2.gif)
 
-### Escalando
+## Escalando
 
 A transformação final do sistema de coordenadas é a mudança de escala, que altera o tamanho da grade. Dê uma olhada neste exemplo, que desenha um quadrado, depois redimensiona a grade para o dobro do tamanho normal e a desenha novamente.
 
@@ -233,7 +238,7 @@ def setup():
 ![ordem importa](assets/2d_transformations_3.png)
 
 
-### A matriz de transformação
+## A matriz de transformação
 
 Sempre que você faz uma rotação, translação ou mudança de escala, as informações necessárias para a transformação são acumuladas em uma tabela de números. Essa tabela, ou matriz, possui apenas algumas linhas e colunas; no entanto, através do milagre da matemática, ela contém todas as informações necessárias para realizar qualquer série de transformações. E é por isso que `pushMatrix()` e `popMatrix()` têm essa palavra em seu nome.
 
