@@ -4,14 +4,14 @@ Listas e tuplas são duas das mais comuns coleções ordenadas de itens no Pytho
 
 Uma lista permite que seus itens ou elementos sejam alterados, adicionados, removidos, ou, como um todo, os itens podem ser reordenados. Dizemos que listas são mutáveis. 
 
-Já uma tupla ou um *string* não podem ter elementos adicionados, removidos e também não podem ser reordenados, dizemos que são estruturas imutáveis. Se for necessária uma correção, sempre podemos criar tuplas e *strings* novamente com a alteração em substituição a coleção original.
+Já uma tupla ou um *string* não podem ter elementos adicionados, removidos e também não podem ser reordenados, dizemos que são estruturas imutáveis. Se for necessária uma correção, sempre podemos criar tuplas e *strings* novamente com a alteração em substituição à coleção original.
 
-Saiba que tuplas são mais ‘econômicas’ em termos computacionais (em casos de grande quantidade de dados, gastam menos memória do computador) e são bastante usadas quando a ordem dos elementos tem significado, por exemplo podemos fazer uma tupla com os dados para a construção de um círculo:
+Saiba que tuplas são mais ‘econômicas’ em termos computacionais (por exemplo, em casos de grande quantidade de dados, gastam menos memória) e são bastante usadas quando a ordem dos elementos tem significado, por exemplo podemos fazer uma tupla com os dados para a construção de um círculo:
 
 ```python
 c = (100, 50, 40) # os númereos representam x, y, diâmetro respectivamente
 ```
-Não faz sentido nenhum reordendar, acrescentar ou remover elementos de uma tupla como essa que descreve o círculo, ela funciona como um "registro" (_record_ em inglês) cujos campos não tem nomes explícitos mas tem significado pela posição, e Se precisar alterar o círculo você recria a tupla que o descreve.
+Não faz sentido nenhum reordendar, acrescentar ou remover elementos de uma tupla como essa que descreve o círculo, ela funciona como um "registro" (_record_ em inglês) cujos campos não tem nomes explícitos mas tem significado pela posição. Se você precisar alterar o círculo pode recriar a tupla que o descreve.
 
 ### Número de itens, tamanho ou comprimento da sequêcia (*length*): <code>len()</code>
 
