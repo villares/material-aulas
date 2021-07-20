@@ -7,12 +7,13 @@ Processing tem funções embutidas que tornam fácil você mover, girar, e cresc
 Esta página apresenta funções `translate`, `rotate`, e `scale`, mas também algumas funções que permitem 'guardar' e 'devolver' o estado anterior do sistema de coordenadas (`pushMatrix()`  e `popMatrix()`).
 
 #### sumário
-[Translação: Movendo a grade](#translação-movendo-a-grade)
- - [Qual é a vantagem?](#qual-é-a-vantagem)
-[Rotação](#rotação)
-[Escalando](#escalando)
-[A matriz de transformação](#a-matriz-de-transformação)
-- [O significado de *push* e *pop*](#o-significado-de-push-e-pop)
+
+- [Translação: Movendo a grade](#translação-movendo-a-grade)
+   - [Qual é a vantagem?](#qual-é-a-vantagem)
+- [Rotação](#rotação)
+- [Escalando](#escalando)
+- [A matriz de transformação](#a-matriz-de-transformação)
+   - [O significado de *push* e *pop*](#o-significado-de-push-e-pop)
 
 ### Translação: Movendo a grade
 
