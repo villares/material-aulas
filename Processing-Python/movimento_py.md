@@ -6,7 +6,7 @@ Para produzir movimento nos valemos de uma ideia presente em todo tipo de anima�
 
 Antes do *laço principal de repetição*, que é como costumamos descrever a execução do `draw()`, é executada uma função de preparo ou configuração chamada `setup()` que também precisamos definir. Essas duas funções juntas são a forma mais comum de se estruturar um *sketch* (um programa em Processing).
 
-Resumindo: Dentro do `setup()` vai tudo aquilo que precisamos fazer apenas uma vez e no começo, como, por exemplo, definir a àrea de desenho com `size()`. Já no `draw()` vão principalmente as instruções de desenho propriamente dito, em geral precedidas por uma limpeza da tela ou fundo, e são acionados os cálculos de atualização dos elementos da animação.
+Resumindo: Dentro do `setup()` vai tudo aquilo que precisamos fazer apenas uma vez e no começo, como, por exemplo, definir a àrea de desenho com `size()`. Já no `draw()` vão principalmente as instruções de desenho propriamente ditas, em geral precedidas por uma limpeza da tela ou fundo, e são acionados os cálculos de atualização dos elementos da animação.
 
 Note que no exemplo a seguir, a posição e velocidade do círculo é mantida em algumas variáveis, `px`, `py`, `vx` e `vy`, que precisam ser 'lembradas' entre os ciclos de repetição do `draw()` e dentro dele são modificadas. Isso é o que chamamamos de *variáveis globais*, em contraste com variáveis que fossem criadas dentro do `draw()` e que seriam *variáveis locais*. Leia mais sobre isso na página [Escopo: variáveis globais e locais](escopo_py.md). 
 
@@ -20,13 +20,13 @@ vx = 2.5   # velocidade horizontal inicial
 vy = -1.5  # velocidade vertical inicial
 
 def setup():
-    global px, py
+    global px, py  # importante!
     size(400, 400)
     # Define a posição inicial do círculo
-    px, py = width / 2, height / 2
+    px, py = width / 2, height / 2  # meio do desenho
 
 def draw():
-    global px, py, vx, vy
+    global px, py, vx, vy  # é o que permite modificar as globais!
     background(0, 0, 200) # limpa o frame com um fundo azul
     # Atualiza as variáveis da posição do círculo
     px = px + vx
