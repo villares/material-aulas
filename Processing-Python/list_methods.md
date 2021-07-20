@@ -29,3 +29,5 @@ Provavelmente você já leu neste material que é possível acrescentar itens à
 `.copy()` - Devolve uma cópia rasa da lista. Equivalente a `a[:]`.
 
 **Você pode ler mais na Documentação do Python sobre as listas e outras estruturas de dados em [5.1. Mais sobre listas](https://docs.python.org/pt-br/2.7/tutorial/datastructures.html#more-on-lists) (na documentação do Python).**
+
+> No Python mais moderno, a partir do Python 3.3, temos o método `.clear()`, que remove todos os itens de uma lista, equivale a `del a[:]`.
