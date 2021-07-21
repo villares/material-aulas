@@ -43,6 +43,7 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 - [Tipos de valores (inteiros, números de ponto flutuante, texto (*strings*))](Processing-Python/tipagem_py.md)
   - [Textos no programa, no console e na tela (*strings*)](Processing-Python/strings_py.md)
   - [Trabalhando com fontes e outros ajustes do texto](Processing-Python/tipografia.md)
+  - [Métodos dos objetos *string*](Processing-Python/string_methods.md)
 - [Interação: input com teclado e mouse](Processing-Python/input_py.md)
 - [Aleatoriedade: `random` e números 'sorteados'](Processing-Python/aleatoriedade_1.md)
   - [Mais sobre aleatoriedade e as diferenças ente o `random` de Processing e de Python](Processing-Python/aleatoriedade_2.md)
@@ -52,6 +53,7 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
   - [O que é *easing*?](Processing-Python/easing.md) - transições de movimento
 
 #### Mais sobre estruturas de dados
+- [Métodos das listas](Processing-Python/list_methods.md)
 - [Outras estruturas de dados: dicionário (_dict_) e conjunto (_set_)](Processing-Python/dicionarios.md)
 - [Compreensão de listas e outras *comprehensions*](Processing-Python/comprehension.md)
 #### Desenhando em 3D
