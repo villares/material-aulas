@@ -2,7 +2,7 @@
 
 Listas são coleções ordenadas, sequências mutáveis, e como quase tudo em Python, são objetos e por isso vem acompanhadas de uma série de funções que podem ser acionadas com a *sintaxe do ponto* (*dot syntax*).
 
-<sub>Na programação orientada a objetos veremos que funções que acompanham objetos de uma determinada classe são conhecidas como métodos.</sub>
+<sub>Na programação orientada a objetos vemos que funções atreladas a objetos de uma classe são conhecidas como métodos.</sub>
 
 ### Antes de chegar aqui
 
