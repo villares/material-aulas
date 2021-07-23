@@ -144,15 +144,15 @@ A notação `[:]` (fatiamento com *início* e *parada* vazios) produz uma cópia
 
 ```python
 a = [0, 1, 2, 3, 4]
-b = a
-del b[3]
+b = a   
+del b[3]  # remove o quarto item da lista
 print(b) # [0, 1, 2, 4] como esperado
 # mas, talvez você se surpreenda!
 print(a) # [0, 1, 2, 4]
 
 a = [0, 1, 2, 3, 4]
 b = a[:] # cria uma cópia nova da sequência
-del b[3]
+del b[3] # remove o quarto item da lista `b`
 print(b) # [0, 1, 2, 4]
 print(a) # [0, 1, 2, 3, 4]
 ```
