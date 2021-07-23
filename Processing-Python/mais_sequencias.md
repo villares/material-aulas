@@ -2,6 +2,15 @@
 
 Listas e tuplas são duas das mais comuns coleções ordenadas de itens no Python. *Strings* (cadeias de caracteres) ou textos, para simplificar, são coleções ordenadas também, contendo caracteres (letras, emojis ou glifos em geral).  No meio do código, uma tupla pode ser construída com parenteses `( ,)` e a lista com colchetes `[ ,]`, um *string* com aspas, simples `'  '`,  duplas `"  "`  ou trincas de aspas simples ou duplas (`'''  '''` e `"""  """`).
 
+```python
+anos = [1968, 1976, 1980, 1994]  # uma lista de números
+lista_de_nomes = ['Bernardo Fontes', 'John Cleese', 'Georg Nees']  # uma lista de strings
+ponto = (23, -45)  # uma tupla com números representando coordenadas de um ponto
+pontos = [(10, 10), (100, 10), (100, 90), (20, 100)]  # uma lista com tuplas de números dentro!
+pontuacao = ".,:;()?"    # um string
+versao = "3.7a"   # ou outro string
+```
+
 Uma lista permite que seus itens ou elementos sejam alterados, adicionados, removidos, ou, como um todo, os itens podem ser reordenados. Dizemos que listas são mutáveis. 
 
 Já uma tupla ou um *string* não podem ter elementos adicionados, removidos e também não podem ser reordenados, dizemos que são estruturas imutáveis. Se for necessária uma correção, sempre podemos criar tuplas e *strings* novamente com a alteração em substituição à coleção original.
@@ -18,10 +27,10 @@ Não faz sentido nenhum reordendar, acrescentar ou remover elementos de uma tupl
 Podemos obter o tamanho, isto é, o número de itens, de praticamente qualquer estrutura de dados em Python (ordenada ou não) usando a função `len()`. Por exemplo:
 
 ```python
-lista_de_nomes ['Bernardo Fontes', 'John Cleese', 'Georg Nees']
+lista_de_nomes = ['Bernardo Fontes', 'John Cleese', 'Georg Nees']
 print(len(lista_de_nomes)) # exibe 3
 
-ponto = (100, 150)
+ponto = (23, -45)
 print(len(ponto))  # exibe 2
 
 n_paises = len(codigos_de_pais) # lista baseada em https://www.iso.org/obp/ui/#search
