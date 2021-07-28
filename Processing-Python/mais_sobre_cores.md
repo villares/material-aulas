@@ -73,7 +73,7 @@ Também é possível indicar o valor máximo de cada canal **RGB** usando `color
 
 ```python
 def setup():
-    verde = color_hex('#00FF00')
+    verde = hex_color('#00FF00')
     fill(verde)
     rect(0, 0, 50, 100)
     azul = hex_color('0000FF')
