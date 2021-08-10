@@ -80,7 +80,7 @@ def mousePressed():
 
 
 
-# Criando a máscara dinâmicamente
+### Criando uma máscara dinâmicamente
 
 ![offscreen buffer](assets/clipping_mask.gif)
 
