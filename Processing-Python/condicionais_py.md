@@ -118,13 +118,21 @@ Para efeitos de operações lógicas, e no uso com `if`, por exemplo, os valores
 A função `bool()` converte valores ou expressões entre os parenteses em `True` ou `False` (os chamados valores booleanos) nos permitindo investigar como Python os interpreta! Note que se comparados diretamente entre si zero, `None`, um string vazio e uma lista vazia não são a mesma coisa, mas se convertidos com `bool()` são todos convertidos no valor `False`. Já `1`,`200` ou `"Unicamp"`, serão convertidos com `bool()` em `True`. 
 
 ```python
-texto = ""  # aspas sem nada dentro, também funcionaria comtexto = None
+texto = ""  # aspas sem nada dentro, também funcionaria com `texto = None`
+# Agradecimentos à Fabiana Costa que pegou um erro na versão anterior deste exemplo
+
 print(texto == False)  # exibe False!
 print(texto == True)  # exibe False!
 print(bool(texto) == False)  # exibe True
 
 if not texto:   # será acionado se o string texto for vazio ou None
    texto = "novo texto"
+   
+# curiosamente...
+print(0 == False) # e também `print(1 == True)`, exibem True!
+# Internamente verdadeiro e falso (True & False) são 1 e 0 no Python!
+# isso permite certas malandragens como multiplicar algo por verdadeiro ou falso...
+# resultando no próprio número ou 0 respectivamente.
    
 print(bool(""))    # exibe False  (um string, texto, vazio)
 print(bool("oi"))  # exibe True   (qualquer outro string)
