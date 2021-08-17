@@ -53,18 +53,19 @@ def setup():
     size(400, 400)
     background(0) # cor do fundo 
     # chamando a função olho várias vezes
-    olho(300, 100, random(50, 100)) # x, y, tamanho sorteado
-    olho(100, 200, random(10, 150)) 
-    olho(200, 300, random(10, 150))
+    olho(300, 100, 100) # x, y, tamanho 
+    olho(100, 200, 50) 
+    tamanho_sorteado = random(10, 150)
+    olho(200, 300, tamanho_sorteado)
 
 # definindo a função olho
 def olho(x, y, tamanho):
-    """Olho precisa de 3 parâmetros"""
+    """Olho precisa de 3 parâmetros, x e y para posição, e tamanho"""
     noStroke()
     fill(255)
-    ellipse(x, y, tamanho, tamanho/2)
+    ellipse(x, y, tamanho, tamanho / 2)
     fill(0)
-    circle(x, y, tamanho*.40)
+    circle(x, y, tamanho * 0.40)
 ```
 
 ### Funções que devolvem resultados
