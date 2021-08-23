@@ -11,7 +11,6 @@ Esta página apresenta funções `translate`, `rotate`, e `scale`, mas também a
 - [Translação: Movendo a grade](#translação-movendo-a-grade)
    - [Qual é a vantagem?](#qual-é-a-vantagem)
 - [Rotação](#rotação)
-- [Escalando](#escalando)
 - [A matriz de transformação](#a-matriz-de-transformação)
    - [O significado de *push* e *pop*](#o-significado-de-push-e-pop)
 
@@ -181,35 +180,10 @@ def draw():
 
 ![roda de cores](assets/2d_transformations_2.gif)
 
-## Escalando
-
-A transformação final do sistema de coordenadas é a mudança de escala, que altera o tamanho da grade. Dê uma olhada neste exemplo, que desenha um quadrado, depois redimensiona a grade para o dobro do tamanho normal e a desenha novamente.
-
-```python
-def setup():
-    size(200,200)
-    background(255)
-        
-    stroke(128)
-    rect(20, 20, 40, 40)
-        
-    stroke(0)
-    pushMatrix()
-    scale(2.0)
-    rect(20, 20, 40, 40)
-    popMatrix()
-```
-![scale](assets/2d_transformations_scale.png)
-
-Primeiro, você pode ver que o quadrado parece ter se movido. Claro que não. Seu canto superior esquerdo ainda está em (20, 20) na grade escalada para cima, mas esse ponto está agora duas vezes mais distante da origem do que no sistema de coordenadas original. Você também pode ver que as linhas são mais grossas. Isso não é ilusão de ótica - as linhas realmente têm o dobro da espessura, porque o sistema de coordenadas foi dimensionado para dobrar seu tamanho.
-
-> **Desafio de programação** aumente a o tamnaho do quadrado preto, mas mantenha o cantto superior esquerdo dele no mesmo lugar do quadrado cinza. Dica: use `translate()` para mover a origem, então use `scale()`.
-
-Não tem uma lei que diz que você tem que escalar as dimensões em *x* e *y* igualmente. Tente usar `scale(3.0, 0.5)` para fazer a dimensão em *x* três vezes maior e a dimensão em *y* metade do tamanho normal.
 
 ### A ordem importa
 
-Quando você faz várias transformações, a ordem faz diferença. Uma rotação seguida de uma translação seguida por uma mudança de escala não produzirá os mesmos resultados que uma translação seguida de uma rotação e uma mudança de escala. Aqui está um exemplo de código e os resultados.
+Além da rotação e translação mencionadas anteriormente, é possível também escalar o sistema de coordenadas com a função `scale()`. Quando você faz várias transformações, a ordem faz diferença. Uma rotação seguida de uma translação seguida por uma mudança de escala não produzirá os mesmos resultados que uma translação seguida de uma rotação e uma mudança de escala. Aqui está um exemplo de código e os resultados.
 
 ```python
 def setup():
