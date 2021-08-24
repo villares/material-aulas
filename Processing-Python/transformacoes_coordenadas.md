@@ -133,7 +133,7 @@ Ei o que aconteceu? Como o quadrado foi movido e cortadao A resposta é: o quadr
 
 ### Girando da maneira certa
 
-A maneira certa de girar o quadrado é:
+A maneira certa de girar o quadrado depende de fazer uma translação antes:
 
 1. Faça a translação da origem do sistema de coordenadas (0, 0) para onde você quer que seja o canto superior esquerdo do quadrado.
 2. Gire a grade π/4 radianos (45°)
@@ -165,7 +165,7 @@ def setup():
     popMatrix()
 ```
 
-Veja agora um sketch que gira dois retângulos em torno do próprio centro usando rotação.
+Veja agora um outro sketch que gira dois retângulos em torno do próprio centro usando rotação.
 ![retangulos](assets/2d_transformations_2.gif)
 
 ```python
@@ -190,7 +190,7 @@ def draw():
     rect(-50, -50, 100, 100)
     popMatrix() 
 ```
-**Para pensar**
+##### Para pensar:
 
 - Você conseguiria re-escrever usando `rectMode(CENTER)` pra desenhar os retângulos pelo centro? Ficaria mais simples? 
 
@@ -238,7 +238,7 @@ E a parte *push* e *pop* dos nomes `pushMatrix` e `popMatrix`? Elas vêm de um c
 
 De maneira semelhante, `pushMatrix()` coloca o status atual do sistema de coordenadas no topo de uma área de memória, e `popMatrix()` pega de volta o status. O exemplo anterior usou `pushMatrix()` e `popMatrix()` para garantir que o sistema de coordenação estivesse "limpo" antes de cada parte do desenho. Em todos os outros exemplos, as chamadas para essas duas funções não eram realmente necessárias, mas não custa nada salvar e restaurar o status da grade.
 
-Notas: 
+##### Notas: 
 - **Sempre execute `pushMatrix()` e `popMatrix()` em pares** ou você vai encontrar erros, um deles é meio que uma proteção antes que ocorra o famoso *estouro* ou *transbordamento* da pilha, *stack overflow*, `pushMatrix() cannot use push more than 32 times`. O outro é aviso de que está faltando um *push* anterior: `missing a pushMatrix() to go with that popMatrix()`.
 
 - Em Processing, o sistema de coordenadas é restaurado ao seu estado original (origem na parte superior esquerda da janela, sem rotação e sem mudança de escala) toda vez que a função `draw()` é executada. 
