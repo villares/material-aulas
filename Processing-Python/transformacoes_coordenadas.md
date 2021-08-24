@@ -55,7 +55,15 @@ def setup():
 ```
 ![retângulo movido](assets/2d_transformations_1.gif)
 
-Vamos olhar o código de conversão em mais detalhes.`pushMatrix()` é uma função embutida que salva a posição atual do sistema de coordendas. O `translate(60, 80)` move o sistema de coordenadas 60 para direita e 80 para baixo. O `rect(20, 20, 40, 40)` desenha o retângulo no mesmo local em que estava originalmente. Lembre-se de que as coisas que você desenha não se movem - a grade se move. Por fim,`popMatrix()` restaura o sistema de coordenadas como estava antes de você fazer a translação.
+Vamos olhar o código de conversão em mais detalhes:
+
+- `pushMatrix()` é uma função embutida que salva a posição atual do sistema de coordendas, como se fizesse um *backup*... 
+
+- `translate(60, 80)` move o sistema de coordenadas 60 para direita e 80 para baixo. 
+
+- `rect(20, 20, 40, 40)` desenha o retângulo no mesmo local em que estava originalmente. Lembre-se de que as coisas que você desenha não se movem - a grade se move. 
+
+- Por fim,`popMatrix()` restaura o sistema de coordenadas como estava antes de você fazer a translação.
 
 Sim, você podia ter feito uma translação `translate(-60, -80)` para mover a grade de volta a sua posição original. No entanto, quando você começa a executar operações mais sofisticadas com o sistema de coordenadas, é mais fácil usar `pushMatrix()` e `popMatrix()` para salvar e restaurar o status em vez de precisar desfazer todas as suas operações. Mais adiante vamos falar da origem desses nomes tão estranhos.
 
@@ -157,29 +165,36 @@ def setup():
     popMatrix()
 ```
 
-E aqui está um programa que gera uma roda de cores usando rotação:
+Veja agora um sketch que gira dois retângulos em torno do próprio centro usando rotação.
+![retangulos](assets/2d_transformations_2.gif)
 
 ```python
 def setup():
-    size(256, 256)
-    background(255)
-    smooth()
-    noStroke()
+    size(400, 400)
 
 def draw():
-    if (frameCount % 10 == 0):
-        fill(frameCount * 3 % 255,
-             frameCount * 5 % 255,
-             frameCount * 7 % 255)
-        pushMatrix()
-        translate(128, 128) 
-        rotate(radians(frameCount * 2 % 360))
-        rect(0, 0, 100, 25)
-        popMatrix()    
+    background(200)
+    angulo = radians(mouseX)
+    
+    pushMatrix()
+    translate(150, 150)
+    rotate(-angulo * 2)
+    fill(0, 200, 0)
+    rect(-25, -25, 50, 50)
+    popMatrix()
+
+    pushMatrix()
+    translate(250, 250)
+    rotate(angulo)
+    fill(200, 0, 200)
+    rect(-50, -50, 100, 100)
+    popMatrix() 
 ```
+**Para pensar**
 
-![roda de cores](assets/2d_transformations_2.gif)
+- Você conseguiria re-escrever usando `rectMode(CENTER)` pra desenhar os retângulos pelo centro? Ficaria mais simples? 
 
+- Este exemplo é útil por demonstrar uma estratégia para girar um objeto, que tem um, ponto inicial arbitrário, no caso o canto superior esquerdo, o girando em torno de outro ponto arbitrário (neste caso o centro). Nem sempre vamos ter disponível, para formas especiais que desenharmos, o equivalente a um `rectMode(CENTER)`.
 
 ### A ordem importa
 
@@ -215,11 +230,11 @@ def setup():
 
 ## A matriz de transformação
 
-Sempre que você faz uma rotação, translação ou mudança de escala, as informações necessárias para a transformação são acumuladas em uma tabela de números. Essa tabela, ou matriz, possui apenas algumas linhas e colunas; no entanto, através do milagre da matemática, ela contém todas as informações necessárias para realizar qualquer série de transformações. E é por isso que `pushMatrix()` e `popMatrix()` têm essa palavra em seu nome.
+Sempre que você faz uma rotação, translação ou mudança de escala, as informações necessárias para a transformação são acumuladas em uma tabela de números. Essa tabela, ou matriz, possui apenas algumas linhas e colunas; no entanto, através do milagre da matemática, ela contém todas as informações necessárias para realizar qualquer série de transformações. E é por isso que `pushMatrix()` e `popMatrix()` têm essa palavra *matrix* em seu nome.
 
-### O significado de *push* e *pop*
+### A origem dos termos *push* e *pop*
 
-Sobre a parte *push* e *pop* dos nomes? Elas vêm de um conceito de computação conhecido como pilha, que funciona como um dispensador de bandejas com mola em uma lanchonete. Quando alguém coloca uma bandeja para a pilha, seu peso empurra a plataforma para baixo. Quando alguém precisa de uma bandeja, ela a pega da parte superior da pilha e as bandejas restantes aparecem um pouco.
+E a parte *push* e *pop* dos nomes `pushMatrix` e `popMatrix`? Elas vêm de um conceito de computação conhecido como pilha, que funciona como um dispensador de bandejas com mola em uma lanchonete. Quando alguém coloca uma bandeja para a pilha, seu peso empurra a plataforma para baixo. Quando alguém precisa de uma bandeja, ela a pega da parte superior da pilha e as bandejas restantes aparecem um pouco.
 
 De maneira semelhante, `pushMatrix()` coloca o status atual do sistema de coordenadas no topo de uma área de memória, e `popMatrix()` pega de volta o status. O exemplo anterior usou `pushMatrix()` e `popMatrix()` para garantir que o sistema de coordenação estivesse "limpo" antes de cada parte do desenho. Em todos os outros exemplos, as chamadas para essas duas funções não eram realmente necessárias, mas não custa nada salvar e restaurar o status da grade.
 
@@ -229,7 +244,7 @@ Notas:
 - Em Processing, o sistema de coordenadas é restaurado ao seu estado original (origem na parte superior esquerda da janela, sem rotação e sem mudança de escala) toda vez que a função `draw()` é executada. 
 - É possível também voltar para o estado inicial o sistema de coordenadas com `resetMatrix()`.
 
-### Transformações Tri-dimensionais
+### Transformações tridimensionais
 
 Se você estiver trabalhando em três dimensões, poderá chamar a função `translate()` com três argumentos para as distâncias *x*, *y*, e *z*. Da mesma forma, você chama `scale()` com três argumentos que indicam o quanto você deseja que a grade seja redimensionada em cada uma dessas dimensões
 
