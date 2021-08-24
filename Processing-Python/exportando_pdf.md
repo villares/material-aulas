@@ -121,6 +121,52 @@ def keyPressed():
 [Exemplo de PDF com vários frames](assets/exemplo2.pdf)
 
 
+Um segundo exemplo de salvar com acumulação de frames
+
+```python
+add_library('pdf')
+
+gravando_pdf = False
+
+def setup():
+    size(600, 600)
+    fundo()
+
+def fundo():
+    background(255)
+    filas = colunas = 12
+    tam = width / colunas  
+    for j in range(filas):
+        for i in range(colunas):
+            fill(0)
+            circle(i * tam + tam / 2, j * tam + tam / 2, tam)
+
+def draw():    
+    if mousePressed and (mouseX, mouseY) != (pmouseX, mouseY):
+        fill(255)
+        noStroke()
+        meu_triangulo(mouseX, mouseY, 50)
+    
+def meu_triangulo(x, y, tam):
+    triangle(x - tam / 2, y + tam / 3,
+             x + tam / 2 , y + tam / 3,
+             x, y - tam / 3)
+
+    
+def keyPressed():
+    global gravando_pdf
+    if key == 'g':
+        if not gravando_pdf:     # if gravando_pdf == False
+            gravando_pdf = True
+            beginRecord(PDF, 'desenho####.pdf')
+            fundo()
+            print(u'Gravação iniciada')
+        else:  # quando gravando == True
+            gravando_pdf = False
+            endRecord()
+            print(u'Gravação encerrada')
+```
+
 
 ## Outras estratégias
 
