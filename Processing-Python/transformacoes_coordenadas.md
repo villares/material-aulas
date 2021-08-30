@@ -93,7 +93,7 @@ def casa(x, y):
 Compare isso com a versão da função que usa `translate()`. Neste caso o código desenha a casa no mesmo lugar, com o canto superior esquerdo em (0, 0), e deixa a translação fazer todo o trabalho.
 
 ```python
-def casa(int x, int y):
+def casa(x, y):
     pushMatrix()
     translate(x, y)
     triangle(15, 0, 0, 15, 30, 15)
