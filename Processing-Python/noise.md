@@ -1,6 +1,8 @@
 ## *Perlin noise*
 #### Ruído de Perlin
 
+Nesta altura você possívelmente já experimentou fazer algo usando números [(pseudo)aleatórios](aleatoriedade_1.md), e talvez tenha notado o quão abruptas são as variações produzidas por esse tipo de estratégia, os números produzidos a cada chamada de `random()` tem uma chance igual de estar em qualquer lugar da faixa indicada, isso facilmente gera imagens caóticas (e às vezes por isso mesmo pouco interessantes). O Ruído de Perlin, que pode ser obtido com a função embutida do Processing, `noise()`, que ao contrário, produz variações que tem algum grau de semelhaça com valores "vizinhos", no tempo ou no espaço, e isso costuma gerar formas e variações de cor que nos remetem a elementos naturais como topografias ou névoas, por exemplo.
+
 >*An algorithm known as “Perlin noise,” named for its inventor Ken Perlin, takes this concept into account. Perlin developed the noise function while working on the original Tron movie in the early 1980s; it was designed to create procedural textures for computer-generated effects. In 1997 Perlin won an Academy Award in technical achievement for this work. Perlin noise can be used to generate various effects with natural qualities, such as clouds, landscapes, and patterned textures like marble.*
 >
 >*Perlin noise has a more organic appearance because it produces a naturally ordered (“smooth”) sequence of pseudo-random numbers. The graph on the left below shows Perlin noise over time, with the x-axis representing time; note the smoothness of the curve.*
@@ -9,7 +11,7 @@
 
 ### *Perlin Noise* 1D
 
-O primeiro exemplo de Ruído de Perlin usa essa função embutida do Processing chamada `noise()`, e  que gera um número entre **0** e **1**, inicialmente com apenas um argumento. Vamos comparar o resultado com `random(1)` na parte de cima da àrea de desenho. Note que na parte de baixo, com `noise()` os valores produzidos tem relação com os vizinhos, ao contrário do `random()`, produzindo uma curva relativamente suave. A amplitude pode ser ajustada mudando o valor pelo qual multiplicamos o resultado de `noise()`, ou então, usando `lerp()`.
+O primeiro exemplo de Ruído de Perlin usa a função `noise()`, que gera um número entre **0** e **1**, inicialmente com apenas um argumento. Vamos comparar o resultado com `random(1)` na parte de cima da àrea de desenho. Note que na parte de baixo, com `noise()` os valores produzidos tem relação com os vizinhos, ao contrário do `random()`, produzindo uma curva relativamente suave. A amplitude pode ser ajustada mudando o valor pelo qual multiplicamos o resultado de `noise()`, ou então, usando `lerp()`.
 
 Pense no argumento que usamos na chamada de `noise()` como um X que deslocamos em uma certa *velocidade*, normalmente chamada de *escala* do ruído. Podemos experimentar mudar a variável `escala`, no exemplo abaixo, e que multiplica os passos dados no argumento de entrada, ou ainda deslocar esse X uma certa distância arbitraria. Os resultados de `noise()` são simétricos para valores negativos de X. 
 
