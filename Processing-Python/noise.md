@@ -11,7 +11,7 @@ Nesta altura você possívelmente já experimentou fazer algo usando [números (
 
 ### *Perlin Noise* 1D
 
-O primeiro exemplo de Ruído de Perlin usa a função `noise()`, que gera um número entre **0** e **1**, inicialmente com apenas um argumento. Vamos comparar o resultado com `random(1)` na parte de cima da àrea de desenho. Note que na parte de baixo, com `noise()` os valores produzidos tem relação com os vizinhos, ao contrário do `random()`, produzindo uma curva relativamente suave. A amplitude pode ser ajustada mudando o valor pelo qual multiplicamos o resultado de `noise()`, ou então, usando `lerp()`.
+O primeiro exemplo de Ruído de Perlin, apresentado a seguir, usa a função `noise()`, que gera um número entre **0** e **1**, inicialmente com apenas um argumento. Vamos comparar o resultado com `random(1)` na parte de cima da àrea de desenho. Note que na parte de baixo, com `noise()` os valores produzidos tem relação com os vizinhos, ao contrário do `random()`, produzindo uma curva relativamente suave. A amplitude pode ser ajustada mudando o valor pelo qual multiplicamos o resultado de `noise()`, ou então, usando `lerp()`.
 
 Pense no argumento que usamos na chamada de `noise()` como um X que deslocamos em uma certa *velocidade*, normalmente chamada de *escala* do ruído. Podemos experimentar mudar a variável `escala`, no exemplo abaixo, e que multiplica os passos dados no argumento de entrada, ou ainda deslocar esse X uma certa distância arbitraria. Os resultados de `noise()` são simétricos para valores negativos de X. 
 
