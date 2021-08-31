@@ -1,4 +1,4 @@
-# Números 'aleatórios'
+# Números "aleatórios"
 
 ## Mais precisamente números pseudo-aleatórios
 
