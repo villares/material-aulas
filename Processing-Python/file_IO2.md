@@ -4,9 +4,9 @@
 
 Vamos agora falar sobre como ler e escrever dados simples em um arquivo CSV, um arquivo texto com valores separados por vígula. Tanto o Processing como o a biblioteca padrão do Python tem ferramentas para ajudar a lidar com este formato.
 
-*AVISO:*  Infelizmente o módulo `csv` da biblioteca padrão do Jython, o Python 2 que estamos usando, não entende de Unicode então vamos usar uma biblioteca chamada [`unicodecsv`](https://raw.githubusercontent.com/villares/material-aulas/main/Processing-Python/assets/unicodecsv.py) que resolve isso para nós.
+*AVISO:*  Infelizmente o módulo **`csv`** da biblioteca padrão do Jython, o Python 2 que estamos usando, não entende de Unicode então vamos usar uma biblioteca chamada **`unicodecsv`** que resolve isso para nós.
 
-Em preparação para o nosso primeiro exemplo, note que precisaremos de um arquivo `dados.csv` que deve ficar dentro da pasta `/data/` dentro  do seu sketch, e de uma cópia de `unicodecsv.py` que você pode copiar do no parágrafo anteror:
+Em preparação para o nosso primeiro exemplo, note que precisaremos de um arquivo `dados.csv` que deve ficar dentro da pasta `/data/` dentro  do seu sketch, e de uma cópia de [`unicodecsv.py`]. (https://raw.githubusercontent.com/villares/material-aulas/main/Processing-Python/assets/unicodecsv.py) (clique com o botão da direita do mouse para salvar no seu computador)
 
 ```
 sketch_2020_05a                (pasta/folder do sketch)
