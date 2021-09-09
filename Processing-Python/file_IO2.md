@@ -19,7 +19,10 @@ sketch_2020_05a                (pasta/folder do sketch)
 Conteúdo do aquivo:
 
 ```
-nome,valor,area...
+nome,valor,area,largura,comprimento,x,y
+A1,800,32,2,16,0,19
+A3,2520,252,14,18,2,17
+...
 ```
 Exemplo que lê o arquivo
 
