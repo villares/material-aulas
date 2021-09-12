@@ -69,7 +69,7 @@ divisivel_por_3 = [n for n in range(1000) if n % 3 == 0]
 ```
 ### Expressões geradoras
 
-Se você não precisa dessa coleção de valores mais de uma vez, pode evitar que ela seja guardada na memória, usando expressões geradoras (generator expressions) substituindo os colchetes por parêntes:
+Se você não precisa dessa coleção de valores mais de uma vez, pode evitar que ela seja guardada na memória, usando expressões geradoras (*generator expressions*) substituindo os colchetes por parênteses, e até mesmo omitindo os parênteses se a expressão for posta como argumento de uma função:
 
 ```python
 # soma os quadrados dos números pares entre 0 e 98 (o 100 não está incluso).
