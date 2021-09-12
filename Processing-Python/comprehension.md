@@ -19,29 +19,29 @@ pontos = [(i * 10, random(-100, 100)) for i in range(10)]
 Veja se você consegue identificar, nos exemplos acima, os elementos do seguinte padrão geral, que usa um laço de repetição para construir a lista: 
 
 ```python
-nova_lista = []
+lista_resultante = []
 for «valor» in «iterável»:
-      resultado.append(«novo_elemento»)  # o novo elemento é acrescentado
+      lista_resultante.append(«novo_elemento»)  # o novo elemento é acrescentado
 ```
 
 E a forma reescrita:
 
 ```python
-nova_lista = [«novo_elemento» for «valor» in «iterável»]
+lista_resultante = [«novo_elemento» for «valor» in «iterável»]
 ```
 
 É possível ainda "filtrar", usar uma condição que permite ou não produzir novos elementos.
 
 ```python
-nova_lista = []
+lista_resultante = []
 for «valor» in «iterável»:
     if  «condição»:  # a condição depende do valor
-        resultado.append(«novo_elemento»)  # o novo elemento é acrescentado
+        lista_resultante.append(«novo_elemento»)  # o novo elemento é acrescentado
 ```
 Que pode ser reescrito assim:
 
 ```python
-nova_lista = [«novo_elemento» for «valor» in «iterável» if «condição»]
+lista_resultante = [«novo_elemento» for «valor» in «iterável» if «condição»]
 ```
 
 ### Mais exemplos
@@ -50,6 +50,7 @@ Sem "filtragem"
 
 ```python
 dimensoes_retangulos = [(10, 20), (20, 30), (10, 30), (30, 30), (30, 10)]
+
 areas = []
 for a, b in demensoes_retangulos:
     areas.append(a * b)
@@ -57,15 +58,15 @@ for a, b in demensoes_retangulos:
 areas = [a * b for a, b in dimensoes]
 ```
 
-Com "filtragem", números divisíveis por 3
+Agora com "filtragem", ignorando quadrados!
 
 ```python
-divisivel_por_3 = []
-for n in range(1000):
-    if n % 3 == 0:
-        divisivel_por_3.append(n)
+areas = []
+for a, b in demensoes_retangulos:
+    if a != b:  # se `a` diferente de `b`, vai ignorar a == b
+        areas.append(a * b)
 
-divisivel_por_3 = [n for n in range(1000) if n % 3 == 0]
+areas = [a * b for a, b in dimensoes if a != b]
 ```
 ### Expressões geradoras
 
