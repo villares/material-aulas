@@ -1,6 +1,6 @@
 ## Compreensão de listas (*list comprehension*)
 
-É muito comum usarmos um laço de repetição para produzir e acumular elementos em uma estrutura de dados, vamos ver um exemplo meio bobinho de um `for` que acrescenta itens em uma lista. São pontos com um `x` que vai crescendo de 10 em 10 e o `y` produzido com `random()` numa faixa:
+É muito comum usarmos um laço de repetição para produzir e acumular elementos em uma estrutura de dados, vamos ver um exemplo meio bobinho de um `for` que acrescenta itens em uma lista. São pontos com um `x` que vai crescendo de 10 em 10 e o `y` produzido 'pseudo-aleatório', com a função embutidada do Processing, `random()`:
 
 ```python
 pontos = []
