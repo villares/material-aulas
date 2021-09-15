@@ -164,11 +164,15 @@ A principal difereça, além do fato de que a tupla foi construída com parentes
 meus_pokemon = ["Fomantis", "Eevee"]
 meus_pokemon.append("Luxray")
 print(meus_pokemon) 
-# Resutado: ["Fomantis", "Eevee", "Luxray"]
+# Resutado mostrado no console: ["Fomantis", "Eevee", "Luxray"]
 
 meus_pokemon[0] = "Bubasauro"  # 0 é o índice do primeiro item da lista
 print(meus_pokemon) 
 # Resutado: ["Bubasauro", "Eevee", "Luxray"]
+
+# consultando um item pelo índice
+print(meus_pokemon[1]) 
+# Resutado: Eevee
 
 del meus_pokemon[1]
 print(meus_pokemon) 
