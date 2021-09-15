@@ -207,11 +207,16 @@ E é possível fazer tuplas com tuplas dentro, listas com listas dentro, listas 
 
 ```python
 pontos = [(10, 10), (100, 20), (200, 50), (50, 150)]
-
-print(pontos[0])
-# exibe: (10, 10)
 ```
 
+
+#### Qual você acha que é o resultado de `print(pontos[3])`?
+<details>
+  <summary>clique para ver a resposta</summary>
+
+<code>(50, 150)</code>
+  
+ 
 ### Iterando pelos dados
 
 Finalmente vamos usar a estrutura de iteração, o *loop* `for`, para repetir a ação de desenhar um círculo, usando as coordenadas das tuplas de coordenadas na lista `pontos`:
