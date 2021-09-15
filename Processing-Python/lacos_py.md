@@ -185,6 +185,9 @@ Tuplas são mais 'econômicas' em termos computacionais e são bastante usadas q
 
 ```python
 posicao = (150, 50)  #  x: 150 y: 50
+
+print(posicao[0])  # exibe 150
+print(posicao[1])  # exibe 50
 ```
 
 Um outro termo usado para se referir a uma coleção em que a ordem importa e não faz sentido reordenar é 'registro', se temos tuplas com nomes, emails e telefones, por exemplo, como uma linha em uma planilha.
@@ -194,12 +197,19 @@ Podemos 'desempacotar' uma tupla, atribuindo os seus valores a variáveis, desde
 ```python
 posicao = (100, 150) 
 x, y = posicao # x passa a valer 100 e y 150
+
+# mais simples, mas com o mesmo resultado, do que escrever:
+# x = posicao[0]
+# y = posicao[1]
 ```
 
 E é possível fazer tuplas com tuplas dentro, listas com listas dentro, listas com tuplas dentro e etc. Vamos experimentar fazer uma lista de tuplas representando as coordenadas de alguns pontos:
 
 ```python
 pontos = [(10, 10), (100, 20), (200, 50), (50, 150)]
+
+print(pontos[0])
+# exibe: (10, 10)
 ```
 
 ### Iterando pelos dados
