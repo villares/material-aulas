@@ -215,7 +215,8 @@ pontos = [(10, 10), (100, 20), (200, 50), (50, 150)]
   <summary>clique para ver a resposta</summary>
 
 <code>(50, 150)</code>
-  
+
+</details>
  
 ### Iterando pelos dados
 
