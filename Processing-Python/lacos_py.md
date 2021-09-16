@@ -158,7 +158,7 @@ Exemplo de uma lista:
 ```python
 escritores = ["Primo Levi", "Machado de Asssis"]
 ```
-A principal difereça, além do fato de que a tupla foi construída com parenteses `( ,)`e a lista com colchetes `[ ,]`, é que **uma lista permite que seus itens sejam alterados**, itens podem ser adicionados, removidos, ou, como um todo, podem ser reordenados.
+A principal diferença, além do fato de que a tupla foi construída com parenteses `( ,)`e a lista com colchetes `[ ,]`, é que **uma lista permite que seus itens sejam alterados**, itens podem ser adicionados, removidos, ou, como um todo, podem ser reordenados. Dizemos que uma lista é *mutável*.
 
 ```python
 frutas = ["uva", "banana"]
@@ -181,7 +181,7 @@ print(frutas)
 
 Já **uma tupla não pode ter itens removidos, addicionados ou ser reordenada**, dizemos que ela é *imutável* (mesmo se um item puder ter o seu conteúdo mais interno alterado). Se for necessária uma correção, podemos criar uma nova tupla com a alteração em substituição da original.
 
-Tuplas são mais 'econômicas' em termos computacionais e são bastante usadas quando a ordem dos elementos tem significado, por exemplo podemos fazer uma tupla com coordenadas x e y, a primeira posição 'significa' (a ordem indica) um valor no eixo X e a segunda posição indica um valor no eixo Y:
+As tuplas, em certos contextos computacionais, são mais eficientes que as listas, ocupam menos espaço na memória, por exemplo, não que você precise se preocupar com isso neste momento. É mais interessante, por enquanto, considerar que são bastante convenientes quando a ordem dos elementos tem significado, por exemplo, podemos fazer uma tupla com coordenadas x e y, a primeira posição 'significa' (a ordem indica) um valor no eixo X e a segunda posição indica um valor no eixo Y:
 
 ```python
 posicao = (150, 50)  #  x: 150 y: 50
