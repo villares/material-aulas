@@ -195,12 +195,12 @@ Um outro termo usado para se referir a uma coleção em que a ordem importa e n�
 Podemos 'desempacotar' uma tupla, atribuindo os seus valores a variáveis, desde que o número de variáveis seja igual ao número de itens:
 
 ```python
-posicao = (100, 150) 
-x, y = posicao # x passa a valer 100 e y 150
+posicao = (250, 120) 
+x, y = posicao # x passa a valer 250 e y passa a valer 120
 
 # mais simples, mas com o mesmo resultado, do que escrever:
-# x = posicao[0]
-# y = posicao[1]
+# x = posicao[0]  
+# y = posicao[1]  
 ```
 
 E é possível fazer tuplas com tuplas dentro, listas com listas dentro, listas com tuplas dentro e etc. Vamos experimentar fazer uma lista de tuplas representando as coordenadas de alguns pontos:
