@@ -161,22 +161,22 @@ meus_pokemon = ["Fomantis", "Eevee"]
 A principal difereça, além do fato de que a tupla foi construída com parenteses `( ,)`e a lista com colchetes `[ ,]`, é que **uma lista permite que seus itens sejam alterados**, itens podem ser adicionados, removidos, ou, como um todo, podem ser reordenados.
 
 ```python
-meus_pokemon = ["Fomantis", "Eevee"]
-meus_pokemon.append("Luxray")
-print(meus_pokemon) 
-# Resutado mostrado no console: ["Fomantis", "Eevee", "Luxray"]
+frutas = ["uva", "banana"]
+frutas.append("jaca")
+print(frutas) 
+# Resutado mostrado no console: ["uva", "banana", "jaca"]
 
-meus_pokemon[0] = "Bubasauro"  # 0 é o índice do primeiro item da lista
-print(meus_pokemon) 
-# Resutado: ["Bubasauro", "Eevee", "Luxray"]
+frutas[0] = "kiwi"  # 0 é o índice do primeiro item da lista
+print(frutas) 
+# Exibe: ["kiwi", "banana", "jaca"]
 
 # consultando um item pelo índice
-print(meus_pokemon[1]) 
-# Resutado: Eevee
+print(frutas[1]) 
+# Exibe: banana
 
-del meus_pokemon[1]
+del frutas[1]
 print(meus_pokemon) 
-# Resutado: ["Bubasauro", "Luxray"]
+# Exibe: ["kiwi", "jaca"]
 ```
 
 Já **uma tupla não pode ter itens removidos, addicionados ou ser reordenada**, dizemos que ela é *imutável* (mesmo se um item puder ter o seu conteúdo mais interno alterado). Se for necessária uma correção, podemos criar uma nova tupla com a alteração em substituição da original.
