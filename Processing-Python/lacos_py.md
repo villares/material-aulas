@@ -156,7 +156,7 @@ tupla_sertaneja = ("Maiara", "Maraisa")
 Exemplo de uma lista:
 
 ```python
-meus_pokemon = ["Fomantis", "Eevee"]
+escritores = ["Primo Levi", "Machado de Asssis"]
 ```
 A principal difereça, além do fato de que a tupla foi construída com parenteses `( ,)`e a lista com colchetes `[ ,]`, é que **uma lista permite que seus itens sejam alterados**, itens podem ser adicionados, removidos, ou, como um todo, podem ser reordenados.
 
@@ -175,7 +175,7 @@ print(frutas[1])
 # Exibe: banana
 
 del frutas[1]
-print(meus_pokemon) 
+print(frutas) 
 # Exibe: ["kiwi", "jaca"]
 ```
 
@@ -209,8 +209,7 @@ E é possível fazer tuplas com tuplas dentro, listas com listas dentro, listas 
 pontos = [(10, 10), (100, 20), (200, 50), (50, 150)]
 ```
 
-
-#### Qual você acha que é o resultado de `print(pontos[3])`?
+#### Qual é o resultado de `print(pontos[3])`?
 <details>
   <summary>clique para ver a resposta</summary>
 
@@ -256,7 +255,6 @@ for «variável_para_índice», «variável_para_item» in enumerate(«sequênci
 
 Veja usado no contexto do exemplo anterior.
 
-
 ```python
 def setup():
     size(400, 400)
@@ -276,7 +274,30 @@ def setup():
 # E a construção «legenda = "{}: {}, {}".format(i, x, y)» para o formar texto
 # o método .format() injeta valores passados como argumentos em posições marcadas com {} 
 ```
-![sketch_2020_04_10a](https://abav.lugaralgum.com/sketch-a-day/2020/sketch_2020_04_10a/enumerate.png)
+![sketch_2020_04_10a](assets/enumerate.png)
+
+#### Uma utilidade de enumerar, pegar pares de itens
+
+```python
+def setup():
+    size(400, 400)
+    fill(0)  # preenchimento preto esconde a treta da linha sobrepondo
+    pontos = [(50, 50), (300, 370), (200, 50), (150, 150)]
+    for i, ponto in enumerate(pontos):  # (índice, ponto) para cada ponto de `pontos`
+        xa, ya = ponto
+        ponto_anterior = pontos[i - 1] # pega o último item da lista quando i é 0
+        xb, yb = ponto_anterior  
+        ellipse(xa, ya, 10, 10)
+        # desenha linha entre os dois pontos
+        line(xa, ya, xb, yb)
+        # desenha círculo menor entre os pontos
+        ellipse((xa + xb) / 2, (ya + yb) / 2, 5, 5)
+```
+
+
+![`enumerara()` ](assets/for_com_enumerate.png)
+
+
 
 ## Assuntos relacionados
 
