@@ -7,6 +7,8 @@ Referências externas:
 - https://www.cgjennings.ca/articles/l-systems/
 - http://www.paulbourke.net/fractals/lsys/ 
 
+### Um exemplo completo
+
 ```python
 axioma = "X"
 regras = {"X": "F+[[X]-X]-F[-FX]+X",
