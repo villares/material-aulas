@@ -17,7 +17,7 @@ xo, yo = 300, 500
 def setup():
     global frase
     size(600, 600)
-    frase = gerar_sistema(iteracoes)
+    frase = gerar_sistema(iteracoes, aximoa, regras)
     print(len(frase))
 
 def draw():
@@ -25,25 +25,20 @@ def draw():
     translate(xo, yo)
     desenha_sistema(frase)
             
-def keyPressed():
-    global tamanho, angulo, iteracoes, frase
-    if key == 'z':
-        tamanho -= 1 # tamanho = tamanho - 1
-    if key == 'x':
-        tamanho += 1
-    if key == 'a':
-        angulo -= 1
-    if key == 's':
-        angulo += 1       
-    if key == 'q':
-        iteracoes -= 1
-        frase = gerar_sistema(iteracoes)
-        print(len(frase))
-    if key == 'w':
-        iteracoes += 1   
-        frase = gerar_sistema(iteracoes)
-        print(len(frase))
-
+def gerar_sistema(num, axioma, regras):
+    """
+    Produz um sistema-L a partir da  frase `axioma`,
+    repetindo `num` iterações, as substituições descritas
+    nas pelo dicionário `regras`
+    """
+    frase_inicial = axioma
+    for i in range(num):
+        frase_nova = ""
+        for simbolo in frase_inicial:
+            substituicao = regras.get(simbolo, simbolo)  
+            frase_nova = frase_nova + substituicao
+        frase_inicial = frase_nova
+    return frase_nova
             
 def desenha_sistema(simbolos):
     """
@@ -63,18 +58,22 @@ def desenha_sistema(simbolos):
         if simbolo == "]":
             popMatrix()
 
-def gerar_sistema(num):
-    """
-    Produz a partir da frase na variável globak axioma,
-    repetindo `num` iterações, um sistema-L seguindo as
-    regras do dicionário global `regras`
-    """
-    frase = axioma
-    for i in range(num):
-        frase_nova = ""
-        for simbolo in frase:
-            substituicao = regras.get(simbolo, simbolo)  
-            frase_nova = frase_nova + substituicao
-        frase = frase_nova
-    return frase
+def keyPressed():
+    global tamanho, angulo, iteracoes, frase
+    if key == 'z':
+        tamanho -= 1 # tamanho = tamanho - 1
+    if key == 'x':
+        tamanho += 1
+    if key == 'a':
+        angulo -= 1
+    if key == 's':
+        angulo += 1       
+    if key == 'q':
+        iteracoes -= 1
+        frase = gerar_sistema(iteracoes, axioma, regras)
+        print(len(frase))
+    if key == 'w':
+        iteracoes += 1   
+        frase = gerar_sistema(iteracoes, axioma, regras)
+        print(len(frase))
 ```
