@@ -45,8 +45,10 @@ Para criar uma *issue*:
   - Guias de markdown em português:
      * [github.com/luong-komorebi/Markdown-Tutorial](https://github.com/luong-komorebi/Markdown-Tutorial/blob/master/README_pt-BR.md#syntax)
      * [github.com/leticiadasilva/notas-de-aula](https://github.com/leticiadasilva/notas-de-aula/blob/master/markdown/anota%C3%A7oes-markdown.md)
-   - para fazer links externos `[texto](url)`
-   - para formatar texto como código no markdown use a "crase" também chamada de *backtick* ``` ` ``` ou a tripla-crase assim:
+   - Para fazer links `[texto](url)`
+        - Exemplo: `[Referência do Processing modo Python](https://py.processing.org/reference)`<br>
+          Resultado: [Referência do Processing modo Python](https://py.processing.org/reference)
+   - Para formatar texto como código no markdown use a "crase" também chamada de *backtick* ``` ` ``` ou a tripla-crase assim:
        - bloco com ` ```python ___``` `<br>Exemplo:
           ```
               ```python
