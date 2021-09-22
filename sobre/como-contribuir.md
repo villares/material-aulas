@@ -45,6 +45,7 @@ Para criar uma *issue*:
   - Guias de markdown em português:
      * [github.com/luong-komorebi/Markdown-Tutorial](https://github.com/luong-komorebi/Markdown-Tutorial/blob/master/README_pt-BR.md#syntax)
      * [github.com/leticiadasilva/notas-de-aula](https://github.com/leticiadasilva/notas-de-aula/blob/master/markdown/anota%C3%A7oes-markdown.md)
+   - Para vazer subtítulos use múltiplos `#` , como `##`, `###` e etc. Um só `#` é o título principal da página.
    - Para fazer links `[texto](url)`
         - Exemplo: `[Referência do Processing modo Python](https://py.processing.org/reference)`<br>
           Resultado: [Referência do Processing modo Python](https://py.processing.org/reference)
