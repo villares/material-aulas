@@ -35,8 +35,7 @@ Para criar uma *issue*:
 - **Sempre converse antes com as ṕessoas mantenedoras por meio de uma issue antes de propor uma contribuição (*Pull Request*).**
 - faça um _fork_ (que é uma cópia deste repositório com o material que vai ficar na sua conta do GitHub, e é onde você vai fazer as contribuições)
 - crie um _branch_ (_branch_ é uma etiqueta que marca alternativas ou variantes de um projeto, use algo como: 'melhoria-descrição-abc')
- - Um passo opcional é fazer um *clone* do seu computador, o que permite usar um editor local, aí vocẽ vai precisar aprender a fazer locamente os processos de de `commit` e `push`...
-
+  - Um passo opcional é fazer um *clone* do seu computador, o que permite usar um editor local, aí vocẽ vai precisar aprender a fazer locamente os processos de de `commit` e `push`...
 
 #### Faça modificações no material
 
