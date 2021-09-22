@@ -36,7 +36,7 @@ Para criar uma *issue*:
 - crie um _branch_ (_branch_ é uma etiqueta que marca alternativas ou variantes de um projeto, use algo como: 'melhoria-descrição-abc')
 - modifique arquivos, usando o botão com o lápis na interface web do GitHub (ou com editor no *clone* do seu computador... e dê commit & push...)
 - suba arquivos (na interface web, visite a pasta do repositório onde vai ficar o arquivo e o arraste sobre a janela do navegador)
-- crie arquivos Markdown (.md), use seu editor de código preferido e suba, ou use o botão **Create New File** na interface web.
+- edite os arquivos Markdown (.md) que compõe o material, ou crie novos arquivos, use seu editor de código preferido e suba, ou use o **Botão do lapis**, ou ainda o boão **Create New File**, ambos na interface web.
   - Como se escreve markdown ou [GFM](https://github.github.com/gfm/)? 
   - Guias de markdown em português:
      * [github.com/luong-komorebi/Markdown-Tutorial](https://github.com/luong-komorebi/Markdown-Tutorial/blob/master/README_pt-BR.md#syntax)
