@@ -67,10 +67,10 @@ def rule(current, ngbs):
         return current  # stays the same (ngbs == 2)
 
 def calc_ngbs_alive(i, j):
-    NEIGHBOURS = ((-1, 00), (01, 00),  # a tuple describing the neighbourhood of a cell
-                  (-1, -1), (00, -1),
-                  (01, -1), (-1, 01),
-                  (00, 01), (01, 01))
+    NEIGHBOURS = ((-1, 0), (1, +0),  # a tuple describing the neighbourhood of a cell
+                  (-1,-1), (0, -1),
+                  (1, -1), (-1, 1),
+                  (0, 1), (1, 1))
     alive = 0
     for iv, jv in NEIGHBOURS:
         alive += grid[(i + iv) % cols][(j + jv) % rows]
