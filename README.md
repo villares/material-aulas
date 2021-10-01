@@ -54,8 +54,10 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 
 #### Mais sobre estruturas de dados
 - [Métodos das listas](Processing-Python/list_methods.md)
-- [Outras estruturas de dados: dicionário (_dict_) e conjunto (_set_)](Processing-Python/dicionarios.md)
+- [Mais estruturas de dados: dicionário (_dict_)](Processing-Python/dicionarios.md)
+- [Mais estruturas de dados: conjunto (_set_)](Processing-Python/conjuntos.md)
 - [Compreensão de listas e outras *comprehensions*](Processing-Python/comprehension.md)
+
 #### Desenhando em 3D
 
 - [Primeiros passos com `size(…, …, P3D)`](Processing-Python/desenho-3D.md)
