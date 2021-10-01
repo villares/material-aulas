@@ -162,7 +162,7 @@ r = random() * 100  # random do Python sobrepôs o random do Processing
 
 ou ainda
 
-```
+```python
 import random as rnd
 
 rnd.seed(numero_inteiro)
