@@ -89,8 +89,8 @@ def setup():
     
 def draw():
     background(0)
-    contador = 0
     # Desenha uma grade com as imagens na lista `imagens`
+    contador = 0
     for c in range(colunas):
         x = c * w
         for l in range(linhas):
@@ -144,6 +144,21 @@ def has_image_ext(file_name):
     valid_ext = ('jpg', 'png', 'jpeg', 'gif', 'tif', 'tga')
     file_ext = file_name.split('.')[-1]
     return file_ext.lower() in valid_ext
+```
+
+Uma variante do `draw()` que permite largura variável das imagens, fixando a altura, como no exemplo anterior, mas :
+
+```python
+    # Desenha uma grade com as imagens na lista `imagens`
+    x = y = 0
+    for nome, img in imagens:
+        print(img)
+        fator = h / img.height
+        if x + img.width * fator> width:
+            x = 0
+            y += h
+        image(img, x, y, img.width * fator, img.height * fator)
+        x += img.width * fator
 ```
 
 ## Assuntos relacionados
