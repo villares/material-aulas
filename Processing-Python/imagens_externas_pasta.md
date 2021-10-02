@@ -89,7 +89,7 @@ def setup():
     
 def draw():
     background(0)
-    # Desenha uma grade com as imagens na lista `imagens`
+    # Desenha grade com `imagens` com colunas fixas de largura `w`, imagens mais largas são sobrepostas
     contador = 0
     for c in range(colunas):
         x = c * w
@@ -149,7 +149,9 @@ def has_image_ext(file_name):
 Uma variante do `draw()` que permite largura variável das imagens, fixando a altura, como no exemplo anterior, mas :
 
 ```python
-    # Desenha uma grade com as imagens na lista `imagens`
+def draw():
+    background(0)
+    # Desenha `imagens` em filas de altura 'h', deslocando na horizontal com largura de cada imagem.
     x = y = 0
     for nome, img in imagens:
         print(img)
