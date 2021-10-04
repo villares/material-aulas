@@ -86,7 +86,7 @@ def keyPressed():
 
 ### Exemplo 3D
 
-Exemplo usando `P3D` e acrecentando `rotateY()`
+Exemplo usando `P3D` e adicionando `rotateY()`
 
 ```python
 
