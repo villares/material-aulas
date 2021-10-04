@@ -28,7 +28,7 @@ Desta maneira é possível desenhar os mesmos elementos 2D que utilizamos até a
 
 - Linhas podem receber coordenadas 3D: `line(x1, y1, z1, x2, y2, z2)`
 
-- Os elementos `PShape` criados com `beginShape()/endShape()` passam a poder ser desenhados no espaço, usando, por exemplo, `vertex(x, y, z)`.
+- Os elementos `PShape` criados com `beginShape()/endShape()` passam a poder ser desenhados no espaço, usando, por exemplo, `vertex(x, y, z)`. Esse comando desenha a partir de uma sequência de vértices dados nas coordenadas recebidas.
 
 - A função `box(w, h, d)` desenha um paralelepípedo, ou um cubo com `box(side)`, sempre na origem (0, 0, 0) do sistema de coordenadas, sendo então em geral acompanhada de uma estrutura com `pushMatrix()`/`popMatrix()` e `translate(x, y, z)` para que seja posicionada no lugar desejado.
 
