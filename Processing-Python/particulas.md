@@ -17,7 +17,6 @@ Prerequisitos para aproveitar melhor este material:
 * Controle de atributos gráficos `fill`, `stroke`, `noStroke`, `noFill`, `background`;
 * Controle de fluxo de execução e laços (`if`, `else` e `for`);
 * Declaração de funções com e sem parâmetros;
-* Opcional: Controle do sistema de coordenadas `pushMatrix`, `translate`, `rotate`, `scale`, `popMatrix`.
 
 ###  0. Começando sem orientação a objetos
 #### Redesenhando formas e atualizando variáveis no laço principal do Processing
@@ -159,8 +158,8 @@ class Particula():
                          200)  # alpha
 
     def desenha(self):
-		""" Desenha círculo """
-	    fill(self.cor)
+	""" Desenha círculo """
+        fill(self.cor)
         circle(self.x, self.y, self.tamanho)
 
 
