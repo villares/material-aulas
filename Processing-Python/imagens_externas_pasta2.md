@@ -44,20 +44,22 @@ def setup():
 def draw():
     background(0)
     random_image = choice(imagens)
-    fator_escala = 1
-    if random_image.width > width:
+    # Para encolher proporcionalmente a imagem caso ela não caiba na àrea de desenho
+    fator_escala = 1 # caso a imagem caiba perfeitamente
+    if random_image.width > width:   # se a largura for maior que a largura da tela
         fator_escala = float(width) / random_image.width
-    if random_image.height * f > height:
+    if random_image.height * f > height:  # se mesmo tento sido já reduzida, a altura não couber
         fator_escala = float(height) / random_image.height
+    # Mostra a imagem centrada na àrea de desenho
     imageMode(CENTER)
     image(random_image, width / 2, height / 2,
           random_image.width * fator_escala, random_image.height * fator_escala
                      
-def mouseClicked():  # executa quando o mouse é clicado
-    redraw()
+def mouseClicked():  # executada quando o mouse é clicado
+    redraw()         # pede para executar mais um ciclo da função draw()
     
 def has_image_ext(file_name):
-    # tupla com extensões válidas para imagens
+    """Responde se a extansão do arquivo está na tupla contendo extensões válidas para imagens."""
     valid_ext = ('jpg', 'png', 'jpeg', 'gif', 'tif', 'tga')
     file_ext = file_name.split('.')[-1]
     return file_ext.lower() in valid_ext
