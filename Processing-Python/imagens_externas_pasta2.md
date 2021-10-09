@@ -25,33 +25,37 @@ imagens = []  # lista que vai receber objetos PImage (Processing Image data)
 def setup():
     size(400, 400)
     # Ponha as imagens na pasta /data/ dentro da pasta do seu sketch
-    data_folder = sketchPath('data')  # não funciona fora do setup
+    data_folder = sketchPath('data')  # encontra o caminho da pasta 'data', não funciona fora do setup
+    # Começa olhando para os itens da pasta, confere se é uma imagem e guarda na lista caminhos_arquivos
     caminhos_arquivos = []
     for nome_arquivo in os.listdir(data_folder):
         caminho_arquivo = os.path.join(data_folder, nome_arquivo)
         if os.path.isfile(caminho_arquivo) and has_image_ext(caminho_arquivo):
             caminhos_arquivos.append(caminho_arquivo)
+    # Agora efetivamente carrega na memória cada imagem a partir dos caminhos listados no passo anterior
     for caminho_arquivo in caminhos_arquivos:
         img = loadImage(caminho_arquivo)
         imagens.append(img)
-    noLoop()  # clique do mouse para redraw
+    # Vamos congelar a repetição do draw(), clique com o mouse para uma nova imagem (redraw)
+    noLoop()  
         
 def draw():
     background(0)
     random_image = choice(imagens)
-    f = 1
+    fator_escala = 1
     if random_image.width > width:
-        f = float(width) / random_image.width
+        fator_escala = float(width) / random_image.width
     if random_image.height * f > height:
-        f = float(height) / random_image.height
+        fator_escala = float(height) / random_image.height
     imageMode(CENTER)
     image(random_image, width / 2, height / 2,
-          random_image.width * f, random_image.height * f)
+          random_image.width * fator_escala, random_image.height * fator_escala
                      
-def mouseClicked():
+def mouseClicked():  # executa quando o mouse é clicado
     redraw()
     
 def has_image_ext(file_name):
+    # tupla com extensões válidas para imagens
     valid_ext = ('jpg', 'png', 'jpeg', 'gif', 'tif', 'tga')
     file_ext = file_name.split('.')[-1]
     return file_ext.lower() in valid_ext
