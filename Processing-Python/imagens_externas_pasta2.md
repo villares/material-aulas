@@ -4,9 +4,9 @@
 
 > Exemplo de execução usando imagens medievais coletadas pelo artista e educador [Daniel Seda](https://www.danielseda.com/home).
 
-Tendo visto previamente como [ler e usar imagens de arquivos externos](imagens_externas.md) com `loadImage()`, e a estrutura de dados lista (`list`) neste exemplo vamos carregar todas as imagens encontradas na pasta `data` localizada dentro da pasta do seu *sketch*. 
+Tendo visto previamente como [ler e usar imagens de arquivos externos](imagens_externas.md) com `loadImage()`, e a estrutura de dados lista (`list`) neste exemplo vamos carregar todas as imagens encontradas na pasta `data` localizada dentro da pasta do seu *sketch*. Depois vamos "sortear", uma imagem para mostrar usando a função `random.choice`. A cada clique do mouse uma nova imagem será mostrada.
 
-É preciso criar uma variável global para guardar as informações dos arquivos encontrados, fazemos isso com a linha contendo `imagens = []` antes do `setup()` que cria uma lista vazia e aponta o nome `imagens` para ela.
+Para começar, é preciso criar uma variável global para guardar os dados das imagens carregados dos arquivos encontrados, fazemos isso com a linha `imagens = []` antes do `setup()` que cria uma lista vazia e aponta o nome `imagens` para ela.
 
 Usaremos a função `sketchPath()` do Processing, com o argumento `'data'` para obter o caminho da pasta *data* dentro do seu *sketch*. E vamos também usar funções importadas, trazidas, do módulo `os`do Python para:
 
@@ -15,6 +15,8 @@ Usaremos a função `sketchPath()` do Processing, com o argumento `'data'` para 
 - Checar se o item é um arquivo (e não uma sub-pasta) com `os.path.isfile(caminho)`
 
 - Juntar um nome de arquivo com o caminho da pasta, formando o "caminho completo" do item, com `os.path.join(caminho, nome_arquivo)`
+
+Depois do procedimento que popula a lista `caminhos_arquivos`, que contém o caminho completo para os arquivos de imagem (localização da pasta + nome do arquivo), nós vamos pegar cada um desses caminhos e usá-lo para carregar os dados da imagem com a função `loadImage()` do Processing. Essa função devolve um objeto `PImage` que pode ser mostrado na tela com a função `image()` posteriormente.
 
 ```python
 import os  # para usar listdir, path.isfile, path.join
