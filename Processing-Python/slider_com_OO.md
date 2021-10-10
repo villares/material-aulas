@@ -1,8 +1,10 @@
 # Primeiros passos de orientaçao a objetos: usando a classe Slider
 
-No começo do curso os principais exemplos de código que vimos se valem de estratégias de programação que são conhecidas pelos nomes, "Programação Procedural" ou "Programação Imperativa Estruturada". Agora, uma vez que Python, assim como diversas outras linguagens, permite usar uma maneira de programar chamada "Orientação a Objetos" (_Object Orientation_, por vezes abreviada OO), bem como misturar elementos de diversos paradigmas. 
+No começo do curso os principais exemplos de código que vimos se valem de estratégias de programação que são conhecidas pelos nomes, "Programação Procedural" ou "Programação Imperativa Estruturada". 
 
-Vamos aqui então apresentar os primeiros elementos e vocabulários da orientação a objetos.
+Agora veremos como Python, assim como diversas outras linguagens, permite usar uma maneira de programar chamada "Orientação a Objetos" (_Object Orientation_, por vezes abreviada OO), bem como permite misturar elementos de diversos paradigmas. 
+
+Vamos começar apresentando os primeiros elementos e vocabulários da orientação a objetos.
 
 ## Vocabulário
 
@@ -41,6 +43,11 @@ Fora casos especiais em que podemos criar objetos diretammente no código (como 
 ```python
 s1 = Slider(0, 90, 50, 'tamanho')  # mínimo, máximo, valor_inicial, etiqueta
 ```
+
+### O que ficou de fora
+
+Não vamos explicar ainda neste momento como funciona a definição da classe, muito menos o assunto da "herança" em que uma classe recebe elementos prontos ou diretrizes de outra mais genérica.
+
 
 ## Exemplo de uso da classe `Slider`
 
