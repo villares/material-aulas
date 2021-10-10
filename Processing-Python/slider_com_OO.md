@@ -1,28 +1,50 @@
 # Ideias de orientação a objetos: primeiros passos, usando um slider
 
-No começo do curso os principais exemplos de código que vimos se valem de estratégias de programação que são conhecidas pelos nomes, "Programação Procedural" ou "Programação Imperativa Estruturada". Agora, uma vez que Python, assim como diversas outras linguagens, permite usar uma maneira de programar chamada "Orientação a Objetos" (_Object Orientation_, por vezes abreviada OO), bem como misturar elementos de diversos paradigmas. Vamos aqui então apresentar os primeiros elementos e vocabulários da orientação a objetos.
+No começo do curso os principais exemplos de código que vimos se valem de estratégias de programação que são conhecidas pelos nomes, "Programação Procedural" ou "Programação Imperativa Estruturada". Agora, uma vez que Python, assim como diversas outras linguagens, permite usar uma maneira de programar chamada "Orientação a Objetos" (_Object Orientation_, por vezes abreviada OO), bem como misturar elementos de diversos paradigmas. 
+
+Vamos aqui então apresentar os primeiros elementos e vocabulários da orientação a objetos.
+
+## Vocabulário
 
 ### Classe (_class_), tipo (_type_) ou uma "categoria de objetos"
 
-Vamos aqui usar como equivalentes os termos classe e tipo, e quando falamos sobre os valores manipulados pela linguagem é comum falarmos sobre a que categoria pertencem, isto é, de que tipo ou classe são. Os valores mais simples como os números que manipulamos são objetos do tipo _float_ (ponto flutuante) ou _int_ (inteiros). E os textos são da classe _string_. Estruturas como listas são objetos do tipo _list_ e assim por diante. Você pode não ter percebido mas o Processing nos entrega os dados na forma de um objeto `PImage`. Por sinal fora os tipos embutidos essenciais, a maioria das classes, especialmente as que formos criar, seguem a conveção de ter a primeira letra maiúscula.
+Tratando como equivalentes os termos classe e tipo, quando falamos sobre os valores manipulados pelo nosso programa é comum falarmos sobre a categoria a que pertencem, isto é, de que tipo ou classe são. Os valores mais fundamentais, ditos primitivos, como os números que manipulamos, são do tipo _float_ (ponto flutuante) ou _int_ (inteiros), já os textos são da classe _str_ (abreviação de _string_). Estruturas como listas são objetos do tipo _list_ e assim por diante. Você pode não ter visto mas o Processing nos entrega os dados de imagens carregadas do disco na forma de um objeto `PImage`. 
 
-### Atributos e métodos
+Por sinal note que fora os tipos embutidos (aqui mencionanmos _int_, _float_, _str_ e _list_), as classes mais comuns, e especialmente as que formos criar, seguem a convenção de ter a primeira letra maiúscula.
 
-Objetos tem 
+### Atributos, ou campos
 
+Objetos tem "valores de estado interno", atributos que podem ser consultados, e em alguns casos modificados, usando a "sintaxe do ponto".
+Por exemplo, quando carregamos uma imagem no Processing podemos consultar as dimensões dela:
+
+```python
+img = loadImage('a.png')  # uma imagem PNG na pasta /data/
+w = img.width  # largura em pixels
+h = img.height  # altura em pixels    
+```
+
+### Métodos, funções associadas aos objetos
+
+Objetos tem funções associadas a eles, que chamamos de métodos.
+Uma lista em Python possui diversos métodos, já vimos pelo menos um deles: `.append()` que inclui elementos na lista.
+
+```python
+frutas = ['uva', 'banana']
+frutas.append('kiwi')   
+print(frutas)  # ['uva', 'banana', 'kiwi']
+```
 
 ### Instanciar, ou criar uma nova instância de um objeto
 
-Fora casos especiais em que uma função cria um novo objeto para nós (como `loadImage(nome_arquivo)` cria um objeto `PImage`) costumamos criar novos objetos chamando o nome da classe, e isso pode ou não demandar argumentos.
-
-No exemplo que veremos a seguir vamos criar um slider assim:
+Fora casos especiais em que podemos criar objetos diretammente no código (como a lista de frutas que acabamos de ver) ou com uma função ajudante, no caso de `loadImage(nome_arquivo)`, que cria um objeto `PImage`, costumamos criar novos objetos chamando o nome da classe, e isso pode ou não demandar argumentos. No exemplo que veremos a seguir vamos criaremos um slider assim:
 
 ```python
 s1 = Slider(0, 90, 50, 'tamanho')  # mínimo, máximo, valor_inicial, etiqueta
 ```
 
-
 ## Exemplo de uso da classe `Slider`
+
+Veja um exemplo comentado de como instanciar e usar objetos da classe `Slider` que tem os métodos `.position()` para locá-los na tela, e o método `.update()` que faz o duplo papel de desenhar o slider na tela e obter o valor indicado por ele naquele momento.
 
 ```python
 from __future__ import unicode_literals
@@ -33,8 +55,8 @@ def setup():
     seed = int(random(1000))
     print(seed)
     size(500, 500)
-    s1 = Slider(0, 90, 50, 'tamanho')
-    s1.position(20, 30)
+    s1 = Slider(0, 90, 50, 'tamanho')   # instanciando o slider s1
+    s1.position(20, 30)                 # posicionando s1 em x:20 y:30
     s2 = Slider(0, 180, 45, 'ângulo')
     s2.position(190, 30)
     s3 = Slider(0, 10, 0, 'variação aleatória')
@@ -45,7 +67,7 @@ def draw():
     randomSeed(seed)
     background(240, 240, 200)
     translate(250, 440)    
-    tamanho = s1.update()
+    tamanho = s1.update()          # atualizando, desenha s1 na tela e obtem um valor
     angulo = radians(s2.update())
     rndvar = s3.update() / 10
     galho(tamanho)   
@@ -120,8 +142,7 @@ class Slider:
         pop()  # popStyle() and popMat
 ```
     
-    
-### Uma segunda versão da classe Slider    
+## Extra: Uma segunda versão da classe Slider    
     
 Acrescentando alguns extras e comentários à classe Slider.
 
