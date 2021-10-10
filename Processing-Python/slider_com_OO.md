@@ -46,8 +46,7 @@ s1 = Slider(0, 90, 50, 'tamanho')  # mínimo, máximo, valor_inicial, etiqueta
 
 ### O que ficou de fora
 
-Não vamos explicar ainda neste momento como funciona a definição da classe, muito menos o assunto da "herança" em que uma classe recebe elementos prontos ou diretrizes de outra mais genérica.
-
+Não vamos ver ainda neste momento como funciona a definição da classe, como ela produz e inicializa os objetos, como são definidos os métodos. Muito menos tratareomso do assunto "herança" em que uma classe é baseada em outra, recebendo desta parte das suas características.
 
 ## Exemplo de uso da classe `Slider`
 
@@ -150,9 +149,9 @@ class Slider:
         pop()  # popStyle() and popMat
 ```
     
-## Extra: Uma segunda versão da classe Slider    
+## Extra: Uma segunda versão da classe `Slider`    
     
-Acrescentando alguns extras e comentários à classe Slider.
+Acrescentando alguns extras e comentários à classe `Slider`.
 
 ```python
 class Slider:
