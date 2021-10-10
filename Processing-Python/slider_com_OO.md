@@ -50,7 +50,9 @@ Não vamos ver ainda neste momento em detalhes de como funciona a definição da
 
 ## Exemplo de uso da classe `Slider`
 
-Veja agora um exemplo comentado de como instanciar e usar objetos da classe `Slider`que serirão para modificar um desenho de uma àrvore. Note que os objetos _slider_ tem os métodos `.position()` para locá-los na tela depois de terem sido criados, e o método `.update()`, que chamaos dentro do `draw()` e que faz o duplo papel de desenhar o slider na tela e obter o valor indicado por ele naquele momento.
+Veja agora um exemplo comentado de como instanciar e usar objetos da classe `Slider`que vão servir de interface gráfica para modificar um desenho de uma àrvore. 
+
+Note que os objetos _slider_ tem os métodos `.position()` para locá-los na tela depois de terem sido criados, e o método `.update()`, que chamaremos dentro da função `draw()` para fazer o duplo trabalho de desenhar o slider na tela e obter o valor indicado pelo _slider_ naquele momento.
 
 ```python
 from __future__ import unicode_literals  # para textos com acento sem por `u` antes das aspas
