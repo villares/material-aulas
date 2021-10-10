@@ -86,17 +86,18 @@ def galho(tamanho):
         galho(tamanho * reducao - random(-sw, sw) * rndvar)
         popMatrix()
         
-        
- # CONTINUA... precisa colar aqui a definição da classe Slider que está mais abaixo
+ # ...       
+ # ATENÇÃO: precisa colar aqui a definição da classe Slider que está mais abaixo nest página.
  # ou colar em uma nova aba chamada slider.py e acrescentar `from slider import Slider`
  ```
         
 ![slider](assets/slider.png) 
-        
+       
+       
 ### Como é a classe `Slider` por dentro?       
- 
-> Opcionalmente, é possível por o códio abaixo separado em uma nova aba *slider*, que se torna um arquivo `slider.py`. Nesse caso é preciso usar a instrução `from slider import Slider` no começo do seu código.
-> Se não quiser fazer isso, simplesmente cole o código abaixo no final da aba principal.
+
+> **Atenção: o código abaixo faz parte do exemplo acima.**
+> Opcionalmente, é possível por este código separado em uma nova aba *slider*, que se torna um arquivo `slider.py`. Nesse caso é preciso usar a instrução `from slider import Slider` no começo do seu código. Se não quiser fazer isso, simplesmente cole-o na aba principal, após o código anterior`.
     
 Veja uma primeira versão da classe Slider
 
