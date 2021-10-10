@@ -46,7 +46,7 @@ s1 = Slider(0, 90, 50, 'tamanho')  # mínimo, máximo, valor_inicial, etiqueta
 
 ### O que ficou de fora
 
-Não vamos ver ainda neste momento em detalhes como funciona a definição da classe, como ela produz e inicializa os objetos, como são definidos os métodos. Muito menos tratareomso do assunto "herança" em que uma classe é baseada em outra, recebendo desta parte das suas características.
+Não vamos ver ainda neste momento em detalhes de como funciona a definição da classe (a parte que segue `class Slider:`), que codifica como ela produz e inicializa os objetos ou como são definidos os métodos, nem trataremos do assunto mais avançado "herança" em que uma classe é baseada em outra, recebendo desta parte das suas características.
 
 ## Exemplo de uso da classe `Slider`
 
