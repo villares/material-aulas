@@ -1,4 +1,4 @@
-# Ideias de orientação a objetos: primeiros passos, usando um slider
+# Primeiros passos de orientaçao a objetos: usando a classe Slider
 
 No começo do curso os principais exemplos de código que vimos se valem de estratégias de programação que são conhecidas pelos nomes, "Programação Procedural" ou "Programação Imperativa Estruturada". Agora, uma vez que Python, assim como diversas outras linguagens, permite usar uma maneira de programar chamada "Orientação a Objetos" (_Object Orientation_, por vezes abreviada OO), bem como misturar elementos de diversos paradigmas. 
 
@@ -14,7 +14,7 @@ Por sinal note que fora os tipos embutidos (aqui mencionanmos _int_, _float_, _s
 
 ### Atributos, ou campos
 
-Objetos tem "valores de estado interno", atributos que podem ser consultados, e em alguns casos modificados, usando a "sintaxe do ponto".
+Objetos tem "valores internos de estado", são atributos que podem ser consultados usando a "sintaxe do ponto".
 Por exemplo, quando carregamos uma imagem no Processing podemos consultar as dimensões dela:
 
 ```python
@@ -26,7 +26,7 @@ h = img.height  # altura em pixels
 ### Métodos, funções associadas aos objetos
 
 Objetos tem funções associadas a eles, que chamamos de métodos.
-Uma lista em Python possui diversos métodos, já vimos pelo menos um deles: `.append()` que inclui elementos na lista.
+Uma lista em Python, por exemplo, possui diversos métodos. Já vimos pelo menos um deles, o `.append()` que é chamado para incluir elementos na lista.
 
 ```python
 frutas = ['uva', 'banana']
@@ -36,7 +36,7 @@ print(frutas)  # ['uva', 'banana', 'kiwi']
 
 ### Instanciar, ou criar uma nova instância de um objeto
 
-Fora casos especiais em que podemos criar objetos diretammente no código (como a lista de frutas que acabamos de ver) ou com uma função ajudante, no caso de `loadImage(nome_arquivo)`, que cria um objeto `PImage`, costumamos criar novos objetos chamando o nome da classe, e isso pode ou não demandar argumentos. No exemplo que veremos a seguir vamos criaremos um slider assim:
+Fora casos especiais em que podemos criar objetos diretammente no código (como a lista de frutas que acabamos de ver) ou com uma função ajudante, no caso de `loadImage(nome_arquivo)` que cria um objeto `PImage`, costumamos criar novos objetos chamando o nome da classe, e isso pode ou não demandar argumentos. No exemplo que veremos a seguir vamos criar um slider.
 
 ```python
 s1 = Slider(0, 90, 50, 'tamanho')  # mínimo, máximo, valor_inicial, etiqueta
@@ -44,10 +44,10 @@ s1 = Slider(0, 90, 50, 'tamanho')  # mínimo, máximo, valor_inicial, etiqueta
 
 ## Exemplo de uso da classe `Slider`
 
-Veja um exemplo comentado de como instanciar e usar objetos da classe `Slider` que tem os métodos `.position()` para locá-los na tela, e o método `.update()` que faz o duplo papel de desenhar o slider na tela e obter o valor indicado por ele naquele momento.
+Veja agora um exemplo comentado de como instanciar e usar objetos da classe `Slider`que serirão para modificar um desenho de uma àrvore recursiva. Note que os objetos slider tem os métodos `.position()` para locá-los na tela depois de terem sido criados, e o método `.update()`, que chamaos dentro do `draw()` e que faz o duplo papel de desenhar o slider na tela e obter o valor indicado por ele naquele momento.
 
 ```python
-from __future__ import unicode_literals
+from __future__ import unicode_literals  # para textos com acento sem por `u` antes das aspas
 
 def setup():
     global s1, s2, s3
@@ -87,7 +87,7 @@ def galho(tamanho):
         popMatrix()
         
  # ...       
- # ATENÇÃO: precisa colar aqui a definição da classe Slider que está mais abaixo nest página.
+ # Atenção: precisa colar aqui a definição da classe Slider que está mais abaixo nest página.
  # ou colar em uma nova aba chamada slider.py e acrescentar `from slider import Slider`
  ```
         
