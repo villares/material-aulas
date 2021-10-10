@@ -12,11 +12,11 @@ Vamos começar apresentando os primeiros elementos e vocabulários da orientaç�
 
 Tratando como equivalentes os termos classe e tipo, quando falamos sobre os valores manipulados pelo nosso programa é comum falarmos sobre a categoria a que pertencem, isto é, de que tipo ou classe são. Os valores mais fundamentais, ditos primitivos, como os números que manipulamos, são do tipo _float_ (ponto flutuante) ou _int_ (inteiros), já os textos são da classe _str_ (abreviação de _string_). Estruturas como listas são objetos do tipo _list_ e assim por diante. Você pode não ter visto mas o Processing nos entrega os dados de imagens carregadas do disco na forma de um objeto `PImage`. 
 
-Por sinal note que fora os tipos embutidos (aqui mencionanmos _int_, _float_, _str_ e _list_), as classes mais comuns, e especialmente as que formos criar, seguem a convenção de ter a primeira letra maiúscula.
+Por sinal note que fora os tipos embutidos (aqui mencionamos _int_, _float_, _str_ e _list_), as classes mais comuns, e especialmente as que formos criar, seguem a convenção de ter a primeira letra maiúscula.
 
-### Atributos, ou campos
+### Atributos (propriedades ou campos)
 
-Objetos tem "valores ou estados internos" que podem ser atributos capazes de serem consultados usando a "sintaxe do ponto" (`objeto.atributo`).
+Objetos tem "valores ou propriedades" chamadas de atributos, que podem ser consultados usando a "sintaxe do ponto" (`objeto.atributo`).
 Por exemplo, quando carregamos uma imagem no Processing podemos consultar as dimensões dela nos atributos `.width` e `.height`:
 
 ```python
@@ -25,10 +25,10 @@ w = img.width  # largura em pixels
 h = img.height  # altura em pixels    
 ```
 
-### Métodos, funções associadas aos objetos
+### Métodos (ou funções associadas aos objetos)
 
-Objetos tem funções associadas conhecidas como de métodos e que podem ser invocadas com a "sintaxe do ponto" (`objeto.metodo()`).
-Uma lista em Python, por exemplo, possui diversos métodos. Já vimos pelo menos um deles, o `.append()` que é chamado para incluir elementos na lista.
+Objetos tem funções associadas, conhecidas como métodos, que podem ser invocadas com a "sintaxe do ponto" (`objeto.metodo()`).
+Uma lista em Python, por exemplo, [possui diversos métodos](list_methods.md) e já vimos pelo menos um deles, o `.append()` que é chamado para incluir elementos na lista.
 
 ```python
 frutas = ['uva', 'banana']
