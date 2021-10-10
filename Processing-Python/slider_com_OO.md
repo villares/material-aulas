@@ -36,7 +36,7 @@ frutas.append('kiwi')
 print(frutas)  # ['uva', 'banana', 'kiwi']
 ```
 
-### Instanciar, ou criar uma nova instância de um objeto
+### Instanciar (criar uma nova instância de um objeto)
 
 Fora casos especiais em que podemos criar objetos diretammente no código (como a lista de frutas que acabamos de ver) ou com uma função ajudante, no caso de `loadImage(nome_arquivo)` que cria um objeto `PImage`, costumamos criar novos objetos chamando o nome da classe, e isso pode ou não demandar argumentos. No exemplo que veremos a seguir vamos criar um slider.
 
@@ -100,7 +100,7 @@ def galho(tamanho):
 ![slider](assets/slider.png) 
        
        
-### Como é a classe `Slider` por dentro?       
+### Como é a definição da classe `Slider`? (a classe por dentro)       
 
 > **Atenção: o código abaixo faz parte do exemplo acima.**
 > Opcionalmente, é possível por este código separado em uma nova aba *slider*, que se torna um arquivo `slider.py`. Nesse caso é preciso usar a instrução `from slider import Slider` no começo do seu código. Se não quiser fazer isso, simplesmente cole-o na aba principal, após o código anterior`.
