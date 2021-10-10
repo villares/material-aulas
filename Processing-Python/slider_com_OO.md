@@ -14,8 +14,8 @@ Por sinal note que fora os tipos embutidos (aqui mencionanmos _int_, _float_, _s
 
 ### Atributos, ou campos
 
-Objetos tem "valores internos de estado", são atributos que podem ser consultados usando a "sintaxe do ponto".
-Por exemplo, quando carregamos uma imagem no Processing podemos consultar as dimensões dela:
+Objetos tem "valores ou estados internos" que podem ser atributos capazes de serem consultados usando a "sintaxe do ponto" (`objeto.atributo`).
+Por exemplo, quando carregamos uma imagem no Processing podemos consultar as dimensões dela nos atributos `.width` e `.height`:
 
 ```python
 img = loadImage('a.png')  # uma imagem PNG na pasta /data/
@@ -25,7 +25,7 @@ h = img.height  # altura em pixels
 
 ### Métodos, funções associadas aos objetos
 
-Objetos tem funções associadas a eles, que chamamos de métodos.
+Objetos tem funções associadas conhecidas como de métodos e que podem ser invocadas com a "sintaxe do ponto" (`objeto.metodo()`).
 Uma lista em Python, por exemplo, possui diversos métodos. Já vimos pelo menos um deles, o `.append()` que é chamado para incluir elementos na lista.
 
 ```python
