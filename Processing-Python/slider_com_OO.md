@@ -186,7 +186,7 @@ class Slider:
         return self.value
         
     def display(self):
-        """Display sliner on screen, using orginal Processing coordinates."""
+        """Draw slider on screen, using orginal, not transformed, Processing coordinates."""
         push()  # combines pushMatrix() and pushStyle()
         resetMatrix()
         camera()
