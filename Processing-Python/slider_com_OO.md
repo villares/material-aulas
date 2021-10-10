@@ -1,4 +1,4 @@
-# Primeiros passos de orientaçao a objetos: usando a classe Slider
+# Primeiros passos de orientação a objetos: usando a classe Slider
 
 No começo do curso os principais exemplos de código que vimos se valem de estratégias de programação que são conhecidas pelos nomes, "Programação Procedural" ou "Programação Imperativa Estruturada". 
 
