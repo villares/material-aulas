@@ -1,18 +1,18 @@
 # Primeiros passos de orientação a objetos: usando a classe Slider
 
-No começo do curso os principais exemplos de código que vimos se valem de estratégias de programação que são conhecidas pelos nomes, "Programação Procedural" ou "Programação Imperativa Estruturada". 
+No começo do curso os principais exemplos de código que vimos se valem de estratégias de programação que são conhecidas pelos nomes, "Programação Procedural" ou "Programação Imperativa Estruturada", entre outrod. 
 
 Agora veremos como Python, assim como diversas outras linguagens, permite usar uma maneira de programar chamada "Orientação a Objetos" (_Object Orientation_, por vezes abreviada OO), bem como permite misturar elementos de diversos paradigmas. 
 
 Vamos começar apresentando os primeiros elementos e vocabulários da orientação a objetos.
 
-## Vocabulário
+## Ideias principais e vocabulário
 
 ### Classe (_class_), tipo (_type_) ou uma "categoria de objetos"
 
-Tratando como equivalentes os termos classe e tipo, quando falamos sobre os valores manipulados pelo nosso programa é comum falarmos sobre a categoria a que pertencem, isto é, de que tipo ou classe são. Os valores mais fundamentais, ditos primitivos, como os números que manipulamos, são do tipo _float_ (ponto flutuante) ou _int_ (inteiros), já os textos são da classe _str_ (abreviação de _string_). Estruturas como listas são objetos do tipo _list_ e assim por diante. Você pode não ter visto mas o Processing nos entrega os dados de imagens carregadas do disco na forma de um objeto `PImage`. 
+Tratando como equivalentes os termos classe e tipo, quando falamos sobre os valores manipulados pelo nosso programa é comum mencionarmos a categoria a que pertencem, isto é, de que tipo ou classe são. Os valores mais fundamentais, ditos primitivos, como os números que manipulamos, são em geral do tipo _float_ (ponto flutuante) ou _int_ (abreviação de _integer_, inteiros), já os textos são da classe _str_ (abreviação de _string_, uma cadeia de caracteres). Estruturas como listas são objetos do tipo _list_ e assim por diante. Você pode não ter visto mas o Processing nos entrega os dados de imagens carregadas do disco na forma de um objeto `PImage`. Cada tipo de objeto pode ter propriedades e funcionalidades específicas (atributos e métodos) que os tornam mais úteis em determinados contextos. 
 
-Por sinal note que fora os tipos embutidos (aqui mencionamos _int_, _float_, _str_ e _list_), as classes mais comuns, e especialmente as que formos criar, seguem a convenção de ter a primeira letra maiúscula.
+Note que fora os tipos embutidos (acima mencionamos _int_, _float_, _str_ e _list_, mas há vários outros), as classes normalmente seguem a convenção de ter a primeira letra maiúscula no nome, com `Slider` que veremos mais à frente, e é especialmente recomendável seguir essa convençao para as classes que você criar.
 
 ### Atributos (propriedades ou campos)
 
@@ -46,11 +46,11 @@ s1 = Slider(0, 90, 50, 'tamanho')  # mínimo, máximo, valor_inicial, etiqueta
 
 ### O que ficou de fora
 
-Não vamos ver ainda neste momento como funciona a definição da classe, como ela produz e inicializa os objetos, como são definidos os métodos. Muito menos tratareomso do assunto "herança" em que uma classe é baseada em outra, recebendo desta parte das suas características.
+Não vamos ver ainda neste momento em detalhes como funciona a definição da classe, como ela produz e inicializa os objetos, como são definidos os métodos. Muito menos tratareomso do assunto "herança" em que uma classe é baseada em outra, recebendo desta parte das suas características.
 
 ## Exemplo de uso da classe `Slider`
 
-Veja agora um exemplo comentado de como instanciar e usar objetos da classe `Slider`que serirão para modificar um desenho de uma àrvore recursiva. Note que os objetos slider tem os métodos `.position()` para locá-los na tela depois de terem sido criados, e o método `.update()`, que chamaos dentro do `draw()` e que faz o duplo papel de desenhar o slider na tela e obter o valor indicado por ele naquele momento.
+Veja agora um exemplo comentado de como instanciar e usar objetos da classe `Slider`que serirão para modificar um desenho de uma àrvore. Note que os objetos _slider_ tem os métodos `.position()` para locá-los na tela depois de terem sido criados, e o método `.update()`, que chamaos dentro do `draw()` e que faz o duplo papel de desenhar o slider na tela e obter o valor indicado por ele naquele momento.
 
 ```python
 from __future__ import unicode_literals  # para textos com acento sem por `u` antes das aspas
@@ -93,8 +93,8 @@ def galho(tamanho):
         popMatrix()
         
  # ...       
- # Atenção: precisa colar aqui a definição da classe Slider que está mais abaixo nest página.
- # ou colar em uma nova aba chamada slider.py e acrescentar `from slider import Slider`
+ # Atenção: precisa colar aqui a definição da classe Slider que está mais abaixo nesta página.
+ # ou colar em uma nova aba chamada slider.py e acrescentar `from slider import Slider` no início do sketch
  ```
         
 ![slider](assets/slider.png) 
