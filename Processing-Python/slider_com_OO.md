@@ -1,10 +1,31 @@
-# Ideias de orientação a objetos: um slider
+# Ideias de orientação a objetos: primeiros passos, usando um slider
 
-### Como usar uma classe `Slider`
+No começo do curso os principais exemplos de código que vimos se valem de estratégias de programação que são conhecidas pelos nomes, "Programação Procedural" ou "Programação Imperativa Estruturada". Agora, uma vez que Python, assim como diversas outras linguagens, permite usar uma maneira de programar chamada "Orientação a Objetos" (_Object Orientation_, por vezes abreviada OO), bem como misturar elementos de diversos paradigmas. Vamos aqui então apresentar os primeiros elementos e vocabulários da orientação a objetos.
+
+### Classe (_class_), tipo (_type_) ou uma "categoria de objetos"
+
+Vamos aqui usar como equivalentes os termos classe e tipo, e quando falamos sobre os valores manipulados pela linguagem é comum falarmos sobre a que categoria pertencem, isto é, de que tipo ou classe são. Os valores mais simples como os números que manipulamos são objetos do tipo _float_ (ponto flutuante) ou _int_ (inteiros). E os textos são da classe _string_. Estruturas como listas são objetos do tipo _list_ e assim por diante. Você pode não ter percebido mas o Processing nos entrega os dados na forma de um objeto `PImage`. Por sinal fora os tipos embutidos essenciais, a maioria das classes, especialmente as que formos criar, seguem a conveção de ter a primeira letra maiúscula.
+
+### Atributos e métodos
+
+Objetos tem 
+
+
+### Instanciar, ou criar uma nova instância de um objeto
+
+Fora casos especiais em que uma função cria um novo objeto para nós (como `loadImage(nome_arquivo)` cria um objeto `PImage`) costumamos criar novos objetos chamando o nome da classe, e isso pode ou não demandar argumentos.
+
+No exemplo que veremos a seguir vamos criar um slider assim:
+
+```python
+s1 = Slider(0, 90, 50, 'tamanho')  # mínimo, máximo, valor_inicial, etiqueta
+```
+
+
+## Exemplo de uso da classe `Slider`
 
 ```python
 from __future__ import unicode_literals
-from slider import Slider  # slider é o arquivo slider.py
 
 def setup():
     global s1, s2, s3
@@ -42,15 +63,20 @@ def galho(tamanho):
         rotate(-angulo * 2)
         galho(tamanho * reducao - random(-sw, sw) * rndvar)
         popMatrix()
+        
+        
+ # CONTINUA... precisa colar aqui a definição da classe Slider que está mais abaixo
+ # ou colar em uma nova aba chamada slider.py e acrescentar `from slider import Slider`
  ```
         
 ![slider](assets/slider.png) 
         
 ### Como é a classe `Slider` por dentro?       
  
-Uma aba **slider** é um arquivo `slider.py`
+> Opcionalmente, é possível por o códio abaixo separado em uma nova aba *slider*, que se torna um arquivo `slider.py`. Nesse caso é preciso usar a instrução `from slider import Slider` no começo do seu código.
+> Se não quiser fazer isso, simplesmente cole o código abaixo no final da aba principal.
     
-Uma primeira versão da classe Slider
+Veja uma primeira versão da classe Slider
 
 ```python
 class Slider:
@@ -95,9 +121,9 @@ class Slider:
 ```
     
     
+### Uma segunda versão da classe Slider    
     
-    
-Acrescentando alguns extras e comentários à classe Slider
+Acrescentando alguns extras e comentários à classe Slider.
 
 ```python
 class Slider:
