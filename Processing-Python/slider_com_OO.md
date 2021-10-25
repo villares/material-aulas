@@ -151,9 +151,15 @@ class Slider:
         pop()  # popStyle() and popMat
 ```
     
+## Páginas relacionadas
+
+- [Um botão com orientação a objetos](Processing-Python/botao_com_OO.md)
+- [Uma classe de partículas simples](Processing-Python/particulas.md)
+- [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/mestrado/bandeirinhas/) (página externa)
+    
 ## Extra: Uma segunda versão da classe `Slider`    
     
-Acrescentando alguns extras e comentários à classe `Slider`.
+Acrescentando alguns extras e comentários à classe `Slider`. Permite o uso de sliders em *sketchs* com 3D.
 
 ```python
 class Slider:
@@ -171,17 +177,17 @@ class Slider:
         self.value = default
         self.label = label
         self.w, self.h = 120, 20
-        self.position(20, 20)  # default position
+        self.position(20, 20)  # Pos default
 
     def position(self, x, y):
-        """Set position on screen, and the rectx 'handle' position"""
+        """Define as coordenadas na tela, e calcula rectx, pos. do 'handle'"""
         self.x = x
         self.y = y
         # the position of the rect you slide:
         self.rectx = self.x + map(self.value, self.low, self.high, 0, self.w)
 
     def update(self):
-        """Updates the slider and returns value. Calls display()"""
+        """Atualiza o slider e devolve o valor (self.value). Chama display()"""
         # mousePressed moves slider
         if mousePressed and dist(mouseX, mouseY, self.rectx, self.y) < self.h:
             self.rectx = mouseX
@@ -194,22 +200,22 @@ class Slider:
         return self.value
         
     def display(self):
-        """Draw slider on screen, using orginal, not transformed, Processing coordinates."""
-        push()  # combines pushMatrix() and pushStyle()
-        resetMatrix()
-        camera()
+        """Desenha o slider na tela, usando coordenadas sem transformar"""
+        push()         # Combina pushMatrix() e pushStyle()
+        resetMatrix()  # push(), seguido de resetMatrix() e camera() permitem...
+        camera()       # ... desenhar o slider no sistema de coordenadas original
         rectMode(CENTER)
-        # gray line behind slider
+        # Linha cinza sob o slider
         strokeWeight(4)
         stroke(200)
         line(self.x, self.y, self.x + self.w, self.y)
-        # draw rectangle
+        # O retângulo, elemento principal da interface do slider
         strokeWeight(1)
         stroke(0)
         fill(255)
         translate(0, 0, 1)
         rect(self.rectx, self.y, self.w / 12, self.h)
-        # draw value
+        # Mostra o valor (value) atual
         fill(0)
         textSize(10)
         textAlign(CENTER, CENTER)
@@ -220,5 +226,5 @@ class Slider:
             text(self.label, self.x, self.y - self.h)
         else:
             text(self.label, self.x + self.w / 2, self.y - self.h)
-        pop()  # popStyle() and popMat
+        pop()  # equivale a popStyle() and popMatrix()
 ```
