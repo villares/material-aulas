@@ -1,8 +1,6 @@
 # Primeiros passos de orientação a objetos: usando a classe Slider
 
-No começo do curso os principais exemplos de código que vimos se valem de estratégias de programação que são conhecidas pelos nomes, "Programação Procedural" ou "Programação Imperativa Estruturada", entre outrod. 
-
-Agora veremos como Python, assim como diversas outras linguagens, permite usar uma maneira de programar chamada "Orientação a Objetos" (_Object Orientation_, por vezes abreviada OO), bem como permite misturar elementos de diversos paradigmas. 
+No começo do curso os principais exemplos de código que vimos se valem, em geral, de estratégias de programação sem "Orientação a Objetos". Agora veremos como Python, assim como diversas outras linguagens, permite usar esta maneira de programar, pomposamente chamada de "paradigma de programação": a Orientação a objetos (_Object Orientation_, por vezes abreviada OO). Python permite misturar elementos de diversos paradigmas.
 
 Vamos começar apresentando os primeiros elementos e vocabulários da orientação a objetos.
 
