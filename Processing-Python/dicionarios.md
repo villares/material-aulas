@@ -156,6 +156,8 @@ estados = {'MG': {'capital':'Belo Horizonte', 'pop': 21292666},
            'RN': {'capital':'Natal', 'pop': 3534165},
            'MT': {'capital':u'Cuiabá', 'pop': 3526220},
            'AL': {'capital':u'Maceió', 'pop': 3351543},
+           'TO': {'capital':u'Palmas', 'pop': 1607363},
+           'MS': {'capital': u'Campo Grande', 'pop': 2839188},
            }
 
 estados['SP'] = {'capital':u'São Paulo', 'pop':46289333}  # Acrescenta estado, a chave é a sigla, o valor um outro dicionário
