@@ -27,7 +27,7 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 - [Condicionais (`if` e `else`)](Processing-Python/condicionais_py.md)
   - [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](Processing-Python/atribuicao-e-comparacao.md)
   - [Condições aninhadas e outras estruturas condicionais](Processing-Python/condicionais_2.md)
-  - [Divisão com números inteiros](Processing-Python/divisao.md)
+  - [Divisão com inteiros, obtendo resultados `float`, divisão por zero e o resto da divisão](Processing-Python/divisao.md) 
 - [Movimento: uma animação simples usando `setup()` e `draw()`](Processing-Python/movimento_py.md)
   - [Escopo de variáveis (local e global)](Processing-Python/escopo_py.md)
 - [Declarando novas funções](Processing-Python/funcoes_py.md)
