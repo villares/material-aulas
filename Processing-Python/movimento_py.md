@@ -20,28 +20,26 @@ vx = 2.5   # velocidade horizontal inicial
 vy = -1.5  # velocidade vertical inicial
 
 def setup():
-    global px, py  # importante!
+    global px, py  # importante, permite criar variáveis globais dentro do setup!
     size(400, 400)
+    noStroke()  # desenhar sem traço de contorno
     # Define a posição inicial do círculo
     px, py = width / 2, height / 2  # meio do desenho
 
 def draw():
-    global px, py, vx, vy  # é o que permite modificar as globais!
+    global px, py, vx, vy  # é o que permite modificar as variaveis globais no draw!
     background(0, 0, 200) # limpa o frame com um fundo azul
-    # Atualiza as variáveis da posição do círculo
-    px = px + vx
+    # Atualizar as variáveis da posição do círculo
+    px = px + vx   # "posiçao x" passa a ser a "posição x" + "velocidade x"
     py = py + vy
-    # Testa se o círculo está fora da tela, se estiver,
-    # inverte a velocidade (que se torna -velocidade).
+    # Testar se o círculo está fora da tela, se estiver,
+    # inverta a velocidade (de a ela o valor de -velocidade).
     if px > width - raio or px < raio:
         vx = -vx
     if py > height - raio or py < raio:
         vy = -vy
     # Desenha o círculo
-    noStroke()  # sem traço de contorno
-    ellipse(px, py, raio * 2 , raio * 2)
-    # em versões mais novas do Processing
-    # podemos usar circle(px, py, raio * 2)
+    circle(px, py, raio * 2)
 ```
 ### Assuntos relacionados
 
