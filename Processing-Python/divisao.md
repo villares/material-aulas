@@ -1,4 +1,4 @@
-## Divisão com inteiros
+## Divisão com inteiros, obtendo resultados `float`, divisão por zero e o resto da divisão
 
 ### Um pouco de contexto
 

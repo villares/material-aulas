@@ -27,7 +27,7 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 - [Condicionais (`if` e `else`)](Processing-Python/condicionais_py.md)
   - [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](Processing-Python/atribuicao-e-comparacao.md)
   - [Condições aninhadas e outras estruturas condicionais](Processing-Python/condicionais_2.md)
-  - [Divisão com números inteiros](Processing-Python/divisao.md)
+  - [Divisão com inteiros, obtendo resultados `float`, divisão por zero e o resto da divisão](Processing-Python/divisao.md) 
 - [Movimento: uma animação simples usando `setup()` e `draw()`](Processing-Python/movimento_py.md)
   - [Escopo de variáveis (local e global)](Processing-Python/escopo_py.md)
 - [Declarando novas funções](Processing-Python/funcoes_py.md)
@@ -54,8 +54,10 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 
 #### Mais sobre estruturas de dados
 - [Métodos das listas](Processing-Python/list_methods.md)
-- [Outras estruturas de dados: dicionário (_dict_) e conjunto (_set_)](Processing-Python/dicionarios.md)
+- [Mais estruturas de dados: dicionário (_dict_)](Processing-Python/dicionarios.md)
+- [Mais estruturas de dados: conjunto (_set_)](Processing-Python/conjuntos.md)
 - [Compreensão de listas e outras *comprehensions*](Processing-Python/comprehension.md)
+
 #### Desenhando em 3D
 
 - [Primeiros passos com `size(…, …, P3D)`](Processing-Python/desenho-3D.md)
@@ -80,12 +82,13 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 #### Arquivos externos
 - [Lendo um arquivo vetorial (SVG)](Processing-Python/recursos_vetoriais_externos.md)
 - [Lendo arquivos de imagem (*bitmap/raster*)](Processing-Python/imagens_externas.md)
-  - [Lendo todas as imagens de uma pasta](Processing-Python/imagens_externas_pasta.md)
+  - [Lendo todas as imagens da pasta `data`](Processing-Python/imagens_externas_pasta2.md) e sorteando uma
+  - [Lendo todas as imagens de uma pasta selecionada pela pessoa usuária](Processing-Python/imagens_externas_pasta.md) (avançado)
 - [Lendo e escrevendo texto em arquivos (*file IO*)](Processing-Python/file_IO.md)
 
 #### Orientação a Objetos
+- [Primeiros passos de orientação a objetos: usando a classe Slider](Processing-Python/slider_com_OO.md)
 - [Um botão com orientação a objetos](Processing-Python/botao_com_OO.md)
-- [Um *slider* com orientação a objetos](Processing-Python/slider_com_OO.md)
 - [Uma classe de partículas simples](Processing-Python/particulas.md)
 - [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/mestrado/bandeirinhas/) (página externa)
 

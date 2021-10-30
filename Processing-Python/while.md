@@ -189,22 +189,23 @@ Dois exemplos, em abstrato, que demonstram este comportamento.
 
 ```python
 x = 0
-while(x < 10):
-    print(x) # quando a condição for verdadeira
-    x += 1;
+while x < 10:
+    print(x) # enquando a condição for verdadeira
+    x += 1
 else: # quando a condição for falsa e o loop terminou
-    print ("False: o x não é mais menor que 10")
+    print("False: o x não é mais menor que 10")
 
 x = 0
-while (x < 10):
-    print (x) # quando a condição for verdadeira
-    x += 1;
-    break # interrompe o laço!
+while x < 10:
+    print (x) # enquando a condição for verdadeira
+    x += 1
+    if x > 8:
+        break # interrompe o laço antes!
 else: # quando a condição for falsa
-    print ("False: o x não é mais menor que 10") # não será executado!
+    print("False: o x não é mais menor que 10") # nunca será executado!
 ```
 
-No segundo exemplo, `break` interrompe a execução de ciclos e, nesse caso, o bloco do `else`, isto é, o bloco de instruções executadas quando a condição não é mais verdadeira, não será executado.
+No segundo exemplo, `break` interrompe a execução do laço, e nesse caso, o bloco do `else`, que só executa quando a condição do `while` não é mais verdadeira, não será executado.
 
 ## Assuntos relacionados
 

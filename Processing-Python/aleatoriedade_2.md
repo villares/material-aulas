@@ -139,18 +139,69 @@ def draw():
 
 ![random_choice](assets/shuffle.gif)
 
-### Sementes dos geradores pseudo-aleatórios (*randomSeed*)
+### Sementes dos geradores pseudo-aleatórios (*random seed*)
 
 Como os números produzidos por `random()` não são verdadeiramente aleatórios, e sim produzidos por algorítmos geradores determinísticos, é possível fixar um parâmetro inical, conhecido como semente (*seed*), o que permite reproduzir novamente a mesma sequência de números.
 
-Para fixar o início do gerador de `random()` no Processing usamos `randomSeed(numero_inteiro)`. 
-
-Já para as funções do módulo `random` do Python:
+Para fixar o início do gerador de `random()` no Processing usamos `randomSeed(numero_inteiro)`.
 
 ```python
-from random import seed
-seed(numero_inteiro)
+randomSeeed(numero_inteiro)  # ajusta a semente no Processing
+s = random(10, 20)  # Função random() do Processing
 ```
+
+Já para as funções do módulo `random` do Python usamos a função `seed()` do módulo `random`.
+
+```python
+from random import random, choice, seed 
+
+seed(numero_inteiro)
+c = choice(('A', 'B', 'C'))
+r = random() * 100  # random do Python sobrepôs o random do Processing
+```
+
+ou ainda
+
+```python
+import random as rnd
+
+rnd.seed(numero_inteiro)
+c = rnd.choice(('A', 'B', 'C'))
+r = rnd.random() * 100
+```
+
+### Um exemplo de uso do `random.seed()` do Python
+
+Modificando o exemplo anterior com `shuffle`.
+
+```python
+from random import shuffle, seed
+
+tam = 80
+
+def setup():
+    size(400, 400)
+    textAlign(CENTER, CENTER)
+    colorMode(HSB)  # matiz, saturacao, brilho
+
+def draw():
+    seed(mouseX)
+    posicoes = []  # lista vazia
+    for y in range(0, height, tam):
+        for x in range(0, width, tam): 
+            posicoes.append((x, y))  # tupla (x, y)
+
+    shuffle(posicoes)  # Embaralha a lista gerada 
+
+    for i, (x, y) in enumerate(posicoes):  # desenha os quadrados 
+        fill(i * 10, 200, 200) # i influencia o matiz
+        rect(x, y, tam, tam)
+        fill(0)
+        text(i, x + tam / 2, y + tam / 2) # escrevendo o números 
+```
+
+
+### Um exemplo do `randomSeed()` do Processing
 
 Neste exemplo abaixo usamos uma semente para manter 'congelados' os números gerados por `random()` entre frames do `draw()`, mantendo a interatividade de ajuste do ângulo da árvore com o mouse. Quando uma imagem é exportada, o nome do arquivo contém a semente (_seed_) do gerador de números pseudo-aleatórios.
 

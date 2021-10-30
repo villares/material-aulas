@@ -31,23 +31,49 @@ Para criar uma *issue*:
 
 ### Para propor correções ou acrescentar novos materiais
 
+#### Preparo
 - **Sempre converse antes com as ṕessoas mantenedoras por meio de uma issue antes de propor uma contribuição (*Pull Request*).**
 - faça um _fork_ (que é uma cópia deste repositório com o material que vai ficar na sua conta do GitHub, e é onde você vai fazer as contribuições)
 - crie um _branch_ (_branch_ é uma etiqueta que marca alternativas ou variantes de um projeto, use algo como: 'melhoria-descrição-abc')
-- modifique arquivos, usando o botão com o lápis na interface web do GitHub (ou com editor no *clone* do seu computador... e dê commit & push...)
-- suba arquivos (na interface web, visite a pasta do repositório onde vai ficar o arquivo e o arraste sobre a janela do navegador)
-- crie arquivos Markdown (.md), use seu editor de código preferido e suba, ou use o botão **Create New File** na interface web.
-  - Como se escreve markdown ou [GFM](https://github.github.com/gfm/)? 
+  - Um passo opcional é fazer um *clone* do seu computador, o que permite usar um editor local, aí vocẽ vai precisar aprender a fazer locamente os processos de de `commit` e `push`...
+
+#### Faça modificações no material
+
+- Modifique arquivos, editando os arquivos Markdown (.md) que compõe o material-aulas, no seu clone local ou usando o **botão com o lápis** na interface web do GitHub
+
+- Como se escreve markdown ou [GFM](https://github.github.com/gfm/)? 
   - Guias de markdown em português:
      * [github.com/luong-komorebi/Markdown-Tutorial](https://github.com/luong-komorebi/Markdown-Tutorial/blob/master/README_pt-BR.md#syntax)
      * [github.com/leticiadasilva/notas-de-aula](https://github.com/leticiadasilva/notas-de-aula/blob/master/markdown/anota%C3%A7oes-markdown.md)
-   - para fazer links externos `[texto](url)`
-   - para formatar texto como código no markdown:
-       - bloco com ` ```python ___``` ` 
-       - no meio da frase ` `` `
-   - para inserir imagens no markdown
-       - suba o arquivo da imagem (.png preferencialmente)
-       - use um link precedido de uma exclamação `![nome da imagem](local/arquivo.png)`
+   - Para vazer subtítulos use múltiplos `#` , como `##`, `###` e etc. Um só `#` é o título principal da página.
+   - Para fazer links `[texto](url)`
+        - Exemplo: `[Referência do Processing modo Python](https://py.processing.org/reference)`<br>
+          Resultado: [Referência do Processing modo Python](https://py.processing.org/reference)
+   - Para formatar texto como código no markdown use a "crase" também chamada de *backtick* ``` ` ``` ou a tripla-crase assim:
+       - bloco com ` ```python ___``` `<br>Exemplo:
+          ```
+              ```python
+              def setup():
+                  size(400, 400)
+              ```
+          ```
+          Resultado:
+          ```python
+          def setup():
+              size(400, 400)
+          ```
+      - no meio da frase ` `` `  <br>Exemplo: ```*Use  `noFill()` para desligar o preenchiemto.*```<br>Resultado: *Use  `noFill()` para desligar o preenchiemto.*
+
+#### Acrescentando novos arquivos
+
+- Você pode também criar novos arquivos, use seu editor de código preferido e suba, ou use o botão **Create New File** na interface web para criar um arquivo `.md`.
+- Para subir arquivos na interface web, visite a pasta do repositório onde vai ficar o arquivo e o arraste sobre a janela do navegador.
+- para inserir imagens no markdown
+   - suba o arquivo da imagem (.png preferencialmente)
+   - use em uma página o código de um link precedido de uma exclamação `![nome da imagem](local/arquivo.png)`
+
+#### A conclusão do processo com um PR
+
 - faça um *Pull Request* (PR)
   - o que é um PR, pra quê serve, como funciona? 
      - _Pull Request_ é um pedido ao mantenedor para aceitar uma contribuição/modificação no projeto
