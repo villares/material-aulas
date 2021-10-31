@@ -1,4 +1,4 @@
-## Operações com Vetores e a classe `PVector`
+## Operações com vetores e a classe `PVector`
 
 Vetores no fundo são são listas de números, algo como `[105, 42]` ou `[120, 81, 35]`. Os números são os *componentes* e os vetores, que podem ter o número de componentes que você quiser, mas nos interessam mais neste momento os vetores com 2 ou 3 componentes pois eles são úteis para representar coordenadas, velocidades e acelerações em duas e três dimensões. Podemos visualizá-los como pontos ou como segmentos de reta orientados, a representação gráfica usual é como uma seta.
 
@@ -25,3 +25,4 @@ def draw():
     pos += vel
     vel += acel
 ```
+![vetores1](assets/vetores1.gif)
