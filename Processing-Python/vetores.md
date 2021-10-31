@@ -27,9 +27,9 @@ def draw():
 ```
 ![vetores1](assets/vetores1.gif)
 
-No exemplo acima, estamos usando um vetor `pos` para representar a posição de uma partívula, `vel` para a sua velociade, e `acel` para uma aceleração para baixo (que pode ser interpretada como resultado de uma força causada pela ação da gravidade).
+No exemplo acima, estamos usando um vetor `pos` para representar a posição de uma partícula, o vetor `vel` para a sua velociade, e o vetor `acel` para uma aceleração para baixo (que pode ser interpretada como resultado de uma força causada pela ação da gravidade, por exemplo).
 
-Usamos os operadores de atribuição aumentada `+=` para fazer a velocidade alterar a posição, algo equivalente a `pos = pos + vel` e a aceleração modificar a velocidasde.
+No código o operador de atribuição aumentada `+=` aplicado à variável global `pos` faz a velocidade alterar a posição, algo equivalente a `pos = pos + vel` e da mesma forma a aceleração modifica a velocidade.
 
 ### Métodos dos vetores `PVector`
 
