@@ -1,8 +1,8 @@
 # Autômatos Celulares (*Celular Automata*)
 
-## O que são, de onde veio essa ideia?
+## O que são os autômatos celulares, de onde veio essa ideia?
 
-Criados inicalmente como ferramentas de exploração teórica/matemática (robôs auto-replicantes do von Neuman ou crescimento de cristais), depois viraram uma atividade lúdica, tornada relativamente popular pela coluna do Martin Gardner de recreações matemáticas na revista Scientific America, que apresentou o jogo da vida do Conway.
+Criados inicalmente como ferramentas de exploração teórica/matemática, robôs auto-replicantes imaginados por von Neuman ou crescimento de cristais, mas também uma atividade lúdica, tornada relativamente popular pela coluna do Martin Gardner de recreações matemáticas na revista Scientific America, que apresentou o jogo da vida do Conway. Pesquisados em profundidade por Wolfram.
 
 Foram adotados por artista visuais que se interessam por computação por conta dos padrões interessantes que geram e o impacto da sua evolução (isso de lembrarem elemento vivos). Neste material didático os olhamos deste ponto de vista, assim como do ponto de vista didático (para quem quer aprender/ensinar programação), exploratório, lúdico e estético. Talvez um pouco histórico-cultural também...
 
