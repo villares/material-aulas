@@ -98,7 +98,10 @@ Para criar uma *issue*:
 
 - Usando a interface web
 
- `[Não rola muito legal - a ver]`
+     - simplesmente entre no repositório que você precisa atualizar no seu perfil e procure pelo botão __FETCH UPSTREAM__.
+     - um menu abrirá indicando a sistuação do seu repositório. Se não houver conflitos, você poderá atualizar apertando o botão __FETCH AND MERGE__.
+     (adicionar imagem com destaque do botão)
+     - no caso de existir conflitos, é possível comparar os repositórios e entender onde ocorrem os conflitos, e isso pode ser um pouco mais complexo.
 
 - Usando a interface da linha de comando (aponte o terminal para a pasta local do repositório):
 
