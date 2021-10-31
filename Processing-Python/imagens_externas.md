@@ -13,7 +13,7 @@ sketch_2020_04a                (pasta/folder do sketch)
 
 Note que a operação de carregar o arquivo de imagem é relativamente demorada e nunca deve ser executada dentro do laço `draw()`. Em geral só precisamos carregar uma vez a imagem e fazemos isso no `setup()`. Também é comum criarmos uma variável global que faz referência à imagem, neste exemplo a variável `img`:
 
-```pyde
+```python
 def setup():
     size(400, 400)
     global img
@@ -30,7 +30,7 @@ def draw():
 
 Se a imagem tiver **exatamente** a mesma dimensão da área de desenho ela pode ser usada em `background()`.
 
-```pyde
+```python
 def setup():
     size(600, 400)
     global imagem_fundo
@@ -43,7 +43,7 @@ def draw():
 
 Pode ser conveniente simplesmente usar a função `image()` como visto anteriormente, para desenhar a imagem na área de desenho logo no começo do `draw()`, caso suas dimensões não sejam iguais a área de desenho.
 
-```pyde
+```python
 def setup():
     size(600, 400)
     global imagem_fundo
@@ -59,7 +59,7 @@ def draw():
 
 Use `get()` para os pixels visíveis na tela ou o método `.get()` para os pixels em uma imagem `PImage`. Como no exemplo abaixo:
 
-```pyde
+```python
  def setup():
     size(500,500)
     global imagem
@@ -81,7 +81,7 @@ Podemos copiar imagens digitais previamente carregadas na memória para uma regi
 
 Os parâmetros aceitos pela função `copy()` são:
 
-- `src`: imagem fonte (**Opcional**, caso não seja especificada, se refere à própria janela)
+- `src`: imagem fonte (**Opcional**, caso não seja especificada, se refere à própria tela de desenho)
 - `sx`: coordenada X do ponto superior esquerdo da região a ser copiada da imagem fonte
 - `sy`: coordenada Y do ponto superior esquerdo da região a ser copiada da imagem fonte
 - `sw`: largura da região a ser copiada da imagem fonte
@@ -91,9 +91,9 @@ Os parâmetros aceitos pela função `copy()` são:
 - `dw`: largura da região de destino na janela
 - `dy`: altura da região de destino na janela
 
-Use `copy()` para copiar uma imagem externa ou a própria janela para outras regiões.
+Use `copy()` para copiar pixels de uma imagem `PImage`, ou de uma região da tela, para outra região da tela.
 
-```
+```python
 def setup():
     size(400,200)
     global imagem
@@ -106,7 +106,7 @@ def draw():
 
 ![Duas da mesma imagem lado a lado](assets/copy1.png "Duas da mesma imagem lado a lado")
 
-```
+```python
 def setup():
     size(200,200)
     global imagem, imagem2
