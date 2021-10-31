@@ -2,7 +2,7 @@
 
 ## Acessando um arquivo com `loadImage()`
 
-Podemos carregar (*load*) na memória imagens digitais a partir de arquivos externos nos formatos PNG, JPG, GIF, TIF entre outros. Para isso usamos a função `loadImage()`, mas é preciso indicar onde está o arquivo (o chamado 'caminho completo' do arquivo), ou que ele esteja na pasta `/data/` dentro da pasta do seu *sketch* (programa).
+Podemos carregar (_load_) na memória imagens digitais a partir de arquivos externos nos formatos PNG, JPG, GIF, TIF entre outros. Para isso usamos a função `loadImage()`, mas é preciso indicar onde está o arquivo (o chamado 'caminho completo' do arquivo), ou que ele esteja na pasta `/data/` dentro da pasta do seu _sketch_ (programa).
 
 ```
 sketch_2020_04a                (pasta/folder do sketch)
@@ -25,7 +25,7 @@ def draw():
     # img.width e img.height são as dimensões da imagem original
     # podemos mostrar uma imagem com metade da sua largura e altura originais assim:
     # image(img, 0, 0, img.width / 2, img.height / 2)
-    
+
 ```
 
 Se a imagem tiver **exatamente** a mesma dimensão da área de desenho ela pode ser usada em `background()`.
@@ -64,7 +64,7 @@ Use `get()` para os pixels visíveis na tela ou o método `.get()` para os pixel
     size(500,500)
     global imagem
     imagem = loadImage('arquivo.png')  # carregando uma imagem da pasta /data/
-    
+
  def draw():
     iw, ih = imagem.width, imagem.height
     print(iw, ih)
@@ -74,6 +74,51 @@ Use `get()` para os pixels visíveis na tela ou o método `.get()` para os pixel
     image(imagem, 0, 0)
     circle(mouseX, mouseY, 30)
 ```
+
+## Copiando uma imagem com `copy()`
+
+Podemos copiar imagens digitais previamente carregadas na memória para uma região específica da janela de exibição. Se a região a ser copiada e a região a ser colada a imagem tiverem tamanhos diferentes, então o conteúdo será automaticamente redimensionado na região de destino.
+
+Os parâmetros aceitos pela função `copy()` são:
+
+- `src`: imagem fonte (**Opcional**, caso não seja especificada, se refere à própria janela)
+- `sx`: coordenada X do ponto superior esquerdo da região a ser copiada da imagem fonte
+- `sy`: coordenada Y do ponto superior esquerdo da região a ser copiada da imagem fonte
+- `sw`: largura da região a ser copiada da imagem fonte
+- `sh`: altura da região a ser copiada da imagem fonte
+- `dx`: coordenada X do ponto superior esquerdo da região de destino na janela
+- `dy`: coordenada Y do ponto superior esquerdo da região de destino na janela
+- `dw`: largura da região de destino na janela
+- `dy`: altura da região de destino na janela
+
+Use `copy()` para copiar uma imagem externa ou a própria janela para outras regiões.
+
+```
+def setup():
+    size(400,200)
+    global imagem
+    imagem = loadImage('sunflower.png')
+
+def draw():
+    image(imagem, 0, 0)
+    copy(0, 0, 200, 200, 200, 0, 200, 200)
+```
+
+![Duas da mesma imagem lado a lado](assets/copy1.png "Duas da mesma imagem lado a lado")
+
+```
+def setup():
+    size(200,200)
+    global imagem, imagem2
+    imagem = loadImage('sunflower.png')
+    imagem2 = loadImage('sunflower.png')
+
+def draw():
+    image(imagem, 0, 0)
+    copy(imagem2, 0, 0, 200, 200, 150, 150, 50, 50)
+```
+
+![Uma imagem externa por cima da janela](assets/copy2.png "Uma imagem externa por cima da janela")
 
 ## Assuntos relacionados
 
