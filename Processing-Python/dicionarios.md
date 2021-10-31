@@ -164,7 +164,42 @@ def draw():
 ![imagem do tabuleiro aqui](assets/batalha-naval.png)
 
 
+### Exemplo de diconário com dicionários dentro
+
+Não é incomum termos como valores de um dicionário, outros dicionários. O formato de intercâmbio de infomações JSON (lê-se *djeizon*, vem de *JavaScript Object Notation*), é praticamente uma porção de dicionários aninhados.
+
+```python
+# Fonte IBGE 2020
+
+estados = {'MG': {'capital':'Belo Horizonte', 'pop': 21292666},
+           'AC': {'capital':'Rio Branco', 'pop': 894470},
+           'RJ': {'capital':'Rio de Janeiro', 'pop': 17366189},
+           'BH': {'capital':'Salvador', 'pop': 14930634},
+           'PR': {'capital':'Curitiba', 'pop': 11516840},
+           'AC': {'capital':'Rio Branco', 'pop': 894470},
+           'RS': {'capital':'Porto Alegre', 'pop': 11422973},
+           'PE': {'capital':'Recife', 'pop': 9616621},
+           'CE': {'capital':'Fortaleza', 'pop': 9187103},
+           'PA': {'capital':u'Belém', 'pop': 8690745},
+           'SC': {'capital':'Joinville', 'pop': 7252502},
+           'MA': {'capital':u'São Luís', 'pop': 7114598},
+           'GO': {'capital':u'Goiânia', 'pop': 7113540},
+           'AM': {'capital':'Manaus', 'pop': 4207714},
+           'ES': {'capital':u'Vitória', 'pop': 4064052},
+           'PB': {'capital':u'João Pessoa', 'pop': 4039277},
+           'RN': {'capital':'Natal', 'pop': 3534165},
+           'MT': {'capital':u'Cuiabá', 'pop': 3526220},
+           'AL': {'capital':u'Maceió', 'pop': 3351543},
+           'TO': {'capital':u'Palmas', 'pop': 1607363},
+           'MS': {'capital': u'Campo Grande', 'pop': 2839188},
+           }
+
+estados['SP'] = {'capital':u'São Paulo', 'pop':46289333}  # Acrescenta estado, a chave é a sigla, o valor um outro dicionário
+   
+```
+
 ## Assuntos relacionados
+
 
 - [Conjuntos](conjuntos.md)
 

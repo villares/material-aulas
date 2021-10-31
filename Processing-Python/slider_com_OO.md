@@ -1,8 +1,6 @@
 # Primeiros passos de orientação a objetos: usando a classe Slider
 
-No começo do curso os principais exemplos de código que vimos se valem de estratégias de programação que são conhecidas pelos nomes, "Programação Procedural" ou "Programação Imperativa Estruturada", entre outrod. 
-
-Agora veremos como Python, assim como diversas outras linguagens, permite usar uma maneira de programar chamada "Orientação a Objetos" (_Object Orientation_, por vezes abreviada OO), bem como permite misturar elementos de diversos paradigmas. 
+No começo do curso os principais exemplos de código que vimos se valem, em geral, de estratégias de programação sem "Orientação a Objetos". Agora veremos como Python, assim como diversas outras linguagens, permite usar esta maneira de programar, pomposamente chamada de "paradigma de programação": a Orientação a objetos (_Object Orientation_, por vezes abreviada OO). Python permite misturar elementos de diversos paradigmas.
 
 Vamos começar apresentando os primeiros elementos e vocabulários da orientação a objetos.
 
@@ -50,7 +48,9 @@ Não vamos ver ainda neste momento em detalhes de como funciona a definição da
 
 ## Exemplo de uso da classe `Slider`
 
-Veja agora um exemplo comentado de como instanciar e usar objetos da classe `Slider`que serirão para modificar um desenho de uma àrvore. Note que os objetos _slider_ tem os métodos `.position()` para locá-los na tela depois de terem sido criados, e o método `.update()`, que chamaos dentro do `draw()` e que faz o duplo papel de desenhar o slider na tela e obter o valor indicado por ele naquele momento.
+Veja agora um exemplo comentado de como instanciar e usar objetos da classe `Slider`que vão servir de interface gráfica para modificar um desenho de uma àrvore. 
+
+Note que os objetos _slider_ tem os métodos `.position()` para locá-los na tela depois de terem sido criados, e o método `.update()`, que chamaremos dentro da função `draw()` para fazer o duplo trabalho de desenhar o slider na tela e obter o valor indicado pelo _slider_ naquele momento.
 
 ```python
 from __future__ import unicode_literals  # para textos com acento sem por `u` antes das aspas
@@ -149,9 +149,15 @@ class Slider:
         pop()  # popStyle() and popMat
 ```
     
+## Páginas relacionadas
+
+- [Um botão com orientação a objetos](Processing-Python/botao_com_OO.md)
+- [Uma classe de partículas simples](Processing-Python/particulas.md)
+- [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/mestrado/bandeirinhas/) (página externa)
+    
 ## Extra: Uma segunda versão da classe `Slider`    
     
-Acrescentando alguns extras e comentários à classe `Slider`.
+Acrescentando alguns extras e comentários à classe `Slider`. Permite o uso de sliders em *sketchs* com 3D.
 
 ```python
 class Slider:
@@ -169,17 +175,17 @@ class Slider:
         self.value = default
         self.label = label
         self.w, self.h = 120, 20
-        self.position(20, 20)  # default position
+        self.position(20, 20)  # Pos default
 
     def position(self, x, y):
-        """Set position on screen, and the rectx 'handle' position"""
+        """Define as coordenadas na tela, e calcula rectx, pos. do 'handle'"""
         self.x = x
         self.y = y
         # the position of the rect you slide:
         self.rectx = self.x + map(self.value, self.low, self.high, 0, self.w)
 
     def update(self):
-        """Updates the slider and returns value. Calls display()"""
+        """Atualiza o slider e devolve o valor (self.value). Chama display()"""
         # mousePressed moves slider
         if mousePressed and dist(mouseX, mouseY, self.rectx, self.y) < self.h:
             self.rectx = mouseX
@@ -192,22 +198,22 @@ class Slider:
         return self.value
         
     def display(self):
-        """Draw slider on screen, using orginal, not transformed, Processing coordinates."""
-        push()  # combines pushMatrix() and pushStyle()
-        resetMatrix()
-        camera()
+        """Desenha o slider na tela, usando coordenadas sem transformar"""
+        push()         # Combina pushMatrix() e pushStyle()
+        resetMatrix()  # push(), seguido de resetMatrix() e camera() permitem...
+        camera()       # ... desenhar o slider no sistema de coordenadas original
         rectMode(CENTER)
-        # gray line behind slider
+        # Linha cinza sob o slider
         strokeWeight(4)
         stroke(200)
         line(self.x, self.y, self.x + self.w, self.y)
-        # draw rectangle
+        # O retângulo, elemento principal da interface do slider
         strokeWeight(1)
         stroke(0)
         fill(255)
         translate(0, 0, 1)
         rect(self.rectx, self.y, self.w / 12, self.h)
-        # draw value
+        # Mostra o valor (value) atual
         fill(0)
         textSize(10)
         textAlign(CENTER, CENTER)
@@ -218,5 +224,5 @@ class Slider:
             text(self.label, self.x, self.y - self.h)
         else:
             text(self.label, self.x + self.w / 2, self.y - self.h)
-        pop()  # popStyle() and popMat
+        pop()  # equivale a popStyle() and popMatrix()
 ```
