@@ -14,13 +14,14 @@ angulos_para_arredondar = [15.0, 15.5, 40.2, 45.1, 60.8,  75.3]
 A função `int()` faz essa conversão para um número de cada vez, desprezando a parte decimal. Já `round()` "empurra" números com a parte decimal maior que 0.5 para cima, veja um exemplo abaixo.
 
 ```python
-print(int(10.8))   # exibe 10
-print(round(10.8)) # exibe 11
+print(int(10.8))   # exibe 10   (int)
+print(round(10.8)) # exibe 11.0 (um resultado float!)
 ```
 
 Uma primeira aproximação para o problema de arredondar ou converter em inteiros os números da lista pode ser criar um laço de repetição:
 
 ```python
+angulos_para_arredondar = [15.0, 15.5, 40.2, 45.1, 60.8,  75.3]
 angulos_inteiros = []
 for a in angulos_para_arredondar:
     angulos_inteiros.append(int(a))
@@ -32,13 +33,19 @@ print(angulos_inteiros)
 Mas uma outra estratégia muito legal que podemos usar é a função embutida `map()` do Python* 
 
 ```python
+angulos_para_arredondar = [15.0, 15.5, 40.2, 45.1, 60.8,  75.3]
 angulos_inteiros = list(map(int, angulos_para_arredondar))  # [15, 15, 40, 45, 60, 75]
 ```
 
-Repare que não estamos chamando a função `int()`, com o s parenteses, estamos passando o nome dela para a função `map()` como o primeiro argumento.
+Repare que não estamos chamando a função `int()`, o que seria feito se usássemos os parenteses, estamos passando o nome dela para a função `map()` como o primeiro argumento. Veja o mesmo exemplo, passando o nome da função `round()` como argumento:
+
+```python
+angulos_para_arredondar = [15.0, 15.5, 40.2, 45.1, 60.8,  75.3]
+angulos_arredondados = list(map(round, angulos_para_arredondar))  # [15.0, 16.0, 40.0, 45.0, 61.0, 75.0]
+```
+
 
 >* A função `map()` do Python  é diferente da [função `map() ` do Processing](https://github.com/villares/material-aulas/blob/master/Processing-Python/map_lerp.md), no Processing modo Python temos as duas ao mesmo tempo, e isso é meio estranho..., o ambiente vê comforme os valores que você passou qual das funções vai usar.
-
 
 ### O método `sort()` e funções anônimas com `lambda`
 
@@ -101,8 +108,21 @@ def draw():
               ]
     
     for func in formas:
-        func(100, 100, 100)
+        func(50, 50, 90)
 ```
+
+ou
+
+```python                        
+def draw():
+    formas = {'r': lambda x, y, lado: rect(x - lado / 2, y - lado / 2, lado, lado),
+              'e':  lambda x, y, lado: ellipse(x, y, lado, lado/2)
+              }
+    
+    formas['r'](50, 50, 80)
+    formas['e'](50, 50, 80)
+```
+
 
 TO DO: 
  - *Decorators*: O que são? Onde vivem? Do que se alimentam?
