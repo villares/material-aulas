@@ -40,9 +40,35 @@ Repare que não estamos chamando a função `int()`, com o s parenteses, estamos
 >* A função `map()` do Python  é diferente da [função `map() ` do Processing](https://github.com/villares/material-aulas/blob/master/Processing-Python/map_lerp.md), no Processing modo Python temos as duas ao mesmo tempo, e isso é meio estranho..., o ambiente vê comforme os valores que você passou qual das funções vai usar.
 
 
-### `sorted()` e funções anônimas com a palavra chave `lambda`
+### O método `sort()` e funções anônimas com `lambda`
 
-A palavra chave `lambda` permite uma forma abreviada de definir uma função, com algumas restrições, tem que ser um corpo em uma só expressão (não pode ter várias linhas). Como ela é possível criar funções sem nome no Python, que são úteis justamente quando precisamos de uma pequena função para passar como argumento de outra função! 
+#### `sort()` com e a função `key`.
+
+O método `sort()` das listas contendo *strings* (texto) põe os itens em ordem alfabética:
+```python
+frutas = ['morango', 'abacaxi', 'uva', 'banana', 'caju']
+frutas.sort()
+print(frutas) # ['abacaxi', 'banana', 'caju', 'morango', 'uva']
+
+```
+
+A função embutida `len()` do Python, quando aplicada a *strings* nos devolve o tamanho, número de caracteres: 
+
+```python
+print(len('abacaxi')) # exibe: 7
+```
+Se passarmos o nome da função `len()`, isto é `len` sem os parenteses, como o argumento nomeado (*keyword argument*) `key`, a lista vai ser ordenada pelo tamanho (crescente) das palavras!
+
+```python
+frutas = ['morango', 'abacaxi', 'uva', 'banana', 'caju']
+frutas.sort(key=len)
+print(frutas) # ['uva', 'caju', 'banana', 'morango', 'abacaxi']
+
+```
+
+#### `lambda`, uma pequena função sem nome
+
+A palavra chave `lambda` permite uma forma abreviada de definir uma função. Como ela é possível criar funções sem nome no Python, que são úteis justamente quando precisamos de uma pequena função para passar como argumento de outra função! 
 
 Veja este caso em que queremos uma função que nos dá a última letra de uma palavra:
 
@@ -58,8 +84,12 @@ Agora podemos ordenar a nossa lista de frutas pela última letra!
 
 ```python
 frutas = ['morango', 'abacaxi', 'uva', 'banana', 'caju']
-print(sorted(frutas, key=lambda p : p[-1]))
+frutas.sort(key=lambda p : p[-1])
+print(frutas)  # ['uva', 'banana', 'abacaxi', 'morango', 'caju']
 ```
+
+Não abuse no uso de *lambdas*, na dúvida crie uma função nomeada, o código fica mais legível. As funções anônimas *lambda* têm também algumas restrições, seu corpo é uma só expressão (não pode ter várias linhas).
+
 ### Listas e dicionários de funções
 
 Como as funções são também objetos/valores, podemos guardá-las em listas e dicionários.
