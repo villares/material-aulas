@@ -37,13 +37,14 @@ angulos_para_arredondar = [15.0, 15.5, 40.2, 45.1, 60.8,  75.3]
 angulos_inteiros = list(map(int, angulos_para_arredondar))  # [15, 15, 40, 45, 60, 75]
 ```
 
-Repare que não estamos chamando a função `int()`, o que seria feito se usássemos os parenteses, estamos passando o nome dela para a função `map()` como o primeiro argumento. Veja o mesmo exemplo, passando o nome da função `round()` como argumento:
+Repare que não estamos chamando a função `int()`, o que seria feito se usássemos os parenteses, estamos passando o nome dela para a função `map()` como o primeiro argumento. A função `map()` vai chamar `int()` para nós usando como argumento de `int()` cada valor da lista, e vai nos devolver o resultado. Em Python 2 é uma lista, em Python 3 é um objeto gerador que pode nos dar os itens um por vez ou ser convertido em uma lista.
+
+Veja o mesmo exemplo, passando o nome da função `round()` como argumento:
 
 ```python
 angulos_para_arredondar = [15.0, 15.5, 40.2, 45.1, 60.8,  75.3]
 angulos_arredondados = list(map(round, angulos_para_arredondar))  # [15.0, 16.0, 40.0, 45.0, 61.0, 75.0]
 ```
-
 
 >* A função `map()` do Python  é diferente da [função `map() ` do Processing](https://github.com/villares/material-aulas/blob/master/Processing-Python/map_lerp.md), no Processing modo Python temos as duas ao mesmo tempo, e isso é meio estranho..., o ambiente vê comforme os valores que você passou qual das funções vai usar.
 
