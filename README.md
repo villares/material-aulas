@@ -51,7 +51,7 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 - [Como usar seno `sin()`, cosseno `cos()` e arco tangente `atan2()`](Processing-Python/seno_cosseno_atan2.md)
 - [Manipulando números com `map()` e `lerp()`](Processing-Python/map_lerp.md) - e fazendo cores intermediárias!
   - [O que é *easing*?](Processing-Python/easing.md) - transições de movimento
-- [Funções como argumentos de outras funções](Processing-Python/funcoes-como-argumentos.md) o caso do `map()` e do `sort()`
+- [Funções como argumentos de outras funções](Processing-Python/funcoes-como-argumentos.md) - `sort()` e funções `lambda`
 
 #### Mais sobre estruturas de dados
 
