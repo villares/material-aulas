@@ -51,8 +51,10 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 - [Como usar seno `sin()`, cosseno `cos()` e arco tangente `atan2()`](Processing-Python/seno_cosseno_atan2.md)
 - [Manipulando números com `map()` e `lerp()`](Processing-Python/map_lerp.md) - e fazendo cores intermediárias!
   - [O que é *easing*?](Processing-Python/easing.md) - transições de movimento
+- [Funções como argumentos de outras funções](Processing-Python/funcoes-como-argumentos.md) o caso do `map()` e do `sort()`
 
 #### Mais sobre estruturas de dados
+
 - [Métodos das listas](Processing-Python/list_methods.md)
 - [Mais estruturas de dados: dicionário (_dict_)](Processing-Python/dicionarios.md)
 - [Mais estruturas de dados: conjunto (_set_)](Processing-Python/conjuntos.md)
@@ -80,6 +82,7 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 - [Exportando um aplicativo independente](Processing-Python/export_application.md)
 
 #### Arquivos externos
+
 - [Lendo um arquivo vetorial (SVG)](Processing-Python/recursos_vetoriais_externos.md)
 - [Lendo arquivos de imagem (*bitmap/raster*)](Processing-Python/imagens_externas.md)
   - [Lendo todas as imagens da pasta `data`](Processing-Python/imagens_externas_pasta2.md) e sorteando uma
@@ -87,6 +90,7 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 - [Lendo e escrevendo texto em arquivos (*file IO*)](Processing-Python/file_IO.md)
 
 #### Orientação a Objetos
+
 - [Primeiros passos de orientação a objetos: usando a classe Slider](Processing-Python/slider_com_OO.md)
 - [Um botão com orientação a objetos](Processing-Python/botao_com_OO.md)
 - [Uma classe de partículas simples](Processing-Python/particulas.md)
