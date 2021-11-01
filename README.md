@@ -90,14 +90,9 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 - [Primeiros passos de orientação a objetos: usando a classe Slider](Processing-Python/slider_com_OO.md)
 - [Um botão com orientação a objetos](Processing-Python/botao_com_OO.md)
 - [Uma classe de partículas simples](Processing-Python/particulas.md)
+- [Operações com vetores e a classe `PVector` do Processing](Processing-Python/vetores.md)
 - [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/mestrado/bandeirinhas/) (página externa)
 
-<!-- 
-#### Funções como objetos e algumas ideias de Programação Funcional
-- [Usando`map()`,`reduce()`e outras funções que recebem funções como argumentos](funcoes_como_objetos_1.md)
-- [Listas e dicionários de funções](funcoes_como_objetos_2.md)
-- [*Decorators*: O que são? Onde vivem? Do que se alimentam?](funcoes_decoradores.md)
--->
 #### Questões mais avançadas da ferramenta
 
 - [Usando várias abas no IDE](Processing-Python/modulos.md)
