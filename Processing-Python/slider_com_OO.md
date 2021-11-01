@@ -44,11 +44,11 @@ s1 = Slider(0, 90, 50, 'tamanho')  # mínimo, máximo, valor_inicial, etiqueta
 
 ### O que ficou de fora
 
-Não vamos ver ainda neste momento em detalhes de como funciona a definição da classe (a parte que segue `class Slider:`), que codifica como ela produz e inicializa os objetos ou como são definidos os métodos, nem trataremos do assunto mais avançado "herança" em que uma classe é baseada em outra, recebendo desta parte das suas características.
+Não vamos ver ainda neste momento em detalhes de como funciona a definição ou criação da classe (a parte que segue `class Slider:`), que codifica como ela produz e inicializa os objetos ou como são definidos os métodos, nem trataremos do assunto mais avançado "herança" em que uma classe é baseada em outra, recebendo desta parte das suas características.
 
 ## Exemplo de uso da classe `Slider`
 
-Veja agora um exemplo comentado de como instanciar e usar objetos da classe `Slider`que vão servir de interface gráfica para modificar um desenho de uma àrvore. 
+Veja agora um exemplo comentado de como instanciar e usar objetos da classe `Slider` que vão servir de interface gráfica para modificar um desenho de uma àrvore. 
 
 Note que os objetos _slider_ tem os métodos `.position()` para locá-los na tela depois de terem sido criados, e o método `.update()`, que chamaremos dentro da função `draw()` para fazer o duplo trabalho de desenhar o slider na tela e obter o valor indicado pelo _slider_ naquele momento.
 
@@ -103,7 +103,7 @@ def galho(tamanho):
 ### Como é a definição da classe `Slider`? (a classe por dentro)       
 
 > **Atenção: o código abaixo faz parte do exemplo acima.**
-> Opcionalmente, é possível por este código separado em uma nova aba *slider*, que se torna um arquivo `slider.py`. Nesse caso é preciso usar a instrução `from slider import Slider` no começo do seu código. Se não quiser fazer isso, simplesmente cole-o na aba principal, após o código anterior`.
+> A boa prática diz que, principalmente para projetos mais complexos, é interessante separar as classes em outro arquivo para facilitar a manipulação e leitura do código. Para isso, basta cria uma nova aba *slider*, que se torna um arquivo `slider.py`. Nesse caso é preciso usar a instrução `from slider import Slider` no começo do seu código. Se não quiser fazer isso, simplesmente cole-o na aba principal, após o código anterior`.
     
 Veja uma primeira versão da classe Slider
 
