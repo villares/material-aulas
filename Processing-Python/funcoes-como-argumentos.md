@@ -5,14 +5,14 @@ Pode passar despercebido no começo do aprendizado da linguagem Python que as fu
 
 ### O método `sort()` e funções anônimas com `lambda`
 
-#### `sort()` com e a função `key`.
+#### `sort()` e o argumento nomeado `key`. 
 
-O método `sort()` das listas contendo *strings* (texto) põe os itens em ordem alfabética:
+O método `sort()`, quando chamado em uma lista que contém números, põe os itens da lista em ordem crescente, já em listas contendo *strings* (texto) põe os itens em ordem alfabética:
+
 ```python
 frutas = ['morango', 'abacaxi', 'uva', 'banana', 'caju']
 frutas.sort()
 print(frutas) # ['abacaxi', 'banana', 'caju', 'morango', 'uva']
-
 ```
 
 A função embutida `len()` do Python, quando aplicada a *strings* nos devolve o tamanho, número de caracteres: 
@@ -20,18 +20,18 @@ A função embutida `len()` do Python, quando aplicada a *strings* nos devolve o
 ```python
 print(len('abacaxi')) # exibe: 7
 ```
-Se passarmos o nome da função `len()`, isto é `len` sem os parenteses, como o argumento nomeado (*keyword argument*) `key`, a lista vai ser ordenada pelo tamanho (crescente) das palavras!
+Se passarmos o nome da função `len()`, isto é `len` sem os parenteses, como o argumento nomeado (*keyword argument*) `key` do método `sort()` a lista vai ser ordenada pelo tamanho (crescente) das palavras!
 
 ```python
 frutas = ['morango', 'abacaxi', 'uva', 'banana', 'caju']
 frutas.sort(key=len)
 print(frutas) # ['uva', 'caju', 'banana', 'morango', 'abacaxi']
-
 ```
+O ponto é que podemos passar uma função, isto é, uma referência a uma função, como argumento de outra função.
 
 #### `lambda`, uma pequena função sem nome
 
-A palavra chave `lambda` permite uma forma abreviada de definir uma função. Como ela é possível criar funções sem nome no Python, que são úteis justamente quando precisamos de uma pequena função para passar como argumento de outra função! 
+A palavra chave `lambda` permite uma forma abreviada de definir funções. Com ela é possível criar funções sem nome no Python, que são úteis justamente quando precisamos de uma pequena função para passar como argumento de outra função! 
 
 Veja este caso em que queremos uma função que nos dá a última letra de uma palavra:
 
@@ -40,10 +40,10 @@ Veja este caso em que queremos uma função que nos dá a última letra de uma p
 def ultima_letra(palavra):
     return palavra[-1]
 
-# pode ser reescrita assim:
+# pode ser reescrita assim (mas não é a maneira recomendada de se definir uma função com nome):
 ultima_letra = lambda p : p[-1]
 ```
-Agora podemos ordenar a nossa lista de frutas pela última letra!
+Agora podemos ordenar a nossa lista de frutas pela última letra usando a expressão `lambda` que acabamos de ver:
 
 ```python
 frutas = ['morango', 'abacaxi', 'uva', 'banana', 'caju']
@@ -105,15 +105,21 @@ print(angulos_inteiros)
 # Resultado:
 # [15, 15, 40, 45, 60, 75]
 ```
+Isso pode ser abreviado assim:
 
-Mas uma outra estratégia muito legal que podemos usar é a função embutida `map()` do Python* 
+```python
+angulos_para_arredondar = [15.0, 15.5, 40.2, 45.1, 60.8,  75.3]
+angulos_inteiros = [int(a) for a in angulos_para_arredondar]
+```
+
+Uma outra estratégia que podemos usar é a função embutida `map()` do Python* 
 
 ```python
 angulos_para_arredondar = [15.0, 15.5, 40.2, 45.1, 60.8,  75.3]
 angulos_inteiros = list(map(int, angulos_para_arredondar))  # [15, 15, 40, 45, 60, 75]
 ```
 
-Repare que não estamos chamando a função `int()`, o que seria feito se usássemos os parenteses, estamos passando o nome dela para a função `map()` como o primeiro argumento. A função `map()` vai chamar `int()` para nós usando como argumento de `int()` cada valor da lista, e vai nos devolver o resultado. Em Python 2 é uma lista, em Python 3 é um objeto gerador que pode nos dar os itens um por vez ou ser convertido em uma lista.
+Repare que neste caso não estamos chamando a função `int()`, o que seria feito se usássemos os parenteses, estamos passando uma referência a ela como o primeiro argumento da chamada à `map()`. A função `map()` vai chamar `int()` para nós usando como argumento de `int()` cada valor da lista, e vai nos devolver o resultado. Em Python 2 é uma lista, em Python 3 é um objeto gerador que pode nos dar os itens um por vez ou ser convertido em uma lista.
 
 Veja o mesmo exemplo, passando o nome da função `round()` como argumento:
 
