@@ -25,11 +25,11 @@ def draw():
     pos += vel
     vel += acel
 ```
-![vetores1](assets/vetores1.gif)
+![vetores2](assets/vetores2.gif)
 
-No exemplo acima, estamos usando um vetor `pos` para representar a posição de uma partícula, o vetor `vel` para a sua velociade, e o vetor `acel` para uma aceleração para baixo (que pode ser interpretada como resultado de uma força causada pela ação da gravidade, por exemplo).
+No exemplo acima, o vetor `pos` representa a posição de uma partícula, o vetor `vel` a sua velociade, e o vetor `acel` uma aceleração para baixo (que pode ser interpretada como resultado de uma força causada pela ação da gravidade, por exemplo).
 
-No código o operador de atribuição aumentada `+=` aplicado à variável global `pos` faz a velocidade alterar a posição, algo equivalente a `pos = pos + vel` e da mesma forma a aceleração modifica a velocidade.
+No código o operador de atribuição aumentada `+=`, aplicado à variável global `pos`, faz a velocidade alterar a posição, algo equivalente a `pos = pos + vel`, e da mesma maneira a velocidade é alterada pela aceleração `acel`.
 
 ### Uma classe de partículas que fogem do mouse
 
@@ -78,7 +78,7 @@ class Particle:
 
 ![vetores1](assets/vetores1.gif)
 
-Neste segundo exemplo usamos a diferença (subtração) entre um vetor criado com as cordenadas da posição do mouse (`mouse_pos`) e a posição de cada partícula (`self.pos`) para calcular um vetor `delta` cuja magnitude `delta.mag()` afeta a aceleração das partículas. Usamos também o método `.normalize()` para obter um vetor unitário (de magnitude 1) mantendo apenas a direção do mouse em relação à partícula do vetor original `delta` e usado para calcular a direção da aceleração. O código poderia talvez ser tornado mais eficiente usando o cálculo do quadrado da magnitude (`.magSq()`) que é mais econômico.
+Neste segundo exemplo a diferença (subtração) entre um vetor criado com as cordenadas da posição do mouse (`mouse_pos`) e o vetor que indiaca a posição de cada partícula (`self.pos`) é usada para calcular um vetor `delta` cuja magnitude `delta.mag()` afeta a aceleração das partículas. Podem ser visto também o uso do método `.normalize()` para obter um vetor unitário (de magnitude 1) que, mantendo apenas a direção do vetor original `delta`, é usado para calcular a direção da aceleração. O código poderia talvez ser tornado mais eficiente usando o método que cálcula o quadrado da magnitude (`.magSq()`) que é mais econômico que o cálculo da magnitude.
 
 ### Métodos dos vetores `PVector`
 
