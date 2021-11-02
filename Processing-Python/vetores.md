@@ -25,7 +25,7 @@ def draw():
     pos += vel
     vel += acel
 ```
-![vetores2](assets/vetores2.gif)
+![vetores2](assets/vetores1.gif)
 
 No exemplo acima, o vetor `pos` representa a posição de uma partícula, o vetor `vel` a sua velociade, e o vetor `acel` uma aceleração para baixo (que pode ser interpretada como resultado de uma força causada pela ação da gravidade, por exemplo).
 
@@ -75,7 +75,7 @@ class Particle:
             self.pos.y = 0 
 ```
 
-![vetores1](assets/vetores1.gif)
+![vetores1](assets/vetores2.gif)
 
 Neste segundo exemplo a diferença (subtração) entre um vetor criado com as cordenadas da posição do mouse (`mouse_pos`) e o vetor que indiaca a posição de cada partícula (`self.pos`) é usada para calcular um vetor `delta` cuja magnitude `delta.mag()` afeta a aceleração das partículas. Podem ser visto também o uso do método `.normalize()` para obter um vetor unitário (de magnitude 1) que, mantendo apenas a direção do vetor original `delta`, é usado para calcular a direção da aceleração. O código poderia talvez ser tornado mais eficiente usando o método que cálcula o quadrado da magnitude (`.magSq()`) que é mais econômico que o cálculo da magnitude.
 
