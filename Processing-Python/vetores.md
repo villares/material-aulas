@@ -57,8 +57,7 @@ class Particle:
         delta = self.pos - mouse_pos
         d = delta.mag()
         if 0 < d < 50:
-            delta.normalize()
-            acel = delta * 0.01 / d * d
+            acel = delta.normalize() * 0.01 
             self.vel += acel
         self.pos += self.vel
         self.vel = self.vel * 0.995 # slow down
