@@ -212,4 +212,49 @@ def keyPressed():
         
 ```              
 
+ ### Exemplo Dragon Scale
+ 
 
+axioma = 'F'
+regras = {
+          'F': 'F-H',
+          'H': 'F+H',
+          }
+passo = 5
+angulo = 60 #em graus
+iteracoes = 15
+
+def setup():
+    global frase_resultado
+    size(800, 800)
+    frase_inicial = axioma
+    for _ in range(iteracoes):
+        frase_resultado = ''
+        for simbolo in frase_inicial:
+            substituir = regras.get(simbolo, simbolo)
+            frase_resultado = frase_resultado + substituir
+        #print(frase_inicial, frase_resultado)
+        frase_inicial = frase_resultado    
+    print(len(frase_resultado))
+    
+def draw():
+    background(500, 500, 150)
+    angulo = mouseX / 10.0
+    translate(width / 2, height / 2)
+
+    for simbolo in frase_resultado:
+        if simbolo == 'F':   # se simbolo for igual a 'F'
+            line(0, 0, 0, -passo)
+            translate(0, -passo)
+        elif simbolo == 'H':   # else if (senão se) o simbolo é H
+        
+            line(0, 0, 0, -passo)
+            translate(0, -passo)
+                
+        elif simbolo == '+':
+            
+            rotate(radians(angulo)) # + random(-5, 5)))
+        elif simbolo == '-':
+            rotate(radians(-angulo))
+
+![Exemplo Dragon Scale](https://user-images.githubusercontent.com/91154739/140662460-d3974a4b-8d26-4225-99da-4ce7b791163d.png)
