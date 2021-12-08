@@ -42,8 +42,41 @@ print(frutas)  # ['uva', 'banana', 'abacaxi', 'morango', 'caju']
 
 #### Como remover valores de uma coleção, com um laço e com a função `filter()`.
 
+Imagine que você tem uma coleção de valores, áreas, por exemplo, e gostaria de remover os zeros. Uma primeira maneira de fazer isso seria por meio de um laço de repetição:
 
+```python
+areas = [10, 5, 13.2, 0, 12, 55, 2, 0, 3]
 
+areas_filtradas = []
+for v in areas:
+    if v > 0:
+        areas_filtradas.append(v)
+
+print(areas_filtradas)  # exibe:  [10, 5, 13.2, 12, 55, 2, 3]
+```
+
+Uma segunda maneira seria usando uma *compreensão de lista*
+
+```python
+areas = [10, 5, 13.2, 0, 12, 55, 2, 0, 3]
+
+areas_filtradas = [v for v in areas if v > 0]
+```
+
+Uma terceira maneira seria criar uma função que tem a regra (maior que zero) e usar a função embutida `filter()`
+
+```python
+areas = [10, 5, 13.2, 0, 12, 55, 2, 0, 3]
+
+def maior_que_zero(n):
+    return n > 0  # equivale a dizer if n > 0: return True  
+
+areas_filtradas = filter(maior_que_zero, areas)
+```
+
+##### Exercício
+
+Você conseguiria escrever o exemplo de `filter()` usando uma função `lambda` ?
 
 
 #### `lambda`, uma pequena função sem nome
