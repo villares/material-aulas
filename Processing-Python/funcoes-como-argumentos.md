@@ -3,7 +3,7 @@
 
 Pode passar despercebido no começo do aprendizado da linguagem Python que as funções embutidas, que já vem com a linguagem, bem com as que definimos ou até importamos, são também "objetos", são "valores" e podem ser passadas como argumentos na chamada de outras funções. 
 
-### O método `sort()` e funções anônimas com `lambda`
+### O método `sort()` e a função `filter`
 
 #### `sort()` e o argumento nomeado `key`. 
 
@@ -29,21 +29,32 @@ print(frutas) # ['uva', 'caju', 'banana', 'morango', 'abacaxi']
 ```
 O ponto é que podemos passar uma função, isto é, uma referência a uma função, como argumento de outra função.
 
+Veja este caso em que criamos uma função que nos dá a última letra de uma palavra:
+
+```python
+def ultima_letra(palavra):
+    return palavra[-1]
+
+frutas = ['morango', 'abacaxi', 'uva', 'banana', 'caju']
+frutas.sort(key=ultima_letra)
+print(frutas)  # ['uva', 'banana', 'abacaxi', 'morango', 'caju']
+```
+
 #### `lambda`, uma pequena função sem nome
 
 A palavra chave `lambda` permite uma forma abreviada de definir funções. Com ela é possível criar funções sem nome no Python, que são úteis justamente quando precisamos de uma pequena função para passar como argumento de outra função! 
 
-Veja este caso em que queremos uma função que nos dá a última letra de uma palavra:
+Só para demonstrar a equivaência, na linha a seguir vamos criar a uma função igual à `ultima_letra` usando a palavra chave `lambda`, mas na verdade não é legal usar lambdas desta maneira... se fosse para criar uma função nomeada, era melhor usar o tradicional `def` ....
 
 ```python
-# esta definição de função normal
-def ultima_letra(palavra):
-    return palavra[-1]
-
-# pode ser reescrita assim (mas não é a maneira recomendada de se definir uma função com nome):
 ultima_letra = lambda p : p[-1]
+frutas = ['morango', 'abacaxi', 'uva', 'banana', 'caju']
+frutas.sort(key=ultima_letra)
+print(frutas)  # ['uva', 'banana', 'abacaxi', 'morango', 'caju']
+
 ```
-Agora podemos ordenar a nossa lista de frutas pela última letra usando a expressão `lambda` que acabamos de ver:
+
+A forma mais idiomática, usando a expressão `lambda` que acabamos de ver, seria assim:
 
 ```python
 frutas = ['morango', 'abacaxi', 'uva', 'banana', 'caju']
