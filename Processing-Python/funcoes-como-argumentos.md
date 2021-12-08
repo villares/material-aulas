@@ -40,21 +40,27 @@ frutas.sort(key=ultima_letra)
 print(frutas)  # ['uva', 'banana', 'abacaxi', 'morango', 'caju']
 ```
 
+#### Como remover valores de uma coleção, com um laço e com a função `filter()`.
+
+
+
+
+
 #### `lambda`, uma pequena função sem nome
 
 A palavra chave `lambda` permite uma forma abreviada de definir funções. Com ela é possível criar funções sem nome no Python, que são úteis justamente quando precisamos de uma pequena função para passar como argumento de outra função! 
 
-Só para demonstrar a equivaência, na linha a seguir vamos criar a uma função igual à `ultima_letra` usando a palavra chave `lambda`, mas na verdade não é legal usar lambdas desta maneira... se fosse para criar uma função nomeada, era melhor usar o tradicional `def` ....
+Só para demonstrar a equivalência, no exemplo a seguir vamos criar a função `ultima_letra` usando a palavra chave `lambda` em vez de `def`, na verdade não é legal usar lambdas desta maneira, para criar uma função com nome é melhor usar a forma tradicional com `def`.
 
 ```python
 ultima_letra = lambda p : p[-1]
+
 frutas = ['morango', 'abacaxi', 'uva', 'banana', 'caju']
 frutas.sort(key=ultima_letra)
 print(frutas)  # ['uva', 'banana', 'abacaxi', 'morango', 'caju']
-
 ```
 
-A forma mais idiomática, usando a expressão `lambda` que acabamos de ver, seria assim:
+Agora vejamos a forma mais idiomática, usando a expressão `lambda`, que acabamos de ver, no lugar onde iria o nome da função `ultima_letra`:
 
 ```python
 frutas = ['morango', 'abacaxi', 'uva', 'banana', 'caju']
