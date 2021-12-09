@@ -3,7 +3,7 @@
 
 Pode passar despercebido no começo do aprendizado da linguagem Python que as funções embutidas, que já vem com a linguagem, bem com as que definimos ou até importamos, são também "objetos", são "valores" e podem ser passadas como argumentos na chamada de outras funções. 
 
-### O método `sort()` e a função `filter`
+### O método `sort()` das listas e a função `filter()`
 
 #### `sort()` e o argumento nomeado `key`. 
 
