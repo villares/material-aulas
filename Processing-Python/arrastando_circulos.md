@@ -63,7 +63,7 @@ def mouseDragged():  # quando o mouse é movido apertado
 ![vários círculos sendo arrastados](assets/arrastar_circulos.gif)
 
 
-Para acompanhar o próximo exemplo você precisa estar familiarizado com [sequências e laços de repetição](lacos_py.md), uma vez que vamos usar uma estrutura de dados, uma lista, com tuplas dentro, para manter a posição e tamanho de vários círculos, permitindo que qualquer um deles seja arrastado!.
+Para acompanhar o próximo exemplo você precisa estar familiarizado com [sequências e laços de repetição](lacos_py.md), uma vez que vamos usar uma estrutura de dados, uma lista, com tuplas dentro, para manter a posição e tamanho de vários círculos, permitindo que qualquer um deles seja arrastado!. Um dos elementos sofisticados deste exemplo é que pegamos para olhar os dados de um círculo por vez, mas ao mesmo tempo, graças à função `enumerate()` recebemos a informação do índice, da posição desses dados na lista `circulos`. Usamos esse índice para indicar qual círculo está sendo arrastado.
 
 0. A variável global `arrastando`  vai manter registro da situação de arraste, como no exemplo anterior, só que agora também indicando o índice de posição de um círculo na lista `circulos`. Vamos estabelecer que `None` significa que nenhum círculo está sendo arrastado (um papel feito por `False` no exemplo anterior).
 
@@ -99,13 +99,14 @@ def draw():
 
 def mousePressed():  # quando um botão do mouse é apertado
     global arrastando
-    for i, circulo in enumerate(circulos):
+    # vamos olhar um círculo por vez da lista `circulos`
+    for i, circulo in enumerate(circulos):  # i é o índice na lista
         x, y, d = circulo
         dist_mouse_circulo = dist(mouseX, mouseY, x, y)
         raio = d / 2
-        if  dist_mouse_circulo < raio:
+        if  dist_mouse_circulo < raio:  # se o mouse estiver dentro
             arrastando = i
-            break  # encerra o laço
+            break  # interrompe o laço, não checa mais outros!
     
 def mouseReleased():  # quando um botão do mouse é solto
     global arrastando
