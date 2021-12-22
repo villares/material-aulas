@@ -1,4 +1,4 @@
-## Arrastando círculos
+# Arrastando círculos
 
 ![um círculo sendo arrastado](assets/arrastar_circulo.gif)
 
@@ -6,7 +6,7 @@ Neste exemplo vamos usar três funções que o Processing dispara pra nós em ev
 
 A ideia é que você possa adaptar este código para, por exemplo, arrastar pontos de controle de uma curva/polígono, ou então, outros 'elementos gráficos' do seu *sketch*. 
 
-### Arrastando um círculo
+## Arrastando um círculo
 
 0. Vamos precisar de um indicador de estado (*flag*) parara saber se o arraste começou, para isso vamos usar a variável global `arrastando`, e vamos precisar também duas variáveis para a posição do círculo, `x_circulo` e `y_circulo`.
 
@@ -58,7 +58,7 @@ def mouseDragged():  # quando o mouse é movido apertado
         y_circulo += mouseY - pmouseY    
 ```
 
-### Arrastando vários círculos
+## Arrastando vários círculos
 
 ![vários círculos sendo arrastados](assets/arrastar_circulos.gif)
 
@@ -119,8 +119,13 @@ def mouseDragged():  # quando o mouse é movido apertado
         y += mouseY - pmouseY
         circulos[arrastando] = (x, y, d)
 ```    
+### Desafio
 
-### Assuntos relacionados
+Note que quando os círculos se sobrepõe, o clique do mouse "captura" o mais de baixo para o arraste. Você conseguiria mudar este comportamento?
+Dica:  É possível usar `reversed()` para inverter uma lista, mas o problema é que `enumerate()` não nos entrega uma lista... é possível converter o "objeto enumerador" entregue por `enumerate()` em uma lista com `list()`.
+
+
+## Assuntos relacionados
 
 - [Um botão simples](botao_simples.md)
 - [Sequências e laços de repetição](lacos_py.md)
