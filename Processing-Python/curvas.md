@@ -373,7 +373,7 @@ def draw():
 
 <details>    
 <summary>Resposta: Usando a mesma estratégia de "arrastar círculos".</summary>
-<pre>
+<code>
 arrastando = None
 
 pontos = [ 
@@ -437,5 +437,5 @@ def mouseDragged():
         y += mouseY - pmouseY 
         pontos[arrastando] = (x, y)
 
-</pre>
+</code>
 </details>
