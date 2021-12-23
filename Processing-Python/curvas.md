@@ -372,6 +372,7 @@ def draw():
 ![errada](assets/curves_animate.gif)
 
 <details>    
+ 
 <summary>Resposta: Usando a mesma estratégia de "arrastar círculos".</summary>
  
 <code>
