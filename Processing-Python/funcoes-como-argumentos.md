@@ -74,14 +74,9 @@ def maior_que_zero(n):
 areas_filtradas = filter(maior_que_zero, areas)
 ```
 
-##### Exercício
-
-Você conseguiria escrever o exemplo de `filter()` usando uma função `lambda` ?
-
-
 #### `lambda`, uma pequena função sem nome
 
-A palavra chave `lambda` permite uma forma abreviada de definir funções. Com ela é possível criar funções sem nome no Python, que são úteis justamente quando precisamos de uma pequena função para passar como argumento de outra função! 
+A palavra chave `lambda` permite uma forma abreviada de definir funções. Com ela é possível criar funções anônimas (sem nome) no Python, que são úteis justamente quando precisamos de uma pequena função para passar como argumento de outra função! 
 
 Só para demonstrar a equivalência, no exemplo a seguir vamos criar a função `ultima_letra` usando a palavra chave `lambda` em vez de `def`, na verdade não é legal usar lambdas desta maneira, para criar uma função com nome é melhor usar a forma tradicional com `def`.
 
@@ -101,7 +96,11 @@ frutas.sort(key=lambda p : p[-1])
 print(frutas)  # ['uva', 'banana', 'abacaxi', 'morango', 'caju']
 ```
 
-Não abuse no uso de *lambdas*, na dúvida crie uma função nomeada, o código fica mais legível. As funções anônimas *lambda* têm também algumas restrições, seu corpo é uma só expressão (não pode ter várias linhas).
+Não abuse no uso de *lambdas*, na dúvida defina uma função com nome usando `def`, o código fica mais legível. As funções anônimas *lambda* têm também algumas restrições, seu corpo é uma só expressão (não pode ter várias linhas).
+
+##### Exercício
+
+Você conseguiria escrever o exemplo de `filter()` usando uma função `lambda` ?
 
 ### Listas e dicionários de funções
 
