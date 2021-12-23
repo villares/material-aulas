@@ -11,6 +11,8 @@ Veremos aqui uma variante dessa ideia usando arcos que, ao que parece, foi popul
 # Translated to Processing Python mode from the Java example at
 # "Processing: Creative Coding and Generative Art in Processing 2" by Ira Greenberg, Dianna Xu, Deepak Kumar 
 
+from random import choice
+
 tile_size = 50 
 rows = 50
 cols = 50
@@ -31,7 +33,7 @@ def setup():
 def color_swap(i, j):
     if i > 0 and j == 0:   # first tile of a row, starting from the 2nd row
         # same orientation as tile directly above
-        if (tiles[i-1][0].intorient == tiles[i][0].intorient):                    
+        if tiles[i-1][0].orientation == tiles[i][0].orientation:                    
             # set to opposite coloring of my neighbor above
             tiles[i][0].swapped_colors = not tiles[i-1][0].swapped_colors
         else:
@@ -39,7 +41,7 @@ def color_swap(i, j):
             tiles[i][0].swapped_colors = tiles[i-1][0].swapped_colors
     if j > 0:  # subsequent tiles in a row, including the first
         # same orientation as tile to the left
-        if (tiles[i][j-1].intorient == tiles[i][j].intorient):
+        if tiles[i][j-1].orientation == tiles[i][j].orientation:
             # set to opposite coloring of my neighbor to the left
             tiles[i][j].swapped_colors = not tiles[i][j-1].swapped_colors
         else:
@@ -54,8 +56,7 @@ class Tile:
         self.ic = ic  # inside – fill of arc if swapColor is False
         # outside – fill of background square if swapColor is False
         self.oc = oc
-        self.orient = random(1, 3)  # orientation of tile
-        self.intorient = int(self.orient)  # orientation of tile
+        self.orientation = choice((0, 1))  # orientation of tile
         # whether we should swap inside and outside colors
         self.swapped_colors = False
 
@@ -70,7 +71,7 @@ class Tile:
             fill(self.oc)
         rect(0, 0, self.sz, self.sz)  # draw background square
         translate(self.sz / 2, self.sz / 2)  # move to the center of the tile
-        rotate(self.intorient * PI / 2)  # rotate by the appropriate angle
+        rotate(self.orientation * PI / 2)  # rotate by the appropriate angle
         translate(-self.sz / 2, -self.sz / 2) # back to the upper left corner
         stroke(255)
         strokeWeight(3)
