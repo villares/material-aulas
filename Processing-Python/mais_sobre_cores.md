@@ -10,7 +10,7 @@ As principais funções do Processing que esperam receber uma sequência de núm
 - `color()` - essa função recebe os mesmo argumentos que as anteriores e produz um valor único que pode ser armazenado e passado para outras funções representando uma cor.
 - `background()` - cor de fundo, serve também para limpar a tela, não aceita cores translúcidas, aceita também uma imagem,`PImage`, do mesmo tamanho que a tela.
 
-Por baixo dos panos o Processing trata as cores como um número inteiro muito "grande", com 32 bits, então não se espante ao pedir `print()` de uma variável com uma cor e encontrar uma porção de números grandes (e frequentemente negativos!).
+Por baixo dos panos o Processing trata as cores como um número inteiro "bem grande", com 32 bits, então não se espante que ao pedir `print()` de uma variável com uma cor você vai ver um porção de números negativos grandes!. O negativo tem a ver com o primeiro bit desses números inteiros no caso das cores opacas. 
 
 ### Definindo cores com RGB (ou RGBA)
 
