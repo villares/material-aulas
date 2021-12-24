@@ -1,6 +1,16 @@
 ## Mais sobre cores
 
-Vamos falar aqui sobre como definir e manipular as cores, fingindo que podemos definí-las pelas intensidades e frequências das 'luzinhas' no monitor, ou no projetor, que vai exibir nosso trabalho. A verdade é que a síntese da cor acontece em um lugar escuro e úmido, o cérebro. A percepção de cor no final das contas depende do contexto em que ela se apresenta, um pixel, que em teoria produz uma determinada cor, vai ser entendido como outra cor dependendo do ambiente, especialmente o restante da imagem em volta. Se quiser ler mais sobre isso, procure sobre *neurociência da percepção das cores*.
+Vamos falar aqui sobre como definir e manipular as cores, fingindo que podemos definí-las pelas intensidades e frequências das 'luzinhas' no monitor, ou no projetor, que vai exibir nosso trabalho. 
+
+>A dura verdade é que a síntese da cor acontece em um lugar escuro e úmido, o cérebro. A percepção de cor no final das contas depende do contexto em que ela se apresenta, um pixel, que em teoria produz uma determinada cor, vai ser entendido como outra cor dependendo do ambiente, especialmente o restante da imagem em volta. Se quiser ler mais sobre isso, procure sobre *neurociência da percepção das cores*.
+
+As principais funções do Processing que esperam receber uma sequência de números que vai indicar uma cor são:
+- `fill()` - cor de preenchimento das formas (ṕode ser desativado com `noFill()`
+- `stroke()` - cor de traço, ou contorno, das formas (ṕode ser desativado com `noStroke()`
+- `color()` - essa função recebe os mesmo argumentos que as anteriores e produz um valor único que pode ser armazenado e passado para outras funções representando uma cor.
+- `background()` - cor de fundo, serve também para limpar a tela, não aceita cores translúcidas, aceita também uma imagem,`PImage`, do mesmo tamanho que a tela.
+
+Por baixo dos panos o Processing trata as cores como um número inteiro muito "grande", com 32 bits, então não se espante ao pedir `print()` de uma variável com uma cor e encontrar uma porção de números grandes (e frequentemente negativos!).
 
 ### Definindo cores com RGB (ou RGBA)
 
