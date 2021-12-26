@@ -47,7 +47,7 @@ def cor_sorteada(alpha=None):
         return color(r, g, b)
 ```
 
-O exemplo anterior foi feito para mostrar uma estratégia muito usada para argumentos opcionais, mas, uma vez que `alpha` quando vale **255**, opaco, dá no mesmo que criar uma cor sem mencionar o alpha, poderíamos fazer tudo até mais simples:
+O exemplo anterior foi feito para mostrar uma estratégia muito usada para argumentos opcionais, mas, uma vez que `alpha` quando vale **255** significa opaco, dá no mesmo que criar uma cor sem mencionar o alpha, poderíamos fazer tudo até mais simples:
 
 ```python
 def cor_sorteada(alpha=255):
