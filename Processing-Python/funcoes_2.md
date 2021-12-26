@@ -1,5 +1,5 @@
 
-## Argumentos padrão
+## Argumentos opcionais e valores padrão (*default*)
 
 ### Argumentos opcionais em funções que conhecemos
 
@@ -47,7 +47,7 @@ def cor_sorteada(alpha=None):
         return color(r, g, b)
 ```
 
-O exemplo anterior foi feito para mostrar um padrão muito comum de uso, mas uma vez que `alpha` valendo **255** é o mesmo que sem alpha, poderíamos fazer até mais simples:
+O exemplo anterior foi feito para mostrar uma estratégia muito usada para argumentos opcionais, mas, uma vez que `alpha` quando vale **255**, opaco, dá no mesmo que criar uma cor sem mencionar o alpha, poderíamos fazer tudo até mais simples:
 
 ```python
 def cor_sorteada(alpha=255):
