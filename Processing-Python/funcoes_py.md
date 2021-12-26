@@ -147,7 +147,7 @@ else:
 
 ## Assuntos relacionados
 
-- [Parâmetros padrão e outras malandragens](funcoes_2.md)
+- [Parâmetros opcionais e outras malandragens](funcoes_2.md)
 - [Recursividade em funções](recursao_py.md)
 
 ---
