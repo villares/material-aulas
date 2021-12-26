@@ -112,8 +112,13 @@ def menor_de_idade(idade):
      if idade < 18:
           return True
      else:
-          return False
+          return False          
+
+# Poderia ser escrito abreviadamente assim...
+# def menor_de_idade(idade):
+#     return idade < 18
 ```
+
 (função do exemplo anterior em uso)
 
 ```python
