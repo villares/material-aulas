@@ -158,13 +158,14 @@ def draw():
 
 ### Exemplo 2: Fechando a curva corretamente
 
-Para obter o resultado esperado (ou, caro leitor, pelo menos o que eu esperava) temos que acrescentar uma chamada com as coordenadas do último vértice antes do primeiro, e do primeiro vértice depois do último! Diga lá se não é estranho isso!
+Para obter o resultado esperado (ou, caro leitor, pelo menos o que eu esperava) temos que acrescentar uma chamada com as coordenadas do último vértice antes do primeiro, e do primeiro e segundo vértices depois do último! Diga lá se não é estranho isso!
 
 ```python
 curveVertex(pontos[-1][0], pontos[-1][1])
 for x, y in pontos:
     curveVertex(x, y)
 curveVertex(pontos[0][0], pontos[0][1])
+curveVertex(pontos[1][0], pontos[1][1])
 endShape(CLOSE)
 ```
 
@@ -198,13 +199,14 @@ def draw():
     for x, y in pontos:
         curveVertex(x, y)
     curveVertex(pontos[0][0], pontos[0][1])
+    curveVertex(pontos[1][0], pontos[1][1])
     endShape(CLOSE)
     strokeWeight(1)
     for i, ponto in enumerate(pontos):
         x, y = ponto
         fill(255)
         ellipse(x, y, 5, 5)
-        text(i, x+5, y-5)
+        text(i, x+ 5, y - 5)
 
 </pre>
 </details>
@@ -250,13 +252,17 @@ def draw():
     for x, y in pontos:
         curveVertex(x, y)
     curveVertex(pontos[0][0], pontos[0][1])
-    endShape()
-    strokeWeight(1)
-    for i, ponto in enumerate(pontos):
-        x, y = ponto
-        fill(255)
-        ellipse(x, y, 5, 5)
-        text(i, x+5, y-5)
+    curveVertex(pontos[1][0], pontos[1][1])
+    pontos = [
+    (100, 50),          
+    (150, 100),
+    (250, 100),
+    (250, 200),
+    (150, 200),
+    (50, 200),
+    (50, 100),
+    ] 
+
         
 </pre>
 </details>
