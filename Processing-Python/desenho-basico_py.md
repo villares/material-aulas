@@ -13,7 +13,7 @@ rect(20, 10, 40, 80)
 
 ## Área de desenho e coordenadas
 
-Usamos a função `size()` para determinar o tamanho da área de desenho (sem ela é gerada uma pequena tela de 100 por 100 pixels). Processing nos oferece automaticamente duas variáveis, os nomes `width` e `height`, que referenciam os valores de largura e altura da área de desenho, respectivamente. Podemos mostrar na parte de baixo da janela, no Console, esses valores usando `print()`.
+Usamos a função `size()` para indicar o tamanho da área de desenho que desejamos (sem ela é gerada uma pequena tela de 100 por 100 pixels). Processing nos oferece automaticamente duas variáveis, os nomes `width` e `height`, que referenciam os valores de largura e altura da área de desenho, respectivamente. Podemos mostrar na parte de baixo da janela, o *console*, esses valores usando `print()`.
 
 ```python
 size(400, 200) # define o tamanho da área de deseno (w, h) 
@@ -22,9 +22,9 @@ print(height) # exibe no console altura atual da tela
 ```
 ![Coordenadas](assets/01-console.png)
 
-O computador precisa saber a posição de cada ponto que desenha. Para fazer isso, normalmente usamos coordenadas cartesianas. Os eixos X e Y nos permitem especificar uma posição precisa na grade usando um par de números, normalmente o valor x seguido pelo valor y. 
+O computador precisa saber a posição de cada elemento a ser desenhado, e para informá-la usaremos coordenadas cartesianas, um par de números **x** e **y** que indicam posições ao longo de dois eixos, X (horizontal) e Y (vertical). Isso nos permite especificar uma posição precisa na grade, por convenção, menciondo o valor de **x** primeiro, seguido pelo valor de **y**. 
 
-Note que o eixo X cresce para a direita como de costume, mas o eixo Y é 'invertido' com valores crescendo 'para baixo'. Por exemplo, um ponto em (5, 14) fica a 5 unidades da borda esquerda da tela e 14 unidades para baixo do topo. 
+Note que o eixo X cresce para a direita como de costume (nas aulas de matemática), mas o eixo Y é 'invertido' com valores crescendo 'para baixo'. Por exemplo, um ponto em (5, 14) fica a 5 unidades da borda esquerda da tela e 14 unidades para baixo do topo. 
 
 ![Coordenadas](assets/01-coordenadas.jpg)
 
