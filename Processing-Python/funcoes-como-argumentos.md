@@ -40,9 +40,9 @@ frutas.sort(key=ultima_letra)
 print(frutas)  # ['uva', 'banana', 'abacaxi', 'morango', 'caju']
 ```
 
-#### Como remover valores de uma coleção, com um laço e com a função `filter()`.
+#### Como selecionar valores de uma coleção, com um laço e com a função `filter()`.
 
-Imagine que você tem uma coleção de valores, áreas, por exemplo, e gostaria de remover os zeros. Uma primeira maneira de fazer isso seria por meio de um laço de repetição:
+Imagine que você tem uma coleção de valores, áreas, por exemplo, e gostaria de remover os zeros. Na verdade vamos produzir uma nova coleção só com os valores que nos interessam, sem zeros ou valores negativos. Uma primeira maneira de fazer isso seria por meio de um laço de repetição:
 
 ```python
 areas = [10, 5, 13.2, 0, 12, 55, 2, 0, 3]
