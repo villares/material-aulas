@@ -22,7 +22,7 @@ print(height) # exibe no console altura atual da tela
 ```
 ![Coordenadas](assets/01-console.png)
 
-O computador precisa saber a posição de cada elemento a ser desenhado, e para informá-la usaremos coordenadas cartesianas, um par de números **x** e **y** que indicam posições ao longo de dois eixos, X (horizontal) e Y (vertical). Isso nos permite especificar uma posição precisa na grade, por convenção, menciondo o valor de **x** primeiro, seguido pelo valor de **y**. 
+O computador precisa saber a posição de cada elemento a ser desenhado, e para informá-la usaremos coordenadas cartesianas, um par de números **x** e **y** que indicam posições ao longo de dois eixos, X (horizontal) e Y (vertical). Isso nos permite especificar uma posição precisa na grade, e, por convenção, para fazer isso indicamos o valor de **x** primeiro, e em seguida o valor de **y**. 
 
 Note que o eixo X cresce para a direita como de costume (nas aulas de matemática), mas o eixo Y é 'invertido' com valores crescendo 'para baixo'. Por exemplo, um ponto em (5, 14) fica a 5 unidades da borda esquerda da tela e 14 unidades para baixo do topo. 
 
