@@ -59,10 +59,10 @@ strokeWeight(10) # espessura do traço de contorno 10 pixels
 noStroke() # sem traço de contorno
 ```
 
-A cor indicada pode conter além dos 3 números (R, G, B) um quarto número de transparênica (Alpha). 
+A cor indicada pode conter além dos 3 números (R, G, B) um quarto número de opacidade (*Alpha*). Com a opacidade 0 a cor fica totalmente transparente, 128 torna a cor 50% translúcida e 255 produz uma cor opaca, como se não houvesse sido usado o Alpha.
 
 ```python
-fill(255, 0, 0, 100) # preenchimento vermelho (R:Vermelho, G:Verde, B:Azul, Alpha:Transparência)
+fill(255, 0, 0, 100) # preenchimento vermelho (R:Vermelho, G:Verde, B:Azul, Alpha:opacidade)
 ```
 
 ## Fundo (*background*) e limpeza da área de desenho
