@@ -10,6 +10,29 @@ Algumas vantagens dessa estratégia podem ser:
 - Salvar o imagens em camadas separadas para posterior tratamento.
 - Aplicação de máscaras de recorte ou outros tratamentos
 
+Outra estratégia semelhante é desenhar em um objeto ou *grupo* de objetos *PShape*, que pode ser criado com a função [createGSahpe()](https://py.processing.org/reference/createShape.html), e pode depois desenhado na tela com `shape()'.
+
+### Um primeiro exemplo
+
+```python
+def setup():
+    size(400, 400)
+    global img
+    img = createGraphics(400, 400)
+    img.beginDraw()
+    img.clear() # limpa os pixels, deixa transparente
+    # img.background(200) # fundo (opaco)
+    img.fill(255, 0, 0)
+    img.rect(100, 100, 100, 100)
+    img.endDraw()
+  
+def draw():
+    background(sin(radians(frameCount * 0.5)) * 128 + 128)
+    image(img, 0, 0)
+    fill(0, 0, 200)
+    circle(mouseX, mouseY, 100)
+```
+
 ### Camadas que podem ser salvas em separado
 
 ```python
