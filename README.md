@@ -13,7 +13,7 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 - [O que é e como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)
   <br><sub>**ferramentas alternativas:**</sub>
      - <sub>[pyp5js](https://github.com/berinhard/pyp5js) com [**editor experimental online**](https://berinhard.github.io/pyp5js/pyodide/) do projeto</sub>
-     - <sub>Biblioteca [py5](https://py5.ixora.io ([instruções de instalação usando Thonny IDE e um plugin](https://github.com/tabreturn/thonny-py5mode)</sub>
+     - <sub>Biblioteca [py5](https://py5.ixora.io) ([instruções de instalação usando Thonny IDE e um plugin](https://github.com/tabreturn/thonny-py5mode)</sub>
      - <sub>Editores online [SkulptIDE](http://tiny.cc/processing_python) e [BrythonIDE](https://esperanc.github.io/brythonide/) do prof. Claudio Esperança</sub>
 
 #### Elementos fundamentais
