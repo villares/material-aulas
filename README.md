@@ -15,9 +15,8 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 - Biblioteca [py5](https://py5.ixora.io) ([instruções de instalação usando **Thonny IDE + plugin**](https://github.com/villares/thonny-py5mode/tree/pt-br))</sub>
 - Veja mais outras opções descritas neste quadro: [Processing + Python tools table](https://github.com/villares/Resources-for-teaching-programming#processing--python-tools-table)
 
-<details>
 
-<summary> ### Processing modo Python </summary>
+### material-aulas, versão Processing modo Python 
 
 #### Elementos fundamentais
 
@@ -116,7 +115,6 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 - [`caneta_automatica_py`](caneta_automatica) - Módulo para desenhar inspirado na tartaruga de Logo
 - [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
 
-</details>
 
 #### Recursos externos
 
