@@ -17,11 +17,7 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 
 
 <details>
-<summary>
-
-Material para Processing modo Python
-
-</summary>
+   <summary>Material para Processing modo Python</summary>
 
 #### Elementos fundamentais
 
@@ -115,6 +111,7 @@ Material para Processing modo Python
 
 
 </details>
+
 
 ### Pequenos projetos e outros exemplos
 
