@@ -6,15 +6,18 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 
  Você pode também [fazer pequenas doações](https://gumroad.com/villares)! 
 
-### Processing modo Python
+### Combinações de Processing com Python
 
-> Para aprender a programar usando **Processing modo Python**, uma ferramenta livre de programação com a sintaxe de Python e que inclui o vocabulário, os recursos de desenho e manipulação de imagens, de Processing.
+> O material deste repositório foi criado inicialmente para que se pudesse aprender a programar usando **Processing modo Python**, uma ferramenta livre de programação com a sintaxe de Python e que inclui o vocabulário, os recursos de desenho e manipulação de imagens do Processing. Existem hoje diversas possibilidades de combinar essas duas linguagens, veja abaixo com obter algumas delas:
 
 - [O que é e como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)
-  <br><sub>**ferramentas alternativas:**</sub>
-     - <sub>[pyp5js](https://github.com/berinhard/pyp5js) com [**editor experimental online**](https://berinhard.github.io/pyp5js/pyodide/) do projeto</sub>
-     - <sub>Biblioteca [py5](https://py5.ixora.io) ([instruções de instalação usando **Thonny IDE + plugin**](https://github.com/villares/thonny-py5mode/tree/pt-br))</sub>
-     - <sub>Editores online [SkulptIDE](http://tiny.cc/processing_python) e [BrythonIDE](https://esperanc.github.io/brythonide/) do prof. Claudio Esperança</sub>
+- [pyp5js](https://github.com/berinhard/pyp5js) com [**editor experimental online**](https://berinhard.github.io/pyp5js/pyodide/) do projeto</sub>
+- Biblioteca [py5](https://py5.ixora.io) ([instruções de instalação usando **Thonny IDE + plugin**](https://github.com/villares/thonny-py5mode/tree/pt-br))</sub>
+- Veja mais outras opções descritas neste quadro: [Processing + Python tools table](https://github.com/villares/Resources-for-teaching-programming#processing--python-tools-table)
+
+<details>
+
+<summary> ### Processing modo Python </summary>
 
 #### Elementos fundamentais
 
@@ -112,6 +115,8 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 - [Jogo PONG](https://github.com/villares/material-aulas/tree/master/pong) - Estudos para o fazer um jogo
 - [`caneta_automatica_py`](caneta_automatica) - Módulo para desenhar inspirado na tartaruga de Logo
 - [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
+
+</details>
 
 #### Recursos externos
 
