@@ -18,6 +18,7 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 
 <details>
    <summary><h2>Material para Processing modo Python</h2></summary>
+<p>
 
 #### Elementos fundamentais
 
@@ -110,7 +111,7 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 - [Manipulando a janela](Processing-Python/mais_que_size.md) (tela cheia, redimensionamento e múltiplas janelas)
 
 
-</details>
+</p></details>
 
 
 ### Pequenos projetos e outros exemplos
