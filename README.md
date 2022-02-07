@@ -17,9 +17,7 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 
 
 <details>
-<summary>
-
-### material-aulas, versão Processing modo Python 
+<summary><h2>Material para Processing modo Python</h2>
 
 </summary>
 
