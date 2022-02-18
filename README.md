@@ -16,9 +16,7 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 - Veja mais outras opções descritas neste quadro: [Processing + Python tools table](https://github.com/villares/Resources-for-teaching-programming#processing--python-tools-table)
 
 
-<details>
-   <summary><h2>Material para Processing modo Python</h2></summary>
-<p>
+## Material para Processing modo Python
 
 #### Elementos fundamentais
 
@@ -110,8 +108,6 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 - [Desenhando em um espaço fora da tela (offscreen buffer)](Processing-Python/offscreen_buffer.md) e recortando imagens
 - [Manipulando a janela](Processing-Python/mais_que_size.md) (tela cheia, redimensionamento e múltiplas janelas)
 
-
-</p></details>
 
 
 ### Pequenos projetos e outros exemplos
