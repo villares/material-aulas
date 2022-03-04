@@ -65,7 +65,7 @@ class Tile:
         # move to tile's x-y location (upper left corner)
         translate(self.x, self.y)
         noStroke()
-        if (self.swapped_colors):
+        if self.swapped_colors:
             fill(self.ic)
         else:
             fill(self.oc)
