@@ -49,6 +49,9 @@ def keyPressed():
 
 ![](assets/perlin1D.gif)
 
+> Na imagem acima, na parte superior a altura das linha é calculada a partir do `random(height / 2)`,
+> já as linhas da parte de baixo tem suas alturas produzidas a partir de uma chamada a `noise()`.
+
 Com o teclado podemos alterar o valor da escala e do deslocamente em X.
 
 Note que não é necessário usar `noiseSeed()` no `draw()` pois a semente do `noise()` é inicializada no início da execução do *sketch* e os valores obtidos são consultados por meio dos argumentos, determinísticos, calculados, como posições a serem consultadas em um 'campo' fixo.
