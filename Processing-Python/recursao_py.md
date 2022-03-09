@@ -6,28 +6,34 @@ A ideia central de recursão é de que uma função pode chamar outras funções
 
 Para que isso funcione (e não caia em uma cilada conhecida como "recursão infinita") é preciso que a função em certas condições chegue em uma opção de execução que não requer chamar ela mesma, é o chamado "caso base".
 
-### Um primeiro exemplo
 
-![imagem1](assets/recursividade.png)
+### Uma grade recursiva
 
 ```python
 def setup():
-    size(800, 400)
-    background(255)
-    desenha_retangulos(0, 0, 399, 10)
-    saveFrame("recursividade.png")
-
-def desenha_retangulos(x, y, tamamho, nivel):
-    fill(nivel * 24)
-    rect(x, y, tamamho, tamamho)
-    if nivel > 1:
-        desenha_retangulos(x, y, tamamho / 2, nivel - 1)
-        desenha_retangulos(x + tamamho, y, tamamho / 2, nivel - 1)
-    # o caso base aqui é quando nível (`nivel') chega a 1 (nivel > 1 se torna falso)
-    # e então apenas o retângulo no início da função é desenhado.
+    size(600, 600)
+    background(0)
+    grid(0, 0, width, 4)
+    
+def grid(grid_x, grid_y, grid_size, n):
+    cell_size = grid_size / float(n)
+    for i in range(n):
+        x = grid_x + i * cell_size
+        for j in range(n):
+            y = grid_y + j * cell_size
+            if cell_size < 20:
+                fill(0, 200, 0)
+                circle(x + cell_size / 2,
+                       y + cell_size /2,
+                       cell_size)
+            elif n == 1:
+                fill(0, 0, 200)
+                square(x, y, cell_size)
+            else:
+                grid(x, y, cell_size, int(random(1, 5)))
 ```
 
-> Este exemplo foi adaptado material de curso em [arteprog.space/programacao-criativa](https://arteprog.space/programacao-criativa/).
+![](assets/grade_recursiva.png)
 
 
 ### Árvore recursiva
@@ -58,36 +64,6 @@ def galho(tamanho):
 [exemplo interativo com pyp5js](https://abav.lugaralgum.com/sketch-a-day/2019/sketch_191025pybr2019/index.html)
 
 <iframe src="https://abav.lugaralgum.com/sketch-a-day/2019/sketch_191025pybr2019/index.html" width=500 height=500></iframe>
-
-
-### Uma grade recursiva
-
-```python
-def setup():
-    size(400, 400)
-    background(0)
-    noFill()
-    stroke(255)
-    grade(0, 0, width - 1, 4)
-    
-
-def grade(xg, yg, wg, n=None):
-    n = n or int(random(1, 5))  # n if n is not None else int(random(1, 5))
-    w = wg / float(n)
-    for i in range(n):
-        x = xg + i * w
-        for j in range(n):
-            y = yg + j * w
-            if n == 1:
-                rect(x, y, w, w)
-            else:
-                if w < 20:
-                    ellipse(w/2+x, w/2+y, w, w)
-                else:
-                    grade(x, y, w)
-```
-
-![](assets/grade_recursiva.png)
 
 
 ---
