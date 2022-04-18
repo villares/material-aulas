@@ -1,9 +1,11 @@
 # Laço de repetição `while`
 
-Vejamos aqui algmas pelas quais podemos querer usar o `while`, a sintaxe, a descrição de estratégias de uso em abstrato e em seguida alguns exemplos mais concretos:
+Veja aqui motivos para usar laços com `while`, a sintaxe, a descrição de estratégias de uso, em abstrato, e, em seguida, alguns exemplos mais concretos. 
 
-- Você precisa de contadores ou uma sequênica de números não-inteiros e a forma do laço `for` com `for i in range(inicio, parada, passo):` só funciona com inteiros. Isso pode ser resolvido implementando um [`frange()`](java_para_python.md#implementando-um-range-com-passos-não-inteiros) mas é comum ser feito com `while`;
-- Você só vai descobrir a hora de parar no meio do processo de repetições, isto é, o número de de iterações, onúmero de "voltas" do laço, não é conhecido com antecedência. Por essa razão ele é descrico às vezes como um "laço indetermidado".
+Quando é comum usar o `while`?
+
+- Você precisa de contadores ou uma sequênica de números não-inteiros e a forma do laço `for` com `for i in range(inicio, parada, passo):` só funciona com inteiros. Isso pode ser resolvido implementando um [`frange()`](java_para_python.md#implementando-um-range-com-passos-não-inteiros) mas é mais comum ser feito com `while`;
+- Você só vai saber a hora de parar o laço no meio do processo de repetições, isto é, o número de de iterações, o número de "voltas" do laço, não é conhecido com antecedência, é um chamado "laço indetermidado".
 
 ## Sumário
 
