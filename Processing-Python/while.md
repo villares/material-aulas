@@ -1,5 +1,9 @@
 # Laço de repetição `while`
-Este é um laço de repetição indeterminado, vejamos alguns exemplos!
+
+O laço de repetição com `while` vejamos aqui algumas razões para usá-lo, e mais pra frente alguns exemplos:
+
+- Você precisa de contadores ou uma sequênica de números não-inteiros e a forma do laço `for` com `for i in range(inicio, parada, passo):` só funciona com inteiros. Isso pode ser resolvido implementando um [`frange()`](java_para_python.md#implementando-um-range-com-passos-não-inteiros) mas é comum ser feito com `while`;
+- Você só vai descobrir a hora de parar no meio do processo de repetições, isto é, o número de de iterações, onúmero de "voltas" do laço, não é conhecido com antecedência. Por essa razão ele é descrico às vezes como um "laço indetermidado".
 
 ## Sumário
 
@@ -11,11 +15,6 @@ Este é um laço de repetição indeterminado, vejamos alguns exemplos!
 - [While e else](#while-e-else)
 
 [Assuntos relacionados](#assuntos-relacionados)
-
-Um laço de repetição com `while` pode ser conveniente quando:
-
-- Você precisa de contadores, ou uma sequênica de números, não-inteiros, e a forma `for i in range(inicio, parada, passo)` só funciona com inteiros. Isso pode ser resolvido implementando um [`frange()`](java_para_python.md#implementando-um-range-com-passos-não-inteiros) mas também pode ser feito com `while`
-- O número de de iterações (voltas do laço) é indeterminado, isto é, não é conhecido com antecedência, você só descobre a hora de parar no meio do processo de repetições.
 
 ### Sintaxe dos laços `while`
 
