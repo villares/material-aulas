@@ -61,9 +61,9 @@ while True:  # um laço inicialmente infinito
         break  # saída do laço
 ```
 
-# Primeiro exemplo
+### Primeiro exemplo
 
-no exemplo abaixo usaremos o laço `while` testando se o valor de um ângulo `ang` é menor que 360 graus(em radianos, a constante pi vezes dois, ou, no processing `TWO_PI`).
+No exemplo abaixo usaremos o laço `while` testando se o valor de um ângulo `ang` é menor que 360 graus(em radianos, a constante pi vezes dois, ou, no processing `TWO_PI`).
 
 O corpo do laço produz os vértices, que são pontos de um polígono em forma de estrela, a cada ciclo, e `ang` vai tendo o seu valor aumentado(`ang += passo`), até deixar de ser menor que `TWO_PI`, dessa forma encerrando o laço.
 
@@ -90,7 +90,7 @@ def estrela(x, y, raio_a, raio_b, num_pontas):
 
 ![estrela](assets/estrela.png)
 
-# Uma variante com círculos
+### Uma variante com círculos
 
 ```python
 def setup():
@@ -111,22 +111,21 @@ def mandala(x, y, raio, num_petalas):
 
 ![mandala](https: // user-images.githubusercontent.com/3694604/117585995-e3c3df80-b0eb-11eb-9f13-0a6ae1660408.png)
 
-# Acumulando itens em um conjunto
+### Acumulando itens em uma coleção
 
-# Adicionando tuplas sorteadas à uma lista, dependendo de uma regra, a
-# restrição da distância.
+#### Adicionando tuplas sorteadas à uma lista, dependendo de uma regra, a restrição da distância.
 
-suponha que você quer uma coleção de 1000 pontos, descritos por tuplas(x, y), produzidos(pseudo-)aleatoriamente, mas que cumpram um requisito, no caso estar a uma certa distância do centro do desenho. A cada ciclo do laço é "sorteada" uma posição, mas ela é adicionada à lista apenas se cumprir o requisito. como garantir que são adicionadas exatamente 1000 posições, uma vez que podem ser sorteadas posições que não atendem o requisito em alguns ciclos? A resposta é este uso de `while`.
+Suponha que você quer uma coleção de 1000 pontos, descritos por tuplas(x, y), produzidos(pseudo-)aleatoriamente, mas que cumpram um requisito, no caso estar a uma certa distância do centro do desenho. A cada ciclo do laço é "sorteada" uma posição, mas ela é adicionada à lista apenas se cumprir o requisito. como garantir que são adicionadas exatamente 1000 posições, uma vez que podem ser sorteadas posições que não atendem o requisito em alguns ciclos? A resposta é este uso de `while`.
 
 ```python
-posicoes=[]  # uma lista para guardar tuplas de posições
+posicoes = []  # uma lista para guardar tuplas de posições
 
 def setup():
     size(400, 400)
     background(0, 0, 100)
     while len(posicoes) < 1000:
-        x=random(width)
-        y=random(height)
+        x = andom(width)
+        y  andom(height)
         if dist(x, y, 200, 200) < 195:
              posicoes.append((x, y))
              circle(x, y, 5)
@@ -136,8 +135,7 @@ def setup():
 
 note que neste exemplo, muito simples, não garantimos que não teremos posições sobrepostas. isto pode ser resolvido consultando se a posição "sorteada" já existir na estrutura de dados. para listas isso é algo não eficiente. veja o exemplo a seguir, que resolve este problema, mas se trata de um desenho diferente, e a não-sobreposição é a única restrição.
 
-# Sorteando elementos que não se sobrepõe, as posições não repetem, usando
-# um conjunto/set
+##### Sorteando elementos que não se sobrepõe, as posições não repetem, usando um conjunto/set
 
 imagine uma grade com 6400 posições, vocẽ quer sortear exatamente 3200 quadrados, mas não quer sobreposições.
 
@@ -158,7 +156,7 @@ def setup():
 
 ![quadrados não sobretostos while](assets/while_set.png)
 
-# Somando larguras variáveis
+### Somando larguras variáveis
 
 neste terceiro exemplo queremos acumular retângulos de larguras aleatórias até uma determinada largura total máxima. no corpo do `while()`
 há um mecanismo que checa se a adição da largura da vez passa do limite, e ajusta apropriadamente a última largura.
@@ -181,7 +179,7 @@ def setup():
 
 ![estrela](assets/while_add.png)
 
-# `While` e `else`
+### `While` e `else`
 
 uma sintaxe que pode ser usada também nos laços `for`, é uma cláusula `else` após o laço, o código neste bloco só executa se o laço transcorreu até o fim sem interrupção(sem um `break`).
 
@@ -217,6 +215,6 @@ else:  # quando a condição for falsa
 
 no segundo exemplo, `break` interrompe a execução do laço, e nesse caso, o bloco do `else`, que só executa quando a condição do `while` não é mais verdadeira, não será executado.
 
-# Assuntos relacionados
+## Assuntos relacionados
 
 - [dicionários e conjuntos](dicionarios.md)
