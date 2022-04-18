@@ -6,7 +6,7 @@ Este é um laço de repetição indeterminado, vejamos alguns exemplos!
 - [Sintaxe dos laços while](#sintaxe-dos-laços-while)
 - [Primeiro exemplo](#primeiro-exemplo)
 - [Uma variante com círculos](#uma-variante-com-círculos)
-- [Acumulando itens em um conjunto](#acumulando-itens-em-um-conjunto)
+- [Acumulando itens em uma coleção](#acumulando-itens-em-uma-colecao)
 - [Somando larguras variáveis](#somando-larguras-variáveis)
 - [While e else](#while-e-else)
 
@@ -106,7 +106,7 @@ def mandala(x, y, raio, num_petalas):
 
 ![mandala](https://user-images.githubusercontent.com/3694604/117585995-e3c3df80-b0eb-11eb-9f13-0a6ae1660408.png)
 
-### Acumulando itens em um conjunto
+### Acumulando itens em uma coleção
 
 ##### Adicionando tuplas sorteadas à uma lista, dependendo de uma regra, a restrição da distância.
 
