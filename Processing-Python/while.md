@@ -6,7 +6,7 @@ Este é um laço de repetição indeterminado, vejamos alguns exemplos!
 - [Sintaxe dos laços while](#sintaxe-dos-laços-while)
 - [Primeiro exemplo](#primeiro-exemplo)
 - [Uma variante com círculos](#uma-variante-com-círculos)
-- [Acumulando itens em uma coleção](#acumulando-itens-em-uma-colecao)
+- [Acumulando itens em uma coleção](#acumulando-itens-em-uma-coleção)
 - [Somando larguras variáveis](#somando-larguras-variáveis)
 - [While e else](#while-e-else)
 
