@@ -1,35 +1,43 @@
 # Laço de repetição `while`
-este é um laço de repetição indeterminado, vejamos alguns exemplos!
 
-# Sumário
+Veja aqui motivos para usar laços com `while`, a sintaxe, a descrição de estratégias de uso, em abstrato, e, em seguida, alguns exemplos mais concretos. 
 
-- [sintaxe dos laços while](  # sintaxe-dos-laços-while)
-- [primeiro exemplo](  # primeiro-exemplo)
-- [uma variante com círculos](  # uma-variante-com-círculos)
-- [acumulando itens em um conjunto](  # acumulando-itens-em-um-conjunto)
-- [somando larguras variáveis](  # somando-larguras-variáveis)
-- [while e else](  # while-e-else)
+Quando é comum usar o `while`?
 
-[assuntos relacionados](  # assuntos-relacionados)
+- Você precisa de contadores ou uma sequênica de números não-inteiros e a forma do laço `for` com `for i in range(inicio, parada, passo):` só funciona com inteiros. Isso pode ser resolvido implementando um [`frange()`](java_para_python.md#implementando-um-range-com-passos-não-inteiros) mas é mais comum ser feito com `while`;
+- Você só vai saber a hora de parar o laço no meio do processo de repetições, isto é, o número de de iterações, o número de "voltas" do laço, não é conhecido com antecedência, é um chamado "laço indetermidado".
+
+## Sumário
+
+- [Sintaxe dos laços while](#sintaxe-dos-laços-while)
+- [Primeiro exemplo](#primeiro-exemplo)
+- [Uma variante com círculos](#uma-variante-com-círculos)
+- [Acumulando itens em uma coleção](#acumulando-itens-em-uma-coleção)
+- [Somando larguras variáveis](#somando-larguras-variáveis)
+- [While e else](#while-e-else)
+
 
 um laço de repetição com `while` pode ser conveniente quando:
 
 - você precisa de contadores, ou uma sequênica de números, não-inteiros, e a forma `for i in range(inicio, parada, passo)` só funciona com inteiros. isso pode ser resolvido implementando um[`frange()`](java_para_python.md  # implementando-um-range-com-passos-não-inteiros) mas também pode ser feito com `while`
 - O número de de iterações(voltas do laço) é indeterminado, isto é, não é conhecido com antecedência, você só descobre a hora de parar no meio do processo de repetições.
 
-# Sintaxe dos laços `while`
+### Sintaxe dos laços `while`
 
-de forma geral os laços de repetição baseados no `while` tem a seguinte estrutura:
+De forma geral os laços de repetição baseados no `while` tem a seguinte estrutura: 
 
-```python
-while «condição»:  # enquanto a condição for verdadeira, execute:
-    «corpo»
+```python 
+while «condição»: #  enquanto a condição for verdadeira, execute:
+    «corpo» 
 ```
-no caso da estrutura if, a condição é avaliada como True (verdadeiro) ou False (falso) e o bloco de códigos é executado uma única vez. no caso do while, o bloco de códigos será executado enquanto a condição for verdadeira, resultando em um loop infinito. para evitar essa repetição infinita é necessário modificar o código do corpo de modo que:
+Em contraste com estrutura do `if`, em que quando a condição é avaliada como True (verdadeiro) o bloco de código do corpo é executado uma única vez, No caso do `while`, o bloco do corpo será executado diversas vezes, enquanto a condição for verdadeira, podendo inclusive resultar em um loop infinito. Para evitar essa repetição infinita é necessário garantir que, no código do corpo, em algum momento:
 
-no código do corpo é necessário que seja modificada de alguma forma a condição avaliada pelo laço, para que ela se torne `False` (falsa) em determinado momento, ou então invocar `break`. uma dessas duas coisas é necessária para evitar uma repetição infinita.
+- Alguma ação acontece que torna a condição avaliada pelo laço seja `False` (falsa)
+- Alguma condição no corpo, em uma estrutura com `if`, por exemplo, permite a execução da instrução `break`. 
+ 
+Uma dessas duas coisas é necessária para evitar uma repetição infinita.
 
-vejamos uma descrição em abstrato de algumas dessas estratégias(que podem inclusive ser combinadas):
+Vejamos uma descrição em abstrato de algumas dessas estratégias (que podem inclusive ser combinadas):
 
 ```python
 «é criada uma variável-contador»
