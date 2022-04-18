@@ -25,10 +25,10 @@ De forma geral os laços de repetição baseados no `while` tem a seguinte estru
 while «condição»: #  enquanto a condição for verdadeira, execute:
     «corpo» 
 ```
-No caso da estrutura if, a condição é avaliada como True (verdadeiro) ou False (falso) e o bloco de códigos é executado uma única vez. No caso do while, o bloco de códigos será executado enquanto a condição for verdadeira, resultando em um loop infinito. Para evitar essa repetição infinita é necessário modificar o código do corpo de modo que em algum momento:
+Em contraste com estrutura do `if`, em que quando a condição é avaliada como True (verdadeiro) o bloco de código do corpo é executado uma única vez, No caso do `while`, o bloco do corpo será executado diversas vezes, enquanto a condição for verdadeira, podendo inclusive resultar em um loop infinito. Para evitar essa repetição infinita é necessário garantir que, no código do corpo, em algum momento:
 
-- Alguma ação acontece que torna a condição avaliada pelo laço `False` (falsa)
-- Alguma condição no corpo, em uma estrutura com `if`, por exemplo, permite a execução de uma instrução `break`. 
+- Alguma ação acontece que torna a condição avaliada pelo laço seja `False` (falsa)
+- Alguma condição no corpo, em uma estrutura com `if`, por exemplo, permite a execução da instrução `break`. 
  
 Uma dessas duas coisas é necessária para evitar uma repetição infinita.
 
