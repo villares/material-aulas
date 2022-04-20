@@ -32,7 +32,7 @@ rect(47, 47, 50, 50)
 ```
 ![RGB](assets/RGB.png)
 
-Uma maneira de escolher uma cor e obter os valores RGB dela é usando a ferramenta no menu do IDE, **Ferramentas > Selector de côr** (*Tools > Color Selector...*).
+Uma maneira de escolher uma cor e obter os valores RGB dela é usando a ferramenta no menu do IDE, **Ferramentas > Selector de cor** (*Tools > Color Selector...*).
 
 ![](assets/color_selector.png)
 
