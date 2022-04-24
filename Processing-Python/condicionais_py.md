@@ -82,7 +82,7 @@ def draw():
 | `!=` | `a != b` | verdadeiro se *a* **diferente** de *b* |
 | `and` | `a and b` | verdadeiro se *a* **e** *b* forem ambos verdadeiros |
 | `or` | `a or b` | verdadeiro se *a* **ou** *b* forem verdadeiros |
-| `not` | `not a` | **não** *a* verdadeiro resulta falso, e **não** *a* falso resulta verdadeiro |
+| `not` | `not a` | se *a* verdadeiro resulta falso, e sendo *a* falso resulta verdadeiro |
 | `in` | `a in b` | verdadeiro se elemento *a* **existe dentro** da coleção *b* |
 | `is` | `a is b` | verdadeiro se *a* **é o mesmo objeto** do que *b*, não bastando serem iguais |
 
