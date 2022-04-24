@@ -71,7 +71,10 @@ print('-'.join(coisas))
 # exibe: a-b-c
 
 print('\n'.joint('xyz')  # \n indica uma quebra de linha
-# exibe em 3 linhas: x\ny\n\z
+# exibe em 3 linhas:
+# x
+# y
+# z
 ```
 
 ### Substituições com `.replace()` e inserções com `.format()`
