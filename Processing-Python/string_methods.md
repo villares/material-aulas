@@ -4,26 +4,6 @@
 
 <sub>Na programação orientada a objetos vemos que funções atreladas a objetos de uma classe são conhecidas como métodos.</sub>
 
-### Convertendo números em texto
-
-É possível controlar a formatação da conversão de números em string, como o número de casas decimais ou com zeros à esquerda para garantir um certo número de dígitos, usando o método `.format()` e um string com uma notação especial entre as chaves `{}`:
-
-```python
-print("ângulo calculado: {:.2f}".format(ang)) # Exibe valor com duas casas decimais
-
-nome_arquivo = "arq{:0>5}.svg".format(123) # Produz um string para nome_arquivo: "arq00123.svg"
-```
-
-Veja mais alguns exemplos.
-
-```python
-print(u"π: {:+n}".format(PI)) # com sinal, exibe π: +3.14159
-print("{:.20f}".format(PI)) # com vinte posições decimais, exibe 3.14159274101257324219
-print("{:.4f}".format(PI)) # com quatro posições decimais, exibe 3.1416
-print("{:07.4f}".format(PI)) # preenche com zeros até 8 caracteres, exibe 003.1416
-print("{:.4%}".format(PI)) # interpreta o número como uma porcentagem e exibe 314.1593%
-```
-
 ### Convertendo caixa alta e baixa (maiúsculas e minúsculas)
 
 ```python
@@ -102,10 +82,30 @@ frase = u'as pessoas são estranhas'.replace('as', 'a')
 frase = frase.replace(u'são', u'é')
 print(frase)  # exibe: a pessoa é estranha
 
-# str.format(valor, outro) substitui valores em pontos especiais do texto
-nome, idade = 'Alexandre', 120 # repare que o nome é <str> e a idade <int>
+# str.format(valor, outro) substitui valores em pontos especiais do texto marcados com chaves: {}
+nome, idade = 'Alexandre', 120 # repare que o nome é <str> e a idade <int>, a idade será convertida em <str>. 
 print(u"Olá, {}, você tem mesmo {} anos?".format(nome, idade)) 
 # exibe: Olá, Alexandre, você tem mesmo 120 anos?
+```
+
+### Convertendo números em texto
+
+É possível controlar a formatação da conversão de números em string, como o número de casas decimais ou com zeros à esquerda para garantir um certo número de dígitos, usando o método `.format()` e um string com uma notação especial entre as chaves `{}`:
+
+```python
+print("ângulo calculado: {:.2f}".format(ang)) # Exibe valor com duas casas decimais
+
+nome_arquivo = "arq{:0>5}.svg".format(123) # Produz um string para nome_arquivo: "arq00123.svg"
+```
+
+Veja mais alguns exemplos.
+
+```python
+print(u"π: {:+n}".format(PI)) # com sinal, exibe π: +3.14159
+print("{:.20f}".format(PI)) # com vinte posições decimais, exibe 3.14159274101257324219
+print("{:.4f}".format(PI)) # com quatro posições decimais, exibe 3.1416
+print("{:07.4f}".format(PI)) # preenche com zeros até 8 caracteres, exibe 003.1416
+print("{:.4%}".format(PI)) # interpreta o número como uma porcentagem e exibe 314.1593%
 ```
 
 #### E tem mais coisas ainda!
