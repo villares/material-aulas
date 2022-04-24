@@ -89,7 +89,7 @@ Neste segundo exemplo a diferença (subtração) entre um vetor criado com as co
 | [fromAngle()](https://py.processing.org/reference/Pvetor_fromAngle.html)       | Cria um novo vetor unitário 2D a partir de um ângulo.                                                                              |
 | [copy()](https://py.processing.org/reference/Pvetor_copy.html)                 | Produz um novo vetor, cópia do original.                                                                                           |
 | [mag()](https://py.processing.org/reference/Pvetor_mag.html)                   | Calcula a magnitude do vetor.                                                                                                      |
-| [magSq()](https://py.processing.org/reference/Pvetor_magSq.html)               | Calcula a magnitude ao quadrado do vetor.                                                                                          |
+| [magSq()](https://py.processing.org/reference/Pvetor_magSq.html)               | Calcula a magnitude ao quadrado do vetor. É mais rápido que calcular a magnitude!                                                                                      |
 | [add()](https://py.processing.org/reference/Pvetor_add.html)                   | Soma compontentes x, y, e z, ou um segundo vetor a um vetor. Pode-se usar o operador `+`  para somar dois vetores também.          |
 | [sub()](https://py.processing.org/reference/Pvetor_sub.html)                   | Subtrai compontentes x, y, e z, ou um segundo vetor a um vetor. Pode-se usar o operador `-` pra subtrair um vetor de outro também. |
 | [mult()](https://py.processing.org/reference/Pvetor_mult.html)                 | Multipica um vetor por um valor escalar. Pode-se usar o operador `*`                                                               |
@@ -101,7 +101,7 @@ Neste segundo exemplo a diferença (subtração) entre um vetor criado com as co
 | [limit()](https://py.processing.org/reference/Pvetor_limit.html)               | Limita a magnitude do vetor a um certo valor.                                                                                      |
 | [setMag()](https://py.processing.org/reference/Pvetor_setMag.html)             | Define, isto é altera, a magnitude do vetor.                                                                                       |
 | [heading()](https://py.processing.org/reference/Pvetor_heading.html)           | Calcula o ângulo de rotação do vetor, isto é, para onde ele aponta.                                                                |
-| [rotate()](https://py.processing.org/reference/Pvetor_rotate.html)             | Gira o vetor um verto ângulo em radianos  (2D apenas).                                                                             |
+| [rotate()](https://py.processing.org/reference/Pvetor_rotate.html)             | Gira o vetor um certo ângulo em radianos (funciona apenas em 2D).                                                                             |
 | [lerp()](https://py.processing.org/reference/Pvetor_lerp.html)                 | Produz o resultado da interpolação linear entre dois vetores.                                                                      |
 | [angleBetween()](https://py.processing.org/reference/Pvetor_angleBetween.html) | Calcula o ângulo entre dois vetores.                                                                                               |
 
