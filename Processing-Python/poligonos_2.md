@@ -66,26 +66,20 @@ def setup():
     pontos_shape = [(20, 20), (330, 50), (300, 370)]
     draw_poly(pontos_shape)
 
-def draw_poly(points, holes=None, closed=True):
+def draw_poly(pts, closed=True):
     """
     Aceita como pontos sequencias de tuplas, lista ou vetores com (x, y) ou (x, y, z).
     Por default faz um polígono fechado.
     """
     beginShape()  # inicia o PShape
-    for p in points:
-        vertex(p[0], p[1])    
+    for p in pts:
+        vertex(p[0], p[1]) # ou use `vertex(*p)` para aceitar pontos em 3D   
     # encerra o PShape
     if closed:
         endShape(CLOSE)
     else:
         endShape()
-        
-    # Para aceitar pontos em 2D ou 3D
-    # for p in points:
-    #     if len(p) == 2:
-    #         vertex(p[0], p[1])
-    #     else:
-    #         vertex(*p)  # desempacota pontos em 3d
+       
 ```
 
 </details>   
