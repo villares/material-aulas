@@ -69,7 +69,7 @@ print(area_estragada(20, 40)) # exibe `None`
 Quando usamos dicionários, o método `get` procura por uma chave e devolve o valor atribuido a ela no dicionário, se não encontrar a chave devolve `None`.
 
 ```python
-ddd = {'SP' : 11, 'RJ' : 21, 'BH' : 31} 
+ddd = {'SP': 11, 'RJ': 21, 'BH': 31} 
 
 prefixo = ddd.get(key)
 if prefixo is not None:
