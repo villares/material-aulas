@@ -21,14 +21,16 @@ image(img_a, 0, 0)  # exibe na área de desenho a imagem
 
 ![image](https://user-images.githubusercontent.com/3694604/165303439-bf04975d-551c-46a6-8afc-9f59230841ae.png)
 
-Assim como `0`(zero), `""` (um string vazio), e uma lista ou uma coleção vazia, o `None` é considerado "semelhante a `False`" caso seja avaliado em um contexto que espera verdadeiro (`True`)  ou falso (`False'). Outros números, strings e coleções com itens dentro, assim como a maioria dos objetos, são considerados "semelhantes a `True`".
+Assim como `0`(zero), `""` (um string vazio), e uma lista ou uma coleção vazia, o `None` é considerado "semelhante a `False`" caso seja avaliado em um contexto que espera verdadeiro (`True`)  ou falso (`False`). Outros números que não zero, strings e coleções com itens dentro, assim como a maioria dos objetos, são considerados "semelhantes a `True`" nesses casos.
 
-Então se o seu programa está gerando dinamicamente as imagens, ou, se você desconfia que um arquivo de imagem pode não estar presente, é posível evitar a interrupção do programa com o erro descrito acima com algo assim:
+Então. se o seu programa está gerando dinamicamente as imagens, ou, se você desconfia que o arquivo de imagem pode não estar presente, é posível evitar a interrupção do programa com o erro descrito acima com algo assim:
 
 ```python 
 img = loadImage(arquivo_de_imagem)
 if img:
     image(img, 0, 0)  
+else:
+    print('Imagem faltando')
 ``` 
 
 ### Funções e métodos que não devolvem nenhum valor
