@@ -47,10 +47,10 @@ print(a)          # exibe: None
 Funções que não tem a instrução `return` no corpo, ou tem `return` sem nada depois, quando são chamadas não devolvem nenhum valor, quer dizer, na verdade, elas devolvem esse valor especial `None`. 
 
 ```python
-def triplica(valor):
+def print_triplicado(valor):
     print(valor * 3)
     
-print(triplica('Oi')) 
+print(print_triplicado('Oi')) 
 # Exibe:
 # OiOiOi
 # None
