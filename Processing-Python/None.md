@@ -29,12 +29,12 @@ def area(a, b):
     resultado = a * b
     return resultado
     
-print(area(20, 40) # exibe `800`
+print(area(20, 40)) # exibe `800`
 
 def area_estragada(a, b):
     resultado = a * b
 
-print(area_estragada(20, 40) # exibe `None`
+print(area_estragada(20, 40)) # exibe `None`
 
 print(fill(255, 0, 0))  # muda a cor de preenchimento para vermelho, e exibe `None` no console
 
