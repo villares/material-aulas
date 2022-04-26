@@ -70,4 +70,6 @@ else:
     print('Chave não encontrada!')
 ```
 
-No meu [exemplo final sobre arrastar círculos](arrastando_circulos.md), se nenhum círculo está sendo arrastado, a variável que mantém o índice do círculo fica valendo `None`.
+### Um exemplo mais longo
+
+No [exemplo final sobre arrastar círculos](arrastando_circulos.md), se nenhum círculo está sendo arrastado, a variável que mantém o índice do círculo fica valendo `None`.
