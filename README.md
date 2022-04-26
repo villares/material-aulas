@@ -45,6 +45,7 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
   - [Textos no programa, no console e na tela (*strings*)](Processing-Python/strings_py.md)
   - [Trabalhando com fontes e outros ajustes do texto](Processing-Python/tipografia.md)
   - [Métodos dos objetos *string*](Processing-Python/string_methods.md)
+  - [O valor especial `None`](Processing-Python/None.md)
 - [Interação: input com teclado e mouse](Processing-Python/input_py.md)
 - [Aleatoriedade: `random` e números 'sorteados'](Processing-Python/aleatoriedade_1.md)
   - [Mais sobre aleatoriedade e as diferenças ente o `random` de Processing e de Python](Processing-Python/aleatoriedade_2.md)
