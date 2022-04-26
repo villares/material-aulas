@@ -1,8 +1,6 @@
 # O valor especial `None`
 
-O Python tem um valor especial chamado `None`, que é um objeto único de um tipo só dele, o `NoneType`, e é em geral usado para representar "nada" ou "nenhum valor".
-
-Pode ser usado para indicar a ausência de um valor válido, ou o final de uma sequência de valores (uma estratégia conhecida como "valor sentinela").
+O Python tem um valor especial chamado `None`, que é um objeto único de um tipo só dele, o `NoneType`, e é em geral usado para representar "nada" ou "nenhum valor". Pode ser usado para indicar a ausência de um valor válido, ou o final de uma sequência de valores (uma estratégia conhecida como "valor sentinela").
 
 ### O exemplo da função que carrega uma imagem no Processing
 
@@ -35,7 +33,7 @@ if img:
 
 ### Funções e métodos que não devolvem nenhum valor
 
-`None` é o que nos entregam funções que não foram feitas para devolver um vlalor. 
+`None` é o que nos entregam funções que não foram feitas para devolver algum valor. 
 
 ```python
 print(fill(255, 0, 0))  # muda a cor de preenchimento para vermelho, e exibe `None` no console
@@ -47,12 +45,12 @@ print(a)          # exibe: None
 Funções que não tem a instrução `return` no corpo, ou tem `return` sem nada depois, quando são chamadas não devolvem nenhum valor, quer dizer, na verdade, elas devolvem esse valor especial `None`. 
 
 ```python
-def print_triplicado(texto):
-    print(texto * 3)
+def triplica(valor):
+    print(valor * 3)
     
-print(texto_triplicado('oi')) 
+print(triplica('Oi')) 
 # Exibe:
-# oioioi
+# OiOiOi
 # None
 
 def area(a, b):
