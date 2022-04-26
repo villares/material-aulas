@@ -1,6 +1,6 @@
 # O valor especial `None`
 
-O Python tem um valor especial chamado `None`, que é um objeto único do tipo `NoneType`, e é em geral usado para representar "nada" ou "nenhum valor".
+O Python tem um valor especial chamado `None`, que é um objeto único de um tipo só dele, o `NoneType`, e é em geral usado para representar "nada" ou "nenhum valor".
 
 Pode ser usado para indicar a ausência de um valor válido, ou o final de uma sequência de valores (uma estratégia conhecida como "valor sentinela").
 
@@ -22,6 +22,16 @@ image(img_a, 0, 0)  # exibe na área de desenho a imagem
 ```
 
 ![image](https://user-images.githubusercontent.com/3694604/165303439-bf04975d-551c-46a6-8afc-9f59230841ae.png)
+
+Assim como `0`(zero), `""` (um string vazio), e uma lista ou uma coleção vazia, o `None` é considerado "semelhante a `False`" caso seja avaliado em um contexto que espera verdadeiro (`True`)  ou falso (`False'). Outros números, strings e coleções com itens dentro, assim como a maioria dos objetos, são considerados "semelhantes a `True`".
+
+Então se o seu programa está gerando dinamicamente as imagens, ou, se você desconfia que um arquivo de imagem pode não estar presente, é posível evitar a interrupção do programa com o erro descrito acima com algo assim:
+
+```python 
+img = loadImage(arquivo_de_imagem)
+if img:
+    image(img, 0, 0)  
+``` 
 
 ### Funções e métodos que não devolvem nenhum valor
 
