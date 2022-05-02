@@ -126,32 +126,23 @@ for (int i = particles.size()-1; i >= 0; i--) {
 
 **Python**
 
-```python
-for p in reversed(particles):
-    p.run()
-    if p.isDead():
-        del p
-```
-
-ou, se você precisar o índice:
 
 ```python
 for i in reversed(range(len(particles))):
     p = particles[i]
     p.run()
     if p.isDead():
-        del particles[i]
+        particles.pop(i)
 ```
 
 ou ainda:
 
 ```python
-for i, p in reversed(list(enumerate(self.particles))):
+for i, p in reversed(list(enumerate(particles))):
     p.run()
     if p.isDead():
-        del p # ou del self.particles[i]
+        del particles[i]
 ```
-
 
 
 ### `if`, `else` e seus amigos
