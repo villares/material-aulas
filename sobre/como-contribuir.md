@@ -101,10 +101,10 @@ Para criar uma *issue*:
 <details>
   <summary>Usando a interface web</summary>
 
-     - simplesmente entre no repositório que você precisa atualizar no seu perfil e procure pelo botão verde __Fetch Upstream__.
-     - um menu abrirá indicando a situação do seu repositório. Se não houver conflitos, você poderá atualizar apertando o botão verde __Fetch and Merge__.
-     ![Botão Fetch](https://github.com/rgobatto/material-aulas/blob/update-como-contribuir/sobre/fetch.png)
-     - no caso de existir conflitos, é possível comparar os repositórios e entender onde ocorrem os conflitos, e isso pode ser um pouco mais complexo.
+- simplesmente entre no repositório que você precisa atualizar no seu perfil e procure pelo botão verde __Fetch Upstream__.
+- um menu abrirá indicando a situação do seu repositório. Se não houver conflitos, você poderá atualizar apertando o botão verde __Fetch and Merge__.
+![Botão Fetch](https://github.com/rgobatto/material-aulas/blob/update-como-contribuir/sobre/fetch.png)
+- no caso de existir conflitos, é possível comparar os repositórios e entender onde ocorrem os conflitos, e isso pode ser um pouco mais complexo.
 
 </details>
  
