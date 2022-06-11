@@ -97,6 +97,7 @@ Para criar uma *issue*:
    
 
 ### Como atualizar o seu fork em relação ao repositório de origem quando este já "evoluiu"?
+
 <details>
   <summary>Usando a interface web</summary>
 
@@ -110,31 +111,31 @@ Para criar uma *issue*:
 <details>
    <summary>Usando a interface da linha de comando (aponte o terminal para a pasta local do repositório)</summary>
 
-```shell
- # Primeiro você precisa adicionar como remote o repositório original
- 
- git remote add upstream https://github.com/usuario/nome-do-repositorio.git
+  ```shell
+   # Primeiro você precisa adicionar como remote o repositório original
 
- # depois, você recupera todos os branches daquele remote, incluindo o branch master
- 
- git fetch upstream
+   git remote add upstream https://github.com/usuario/nome-do-repositorio.git
 
- # certifique-se que localmente você está na master
- 
- git checkout master
+   # depois, você recupera todos os branches daquele remote, incluindo o branch master
 
- # você pode re-escrever o seu branch 
- # re-escreva a sua master, de forma que seus commits que ainda não estão na
- # master não se percam no meio do caminho
- 
- git rebase upstream/master
+   git fetch upstream
 
- # essas alterações todas são feitas apenas localmente. se você quiser atualizar o seu fork,
- # precisa "forçar" o push com as alterações. o -f (de force) só precisa ser usado uma vez após o rebase
- 
- git push -f origin master
- 
-```
+   # certifique-se que localmente você está na master
+
+   git checkout master
+
+   # você pode re-escrever o seu branch 
+   # re-escreva a sua master, de forma que seus commits que ainda não estão na
+   # master não se percam no meio do caminho
+
+   git rebase upstream/master
+
+   # essas alterações todas são feitas apenas localmente. se você quiser atualizar o seu fork,
+   # precisa "forçar" o push com as alterações. o -f (de force) só precisa ser usado uma vez após o rebase
+
+   git push -f origin master
+
+  ```
 
  </details>
  
