@@ -94,16 +94,21 @@ Para criar uma *issue*:
 
 - Procure uma issue que você acha que consegue "resolver", escrevendo um material novo ou corrigindo um existente.
    
-### Como atualizar o seu fork em relação ao repositório de origem quando este já "evoluiu"?
+   
 
-- Usando a interface web
+### Como atualizar o seu fork em relação ao repositório de origem quando este já "evoluiu"?
+<details>
+  <summary>Usando a interface web</summary>
 
      - simplesmente entre no repositório que você precisa atualizar no seu perfil e procure pelo botão verde __Fetch Upstream__.
      - um menu abrirá indicando a situação do seu repositório. Se não houver conflitos, você poderá atualizar apertando o botão verde __Fetch and Merge__.
      ![Botão Fetch](https://github.com/rgobatto/material-aulas/blob/update-como-contribuir/sobre/fetch.png)
      - no caso de existir conflitos, é possível comparar os repositórios e entender onde ocorrem os conflitos, e isso pode ser um pouco mais complexo.
 
-- Usando a interface da linha de comando (aponte o terminal para a pasta local do repositório):
+</details>
+ 
+<details>
+   <summary>Usando a interface da linha de comando (aponte o terminal para a pasta local do repositório)</summary>
 
 ```shell
  # Primeiro você precisa adicionar como remote o repositório original
@@ -131,6 +136,8 @@ Para criar uma *issue*:
  
 ```
 
+ </details>
+ 
 - [Tutorial em português](https://blog.da2k.com.br/2014/01/19/manter-repositorio-github-forkado-sincronizado-com-o-original/)
 - Mais informações em inglês [aqui](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork) e [aqui](https://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository)
 
