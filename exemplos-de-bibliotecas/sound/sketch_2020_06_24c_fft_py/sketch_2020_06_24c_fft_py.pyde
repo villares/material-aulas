@@ -10,7 +10,7 @@ of sound. Change the number of bands to get more spectral bands
 # FFT fft
 
 # Define how many FFT bands to use (this needs to be a power of two)
-bands = 8
+bands = 32
 
 # Define a smoothing factor which determines how much the spectrums of consecutive
 # points in time should be combined to create a smoother visualisation of the spectrum.
@@ -20,7 +20,7 @@ bands = 8
 smoothingFactor = 0.2
 
 # Create a vector to store the smoothed spectrum data in
-sum = [0] * 8
+sum = [0] * bands
 
 # Variables for drawing the spectrum:
 # Declare a scaling factor for adjusting the height of the rectangles

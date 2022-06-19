@@ -94,43 +94,51 @@ Para criar uma *issue*:
 
 - Procure uma issue que você acha que consegue "resolver", escrevendo um material novo ou corrigindo um existente.
    
+   
+
 ### Como atualizar o seu fork em relação ao repositório de origem quando este já "evoluiu"?
 
-- Usando a interface web
+<details>
+  <summary>Usando a interface web</summary>
 
-     - simplesmente entre no repositório que você precisa atualizar no seu perfil e procure pelo botão verde __Fetch Upstream__.
-     - um menu abrirá indicando a situação do seu repositório. Se não houver conflitos, você poderá atualizar apertando o botão verde __Fetch and Merge__.
-     ![Botão Fetch](https://github.com/rgobatto/material-aulas/blob/update-como-contribuir/sobre/fetch.png)
-     - no caso de existir conflitos, é possível comparar os repositórios e entender onde ocorrem os conflitos, e isso pode ser um pouco mais complexo.
+- simplesmente entre no repositório que você precisa atualizar no seu perfil e procure pelo botão verde __Fetch Upstream__.
+- um menu abrirá indicando a situação do seu repositório. Se não houver conflitos, você poderá atualizar apertando o botão verde __Fetch and Merge__.
+![Botão Fetch](https://github.com/rgobatto/material-aulas/blob/update-como-contribuir/sobre/fetch.png)
+- no caso de existir conflitos, é possível comparar os repositórios e entender onde ocorrem os conflitos, e isso pode ser um pouco mais complexo.
 
-- Usando a interface da linha de comando (aponte o terminal para a pasta local do repositório):
-
-```shell
- # Primeiro você precisa adicionar como remote o repositório original
+</details>
  
- git remote add upstream https://github.com/usuario/nome-do-repositorio.git
+<details>
+   <summary>Usando a interface da linha de comando (aponte o terminal para a pasta local do repositório)</summary>
 
- # depois, você recupera todos os branches daquele remote, incluindo o branch master
- 
- git fetch upstream
+  ```shell
+   # Primeiro você precisa adicionar como remote o repositório original
 
- # certifique-se que localmente você está na master
- 
- git checkout master
+   git remote add upstream https://github.com/usuario/nome-do-repositorio.git
 
- # você pode re-escrever o seu branch 
- # re-escreva a sua master, de forma que seus commits que ainda não estão na
- # master não se percam no meio do caminho
- 
- git rebase upstream/master
+   # depois, você recupera todos os branches daquele remote, incluindo o branch master
 
- # essas alterações todas são feitas apenas localmente. se você quiser atualizar o seu fork,
- # precisa "forçar" o push com as alterações. o -f (de force) só precisa ser usado uma vez após o rebase
- 
- git push -f origin master
- 
-```
+   git fetch upstream
 
+   # certifique-se que localmente você está na master
+
+   git checkout master
+
+   # você pode re-escrever o seu branch 
+   # re-escreva a sua master, de forma que seus commits que ainda não estão na
+   # master não se percam no meio do caminho
+
+   git rebase upstream/master
+
+   # essas alterações todas são feitas apenas localmente. se você quiser atualizar o seu fork,
+   # precisa "forçar" o push com as alterações. o -f (de force) só precisa ser usado uma vez após o rebase
+
+   git push -f origin master
+
+  ```
+
+ </details>
+ 
 - [Tutorial em português](https://blog.da2k.com.br/2014/01/19/manter-repositorio-github-forkado-sincronizado-com-o-original/)
 - Mais informações em inglês [aqui](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/syncing-a-fork) e [aqui](https://stackoverflow.com/questions/7244321/how-do-i-update-a-github-forked-repository)
 
