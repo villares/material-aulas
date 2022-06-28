@@ -53,7 +53,7 @@ E semelhante a `null` de Java temos o valor `None` em Python os usos não são t
 
 O caso mais simples é um `for` baseado em um contador qualquer, como `for (int i=0; i < limite; i++){ … `  e a tradução é `for i in range(limite): …`
 
-O chamado *for each*, mostrado no quadro, também é muito direto, mas se você encontrar um loop `for` no Java com um passo não inteiro (*float*), como a construção baseada em `range()` no  Python só funciona com números inteiros, você vai ter que implementar um range 'especia', como mostrado abaixo com `frange()` ou então convertê-lo em um loop `while`:
+O chamado *for each*, mostrado no quadro, também é muito direto, mas se você encontrar um loop `for` no Java com um passo não inteiro (*float*), como a construção baseada em `range()` no  Python só funciona com números inteiros, você vai ter que implementar um range 'especial', como mostrado abaixo com `frange()` ou então convertê-lo em um loop `while`:
 
 **Java**
 
@@ -196,8 +196,8 @@ resultado = cond ? a : b
 
 #### switch & case
 
-Não existe `switch/case` no Python, você pode trocar por uma cadeia de `if/elif` ou, se for só para chamar diferentes funções, um dicionário de funções [TO DO página sobre isso].
-**Java**
+Não existia `switch/case` no Python até recentementte, agora com Python 3.10 temos correspondência de padrões (*pattern matching*), mas acreidto que em geral você pode trocar a estrutura do Java por uma cadeia de `if/elif` ou, se for só para chamar diferentes funções, um dicionário de funções [TO DO página sobre isso].
+**Java** você pode trocar
 ```java
 char letter = 'b';
 
