@@ -14,9 +14,9 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 > - Biblioteca [py5](https://py5.ixora.io) ([instruções de instalação usando **Thonny IDE + plugin**](https://github.com/villares/thonny-py5mode/tree/pt-br))
 > Veja mais outras opções descritas neste quadro: [Processing + Python tools table](https://github.com/villares/Resources-for-teaching-programming#processing--python-tools-table)
 
-## [Material para Python 3 com py5](Processing-Python-py5/README.md)  **[novo! revisões em andamento!]**
+## [Material para Python 3 com py5](Processing-Python-py5/README.md) (*Novo!* Em construção.)
 
-## [Material para Processing modo Python](Processing-Python/)
+## [Material para Processing modo Python](Processing-Python/) (2019—2022)
 
 #### Recursos relacionados
 
