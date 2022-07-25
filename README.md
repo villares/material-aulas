@@ -20,6 +20,11 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 
 ### Recursos externos
 
+##### Biblioteca py5 (Python 3 + Processing)
+
+- [py5.ixora.io/reference/sketch.html](https://py5.ixora.io/reference/sketch.html) - Referência oficial da biblioteca py5
+- [py5_cc.pdf](https://github.com/villares/processing.py-cheat-sheet/blob/pt-br/py5/py5_cc.pdf) - Referências rápida (colinha)
+
 ##### Processing modo Python
 
 - [py.processing.org/reference](http://py.processing.org/reference) - Referência do Processing modo Python
