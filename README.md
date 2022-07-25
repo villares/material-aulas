@@ -9,115 +9,14 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 ### Ferramentas de programação utilizadas: combinações de Processing com Python
 
 > O material deste repositório foi criado inicialmente para que se pudesse aprender a programar usando **Processing modo Python**, uma ferramenta livre de programação com a sintaxe de Python e que inclui o vocabulário, os recursos de desenho e manipulação de imagens do Processing. Existem hoje diversas possibilidades de combinar essas duas linguagens, veja abaixo com obter algumas delas:
+> - [O que é e como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)
+> - [pyp5js](https://github.com/berinhard/pyp5js) com [**editor experimental online**](https://berinhard.github.io/pyp5js/pyodide/) do projeto
+> - Biblioteca [py5](https://py5.ixora.io) ([instruções de instalação usando **Thonny IDE + plugin**](https://github.com/villares/thonny-py5mode/tree/pt-br))
+> Veja mais outras opções descritas neste quadro: [Processing + Python tools table](https://github.com/villares/Resources-for-teaching-programming#processing--python-tools-table)
 
-- [O que é e como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/)
-- [pyp5js](https://github.com/berinhard/pyp5js) com [**editor experimental online**](https://berinhard.github.io/pyp5js/pyodide/) do projeto
-- Biblioteca [py5](https://py5.ixora.io) ([instruções de instalação usando **Thonny IDE + plugin**](https://github.com/villares/thonny-py5mode/tree/pt-br))
-- Veja mais outras opções descritas neste quadro: [Processing + Python tools table](https://github.com/villares/Resources-for-teaching-programming#processing--python-tools-table)
+## [Material para Python 3 com py5](Processing-Python-py5/)
 
-
-## Material para Processing modo Python
-
-#### Elementos fundamentais
-
-- [Primeiros passos e desenho básico](Processing-Python/desenho-basico_py.md)
-  - [Variáveis](Processing-Python/variaveis.md)
-  - [Desenhando polígonos](Processing-Python/poligonos_1.md) 
-  - [O que é indentação?](Processing-Python/indentacao.md) 
-  - [Mais sobre cores (RGB e HSB)](Processing-Python/mais_sobre_cores.md)
-- [Condicionais (`if` e `else`)](Processing-Python/condicionais_py.md)
-  - [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](Processing-Python/atribuicao-e-comparacao.md)
-  - [Condições aninhadas e outras estruturas condicionais](Processing-Python/condicionais_2.md)
-  - [Divisão com inteiros, obtendo resultados `float`, divisão por zero e o resto da divisão](Processing-Python/divisao.md) 
-- [Movimento: uma animação simples usando `setup()` e `draw()`](Processing-Python/movimento_py.md)
-  - [Escopo de variáveis (local e global)](Processing-Python/escopo_py.md)
-- [Declarando novas funções](Processing-Python/funcoes_py.md)
-  - [Modificando as coordenadas com `translate()`, `rotate()` e mais!](Processing-Python/transformacoes_coordenadas.md)
-  - [Funções recursivas](Processing-Python/recursao_py.md)
-  - [Funções com argumentos padrão (ou opcionais)](Processing-Python/funcoes_2.md)
-- [Sequências e laços de repetição (iteração com `for`)](Processing-Python/lacos_py.md)
-  - [Mais sobre sequências e fatias](Processing-Python/mais_sequencias.md)
-  - [Grades retangulares: filas e colunas de elementos](Processing-Python/grades.md)
-  - [Mais sobre polígonos](Processing-Python/poligonos_2.md)
-  - [Desenhando formas curvas](Processing-Python/curvas.md) 
-  - [Laço de repetição com `while`](Processing-Python/while.md)
-- [Tipos de valores (inteiros, números de ponto flutuante, texto (*strings*))](Processing-Python/tipagem_py.md)
-  - [Textos no programa, no console e na tela (*strings*)](Processing-Python/strings_py.md)
-  - [Trabalhando com fontes e outros ajustes do texto](Processing-Python/tipografia.md)
-  - [Métodos dos objetos *string*](Processing-Python/string_methods.md)
-  - [O valor especial `None`](Processing-Python/None.md)
-- [Interação: input com teclado e mouse](Processing-Python/input_py.md)
-- [Aleatoriedade: `random` e números 'sorteados'](Processing-Python/aleatoriedade_1.md)
-  - [Mais sobre aleatoriedade e as diferenças ente o `random` de Processing e de Python](Processing-Python/aleatoriedade_2.md)
-  - [*Perlin Noise* (ruído de Perlin) um tipo especial de número pseudo-aleatório](Processing-Python/noise.md)
-- [Como usar seno `sin()`, cosseno `cos()` e arco tangente `atan2()`](Processing-Python/seno_cosseno_atan2.md)
-- [Manipulando números com `map()` e `lerp()`](Processing-Python/map_lerp.md) - e fazendo cores intermediárias!
-  - [O que é *easing*?](Processing-Python/easing.md) - transições de movimento
-- [Funções como argumentos de outras funções](Processing-Python/funcoes-como-argumentos.md) - `sort()` e funções `lambda`
-
-#### Mais sobre estruturas de dados
-
-- [Métodos das listas](Processing-Python/list_methods.md)
-- [Mais estruturas de dados: dicionário (_dict_)](Processing-Python/dicionarios.md)
-- [Mais estruturas de dados: conjunto (_set_)](Processing-Python/conjuntos.md)
-- [Compreensão de listas e outras *comprehensions*](Processing-Python/comprehension.md)
-
-#### Desenhando em 3D
-
-- [Primeiros passos com `size(…, …, P3D)`](Processing-Python/desenho-3D.md)
-
-#### Mais sobre interação com o teclado e mouse
-
-- [Escutando teclas simultâneas](Processing-Python/teclas_simultaneas.md)
-- [Um botão simples](Processing-Python/botao_simples.md)
-- [Arrastando círculos](Processing-Python/arrastando_circulos.md)
-- [Rodinha do mouse (*mouse wheel*)](Processing-Python/rodinha_mouse.md)
-- [Parando o `draw()`](Processing-Python/no_loop.md)
-- [Uma janela de diálogo com um campo de texto](Processing-Python/input_janela.md)
-
-#### Exportação de imagens e outras saídas
-
-- [Exportando imagens (bitmap/raster)](Processing-Python/exportando_imagem.md)
-- [Exportando PDF (saída vetorial)](Processing-Python/exportando_pdf.md)
-- [Exportando SVG (saída vetorial)](Processing-Python/exportando_svg.md)
-- [Exportando animações (vídeos ou GIF)](Processing-Python/exportar_animacoes.md) 
-- [Exportando um aplicativo independente](Processing-Python/export_application.md)
-
-#### Arquivos externos
-
-- [Lendo um arquivo vetorial (SVG)](Processing-Python/recursos_vetoriais_externos.md)
-- [Lendo arquivos de imagem (*bitmap/raster*)](Processing-Python/imagens_externas.md)
-  - [Lendo todas as imagens da pasta `data`](Processing-Python/imagens_externas_pasta2.md) e sorteando uma
-  - [Lendo todas as imagens de uma pasta selecionada pela pessoa usuária](Processing-Python/imagens_externas_pasta.md) (avançado)
-- [Lendo e escrevendo texto em arquivos (*file IO*)](Processing-Python/file_IO.md)
-
-#### Orientação a Objetos
-
-- [Primeiros passos de orientação a objetos: usando a classe Slider](Processing-Python/slider_com_OO.md)
-- [Um botão com orientação a objetos](Processing-Python/botao_com_OO.md)
-- [Uma classe de partículas simples](Processing-Python/particulas.md)
-- [Operações com vetores e a classe `PVector` do Processing](Processing-Python/vetores.md)
-- [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/mestrado/bandeirinhas/) (página externa)
-
-#### Questões mais avançadas da ferramenta
-
-- [Usando várias abas no IDE](Processing-Python/modulos.md)
-- [Sobre o Python 2 e alguns recursos do Python 3](Processing-Python/futuro.md)
-- [Dicas para portar exemplos do Processing modo Java para o modo Python](Processing-Python/java_para_python.md)
-- [Mais sobre Python, Jython e Java](http://arteprog.space/Processando-Processing/tutoriais-PT/python-Python_Jython_e_Java) (página externa)
-- [Mais sobre atributos gráficos](Processing-Python/mais_atributos_graficos.md)
-- [Desenhando em um espaço fora da tela (offscreen buffer)](Processing-Python/offscreen_buffer.md) e recortando imagens
-- [Manipulando a janela](Processing-Python/mais_que_size.md) (tela cheia, redimensionamento e múltiplas janelas)
-
-
-
-### Pequenos projetos e outros exemplos
-
-- [Módulos ou mosaicos de Truchet](Processing-Python/truchet.md)
-- [Jogo PONG](https://github.com/villares/material-aulas/tree/master/pong) - Estudos para o fazer um jogo
-- [`caneta_automatica_py`](caneta_automatica) - Módulo para desenhar inspirado na tartaruga de Logo
-- [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
-
+## [Material para Processing modo Python](Processing-Python/)
 
 ### Recursos externos
 
