@@ -18,7 +18,7 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 
 ## [Material para Processing modo Python](Processing-Python/)
 
-### Recursos externos
+#### Recursos relacionados
 
 ##### Biblioteca py5 (Python 3 + Processing)
 
@@ -30,26 +30,22 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 - [py.processing.org/reference](http://py.processing.org/reference) - Referência do Processing modo Python
 - [Processing.py in Ten Lessons](https://tabreturn.github.io/#processing-reverse) (em Inglês) de [Tristan B. @tabreturn](http://portfolio.tabreturn.com/)
 - Livro [Getting Started with Processing.py](http://www.worldcat.org/oclc/1001947294) (em Inglês) Allison Parrish et al.
+- [Processando-Processing](https://github.com/arteprog/processando-processing) - Ajude a traduzir mais coisas!
 
 ##### Processing modo Java
 
-- [processing.org/reference](http://processing.org/reference) - Tem algumas páginas à mais e coisas que funcionam no Python
+- [processing.org/reference](http://processing.org/reference) - Tem coisas que funcionam no Python
 - Livro [O código transcendente](https://codigotranscendente.github.io/livro/about.html) de Mateus Berruezo
 - [Programação Criativa](http://arteprog.space/programacao-criativa) de Monica Rizzolli e Alexandre Villares
 - [Guia de programação em Processing](https://www.ranoya.com/aulas/designgenerativo/playgroundDocs/introProcessing.php?theme=dgen&elementos=processing), Prof. Guilherme Ranoya (UFPE).
 - [Tradução da referência da linguagem - versão 1.0 (2005)](http://www.dainf.ct.utfpr.edu.br/~merkle/processing/reference/ptBR/index.html), Prof. Luiz Merkle (UFTPR)
-
-### Outros recursos introdutórios abertos
 
 #### Livros de Python
 
 - DOWNEY, Allen. [Pense em Python 2e](https://penseallen.github.io/PensePython2e/)
 - BORGES, Luiz Eduardo. [Python para desenvolvedores 3e](https://ricardoduarte.github.io/python-para-desenvolvedores/#conteudo)
 - SWEIGART, Al. Automatize tarefas maçantes com Python (traduzido pela Novatec)<br> ou [automatetheboringstuff.com](https://automatetheboringstuff.com) (site do autor em Inglês)
-
-#### Processando-Processing
-
-- [Ajude a traduzir mais coisas!](https://github.com/arteprog/processando-processing)
+- VANDERPLAS, Jake. [Whirlwind Tour of Python](https://jakevdp.github.io/WhirlwindTourOfPython)
 
 ---
 ### Licenças
