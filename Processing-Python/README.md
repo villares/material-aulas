@@ -98,8 +98,8 @@
 ### Pequenos projetos e outros exemplos
 
 - [Módulos ou mosaicos de Truchet](truchet.md)
-- [Jogo PONG](https://github.com/villares/material-aulas/tree/master/pong) - Estudos para o fazer um jogo
-- [`caneta_automatica_py`](caneta_automatica) - Módulo para desenhar inspirado na tartaruga de Logo
+- [Jogo PONG](pong/) - Estudos para o fazer um jogo
+- [`caneta_automatica_py`](caneta_automatica/) - Módulo para desenhar inspirado na tartaruga de Logo
 - [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
 
 
