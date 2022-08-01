@@ -1,14 +1,5 @@
 # Exportando SVG
 
-from java.io import file
-muito semelhante a exportação de PDF, para salvar um arquivo vetorial SVG, é necessário adicionar uma biblioteca de exportação, que já vem com o processing, acrescentando esta linha no início do * sketch*:
-
-``` python
-add_library('svg')
-```
-isso pode ser feito manualmente ou pelo menu * sketch * do processing IDE:
-***sketch > importar biblioteca > SVG export***
-
 # Usando um objeto PGraphics
 
 A estratégia mostrada a seguir permite mostrar na tela o desenho mas salvar um arquivo ajustes especiais, como por exemplo dimensões escaladas.
@@ -20,7 +11,7 @@ A estratégia mostrada a seguir permite mostrar na tela o desenho mas salvar um 
 tecle 'e' para salvar um único frame e encerrar o sketch
 """
 
-add_library('svg')
+
 
 save_frame = False
 fator_escala = 3.78  # 255px -> ~255mm
@@ -67,7 +58,7 @@ def key_pressed():
 
 ```python
 
-add_library('svg')
+
 
 save_frame = False
 fator_escala = 3
@@ -125,7 +116,7 @@ no exemplo a seguir mostramos como exportar desenhos tridimensionais em formato 
 
 O resultado, infelizmente,  é  bastante limitado, como pode ser visto abaixo:
 
-![a](assets/3_da.svg) ![b](assets/3_db.svg)
+![a](assets/3Da.svg) ![ ](assets/3Db.svg "Imagem não encontrada: assets/3_db.svg")
 
 
 ```python
@@ -133,7 +124,7 @@ O resultado, infelizmente,  é  bastante limitado, como pode ser visto abaixo:
 tecle 'e' para salvar um único frame e encerrar o sketch
 """
 
-add_library('svg')
+
 # add_library('pdf')
 
 save_frame = False

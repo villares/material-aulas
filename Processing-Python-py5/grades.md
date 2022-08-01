@@ -19,11 +19,13 @@ imagine que é possível escrever de forma parecida uma fila vertical, uma colun
 <details >
 <summary > pense em como você escreveria o código e depois clique para a resposta < /summary >
 
-<pre >
+<pre>
+
 size(400, 400)
 # deslocamento (offset) inicial: 20 - deslocamente vertical de cada círculo: 40
 for y in range(20, 400, 40):  # 10 números de 20 a 380, incluso, de 40 em 40
     ellipse(20, y, 35, 35)  # círculos de diâmetro 35
+
 </pre >
 
 </details >
@@ -74,7 +76,7 @@ def draw():
 
 
 ```
-![](https: // github.com/villares/material-aulas/blob/master/processing-python/assets/sketch_2020_04_12b.png?raw=true)
+![](assets/sketch_2020_04_12b.png)
 
 # Assuntos relacionados
 
@@ -88,7 +90,7 @@ em python, se usarmos a palavra chave `yield` no lugar de `return` dentro de um 
 
 A parte central da construção da grade, os laços encaixados produzindo as coordenadas, pode ser encapsulado em uma função separada. neste exemplo `grid()` devove um objeto que a cada iteração devolve uma tupla(x, y) de uma grade com um certo número de filas e colunas, os dois últimos argumentos, opcionais, definem a largura da coluna e altura da fila.
 
-```pyde
+```python
 
 
 def setup():
@@ -131,4 +133,4 @@ def grid(colunas, filas, tam_col=1, tam_fil=1):
     # produzindo os resultados conforme a necessidade. Dentro de um loop, por
     # exemplo.
 ```
-![](https: // github.com/villares/material-aulas/blob/master/processing-python/assets/sketch_2020_04_12a.png?raw=true)
+![](assets/sketch_2020_04_12a.png)

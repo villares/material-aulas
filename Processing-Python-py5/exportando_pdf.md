@@ -4,20 +4,6 @@ saver salvar um PDF é muito útil, pois é formato que preserva informação ve
 
 é importante considerar que existe mais de uma estratégia para exportar arquivos vetorias. imagens * raster * são mais fáceis, basta exportar o que acumulou na tela em qualquer momento, com desenho vetorial ou você redesenha tudo a cada quadro ou você tem que pensar com cuidado sobre a acumulação de quadros para o arquivo não ficar imenso. vocẽ tem interação? precisa ligar e desligar a gravação dos frames.
 
-# Preparação - importando a biblioteca
-
-primeiro é necessário adicionar uma biblioteca de exportação que já vem com o processing, acrescentando esta linha no início do * sketch*:
-
-``` python
-add_library('pdf')
-```
-isso pode ser feito manualmente ou pelo menu * sketch * do processing IDE:
-***sketch > importar biblioteca > PDF export***
-
-![adicionando](assets/pdf_export.png)
-
-veja nos exemplos abaixo as llinhas de código que você precisa acrescentar ao longo so seu * sketch*, dependendo do que quer exportar.
-
 # PDF simples
 
 # Salvando um frame único do `draw()`, sem acumulação
@@ -25,8 +11,6 @@ veja nos exemplos abaixo as llinhas de código que você precisa acrescentar ao 
 A estratégia a seguir permite a interatividade, com o uso de `draw()`, mas exige que desenho seja realizado inteiro em cada frame.
 
 ```python
-add_library('pdf')
-
 salvar_pdf = False  # um indicador ('flag') dispara a exportação
 
 
@@ -90,7 +74,7 @@ def key_pressed():
 Não é possível capturar diretamente o produto da acumulação do desenho na tela, como acontece com a exportação de uma imagem raster que fazemos usando `save_frame()`, mas é possível gravar o PDF durante vários frames, acumulando os desenhos produzidos no arquivo e na tela ao mesmo tempo. neste exemplo você  'liga' e 'desliga'  a gravação de frames no PDF usando a tecla 'p'.
 
 ```python
-add_library('pdf')
+
 
 gravando_pdf = False  # 'flag'/indicador de gravação do PDF
 
@@ -135,15 +119,11 @@ def key_pressed():
 um segundo exemplo de salvar com acumulação de frames
 
 ```python
-add_library('pdf')
-
 gravando_pdf = False
-
 
 def setup():
     size(600, 600)
     fundo()
-
 
 def fundo():
     background(255)
@@ -154,19 +134,16 @@ def fundo():
             fill(0)
             circle(i * tam + tam / 2, j * tam + tam / 2, tam)
 
-
 def draw():
     if mouse_pressed and (mouse_x, mouse_y) != (pmouse_x, mouse_y):
         fill(255)
         no_stroke()
         meu_triangulo(mouse_x, mouse_y, 50)
 
-
 def meu_triangulo(x, y, tam):
     triangle(x - tam / 2, y + tam / 3,
              x + tam / 2, y + tam / 3,
              x, y - tam / 3)
-
 
 def key_pressed():
     global gravando_pdf
@@ -192,7 +169,7 @@ def key_pressed():
 usando `create_graphics()` podemos mostrar na tela o desenho mas salvar o arquivo do desenho com alguns ajustes especiais.
 
 ```python
-add_library('pdf')
+
 f = create_graphics(width * 2, height * 2, PDF, "file.pdf")
 begin_record(f)  # inicia a gravação do arquivo
 f.stroke_weight(2)
@@ -207,7 +184,7 @@ veja um exemplo mais completo desta estratégia no exemplo a seguir, que produz 
 # Salvando um PDF com múltiplas páginas
 
 ```python
-add_library('pdf')
+
 
 nome_arquivo = "10_paginas.pdf"
 
@@ -241,7 +218,7 @@ O que não funciona quando exportamos em PDF?
 
 - A chamada `blend_mode(MULTIPLY)` ou qualquer outra variante de `blend_mode()` não tem efeito no PDF(só na tela).
 
-- para exportar desenhos em 3D, é preciso usar `begin_raw()`  e `end_raw()` em lugar de `begin_record/end_record` e o resultado é um tanto deficiente(veja exemplo em[exportando SVG](exportando_svg.md)).
+- para exportar desenhos em 3D, é preciso usar `begin_raw()`  e `end_raw()` em lugar de `begin_record/end_record` e o resultado é um tanto deficiente(veja exemplo em [exportando SVG](exportando_svg.md)).
 
 # O que pode dar errado? Algumas considerações finais
 
