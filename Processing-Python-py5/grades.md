@@ -16,22 +16,17 @@ for x in range(20, 400, 40):  # 10 números de 20 a 380, incluso, de 40 em 40
 
 imagine que é possível escrever de forma parecida uma fila vertical, uma coluna de círculos...
 
-<details>
     
-<summary> pense em como você escreveria o código e depois clique para a resposta </summary>
+<!-- summary> pense em como você escreveria o código e depois clique para a resposta </summary -->
 
-<pre>
-
+```python
 size(400, 400)
 # deslocamento (offset) inicial: 20 - deslocamente vertical de cada círculo: 40
 for y in range(20, 400, 40):  # 10 números de 20 a 380, incluso, de 40 em 40
     ellipse(20, y, 35, 35)  # círculos de diâmetro 35
+```
 
-</pre >
-
-</details >
-
-em seguida, veremos que uma fila de colunas se torna uma grade de elementos:
+Em seguida, veremos que uma fila de colunas se torna uma grade de elementos:
 
 ```python
 size(400, 400)
