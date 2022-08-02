@@ -164,7 +164,7 @@ def key_pressed():
 
 # Outras estratégias
 
-# Usando um objeto PGraphics
+# Usando um objeto Py5Graphics
 
 usando `create_graphics()` podemos mostrar na tela o desenho mas salvar o arquivo do desenho com alguns ajustes especiais.
 
@@ -222,7 +222,7 @@ O que não funciona quando exportamos em PDF?
 
 # O que pode dar errado? Algumas considerações finais
 
-se não estiver funcionando, confira se não está esquecendo algo sobre exportação de PDF:
+Se não estiver funcionando, confira se não está esquecendo algo sobre exportação de PDF:
 
 - pense com cuidado se seu sketch precisa salvar apenas um frame ou acumular frames(muda a estratégia um pouco)
 - Não esqueça que só aparecem na gravação ações e ajustes feitos depois do begin_record() ou begin_raw() e isso é bastante crítico em relação a:

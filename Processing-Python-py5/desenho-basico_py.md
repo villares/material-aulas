@@ -89,7 +89,6 @@ O tempo todo vamos consultar o que é conhecido documentação de referência. P
 
 Comentários são anotações, pedaços de texto no código, que não são executados pelo computador, são ignorados. Em Python, comentários começam com `#` e vão até o final da linha. Podem ser, inclusive, quando o `#` é no começo da linha, uma linha inteira, servindo como uma maneira rápida de desativar um trecho do código! Em inglês tem até uma expressão para isso: *comment out* (desativar por meio de um comentário).
 
-
 Os comentários são feitos principalmente para o benefício as pessoas que colaboram com você e estão lendo o código, como, por exemplo, uma pessoa muito importante que é você-daqui-a-uma-semana, entender qual era o objetivo daquele pedaço do programa. os comentários que você está vendo neste material didático talvez não sejam um exemplo muito bom de comentários pois eles estão explicando funcionamento muito elementar das funções e experessões usadas, idealmente, anote o seu código com explicações curtas que falem mais do motivo ou objetivo daquele bloco e não esqueça de mudá-los quando o objetivo e o código mudar.
 
 ```python
@@ -101,11 +100,11 @@ size(900, 900)
 # background(0) <- instrução desativada, isso aqui tudo virou um comentário!
 
 """
-extra: com três aspas no começo e no final podemos produzir textos (strings)
+Extra: com três aspas no começo e no final podemos produzir textos (strings)
 de várias linhas que são usados como uma espécie de comentário também, uma vez
 que contém explicações para humanos, e não executam, assim como comentários.
 
-quando ficam logo no começo do corpo de uma definição de função ou classe, são
+Quando ficam logo no começo do corpo de uma definição de função ou classe, são
 chamados 'docstrings' (textos de documentação).
 """
 ```
@@ -118,9 +117,4 @@ chamados 'docstrings' (textos de documentação).
 
 ---
 
-este material é parcialmente baseado nos materiais criados para o curso[progração criativa](https: // arteprog.space/programacao-criativa/)
-
----
-
-texto e imagens / text and images: CC BY-NC-SA 4.0
-Código / code: GNU GPL v3.0 exceto onde explicitamente indicado.
+Este material é parcialmente baseado nos materiais criados para o curso [progração criativa](https: // arteprog.space/programacao-criativa/)

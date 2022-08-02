@@ -92,24 +92,24 @@ neste segundo exemplo a diferença(subtração) entre um vetor criado com as cor
 
 | método | descrição |
 | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
-| [set()](https: // py.processing.org/reference/pvetor_set.html) | define(altera) os componentes do vetor. |
-| [random2_d()](https: // py.processing.org/reference/pvetor_random2_d.html) | cria um novo vetor unitário 2D com uma direção aleatória. |
-| [random3_d()](https: // py.processing.org/reference/pvetor_random3_d.html) | cria um novo vetor unitário 3D com uma direção aleatória. |
-| [from_angle()](https: // py.processing.org/reference/pvetor_from_angle.html) | cria um novo vetor unitário 2D a partir de um ângulo. |
-| [copy()](https: // py.processing.org/reference/pvetor_copy.html) | produz um novo vetor, cópia do original. |
-| [mag()](https: // py.processing.org/reference/pvetor_mag.html) | calcula a magnitude do vetor. |
-| [mag_sq()](https: // py.processing.org/reference/pvetor_mag_sq.html) | calcula a magnitude ao quadrado do vetor. |
-| [add()](https: // py.processing.org/reference/pvetor_add.html) | soma compontentes x, y, e z, ou um segundo vetor a um vetor. pode-se usar o operador `+`  para somar dois vetores também. |
-| [sub()](https: // py.processing.org/reference/pvetor_sub.html) | subtrai compontentes x, y, e z, ou um segundo vetor a um vetor. pode-se usar o operador `-` pra subtrair um vetor de outro também. |
-| [mult()](https: // py.processing.org/reference/pvetor_mult.html) | multipica um vetor por um valor escalar. pode-se usar o operador `*` |
-| [div()](https: // py.processing.org/reference/pvetor_div.html) | divide um vetor por um valor escalar. pode-se usar o operador `/` |
-| [dist()](https: // py.processing.org/reference/pvetor_dist.html) | calcula a distância entre dois pontos representados por dois vetores. |
-| [dot()](https: // py.processing.org/reference/pvetor_dot.html) | calcula o produto escalar(*dot product*) do vetor e um valor escalar. |
-| [cross()](https: // py.processing.org/reference/pvetor_cross.html) | calcula o produto vetorial(*cross product*) entre dois vetores. |
-| [normalize()](https: // py.processing.org/reference/pvetor_normalize.html) | normaliza o vetor, isto é faz com que fique com a magnitude 1, mantendo a mesma direção. |
-| [limit()](https: // py.processing.org/reference/pvetor_limit.html) | limita a magnitude do vetor a um certo valor. |
-| [set_mag()](https: // py.processing.org/reference/pvetor_set_mag.html) | define, isto é altera, a magnitude do vetor. |
-| [heading()](https: // py.processing.org/reference/pvetor_heading.html) | calcula o ângulo de rotação do vetor, isto é, para onde ele aponta. |
-| [rotate()](https: // py.processing.org/reference/pvetor_rotate.html) | gira o vetor um verto ângulo em radianos  (2D apenas). |
-| [lerp()](https: // py.processing.org/reference/pvetor_lerp.html) | produz o resultado da interpolação linear entre dois vetores. |
-| [angle_between()](https: // py.processing.org/reference/pvetor_angle_between.html) | calcula o ângulo entre dois vetores. |
+| [set()](https://py5.ixora.io/reference/py5vector_set.html) | define(altera) os componentes do vetor. |
+| [Py5Vector2D.random()](https://py5.ixora.io/reference/py5vector_random.html) | cria um novo vetor unitário 2D com uma direção aleatória. |
+| [Py5Vector3D.random()](https://py5.ixora.io/reference/py5vector_random.html) | cria um novo vetor unitário 3D com uma direção aleatória. |
+| [from_angle()](https://py5.ixora.io/reference/py5vector_from_angle.html) | cria um novo vetor unitário 2D a partir de um ângulo. |
+| [copy()](https://py5.ixora.io/reference/py5vector_copy.html) | produz um novo vetor, cópia do original. |
+| [mag()](https://py5.ixora.io/reference/py5vector_mag.html) | calcula a magnitude do vetor. |
+| [mag_sq()](https://py5.ixora.io/reference/py5vector_mag_sq.html) | calcula a magnitude ao quadrado do vetor. |
+| [add()](https://py5.ixora.io/reference/py5vector_add.html) | soma compontentes x, y, e z, ou um segundo vetor a um vetor. pode-se usar o operador `+`  para somar dois vetores também. |
+| [sub()](https://py5.ixora.io/reference/py5vector_sub.html) | subtrai compontentes x, y, e z, ou um segundo vetor a um vetor. pode-se usar o operador `-` pra subtrair um vetor de outro também. |
+| [mult()](https://py5.ixora.io/reference/py5vector_mult.html) | multipica um vetor por um valor escalar. pode-se usar o operador `*` |
+| [div()](https://py5.ixora.io/reference/py5vector_div.html) | divide um vetor por um valor escalar. pode-se usar o operador `/` |
+| [dist()](https://py5.ixora.io/reference/py5vector_dist.html) | calcula a distância entre dois pontos representados por dois vetores. |
+| [dot()](https://py5.ixora.io/reference/py5vector_dot.html) | calcula o produto escalar(*dot product*) do vetor e um valor escalar. |
+| [cross()](https://py5.ixora.io/reference/py5vector_cross.html) | calcula o produto vetorial(*cross product*) entre dois vetores. |
+| [normalize()](https://py5.ixora.io/reference/py5vector_normalize.html) | normaliza o vetor, isto é faz com que fique com a magnitude 1, mantendo a mesma direção. |
+| [limit()](https://py5.ixora.io/reference/py5vector_limit.html) | limita a magnitude do vetor a um certo valor. |
+| [set_mag()](https://py5.ixora.io/reference/py5vector_set_mag.html) | define, isto é altera, a magnitude do vetor. |
+| [heading()](https://py5.ixora.io/reference/py5vector_heading.html) | calcula o ângulo de rotação do vetor, isto é, para onde ele aponta. |
+| [rotate()](https://py5.ixora.io/reference/py5vector_rotate.html) | gira o vetor um verto ângulo em radianos  (2D apenas). |
+| [lerp()](https://py5.ixora.io/reference/py5vector_lerp.html) | produz o resultado da interpolação linear entre dois vetores. |
+| [angle_between()](https://py5.ixora.io/reference/py5vector_angle_between.html) | calcula o ângulo entre dois vetores. |
