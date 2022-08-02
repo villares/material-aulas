@@ -16,21 +16,17 @@ for x in range(20, 400, 40):  # 10 números de 20 a 380, incluso, de 40 em 40
 
 imagine que é possível escrever de forma parecida uma fila vertical, uma coluna de círculos...
 
-<details >
-<summary > pense em como você escreveria o código e depois clique para a resposta < /summary >
+    
+<!-- summary> pense em como você escreveria o código e depois clique para a resposta </summary -->
 
-<pre>
-
+```python
 size(400, 400)
 # deslocamento (offset) inicial: 20 - deslocamente vertical de cada círculo: 40
 for y in range(20, 400, 40):  # 10 números de 20 a 380, incluso, de 40 em 40
     ellipse(20, y, 35, 35)  # círculos de diâmetro 35
+```
 
-</pre >
-
-</details >
-
-em seguida, veremos que uma fila de colunas se torna uma grade de elementos:
+Em seguida, veremos que uma fila de colunas se torna uma grade de elementos:
 
 ```python
 size(400, 400)
@@ -43,9 +39,7 @@ for x in range(20, 400, 40):  # 10 números de 20 a 380, de 40 em 40
 
 ![](assets/grade.png)
 
-é possível também fazer uma "coluna de filas", mudando só a ordem de desenho, mas não o resultado visual final.
-
-veja um exemplo, um pouco ampliado, em que a posição do elemento altera a cor e o tamanho:
+É possível também fazer uma "coluna de filas", mudando só a ordem de desenho, mas não o resultado visual final. Veja um exemplo, um pouco ampliado, em que a posição do elemento altera a cor e o tamanho:
 
 ```python
 
@@ -73,9 +67,8 @@ def draw():
             c = color(h, 255, 200)
             fill(c)
             ellipse(x, y, s, s)
-
-
 ```
+
 ![](assets/sketch_2020_04_12b.png)
 
 # Assuntos relacionados
@@ -83,8 +76,7 @@ def draw():
 - [sequências e laços de repetição](lacos_py.md)
 - [cores com HSB(matiz, saturação e brilho)](cores_hsb.md)
 
-# Extra (assunto avançado): Usando uma função geradora (*generator*) que
-# devolve tuplas de coordenadas
+# Extra (assunto avançado): Usando uma função geradora (*generator*) que devolve tuplas de coordenadas
 
 em python, se usarmos a palavra chave `yield` no lugar de `return` dentro de um laço em uma função, isso produz um maquinário todo chamado * função geradora * que suspende a execução do laço a cada encontro com o `yield` e retorna quando um novo item é pedido para esse maquinário. A função, quando invocada não devolve um item ou mesmo uma lista de itens, devolve esse maquinário, na forma de um objeto gerador(ou * generator * em inglês) que pode ser iterado como uma lista(ou outro iterável qualquer).
 
@@ -133,4 +125,5 @@ def grid(colunas, filas, tam_col=1, tam_fil=1):
     # produzindo os resultados conforme a necessidade. Dentro de um loop, por
     # exemplo.
 ```
+
 ![](assets/sketch_2020_04_12a.png)
