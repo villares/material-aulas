@@ -1,6 +1,6 @@
 # Primeiros passos e desenho básico
 
-se você seguiu os passos [para instalar o processin modo python](https: // abav.lugaralgum.com/como-instalar-o-processing-modo-python /) , experimente digitar o código abaixo no IDE (nosso editor de código), e, em seguida, clique no botão com a seta triangular para frente (executar/*run*):
+Se você seguiu os passos [para instalar Thonny IDE com o py5](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python /) , verifique se a opção *imported mode* está ativada no menu **py5** e experimente digitar o código abaixo no editor de código, e, em seguida, clique no botão com a seta triangular para frente (executar/*run*):
 
 ```python
 size(200, 200)
@@ -50,16 +50,23 @@ fill(0, 255, 0)  # preenchimento verde
 ellipse(50, 50, 50, 50)  # produz um círculo verde
 ```
 
-é possível ajustar a cor de preenchimento de uma forma com `fill()` a cor de traço do contorno com `stroke()`, pedir uma forma sem preenchimento com `no_fill()` ou sem traço de contorno com `no_stroke()`. A espessura do traço de contorno pode ser controlada com `stroke_weight()`.
+Uma outra maneira de indicar cores é com a notação hexadecimal, `'#RRGGBB`.
+
+```python
+fill('#00FF00')  # preenchimento verde
+ellipse(50, 50, 50, 50)  # produz um círculo verde
+```
+
+É possível ajustar a cor de preenchimento de uma forma com `fill()` a cor de traço do contorno com `stroke()`, pedir uma forma sem preenchimento com `no_fill()` ou sem traço de contorno com `no_stroke()`. A espessura do traço de contorno pode ser controlada com `stroke_weight()`.
 
 ```python
 no_fill()  # sem preenchimento, formas vazadas
-stroke(0, 0, 255)  # exemplo de cor do traço azul cor(R, G, B)
+stroke(0, 0, 255)  # exemplo de cor do traço azul cor (R, G, B)
 stroke_weight(10)  # espessura do traço de contorno 10 pixels
 no_stroke()  # sem traço de contorno
 ```
 
-A cor indicada pode conter além dos 3 números(R, G, B) um quarto número de opacidade(*alpha*). com a opacidade 0 a cor fica totalmente transparente, 128 torna a cor 50 % translúcida e 255 produz uma cor opaca, como se não houvesse sido usado o alpha.
+A cor indicada pode conter além dos 3 números(R, G, B) um quarto número de opacidade(*alpha*). com a opacidade 0 a cor fica totalmente transparente, 128 torna a cor 50 % translúcida e 255 produz uma cor opaca, como se não houvesse sido usado o alpha. 
 
 ```python
 # preenchimento vermelho (R:Vermelho, G:Verde, B:Azul, Alpha:opacidade)
@@ -73,17 +80,17 @@ O fundo também serve para apagar a área de desenho
 ```python
 background(0, 255, 0)  # fundo verde, limpa a tela background(R, G, B)
 ```
+
 # Onde encontrar os nomes das funções, o vocabulário, e os seus significados?
 
-O tempo todo vamos consultar o que é conhecido como * language reference * (referência da linguagem) que para o processing modo python fica em[py.processing.org/reference](https: // py.processing.org/reference /) .
+O tempo todo vamos consultar o que é conhecido documentação de referência. Para o vocabulário de desenho da biblioteca py5 fica em [py5.ixora.io/reference/sketch.html](https://py5.ixora.io/reference/sketch.html).
 
 # Comentários, o que são e como criar comentários em Python?
 
-# ` e vão até o final da linha. Podem ser, inclusive, quando o `#` é no começo da linha, uma linha inteira, servindo como uma maneira rápida de desativar um trecho do código! Em inglês tem até uma expressão para isso: *comment out* (desativar por meio de um comentário).
-comentários são anotações, pedaços de texto no código, que não são executados pelo computador, são ignorados. em python, comentários começam com `
+Comentários são anotações, pedaços de texto no código, que não são executados pelo computador, são ignorados. Em Python, comentários começam com `#` e vão até o final da linha. Podem ser, inclusive, quando o `#` é no começo da linha, uma linha inteira, servindo como uma maneira rápida de desativar um trecho do código! Em inglês tem até uma expressão para isso: *comment out* (desativar por meio de um comentário).
 
-os comentários são feitos principalmente para o benefício as pessoas que colaboram com você e estão lendo o código, como, por exemplo, uma pessoa muito importante que é você-daqui-a-uma-semana, entender qual era o objetivo daquele pedaço do programa. os comentários que você está vendo neste material didático talvez não sejam um exemplo muito bom de comentários pois eles estão explicando funcionamento muito elementar das funções e experessões usadas, idealmente, anote o seu código com explicações curtas que falem mais do motivo ou objetivo daquele bloco e não esqueça de mudá-los quando o objetivo e o código mudar.
 
+Os comentários são feitos principalmente para o benefício as pessoas que colaboram com você e estão lendo o código, como, por exemplo, uma pessoa muito importante que é você-daqui-a-uma-semana, entender qual era o objetivo daquele pedaço do programa. os comentários que você está vendo neste material didático talvez não sejam um exemplo muito bom de comentários pois eles estão explicando funcionamento muito elementar das funções e experessões usadas, idealmente, anote o seu código com explicações curtas que falem mais do motivo ou objetivo daquele bloco e não esqueça de mudá-los quando o objetivo e o código mudar.
 
 ```python
 # Oi eu sou um comentário de uma linha inteira
