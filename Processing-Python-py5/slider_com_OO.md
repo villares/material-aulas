@@ -113,7 +113,7 @@ def galho(tamanho):
 veja uma primeira versão da classe slider
 
 ```python
-class slider:
+class Slider:
 
     def __init__(self, low, high, default, label=''):
         self.low , self.high = low, high
@@ -165,7 +165,7 @@ class slider:
 acrescentando alguns extras e comentários à classe `slider`. permite o uso de sliders em *sketchs* com 3_d.
 
 ```python
-class slider:
+class Slider:
 
     template = "{:.1f}"  # para formatar como mostra o valor
     label_align = CENTER
@@ -189,7 +189,7 @@ class slider:
         # the position of the rect you slide:
         self.rectx = self.x + map(self.value, self.low, self.high, 0, self.w)
 
-    def update(self):
+    def update(self, display=True):
         """Atualiza o slider e devolve o valor (self.value). Chama display()"""
         # mousePressed moves slider
         if mouse_pressed and dist(mouse_x, mouse_y, self.rectx, self.y) < self.h:
@@ -199,7 +199,8 @@ class slider:
         self.value = map(self.rectx,
                          self.x, self.x + self.w,
                          self.low, self.high)
-        self.display()
+        if display:
+            self.display()
         return self.value
         
     def display(self):
