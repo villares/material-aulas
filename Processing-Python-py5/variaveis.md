@@ -1,10 +1,10 @@
 # Variáveis
 
-variáveis são nomes que inventamos quando estamos escrevendo um programa, e que apontam para valores na memória do computador. esses valores podem ser simples como números inteiros(*int*/*integer*), textos(*str*/*string*) ou, de maneira genérica, a entidades que chamamos de * objetos*. em python, como vai ser possível perceber futuramente, há muitos tipos de objetos e sempre podemos fazer referência a eles por meio de variáveis.
+Variáveis são nomes que inventamos quando estamos escrevendo um programa, e que apontam para valores na memória do computador. Esses valores podem ser simples como números inteiros(*int*/*integer*), textos(*str*/*string*) ou, de maneira genérica, a entidades que chamamos de * objetos*. Em Python, como vai ser possível perceber futuramente, há muitos tipos de objetos e sempre podemos fazer referência a eles por meio de variáveis.
 
 # Atribuição
 
-para criar uma nova variável, e também para modificar o valor para o qual uma variável existente aponta, usamos o operador de atribuição `=`.
+Para criar uma nova variável, e também para modificar o valor para o qual uma variável existente aponta, usamos o operador de atribuição `=`.
 
 ```python
 lado = 50  # cria a variável `lado` que aponta para o valor 50
@@ -27,7 +27,7 @@ rect(a, 10, 40, 40)  # desenha um retângulo em x:55, y:10
 # *ou, em outras palavras: "veja quanto está valendo `a` agora, some 45 e este é o novo valor de `a`
 # isso também pode ser escrito assim: a += 45
 ```
-**você consegue imaginar qual vai ser o resultado?**
+**Você consegue imaginar qual vai ser o resultado?**
 
 <details >
 <summary > clique para ver o resultado < /summary >
@@ -38,9 +38,9 @@ rect(a, 10, 40, 40)  # desenha um retângulo em x:55, y:10
 
 # Metáforas para pensar sobre as variáveis
 
-pense nas variáveis como nomes, etiquetas que você cola nos objetos que estão na memória do computador, e você usa os nomes para pedir ao computador os valores para os quais apontam. O mesmo objeto ou valor pode ter vários apelidos, nomes que apontam pro mesmo objeto/valor na memória.
+Pense nas variáveis como nomes, etiquetas que você cola nos objetos que estão na memória do computador, e você usa os nomes para pedir ao computador os valores para os quais apontam. O mesmo objeto ou valor pode ter vários apelidos, nomes que apontam pro mesmo objeto/valor na memória.
 
-**modificar uma variável existente é tirar a etiqueta de um objeto e por em outro.**
+**Modificar uma variável existente é tirar a etiqueta de um objeto e por em outro.**
 
 ```python
 aluno32 = 'Alberto'
@@ -63,7 +63,7 @@ print(idade)  # resultado: 14
 
 # Convenções para os nomes das variáveis
 
-nomear uma variável é algo a se pensar com cuidado, vamos inventar um nome que descreva os valores para os quais a variável vai apontar. Não queremos nem um nome muito longo, que dá preguiça de digitar no programa muitas vezes, nem um nome curto demais que vamos esquecer daqui alguns dias do que se trata... veja abaixo algumas regras sintáticas do python e recomendações estilísticas:
+Nomear uma variável é algo a se pensar com cuidado, vamos inventar um nome que descreva os valores para os quais a variável vai apontar. Não queremos nem um nome muito longo, que dá preguiça de digitar no programa muitas vezes, nem um nome curto demais que vamos esquecer daqui alguns dias do que se trata... Veja abaixo algumas regras sintáticas do Python e recomendações estilísticas:
 
 ```python
 minhaidademental = 13  # correto, mas não muito legível
@@ -75,7 +75,7 @@ x = 100
 x_ = 200
 
 # Funciona, mas não recomendado
-minha_idade_mental = 13  # Reservamos nomes com a 1ª letra maiúscula para 'classes´
+MinhaIdadeMental = 13  # Reservamos nomes com a 1ª letra maiúscula para 'classes´
 
 # Casos especiais
 IDADE_MAXIMA = 200  # Costumamos usar só para valores que não mudam, as 'constantes'
@@ -91,6 +91,6 @@ a!idade = 13  # só letras e números e _ por favor!
 
 # Assuntos relacionados
 
-- [qual a diferença entre `=` (atribuição) e `==` (comparação)?](atribuicao-e-comparacao.md)
-- [escopo de variáveis](escopo_py.md)
-- [valores e seus tipos](tipagem_py.md)
+- [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](atribuicao-e-comparacao.md)
+- [Escopo de variáveis](escopo_py.md)
+- [Valores e seus tipos](tipagem_py.md)
