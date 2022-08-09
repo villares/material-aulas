@@ -3,8 +3,10 @@
 Se você seguiu os passos [para instalar Thonny IDE com o py5](https://abav.lugaralgum.com/como-instalar-py5) , verifique se a opção *imported mode* está ativada no menu **py5** e experimente digitar o código abaixo no editor de código, e, em seguida, clique no botão com a seta triangular para frente (executar/*run*):
 
 ```python
-size(200, 200)
-rect(20, 10, 40, 80)
+# área de desenho, largura (width) 400, altura (height) 400
+size(400, 400)
+# um retângulo na posição x=100, y=50, com largura 150 e altura 200
+rect(100, 50, 150, 200)
 ```
 
 ![IDE](assets/01-IDE.png)
@@ -13,10 +15,10 @@ rect(20, 10, 40, 80)
 
 # Área de desenho e coordenadas
 
-Usamos a função `size()` para indicar o tamanho da área de desenho que desejamos(sem ela é gerada uma pequena tela de 100 por 100 pixels). Processing nos oferece automaticamente duas variáveis, os nomes `width` e `height`, que referenciam os valores de largura e altura da área de desenho, respectivamente. Podemos mostrar na parte de baixo da janela, o * console*, esses valores usando `print()`.
+Usamos a função `size()` para indicar o tamanho da área de desenho que desejamos(sem ela é gerada uma pequena tela de 100 por 100 pixels). Processing nos oferece automaticamente duas variáveis, os nomes `width` e `height`, que referenciam os valores de largura e altura da área de desenho, respectivamente. Podemos mostrar esses valores na parte de baixo da janela, o *console* ou *shell*, usando a função `print()` (exibir).
 
 ```python
-size(400, 200) # define o tamanho da área de deseno (w, h)
+size(400, 400) # define o tamanho da área de deseno (w, h)
 print(width)   # exibe no console largura atual da tela
 print(height)  # exibe no console altura atual da tela
 ```

@@ -4,7 +4,7 @@ Vamos falar aqui sobre como definir e manipular as cores, fingindo que podemos d
 
 >A dura verdade é que a síntese da cor acontece em um lugar escuro e úmido, o cérebro. A percepção de cor no final das contas depende do contexto em que ela se apresenta, um pixel, que em teoria produz uma determinada cor, vai ser entendido como outra cor dependendo do ambiente, especialmente o restante da imagem em volta. Se quiser ler mais sobre isso, procure sobre * neurociência da percepção das cores*.
 
-As principais funções do Processing que esperam receber uma sequência de números que vai indicar uma cor são:
+As principais funções do *py5* que esperam receber uma sequência de números que vai indicar uma cor são:
 - `fill()` - cor de preenchimento das formas(ṕode ser desativado com `no_fill()`
 - `stroke()` - cor de traço, ou contorno, das formas(ṕode ser desativado com `no_stroke()`
 - `color()` - essa função recebe os mesmo argumentos que as anteriores e produz um valor único que pode ser armazenado e passado para outras funções representando uma cor.
@@ -14,7 +14,7 @@ Por baixo dos panos o Processing trata as cores como um número inteiro "bem gra
 
 # Definindo cores com RGB (ou RGBA)
 
-Por padrão escolhemos cores no Processing com trincas de números entre ** 0 ** e ** 255 ** que representam valores de intensidade nos canais ** R ** (*Red*, vermelho), **G ** (*Green*, verde) e ** B ** (*Blue*, azul). Um quarto número(*Alpha*) pode ser usado para indicar cores translúcidas(**0 ** fica totalmente transparente, e invisível, e ** 255 ** totalmente opaca, como se não tivesse sido usado o quarto número).
+Por padrão escolhemos cores no Processing com trincas de números entre **0** e **255** que representam valores de intensidade nos canais **R** (*Red*, vermelho), **G** (*Green*, verde) e **B** (*Blue*, azul). Um quarto número define a opacidade (*Alpha*) pode ser usado para indicar cores translúcidas (**0** fica totalmente transparente, e invisível, e **255** totalmente opaca, como se não tivesse sido usado o quarto número). 
 
 ```python
 stroke_weight(5)
@@ -32,13 +32,13 @@ rect(47, 47, 50, 50)
 ```
 ![RGB](assets/RGB.png)
 
-Uma maneira de escolher uma cor e obter os valores RGB dela é usando a ferramenta no menu do IDE, **Ferramentas > Selector de cor ** (*Tools > Color Selector...*).
+Uma maneira de escolher uma cor e obter os valores RGB dela é usando a ferramenta no menu do py5 do Thonny IDE (*py5 > Color Selector...*).
 
 ![](assets/color_selector.png)
 
 # Cores com HSB (Matiz, Saturação e Brilho)
 
-Se chamaramos a função * color_mode * com a constante ** HSB**, `color_mode(HSB)`, podemos passar a usar números representando Matiz(*Hue*), Saturação(*Saturation*) e Brilho(*Brightness*).
+Se chamaramos a função *color_mode* com a constante **HSB**, `color_mode(HSB)`, podemos passar a usar números representando Matiz(*Hue*), Saturação(*Saturation*) e Brilho(*Brightness*).
 
 ```python
 color_mode(HSB)
@@ -58,7 +58,7 @@ for x in range(100):
 
 ![HSB](assets/HSB.png)
 
-É possível reverter pra o modo ** RGB ** padrão chamando `color_mode(RGB)`.
+É possível reverter pra o modo **RGB** padrão chamando `color_mode(RGB)`.
 
 # Mudando a escala de valores
 
@@ -75,30 +75,8 @@ for h in range(100):
 
 ![HSB](assets/HSB100.png)
 
-Também é possível indicar o valor máximo de cada canal ** RGB ** usando `color_mode(RGB, max_r, max_g, max_b)` ou no caso do modo HSB, `color_mode(HSB, max_h, max_s, max_b)`. Você vai encontrar por aí exemplos com ** 360 ** como máximo para o matiz(*hue*), fazendo referência a distribuição de matizes em um círculo, e também outros que usam ** 1 ** como valor máximo para brilho e saturação(assim 0.5 passa a significar 50 % de saturação ou brilho, por exemplo).
+Também é possível indicar o valor máximo de cada canal **RGB** usando `color_mode(RGB, max_r, max_g, max_b)` ou no caso do modo HSB, `color_mode(HSB, max_h, max_s, max_b)`. Você vai encontrar por aí exemplos com **360** como máximo para o matiz(*hue*), fazendo referência a distribuição de matizes em um círculo, e também outros que usam **1** como valor máximo para brilho e saturação(assim 0.5 passa a significar 50 % de saturação ou brilho, por exemplo).
 
 # Sobre a notação hexa com `#`
 
-# ` seguido por `RRGGBB`, também conhecida como cor hexa e apreciada por web-designers e comum também no Processing Java, mas só entre aspas no modo Python, como em `fill("#FFAA00"`) nas funções `fill()`,  `background()` e `stroke()`. Mas infelizmente isso não funciona com a função `color()`, o que pode ser chato na hora de traduzir certos exemplos. Por conta disso, preparei esta pequena função-ajudante `hex_color()` abaixo.
-É possível usar a notação hexadecimal começando com `
-
-```python
-def setup():
-    verde=hex_color('#00FF00')
-    fill(verde)
-    rect(0, 0, 50, 100)
-    azul=hex_color('0000FF')
-    fill(azul)
-    rect(50, 0, 50, 100)
-
-def hex_color(s):
-    """
-    No Processing tradicional (Java) podemos indicar cores com a notação hexadecimal  #AABBCC
-    No modo Python é possivel usar essa notação entre aspas em fill(), stroke() e
-    background(), mas não é possível fazer isso com a função color().
-    Esta função permite usar cores a partir de um string com a notação hexa no modo Python
-    """
-    if s.startswith('#'):
-        s=s[1:]
-    return color(int(s[:2], 16), int(s[2:4], 16), int(s[4:6], 16))
-```
+É possível usar a notação hexadecimal começando com `#` seguido por `RRGGBB`, também conhecida como cor hexa e apreciada por web-designers e comum também no Processing Java, mas só entre aspas no modo Python, como em `fill("#FFAA00"`) nas funções `color()`, `fill()`,  `background()` e `stroke()`.
