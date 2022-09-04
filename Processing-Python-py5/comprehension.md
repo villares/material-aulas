@@ -54,21 +54,21 @@ Sem "filtragem"
 dimensoes_retangulos = [(10, 20), (20, 30), (10, 30), (30, 30), (30, 10)]
 
 areas = []
-for a, b in demensoes_retangulos:
+for a, b in dimensoes_retangulos:
     areas.append(a * b)
 
-areas = [a * b for a, b in dimensoes]
+areas = [a * b for a, b in dimensoes_retangulos]
 ```
 
 Agora com "filtragem", ignorando quadrados!
 
 ```python
 areas = []
-for a, b in demensoes_retangulos:
+for a, b in dimensoes_retangulos:
     if a != b:  # se `a` diferente de `b`, vai ignorar a == b
         areas.append(a * b)
 
-areas = [a * b for a, b in dimensoes if a != b]
+areas = [a * b for a, b in dimensoes_retangulos if a != b]
 ```
 # Expressões geradoras
 
