@@ -14,7 +14,7 @@ Dicionários em especial são tão poderosos e flexíveis que são usados intern
 
 Ou ainda este meme aqui:
 
-![](https: // pbs.twimg.com/media/EelzOpCX0AAIeYV?format=png & name=small)
+![](https://pbs.twimg.com/media/EelzOpCX0AAIeYV?format=png & name=small)
 
 # Uma metáfora para dicionários
 
@@ -22,7 +22,7 @@ Imagine um dicionário como uma tabela de duas colunas que permite que busquemos
 
 Como regra simplificada, podemos usar como chaves objetos * imutáveis*, como números, texto(*strings*) ou tuplas cujos elementos internos também sejam imutáveis. Não podemos usar listas, uma vez que são * mutáveis*. Já os valores podem ser qualquer tipo de objeto/valor de Python, incluido listas e até mesmo outros dicionários!
 
-> Uma explicação mais detalhadas sobre as limitações técnicas dos tipos que podemos usar nos dicionários não cabe neste texto introdutório, mas a sua curiosidade pode fazer você querer ler mais sobre eles em[Estruturas de dados(na documentação do Python)](https: // docs.python.org/pt-br/3/tutorial/datastructures.html  # dictionaries).
+> Uma explicação mais detalhadas sobre as limitações técnicas dos tipos que podemos usar nos dicionários não cabe neste texto introdutório, mas a sua curiosidade pode fazer você querer ler mais sobre eles em[Estruturas de dados(na documentação do Python)](https://docs.python.org/pt-br/3/tutorial/datastructures.html  # dictionaries).
 
 Vejamos um exemplo prático em que um dicionário serve para guardar uma paleta de cores nomeadas, os nomes das cores vão ser as chaves, e as cores produzidas pela função `color()`do Processing vão ser os valores(que podem no final das contas serem usados nas funções `fill()`, `stroke()` e `background()`, por exemplo).
 

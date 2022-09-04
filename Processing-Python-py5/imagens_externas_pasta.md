@@ -1,9 +1,9 @@
 
 # Lendo todas as imagens de uma pasta
 
-![exemplo de grade de imagens](https: // raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/muitas_imagens.png)
+![exemplo de grade de imagens](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/muitas_imagens.png)
 
-> Exemplo de execução carregando 110 imagens medievais coletadas pelo artista e educador[Daniel Seda](https: // www.danielseda.com/home).
+> Exemplo de execução carregando 110 imagens medievais coletadas pelo artista e educador[Daniel Seda](https://www.danielseda.com/home).
 
 Tendo visto previamente como[ler e usar imagens de arquivos externos](imagens_externas.md) com `load_image()`, e a estrutura de dados lista(`list`) neste exemplo mais avançado vamos permitir que a pessoa escolha uma pasta e o * sketch * vai carregar todas as imagens nela encontradas.
 
@@ -73,7 +73,7 @@ def lista_imagens(dir=None):
 
 
 ```
-Não vamos entrar em detalhes aqui, mas você pode querer ler mais sobre[compreensão de listas](https: // panda.ime.usp.br/pensepy/static/pensepy/09-Listas/listas.html  # list-comprehensions) (a maneira compacta de produzir uma lista usada para criar a `f_list`) e [tratamento de exceções](http://turing.com.br/pydoc/2.7/tutorial/errors.html#excecoes) (o trecho dentro dentro de `try:` e  `except... :`) para entender melhor a função `lista_imagens()`.
+Não vamos entrar em detalhes aqui, mas você pode querer ler mais sobre[compreensão de listas](https://panda.ime.usp.br/pensepy/static/pensepy/09-Listas/listas.html  # list-comprehensions) (a maneira compacta de produzir uma lista usada para criar a `f_list`) e [tratamento de exceções](http://turing.com.br/pydoc/2.7/tutorial/errors.html#excecoes) (o trecho dentro dentro de `try:` e  `except... :`) para entender melhor a função `lista_imagens()`.
 
 Repare que usamos a pequena função `has_image_ext()` para responder se  os nomes fornecidos por `os.listdir()` tem a terminação mencionada na tupla `valid_ext`.
 

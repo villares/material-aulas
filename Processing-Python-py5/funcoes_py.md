@@ -1,6 +1,6 @@
 # Definindo e chamando funções
 
->[**função**](https: // penseallen.github.io/PensePython2e/03-funcoes.html  # termo:função)
+>[**função**](https://penseallen.github.io/PensePython2e/03-funcoes.html  # termo:função)
 > Uma sequência nomeada de declarações que executa alguma operação útil. As funções podem receber argumentos ou não e podem ou não produzir algum resultado.
 
 Ao programar podemos inventar vocabulário novo na linguagem que estamos usando quando definimos uma função. Essa palavra se comporta exatamente como outras palavras que já vem prontas na linguagem, e * encapsula*, empacota, alguma ação útil, por meio de um trecho de código, o corpo da função, que é executado quando * chamamos * a função em um outro momento.
@@ -133,25 +133,25 @@ else:
 
 # Glossário
 
-[**encapsulamento**](https: // penseallen.github.io/PensePython2e/04-caso-interface.html  # termo:encapsulamento) O processo de transformar uma sequência de instruções em uma definição de função.
+[**encapsulamento**](https://penseallen.github.io/PensePython2e/04-caso-interface.html  # termo:encapsulamento) O processo de transformar uma sequência de instruções em uma definição de função.
 
-[**definição de função**](https: // penseallen.github.io/PensePython2e/03-funcoes.html  # termo:definição%20de%20função) Uma instrução que cria uma função nova, especificando seu nome, parâmetros e as instruções que contém.
+[**definição de função**](https://penseallen.github.io/PensePython2e/03-funcoes.html  # termo:definição%20de%20função) Uma instrução que cria uma função nova, especificando seu nome, parâmetros e as instruções que contém.
 
-[**cabeçalho**](https: // penseallen.github.io/PensePython2e/03-funcoes.html  # termo:cabeçalho) A primeira linha de uma definição de função.
+[**cabeçalho**](https://penseallen.github.io/PensePython2e/03-funcoes.html  # termo:cabeçalho) A primeira linha de uma definição de função.
 
-[**corpo**](https: // penseallen.github.io/PensePython2e/03-funcoes.html  # termo:corpo) A sequência de instruções dentro de uma definição de função.
+[**corpo**](https://penseallen.github.io/PensePython2e/03-funcoes.html  # termo:corpo) A sequência de instruções dentro de uma definição de função.
 
-[**parâmetro**](https: // penseallen.github.io/PensePython2e/03-funcoes.html  # termo:parâmetro) Um nome usado dentro de uma função para se referir ao valor passado como argumento.
+[**parâmetro**](https://penseallen.github.io/PensePython2e/03-funcoes.html  # termo:parâmetro) Um nome usado dentro de uma função para se referir ao valor passado como argumento.
 
-[**chamada de função**](https: // penseallen.github.io/PensePython2e/03-funcoes.html  # termo:chamada%20de%20função) Uma instrução que executa uma função. É composta pelo nome da função seguido de uma lista de argumentos entre parênteses, ou caso a função possa ser chamada sem argumentos, só os parênteses (`nome()`).
+[**chamada de função**](https://penseallen.github.io/PensePython2e/03-funcoes.html  # termo:chamada%20de%20função) Uma instrução que executa uma função. É composta pelo nome da função seguido de uma lista de argumentos entre parênteses, ou caso a função possa ser chamada sem argumentos, só os parênteses (`nome()`).
 
-[**argumento**](https: // penseallen.github.io/PensePython2e/03-funcoes.html  # termo:argumento) Um valor apresentado a uma função quando a função é chamada. Este valor é atribuído ao parâmetro correspondente na função.
+[**argumento**](https://penseallen.github.io/PensePython2e/03-funcoes.html  # termo:argumento) Um valor apresentado a uma função quando a função é chamada. Este valor é atribuído ao parâmetro correspondente na função.
 
-[**valor de retorno**](https: // penseallen.github.io/PensePython2e/03-funcoes.html  # termo:valor%20de%20retorno) O resultado de uma função. Se uma chamada de função for usada como uma expressão, o valor de retorno é o valor da expressão.
+[**valor de retorno**](https://penseallen.github.io/PensePython2e/03-funcoes.html  # termo:valor%20de%20retorno) O resultado de uma função. Se uma chamada de função for usada como uma expressão, o valor de retorno é o valor da expressão.
 
-[**função com resultado**](https: // penseallen.github.io/PensePython2e/03-funcoes.html  # termo:função%20com%20resultado) Uma função que devolve um valor.
+[**função com resultado**](https://penseallen.github.io/PensePython2e/03-funcoes.html  # termo:função%20com%20resultado) Uma função que devolve um valor.
 
-[**`None`** ](https: // penseallen.github.io/PensePython2e/03-funcoes.html  # termo:None) Um valor especial apresentado por funções nulas (circularmente definidas como funções que devolvem o valor `None`, em lugar de outro valor de resultado).
+[**`None`** ](https://penseallen.github.io/PensePython2e/03-funcoes.html  # termo:None) Um valor especial apresentado por funções nulas (circularmente definidas como funções que devolvem o valor `None`, em lugar de outro valor de resultado).
 
 # Assuntos relacionados
 

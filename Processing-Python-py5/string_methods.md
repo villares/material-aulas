@@ -122,4 +122,4 @@ print("{:.4%}".format(PI))
 
 # E tem mais coisas ainda!
 
-Voocê pode ler mais na Documentação do Python sobre os[métodos de String](https: // docs.python.org/pt-br/2.7/library/stdtypes.html  # string-methods) e a [mini-linguagem de formatação](https://docs.python.org/pt-br/3.6/library/string.html#formatstrings).
+Voocê pode ler mais na Documentação do Python sobre os[métodos de String](https://docs.python.org/pt-br/2.7/library/stdtypes.html  # string-methods) e a [mini-linguagem de formatação](https://docs.python.org/pt-br/3.6/library/string.html#formatstrings).

@@ -2,8 +2,8 @@
 
 > Adapatdo de: VILLARES, A. B. A.
 MOREIRA, D. DE C.
-GOMES, M. R. [Ensino de programação em um contexto de exploração gráfica com Processing modo Python](https: // villares.github.io/mestrado/VILLARES_MOREIRA_GOMES_GRAPHICA_2017). In: Anais GRAPHICA 2017 - XII International Conference on Graphics Engineering for Arts and Design. Anais…Araçatuba(SP) UNIP, 2017.
-> *Para executar[instale o Processing com o modo Python](http: // villares.github.io/como-instalar-o-processing-modo-python /) *
+GOMES, M. R. [Ensino de programação em um contexto de exploração gráfica com Processing modo Python](https://villares.github.io/mestrado/VILLARES_MOREIRA_GOMES_GRAPHICA_2017). In: Anais GRAPHICA 2017 - XII International Conference on Graphics Engineering for Arts and Design. Anais…Araçatuba(SP) UNIP, 2017.
+> *Para executar[instale o Processing com o modo Python](http://villares.github.io/como-instalar-o-processing-modo-python /) *
 
 Vamos ver aqui alguns conceitos introdutórios de orientação a objetos:
 

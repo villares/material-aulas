@@ -299,4 +299,4 @@ def seta_tam_fixo(xa, ya, xb, yb, tam):
 
 ![](assets/seta_curta.gif)
 
-Note que ocultei a setinha do mouse com `no_cursor()`, é possível voltar com o cursor, e escolher outros formatos ou até uma imagem como cursor, consulte a documentação de[`cursor()`](https: // py.processing.org/reference/cursor.html).
+Note que ocultei a setinha do mouse com `no_cursor()`, é possível voltar com o cursor, e escolher outros formatos ou até uma imagem como cursor, consulte a documentação de[`cursor()`](https://py.processing.org/reference/cursor.html).

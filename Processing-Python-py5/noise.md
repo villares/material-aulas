@@ -7,7 +7,7 @@ Nesta altura você possívelmente já experimentou fazer algo usando[números(ps
 >
 >*Perlin noise has a more organic appearance because it produces a naturally ordered(“smooth”) sequence of pseudo-random numbers. The graph on the left below shows Perlin noise over time, with the x-axis representing time; note the smoothness of the curve.*
 >
->(Trecho de [*The Nature of Code*](https: // natureofcode.com/book/introduction /), 2012, de Daniel Shiffman.)
+>(Trecho de [*The Nature of Code*](https://natureofcode.com/book/introduction /), 2012, de Daniel Shiffman.)
 
 # *Perlin Noise* 1D
 

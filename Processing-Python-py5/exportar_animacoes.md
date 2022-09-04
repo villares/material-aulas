@@ -35,9 +35,9 @@ def draw():
 ```
 Para a converter esses 'frames' em um vídeo ou em um GIF animado, podemos usar:
 - A ferramenta ** Movie Maker ** do próprio IDE do Processing(Vídeo)
-- [**Gimp**](https: // gimp.org) ou [**Glimpse**](http: // https: // glimpse-editor.org /), com o comando 'abrir como camadas' (GIF animado)
-- Ferramentas online como ** https: // ezgif.com/** (GIF animado)
-- Alguma outra ferramenta da sua escolha, como o[**ffmpeg**](http//www.ffmpeg.org) na linha de comando(ou[via uma GUI](https: // github.com/amiaopensource/ffmpeg-amia-wiki/wiki/3 % 29-Graphical-User-Interface-Applications-using-FFmpeg)).
+- [**Gimp**](https://gimp.org) ou [**Glimpse**](http://https://glimpse-editor.org /), com o comando 'abrir como camadas' (GIF animado)
+- Ferramentas online como ** https://ezgif.com/** (GIF animado)
+- Alguma outra ferramenta da sua escolha, como o[**ffmpeg**](http//www.ffmpeg.org) na linha de comando(ou[via uma GUI](https://github.com/amiaopensource/ffmpeg-amia-wiki/wiki/3 % 29-Graphical-User-Interface-Applications-using-FFmpeg)).
 
 # B. Biblioteca *GifAnimation*
 
@@ -155,7 +155,7 @@ def draw():
 
 # C. Biblioteca *Video Export*
 
-A biblioteca * Video Export * criada por Abe Pazos[@hamoid](https: // github.com/hamoid) pode ser baixada diretamente pelo IDE, e vem com vários exemplos. Será necessário instalar a ferramenta `ffmpeg` disponível em[www.ffmpeg.org](https: // www.ffmpeg.org /)
+A biblioteca * Video Export * criada por Abe Pazos[@hamoid](https://github.com/hamoid) pode ser baixada diretamente pelo IDE, e vem com vários exemplos. Será necessário instalar a ferramenta `ffmpeg` disponível em[www.ffmpeg.org](https://www.ffmpeg.org /)
 
 **[Falta alertar sobre a installação do ffmpeg] **
 
@@ -212,7 +212,7 @@ def keyPressed():
 
 Uma última estratégia que pode ser útil para documentar e compartilhar o resultado de * sketches * é gravar a tela do computador, ou parte dela.
 
-- [Peek](https: // github.com/phw/peek) - Linux - exporta diretamente GIF, APNG ou MP4
-- [LICEcap](https: // www.cockos.com/licecap /) - Windows e MacOS - exporta diretamenteGIF
-- [OBS Studio](https: // obsproject.com /) - Windows, MacOS e Linux - exporta vídeo
-- [GifCam](https: // gifcam.br.uptodown.com/windows) - Windows - exporta e edita diretamenteGIF
+- [Peek](https://github.com/phw/peek) - Linux - exporta diretamente GIF, APNG ou MP4
+- [LICEcap](https://www.cockos.com/licecap /) - Windows e MacOS - exporta diretamenteGIF
+- [OBS Studio](https://obsproject.com /) - Windows, MacOS e Linux - exporta vídeo
+- [GifCam](https://gifcam.br.uptodown.com/windows) - Windows - exporta e edita diretamenteGIF

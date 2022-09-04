@@ -75,9 +75,9 @@ def draw():
     text(texto_mouse, 50, 70)
 ```
 
-![resultado](https: // raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/text-na-tela.png)
+![resultado](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/text-na-tela.png)
 
-Mais sobre desenhar texto na tela na página sobre tipografia básica em: [Trabalhando com fontes e outros ajustes do texto](https: // github.com/villares/material-aulas/blob/master/Processing-Python/tipografia.md)
+Mais sobre desenhar texto na tela na página sobre tipografia básica em: [Trabalhando com fontes e outros ajustes do texto](https://github.com/villares/material-aulas/blob/master/Processing-Python/tipografia.md)
 
 # Letras com acentos, caracteres especiais e outros glifos
 

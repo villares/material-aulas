@@ -20,7 +20,7 @@ image(img_a, 0, 0)  # exibe na área de desenho a imagem
 # NullPointerException at processing.core.PGraphics.image(PGraphics...
 ```
 
-![image](https: // user-images.githubusercontent.com/3694604/165303439-bf04975d-551c-46a6-8afc-9f59230841ae.png)
+![image](https://user-images.githubusercontent.com/3694604/165303439-bf04975d-551c-46a6-8afc-9f59230841ae.png)
 
 Assim como `0`(zero), `""` (um string vazio), e uma lista ou uma coleção vazia, o `None` é considerado "semelhante a `False`" caso seja avaliado em um contexto que espera verdadeiro(`True`)  ou falso(`False`). Outros números que não zero, strings e coleções com itens dentro, assim como a maioria dos objetos, são considerados "semelhantes a `True`" nesses casos.
 

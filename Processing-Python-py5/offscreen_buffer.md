@@ -1,6 +1,6 @@
 # Desenhando em um espaço fora da tela (*offscreen buffer*)
 
-É possível desenhar em um objeto especial, uma espécie de tela virtual, criando superfícies * Py5Graphics * com a função[create_graphics()](https: // py.processing.org/reference/create_graphics.html), em vez de desenhar diretamente na tela em uma estratégia conhecida como _offscreen buffer_. Depois é possível mostrar ou não essa imagem na área de desenho normal com a função `image()` (a mesma que usamos para mostrar uma imagem externa carregada carregada com `load_image()`, uma * Py5Image*).
+É possível desenhar em um objeto especial, uma espécie de tela virtual, criando superfícies * Py5Graphics * com a função[create_graphics()](https://py.processing.org/reference/create_graphics.html), em vez de desenhar diretamente na tela em uma estratégia conhecida como _offscreen buffer_. Depois é possível mostrar ou não essa imagem na área de desenho normal com a função `image()` (a mesma que usamos para mostrar uma imagem externa carregada carregada com `load_image()`, uma * Py5Image*).
 
 **Atenção: ** Não esqueça de usar `.begin_draw()` e `.end_draw()` ou você será brindado com uma `NullPointerException`
 
@@ -10,7 +10,7 @@ Algumas vantagens dessa estratégia podem ser:
 - Salvar o imagens em camadas separadas para posterior tratamento.
 - Aplicação de máscaras de recorte ou outros tratamentos
 
-Outra estratégia semelhante é desenhar em um objeto ou * grupo * de objetos * Py5Shape*, que pode ser criado com a função[create_shape()](https: // py.processing.org/reference/create_shape.html), e pode depois desenhado na tela com `shape()'.
+Outra estratégia semelhante é desenhar em um objeto ou * grupo * de objetos * Py5Shape*, que pode ser criado com a função[create_shape()](https://py.processing.org/reference/create_shape.html), e pode depois desenhado na tela com `shape()'.
 
 # Um primeiro exemplo
 
@@ -77,9 +77,9 @@ def keyPressed():
 
 
 ```
-![camada0](https: // user-images.githubusercontent.com/3694604/70395381-dc6f4280-19dc-11ea-8f64-fad20e2c0993.png)
-![camada1](https: // user-images.githubusercontent.com/3694604/70395382-dc6f4280-19dc-11ea-9d9b-d8a371a1c7d8.png)
-![combinadas](https: // user-images.githubusercontent.com/3694604/70395383-dd07d900-19dc-11ea-9671-4cf6eb2d510e.png)
+![camada0](https://user-images.githubusercontent.com/3694604/70395381-dc6f4280-19dc-11ea-8f64-fad20e2c0993.png)
+![camada1](https://user-images.githubusercontent.com/3694604/70395382-dc6f4280-19dc-11ea-9d9b-d8a371a1c7d8.png)
+![combinadas](https://user-images.githubusercontent.com/3694604/70395383-dd07d900-19dc-11ea-9671-4cf6eb2d510e.png)
 
 
 # Recortando imagens com uma máscara

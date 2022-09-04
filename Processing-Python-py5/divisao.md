@@ -180,11 +180,11 @@ Resultado(truncado, seriam 100 números):
 
 # Glossário
 
-[**tipo**](https: // penseallen.github.io/PensePython2e/01-jornada.html  # termo:tipo) Uma categoria de valores. Alguns tipos que vimos por enquanto são números inteiros (tipo `int`), números de ponto flutuante (tipo `float`) e *strings* (tipo `str`).
+[**tipo**](https://penseallen.github.io/PensePython2e/01-jornada.html  # termo:tipo) Uma categoria de valores. Alguns tipos que vimos por enquanto são números inteiros (tipo `int`), números de ponto flutuante (tipo `float`) e *strings* (tipo `str`).
 
-[**inteiro**](https: // penseallen.github.io/PensePython2e/01-jornada.html  # termo:inteiro) Um tipo que representa números inteiros.
+[**inteiro**](https://penseallen.github.io/PensePython2e/01-jornada.html  # termo:inteiro) Um tipo que representa números inteiros.
 
-[**ponto flutuante**](https: // penseallen.github.io/PensePython2e/01-jornada.html  # termo:ponto%20flutuante) Um tipo que representa números com partes fracionárias.
+[**ponto flutuante**](https://penseallen.github.io/PensePython2e/01-jornada.html  # termo:ponto%20flutuante) Um tipo que representa números com partes fracionárias.
 
 # Assuntos relacionados
 

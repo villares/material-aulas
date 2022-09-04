@@ -131,7 +131,7 @@ DELETE    '\x7f'
 - [Como ler a rodinha do mouse(*mouse wheel * ou * scroll wheel*)](rodinha_mouse.md)
 
 - --
-Este material é baseado no material do curso https: // arteprog.space/programacao-criativa /
+Este material é baseado no material do curso https://arteprog.space/programacao-criativa /
 
 ---
 Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.

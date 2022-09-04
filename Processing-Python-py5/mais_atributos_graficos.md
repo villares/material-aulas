@@ -1,6 +1,6 @@
 # Mais sobre os atributos gráficos
 
-Esta página tenta ampliar um pouco o assundo dos atributos gráficos, que são os ajustes que podemos fazer nas formas que desenhamos, mencionados desde os[primeiros passos](https: // github.com/villares/material-aulas/blob/main/Processing-Python/desenho-basico_py.md) e também quando falamos[mais sobre as cores](https: // github.com/villares/material-aulas/blob/main/Processing-Python/mais_sobre_cores.md).
+Esta página tenta ampliar um pouco o assundo dos atributos gráficos, que são os ajustes que podemos fazer nas formas que desenhamos, mencionados desde os[primeiros passos](https://github.com/villares/material-aulas/blob/main/Processing-Python/desenho-basico_py.md) e também quando falamos[mais sobre as cores](https://github.com/villares/material-aulas/blob/main/Processing-Python/mais_sobre_cores.md).
 
 # Quais são os ajustes que podemos fazer nos atributos gráficos das formas
 # que desennhamos?
@@ -8,7 +8,7 @@ Esta página tenta ampliar um pouco o assundo dos atributos gráficos, que são 
 - Cor de preenchimento `fill()` ou não-preenchimento `no_fill()`, cor de traço `stroke()` e não-traço `no_stroke()`
 - As cores podem ser indicadas como uma trinca de números de 0 a 255 (R, G, B) ou ainda com um quarto número que define o * alpha * ou opacidade(R, G, B, A) sendo que * alpha * 0 torna a cor totalmente transparente e 255 totalmente opaca. Se usarmos `color_mode(HSB)` podemos indicar matiz(*hue*), saturação(*saturation*) e Brilho(*brightness*), também com o quarto valor para o * alpha * opcional.
 - Espessura de traço `stroke_weight()` (não pode ser menor que zero!)
-- Junções e terminações dos traços[`stroke_join()`](https: // py.processing.org/reference/stroke_join.html) e[`stroke_caps()`](https: // py.processing.org/reference/stroke_cap.html)
+- Junções e terminações dos traços[`stroke_join()`](https://py.processing.org/reference/stroke_join.html) e[`stroke_caps()`](https://py.processing.org/reference/stroke_cap.html)
 
 # Preservando o estado atual dos atributos (fazendo modificações e depois
 # voltando ao estado anterior)

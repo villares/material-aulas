@@ -101,5 +101,5 @@ areas_dict = {(a, b): a * b for a, b in dimensoes_retangulos}
 
 # Veja no livto Pense em Python
 
-- [Abrangência de listas](https: // github.com/villares/PensePython2e/blob/master/docs/19-extra.md  # 192---abrang%C3%AAncia-de-listas)
-- [Expressões geradoras](https: // github.com/villares/PensePython2e/blob/master/docs/19-extra.md  # 193---express%C3%B5es-geradoras)
+- [Abrangência de listas](https://github.com/villares/PensePython2e/blob/master/docs/19-extra.md  # 192---abrang%C3%AAncia-de-listas)
+- [Expressões geradoras](https://github.com/villares/PensePython2e/blob/master/docs/19-extra.md  # 193---express%C3%B5es-geradoras)

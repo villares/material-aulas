@@ -5,7 +5,7 @@ Em computação existe uma classificação dos valores armazenados na memória d
 
 Em Python, quando fazemos uma atribuição, criando ou alterando uma variável, por exemplo `i = 10`, o `i` é um nome que aponta para um valor na memória, `10`, um número ** inteiro**, do tipo * integer * que é normalmente abreviado como `int`.
 
-Já `10.5`, `0.2` que tem uma parte fracionária, ou até mesmo `10.` (dez seguido de um ponto), são considerados ** números de ponto flutuante**, *floating point * ou abreviadamente `float`. Valores numéricos em Python são, na maior parte das vezes, dos tipos ** *inteiro*** ou ** *ponto flutuante***. Mas há também tipos como ** *número complexo*** ([mais detalhes na documentação do Python](https: // docs.python.org/pt-br/3/library/stdtypes.html  # numeric-types-int-float-complex)), entre outros.
+Já `10.5`, `0.2` que tem uma parte fracionária, ou até mesmo `10.` (dez seguido de um ponto), são considerados ** números de ponto flutuante**, *floating point * ou abreviadamente `float`. Valores numéricos em Python são, na maior parte das vezes, dos tipos ** *inteiro*** ou ** *ponto flutuante***. Mas há também tipos como ** *número complexo*** ([mais detalhes na documentação do Python](https://docs.python.org/pt-br/3/library/stdtypes.html  # numeric-types-int-float-complex)), entre outros.
 
 Textos, que aparecem entre aspas quando no meio do código de um programa, como por exemplo `'hello'` ou `"Eric Idle"`, são do tipo ** *string*** (cadeia de caracteres em português) que abreviamos como `str`. Repare que `"1010"` é um * string * enquanto `1010` é um número inteiro, `int`, e `1010.0` é `float`.
 
@@ -89,18 +89,18 @@ Quando você for converter em * string*, por exemplo, um objeto que descreve um 
 
 # Glossário
 
-[**valor**](https: // penseallen.github.io/PensePython2e/01-jornada.html  # termo:valor) Uma das unidades básicas de dados, como um número ou *string*, que um programa manipula.
+[**valor**](https://penseallen.github.io/PensePython2e/01-jornada.html  # termo:valor) Uma das unidades básicas de dados, como um número ou *string*, que um programa manipula.
 
-[**tipo**](https: // penseallen.github.io/PensePython2e/01-jornada.html  # termo:tipo) Uma categoria de valores. Alguns tipos que vimos por enquanto são números inteiros (tipo `int`), números de ponto flutuante (tipo `float`) e *strings* (tipo `str`).
+[**tipo**](https://penseallen.github.io/PensePython2e/01-jornada.html  # termo:tipo) Uma categoria de valores. Alguns tipos que vimos por enquanto são números inteiros (tipo `int`), números de ponto flutuante (tipo `float`) e *strings* (tipo `str`).
 
-[**inteiro**](https: // penseallen.github.io/PensePython2e/01-jornada.html  # termo:inteiro) Um tipo que representa números inteiros.
+[**inteiro**](https://penseallen.github.io/PensePython2e/01-jornada.html  # termo:inteiro) Um tipo que representa números inteiros.
 
-[**ponto flutuante**](https: // penseallen.github.io/PensePython2e/01-jornada.html  # termo:ponto%20flutuante) Um tipo que representa números com partes fracionárias.
+[**ponto flutuante**](https://penseallen.github.io/PensePython2e/01-jornada.html  # termo:ponto%20flutuante) Um tipo que representa números com partes fracionárias.
 
-[**string**](https: // penseallen.github.io/PensePython2e/01-jornada.html  # termo:string) Um tipo que representa sequências de caracteres.
+[**string**](https://penseallen.github.io/PensePython2e/01-jornada.html  # termo:string) Um tipo que representa sequências de caracteres.
 
 - --
-Este material é baseado no mate_mrial do curso https: // arteprog.space/programacao-criativa /
+Este material é baseado no mate_mrial do curso https://arteprog.space/programacao-criativa /
 
 ---
 Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.

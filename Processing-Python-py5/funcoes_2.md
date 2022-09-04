@@ -3,7 +3,7 @@
 
 # Argumentos opcionais em funções que conhecemos
 
-Você já reparou que a função `rect()` aceita 4, 5 ou 8 argumentos? Você pode invocar `rect()` das seguintes maneiras([confira na referência se preferir](https: // py.processing.org/reference/rect.html)):
+Você já reparou que a função `rect()` aceita 4, 5 ou 8 argumentos? Você pode invocar `rect()` das seguintes maneiras([confira na referência se preferir](https://py.processing.org/reference/rect.html)):
 
 ```
 rect(x, y, largura, altura)

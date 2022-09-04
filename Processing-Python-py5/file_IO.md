@@ -188,4 +188,4 @@ with open(caminho_arquivo, "w", encoding="utf-8") as file:
 # Assuntos relacionados
 
 * [Textos no programa, no console e na tela(*strings*)](strings_py.md)
-* Se quiser ler mais sobre * Filie IO * na documentação do Python: [Python 2.7 Tutorial: Reading and Writing Files](https: // docs.python.org/2/tutorial/inputoutput.html  # reading-and-writing-files)
+* Se quiser ler mais sobre * Filie IO * na documentação do Python: [Python 2.7 Tutorial: Reading and Writing Files](https://docs.python.org/2/tutorial/inputoutput.html  # reading-and-writing-files)

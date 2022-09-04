@@ -105,7 +105,7 @@ def mandala(x, y, raio, num_petalas):
         angulo += passo
 ```
 
-![mandala](https: // user-images.githubusercontent.com/3694604/117585995-e3c3df80-b0eb-11eb-9f13-0a6ae1660408.png)
+![mandala](https://user-images.githubusercontent.com/3694604/117585995-e3c3df80-b0eb-11eb-9f13-0a6ae1660408.png)
 
 # Acumulando itens em uma coleção
 

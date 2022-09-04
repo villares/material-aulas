@@ -92,24 +92,24 @@ Neste segundo exemplo a diferença(subtração) entre um vetor criado com as cor
 
 | método | descrição |
 | ------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------- |
-| [set()](https: // py.processing.org/reference/PVector_set.html) | Define(altera) os componentes do vetor. |
-| [random2_d()](https: // py.processing.org/reference/PVector_random2D.html) | Cria um novo vetor unitário 2D com uma direção aleatória. |
-| [random3_d()](https: // py.processing.org/reference/PVector_random3D.html) | Cria um novo vetor unitário 3D com uma direção aleatória. |
-| [from_angle()](https: // py.processing.org/reference/PVector_fromAngle.html) | Cria um novo vetor unitário 2D a partir de um ângulo. |
-| [copy()](https: // py.processing.org/reference/PVector_copy.html) | Produz um novo vetor, cópia do original. |
-| [mag()](https: // py.processing.org/reference/PVector_mag.html) | Calcula a magnitude do vetor. |
-| [mag_sq()](https: // py.processing.org/reference/PVector_magSq.html) | Calcula a magnitude ao quadrado do vetor. É mais rápido que calcular a magnitude! |
-| [add()](https: // py.processing.org/reference/PVector_add.html) | Soma compontentes x, y, e z, ou um segundo vetor a um vetor. Pode-se usar o operador `+`  para somar dois vetores também. |
-| [sub()](https: // py.processing.org/reference/PVector_sub.html) | Subtrai compontentes x, y, e z, ou um segundo vetor a um vetor. Pode-se usar o operador `-` pra subtrair um vetor de outro também. |
-| [mult()](https: // py.processing.org/reference/PVector_mult.html) | Multipica um vetor por um valor escalar. Pode-se usar o operador `*` |
-| [div()](https: // py.processing.org/reference/PVector_div.html) | Divide um vetor por um valor escalar. Pode-se usar o operador `/` |
-| [dist()](https: // py.processing.org/reference/PVector_dist.html) | Calcula a distância entre dois pontos representados por dois vetores. |
-| [dot()](https: // py.processing.org/reference/PVector_dot.html) | Calcula o produto escalar(*dot product*) entre dois vetores. |
-| [cross()](https: // py.processing.org/reference/PVector_cross.html) | Calcula o produto vetorial(*cross product*) entre dois vetores. |
-| [normalize()](https: // py.processing.org/reference/PVector_normalize.html) | Normaliza o vetor, isto é faz com que fique com a magnitude 1, mantendo a mesma direção. |
-| [limit()](https: // py.processing.org/reference/PVector_limit.html) | Limita a magnitude do vetor a um certo valor. |
-| [set_mag()](https: // py.processing.org/reference/PVector_setMag.html) | Define, isto é altera, a magnitude do vetor. |
-| [heading()](https: // py.processing.org/reference/PVector_heading.html) | Calcula o ângulo de rotação do vetor, isto é, para onde ele aponta. |
-| [rotate()](https: // py.processing.org/reference/PVector_rotate.html) | Gira o vetor um certo ângulo em radianos(funciona apenas em 2D). |
-| [lerp()](https: // py.processing.org/reference/PVector_lerp.html) | Produz o resultado da interpolação linear entre dois vetores. |
-| [angle_between()](https: // py.processing.org/reference/PVector_angleBetween.html) | Calcula o ângulo entre dois vetores. |
+| [set()](https://py.processing.org/reference/PVector_set.html) | Define(altera) os componentes do vetor. |
+| [random2_d()](https://py.processing.org/reference/PVector_random2D.html) | Cria um novo vetor unitário 2D com uma direção aleatória. |
+| [random3_d()](https://py.processing.org/reference/PVector_random3D.html) | Cria um novo vetor unitário 3D com uma direção aleatória. |
+| [from_angle()](https://py.processing.org/reference/PVector_fromAngle.html) | Cria um novo vetor unitário 2D a partir de um ângulo. |
+| [copy()](https://py.processing.org/reference/PVector_copy.html) | Produz um novo vetor, cópia do original. |
+| [mag()](https://py.processing.org/reference/PVector_mag.html) | Calcula a magnitude do vetor. |
+| [mag_sq()](https://py.processing.org/reference/PVector_magSq.html) | Calcula a magnitude ao quadrado do vetor. É mais rápido que calcular a magnitude! |
+| [add()](https://py.processing.org/reference/PVector_add.html) | Soma compontentes x, y, e z, ou um segundo vetor a um vetor. Pode-se usar o operador `+`  para somar dois vetores também. |
+| [sub()](https://py.processing.org/reference/PVector_sub.html) | Subtrai compontentes x, y, e z, ou um segundo vetor a um vetor. Pode-se usar o operador `-` pra subtrair um vetor de outro também. |
+| [mult()](https://py.processing.org/reference/PVector_mult.html) | Multipica um vetor por um valor escalar. Pode-se usar o operador `*` |
+| [div()](https://py.processing.org/reference/PVector_div.html) | Divide um vetor por um valor escalar. Pode-se usar o operador `/` |
+| [dist()](https://py.processing.org/reference/PVector_dist.html) | Calcula a distância entre dois pontos representados por dois vetores. |
+| [dot()](https://py.processing.org/reference/PVector_dot.html) | Calcula o produto escalar(*dot product*) entre dois vetores. |
+| [cross()](https://py.processing.org/reference/PVector_cross.html) | Calcula o produto vetorial(*cross product*) entre dois vetores. |
+| [normalize()](https://py.processing.org/reference/PVector_normalize.html) | Normaliza o vetor, isto é faz com que fique com a magnitude 1, mantendo a mesma direção. |
+| [limit()](https://py.processing.org/reference/PVector_limit.html) | Limita a magnitude do vetor a um certo valor. |
+| [set_mag()](https://py.processing.org/reference/PVector_setMag.html) | Define, isto é altera, a magnitude do vetor. |
+| [heading()](https://py.processing.org/reference/PVector_heading.html) | Calcula o ângulo de rotação do vetor, isto é, para onde ele aponta. |
+| [rotate()](https://py.processing.org/reference/PVector_rotate.html) | Gira o vetor um certo ângulo em radianos(funciona apenas em 2D). |
+| [lerp()](https://py.processing.org/reference/PVector_lerp.html) | Produz o resultado da interpolação linear entre dois vetores. |
+| [angle_between()](https://py.processing.org/reference/PVector_angleBetween.html) | Calcula o ângulo entre dois vetores. |

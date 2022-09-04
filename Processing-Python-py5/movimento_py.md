@@ -51,7 +51,7 @@ def draw():
 - [Como exportar animações](exportar_animacoes.md)
 
 ---
-Este material é baseado no material do curso https: // arteprog.space/programacao-criativa/
+Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
 
 ---
 Texto e imagens / text and images: CC BY-NC-SA 4.0

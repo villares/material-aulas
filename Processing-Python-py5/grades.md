@@ -74,7 +74,7 @@ def draw():
 
 
 ```
-![](https: // github.com/villares/material-aulas/blob/master/Processing-Python/assets/sketch_2020_04_12b.png?raw=true)
+![](https://github.com/villares/material-aulas/blob/master/Processing-Python/assets/sketch_2020_04_12b.png?raw=true)
 
 # Assuntos relacionados
 
@@ -131,4 +131,4 @@ def grid(colunas, filas, tam_col=1, tam_fil=1):
     # produzindo os resultados conforme a necessidade. Dentro de um loop, por
     # exemplo.
 ```
-![](https: // github.com/villares/material-aulas/blob/master/Processing-Python/assets/sketch_2020_04_12a.png?raw=true)
+![](https://github.com/villares/material-aulas/blob/master/Processing-Python/assets/sketch_2020_04_12a.png?raw=true)

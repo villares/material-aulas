@@ -1,6 +1,6 @@
 # Transformando o sistema de coordenandas
 
-> Baseado no tutorial[2D Transformations](https: // py.processing.org/tutorials/transform2d /)([versão traduzida](http: // arteprog.space/Processando-Processing/tutoriais-PT/python-transformacoes_2_d)) de J. David Eisenberg
+> Baseado no tutorial[2D Transformations](https://py.processing.org/tutorials/transform2d /)([versão traduzida](http://arteprog.space/Processando-Processing/tutoriais-PT/python-transformacoes_2_d)) de J. David Eisenberg
 
 Processing tem funções embutidas que tornam fácil você mover, girar, e crescer ou encolher objetos por meio da manipulação do sistema de coordenadas. Isso torna possível, por exemplo desenhar um retângulo girado na tela, uma vez que a função `rect()` só sabe desenhar retângulos com os lados alinhados com o sistema de coordenadas.
 
@@ -18,15 +18,15 @@ Esta página apresenta funções `translate`, `rotate`, e `scale`, mas também a
 
 Quando você quer desenhar alguma coisa, especifica as cordenadas. Veja um retângulo simples desenhado com o código `rect(20, 20, 40, 40)`. O sistema de coordenadas é como uma espécie de grade ou papel milimetrado, e está mostrado em cinza.
 
-![Black rectangle on gray numbered grid](https: // py.processing.org/tutorials/transform2d/imgs/original.png)
+![Black rectangle on gray numbered grid](https://py.processing.org/tutorials/transform2d/imgs/original.png)
 
 Se você quiser mover o retângulo 60 unidades para a direita e 80 unidades para baixo, pode mudar as coordenadas somando ao * x * e * y * do ponto inicial: `rect(20 + 60, 20 + 80, 40, 40)` e o retângulo vai aparecer em um local diferente. (A seta é só para efeito dramático.)
 
-![Black rectangle on gray numbered grid, moved](https: // py.processing.org/tutorials/transform2d/imgs/new_coords.png)
+![Black rectangle on gray numbered grid, moved](https://py.processing.org/tutorials/transform2d/imgs/new_coords.png)
 
 Mas tem uma maneira mais interessante de fazer isso: **em vez disso mover o sistema de coordenadas**. Se você move a grado 60 unidades para a direita e 80 para baixo vai obter exatamente o mesmo resultado visual. Mover o sistema de coordenadas é chamado de translação.
 
-![grid moved with arrow showing motion](https: // py.processing.org/tutorials/transform2d/imgs/moved_grid.png)
+![grid moved with arrow showing motion](https://py.processing.org/tutorials/transform2d/imgs/moved_grid.png)
 
 A coisa importante de se notar no diagrama anterior é que, do ponto de vista do retângulo, ele não se moveu nada. O canto superior esquerdo continua em(20, 20). Quando você usa transformações, as coisas que você desenha * não mudam de posição*; o sistema de cordenadas muda.
 
@@ -71,7 +71,7 @@ Sim, você podia ter feito uma translação `translate(-60, -80)` para mover a g
 
 Você pode estar pensando que pegar o sistema de coordenadas e movê-lo é muito mais complicado do que apenas adicionar às coordenadas. Para um exemplo simples, como o retângulo, você está correto. Mas vamos dar um exemplo de onde o `translate()` pode facilitar a vida. Aqui está um código que desenha uma fileira de casas. Ele usa um loop que chama a função chamada `casa()`, que recebe o * x * e * y * da posição do canto superior esquerdo da casa como parâmetros.
 
-![Row of stick-figure casas](https: // py.processing.org/tutorials/transform2d/imgs/houses.png)
+![Row of stick-figure casas](https://py.processing.org/tutorials/transform2d/imgs/houses.png)
 
 ```python
 def setup():
@@ -106,7 +106,7 @@ def casa(x, y):
 
 Além da translação, que move a grade, é possível girar o sistema de coordenadas com a função `rotate()`. Essa função tem um parâmetro ou argumento, um número de * radianos * que você quer rodar. Em graus, um círculo tem 360°. Quando descrevemos os ângulos em radianos, a circuferência completa tem 2π radianos. Eis aqui um diagrama de como Processing mede ângulos em graus(preto) e radianos(vermelho).
 
-![Degrees are measured clockwise with zero being at 3 o'clock](https: // py.processing.org/tutorials/transform2d/imgs/degrees.png)
+![Degrees are measured clockwise with zero being at 3 o'clock](https://py.processing.org/tutorials/transform2d/imgs/degrees.png)
 
 Como a maioria das pessoas pensa em graus, o Processing possui uma função embutida `radians()` que recebe um número em graus como argumento e o converte para você. Ele também possui uma função `degrees()` que converte radianos em graus. Dado esse cenário, vamos tentar girar um quadrado 45 graus no sentido horário.
 
@@ -129,7 +129,7 @@ def setup():
 
 Ei o que aconteceu? Como o quadrado foi movido e cortadao A resposta é: o quadrado não se moveu. A ** grade ** foi girada. Aqui está o que realmente aconteceu. Como você pode ver, no sistema de coordenadas girado, o quadrado ainda tem seu canto superior esquerdo em(40, 40).
 
-![shows grid rotated 45 degrees clockwise](https: // py.processing.org/tutorials/transform2d/imgs/rotated_grid.png)
+![shows grid rotated 45 degrees clockwise](https://py.processing.org/tutorials/transform2d/imgs/rotated_grid.png)
 
 # Girando da maneira certa
 
@@ -139,7 +139,7 @@ A maneira certa de girar o quadrado depende de fazer uma translação antes:
 2. Gire a grade π/4 radianos(45°)
 3. Desenhe o quadrado na origem.
 
-![Grid translated, then rotated](https: // py.processing.org/tutorials/transform2d/imgs/correct_rotate_grid.png)
+![Grid translated, then rotated](https://py.processing.org/tutorials/transform2d/imgs/correct_rotate_grid.png)
 
 E aqui está o código que gera o resultado, sem as marcas de grade.
 
@@ -252,4 +252,4 @@ Para rotação, chame as funções `rotateX()`, `rotateY()`, ou `rotateZ()` para
 
 # Assuntos relacionados
 
-- Veja a[versão completa traduzida do tutorial na qual este material foi baseado](http: // arteprog.space/Processando-Processing/tutoriais-PT/python-transformacoes_2D), tem um exemplo bacana de um robô que balança os braços.
+- Veja a[versão completa traduzida do tutorial na qual este material foi baseado](http://arteprog.space/Processando-Processing/tutoriais-PT/python-transformacoes_2D), tem um exemplo bacana de um robô que balança os braços.

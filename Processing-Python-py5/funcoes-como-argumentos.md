@@ -206,5 +206,5 @@ angulos_para_arredondar = [15.0, 15.5, 40.2, 45.1, 60.8,  75.3]
 angulos_arredondados = list(map(round, angulos_para_arredondar))
 ```
 
->`*` A função `map()` do Python  é diferente da[função `map() ` do Processing](https: // github.com/villares/material-aulas/blob/master/Processing-Python/map_lerp.md), no Processing modo Python temos as duas ao mesmo tempo, e isso é meio estranho..., o ambiente vê comforme os valores que você passou qual das funções vai usar.
+>`*` A função `map()` do Python  é diferente da[função `map() ` do Processing](https://github.com/villares/material-aulas/blob/master/Processing-Python/map_lerp.md), no Processing modo Python temos as duas ao mesmo tempo, e isso é meio estranho..., o ambiente vê comforme os valores que você passou qual das funções vai usar.
 >

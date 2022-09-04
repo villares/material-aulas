@@ -57,11 +57,11 @@ sorteio = rnd.choice(colecao)
 
 # Glossário
 
-[módulo](https: // penseallen.github.io/PensePython2e/03-funcoes.html  # termo:m%C3%B3dulo)
+[módulo](https://penseallen.github.io/PensePython2e/03-funcoes.html  # termo:m%C3%B3dulo)
 
 Um arquivo que contém uma coleção de funções relacionadas e outras definições.
 
-[instrução de importação](https: // penseallen.github.io/PensePython2e/03-funcoes.html  # termo:instrução%20de%20importação)
+[instrução de importação](https://penseallen.github.io/PensePython2e/03-funcoes.html  # termo:instrução%20de%20importação)
 
 Uma instrução que lê um arquivo de módulo e cria um objeto de módulo.
 

@@ -53,10 +53,10 @@ if num != 0:  # se num não for igual a zero
 
 # Glossário
 
-[**variável**](https: // penseallen.github.io/PensePython2e/02-vars-expr-instr.html  # termo:variável) Um nome que se refere a um valor.
+[**variável**](https://penseallen.github.io/PensePython2e/02-vars-expr-instr.html  # termo:variável) Um nome que se refere a um valor.
 
-[**atribuição**](https: // penseallen.github.io/PensePython2e/02-vars-expr-instr.html  # termo:atribuição) Uma instrução que atribui um valor a uma variável.
+[**atribuição**](https://penseallen.github.io/PensePython2e/02-vars-expr-instr.html  # termo:atribuição) Uma instrução que atribui um valor a uma variável.
 
-[**operador relacional**](https: // penseallen.github.io/PensePython2e/05-cond-recur.html  # termo:operador%20relacional) Um destes operadores, que compara seus operandos: `==`, `!=`, `>`, `<`, `>=` e `<=`.
+[**operador relacional**](https://penseallen.github.io/PensePython2e/05-cond-recur.html  # termo:operador%20relacional) Um destes operadores, que compara seus operandos: `==`, `!=`, `>`, `<`, `>=` e `<=`.
 
-[**instrução condicional**](https: // penseallen.github.io/PensePython2e/05-cond-recur.html  # termo:instrução%20condicional) Uma instrução que controla o fluxo de execução, dependendo de alguma condição (expressão avaliada como `True` ou `False`).
+[**instrução condicional**](https://penseallen.github.io/PensePython2e/05-cond-recur.html  # termo:instrução%20condicional) Uma instrução que controla o fluxo de execução, dependendo de alguma condição (expressão avaliada como `True` ou `False`).

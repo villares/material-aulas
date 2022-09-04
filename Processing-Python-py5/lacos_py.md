@@ -250,7 +250,7 @@ def setup():
 
 ```
 
-![resultado](https: // i.imgur.com/TL0BBId.png)
+![resultado](https://i.imgur.com/TL0BBId.png)
 
 
 # Enumerando os itens da sequência
@@ -327,7 +327,7 @@ for x in range(5, 100, 10):  # x: 5, 15, 25, 35 ... 95
   for y in range(5, 100, 10):  # y: 5, 15, 25, 35 ... 95
     ellipse(x, y, 5, 5)
 ```
-![mini grade](https: // raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/mini-grid.png)
+![mini grade](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/mini-grid.png)
 
 Veja mais em: [Grades retangulares: filas e colunas de elementos](grades.md)
 
@@ -341,10 +341,10 @@ Veja mais em: [Grades retangulares: filas e colunas de elementos](grades.md)
 
 # Glossário
 
-[**loop**](https: // penseallen.github.io/PensePython2e/04-caso-interface.html  # termo:loop) **(laço)** Parte de um programa que pode ser executada repetidamente.
+[**loop**](https://penseallen.github.io/PensePython2e/04-caso-interface.html  # termo:loop) **(laço)** Parte de um programa que pode ser executada repetidamente.
 
 - --
-Este material é baseado no material do curso https: // arteprog.space/programacao-criativa /
+Este material é baseado no material do curso https://arteprog.space/programacao-criativa /
 
 ---
 Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.

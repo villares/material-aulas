@@ -3,9 +3,9 @@
 # módulo caneta_automatica.py
 
 from caneta_automatica import *
-> Este módulo é uma tentativa de fazer com mínimos elementos uma ferramenta de desenho inspirada na tartatuga desenhadora da linguagem Logo. Leia mais sobre Logo em < https: // pt.wikipedia.org/wiki/Logo > . Você vai precisar do[Processing modo Python](https: // abav.lugaralgum.com/como-instalar-o-processing-modo-python /) .
+> Este módulo é uma tentativa de fazer com mínimos elementos uma ferramenta de desenho inspirada na tartatuga desenhadora da linguagem Logo. Leia mais sobre Logo em < https://pt.wikipedia.org/wiki/Logo > . Você vai precisar do[Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python /) .
 
-O módulo * caneta_automatica.py * deve ficar dentro da pasta do seu * sketch*, o que o torna uma aba do IDE. Baixe o arquivo ou copie e cole o conteúdo de[caneta_automatica.py](https: // raw.githubusercontent.com/villares/material-aulas/master/caneta_automatica/caneta_automatica.py) em uma nova aba de nome 'caneta_automatica' (o Processing vai acrescentar '.py' no nome do arquivo para você).
+O módulo * caneta_automatica.py * deve ficar dentro da pasta do seu * sketch*, o que o torna uma aba do IDE. Baixe o arquivo ou copie e cole o conteúdo de[caneta_automatica.py](https://raw.githubusercontent.com/villares/material-aulas/master/caneta_automatica/caneta_automatica.py) em uma nova aba de nome 'caneta_automatica' (o Processing vai acrescentar '.py' no nome do arquivo para você).
 
 Para importar e começar a usar a caneta você precisa das seguintes linhas:
 

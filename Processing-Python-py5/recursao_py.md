@@ -1,6 +1,6 @@
 # Recursão
 
-Allen Downey[no livro Pense em Python 2e](https: // penseallen.github.io/PensePython2e/05-cond-recur.html  # termo:recursividade) define *recursividade* como o processo de chamar uma função que está sendo atualmente executada. A ideia central da recursividade, ou recursão, é de que uma função pode chamar outras funções, e no caso de uma função recursiva, a função pode também chamar ela mesma!
+Allen Downey[no livro Pense em Python 2e](https://penseallen.github.io/PensePython2e/05-cond-recur.html  # termo:recursividade) define *recursividade* como o processo de chamar uma função que está sendo atualmente executada. A ideia central da recursividade, ou recursão, é de que uma função pode chamar outras funções, e no caso de uma função recursiva, a função pode também chamar ela mesma!
 
 Para que isso funcione, e não caia em uma cilada conhecida como "recursão infinita", é preciso que a função sendo chamada possa, em certas condições, chegar em uma opção de execução que não requer chamar ela mesma. Essa condição que executa sem recursão é também conhecida como "caso base".
 
@@ -59,7 +59,7 @@ def galho(tamanho):
         translate(0, tamanho)  # desfaz deslocamento da origem
 ```
 
-[exemplo interativo com pyp5js](https: // abav.lugaralgum.com/sketch-a-day/2019/sketch_191025pybr2019/index.html)
+[exemplo interativo com pyp5js](https://abav.lugaralgum.com/sketch-a-day/2019/sketch_191025pybr2019/index.html)
 
 < iframe src="https://abav.lugaralgum.com/sketch-a-day/2019/sketch_191025pybr2019/index.html" width=500 height=500 > </iframe >
 

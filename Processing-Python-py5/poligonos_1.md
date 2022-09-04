@@ -63,6 +63,6 @@ end_shape(CLOSE)
 # Assuntos relacionados
 
 - Animando uma estrela com[`setup()`, `draw()` e o movimento do mouse](indentacao.md).
-- Usos mais avançados de `begin_shape()` na[referência](https: // py.processing.org/reference/begin_shape.html).
+- Usos mais avançados de `begin_shape()` na[referência](https://py.processing.org/reference/begin_shape.html).
 - [Criando os vértices a partir de estruturas de dados com laços de repetição e como fazer polígonos com furos](poligonos_2.md).
 - Crie estrelas de muitas pontas usando[laços de repetição `while`](while.md).

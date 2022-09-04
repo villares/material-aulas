@@ -67,6 +67,6 @@ def draw():
 # Assuntos relacionados
 
 - Mais sobre[animações com `setup()` e `draw()`](movimento_py.md)
-- Estrelas de muitas pontas com[laços de repetição `while`](https: // github.com/villares/material-aulas/blob/master/Processing-Python/while.md)
-- Você pode ver usos mais avançados de `begin_shape()` na[referência](https: // py.processing.org/reference/begin_shape.html).
-- Você pode montar os vértices a partir de[estruturas de dados com laços de repetição ou fazer polígonos com furos](https: // github.com/villares/material-aulas/blob/master/Processing-Python/poligonos_2.md)
+- Estrelas de muitas pontas com[laços de repetição `while`](https://github.com/villares/material-aulas/blob/master/Processing-Python/while.md)
+- Você pode ver usos mais avançados de `begin_shape()` na[referência](https://py.processing.org/reference/begin_shape.html).
+- Você pode montar os vértices a partir de[estruturas de dados com laços de repetição ou fazer polígonos com furos](https://github.com/villares/material-aulas/blob/master/Processing-Python/poligonos_2.md)
