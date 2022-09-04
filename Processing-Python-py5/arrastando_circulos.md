@@ -2,23 +2,23 @@
 
 ![um círculo sendo arrastado](assets/arrastar_circulo.gif)
 
-neste exemplo vamos usar três funções que o processing dispara pra nós em eventos do mouse(`mouse_pressed()`, `mouse_released()` e `mouse_dragged()`) para criar um elemento de interação interessante, um círculo que possa ser arrastado.
+Neste exemplo vamos usar três funções que o Processing dispara pra nós em eventos do mouse(`mouse_pressed()`, `mouse_released()` e `mouse_dragged()`) para criar um elemento de interação interessante, um círculo que possa ser arrastado.
 
 A ideia é que você possa adaptar este código para, por exemplo, arrastar pontos de controle de uma curva/polígono, ou então, outros 'elementos gráficos' do seu * sketch*.
 
 # Arrastando um círculo
 
-0. vamos precisar de um indicador de estado(*flag*) parara saber se o arraste começou, para isso vamos usar a variável global `arrastando`, e vamos precisar também duas variáveis para a posição do círculo, `x_circulo` e `y_circulo`.
+0. Vamos precisar de um indicador de estado(*flag*) parara saber se o arraste começou, para isso vamos usar a variável global `arrastando`, e vamos precisar também duas variáveis para a posição do círculo, `x_circulo` e `y_circulo`.
 
-1. dentro de `mouse_pressed()` vamos checar se o mouse está sobre o círculo. A estratégia escolhida foi usar a função `dist()` para comparar a distância do mouse até o centro do círculo com o raio do círculo(se a distância for menor que o raio, o mouse está sobre o círculo). esse tipo de checagem é conhecida em programação de jogos e interfaces como "checagem de colisão".
+1. Dentro de `mouse_pressed()` vamos checar se o mouse está sobre o círculo. A estratégia escolhida foi usar a função `dist()` para comparar a distância do mouse até o centro do círculo com o raio do círculo(se a distância for menor que o raio, o mouse está sobre o círculo). Esse tipo de checagem é conhecida em programação de jogos e interfaces como "checagem de colisão".
 
-neste caso estamos fazendo uma checagem de colisão ponto-círculo(a posição do mouse é o ponto), e para outros casos, outros elementos gráficos, é preciso encontrar a estratégia apropriada. veja, por exemplo, o código do[botão simples](botao_simples.md) para ver como é a checagem de colisão ponto-retângulo.
+Neste caso estamos fazendo uma checagem de colisão ponto-círculo(a posição do mouse é o ponto), e para outros casos, outros elementos gráficos, é preciso encontrar a estratégia apropriada. Veja, por exemplo, o código do[botão simples](botao_simples.md) para ver como é a checagem de colisão ponto-retângulo.
 
-caso o mouse esteja dentro do círculo quando for apertado, mudamos `arrastando` de `False` para `True`.
+Caso o mouse esteja dentro do círculo quando for apertado, mudamos `arrastando` de `False` para `True`.
 
-2. dentro de `mouse_released()` vamos só mudar `arrastando` para `False`. isto significa que quando um botão do mouse for solto acabou qualquer arraste que por ventura estivesse em andamento. se não havia círculo sendo arrastado, nada muda.
+2. Dentro de `mouse_released()` vamos só mudar `arrastando` para `False`. Isto significa que quando um botão do mouse for solto acabou qualquer arraste que por ventura estivesse em andamento. Se não havia círculo sendo arrastado, nada muda.
 
-3. dentro de `mouse_dragged()`, executado quando o mouse é movido apertado, isto é, em 'arraste' (*drag*), se o indicador `arrastando` for `True`, indicando que o círculo estava sob o mouse, vamos atualizar as variáveis globais `x_circulo` e `y_circulo` com o deslocamento do mouse. O deslocamento é obtido pela diferença da posição atual do mouse, `mouse_x` e `mouse_y`, para a posição imediatamente anterior(*previous*) que temos com`pmouse_x` e `pmouse_y`.
+3. Dentro de `mouse_dragged()`, executado quando o mouse é movido apertado, isto é, em 'arraste' (*drag*), se o indicador `arrastando` for `True`, indicando que o círculo estava sob o mouse, vamos atualizar as variáveis globais `x_circulo` e `y_circulo` com o deslocamento do mouse. O deslocamento é obtido pela diferença da posição atual do mouse, `mouse_x` e `mouse_y`, para a posição imediatamente anterior(*previous*) que temos com`pmouse_x` e `pmouse_y`.
 
 ```python
 arrastando = False
@@ -70,13 +70,13 @@ def mouse_dragged():  # quando o mouse é movido apertado
 ![vários círculos sendo arrastados](assets/arrastar_circulos.gif)
 
 
-para acompanhar o próximo exemplo você precisa estar familiarizado com[sequências e laços de repetição](lacos_py.md), uma vez que vamos usar uma estrutura de dados, uma lista, com tuplas dentro, para manter a posição e tamanho de vários círculos, permitindo que qualquer um deles seja arrastado!. um dos elementos sofisticados deste exemplo é que pegamos para olhar os dados de um círculo por vez, mas ao mesmo tempo, graças à função `enumerate()` recebemos a informação do índice, da posição desses dados na lista `circulos`. usamos esse índice para indicar qual círculo está sendo arrastado.
+Para acompanhar o próximo exemplo você precisa estar familiarizado com[sequências e laços de repetição](lacos_py.md), uma vez que vamos usar uma estrutura de dados, uma lista, com tuplas dentro, para manter a posição e tamanho de vários círculos, permitindo que qualquer um deles seja arrastado!. Um dos elementos sofisticados deste exemplo é que pegamos para olhar os dados de um círculo por vez, mas ao mesmo tempo, graças à função `enumerate()` recebemos a informação do índice, da posição desses dados na lista `circulos`. Usamos esse índice para indicar qual círculo está sendo arrastado.
 
-0. A variável global `arrastando`  vai manter registro da situação de arraste, como no exemplo anterior, só que agora também indicando o índice de posição de um círculo na lista `circulos`. vamos estabelecer que `None` significa que nenhum círculo está sendo arrastado(um papel feito por `False` no exemplo anterior).
+0. A variável global `arrastando`  vai manter registro da situação de arraste, como no exemplo anterior, só que agora também indicando o índice de posição de um círculo na lista `circulos`. Vamos estabelecer que `None` significa que nenhum círculo está sendo arrastado(um papel feito por `False` no exemplo anterior).
 
-1. na função `mouse_pressed()` vamos checar uma a uma cada tupla da lista, contendo X, Y e diâmetro dos círculos, e caso algum deles esteja sob o mouse, vamos atualizar a variável `arrastando` apontando o índice dessa tupla na lista. O primeiro círculo encontrado interrompe a busca, só um círculo pode ser arrastado por vez. no caso de vários círculos estarem sob o mouse, é selecionado o que vier antes na lista, por conta disso, é selecionado aquele que é desenhado primeiro, o 'mais de baixo' entre eles.
+1. Na função `mouse_pressed()` vamos checar uma a uma cada tupla da lista, contendo X, Y e diâmetro dos círculos, e caso algum deles esteja sob o mouse, vamos atualizar a variável `arrastando` apontando o índice dessa tupla na lista. O primeiro círculo encontrado interrompe a busca, só um círculo pode ser arrastado por vez. No caso de vários círculos estarem sob o mouse, é selecionado o que vier antes na lista, por conta disso, é selecionado aquele que é desenhado primeiro, o 'mais de baixo' entre eles.
 
-2. A função `mouse_released()` altera `arrastando` para `None`. nenhum círculo está sendo arrastado.
+2. A função `mouse_released()` altera `arrastando` para `None`. Nenhum círculo está sendo arrastado.
 
 3. A função `mouse_dragged()`, caso `arrastando` não seja `None`, é criada uma nova tupla com a posição atualizada do círculo e é alterada a lista na posição indicada por `arrastando`.
 
@@ -135,11 +135,11 @@ def mouse_dragged():  # quando o mouse é movido apertado
 ```
 # Desafio
 
-note que quando os círculos se sobrepõe, o clique do mouse "captura" o mais de baixo para o arraste. você conseguiria mudar este comportamento?
-dica:  é possível usar `reversed()` para inverter uma lista, mas o problema é que `enumerate()` não nos entrega uma lista... é possível converter o "objeto enumerador" entregue por `enumerate()` em uma lista com `list()`.
+Note que quando os círculos se sobrepõe, o clique do mouse "captura" o mais de baixo para o arraste. Você conseguiria mudar este comportamento?
+Dica:  É possível usar `reversed()` para inverter uma lista, mas o problema é que `enumerate()` não nos entrega uma lista... é possível converter o "objeto enumerador" entregue por `enumerate()` em uma lista com `list()`.
 
 
 # Assuntos relacionados
 
-- [um botão simples](botao_simples.md)
-- [sequências e laços de repetição](lacos_py.md)
+- [Um botão simples](botao_simples.md)
+- [Sequências e laços de repetição](lacos_py.md)

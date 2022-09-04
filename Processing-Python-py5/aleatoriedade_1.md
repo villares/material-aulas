@@ -2,13 +2,13 @@
 
 # Mais precisamente números pseudo-aleatórios
 
-computadores são máquinas determinísticas e não conseguem realmente 'sortear' um número, por isso usam algorítmos (receitas) que produzem sequências de números praticamente indistinguíveis, para a maioria dos usos[< sup >＊</sup > ](#footnote1), de sequências verdadeiramente aleatórias. Por conta disso ganham este nome tecnicamente mais preciso de *pseudo-aleatórios* (falsos aleatórios). 
+Computadores são máquinas determinísticas e não conseguem realmente 'sortear' um número, por isso usam algorítmos (receitas) que produzem sequências de números praticamente indistinguíveis, para a maioria dos usos[< sup >＊</sup > ](#footnote1), de sequências verdadeiramente aleatórias. Por conta disso ganham este nome tecnicamente mais preciso de *pseudo-aleatórios* (falsos aleatórios). 
 
 # Função `random()` no Processing
 
-podemos pedir ao processing para nos entregar um número entre 0 e * n * chamando `random(n)` ou entre * a * e * b * chamando `random(a, b)`. O número devolvido não é um número inteiro(*int*), mas podemos jogar fora a parte decimal fazendo a conversão com a função `int()`,  assim: `int(random(n))`.
+Podemos pedir ao Processing para nos entregar um número entre 0 e * n * chamando `random(n)` ou entre * a * e * b * chamando `random(a, b)`. O número devolvido não é um número inteiro(*int*), mas podemos jogar fora a parte decimal fazendo a conversão com a função `int()`,  assim: `int(random(n))`.
 
-um exemplo tradicional, e divertido, é fazer um pincel de círculos com o tamanho e a cor 'sorteados'. note que o `fill()` aceita números * float * e os converte em * int * para nós. O quarto argumento de `fill(r, g, b, alpha)` indica uma cor translúcida.
+Um exemplo tradicional, e divertido, é fazer um pincel de círculos com o tamanho e a cor 'sorteados'. Note que o `fill()` aceita números * float * e os converte em * int * para nós. O quarto argumento de `fill(r, g, b, alpha)` indica uma cor translúcida.
 
 ![pincel com random](assets/pincel_aleatorio.gif)
 
@@ -47,7 +47,7 @@ faixa=random(-5, 5)  # exemplos: 3.91, -2.23, -1.2, 4.25
 
 # Assuntos relacionados
 
-- [mais sobre pseudo-aleatoriedade, módulo `random` do python e sementes](aleatoriedade_2.md)
+- [Mais sobre pseudo-aleatoriedade, módulo `random` do Python e sementes](aleatoriedade_2.md)
 
 - --
 
@@ -55,4 +55,4 @@ faixa=random(-5, 5)  # exemplos: 3.91, -2.23, -1.2, 4.25
 
 ---
 
-texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
+Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.

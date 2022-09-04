@@ -1,7 +1,7 @@
 # Desenhando polígonos - II
 # Mais sobre polígonos e PShape
 
-agora que já sabemos iterar por uma estrutura de dados, podemos usar as coordenadas das tuplas na lista que vimos anteriormente para desenhar um polígono ou mais genericamente um 'forma' Py5Shape:
+Agora que já sabemos iterar por uma estrutura de dados, podemos usar as coordenadas das tuplas na lista que vimos anteriormente para desenhar um polígono ou mais genericamente um 'forma' Py5Shape:
 
 ```python
 
@@ -23,11 +23,11 @@ def setup():
 
 # Formas com furos
 
-podemos criar furos dentro de formas `Py5Shape` pendindo uma sequência de vértices, com`vertex()`, entre as funções `begin_contour()` e `end_contour()`, que por sua vez precisam estar entre `begin_shape()` e `end_shape()`.
+Podemos criar furos dentro de formas `Py5Shape` pendindo uma sequência de vértices, com`vertex()`, entre as funções `begin_contour()` e `end_contour()`, que por sua vez precisam estar entre `begin_shape()` e `end_shape()`.
 
-**note que é preciso que a direção dos pontos da forma interna, do furo, seja contrária a da forma externa.**
+**Note que é preciso que a direção dos pontos da forma interna, do furo, seja contrária a da forma externa.**
 
-no exemplo a seguir vamos descrever com uma lista de tuplas 3 vértices em sentido horário, e os vértices do furo no mesmo sentido. para funcionar corretamente o furo, no segundo laço `for` os pontos do furo tem sua ordem invertida com `pontos_furo[::-1]`. experimente remover essa inversão para ver o resultado!
+No exemplo a seguir vamos descrever com uma lista de tuplas 3 vértices em sentido horário, e os vértices do furo no mesmo sentido. Para funcionar corretamente o furo, no segundo laço `for` os pontos do furo tem sua ordem invertida com `pontos_furo[::-1]`. Experimente remover essa inversão para ver o resultado!
 
 ```python
 
@@ -57,16 +57,16 @@ def setup():
 
 # Assuntos relacionados
 
-- [desenhando polígonos - I](poligonos_1.md)
-- [sequências e laços de repetição](lacos_py.md)
+- [Desenhando Polígonos - I](poligonos_1.md)
+- [Sequências e laços de repetição](lacos_py.md)
 
 
 # EXTRA: Funções para desenhar sequências de pontos em forma de polígono
 
-**desafio: ** você conseguiria encapsular em uma função a parte do código que faz o desenho do polígono?
+**Desafio: ** Você conseguiria encapsular em uma função a parte do código que faz o desenho do polígono?
 
 <details >
-<summary > resposta: uma função que desenha polígonos a partir de sequências de pontos. < /summary >
+<summary > Resposta: Uma função que desenha polígonos a partir de sequências de pontos. < /summary >
 
 ```python
 
@@ -77,14 +77,14 @@ def setup():
     draw_poly(pontos_shape)
 
 
-def draw_poly(points, holes=None, closed=True):
+def draw_poly(pts, closed=True):
     """
-    aceita como pontos sequencias de tuplas, lista ou vetores com (x, y) ou (x, y, z).
-    por default faz um polígono fechado.
+    Aceita como pontos sequencias de tuplas, lista ou vetores com (x, y) ou (x, y, z).
+    Por default faz um polígono fechado.
     """
     begin_shape()  # inicia o PShape
-    for p in points:
-        vertex(p[0], p[1])
+    for p in pts:
+        vertex(p[0], p[1])  # ou use `vertex(*p)` para aceitar pontos em 3D
     # encerra o PShape
     if closed:
         end_shape(CLOSE)
@@ -92,20 +92,14 @@ def draw_poly(points, holes=None, closed=True):
         end_shape()
 
 
-    # Para aceitar pontos em 2D ou 3D
-    # for p in points:
-    #     if len(p) == 2:
-    #         vertex(p[0], p[1])
-    #     else:
-    #         vertex(*p)  # desempacota pontos em 3d
 ```
 
 </details >
 
-**avançado: ** agora imagine uma função que desenha um Py5Shape com furos se mandarmos uma lista de pontos, mais uma lista de furos com polígonos dentro.
+**Avançado: ** Agora imagine uma função que desenha um Py5Shape com furos se mandarmos uma lista de pontos, mais uma lista de furos com polígonos dentro.
 
 <details >
-<summary > resposta: uma função que desenha polígonos com furos. < /summary >
+<summary > Resposta: Uma função que desenha polígonos com furos. < /summary >
 
 ```python
 
@@ -124,9 +118,9 @@ def setup():
 
 def poly_and_holes(points, holes=None, closed=True):
     """
-    aceita como pontos sequencias de tuplas, lista ou vetores com (x, y) ou (x, y, z).
-    note que `holes` espera uma sequencias de sequencias ou uma única sequencia de
-    pontos. por default faz um polígono fechado.
+    Aceita como pontos sequencias de tuplas, lista ou vetores com (x, y) ou (x, y, z).
+    Note que `holes` espera uma sequencias de sequencias ou uma única sequencia de
+    pontos. Por default faz um polígono fechado.
     """
 
     def depth(seq):
@@ -136,7 +130,7 @@ def poly_and_holes(points, holes=None, closed=True):
         """
         if (isinstance(seq, list) or
                 isinstance(seq, tuple) or
-                isinstance(seq, p_vector)):
+                isinstance(seq, Py5Vector)):
             return 1 + max(depth(item) for item in seq)
         else:
             return 0

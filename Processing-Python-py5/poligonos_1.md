@@ -2,15 +2,15 @@
 
 # Primeiro contato
 
-processing oferece funções para desenhar triângulos `triangle()` e quadriláteros `quad()` que são chamadas usando 3 e 4 pares de números, as coordenadas para 3 e 4 vértices, respectivamente. veja o exemplo a seguir:
+Processing oferece funções para desenhar triângulos `triangle()` e quadriláteros `quad()` que são chamadas usando 3 e 4 pares de números, as coordenadas para 3 e 4 vértices, respectivamente. Veja o exemplo a seguir:
 
 ![triangulo e quadrilátero](assets/triangle_quad.png)
 
-mas e se quisermos desenhar um polígono com 5, 6 ou com um número arbitrário de vértices?
+Mas e se quisermos desenhar um polígono com 5, 6 ou com um número arbitrário de vértices?
 
-neste caso usamos um conjuto de funções!
+Neste caso usamos um conjuto de funções!
 
-tudo começa com `begin_shape()`, seguido da repetição da função `vertex()` para cada vértice, terminando com `end_shape()`. quando usado com a constante `CLOSE`, `end_shape(CLOSE)`, produz polígonos fechados.
+Tudo começa com `begin_shape()`, seguido da repetição da função `vertex()` para cada vértice, terminando com `end_shape()`. Quando usado com a constante `CLOSE`, `end_shape(CLOSE)`, produz polígonos fechados.
 
 ```pyde
 size(400, 200)
@@ -35,7 +35,7 @@ end_shape(CLOSE)  # polígono fechado
 
 # Desenhando uma estrela de quatro pontas
 
-vejamos um exemplo que combina a estrutura que vimos antes com o uso de variáveis para calcular a posição dos vértices, formando um estrela!
+Vejamos um exemplo que combina a estrutura que vimos antes com o uso de variáveis para calcular a posição dos vértices, formando um estrela!
 
 ```pyde
 size(400, 400)
@@ -62,7 +62,7 @@ end_shape(CLOSE)
 
 # Assuntos relacionados
 
-- animando uma estrela com[`setup()`, `draw()` e o movimento do mouse](indentacao.md).
-- usos mais avançados de `begin_shape()` na[referência](https: // py.processing.org/reference/begin_shape.html).
-- [criando os vértices a partir de estruturas de dados com laços de repetição e como fazer polígonos com furos](poligonos_2.md).
-- crie estrelas de muitas pontas usando[laços de repetição `while`](while.md).
+- Animando uma estrela com[`setup()`, `draw()` e o movimento do mouse](indentacao.md).
+- Usos mais avançados de `begin_shape()` na[referência](https: // py.processing.org/reference/begin_shape.html).
+- [Criando os vértices a partir de estruturas de dados com laços de repetição e como fazer polígonos com furos](poligonos_2.md).
+- Crie estrelas de muitas pontas usando[laços de repetição `while`](while.md).

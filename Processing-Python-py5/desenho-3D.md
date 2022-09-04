@@ -1,34 +1,34 @@
 # Como desenhar em 3D
 
-nessa página vamos ver como desenhar objetos tridimensionais, ou ainda objetos 2D no espaço.
+Nessa página vamos ver como desenhar objetos tridimensionais, ou ainda objetos 2D no espaço.
 
 # Sumário
 
-- [primeiros passos](  # primeiros-passos)
-- [alguns objetos desenhados em 3D](  # alguns-objetos-desenhados-em-3d)
-- [desenhando uma caixa entre dois pontos](  # desenhando-uma-caixa-entre-dois-pontos)
-- [desenhando um prisma girado em 3D](  # desenhando-um-prisma-girado-em-3d)
-- [carregando arquivos OBJ externos](  # carregando-arquivos-obj-externos)
-- [peasy_cam, uma biblioteca que permite orbitar em torno dos objetos](  # peasycam-uma-biblioteca-que-permite-orbitar-em-torno-dos-objetos)
-- [explorando ajustes avançados com a função `hint()`](  # explorando-ajustes-avançados-com-a-função-hint)
-- [assuntos relacionados](  # assuntos-relacionados)
+- [Primeiros passos](  # primeiros-passos)
+- [Alguns objetos desenhados em 3D](  # alguns-objetos-desenhados-em-3d)
+- [Desenhando uma caixa entre dois pontos](  # desenhando-uma-caixa-entre-dois-pontos)
+- [Desenhando um prisma girado em 3D](  # desenhando-um-prisma-girado-em-3d)
+- [Carregando arquivos OBJ externos](  # carregando-arquivos-obj-externos)
+- [PeasyCam, uma biblioteca que permite orbitar em torno dos objetos](  # peasycam-uma-biblioteca-que-permite-orbitar-em-torno-dos-objetos)
+- [Explorando ajustes avançados com a função `hint()`](  # explorando-ajustes-avançados-com-a-função-hint)
+- [Assuntos relacionados](  # assuntos-relacionados)
 
 # Primeiros passos
 
-para começar, dentro do `setup()` é preciso usar o argumento `P3D` em `size()`, como neste exemplo:
+Para começar, dentro do `setup()` é preciso usar o argumento `P3D` em `size()`, como neste exemplo:
 
 ```python
 def setup():
     size(500, 500, P3D)
 ```
 
-passa então a ser possivel modificar o sistema de coordenadas com `translate(x, y, z)` (agora com ** z**) e `rotate_x()`, `rotate_y()` e `rotate_z()` (que giram em torno dos eixos).
+Passa então a ser possivel modificar o sistema de coordenadas com `translate(x, y, z)` (agora com ** z**) e `rotate_x()`, `rotate_y()` e `rotate_z()` (que giram em torno dos eixos).
 
-desta maneira é possível desenhar os mesmos elementos 2D que utilizamos até agora, porém deslocados e girados no espaço. mas além dessa estratégia, também acontecem as seguintes mudanças:
+Desta maneira é possível desenhar os mesmos elementos 2D que utilizamos até agora, porém deslocados e girados no espaço. Mas além dessa estratégia, também acontecem as seguintes mudanças:
 
-- linhas podem receber coordenadas 3D: `line(x1, y1, z1, x2, y2, z2)`
+- Linhas podem receber coordenadas 3D: `line(x1, y1, z1, x2, y2, z2)`
 
-- os elementos `Py5Shape` criados com `begin_shape()/end_shape()` passam a poder ser desenhados no espaço, usando, por exemplo, `vertex(x, y, z)`. esse comando desenha a partir de uma sequência de vértices dados nas coordenadas recebidas.
+- Os elementos `Py5Shape` criados com `begin_shape()/end_shape()` passam a poder ser desenhados no espaço, usando, por exemplo, `vertex(x, y, z)`. Esse comando desenha a partir de uma sequência de vértices dados nas coordenadas recebidas.
 
 - A função `box(w, h, d)` desenha um paralelepípedo, ou um cubo com `box(side)`, sempre na origem(0, 0, 0) do sistema de coordenadas, sendo então em geral acompanhada de uma estrutura com `push_matrix()`/`pop_matrix()` e `translate(x, y, z)` para que seja posicionada no lugar desejado.
 
@@ -82,7 +82,7 @@ def caixa(x, y, z, *tam):
 
 # Desenhando uma caixa entre dois pontos
 
-usando um volume * box() girado em 3_d.
+Usando um volume * box() girado em 3_d.
 
 ```python
 def setup():
@@ -115,8 +115,8 @@ def bar_line(x1, y1, z1, x2, y2, z2, weight=10):
 ```python
 def prism_line(x1, y1, z1, x2, y2, z2, radius=10, num_points=6):
     """
-    desenha um prisma girado em 3D como uma barra.
-    requer as funções auxiliares draw_face e z_circle.
+    Desenha um prisma girado em 3D como uma barra.
+    Requer as funções auxiliares draw_face e z_circle.
     """
     p1, p2=(x1, y1, z1), (x2, y2, z2)
     dist_p1_p2=dist(x1, y1, z1, x2, y2, z2)
@@ -153,13 +153,13 @@ def z_circle(x, y, radius, num_points=16):
 
 # Carregando arquivos OBJ externos
 
-usando `size()` com `P3D` é possível carregar arquivos OBJ com a função `load_shape('arquivo.obj')` e mostrá-los com `shape(s, x, y)`.
-procure o exemplo que vem no IDE na janela de exemplos: `basic > shape > load_display_obj`.
+Usando `size()` com `P3D` é possível carregar arquivos OBJ com a função `load_shape('arquivo.obj')` e mostrá-los com `shape(s, x, y)`.
+Procure o exemplo que vem no IDE na janela de exemplos: `Basic > Shape > LoadDisplayOBJ`.
 
 
 # PeasyCam, uma biblioteca que permite orbitar em torno dos objetos
 
-é possível baixar e instalar pelo IDE uma biblioteca chamada ** peasy_cam ** que acrescenta com poucas linhas a funcionalidade de uma câmera que com o arrastar do mouse clicado 'orbita' em torno dos elementos desenhados, a câmera também oferece zoom com a rodinha do mouse. note que o uso desta biblioteca desloca o sistema de coordenadas levando a origem para o centro da área de desenho.
+É possível baixar e instalar pelo IDE uma biblioteca chamada ** PeasyCam ** que acrescenta com poucas linhas a funcionalidade de uma câmera que com o arrastar do mouse clicado 'orbita' em torno dos elementos desenhados, a câmera também oferece zoom com a rodinha do mouse. Note que o uso desta biblioteca desloca o sistema de coordenadas levando a origem para o centro da área de desenho.
 
 ```python
 add_library('peasycam')  # é preciso baixar/instalar pelo IDE
@@ -167,7 +167,7 @@ add_library('peasycam')  # é preciso baixar/instalar pelo IDE
 def setup():
     global cam
     size(500, 500, P3D)
-    cam=peasy_cam(this, 100)
+    cam=PeasyCam(this, 100)
     cam.set_minimum_distance(100)
     cam.set_maximum_distance(200)
 
@@ -194,7 +194,7 @@ def draw():
 
 # Explorando ajustes avançados com a função `hint()`
 
-é possível controlar alguns aspectos do cálculo da apresentação 3D, meio que um ajuste fino, que tem impacto na performance(velocidade de execução) e aparência. este código exemplo abaixo permite testar os ajustes, conhecidos como * hints * da máquina de apresentação(*render engine*).
+É possível controlar alguns aspectos do cálculo da apresentação 3D, meio que um ajuste fino, que tem impacto na performance(velocidade de execução) e aparência. Este código exemplo abaixo permite testar os ajustes, conhecidos como * hints * da máquina de apresentação(*render engine*).
 
 ```python
 # Este exemplo mostra a diferença entre as opções documentadas em:
@@ -262,11 +262,11 @@ def apply_hints():
 
 # Se der pau na sua placa de vídeo, tente isto:
 
-se você estiver no linux com uma placa intel integrada, tente acrescentar isto no início do seu sketch
+Se você estiver no Linux com uma placa intel integrada, tente acrescentar isto no início do seu sketch
 
 ```python
-from java.lang import system
-system.set_property("jogl.disable.openglcore", "false")
+from java.lang import System
+System.setProperty("jogl.disable.openglcore", "false")
 ```
 
 # Assuntos relacionados
@@ -274,4 +274,4 @@ system.set_property("jogl.disable.openglcore", "false")
 # Exemplos de caixa com furos e outros sólidos desenhados em 3D e
 # desdobrados em 2D
 
-- https: // github.com/villares/paper-objects-with-processing-and-python
+- https: // github.com/villares/Paper-objects-with-Processing-and-Python

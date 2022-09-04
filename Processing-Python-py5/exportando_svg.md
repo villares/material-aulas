@@ -1,5 +1,14 @@
 # Exportando SVG
 
+from java.io import File
+Muito semelhante a exportação de PDF, para salvar um arquivo vetorial SVG, é necessário adicionar uma biblioteca de exportação, que já vem com o Processing, acrescentando esta linha no início do * sketch*:
+
+``` python
+add_library('svg')
+```
+Isso pode ser feito manualmente ou pelo menu * Sketch * do Processing IDE:
+***Sketch > Importar Biblioteca > SVG Export***
+
 # Usando um objeto PGraphics
 
 A estratégia mostrada a seguir permite mostrar na tela o desenho mas salvar um arquivo ajustes especiais, como por exemplo dimensões escaladas.
@@ -8,10 +17,10 @@ A estratégia mostrada a seguir permite mostrar na tela o desenho mas salvar um 
 
 ```python
 """
-tecle 'e' para salvar um único frame e encerrar o sketch
+Tecle 'e' para salvar um único frame e encerrar o sketch
 """
 
-
+add_library('svg')
 
 save_frame = False
 fator_escala = 3.78  # 255px -> ~255mm
@@ -58,7 +67,7 @@ def key_pressed():
 
 ```python
 
-
+add_library('svg')
 
 save_frame = False
 fator_escala = 3
@@ -96,7 +105,7 @@ def salva_svg(selection, ):
 
 def key_pressed():
     if key == 's':
-        sugestao = file("exemplo.svg")
+        sugestao = File("exemplo.svg")
         select_output("Salvar:", "salvaSVG", sugestao)
 
 
@@ -110,21 +119,21 @@ O que não funciona quando exportamos em SVG?
 
 # Exportação de desenho 3D em arquivos vetoriais 2D
 
-é possível exportar a geometria 3D em si para arquivos DXF ou ainda outros formatos apropriados, assunto que não vamos tratar neste momento.
+É possível exportar a geometria 3D em si para arquivos DXF ou ainda outros formatos apropriados, assunto que não vamos tratar neste momento.
 
-no exemplo a seguir mostramos como exportar desenhos tridimensionais em formato vetorial 2D, o que pode ser feito tanto em SVG como em PDF, usando `begin_raw()` e `end_raw()`.
+No exemplo a seguir mostramos como exportar desenhos tridimensionais em formato vetorial 2D, o que pode ser feito tanto em SVG como em PDF, usando `begin_raw()` e `end_raw()`.
 
 O resultado, infelizmente,  é  bastante limitado, como pode ser visto abaixo:
 
-![a](assets/3Da.svg) ![ ](assets/3Db.svg "Imagem não encontrada: assets/3_db.svg")
+![a](assets/3_da.svg) ![b](assets/3_db.svg)
 
 
 ```python
 """
-tecle 'e' para salvar um único frame e encerrar o sketch
+Tecle 'e' para salvar um único frame e encerrar o sketch
 """
 
-
+add_library('svg')
 # add_library('pdf')
 
 save_frame = False
@@ -177,4 +186,4 @@ def key_pressed():
 
 # Assuntos relacionados:
 
-- [exportando PDF](exportando_pdf.md)
+- [Exportando PDF](exportando_pdf.md)

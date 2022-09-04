@@ -1,11 +1,11 @@
 # Definindo e chamando funções
 
->[**função**](https: // penseallen.github.io/pense_python2e/03-funcoes.html  # termo:função)
-> uma sequência nomeada de declarações que executa alguma operação útil. as funções podem receber argumentos ou não e podem ou não produzir algum resultado.
+>[**função**](https: // penseallen.github.io/PensePython2e/03-funcoes.html  # termo:função)
+> Uma sequência nomeada de declarações que executa alguma operação útil. As funções podem receber argumentos ou não e podem ou não produzir algum resultado.
 
-ao programar podemos inventar vocabulário novo na linguagem que estamos usando quando definimos uma função. essa palavra se comporta exatamente como outras palavras que já vem prontas na linguagem, e * encapsula*, empacota, alguma ação útil, por meio de um trecho de código, o corpo da função, que é executado quando * chamamos * a função em um outro momento.
+Ao programar podemos inventar vocabulário novo na linguagem que estamos usando quando definimos uma função. Essa palavra se comporta exatamente como outras palavras que já vem prontas na linguagem, e * encapsula*, empacota, alguma ação útil, por meio de um trecho de código, o corpo da função, que é executado quando * chamamos * a função em um outro momento.
 
-leia com cuidado estes três exemplos, escritos de maneira genérica, com nomes bobos(`nome_da_funcao`, `outra_funcao`, `funcao_com_resultado`) mas que exemplificam a estrutura da definição de uma nova função. onde está `corpo` entram indentadas em relação ao cabeçalho(a linha do `def`), as ações que a função executa.
+Leia com cuidado estes três exemplos, escritos de maneira genérica, com nomes bobos(`nome_da_funcao`, `outra_funcao`, `funcao_com_resultado`) mas que exemplificam a estrutura da definição de uma nova função. Onde está `corpo` entram indentadas em relação ao cabeçalho(a linha do `def`), as ações que a função executa.
 
 # Sintaxe para definição de funções
 ```python
@@ -26,7 +26,7 @@ def funcao_com_resultado(a):  # esta função tem um parâmetro
 
 # Sintaxe da invocação, ou chamada, de funções
 
-vamos ver agora como seria o uso dessas novas palavras, comparando com palavras da linguagem que já vimos antes.
+Vamos ver agora como seria o uso dessas novas palavras, comparando com palavras da linguagem que já vimos antes.
 
 ```python
 nome_da_funcao(valor, outro_valor)  # esta função precisa de dois argumentos
@@ -47,7 +47,7 @@ r=random(256)
 fill(random(256), random(256), random(256))
 ```
 
-os parâmetros, quando existem, são nomes lá dentro da definição da função, que recebem os valores dos argumentos usados quando a função é chamada.
+Os parâmetros, quando existem, são nomes lá dentro da definição da função, que recebem os valores dos argumentos usados quando a função é chamada.
 
 # Exemplo da função `olho()`
 
@@ -75,11 +75,11 @@ def olho(x, y, tamanho):
 
 A função `olho()` desenha um olho mas não devolve nenhum valor, na verdade ela devolve o valor especial `None` (uma espécie de "nada"), mas é comum termos funções que devolvem algum valor útil como resultado.
 
-as funções que são feitas para devolver um resultado contém a palavra `return` no seu corpo, seguida do resultado calculado. A instrução `return` pode aparecer no meio da função, mas sempre que for executada interrompe a execucão da função, *devolvendo * o fluxo de execução para o ponto onde a função foi chamada.
+As funções que são feitas para devolver um resultado contém a palavra `return` no seu corpo, seguida do resultado calculado. A instrução `return` pode aparecer no meio da função, mas sempre que for executada interrompe a execucão da função, *devolvendo * o fluxo de execução para o ponto onde a função foi chamada.
 
-< sup > se não houver um valor depois de `return` no corpo, a função devolve o valor especial `None`, o mesmo que acontece com funções que não tem `return`, só que no ponto onde está escrito `return`. < /sup >
+< sup > Se não houver um valor depois de `return` no corpo, a função devolve o valor especial `None`, o mesmo que acontece com funções que não tem `return`, só que no ponto onde está escrito `return`. < /sup >
 
-aqui alguns exemplos:
+Aqui alguns exemplos:
 
 ```python
 def cor_sorteada():
@@ -98,7 +98,7 @@ fill(cor_sorteada())   # pede um preenchimento com uma cor sorteada!
 rect(10, 10, 100, 50)
 ```
 
-da mesma maneira todo o tipo de manipulação de valores pode ser encapsulada em uma função.
+Da mesma maneira todo o tipo de manipulação de valores pode ser encapsulada em uma função.
 
 ```python
 def media(a, b):
@@ -108,7 +108,7 @@ print(media(100, 21))
 # resultado: 60.5
 ```
 
-mais um exemplo
+Mais um exemplo
 
 ```python
 def menor_de_idade(idade):
@@ -133,30 +133,30 @@ else:
 
 # Glossário
 
-[**encapsulamento**](https: // penseallen.github.io/pense_python2e/04-caso-interface.html  # termo:encapsulamento) O processo de transformar uma sequência de instruções em uma definição de função.
+[**encapsulamento**](https: // penseallen.github.io/PensePython2e/04-caso-interface.html  # termo:encapsulamento) O processo de transformar uma sequência de instruções em uma definição de função.
 
-[**definição de função**](https: // penseallen.github.io/pense_python2e/03-funcoes.html  # termo:definição%20de%20função) Uma instrução que cria uma função nova, especificando seu nome, parâmetros e as instruções que contém.
+[**definição de função**](https: // penseallen.github.io/PensePython2e/03-funcoes.html  # termo:definição%20de%20função) Uma instrução que cria uma função nova, especificando seu nome, parâmetros e as instruções que contém.
 
-[**cabeçalho**](https: // penseallen.github.io/pense_python2e/03-funcoes.html  # termo:cabeçalho) A primeira linha de uma definição de função.
+[**cabeçalho**](https: // penseallen.github.io/PensePython2e/03-funcoes.html  # termo:cabeçalho) A primeira linha de uma definição de função.
 
-[**corpo**](https: // penseallen.github.io/pense_python2e/03-funcoes.html  # termo:corpo) A sequência de instruções dentro de uma definição de função.
+[**corpo**](https: // penseallen.github.io/PensePython2e/03-funcoes.html  # termo:corpo) A sequência de instruções dentro de uma definição de função.
 
-[**parâmetro**](https: // penseallen.github.io/pense_python2e/03-funcoes.html  # termo:parâmetro) Um nome usado dentro de uma função para se referir ao valor passado como argumento.
+[**parâmetro**](https: // penseallen.github.io/PensePython2e/03-funcoes.html  # termo:parâmetro) Um nome usado dentro de uma função para se referir ao valor passado como argumento.
 
-[**chamada de função**](https: // penseallen.github.io/pense_python2e/03-funcoes.html  # termo:chamada%20de%20função) Uma instrução que executa uma função. É composta pelo nome da função seguido de uma lista de argumentos entre parênteses, ou caso a função possa ser chamada sem argumentos, só os parênteses (`nome()`).
+[**chamada de função**](https: // penseallen.github.io/PensePython2e/03-funcoes.html  # termo:chamada%20de%20função) Uma instrução que executa uma função. É composta pelo nome da função seguido de uma lista de argumentos entre parênteses, ou caso a função possa ser chamada sem argumentos, só os parênteses (`nome()`).
 
-[**argumento**](https: // penseallen.github.io/pense_python2e/03-funcoes.html  # termo:argumento) Um valor apresentado a uma função quando a função é chamada. Este valor é atribuído ao parâmetro correspondente na função.
+[**argumento**](https: // penseallen.github.io/PensePython2e/03-funcoes.html  # termo:argumento) Um valor apresentado a uma função quando a função é chamada. Este valor é atribuído ao parâmetro correspondente na função.
 
-[**valor de retorno**](https: // penseallen.github.io/pense_python2e/03-funcoes.html  # termo:valor%20de%20retorno) O resultado de uma função. Se uma chamada de função for usada como uma expressão, o valor de retorno é o valor da expressão.
+[**valor de retorno**](https: // penseallen.github.io/PensePython2e/03-funcoes.html  # termo:valor%20de%20retorno) O resultado de uma função. Se uma chamada de função for usada como uma expressão, o valor de retorno é o valor da expressão.
 
-[**função com resultado**](https: // penseallen.github.io/pense_python2e/03-funcoes.html  # termo:função%20com%20resultado) Uma função que devolve um valor.
+[**função com resultado**](https: // penseallen.github.io/PensePython2e/03-funcoes.html  # termo:função%20com%20resultado) Uma função que devolve um valor.
 
-[**`None`** ](https: // penseallen.github.io/pense_python2e/03-funcoes.html  # termo:None) Um valor especial apresentado por funções nulas (circularmente definidas como funções que devolvem o valor `None`, em lugar de outro valor de resultado).
+[**`None`** ](https: // penseallen.github.io/PensePython2e/03-funcoes.html  # termo:None) Um valor especial apresentado por funções nulas (circularmente definidas como funções que devolvem o valor `None`, em lugar de outro valor de resultado).
 
 # Assuntos relacionados
 
-- [parâmetros opcionais e outras malandragens](funcoes_2.md)
-- [recursividade em funções](recursao_py.md)
+- [Parâmetros opcionais e outras malandragens](funcoes_2.md)
+- [Recursividade em funções](recursao_py.md)
 
 - --
-texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
+Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.

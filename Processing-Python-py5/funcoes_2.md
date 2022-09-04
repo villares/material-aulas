@@ -3,14 +3,14 @@
 
 # Argumentos opcionais em funções que conhecemos
 
-você já reparou que a função `rect()` aceita 4, 5 ou 8 argumentos? você pode invocar `rect()` das seguintes maneiras([confira na referência se preferir](https: // py.processing.org/reference/rect.html)):
+Você já reparou que a função `rect()` aceita 4, 5 ou 8 argumentos? Você pode invocar `rect()` das seguintes maneiras([confira na referência se preferir](https: // py.processing.org/reference/rect.html)):
 
 ```
 rect(x, y, largura, altura)
 rect(x, y, largura, altura, raio_cantos)
 rect(x, y, largura, altura, raio_sup_esq, raio_sup_dir, raio_inf_dir, raio_inf_esq)`
 ```
-outro caso é a função `fill()` para pedir uma cor de preenchimento:
+Outro caso é a função `fill()` para pedir uma cor de preenchimento:
 ```
 fill(cinza)
 fill(cinza, alpha_opacidade)
@@ -20,9 +20,9 @@ fill(r, g, b, alpha_opacidade)
 
 # Como fazer isso nas funções que definimos?
 
-em python é possível obter esse mesmo tipo de comportamento que vimos acima em uma função que nós estamos definindo. Há mais de uma estratégia para fazer isso, vamos explorar aqui uma das mais simples.
+Em Python é possível obter esse mesmo tipo de comportamento que vimos acima em uma função que nós estamos definindo. Há mais de uma estratégia para fazer isso, vamos explorar aqui uma das mais simples.
 
-vamos partir do exemplo de uma função que devolve cores geradas com `random()`, cuja primeira versão era mais ou menos assim:
+Vamos partir do exemplo de uma função que devolve cores geradas com `random()`, cuja primeira versão era mais ou menos assim:
 
 ```python
 
@@ -37,7 +37,7 @@ def cor_sorteada():
 
 ```
 
-agora imagine que gostaríamos de especificar um valor de opacidade(*alpha*) opcionalmente. caso nenhum argumento seja usado na chamada da função, `alpha` recebe um valor * default * (padrão), `alpha = None`. O que permite agir de maneira diferente com ou sem o argumento.
+Agora imagine que gostaríamos de especificar um valor de opacidade(*alpha*) opcionalmente. Caso nenhum argumento seja usado na chamada da função, `alpha` recebe um valor * default * (padrão), `alpha = None`. O que permite agir de maneira diferente com ou sem o argumento.
 
 ```python
 

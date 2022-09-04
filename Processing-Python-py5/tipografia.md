@@ -2,13 +2,13 @@
 
 # Trabalhando com fontes e outros ajustes do texto
 
-usamos `text("Lorem Ipsum dolor", x, y)` para escrever um texto na área de desenho. O tamanho pode ser controlado, em pontos, por `text_size()`. O alinhamento pode ser alterado por `text_align()`. A cor vem do `fill()`.
+Usamos `text("Lorem Ipsum dolor", x, y)` para escrever um texto na área de desenho. O tamanho pode ser controlado, em pontos, por `text_size()`. O alinhamento pode ser alterado por `text_align()`. A cor vem do `fill()`.
 
 # Exemplo básico
 
 ```pyde
 """
-adaptado do tutorial
+Adaptado do tutorial
 https://py.processing.org/tutorials/typography/
 """
 
@@ -42,21 +42,21 @@ def draw():
 
 # Definindo a fonte
 
-se não indicarmos alguma, uma fonte padrão será usada, mas podemos criar uma nova fonte(Py5Font) e usar em `text_font()`,
+Se não indicarmos alguma, uma fonte padrão será usada, mas podemos criar uma nova fonte(Py5Font) e usar em `text_font()`,
 a partir de uma fonte já instalada ou de um arquivo vetorial ** .ttf ** ou ** .otf ** na pasta * """data**:
 
 ```pyde
 # para ver as fontes instaladas no seu computador
-for font_name in p_font.list():
+for font_name in PFont.list():
     print(font_name)
 # para usar a fonte Vera Sans Mono no estilo negrito
-f = create_font("Bitstream Vera Sans Mono Bold", 24)
-text_font(f)
+f = createFont("Bitstream Vera Sans Mono Bold", 24)
+textFont(f)
 ```
 
-especialmente no caso de não termos permissão para distribuir o arquivo vetorial da fonte, podemos criar uma fonte bitmap
+Especialmente no caso de não termos permissão para distribuir o arquivo vetorial da fonte, podemos criar uma fonte bitmap
 a partir da original e distribuir este novo arquivo **.vlw**, na pasta *"""data**.
-usando a ferramenta ** tool > create font...** produzimos o arquivo da fonte que pode ser carregado da seguinte maneira:
+Usando a ferramenta ** Tool > Create Font...** produzimos o arquivo da fonte que pode ser carregado da seguinte maneira:
 
 ```pyde
 font = load_font("LetterGothicStd-32.vlw")
@@ -66,7 +66,7 @@ font = load_font("LetterGothicStd-32.vlw")
 
 ![grade](https: // raw.githubusercontent.com/arteprog/programacao-criativa/master/assets/imagens/typogrid.png)
 
-copie o arquivo descompactado ** .otf*** da fonte[garoa hacker clube bold](https: // garoa.net.br/wiki/fonte__garoa__hacker__clube__bold) na sub-pasta * """data** do seu sketch.
+Copie o arquivo descompactado ** .otf*** da fonte[Garoa Hacker Clube Bold](https: // garoa.net.br/wiki/Fonte_Garoa_Hacker_Clube_Bold) na sub-pasta * """data** do seu sketch.
 
 ```pyde
 glifos = "ABCDEFGHIJKLMNOPQRSTUVWXYZ☂#$*&"
@@ -107,32 +107,32 @@ def mouse_pressed():
 def mouse_released():
     no_loop()
 ```
-é possível desenhar texto no modo `P3D` (veja mais sobre isso na página sobre [desenho em 3D](desenho-3_d.md) )
-este exemplo mostra 23 linhas na tela, e anima a rolagem (scroll) com o giro da [rodinha do mouse](rodinha_mouse.md).
+É possível desenhar texto no modo `P3D` (veja mais sobre isso na página sobre [Desenho em 3D](desenho-3_d.md) )
+Este exemplo mostra 23 linhas na tela, e anima a rolagem (scroll) com o giro da [rodinha do mouse](rodinha_mouse.md).
 
 ```python
 zen = u"""\
-the zen of python, by tim peters
+The Zen of Python, by Tim Peters
 
-beautiful is better than ugly.
-explicit is better than implicit.
-simple is better than complex.
-complex is better than complicated.
-flat is better than nested.
-sparse is better than dense.
-readability counts.
-special cases aren't special enough to break the rules.
-although practicality beats purity.
-errors should never pass silently.
-unless explicitly silenced.
-in the face of ambiguity, refuse the temptation to guess.
-there should be one—and preferably only one—obvious way to do it.
-although that way may not be obvious at first unless you're Dutch.
-now is better than never.
-although never is often better than * right * now.
-if the implementation is hard to explain, it's a bad idea.
-if the implementation is easy to explain, it may be a good idea.
-namespaces are one honking great idea—let's do more of those!\
+Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Complex is better than complicated.
+Flat is better than nested.
+Sparse is better than dense.
+Readability counts.
+Special cases aren't special enough to break the rules.
+Although practicality beats purity.
+Errors should never pass silently.
+Unless explicitly silenced.
+In the face of ambiguity, refuse the temptation to guess.
+There should be one—and preferably only one—obvious way to do it.
+Although that way may not be obvious at first unless you're Dutch.
+Now is better than never.
+Although never is often better than * right * now.
+If the implementation is hard to explain, it's a bad idea.
+If the implementation is easy to explain, it may be a good idea.
+Namespaces are one honking great idea—let's do more of those!\
 """
 pos = 0
 
@@ -164,7 +164,7 @@ def mouse_wheel(e):
 
 # Sugestão de leitutra
 
-tutoriais em:
+Tutoriais em:
 
-- https://processing.org/tutorials/typography/ (java)
-- https://py.processing.org/tutorials/text/ (python)
+- https://processing.org/tutorials/typography/ (Java)
+- https://py.processing.org/tutorials/text/ (Python)

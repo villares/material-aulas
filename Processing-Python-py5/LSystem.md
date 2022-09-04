@@ -1,9 +1,9 @@
 # L-System - Sistema de Lindenmayer
 
-L-systems são as estruturas e procedimentos criados por aristide lindenmayer para estudar o crescimento de algas e plantas, por meio da manipulação de sequências de símbolos. as sequências são geradas por sucessivas iterações da aplicação de regras de substituição. A tradução computacional dessas estruturas foi discutida pela primeira vez em * lecture notes in biomathematics * por przemyslaw prusinkiewcz e james hanan.
+L-Systems são as estruturas e procedimentos criados por Aristide Lindenmayer para estudar o crescimento de algas e plantas, por meio da manipulação de sequências de símbolos. As sequências são geradas por sucessivas iterações da aplicação de regras de substituição. A tradução computacional dessas estruturas foi discutida pela primeira vez em * Lecture Notes in Biomathematics * por Przemyslaw Prusinkiewcz e James Hanan.
 
-referências externas:
-- [the algorithmic beauty of plants](http: // algorithmicbotany.org/papers /  # abop) (+ diversos livros e artigos)
+Referências externas:
+- [The Algorithmic Beauty of Plants](http: // algorithmicbotany.org/papers /  # abop) (+ diversos livros e artigos)
 - https: // www.cgjennings.ca/articles/l-systems /
 - http: // www.paulbourke.net/fractals/lsys /
 
@@ -32,7 +32,7 @@ def draw():
 
 def gerar_sistema(num, axioma, regras):
     """
-    produz um sistema-L a partir da  frase `axioma`,
+    Produz um sistema-L a partir da  frase `axioma`,
     repetindo `num` iterações, as substituições descritas
     nas pelo dicionário `regras`
     """
@@ -47,7 +47,7 @@ def gerar_sistema(num, axioma, regras):
 
 def desenha_sistema(simbolos):
     """
-    recebe uma frase e desenha de acordo com
+    Recebe uma frase e desenha de acordo com
     as "regras de desenho".
     """
     for simbolo in simbolos:
@@ -86,7 +86,7 @@ def key_pressed():
 
 # Exemplo 3D
 
-exemplo usando `P3D` e adicionando `rotate_y()`
+Exemplo usando `P3D` e adicionando `rotate_y()`
 
 ```python
 
@@ -138,7 +138,7 @@ def draw():
 
 # Exemplo 3D
 
-exemplo criando padroes animados usando `P3D` e `for _ in range(): `
+Exemplo criando padroes animados usando `P3D` e `for _ in range(): `
 
 
 ```python

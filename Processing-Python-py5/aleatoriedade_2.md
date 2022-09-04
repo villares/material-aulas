@@ -8,37 +8,37 @@ from random import sample
 from random import choice
 from random import randint
 from random import random
-vamos começar revisando a  função `random()` do processing, que produz números pseudo-aleatórios e já vimos anteriormente, em seguida vamos ver um pouco do módulo * random * de python que pode ser * importado * (com a instrução `import` no início do código), que e tem uma função `random()` e algumas outras funções relacionadas.
+Vamos começar revisando a  função `random()` do Processing, que produz números pseudo-aleatórios e já vimos anteriormente, em seguida vamos ver um pouco do módulo * random * de Python que pode ser * importado * (com a instrução `import` no início do código), que e tem uma função `random()` e algumas outras funções relacionadas.
 
 # A função `random()` do Processing
 
-cada vez que chamamos a função `random()` com um valor de argumento, como em `sorteio = random(1)
+Cada vez que chamamos a função `random()` com um valor de argumento, como em `sorteio = random(1)
 ` um número entre zero e o argumento passado(servindo de limite superior, mas não incluso) é produzido.
 
 ![imagem_exemplo](assets/random1-10.png)
 
-se dois valores forem usados, por exemplo `random(-5, 5)` serão produzidos números entre - 5 e 5 (não incluso). E podemos obter números inteiros convertendo o valor usando `int()`, como em `sorteio_inteiro = int(random(1, 11))` que 'sorteia' com igual probabilidades os números de 1 a 10.
+Se dois valores forem usados, por exemplo `random(-5, 5)` serão produzidos números entre - 5 e 5 (não incluso). E podemos obter números inteiros convertendo o valor usando `int()`, como em `sorteio_inteiro = int(random(1, 11))` que 'sorteia' com igual probabilidades os números de 1 a 10.
 
 # O módulo `random` da biblioteca padrão do Python
 
-no python a funçao `random()` precisa ser importada do módulo `random` com a a seguinte  instrução:
+No Python a funçao `random()` precisa ser importada do módulo `random` com a a seguinte  instrução:
 
 ```python
 ```
 
-> mas, se fizermos isso "matamos" o `random()` do processing. uma alternativa, se quisermos manter as duas, é escrever: < /br >
+> Mas, se fizermos isso "matamos" o `random()` do Processing. Uma alternativa, se quisermos manter as duas, é escrever: < /br >
 > `from random import random as py_random` < /br >
 > e aí usaremos o nome `py_random()`, uma outra opção ainda importar o módulo todo com outro nome < /br >
 > `import random as rnd` < /br >
 > e nesse caso usaremos `rnd.random()`, por exemplo. < /br >
 
-A função `random()` em python não recebe argumentos(isto é não vai nada dentro dos parênteses) e devolve o equivalente a `random(1)` no processing, por esse motivo  não me  parece tão flexível e útil.
+A função `random()` em Python não recebe argumentos(isto é não vai nada dentro dos parênteses) e devolve o equivalente a `random(1)` no Processing, por esse motivo  não me  parece tão flexível e útil.
 
-no entanto, o módulo `random` de python oferece outras funções muito simpáticas, quero dizer, interessantes: `choice()`, `sample()`, e `shuffle()`.
+No entanto, o módulo `random` de Python oferece outras funções muito simpáticas, quero dizer, interessantes: `choice()`, `sample()`, e `shuffle()`.
 
 # Produzindo números inteiros com `randint()`
 
-é comum querermos produzir números pseudo-aleatórios inteiros, em processing costumamos truncar, convertendo com `int()` como em `int(random(1, 6))`, mas em python podemos fazer assim:
+É comum querermos produzir números pseudo-aleatórios inteiros, em Processing costumamos truncar, convertendo com `int()` como em `int(random(1, 6))`, mas em Python podemos fazer assim:
 
 ```python
 
@@ -51,7 +51,7 @@ for _ in range(100):
 
 # Selecionando um único item com `choice()`
 
-A função `choice(colection)` devolve um item de uma coleção(tupla, lista, conjunto). para cada execução um item é escolhido(pseudo-)aleatoriamente.
+A função `choice(colection)` devolve um item de uma coleção(tupla, lista, conjunto). Para cada execução um item é escolhido(pseudo-)aleatoriamente.
 
 ```python
 
@@ -62,7 +62,7 @@ print(sorteio)
 # jaca
 ```
 
-veja também outro exemplo, mais visual.
+Veja também outro exemplo, mais visual.
 
 ```python
 
@@ -81,7 +81,7 @@ def draw():
 
 # Selecionando uma amostra (sem repetição de itens)
 
-*sample * significa amostra, e usamos `sample(colection, k)` onde `k` é o tamanho da amostra(e não pode ser maior que tamanho da população) para obter uma lista com `k` itens.
+*Sample * significa amostra, e usamos `sample(colection, k)` onde `k` é o tamanho da amostra(e não pode ser maior que tamanho da população) para obter uma lista com `k` itens.
 
 ```python
 
@@ -100,7 +100,7 @@ print(len(duas_cores))  # resultado: 2
 
 # Misturando a ordem de uma sequência mutável
 
-ao executar `shuffle(minha_sequencia)` fazemos com que `minha_sequencia`, que, atenção, não pode ser uma sequência vazia, seja reordenada 'aleatoriamente'.
+Ao executar `shuffle(minha_sequencia)` fazemos com que `minha_sequencia`, que, atenção, não pode ser uma sequência vazia, seja reordenada 'aleatoriamente'.
 
 ```python
 
@@ -115,7 +115,7 @@ print(letras)
 
 A coleção precisa ser ordenada e mutável, como uma lista, não pode ser uma tupla, que é imutável, ou um conjunto que não guarda a ordem dos elementos.
 
-veja um outro exemplo de `shuffle()`, embaralhando uma lista de tuplas que representam as posições em uma grade. as cores e os números são relativos à ordem dos elementos na lista(0, vermelho) é o primeiro quadrado da lista.
+Veja um outro exemplo de `shuffle()`, embaralhando uma lista de tuplas que representam as posições em uma grade. As cores e os números são relativos à ordem dos elementos na lista(0, vermelho) é o primeiro quadrado da lista.
 
 ```python
 
@@ -150,16 +150,16 @@ def draw():
 
 # Sementes dos geradores pseudo-aleatórios (*random seed*)
 
-como os números produzidos por `random()` não são verdadeiramente aleatórios, e sim produzidos por algorítmos geradores determinísticos, é possível fixar um parâmetro inical, conhecido como semente(*seed*), o que permite reproduzir novamente a mesma sequência de números.
+Como os números produzidos por `random()` não são verdadeiramente aleatórios, e sim produzidos por algorítmos geradores determinísticos, é possível fixar um parâmetro inical, conhecido como semente(*seed*), o que permite reproduzir novamente a mesma sequência de números.
 
-para fixar o início do gerador de `random()` no processing usamos `random_seed(numero_inteiro)`.
+Para fixar o início do gerador de `random()` no Processing usamos `random_seed(numero_inteiro)`.
 
 ```python
 random_seeed(numero_inteiro)  # ajusta a semente no Processing
 s = random(10, 20)  # Função random() do Processing
 ```
 
-Já para as funções do módulo `random` do python usamos a função `seed()` do módulo `random`.
+Já para as funções do módulo `random` do Python usamos a função `seed()` do módulo `random`.
 
 ```python
 
@@ -179,7 +179,7 @@ r = rnd.random() * 100
 
 # Um exemplo de uso do `random.seed()` do Python
 
-modificando o exemplo anterior com `shuffle`.
+Modificando o exemplo anterior com `shuffle`.
 
 ```python
 
@@ -213,7 +213,7 @@ def draw():
 
 # Um exemplo do `randomSeed()` do Processing
 
-neste exemplo abaixo usamos uma semente para manter 'congelados' os números gerados por `random()` entre frames do `draw()`, mantendo a interatividade de ajuste do ângulo da árvore com o mouse. quando uma imagem é exportada, o nome do arquivo contém a semente(_seed_) do gerador de números pseudo-aleatórios.
+Neste exemplo abaixo usamos uma semente para manter 'congelados' os números gerados por `random()` entre frames do `draw()`, mantendo a interatividade de ajuste do ângulo da árvore com o mouse. Quando uma imagem é exportada, o nome do arquivo contém a semente(_seed_) do gerador de números pseudo-aleatórios.
 
 ```python
 
@@ -265,5 +265,5 @@ def key_pressed():  # executada quando uma tecla for precinada
 
 ---
 
-texto e imagens / text and images: CC BY-NC-SA 4.0
+Texto e imagens / text and images: CC BY-NC-SA 4.0
 Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.

@@ -4,21 +4,21 @@ from random import choice
 import os  # para usar listdir, path.isfile, path.join
 ![imagens sorteadas da pasta](assets/random_images.gif)
 
-> exemplo de execução usando imagens medievais coletadas pelo artista e educador[daniel seda](https: // www.danielseda.com/home).
+> Exemplo de execução usando imagens medievais coletadas pelo artista e educador[Daniel Seda](https: // www.danielseda.com/home).
 
-tendo visto previamente como[ler e usar imagens de arquivos externos](imagens_externas.md) com `load_image()`, e a estrutura de dados lista(`list`) neste exemplo vamos carregar todas as imagens encontradas na pasta `data` localizada dentro da pasta do seu * sketch*. depois vamos "sortear", uma imagem para mostrar usando a função `random.choice`. A cada clique do mouse uma nova imagem será mostrada.
+Tendo visto previamente como[ler e usar imagens de arquivos externos](imagens_externas.md) com `load_image()`, e a estrutura de dados lista(`list`) neste exemplo vamos carregar todas as imagens encontradas na pasta `data` localizada dentro da pasta do seu * sketch*. Depois vamos "sortear", uma imagem para mostrar usando a função `random.choice`. A cada clique do mouse uma nova imagem será mostrada.
 
-para começar, é preciso criar uma variável global para guardar os dados das imagens carregados dos arquivos encontrados, fazemos isso com a linha `imagens = []` antes do `setup()` que cria uma lista vazia e aponta o nome `imagens` para ela.
+Para começar, é preciso criar uma variável global para guardar os dados das imagens carregados dos arquivos encontrados, fazemos isso com a linha `imagens = []` antes do `setup()` que cria uma lista vazia e aponta o nome `imagens` para ela.
 
-usaremos a função `sketch_path()` do processing, com o argumento `'data'` para obter o caminho da pasta * data * dentro do seu * sketch*. E vamos também usar funções importadas, trazidas, do módulo `os`do python para:
+Usaremos a função `sketch_path()` do Processing, com o argumento `'data'` para obter o caminho da pasta * data * dentro do seu * sketch*. E vamos também usar funções importadas, trazidas, do módulo `os`do Python para:
 
-- listar todos os itens de uma pasta com`os.listdir(caminho_da_pasta)`
+- Listar todos os itens de uma pasta com`os.listdir(caminho_da_pasta)`
 
-- checar se o item é um arquivo(e não uma sub-pasta) com `os.path.isfile(caminho)`
+- Checar se o item é um arquivo(e não uma sub-pasta) com `os.path.isfile(caminho)`
 
-- juntar um nome de arquivo com o caminho da pasta, formando o "caminho completo" do item, com `os.path.join(caminho, nome_arquivo)`
+- Juntar um nome de arquivo com o caminho da pasta, formando o "caminho completo" do item, com `os.path.join(caminho, nome_arquivo)`
 
-depois do procedimento que popula a lista `caminhos_arquivos`, que contém o caminho completo para os arquivos de imagem(localização da pasta + nome do arquivo), nós vamos pegar cada um desses caminhos e usá-lo para carregar os dados da imagem com a função `load_image()` do processing. essa função devolve um objeto `Py5Image` que pode ser mostrado na tela com a função `image()` posteriormente.
+Depois do procedimento que popula a lista `caminhos_arquivos`, que contém o caminho completo para os arquivos de imagem(localização da pasta + nome do arquivo), nós vamos pegar cada um desses caminhos e usá-lo para carregar os dados da imagem com a função `load_image()` do Processing. Essa função devolve um objeto `Py5Image` que pode ser mostrado na tela com a função `image()` posteriormente.
 
 ```python
 
@@ -90,7 +90,7 @@ def setup():
     caminhos_arquivos=[]
     try:
         data_folder_contents=os.listdir(data_folder)
-    except os_error:
+    except OSError:
         print(u'Pasta não encontrada.')
         data_folder_contents=[]
     for nome_arquivo in data_folder_contents:
@@ -131,6 +131,6 @@ def has_image_ext(file_name):
 
 # Assuntos relacionados
 
-- estrutura de pixels das imagens em[pixels e imagens](pixels.md)
-- [lendo e escrevendo texto em arquivos(*file IO*)](/processing-python/file_io.md)
-- [lendo todas as imagens de uma pasta selecionada pela pessoa usuária](imagens_externas_pasta.md)
+- Estrutura de pixels das imagens em[Pixels e imagens](pixels.md)
+- [Lendo e escrevendo texto em arquivos(*file IO*)](/Processing-Python/file_io.md)
+- [Lendo todas as imagens de uma pasta selecionada pela pessoa usuária](imagens_externas_pasta.md)

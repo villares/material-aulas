@@ -1,14 +1,14 @@
 # Conjuntos
 
-from __future__ import unicode_literals
-conjuntos(*set*) são estruturas para guardar coleções de itens sem se preocupar com a ordem(por isso não nos referimos a eles como sequências como as tuplas e listas).
 
-- converter uma coleção em conjunto garante que não temos repetição de itens(mas perderemos a ordem se originalmente tínhamos uma coleção ordenada, uma sequência)
+Conjuntos(*set*) são estruturas para guardar coleções de itens sem se preocupar com a ordem(por isso não nos referimos a eles como sequências como as tuplas e listas).
+
+- Converter uma coleção em conjunto garante que não temos repetição de itens(mas perderemos a ordem se originalmente tínhamos uma coleção ordenada, uma sequência)
 - São super eficientes para a consulta de existência ou não de um item(temos X neste conjunto?) assim como operações de subtração, união e intersecção de conjuntos.
 
 # Eliminando repetições com conjuntos
 
-uma das formas mais simples de se eliminar duplicações, items repetidos, em uma lista, é transformá-la em um conjunto e depois de volta em uma lista(perde-se a ordem dos elementos).
+Uma das formas mais simples de se eliminar duplicações, items repetidos, em uma lista, é transformá-la em um conjunto e depois de volta em uma lista(perde-se a ordem dos elementos).
 
 ```python
 frutas = ['banana', 'uva', 'uva', 'banana', 'kiwi', 'jaca', 'uva']
@@ -32,7 +32,7 @@ diferenca_b_menos_a = conjunto_b - conjunto_a   # {"fogo"}
 
 # Um exemplo visual, interativo
 
-execute o código abaixo e use o mouse para ligar e desligar, clicando na legenta, os diversos conjuntos de "pontos" calculados pelas operações de conjuntos, fazendo assim uma demonstração visual. note que no código deste exemplo usamos uma tupla com dicionários dentro!
+Execute o código abaixo e use o mouse para ligar e desligar, clicando na legenta, os diversos conjuntos de "pontos" calculados pelas operações de conjuntos, fazendo assim uma demonstração visual. Note que no código deste exemplo usamos uma tupla com dicionários dentro!
 
 ![conjuntos](assets/conjuntos.png)
 
@@ -93,4 +93,4 @@ def mouse_clicked():
 
 # Assuntos relacionados
 
-- [dicionários](dicionarios.md)
+- [Dicionários](dicionarios.md)

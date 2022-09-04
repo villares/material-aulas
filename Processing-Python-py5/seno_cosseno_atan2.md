@@ -3,35 +3,35 @@
 
 # `sin()`, `cos()` e `atan2()`
 
-as funções trigonométricas não são nenhum bicho de sete cabeças, 2π cabeças, no máximo...
+As funções trigonométricas não são nenhum bicho de sete cabeças, 2π cabeças, no máximo...
 
-para começar é preciso saber que quando uma dessas funções pede um ângulo como argumento(o valor entre parênteses), espera que você informe esse ângulo em * radianos*, por isso, se você pensa em graus, use `radians(angulo_em_graus)` para converter. outras funções, como `atan2()`, que vamos ver nesta página, devolvem um ângulo, em radianos, que por sua vez pode ser convertido em graus com `degrees(angulo_em_radianos)`se você precisar.
+Para começar é preciso saber que quando uma dessas funções pede um ângulo como argumento(o valor entre parênteses), espera que você informe esse ângulo em * radianos*, por isso, se você pensa em graus, use `radians(angulo_em_graus)` para converter. Outras funções, como `atan2()`, que vamos ver nesta página, devolvem um ângulo, em radianos, que por sua vez pode ser convertido em graus com `degrees(angulo_em_radianos)`se você precisar.
 
 # Sumário
 - [seno e cosseno](  # seno-e-cosseno)
 - [`sin()` e `cos()` no espaço](  # sin-e-cos-no-espaço)
     - [outra versão com algumas indicações](  # outra-versão-com-algumas-indicações)
 - [`sin()` e `cos()` no tempo](  # sin-e-cos-no-tempo)
-- [seno e cosseno fornecem as coordenadas dos pontos de um círculo!](  # seno-e-cosseno-fornecem-as-coordenadas-dos-pontos-de-um-círculo)
-    - [uma versão animada e com algumas indicações](  # uma-versão-animada-e-com-algumas-indicações)
+- [Seno e cosseno fornecem as coordenadas dos pontos de um círculo!](  # seno-e-cosseno-fornecem-as-coordenadas-dos-pontos-de-um-círculo)
+    - [Uma versão animada e com algumas indicações](  # uma-versão-animada-e-com-algumas-indicações)
 - [A função do arco tangente](  # a-função-do-arco-tangente)
-    - [como descobrir a inclinação de um segmento de reta?](  # como-descobrir-a-inclinação-de-um-segmento-de-reta)
-    - [desenhando uma seta com `atan2()`](  # desenhando-uma-seta-com-atan2)
-    - [apontando para o mouse](  # apontando-para-o-mouse)
+    - [Como descobrir a inclinação de um segmento de reta?](  # como-descobrir-a-inclinação-de-um-segmento-de-reta)
+    - [Desenhando uma seta com `atan2()`](  # desenhando-uma-seta-com-atan2)
+    - [Apontando para o mouse](  # apontando-para-o-mouse)
 
 # Seno e cosseno
 
-na origem essas funções tratam das relações entre ângulos e proporções das medidas dos triângulos, sendo muito estudas, demonstradas, em triângulos retângulos ou em um círculo de raio unitário(o ciclo trigronométrico), mas para além desse contexto, das coisas mais úteis que você pode querer saber, e acredito não ser difícil demonstrar aqui, é que essas funções devolvem valores entre ** -1 ** e ** 1 ** de maneira cíclica, periódica.
+Na origem essas funções tratam das relações entre ângulos e proporções das medidas dos triângulos, sendo muito estudas, demonstradas, em triângulos retângulos ou em um círculo de raio unitário(o ciclo trigronométrico), mas para além desse contexto, das coisas mais úteis que você pode querer saber, e acredito não ser difícil demonstrar aqui, é que essas funções devolvem valores entre ** -1 ** e ** 1 ** de maneira cíclica, periódica.
 
-os primeiros exemplos a seguir são para visualizar como se dá o comportamento do seno e do cosseno.
+Os primeiros exemplos a seguir são para visualizar como se dá o comportamento do seno e do cosseno.
 
 # `sin()` e `cos()` no espaço
 
 ![](assets/seno_cosseno_0.png)
 
-para produzir a imagem acima, criamos um laço repetição que produz um `x` de ** 0 ** a ** 720 ** , convertemos esse `x`num ângulo em radianos e dividimos por ** 2**, de forma a obter ângulos de ** 0 ** a ** 2π ** radianos (ou ** 0°** a ** 360°** ).
+Para produzir a imagem acima, criamos um laço repetição que produz um `x` de ** 0 ** a ** 720 ** , convertemos esse `x`num ângulo em radianos e dividimos por ** 2**, de forma a obter ângulos de ** 0 ** a ** 2π ** radianos (ou ** 0°** a ** 360°** ).
 
-vamos  multiplicar o valor do seno e do cosseno do ângulo pela metade da altura da tela(aproveitando para inverter o sinal pois o eixo Y do processing cresce para baixo e estamos acostumados a ver os gráficos com a parte positiva para cima). para deslocar a origem para baixo somamos esse mesmo valor de metade da altura da tela.
+Vamos  multiplicar o valor do seno e do cosseno do ângulo pela metade da altura da tela(aproveitando para inverter o sinal pois o eixo Y do Processing cresce para baixo e estamos acostumados a ver os gráficos com a parte positiva para cima). Para deslocar a origem para baixo somamos esse mesmo valor de metade da altura da tela.
 
 ```python
 size(720, 229)  # 360×2, 4 radianos
@@ -44,7 +44,7 @@ for x in range(width):
     point(x, cosseno)
 ```
 
-qual é o seno e qual o cosseno? veja o resultado das instruções a seguir.
+Qual é o seno e qual o cosseno? Veja o resultado das instruções a seguir.
 
 ```python
 print(sin(0))  # exibe no console: 0.0
@@ -55,7 +55,7 @@ O seno é o que começa à esquerda no ** 0**, na meia altura da tela, e o cosse
 
 # Outra versão com algumas indicações
 
-desta vez o exemplo usa `translate()` e `scale()` para deslocar e inverter o eixo y. E o X vai de ** 0 ** a aproximadamente ** 2π ** mutiplicado por ** 100 **
+Desta vez o exemplo usa `translate()` e `scale()` para deslocar e inverter o eixo Y. E o X vai de ** 0 ** a aproximadamente ** 2π ** mutiplicado por ** 100 **
 
 ![](assets/seno_cosseno.png)
 
@@ -97,7 +97,7 @@ def indicacoes():
 
 # `sin()` e `cos()` no tempo
 
-seno e cosseno são muito úteis para fazer animações cíclicas, é muito fácil usar a contagem pronta dos quadros oferecida pelo processing,  `frame_count` como se fosse um ângulo em graus, converta em radianos e * voi-lá *!
+Seno e cosseno são muito úteis para fazer animações cíclicas, é muito fácil usar a contagem pronta dos quadros oferecida pelo Processing,  `frame_count` como se fosse um ângulo em graus, converta em radianos e * voi-lá *!
 
 ![](assets/seno_cosseno.gif)
 
@@ -132,11 +132,11 @@ def indicacoes():
     fill(0, 200, 200)
     text("seno", 10, 60)
 ```
-note que seno ou cosseno valendo zero significa que a bolinha fica com tamanho ** 100**, com valor ** -1 ** ela deseaparece e com o valor ** 1 ** ela ganha o seu diâmetro máximo de ** 200 ** pixels.
+Note que seno ou cosseno valendo zero significa que a bolinha fica com tamanho ** 100**, com valor ** -1 ** ela deseaparece e com o valor ** 1 ** ela ganha o seu diâmetro máximo de ** 200 ** pixels.
 
 # Seno e cosseno fornecem as coordenadas dos pontos de um círculo!
 
-com seno, cosseno, o raio e coordenadas do centro, é possível calcular o X e Y de um ponto para cada ângulo em um círculo, isso permite desenhar polígonos regulares e[estrelas](while.md), por exemplo.
+Com seno, cosseno, o raio e coordenadas do centro, é possível calcular o X e Y de um ponto para cada ângulo em um círculo, isso permite desenhar polígonos regulares e[estrelas](while.md), por exemplo.
 
 ![](assets/seno_cosseno_p.png)
 
@@ -154,7 +154,7 @@ for graus in range(0, 360, 18):  # cada 18°
 
 # Uma versão animada e com algumas indicações
 
-vamos agora desenhar atualizando o ângulo com o tempo, dessa forma animando o ponto no círculo.
+Vamos agora desenhar atualizando o ângulo com o tempo, dessa forma animando o ponto no círculo.
 
 ![](assets/seno_cosseno_c.gif)
 
@@ -208,15 +208,15 @@ def indicacoes():
 
 A função `atan()` (arco tangente) devolve o ângulo a partir da tangente desse ângulo, e é possível calcular a tangente dividindo o cateto oposto pelo cateto adjacente, no caso os lados paralelos aos eixos, do triângulo formado pelos pontos de uma 'linha' (como chamamos informalmente um segmento de reta definido por dois pontos).
 
-O cateto oposto é a diferença dos valores de Y e o adjacente a diferença dos valores de X das coordenadas da linha. Só que na prática isso é uma encrenca, se a linha ficar na vertical teremos uma divisão por zero…  muito mais prático é entregar o trabalho de dividir para uma 'versão 2' da função do arco tangente: `atan2(dy, dx)`, os dois argumentos são as medidas dos catetos e ela cuida de tudo nos devolvendo um ângulo em radianos.
+O cateto oposto é a diferença dos valores de Y e o adjacente a diferença dos valores de X das coordenadas da linha. Só que na prática isso é uma encrenca, se a linha ficar na vertical teremos uma divisão por zero…  Muito mais prático é entregar o trabalho de dividir para uma 'versão 2' da função do arco tangente: `atan2(dy, dx)`, os dois argumentos são as medidas dos catetos e ela cuida de tudo nos devolvendo um ângulo em radianos.
 
 ![](assets/atan2.gif)
 
-note que vamos obter ângulos com valores entre ** -π ** e ** π ** (entre ** -180 ** e ** 180 ** graus) em vez de ** 0 ** a ** 2π**. você pode somar a constate `PI` do processing ao valor se preferir essa segunda faixa.
+Note que vamos obter ângulos com valores entre ** -π ** e ** π ** (entre ** -180 ** e ** 180 ** graus) em vez de ** 0 ** a ** 2π**. Você pode somar a constate `PI` do Processing ao valor se preferir essa segunda faixa.
 
 # Desenhando uma seta com `atan2()`
 
-para demonstrar a utilidade de se saber o ângulo de uma linha, vamos desenhar uma seta! na verdade, saber o ângulo de uma linha da qual conhecemos as coordenadas permite desenhar todo tipo de elemento alinhado ou com ângulo a ela relacionado.
+Para demonstrar a utilidade de se saber o ângulo de uma linha, vamos desenhar uma seta! Na verdade, saber o ângulo de uma linha da qual conhecemos as coordenadas permite desenhar todo tipo de elemento alinhado ou com ângulo a ela relacionado.
 
 A estratégia mostrada inicialmente é usar o ângulo da linha para girar o sistema de coordenadas, dentro da função `seta()`,  e desenhar a cabeça com as coordenadas transformadas.
 
@@ -247,7 +247,7 @@ def seta(xa, ya, xb, yb):
     pop_matrix()
 ```
 
-mas, você pode querer calcular você mesma as coordenadas dos vértices da cabeça da seta assim:
+Mas, você pode querer calcular você mesma as coordenadas dos vértices da cabeça da seta assim:
 
 ```python
 def seta(xa, ya, xb, yb):
@@ -265,7 +265,7 @@ def seta(xa, ya, xb, yb):
 
 # Apontando para o mouse
 
-ampliando a estratégia mostrada na segunda versão da seta, em que a coordenada dos pontos são calculados usando seno e cosseno, é possível fazer setas de tamanho fixo, apontadas para o mouse. O ângulo continua sendo providenciado pela função do arco tangente.
+Ampliando a estratégia mostrada na segunda versão da seta, em que a coordenada dos pontos são calculados usando seno e cosseno, é possível fazer setas de tamanho fixo, apontadas para o mouse. O ângulo continua sendo providenciado pela função do arco tangente.
 
 
 ```python
@@ -299,4 +299,4 @@ def seta_tam_fixo(xa, ya, xb, yb, tam):
 
 ![](assets/seta_curta.gif)
 
-note que ocultei a setinha do mouse com `no_cursor()`, é possível voltar com o cursor, e escolher outros formatos ou até uma imagem como cursor, consulte a documentação de[`cursor()`](https: // py.processing.org/reference/cursor.html).
+Note que ocultei a setinha do mouse com `no_cursor()`, é possível voltar com o cursor, e escolher outros formatos ou até uma imagem como cursor, consulte a documentação de[`cursor()`](https: // py.processing.org/reference/cursor.html).

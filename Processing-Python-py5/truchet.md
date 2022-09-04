@@ -2,9 +2,9 @@
 
 ![image](https: // user-images.githubusercontent.com/3694604/119920020-f8a0cf80-bf41-11eb-9238-c30eac1efebd.png)
 
-A tesselação(isto é o recobrimento de superfícies) por um padrão de quadrados decorados com desenhos que não tem simetria rotacional foi explorada pelo padre dominicano francês Sébastien truchet.
+A tesselação(isto é o recobrimento de superfícies) por um padrão de quadrados decorados com desenhos que não tem simetria rotacional foi explorada pelo padre dominicano francês Sébastien Truchet.
 
-veremos aqui uma variante dessa ideia usando arcos que, ao que parece, foi popularizada pelo trabalho de cyril stanley smith and pauline boucher, [the tiling patterns of sebastien truchet and the topology of structural hierarchy](https: // www.jstor.org/stable/1578535?origin=crossref & seq=1  # metadata_info_tab_contents) em um exemplo traduzido para Processing modo Python do original em Processing Java no livro [Processing: Creative Coding and Generative Art in Processing 2](https://rd.springer.com/book/10.1007/978-1-4302-4465-3).
+Veremos aqui uma variante dessa ideia usando arcos que, ao que parece, foi popularizada pelo trabalho de Cyril Stanley Smith and Pauline Boucher, [The Tiling Patterns of Sebastien Truchet and the Topology of Structural Hierarchy](https: // www.jstor.org/stable/1578535?origin=crossref & seq=1  # metadata_info_tab_contents) em um exemplo traduzido para Processing modo Python do original em Processing Java no livro [Processing: Creative Coding and Generative Art in Processing 2](https://rd.springer.com/book/10.1007/978-1-4302-4465-3).
 
 
 ```python
@@ -26,7 +26,7 @@ def setup():
     smooth()
     for i in range(rows):
         for j in range(cols):
-            tiles[i][j]=tile(j * tile_size, i * tile_size, tile_size, ic, oc)
+            tiles[i][j]=Tile(j * tile_size, i * tile_size, tile_size, ic, oc)
             color_swap(i, j)
             tiles[i][j].display()
 
@@ -48,7 +48,7 @@ def color_swap(i, j):
             # set to same coloring of my neighbor to the left
             tiles[i][j].swapped_colors=tiles[i][j-1].swapped_colors
 
-class tile:
+class Tile:
 
     def __init__(self, x, y, w, ic, oc):
         self.x, self.y=x, y  # x, y coords of top left corner of tile
@@ -65,7 +65,7 @@ class tile:
         # move to tile's x-y location (upper left corner)
         translate(self.x, self.y)
         no_stroke()
-        if (self.swapped_colors):
+        if self.swapped_colors:
             fill(self.ic)
         else:
             fill(self.oc)

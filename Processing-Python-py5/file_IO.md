@@ -4,7 +4,7 @@
 # desnecessário no Python 3, isto é para poder usar unicode="utf-8" no Python 2
 from codecs import open
 from os.path import join
-nosso primeiro exemplo vai ser sobre como ler linhas de texto(*strings*) de um arquivo texto(*text file*).
+Nosso primeiro exemplo vai ser sobre como ler linhas de texto(*strings*) de um arquivo texto(*text file*).
 
 O arquivo `frutas.txt` vai ficar dentro da pasta `/ data /` dentro  do seu sketch:
 ```
@@ -13,7 +13,7 @@ sketch_2020_05a(pasta/folder do sketch)
   L  data(pasta/folder)
        L  frutas.txt(arquivo texto)
 ```
-conteúdo do aquivo:
+Conteúdo do aquivo:
 ```
 maçã
 abacaxi
@@ -22,20 +22,20 @@ banana
 jaca
 maracujá
 ```
-A leitura dos dos dados pode ser feita no python de maneira mais 'universal', o que é útil saber para poder fazer em outros contextos de uso de python:
+A leitura dos dos dados pode ser feita no Python de maneira mais 'universal', o que é útil saber para poder fazer em outros contextos de uso de Python:
 
 ```python
 # No Python - exemplo mais universal
 with open(join('data', 'frutas.txt', 'r', encoding='utf-8') as file:
     linhas=file.readlines()
 ```
-ou usando uma função bem simples do processing chamada `load_strings()`:
+Ou usando uma função bem simples do Processing chamada `load_strings()`:
 
 ```python
 # No Processing - mais específico - não use antes do setup()!
 linhas=load_strings("nomes.txt")  # frutas.txt na pasta /data/
 ```
-note que em ambos os casos, ler dados de um arquivo no computador é considerada uma operação relativamente lenta e não deve ser feita repetidas vezes dentro do `draw()` pois vai ser um disperdício e deixa o seu desenho ou animação lentos.
+Note que em ambos os casos, ler dados de um arquivo no computador é considerada uma operação relativamente lenta e não deve ser feita repetidas vezes dentro do `draw()` pois vai ser um disperdício e deixa o seu desenho ou animação lentos.
 
 ```python
 def setup():
@@ -56,7 +56,7 @@ def setup():
 
 # Escolhendo um arquivo para abrir
 
-usando o a função `select_input()`,  você permite que a pessoa escolha um arquivo para subsequente leitura, como no exemplo anterior, com `load_strings()`. é preciso passar dois argumentos: um texto para o título da janela de seleção, e o nome de uma função que será executada quano a pessoa terminar de selecionar o arquivo(ou cancelar a seleção).
+Usando o a função `select_input()`,  você permite que a pessoa escolha um arquivo para subsequente leitura, como no exemplo anterior, com `load_strings()`. É preciso passar dois argumentos: um texto para o título da janela de seleção, e o nome de uma função que será executada quano a pessoa terminar de selecionar o arquivo(ou cancelar a seleção).
 
 ```python
 linhas=["tecle 'o' para abrir um arquivo",
@@ -97,7 +97,7 @@ def select_file(selection):
 
 # Escrevendo texto em arquivos (e escolhendo onde salvar um arquivo)
 
-de maneira análoga, podemos usar `save_strings()` para salvar em um arquivo do disco uma lista de * strings*. no exemplo abaixo usamos `select_output()` para disparar uma janela que pergunta o nome e local para salvar um arquivo.
+De maneira análoga, podemos usar `save_strings()` para salvar em um arquivo do disco uma lista de * strings*. No exemplo abaixo usamos `select_output()` para disparar uma janela que pergunta o nome e local para salvar um arquivo.
 
 ```python
 circulos=[]
@@ -153,7 +153,7 @@ def carregar_circulos(arquivo):
 ```
 ![circulos](assets/output.png)
 
-veja um trecho do arquivo gerado pelo exemplo[`output.txt`](assets/output.txt)
+Veja um trecho do arquivo gerado pelo exemplo[`output.txt`](assets/output.txt)
 ```
 68 120 37.5507659912
 71 98 32.7605819702
@@ -170,11 +170,11 @@ veja um trecho do arquivo gerado pelo exemplo[`output.txt`](assets/output.txt)
 ```
 # Escrevendo em arquivos no Python sem a ajuda do Processing
 
-A maneira mais 'universal' em python de se escrever em um arquivo texto é usando `open(caminho_arquivo, modo)`, que fornece um objeto com o método `.write()`.
+A maneira mais 'universal' em Python de se escrever em um arquivo texto é usando `open(caminho_arquivo, modo)`, que fornece um objeto com o método `.write()`.
 
-O mais recomendado é usar um chamado 'gerenciador de contexto', fazendo um bloco indentado que começa com `with open(caminho_arquivo, modo) as objeto_arquivo: `. se não usar o `with open(...: ` você precisa cuidar de 'fechar' o aquivo com `.close()` depois de ler ou escrever, e ainda corre o risco do arquivo ficar aberto se o seu programa encerrar no meio do caminho.
+O mais recomendado é usar um chamado 'gerenciador de contexto', fazendo um bloco indentado que começa com `with open(caminho_arquivo, modo) as objeto_arquivo: `. Se não usar o `with open(...: ` você precisa cuidar de 'fechar' o aquivo com `.close()` depois de ler ou escrever, e ainda corre o risco do arquivo ficar aberto se o seu programa encerrar no meio do caminho.
 
-veja o caso de gravar os dados dos círculos no exemplo anterior como ficaria:
+Veja o caso de gravar os dados dos círculos no exemplo anterior como ficaria:
 
 ```python
 from codecs import open  # para poder usar unicode="utf-8" no Python 2
@@ -187,5 +187,5 @@ with open(caminho_arquivo, "w", encoding="utf-8") as file:
 
 # Assuntos relacionados
 
-* [textos no programa, no console e na tela(*strings*)](strings_py.md)
-* se quiser ler mais sobre * filie IO * na documentação do python: [python 2.7 tutorial: reading and writing files](https: // docs.python.org/2/tutorial/inputoutput.html  # reading-and-writing-files)
+* [Textos no programa, no console e na tela(*strings*)](strings_py.md)
+* Se quiser ler mais sobre * Filie IO * na documentação do Python: [Python 2.7 Tutorial: Reading and Writing Files](https: // docs.python.org/2/tutorial/inputoutput.html  # reading-and-writing-files)

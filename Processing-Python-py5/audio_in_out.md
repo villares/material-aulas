@@ -1,10 +1,10 @@
 # Usando a biblioteca *Sound* do Processing
 
-é preciso instalar a biblioteca ** sound ** da fundação processing pelo ide.
+É preciso instalar a biblioteca ** Sound ** da fundação Processing pelo IDE.
 
 # Exemplo se análise do som do microfone
 
-<sub > parece que no mac_os catalina está tendo problema ouvir o microfone < /sub >
+<sub > Parece que no MacOS Catalina está tendo problema ouvir o microfone < /sub >
 
 ![](assets/audio_in.gif)
 
@@ -15,12 +15,12 @@ add_library('sound')
 def setup():
     global amplitude, amostras, onda
     size(600, 500)
-    fonte = audio_in(this, 0)
+    fonte = AudioIn(this, 0)
     fonte.start()
-    amplitude = amplitude(this)
+    amplitude = Amplitude(this)
     amplitude.input(fonte)
     amostras = 60
-    onda = waveform(this, amostras)
+    onda = Waveform(this, amostras)
     onda.input(fonte)
 
 
@@ -56,15 +56,15 @@ def setup():
     background(255)
 
     # Turn the volume down globally.
-    s = sound(this)
+    s = Sound(this)
     s.volume(0.2)
     # Create the oscillators and put them into an array.
-    oscillators.append(sin_osc(this))
-    oscillators.append(tri_osc(this))
-    oscillators.append(saw_osc(this))
-    oscillators.append(sqr_osc(this))
+    oscillators.append(SinOsc(this))
+    oscillators.append(TriOsc(this))
+    oscillators.append(SawOsc(this))
+    oscillators.append(SqrOsc(this))
     # Special treatment for the Pulse oscillator to set its pulse width.
-    pulse = pulse(this)
+    pulse = Pulse(this)
     pulse.width(0.05)
     oscillators.append(pulse)
     # Initialise the FFT and start playing the (default) oscillator.

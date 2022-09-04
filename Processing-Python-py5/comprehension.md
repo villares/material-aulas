@@ -1,6 +1,6 @@
 # Compreensão de listas (*list comprehension*)
 
-é muito comum usarmos um laço de repetição para produzir e acumular elementos em uma estrutura de dados, vamos ver um exemplo meio bobinho de um `for` que acrescenta itens em uma lista. São pontos com um `x` que vai crescendo de 10 em 10 e o `y` produzido 'pseudo-aleatório', com a função embutidada do processing, `random()`:
+É muito comum usarmos um laço de repetição para produzir e acumular elementos em uma estrutura de dados, vamos ver um exemplo meio bobinho de um `for` que acrescenta itens em uma lista. São pontos com um `x` que vai crescendo de 10 em 10 e o `y` produzido 'pseudo-aleatório', com a função embutidada do Processing, `random()`:
 
 ```python
 pontos = []
@@ -10,13 +10,13 @@ for i in range(10):
     ponto.append((x, y))  # os parenteses extra criam uma tupla
 ```
 
-existe um maneira alternativa de fazer isso usando a sintaxe chamada * compreensão de lista*, compare:
+Existe um maneira alternativa de fazer isso usando a sintaxe chamada * compreensão de lista*, compare:
 
 ```python
 pontos = [(i * 10, random(-100, 100)) for i in range(10)]
 ```
 
-veja se você consegue identificar, nos exemplos acima, os elementos do seguinte padrão geral, que usa um laço de repetição para construir a lista:
+Veja se você consegue identificar, nos exemplos acima, os elementos do seguinte padrão geral, que usa um laço de repetição para construir a lista:
 
 ```python
 lista_resultante = []
@@ -31,7 +31,7 @@ E a forma reescrita:
 lista_resultante = [«novo_elemento» for «valor» in «iterável»]
 ```
 
-é possível ainda "filtrar", usar uma condição que permite ou não produzir novos elementos.
+É possível ainda "filtrar", usar uma condição que permite ou não produzir novos elementos.
 
 ```python
 lista_resultante = []
@@ -40,7 +40,7 @@ for «valor» in «iterável»:
         # o novo elemento é acrescentado
         lista_resultante.append(«novo_elemento»)
 ```
-que pode ser reescrito assim:
+Que pode ser reescrito assim:
 
 ```python
 lista_resultante = [«novo_elemento» for «valor» in «iterável» if «condição»]
@@ -48,7 +48,7 @@ lista_resultante = [«novo_elemento» for «valor» in «iterável» if «condi�
 
 # Mais exemplos
 
-sem "filtragem"
+Sem "filtragem"
 
 ```python
 dimensoes_retangulos = [(10, 20), (20, 30), (10, 30), (30, 30), (30, 10)]
@@ -60,7 +60,7 @@ for a, b in demensoes_retangulos:
 areas = [a * b for a, b in dimensoes]
 ```
 
-agora com "filtragem", ignorando quadrados!
+Agora com "filtragem", ignorando quadrados!
 
 ```python
 areas = []
@@ -72,7 +72,7 @@ areas = [a * b for a, b in dimensoes if a != b]
 ```
 # Expressões geradoras
 
-se você não precisa dessa coleção de valores mais de uma vez, pode evitar que ela seja guardada na memória, usando expressões geradoras(*generator expressions*) substituindo os colchetes por parênteses, e até mesmo omitindo os parênteses se a expressão for posta como argumento de uma função:
+Se você não precisa dessa coleção de valores mais de uma vez, pode evitar que ela seja guardada na memória, usando expressões geradoras(*generator expressions*) substituindo os colchetes por parênteses, e até mesmo omitindo os parênteses se a expressão for posta como argumento de uma função:
 
 ```python
 # soma os quadrados dos números pares entre 0 e 98 (o 100 não está incluso).
@@ -89,7 +89,7 @@ areas_sem_repetir = {a * b for a, b in dimensoes_retangulos}
 print(areas_sem_repetir)  # set([900, 200, 300, 600])
 ```
 
-um dicionário "pré-calculado" das áreas
+Um dicionário "pré-calculado" das áreas
 
 ```
 areas_dict = {(a, b): a * b for a, b in dimensoes_retangulos}
@@ -101,5 +101,5 @@ areas_dict = {(a, b): a * b for a, b in dimensoes_retangulos}
 
 # Veja no livto Pense em Python
 
-- [abrangência de listas](https: // github.com/villares/pense_python2e/blob/master/docs/19-extra.md  # 192---abrang%C3%AAncia-de-listas)
-- [expressões geradoras](https: // github.com/villares/pense_python2e/blob/master/docs/19-extra.md  # 193---express%C3%B5es-geradoras)
+- [Abrangência de listas](https: // github.com/villares/PensePython2e/blob/master/docs/19-extra.md  # 192---abrang%C3%AAncia-de-listas)
+- [Expressões geradoras](https: // github.com/villares/PensePython2e/blob/master/docs/19-extra.md  # 193---express%C3%B5es-geradoras)

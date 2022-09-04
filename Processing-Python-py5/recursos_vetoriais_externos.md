@@ -4,10 +4,10 @@
 
 ![](assets/bot1.svg)
 
->arquivo: [bot1.svg](assets/bot1.svg), uma ilustração de george brower.
+>arquivo: [bot1.svg](assets/bot1.svg), uma ilustração de George Brower.
 
 
-podemos carregar(*load*) na memória dados de arquivos vetoriais externos nos formatos SVG e obj. para isso usamos a função `load_shape()`, mas é preciso indicar onde está o arquivo(o chamado 'caminho completo' do arquivo), ou que ele esteja na pasta `/ data /` dentro da pasta do seu * sketch * (programa).
+Podemos carregar(*load*) na memória dados de arquivos vetoriais externos nos formatos SVG e OBJ. Para isso usamos a função `load_shape()`, mas é preciso indicar onde está o arquivo(o chamado 'caminho completo' do arquivo), ou que ele esteja na pasta `/ data /` dentro da pasta do seu * sketch * (programa).
 
 ```
 sketch_2020_04a(pasta/folder do sketch)
@@ -16,7 +16,7 @@ L  data(pasta/folder)
 L  bot1.svg(arquivo svg)
 ```
 
-note que a operação de carregar o arquivo é relativamente demorada e nunca deve ser executada dentro do laço `draw()`. em geral só precisamos carregar uma vez e fazemos isso no `setup()`. também é comum criarmos uma variável global que faz referência aos recurso vetoriais carregados, neste exemplo a variável `svg`:
+Note que a operação de carregar o arquivo é relativamente demorada e nunca deve ser executada dentro do laço `draw()`. Em geral só precisamos carregar uma vez e fazemos isso no `setup()`. Também é comum criarmos uma variável global que faz referência aos recurso vetoriais carregados, neste exemplo a variável `svg`:
 
 ```pyde
 
@@ -41,9 +41,9 @@ def draw():
 
 ![](assets/bot1.png)
 
-os objetos `Py5Shape`, que armazenam os dados vetoriais, tem uma série de métodos(funções internas desses objetos) que podem ser consultados na referência do[processing modo java / Py5Shape](https: // processing.org/reference/p_shape.html). A página da referência do processing modo python está incompleta mas os métodos de * Py5Shape * são os mesmos.
+Os objetos `Py5Shape`, que armazenam os dados vetoriais, tem uma série de métodos(funções internas desses objetos) que podem ser consultados na referência do[Processing modo Java / Py5Shape](https: // processing.org/reference/PShape.html). A página da referência do Processing modo Python está incompleta mas os métodos de * Py5Shape * são os mesmos.
 
-um dos métodos mais úteis é o `.disable_syle()` que permite ignorar os atributos grágifos das formas no arquivo SVG, permitinho aplicar o traço e preenchimento por nossa conta. O `.enable_style()` devolve o comportamento original.
+Um dos métodos mais úteis é o `.disable_syle()` que permite ignorar os atributos grágifos das formas no arquivo SVG, permitinho aplicar o traço e preenchimento por nossa conta. O `.enable_style()` devolve o comportamento original.
 
 ```python
 
@@ -68,6 +68,6 @@ def setup():
 
 # Assuntos relacionados
 
-- [carregando imagens externas](imagens_externas.md)
-- [exportando SVG](exportando_svg.md)
-- para carregar objetos 3D no formato OBJ, consulte a página sobre[P3D](https: // github.com/villares/material-aulas/blob/master/processing-python/desenho-3_d.md)
+- [Carregando imagens externas](imagens_externas.md)
+- [Exportando SVG](exportando_svg.md)
+- Para carregar objetos 3D no formato OBJ, consulte a página sobre[P3D](https: // github.com/villares/material-aulas/blob/master/Processing-Python/desenho-3_d.md)

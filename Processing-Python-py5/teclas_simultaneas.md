@@ -1,11 +1,11 @@
 # Escutando teclas simultâneas
 
-from __future__ import unicode_literals
+
 A questão de identificar teclas apertadas simultaneamente pode surgir quando estamos desenvolvendo um * sketch * interativo, e em especial se estamos criando um jogo, em que mais pessoas interagem simultaneamente usando o teclado, também sempre que a interface fica mais complexa e precisa de teclas em combinação.
 
 # Entendendo o problema
 
-executando o código a seguir você vai notar que a variável `key` aponta para um valor que descreve a última tecla que foi pressionada(ou solta) no teclado. isso pode ser um problema se você precisar mostrar quando ** a ** e ** b ** estiverem apertadas simultaneamente.
+Executando o código a seguir você vai notar que a variável `key` aponta para um valor que descreve a última tecla que foi pressionada(ou solta) no teclado. Isso pode ser um problema se você precisar mostrar quando ** a ** e ** b ** estiverem apertadas simultaneamente.
 
    Não deixe de executar e experimentar!
 
@@ -39,7 +39,7 @@ def draw():
 
 ![](assets/teclas_simultaneas_0.gif)
 
-uma modificação pode evitar que uma tecla seja indicada no momento em que é solta e também que fique aparecendo quando já não está mais sendo apertada, mas isso ainda não resolve o problema das teclas simultâneas:
+Uma modificação pode evitar que uma tecla seja indicada no momento em que é solta e também que fique aparecendo quando já não está mais sendo apertada, mas isso ainda não resolve o problema das teclas simultâneas:
 
 ```python
    if key_pressed and key == 'a':
@@ -57,7 +57,7 @@ uma modificação pode evitar que uma tecla seja indicada no momento em que é s
 
 # Uma primeira solução
 
-as soluções para esta questão envolvem criar uma estrutura que  guarde o estado das teclas, indicando se a tecla está apertada naquele momento, e que possa ser modificada pelos eventos de apertar ou soltar uma tecla. em um primeiro momento, para este nosso exemplo, a estrutura pode ser simplesmente um par de variáveis globais, usadas como indicadores (*flags*) do estado das teclas, `a_apertada` e `b_apertada`.
+As soluções para esta questão envolvem criar uma estrutura que  guarde o estado das teclas, indicando se a tecla está apertada naquele momento, e que possa ser modificada pelos eventos de apertar ou soltar uma tecla. Em um primeiro momento, para este nosso exemplo, a estrutura pode ser simplesmente um par de variáveis globais, usadas como indicadores (*flags*) do estado das teclas, `a_apertada` e `b_apertada`.
 
 ```python
 
@@ -109,19 +109,19 @@ def key_released():
 
 # Notas
 
-- se você soltar uma tecla quando o * foco* do seu sistema operacional não estiver na janela do *sketch* o evento `key_released()` não será acionado, e o *sketch* não fica sabendo que a tecla foi solta!
+- Se você soltar uma tecla quando o * foco* do seu sistema operacional não estiver na janela do *sketch* o evento `key_released()` não será acionado, e o *sketch* não fica sabendo que a tecla foi solta!
 
-- nas versões finais com teclado do[jogo PONG neste repositóro](../pong), usamos exatamente essa estratégia, sem isso a experiência de jogo fica muito prejudicada.
+- Nas versões finais com teclado do[jogo PONG neste repositóro](../pong), usamos exatamente essa estratégia, sem isso a experiência de jogo fica muito prejudicada.
 
 # Um montão de teclas
 
-mas como fazer  se o número de teclas que queremos identificar for muito grande? temos que fazer um monte variáveis globais e um monte de condicionais com `if` dentro do `key_pressed()` e do `key_released`? isso não parece muito elegante!
+Mas como fazer  se o número de teclas que queremos identificar for muito grande? Temos que fazer um monte variáveis globais e um monte de condicionais com `if` dentro do `key_pressed()` e do `key_released`? Isso não parece muito elegante!
 
-vamos então explorar uma estratégia de guardar as teclas que foram apertadas em uma estrutura de dados chamada ** conjunto** (*set*), removendo-as do conjunto quando forem soltas. é bom notar que conjuntos não guardam a ordem em que seus itens foram adicionados, e os itens são únicos, um conjunto nunca tem itens duplicados. 
+Vamos então explorar uma estratégia de guardar as teclas que foram apertadas em uma estrutura de dados chamada ** conjunto** (*set*), removendo-as do conjunto quando forem soltas. É bom notar que conjuntos não guardam a ordem em que seus itens foram adicionados, e os itens são únicos, um conjunto nunca tem itens duplicados. 
 
-para acrescentar um item em um conjunto usamos `conjunto.add(item)`, e para remover `conjunto.discard(item)`. essa última operação, *discard*, não faz nada se o item não existir no conjunto.
+Para acrescentar um item em um conjunto usamos `conjunto.add(item)`, e para remover `conjunto.discard(item)`. Essa última operação, *discard*, não faz nada se o item não existir no conjunto.
 
-em python, podemos saber se um item existe dentro de uma coleção(como listas, tuplas, deques e conjuntos) com a palavra chave `in` usada como um operador, e isso é computacionalmente muito mais eficiente em um conjunto grande do que em uma lista ou tupla grande! no exemplo abaixo, se `'b' in teclas_apertadas` for verdade, o fundo fica preto.
+Em Python, podemos saber se um item existe dentro de uma coleção(como listas, tuplas, deques e conjuntos) com a palavra chave `in` usada como um operador, e isso é computacionalmente muito mais eficiente em um conjunto grande do que em uma lista ou tupla grande! No exemplo abaixo, se `'b' in teclas_apertadas` for verdade, o fundo fica preto.
 
 ```python
 teclas_apertadas = set()  # conjunto (set) vazio
@@ -159,13 +159,13 @@ def key_released():
 
 ![](assets/teclas_simultaneas_2.gif)
 
-você viu um `65535` no meio das teclas?
+Você viu um `65535` no meio das teclas?
 
-significa que uma tecla * codificada* (`CODED`) foi pressionada, como `SHIFT`, por exemplo. precisamos lembrar que algumas teclas são identificadas de maneira ligeiramente diferente, as ditas teclas *codificadas*. quando `key == CODED` você precisa usar a variável `key_code` para saber qual tecla foi apertada (ou solta), em geral comparando com uma constante numérica destas aqui:
+Significa que uma tecla * codificada* (`CODED`) foi pressionada, como `SHIFT`, por exemplo. Precisamos lembrar que algumas teclas são identificadas de maneira ligeiramente diferente, as ditas teclas *codificadas*. Quando `key == CODED` você precisa usar a variável `key_code` para saber qual tecla foi apertada (ou solta), em geral comparando com uma constante numérica destas aqui:
 
 `UP DOWN LEFT RIGHT ALT CONTROL SHIFT`
 
-note que `TAB`, `ENTER` e algumas outras teclas * não codificadas* também não foram mostradas direito no exemplo anterior. certas teclas que não são codificadas, que podem ser identificadas usando `key`, precisam ser econtradas fazendo uma comparação de `key` com constantes ou *strings* especiais:
+Note que `TAB`, `ENTER` e algumas outras teclas * não codificadas* também não foram mostradas direito no exemplo anterior. Certas teclas que não são codificadas, que podem ser identificadas usando `key`, precisam ser econtradas fazendo uma comparação de `key` com constantes ou *strings* especiais:
 
 ```
 BACKSPACE '\b'
@@ -176,11 +176,11 @@ ESC       '\x1b'
 DELETE    '\x7f'
 ```
 
-vamos fazer alguns ajustes no código para identificar e mostrar de maneira mais elegante essas teclas!
+Vamos fazer alguns ajustes no código para identificar e mostrar de maneira mais elegante essas teclas!
 
-para isso vamos usar outra estrutura de dados chamada ** dicionário** (*dict*). que mapeia (cria uma correspondência entre) chaves (*keys*) e valores (*values*). é muito rápido consultar um valor atrelado a uma chave em um dicionário. 
+Para isso vamos usar outra estrutura de dados chamada ** dicionário** (*dict*). Que mapeia (cria uma correspondência entre) chaves (*keys*) e valores (*values*). É muito rápido consultar um valor atrelado a uma chave em um dicionário. 
 
-se você sabe que a chave existe no dicionário, pode consultar com a forma `dicionario[chave]` (que dá erro se a chave não existir no dicionário). quando não se tem certeza se a chave está lá, ou é parte da  estratégia  procurar chaves que podem não estar lá, então se usa `dicionario.get(chave, valor_se_nao_tem_a_chave)`.
+Se você sabe que a chave existe no dicionário, pode consultar com a forma `dicionario[chave]` (que dá erro se a chave não existir no dicionário). Quando não se tem certeza se a chave está lá, ou é parte da  estratégia  procurar chaves que podem não estar lá, então se usa `dicionario.get(chave, valor_se_nao_tem_a_chave)`.
 
 ```python
 
@@ -258,10 +258,10 @@ def key_released():
 
 # Notas
 
-* uma vez que certas teclas modificam o efeito de outras, por exemplo, `SHIFT` faz a tecla `1`  aparecer como `!`, então certas sequências podem trazer resultados estranhos:
+* Uma vez que certas teclas modificam o efeito de outras, por exemplo, `SHIFT` faz a tecla `1`  aparecer como `!`, então certas sequências podem trazer resultados estranhos:
 
-    apertar`SHIFT`, depois `1 `, soltar `SHIFT`e por fim soltar `1`. faz o sketch ficar sem ver a tecla `!` ser 'solta'.
-    uma solução possível é manter registro só do `key_code` das teclas que permanece sempre o mesmo, mas podemos converter o `key_code`, que é um número, em algo mais legível, no caso das teclas não codificadas, usando chr()`:
+    Apertar`SHIFT`, depois `1 `, soltar `SHIFT`e por fim soltar `1`. faz o sketch ficar sem ver a tecla `!` ser 'solta'.
+    Uma solução possível é manter registro só do `key_code` das teclas que permanece sempre o mesmo, mas podemos converter o `key_code`, que é um número, em algo mais legível, no caso das teclas não codificadas, usando chr()`:
 
     ```python
 
@@ -277,10 +277,10 @@ def key_released():
         else:
             teclas_apertadas.discard(key_code)
     ```
-    note que agora `a` e  `A` devem aparecer como ` A` e, `1` e `!`  como`1` . fique atento e teste para evitar surpresas! no meu computador o `key_code` de `+` e `-` do teclado numérico lateral, por exemplo, aparecem como `k` e `m`.
-- foi usada `sorted()` para obter uma lista ordenada a partir do conjunto `teclas_apertadas`
-- dentro do `key_pressed()` tem um pequeno truque que impede o * sketch*  de ser interrompido pela tecla `ESC`.
-- no dicionário acrescentei alguns códigos de teclas que vi, estando no linux, os códigos e nomes das teclas podem variar dependendo do seu sistema operacional.
+    Note que agora `a` e  `A` devem aparecer como ` A` e, `1` e `!`  como`1` . Fique atento e teste para evitar surpresas! No meu computador o `key_code` de `+` e `-` do teclado numérico lateral, por exemplo, aparecem como `k` e `m`.
+- Foi usada `sorted()` para obter uma lista ordenada a partir do conjunto `teclas_apertadas`
+- Dentro do `key_pressed()` tem um pequeno truque que impede o * sketch*  de ser interrompido pela tecla `ESC`.
+- No dicionário acrescentei alguns códigos de teclas que vi, estando no Linux, os códigos e nomes das teclas podem variar dependendo do seu sistema operacional.
 
 # Combinando estratégias
 
@@ -288,9 +288,9 @@ A estratégia dos indicadores de estado para teclas, ou de adicionar e remover i
 
 Já para alternar um ajuste, algo como ligar e desligar uma opção, por exemplo (em inglês é usado o termo * toggle*), pode ser melhor usar um indicador modificado por uma condicional simples em `key_typed()`,`key_pressed()` ou `key_released()`, para evitar que um toque da tecla acione mais de uma vez a ação.
 
-no exemplo abaixo, vamos usar um dicionário para guardar um monte de informações a respeito de dois círculos, incluindo cores, e quais teclas podem ser usadas para alterar a posição além de uma tecla para trocar a cor de contorno pela cor de preenchimento, e vice-versa.
+No exemplo abaixo, vamos usar um dicionário para guardar um monte de informações a respeito de dois círculos, incluindo cores, e quais teclas podem ser usadas para alterar a posição além de uma tecla para trocar a cor de contorno pela cor de preenchimento, e vice-versa.
 
-use `SHIFT` para ligar e desligar a animação da cor do fundo e a barra de espaço para voltar os círculos à posição inicial.
+Use `SHIFT` para ligar e desligar a animação da cor do fundo e a barra de espaço para voltar os círculos à posição inicial.
 
 ```python
 teclas_apertadas = set()  # conjunto (set) vazio
@@ -359,9 +359,9 @@ def key_released():
 
 # Notas
 
-- as funções`key_typed()` e`key_pressed()` são acionadas logo que a tecla é apertada, e são suscetíveis a repetição automática depois de um tempo da tecla mantida apertada, já `key_released()` é acionada só quando a tecla é solta.
+- As funções`key_typed()` e`key_pressed()` são acionadas logo que a tecla é apertada, e são suscetíveis a repetição automática depois de um tempo da tecla mantida apertada, já `key_released()` é acionada só quando a tecla é solta.
 
-**desafios**
+**Desafios**
 
--  você conseguiria adicionar um terceiro círculo ao código?
-- mudar a cor ou o tamanho dos círculos conforme as teclas que estão apertadas?
+-  Você conseguiria adicionar um terceiro círculo ao código?
+- Mudar a cor ou o tamanho dos círculos conforme as teclas que estão apertadas?

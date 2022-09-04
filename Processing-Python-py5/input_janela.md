@@ -1,20 +1,20 @@
 # Uma janela de diálogo com um campo de texto como *input*
 
-nas implementações mais conhecidas de python existe uma função chamada `input()` que 'pergunta' a quem estiver executando o programa um valor por meio da digitação no console, o texto digitado é devolvido então para o programa como * string*.
+Nas implementações mais conhecidas de Python existe uma função chamada `input()` que 'pergunta' a quem estiver executando o programa um valor por meio da digitação no console, o texto digitado é devolvido então para o programa como * string*.
 
-O processing modo python não tem essa função, mas com o código a seguir podemos disparar uma janela de diálogo, com um campo de texto, para fazer o mesmo papel!
+O Processing modo Python não tem essa função, mas com o código a seguir podemos disparar uma janela de diálogo, com um campo de texto, para fazer o mesmo papel!
 
 ```python
 
 
 def input(question='', suggestion=''):
-    from javax.swing import j_option_pane
-    return j_option_pane.show_input_dialog(None, question, suggestion)
+    from javax.swing import JOptionPane
+    return JOptionPane.showInputDialog(None, question, suggestion)
 
 
 ```
 
-vejamos então um exemplo de uso, em que um clique do mouse dispara a janela para o input textual.
+Vejamos então um exemplo de uso, em que um clique do mouse dispara a janela para o input textual.
 
 ![](assets/input_janela.gif)
 
@@ -44,8 +44,8 @@ def mouse_pressed():
 
 
 def input(question='', suggestion=''):
-    from javax.swing import j_option_pane
-    return j_option_pane.show_input_dialog(None, question, suggestion)
+    from javax.swing import JOptionPane
+    return JOptionPane.showInputDialog(None, question, suggestion)
 
 
 ```

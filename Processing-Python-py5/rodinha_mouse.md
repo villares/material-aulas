@@ -1,6 +1,6 @@
 # Usando a rodinha do mouse (*mouse wheel*)
 
-um exemplo de como usar a rodinha do mouse para controlar o desenho, por meio da função `mouse_wheel(event)`.
+Um exemplo de como usar a rodinha do mouse para controlar o desenho, por meio da função `mouse_wheel(event)`.
 
 ![rodinha](assets/rodinha_mouse.gif)
 

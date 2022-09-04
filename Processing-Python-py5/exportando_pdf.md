@@ -1,8 +1,22 @@
 # Exportando PDF
 
-saver salvar um PDF é muito útil, pois é formato que preserva informação vetorial, de maneira semelhante ao SVG(recomendo a leitura da página sobre exportar SVG também).
+Saver salvar um PDF é muito útil, pois é formato que preserva informação vetorial, de maneira semelhante ao SVG(recomendo a leitura da página sobre exportar SVG também).
 
-é importante considerar que existe mais de uma estratégia para exportar arquivos vetorias. imagens * raster * são mais fáceis, basta exportar o que acumulou na tela em qualquer momento, com desenho vetorial ou você redesenha tudo a cada quadro ou você tem que pensar com cuidado sobre a acumulação de quadros para o arquivo não ficar imenso. vocẽ tem interação? precisa ligar e desligar a gravação dos frames.
+É importante considerar que existe mais de uma estratégia para exportar arquivos vetorias. Imagens * raster * são mais fáceis, basta exportar o que acumulou na tela em qualquer momento, com desenho vetorial ou você redesenha tudo a cada quadro ou você tem que pensar com cuidado sobre a acumulação de quadros para o arquivo não ficar imenso. Vocẽ tem interação? Precisa ligar e desligar a gravação dos frames.
+
+# Preparação - importando a biblioteca
+
+Primeiro é necessário adicionar uma biblioteca de exportação que já vem com o Processing, acrescentando esta linha no início do * sketch*:
+
+``` python
+add_library('pdf')
+```
+Isso pode ser feito manualmente ou pelo menu * Sketch * do Processing IDE:
+***Sketch > Importar Biblioteca > PDF Export***
+
+![adicionando](assets/pdf_export.png)
+
+Veja nos exemplos abaixo as llinhas de código que você precisa acrescentar ao longo so seu * sketch*, dependendo do que quer exportar.
 
 # PDF simples
 
@@ -11,6 +25,8 @@ saver salvar um PDF é muito útil, pois é formato que preserva informação ve
 A estratégia a seguir permite a interatividade, com o uso de `draw()`, mas exige que desenho seja realizado inteiro em cada frame.
 
 ```python
+add_library('pdf')
+
 salvar_pdf = False  # um indicador ('flag') dispara a exportação
 
 
@@ -27,13 +43,13 @@ def draw():
         begin_record(PDF, "####.pdf")
 
     # Aqui vai o desenho a ser gravado
-    random_seed(seed)
+    randomSeed(seed)
     background(240, 240, 200)
     translate(250, 300)
     galho(60)
 
     if salvar_pdf:    # se verdadeiro, gravação em curso
-        end_record()   # termina a gravação
+        endRecord()   # termina a gravação
         salvar_pdf = False  # desliga o 'flag'
 
 
@@ -41,21 +57,21 @@ def galho(tamanho):
     """
     função recursiva que desenha galhos
     """
-    ang = radians(mouse_x)
+    ang = radians(mouseX)
     reducao = .8
-    stroke_weight(tamanho / 10)
+    strokeWeight(tamanho / 10)
     line(0, 0, 0, -tamanho)
     if tamanho > 5:
-        push_matrix()
+        pushMatrix()
         translate(0, -tamanho)
         rotate(ang)
         galho(tamanho * reducao - random(0, 2))
         rotate(-ang * 2)
         galho(tamanho * reducao - random(0, 2))
-        pop_matrix()
+        popMatrix()
 
 
-def key_pressed():
+def keyPressed():
     global seed, salvar_pdf  # variáveis globais que serão modificadas
     if key == " ":
         seed = int(random(100000))
@@ -67,14 +83,14 @@ def key_pressed():
 
 ```
 
-[exemplo de PDF com um frame](assets/exemplo.pdf)
+[Exemplo de PDF com um frame](assets/exemplo.pdf)
 
 # Salvando a acumulação na tela de vários frames
 
-Não é possível capturar diretamente o produto da acumulação do desenho na tela, como acontece com a exportação de uma imagem raster que fazemos usando `save_frame()`, mas é possível gravar o PDF durante vários frames, acumulando os desenhos produzidos no arquivo e na tela ao mesmo tempo. neste exemplo você  'liga' e 'desliga'  a gravação de frames no PDF usando a tecla 'p'.
+Não é possível capturar diretamente o produto da acumulação do desenho na tela, como acontece com a exportação de uma imagem raster que fazemos usando `saveFrame()`, mas é possível gravar o PDF durante vários frames, acumulando os desenhos produzidos no arquivo e na tela ao mesmo tempo. Neste exemplo você  'liga' e 'desliga'  a gravação de frames no PDF usando a tecla 'p'.
 
 ```python
-
+add_library('pdf')
 
 gravando_pdf = False  # 'flag'/indicador de gravação do PDF
 
@@ -85,26 +101,26 @@ def setup():
 
 
 def draw():
-    color_mode(HSB)    # se puser ajustes no setup não entram na gravação!
-    rect_mode(CENTER)  # fazendo o PDF ficar diferente do resultado na tela
-    if mouse_pressed:
+    colorMode(HSB)    # se puser ajustes no setup não entram na gravação!
+    rectMode(CENTER)  # fazendo o PDF ficar diferente do resultado na tela
+    if mousePressed:
         fill(random(255), 200, 200, 100)
-        rect(mouse_x, mouse_y, 50, 50)
+        rect(mouseX, mouseY, 50, 50)
 
     if not gravando_pdf:
-        text_size(18)
+        textSize(18)
         fill(255)
         text(u"Não está gravando o PDF\n" +
              u"aperte 'p' para começar e parar a gravação",
              20, 20)
 
 
-def key_pressed():
+def keyPressed():
     global gravando_pdf
     if key == "p":                        # A tecla 'p' muda o 'flag' de gravação do PDF
         gravando_pdf = not gravando_pdf   # alternando o seu estado entre True e False
         if gravando_pdf:
-            begin_record(PDF, "####.pdf")  # inicia a gravação do PDF
+            beginRecord(PDF, "####.pdf")  # inicia a gravação do PDF
             background(0)                 # sem isso, fundo branco...
             print(u"iniciando gravação de PDF: {:04n}".format(frame_count))
         else:
@@ -113,17 +129,21 @@ def key_pressed():
 
 
 ```
-[exemplo de PDF com vários frames](assets/exemplo2.pdf)
+[Exemplo de PDF com vários frames](assets/exemplo2.pdf)
 
 
-um segundo exemplo de salvar com acumulação de frames
+Um segundo exemplo de salvar com acumulação de frames
 
 ```python
+add_library('pdf')
+
 gravando_pdf = False
+
 
 def setup():
     size(600, 600)
     fundo()
+
 
 def fundo():
     background(255)
@@ -134,16 +154,19 @@ def fundo():
             fill(0)
             circle(i * tam + tam / 2, j * tam + tam / 2, tam)
 
+
 def draw():
     if mouse_pressed and (mouse_x, mouse_y) != (pmouse_x, mouse_y):
         fill(255)
         no_stroke()
         meu_triangulo(mouse_x, mouse_y, 50)
 
+
 def meu_triangulo(x, y, tam):
     triangle(x - tam / 2, y + tam / 3,
              x + tam / 2, y + tam / 3,
              x, y - tam / 3)
+
 
 def key_pressed():
     global gravando_pdf
@@ -155,7 +178,7 @@ def key_pressed():
             print(u'Gravação iniciada')
         else:  # quando gravando == True
             gravando_pdf = False
-            end_record()
+            endRecord()
             print(u'Gravação encerrada')
 
 
@@ -164,27 +187,27 @@ def key_pressed():
 
 # Outras estratégias
 
-# Usando um objeto Py5Graphics
+# Usando um objeto PGraphics
 
-usando `create_graphics()` podemos mostrar na tela o desenho mas salvar o arquivo do desenho com alguns ajustes especiais.
+Usando `createGraphics()` podemos mostrar na tela o desenho mas salvar o arquivo do desenho com alguns ajustes especiais.
 
 ```python
-
-f = create_graphics(width * 2, height * 2, PDF, "file.pdf")
-begin_record(f)  # inicia a gravação do arquivo
-f.stroke_weight(2)
+add_library('pdf')
+f = createGraphics(width * 2, height * 2, PDF, "file.pdf")
+beginRecord(f)  # inicia a gravação do arquivo
+f.strokeWeight(2)
 f.scale(2)
 # o seu desenho vai aqui
 
 # encerra a gravação
-end_record()
+endRecord()
 ```
-veja um exemplo mais completo desta estratégia no exemplo a seguir, que produz um PDF com várias páginas.
+Veja um exemplo mais completo desta estratégia no exemplo a seguir, que produz um PDF com várias páginas.
 
 # Salvando um PDF com múltiplas páginas
 
 ```python
-
+add_library('pdf')
 
 nome_arquivo = "10_paginas.pdf"
 
@@ -192,8 +215,8 @@ nome_arquivo = "10_paginas.pdf"
 def setup():
     global pdf
     size(300, 400)
-    pdf = create_graphics(width * 2, height * 2, PDF, nome_arquivo)
-    begin_record(pdf)  # inicia a gravação do arquivo
+    pdf = createGraphics(width * 2, height * 2, PDF, nome_arquivo)
+    beginRecord(pdf)  # inicia a gravação do arquivo
     pdf.scale(2)
 
 
@@ -203,11 +226,11 @@ def draw():
     x, y = random(t, width - t), random(t, height - t)
     ellipse(x, y, t * 2, t * 2)
 
-    if frame_count == 10:
-        end_record()
+    if frameCount == 10:
+        endRecord()
         exit()
     else:
-        pdf.next_page()
+        pdf.nextPage()
 
 
 ```
@@ -216,20 +239,20 @@ def draw():
 
 O que não funciona quando exportamos em PDF?
 
-- A chamada `blend_mode(MULTIPLY)` ou qualquer outra variante de `blend_mode()` não tem efeito no PDF(só na tela).
+- A chamada `blendMode(MULTIPLY)` ou qualquer outra variante de `blendMode()` não tem efeito no PDF(só na tela).
 
-- para exportar desenhos em 3D, é preciso usar `begin_raw()`  e `end_raw()` em lugar de `begin_record/end_record` e o resultado é um tanto deficiente(veja exemplo em [exportando SVG](exportando_svg.md)).
+- Para exportar desenhos em 3D, é preciso usar `beginRaw()`  e `endRaw()` em lugar de `beginRecord/endRecord` e o resultado é um tanto deficiente(veja exemplo em[Exportando SVG](exportando_svg.md)).
 
 # O que pode dar errado? Algumas considerações finais
 
 Se não estiver funcionando, confira se não está esquecendo algo sobre exportação de PDF:
 
-- pense com cuidado se seu sketch precisa salvar apenas um frame ou acumular frames(muda a estratégia um pouco)
-- Não esqueça que só aparecem na gravação ações e ajustes feitos depois do begin_record() ou begin_raw() e isso é bastante crítico em relação a:
+- Pense com cuidado se seu sketch precisa salvar apenas um frame ou acumular frames(muda a estratégia um pouco)
+- Não esqueça que só aparecem na gravação ações e ajustes feitos depois do beginRecord() ou beginRaw() e isso é bastante crítico em relação a:
     - `background()`
-    - ajustes como `color_mode()`, `rect_mode()` ou outros ajustes de atributos
-- não esqueça de declarar com `global` o flag/indicador tanto no `draw()` como no `key_pressed()`, se apropriado, para alterar o estado ou início da gravação.
+    - ajustes como `colorMode()`, `rectMode()` ou outros ajustes de atributos
+- não esqueça de declarar com `global` o flag/indicador tanto no `draw()` como no `keyPressed()`, se apropriado, para alterar o estado ou início da gravação.
 
 # Assuntos relacionados:
 
-- [exportando SVG](exportando_svg.md)
+- [Exportando SVG](exportando_svg.md)

@@ -1,30 +1,30 @@
 # Dicionários
 
-dicionários(*dict*), juntamente com as listas(*list*), tuplas(*tuple*) e conjuntos(*set*), são das mais importantes estruturas de dados de alto nível disponíveis embutidas em python.
+Dicionários(*dict*), juntamente com as listas(*list*), tuplas(*tuple*) e conjuntos(*set*), são das mais importantes estruturas de dados de alto nível disponíveis embutidas em Python.
 
-dicionários em especial são tão poderosos e flexíveis que são usados internamente para fazer funcionar muito da linguagem python. isso se reflete nesta piada sobre linguagens de programação:
+Dicionários em especial são tão poderosos e flexíveis que são usados internamente para fazer funcionar muito da linguagem Python. Isso se reflete nesta piada sobre linguagens de programação:
 
 > E se tudo fosse uma lista? LISP
 >
-> E se tudo fosse uma pilha(*stack*)? forth
+> E se tudo fosse uma pilha(*stack*)? Forth
 >
 > E se tudo fosse um ponteiro? C
 >
-> E se tudo fosse um dicionário? python!
+> E se tudo fosse um dicionário? Python!
 
-ou ainda este meme aqui:
+Ou ainda este meme aqui:
 
-![](https: // pbs.twimg.com/media/eelz_op_cx0_aa_ie_yv?format=png & name=small)
+![](https: // pbs.twimg.com/media/EelzOpCX0AAIeYV?format=png & name=small)
 
 # Uma metáfora para dicionários
 
-imagine um dicionário como uma tabela de duas colunas que permite que busquemos um item, que chamamos de ** chave**, o procurando na coluna da esquerda. se o encontrarmos podemos consultar na coluna da direita um ** valor ** correspondente. um dicionário é feito de pares chave-valor.
+Imagine um dicionário como uma tabela de duas colunas que permite que busquemos um item, que chamamos de ** chave**, o procurando na coluna da esquerda. Se o encontrarmos podemos consultar na coluna da direita um ** valor ** correspondente. Um dicionário é feito de pares chave-valor.
 
-como regra simplificada, podemos usar como chaves objetos * imutáveis*, como números, texto(*strings*) ou tuplas cujos elementos internos também sejam imutáveis. Não podemos usar listas, uma vez que são * mutáveis*. Já os valores podem ser qualquer tipo de objeto/valor de python, incluido listas e até mesmo outros dicionários!
+Como regra simplificada, podemos usar como chaves objetos * imutáveis*, como números, texto(*strings*) ou tuplas cujos elementos internos também sejam imutáveis. Não podemos usar listas, uma vez que são * mutáveis*. Já os valores podem ser qualquer tipo de objeto/valor de Python, incluido listas e até mesmo outros dicionários!
 
-> uma explicação mais detalhadas sobre as limitações técnicas dos tipos que podemos usar nos dicionários não cabe neste texto introdutório, mas a sua curiosidade pode fazer você querer ler mais sobre eles em[estruturas de dados(na documentação do python)](https: // docs.python.org/pt-br/3/tutorial/datastructures.html  # dictionaries).
+> Uma explicação mais detalhadas sobre as limitações técnicas dos tipos que podemos usar nos dicionários não cabe neste texto introdutório, mas a sua curiosidade pode fazer você querer ler mais sobre eles em[Estruturas de dados(na documentação do Python)](https: // docs.python.org/pt-br/3/tutorial/datastructures.html  # dictionaries).
 
-vejamos um exemplo prático em que um dicionário serve para guardar uma paleta de cores nomeadas, os nomes das cores vão ser as chaves, e as cores produzidas pela função `color()`do processing vão ser os valores(que podem no final das contas serem usados nas funções `fill()`, `stroke()` e `background()`, por exemplo).
+Vejamos um exemplo prático em que um dicionário serve para guardar uma paleta de cores nomeadas, os nomes das cores vão ser as chaves, e as cores produzidas pela função `color()`do Processing vão ser os valores(que podem no final das contas serem usados nas funções `fill()`, `stroke()` e `background()`, por exemplo).
 
 | chaves(*keys*) | valores(*values*) |
 | --------------- | ------------------ |
@@ -34,7 +34,7 @@ vejamos um exemplo prático em que um dicionário serve para guardar uma paleta 
 | "amarelo" | color(220, 220, 0) |
 | "vermelho" | color(200, 0, 0) |
 
-em python podemos definir um dicionário diretamente no código com a sintaxe `{chave: valor, }`.
+Em Python podemos definir um dicionário diretamente no código com a sintaxe `{chave: valor, }`.
 
 ```python
 cores={
@@ -46,7 +46,7 @@ cores={
     }
 ```
 
-para consultar o valor atribuido a uma chave, acrescentar uma nova chave, ou modificar o valor dela usamos colchetes `[chave]`.
+Para consultar o valor atribuido a uma chave, acrescentar uma nova chave, ou modificar o valor dela usamos colchetes `[chave]`.
 
 ```python
 cor_fundo=cores['azul']  # obtém a cor atribuida à chave 'azul'
@@ -56,7 +56,7 @@ cores['verde']=color(0, 200, 0)  # acrescentar 'verde' ao dicionário
 cores['amarelo']=color(255, 255, 0)  # modifica valor de 'amarelo'
 ```
 
-no caso da consulta, se não houver a chave no dicionário, teremos um erro! se não temos certeza da existência da chave podemos usar uma segunda forma de consulta com `.get()`.
+No caso da consulta, se não houver a chave no dicionário, teremos um erro! Se não temos certeza da existência da chave podemos usar uma segunda forma de consulta com `.get()`.
 
 ```python
 cinza=cores['cinza']  # KeyError!
@@ -72,7 +72,7 @@ fill(roxo)  # enquanto não houver 'roxo' no dicionário teremos color(200)
 
 # Exemplo de diconário com dicionários dentro
 
-Não é incomum termos como valores de um dicionário, outros dicionários. O formato de intercâmbio de infomações JSON(lê-se * djeizon*, vem de * java_script object notation*), é muito parecido com isto, praticamente uma porção de dicionários aninhados.
+Não é incomum termos como valores de um dicionário, outros dicionários. O formato de intercâmbio de infomações JSON(lê-se * djeizon*, vem de * JavaScript Object Notation*), é muito parecido com isto, praticamente uma porção de dicionários aninhados.
 
 ```python
 # Fonte IBGE 2020
@@ -108,7 +108,7 @@ print(estados['ES']['capital'])  # exibe: Vitória
 
 # A questão da ordem dos elementos
 
-vale notar que até pouco tempo atrás os dicionários comuns em python não guardavam ou garantiam a ordem das chaves. em python 3 atual isso mudou, e em python 2 é possível recorrer a `ordered_dict` se você precisar manter registro da ordem em que as chaves foram criadas.
+Vale notar que até pouco tempo atrás os dicionários comuns em Python não guardavam ou garantiam a ordem das chaves. Em Python 3 atual isso mudou, e em Python 2 é possível recorrer a `OrderedDict` se você precisar manter registro da ordem em que as chaves foram criadas.
 
 # Um exemplo com tuplas como chaves: um tabuleiro
 
@@ -171,4 +171,4 @@ def draw():
 # Assuntos relacionados
 
 
-- [conjuntos](conjuntos.md)
+- [Conjuntos](conjuntos.md)

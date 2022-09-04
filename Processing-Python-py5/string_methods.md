@@ -1,33 +1,8 @@
 # Métodos dos objetos *string*
 
-*strings * são um * tipo * de dado armazenado na memória do computador, e mais, em python, são acompanhados de uma série de funções e que podem ser acionadas com a * sintaxe do ponto * (*dot syntax*).
+*Strings * são um * tipo * de dado armazenado na memória do computador, e mais que isso, em Python, são acompanhados de uma série de funções que podem ser acionadas com a * sintaxe do ponto * (*dot syntax*).
 
-<sub > na programação orientada a objetos vemos que funções atreladas a objetos de uma classe são conhecidas como métodos. < /sub >
-
-# Convertendo números em texto
-
-é possível controlar a formatação da conversão de números em string, como o número de casas decimais ou com zeros à esquerda para garantir um certo número de dígitos, usando o método `.format()` e um string com uma notação especial entre as chaves `{}`:
-
-```python
-# Exibe valor com duas casas decimais
-print("ângulo calculado: {:.2f}".format(ang))
-
-# Produz um string para nome_arquivo: "arq00123.svg"
-nome_arquivo = "arq{:0>5}.svg".format(123)
-```
-
-veja mais alguns exemplos.
-
-```python
-print(u"π: {:+n}".format(PI))  # com sinal, exibe π: +3.14159
-# com vinte posições decimais, exibe 3.14159274101257324219
-print("{:.20f}".format(PI))
-print("{:.4f}".format(PI))  # com quatro posições decimais, exibe 3.1416
-# preenche com zeros até 8 caracteres, exibe 003.1416
-print("{:07.4f}".format(PI))
-# interpreta o número como uma porcentagem e exibe 314.1593%
-print("{:.4%}".format(PI))
-```
+<sub > Na programação orientada a objetos vemos que funções atreladas a objetos de uma classe são conhecidas como métodos. < /sub >
 
 # Convertendo caixa alta e baixa (maiúsculas e minúsculas)
 
@@ -53,7 +28,7 @@ print(nome_arquivo.endswith(".jpg"))  # exibe: True
 print(nome_arquivo.endswith(".gif"))  # exibe: False
 ```
 
-é possível 'encadear' métodos, como no exemplo abaixo.
+É possível 'encadear' métodos, como no exemplo abaixo.
 
 ```python
 # identifica arquivos que terminam tanto com .png como com .PNG
@@ -63,13 +38,13 @@ if nome_arquivo.lower().endswith('.png'):
 
 # Procurando sub-strings
 
-trecho da documentação:
+Trecho da documentação:
 
 > `str.find(sub[, start[, end]])`
-> retorna o índice mais baixo na string onde a substring sub é encontrado dentro da fatia s[start:end]. argumntos opcionais como start e end são interpretados como umanotação de fatiamento. retorna - 1 se sub não for localizado. nota: O método find() deve ser usado apenas se precisarmos conhecer a posição de sub. para verificar se sub é ou não uma substring, use o operador `in`.
+> Retorna o índice mais baixo na String onde a substring sub é encontrado dentro da fatia s[start:end]. Argumntos opcionais como start e end são interpretados como umanotação de fatiamento. Retorna - 1 se sub não for localizado. Nota: O método find() deve ser usado apenas se precisarmos conhecer a posição de sub. Para verificar se sub é ou não uma substring, use o operador `in`.
 >
 > `str.count(sub[, start[, end]])`
-> retorna o número de ocorrências da sub-string sub que não se sobrepõem no intervalo[start, end]. argumentos opcionais start e end são interpretados como na notação de fatias.
+> Retorna o número de ocorrências da sub-string sub que não se sobrepõem no intervalo[start, end]. Argumentos opcionais start e end são interpretados como na notação de fatias.
 
 # Dividindo e juntando *strings*
 
@@ -97,7 +72,10 @@ print('-'.join(coisas))
 # exibe: a-b-c
 
 print('\n'.joint('xyz')  # \n indica uma quebra de linha
-# exibe em 3 linhas: x\ny\n\z
+# exibe em 3 linhas:
+# x
+# y
+# z
 ```
 
 # Substituições com `.replace()` e inserções com `.format()`
@@ -110,11 +88,38 @@ frase=frase.replace(u'são', u'é')
 print(frase)  # exibe: a pessoa é estranha
 
 # str.format(valor, outro) substitui valores em pontos especiais do texto
-nome, idade='Alexandre', 120  # repare que o nome é <str> e a idade <int>
+# marcados com chaves: {}
+# repare que o nome é <str> e a idade <int>, a idade será convertida em <str>.
+nome, idade='Alexandre', 120
 print(u"Olá, {}, você tem mesmo {} anos?".format(nome, idade))
 # exibe: Olá, Alexandre, você tem mesmo 120 anos?
 ```
 
+# Convertendo números em texto
+
+É possível controlar a formatação da conversão de números em string, como o número de casas decimais ou com zeros à esquerda para garantir um certo número de dígitos, usando o método `.format()` e um string com uma notação especial entre as chaves `{}`:
+
+```python
+# Exibe valor com duas casas decimais
+print("ângulo calculado: {:.2f}".format(ang))
+
+# Produz um string para nome_arquivo: "arq00123.svg"
+nome_arquivo="arq{:0>5}.svg".format(123)
+```
+
+Veja mais alguns exemplos.
+
+```python
+print(u"π: {:+n}".format(PI))  # com sinal, exibe π: +3.14159
+# com vinte posições decimais, exibe 3.14159274101257324219
+print("{:.20f}".format(PI))
+print("{:.4f}".format(PI))  # com quatro posições decimais, exibe 3.1416
+# preenche com zeros até 8 caracteres, exibe 003.1416
+print("{:07.4f}".format(PI))
+# interpreta o número como uma porcentagem e exibe 314.1593%
+print("{:.4%}".format(PI))
+```
+
 # E tem mais coisas ainda!
 
-voocê pode ler mais na documentação do python sobre os[métodos de string](https: // docs.python.org/pt-br/2.7/library/stdtypes.html  # string-methods) e a [mini-linguagem de formatação](https://docs.python.org/pt-br/3.6/library/string.html#formatstrings).
+Voocê pode ler mais na Documentação do Python sobre os[métodos de String](https: // docs.python.org/pt-br/2.7/library/stdtypes.html  # string-methods) e a [mini-linguagem de formatação](https://docs.python.org/pt-br/3.6/library/string.html#formatstrings).

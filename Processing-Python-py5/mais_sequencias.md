@@ -1,6 +1,6 @@
 # Mais sobre sequências e fatias em coleções ordenadas
 
-listas e tuplas são duas das mais comuns coleções ordenadas de itens no python. *strings * (cadeias de caracteres) ou textos, para simplificar, são coleções ordenadas também, contendo caracteres(letras, emojis ou glifos em geral).  no meio do código, uma tupla pode ser construída com parenteses `(,)` e a lista com colchetes `[, ]`, um * string * com aspas, simples `'  '`,  duplas `"  "`  ou trincas de aspas simples ou duplas(`'''  '''` e `"""  """`).
+Listas e tuplas são duas das mais comuns coleções ordenadas de itens no Python. *Strings * (cadeias de caracteres) ou textos, para simplificar, são coleções ordenadas também, contendo caracteres(letras, emojis ou glifos em geral).  No meio do código, uma tupla pode ser construída com parenteses `(,)` e a lista com colchetes `[, ]`, um * string * com aspas, simples `'  '`,  duplas `"  "`  ou trincas de aspas simples ou duplas(`'''  '''` e `"""  """`).
 
 ```python
 anos = [1968, 1976, 1980, 1994]  # uma lista de números
@@ -15,21 +15,21 @@ pontuacao = ".,:;()?"    # um string
 versao = "3.7a"   # ou outro string
 ```
 
-uma lista permite que seus itens ou elementos sejam alterados, adicionados, removidos, ou, como um todo, os itens podem ser reordenados. dizemos que listas são mutáveis.
+Uma lista permite que seus itens ou elementos sejam alterados, adicionados, removidos, ou, como um todo, os itens podem ser reordenados. Dizemos que listas são mutáveis.
 
-Já uma tupla ou um * string * não podem ter elementos adicionados, removidos e também não podem ser reordenados, dizemos que são estruturas imutáveis. se for necessária uma correção, sempre podemos criar tuplas e * strings * novamente com a alteração em substituição à coleção original.
+Já uma tupla ou um * string * não podem ter elementos adicionados, removidos e também não podem ser reordenados, dizemos que são estruturas imutáveis. Se for necessária uma correção, sempre podemos criar tuplas e * strings * novamente com a alteração em substituição à coleção original.
 
-saiba que tuplas são mais ‘econômicas’ em termos computacionais(por exemplo, em casos de grande quantidade de dados, gastam menos memória) e são bastante usadas quando a ordem dos elementos tem significado, por exemplo podemos fazer uma tupla com os dados para a construção de um círculo:
+Saiba que tuplas são mais ‘econômicas’ em termos computacionais(por exemplo, em casos de grande quantidade de dados, gastam menos memória) e são bastante usadas quando a ordem dos elementos tem significado, por exemplo podemos fazer uma tupla com os dados para a construção de um círculo:
 
 ```python
 c = (100, 50, 40)  # os númereos representam x, y, diâmetro respectivamente
 ```
-Não faz sentido nenhum reordendar, acrescentar ou remover elementos de uma tupla como essa que descreve o círculo, ela funciona como um "registro" (_record_ em inglês) cujos campos não tem nomes explícitos mas tem significado pela posição. se você precisar alterar o círculo pode recriar a tupla que o descreve.
+Não faz sentido nenhum reordendar, acrescentar ou remover elementos de uma tupla como essa que descreve o círculo, ela funciona como um "registro" (_record_ em inglês) cujos campos não tem nomes explícitos mas tem significado pela posição. Se você precisar alterar o círculo pode recriar a tupla que o descreve.
 
 # Número de itens, tamanho ou comprimento da sequêcia (*length*):
 # <code>len()</code>
 
-podemos obter o tamanho, isto é, o número de itens, de praticamente qualquer estrutura de dados em python(ordenada ou não) usando a função `len()`. por exemplo:
+Podemos obter o tamanho, isto é, o número de itens, de praticamente qualquer estrutura de dados em Python(ordenada ou não) usando a função `len()`. Por exemplo:
 
 ```python
 lista_de_nomes = ['Bernardo Fontes', 'John Cleese', 'Georg Nees']
@@ -45,7 +45,7 @@ print(n_paises)  # exibe 249
 
 # Consultando individualmente itens de uma sequência
 
-quando temos uma lista, tupla ou outra coleção ordenada, podemos consultar seus itens pelo índice de posição com a notação `[i]`, sendo que ** a primeira posição é a posição de índice 0**, e a última é a que tem como índice o * número total de itens menos 1*:
+Quando temos uma lista, tupla ou outra coleção ordenada, podemos consultar seus itens pelo índice de posição com a notação `[i]`, sendo que ** a primeira posição é a posição de índice 0**, e a última é a que tem como índice o * número total de itens menos 1*:
 
 ```python
 numeros = (2, 4, 6, 8, 10, 12, 24, 2048)  # alguns números
@@ -59,7 +59,7 @@ print(numeros[8])
 
 # Strings como sequências de itens
 
-uma vez que python trata * strings*, texto, como um espécie de sequência, é possível iterar, isto é, realizar uma ação para cada caractere de um string:
+Uma vez que Python trata * strings*, texto, como um espécie de sequência, é possível iterar, isto é, realizar uma ação para cada caractere de um string:
 
 ```python
 nome = 'Guido'
@@ -74,7 +74,7 @@ for letra in nome:
 # o
 ```
 
-podemos consultar o comprimento de um * string * usando `len(texto)` e o caractere em uma certa posição com a notação `texto[índice]`:
+Podemos consultar o comprimento de um * string * usando `len(texto)` e o caractere em uma certa posição com a notação `texto[índice]`:
 
 ![indices](assets/slices.png)
 
@@ -89,7 +89,7 @@ print(palavra[5])   # IndexError: index out of range: 5
 
 # Alterando itens
 
-estruturas mutáveis como listas, podem ter seus itens alterados, incluídos ou removidos.
+Estruturas mutáveis como listas, podem ter seus itens alterados, incluídos ou removidos.
 
 ```python
 lista = [1976, 1980, 1988, 2013]
@@ -118,11 +118,11 @@ print(b)  # 1994
 print(lista)  # [1976, 2013]
 ```
 
-tuplas e strings são imutáveis, não permitem esses tipos de operação.
+Tuplas e strings são imutáveis, não permitem esses tipos de operação.
 
 # Fatias
 
-com a notação `[inicio:parada:passo]` podemos obter uma subsequência ou fatia(*slice*) de uma sequência. é possível deixar vazias as posições dessa notação, na forma `[inicio:parada]`, `[:parada]`, `[inicio:]`, ou ainda `[::passo]`, entre outras. veja alguns exemplos:
+Com a notação `[inicio:parada:passo]` podemos obter uma subsequência ou fatia(*slice*) de uma sequência. É possível deixar vazias as posições dessa notação, na forma `[inicio:parada]`, `[:parada]`, `[inicio:]`, ou ainda `[::passo]`, entre outras. Veja alguns exemplos:
 
 ```python
 nums = (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, -1)  # uma tupla
@@ -147,7 +147,7 @@ print(nome[:11:2])  # início até a décima, de duas em duas.
 
 # Uma fatia que é uma cópia da sequência
 
-A notação `[:]` (fatiamento com * início * e * parada * vazios) produz uma cópia completa da sequência. O que é especialmente útil para sequências mutáveis. uma vez que a atribuição, por exemplo de uma lista, a mais de uma variável não produz cópias, mas sim varios nomes apontando para a mesma lista na memória do computador:
+A notação `[:]` (fatiamento com * início * e * parada * vazios) produz uma cópia completa da sequência. O que é especialmente útil para sequências mutáveis. Uma vez que a atribuição, por exemplo de uma lista, a mais de uma variável não produz cópias, mas sim varios nomes apontando para a mesma lista na memória do computador:
 
 ```python
 a = [0, 1, 2, 3, 4]
@@ -166,7 +166,7 @@ print(a)  # [0, 1, 2, 3, 4]
 
 # Invertendo uma sequência
 
-uma das maneiras mais comuns de se obter uma cópia invertida de uma sequência é utilizando a notação de fatiamento, com o * início * e * parada * vazios(do início ao final) mas com o * passo * -1, o que fica `[::-1]` como nos exemplos abaixo:
+Uma das maneiras mais comuns de se obter uma cópia invertida de uma sequência é utilizando a notação de fatiamento, com o * início * e * parada * vazios(do início ao final) mas com o * passo * -1, o que fica `[::-1]` como nos exemplos abaixo:
 
 ```python
 print("Alexandre"[::-1])  # exibe: erdnaxelA
@@ -182,10 +182,10 @@ print(list(c))   # exibe: [4, 3, 2, 1, 0]
 
 # Assuntos relacionados
 
-- [sequências e laços de repetição](lacos_py.md) - o primeiro contato com este assunto das coleções.
+- [Sequências e laços de repetição](lacos_py.md) - o primeiro contato com este assunto das coleções.
 
-- [mais sobre listas e seus métodos](list_methods.md)(inserir itens no meio, encontrar o índice de um item e muito mais)
+- [Mais sobre listas e seus métodos](list_methods.md)(inserir itens no meio, encontrar o índice de um item e muito mais)
 
-- [arrastando vários círculos](arrastando_circulos.md  # arrastando-v%C3%A1rios-c%C3%ADrculos)
+- [Arrastando vários círculos](arrastando_circulos.md  # arrastando-v%C3%A1rios-c%C3%ADrculos)
 
-- [mais sobre * strings*](strings_py.md) e[métodos dos objetos * string*](string_methods.md)
+- [Mais sobre * strings*](strings_py.md) e[métodos dos objetos * string*](string_methods.md)

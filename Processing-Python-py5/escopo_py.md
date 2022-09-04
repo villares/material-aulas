@@ -1,12 +1,12 @@
 # Escopo: variáveis locais e globais
 
-grosso modo, *escopo * é como nos referimos à região do código onde os nomes das variáveis, ou os nomes de parâmetros de uma função, estão associados a certos valores. informalmente costumo dizer que é onde no programa uma variável é conhecida. por exemplo, se você tenta usar uma variável que foi definida em um escopo local fora desse escopo vai obter um `name_error` e o seu programa será interrompido.
+Grosso modo, *escopo * é como nos referimos à região do código onde os nomes das variáveis, ou os nomes de parâmetros de uma função, estão associados a certos valores. Informalmente costumo dizer que é onde no programa uma variável é conhecida. Por exemplo, se você tenta usar uma variável que foi definida em um escopo local fora desse escopo vai obter um `NameError` e o seu programa será interrompido.
 
 # Variáveis globais
 
-criamos variáveis globais quando atribuímos um valor a um nome fora do corpo das funções do nosso programa(normalmente no começo do programa), também podemos dizer que a variável * tem escopo global*.
+Criamos variáveis globais quando atribuímos um valor a um nome fora do corpo das funções do nosso programa(normalmente no começo do programa), também podemos dizer que a variável * tem escopo global*.
 
-essas variáveis podem ser usadas ao longo de todo o programa. se você desejar criar uma nova variável global, ou reatribuir(alterar) o valor de uma variável global de dentro de uma função, em python, é necessário usar a instrução `global`. exemplo:
+Essas variáveis podem ser usadas ao longo de todo o programa. Se você desejar criar uma nova variável global, ou reatribuir(alterar) o valor de uma variável global de dentro de uma função, em Python, é necessário usar a instrução `global`. Exemplo:
 
 # Exemplo de uma variável global
 
@@ -36,9 +36,9 @@ def key_pressed():
 
 # Variáveis locais
 
-quando criamos uma variável dentro da definição de uma função(como a função `setup()`, por exemplo), a variável tem * escopo local*, isto significa que somente o código dentro daquela função reconhece o nome e pode usar os valores a ele atribuídos.
+Quando criamos uma variável dentro da definição de uma função(como a função `setup()`, por exemplo), a variável tem * escopo local*, isto significa que somente o código dentro daquela função reconhece o nome e pode usar os valores a ele atribuídos.
 
-os parâmetros são os nomes que recebem os valores, argumentos, usados na chamada de uma função, são declarados no cabeçalho da definição da função, e também são nomes do escopo local da função.
+Os parâmetros são os nomes que recebem os valores, argumentos, usados na chamada de uma função, são declarados no cabeçalho da definição da função, e também são nomes do escopo local da função.
 
 # Exemplo de uma variável local
 
@@ -69,9 +69,9 @@ def olho(x, y, tamanho):  # parâmetros x, y, tamanho
 
 # Recapitulando
 
-- **variáveis globais ** - frequentemente criadas no início do * sketch*, e fora de qualquer função(incluindo `setup()` e `draw()`), as variáveis globais podem ser consultadas em qualquer parte do programa. é possível criar ou alterar uma variável global dentro de uma função, mas para isso é necessário incluir a instrução `global` antes!
+- **Variáveis globais ** - Frequentemente criadas no início do * sketch*, e fora de qualquer função(incluindo `setup()` e `draw()`), as variáveis globais podem ser consultadas em qualquer parte do programa. É possível criar ou alterar uma variável global dentro de uma função, mas para isso é necessário incluir a instrução `global` antes!
 
-- **variáveis locais ** - criadas dentro de uma função, as variáveis locais são, assim como os nomes dos parâmetros, nomes que  pertencem ao escopo local da função em que foram criados.
+- **Variáveis locais ** - Criadas dentro de uma função, as variáveis locais são, assim como os nomes dos parâmetros, nomes que  pertencem ao escopo local da função em que foram criados.
 
 # Mais um exemplo, com variáveis globais e locais
 
@@ -102,24 +102,24 @@ def draw():
 
 # Conselhos sobre variáveis globais
 
-é comum escutarmos que devemos usar variáveis globais com parcimônia, usadas descuidadamente, elas criam o risco de alterarmos inadvertidamente valores em pontos inesperados do programa.
+É comum escutarmos que devemos usar variáveis globais com parcimônia, usadas descuidadamente, elas criam o risco de alterarmos inadvertidamente valores em pontos inesperados do programa.
 
-em projetos grandes, e com muitos programadores, o uso de variáveis globais é evitado, com o argumento de que seu uso viola certas "boas práticas" de engenharia de software. por exemplo, é considerado desejável o máximo encapsulamento das partes de um programa, e sendo elas independentes, com interfaces claras e adequadas para receber e devolver valores, não vão precisar de variáveis globais. mesmo assim, em certos contextos, variáveis globais são usadas.
+Em projetos grandes, e com muitos programadores, o uso de variáveis globais é evitado, com o argumento de que seu uso viola certas "boas práticas" de engenharia de software. Por exemplo, é considerado desejável o máximo encapsulamento das partes de um programa, e sendo elas independentes, com interfaces claras e adequadas para receber e devolver valores, não vão precisar de variáveis globais. Mesmo assim, em certos contextos, variáveis globais são usadas.
 
-em * sketches*, programas raramente muito grandes e com propósitos visuais, você não deve se preocupar com isso! use variáveis globais quando precisar e só fique atento às suas modificações. um erro comum é também criar uma variável local de mesmo nome que uma global, por esquecer de escrever a instrução `global` de python dentro de uma função.
+Em * sketches*, programas raramente muito grandes e com propósitos visuais, você não deve se preocupar com isso! Use variáveis globais quando precisar e só fique atento às suas modificações. Um erro comum é também criar uma variável local de mesmo nome que uma global, por esquecer de escrever a instrução `global` de Python dentro de uma função.
 
 # Glossário
 
-[**variável**](https: // penseallen.github.io/pense_python2e/02-vars-expr-instr.html  # termo:variável) Um nome que se refere a um valor.
+[**variável**](https: // penseallen.github.io/PensePython2e/02-vars-expr-instr.html  # termo:variável) Um nome que se refere a um valor.
 
-[**variável local**](https: // penseallen.github.io/pense_python2e/03-funcoes.html  # termo:variável%20local) Uma variável definida dentro de uma função. Uma variável local só pode ser usada dentro da sua função.
+[**variável local**](https: // penseallen.github.io/PensePython2e/03-funcoes.html  # termo:variável%20local) Uma variável definida dentro de uma função. Uma variável local só pode ser usada dentro da sua função.
 
-[**variável global**](https: // penseallen.github.io/pense_python2e/11-dicionarios.html  # termo:variável%20global) Variável definida fora de uma função. As variáveis globais podem ser acessadas de qualquer função.
+[**variável global**](https: // penseallen.github.io/PensePython2e/11-dicionarios.html  # termo:variável%20global) Variável definida fora de uma função. As variáveis globais podem ser acessadas de qualquer função.
 
-[**instrução `global`**](https: // penseallen.github.io/pense_python2e/11-dicionarios.html  # termo:instrução%20global) Instrução que declara um nome de variável global.
+[**instrução `global`**](https: // penseallen.github.io/PensePython2e/11-dicionarios.html  # termo:instrução%20global) Instrução que declara um nome de variável global.
 
 - --
-este material é baseado no material do curso https: // arteprog.space/programacao-criativa /
+Este material é baseado no material do curso https: // arteprog.space/programacao-criativa /
 
 ---
-texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
+Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.

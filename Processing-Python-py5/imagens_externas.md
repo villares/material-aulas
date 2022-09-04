@@ -2,7 +2,7 @@
 
 # Acessando um arquivo com `loadImage()`
 
-podemos carregar(_load_) na memória imagens digitais a partir de arquivos externos nos formatos PNG, JPG, GIF, TIF entre outros. para isso usamos a função `load_image()`, mas é preciso indicar onde está o arquivo(o chamado 'caminho completo' do arquivo), ou que ele esteja na pasta `/ data /` dentro da pasta do seu _sketch_(programa).
+Podemos carregar(_load_) na memória imagens digitais a partir de arquivos externos nos formatos PNG, JPG, GIF, TIF entre outros. Para isso usamos a função `load_image()`, mas é preciso indicar onde está o arquivo(o chamado 'caminho completo' do arquivo), ou que ele esteja na pasta `/ data /` dentro da pasta do seu _sketch_(programa).
 
 ```
 sketch_2020_04a(pasta/folder do sketch)
@@ -11,7 +11,7 @@ sketch_2020_04a(pasta/folder do sketch)
        L  imagem.jpg(imagem)
 ```
 
-note que a operação de carregar o arquivo de imagem é relativamente demorada e nunca deve ser executada dentro do laço `draw()`. em geral só precisamos carregar uma vez a imagem e fazemos isso no `setup()`. também é comum criarmos uma variável global que faz referência à imagem, neste exemplo a variável `img`:
+Note que a operação de carregar o arquivo de imagem é relativamente demorada e nunca deve ser executada dentro do laço `draw()`. Em geral só precisamos carregar uma vez a imagem e fazemos isso no `setup()`. Também é comum criarmos uma variável global que faz referência à imagem, neste exemplo a variável `img`:
 
 ```python
 
@@ -32,7 +32,7 @@ def draw():
 
 ```
 
-se a imagem tiver ** exatamente ** a mesma dimensão da área de desenho ela pode ser usada em `background()`.
+Se a imagem tiver ** exatamente ** a mesma dimensão da área de desenho ela pode ser usada em `background()`.
 
 ```python
 
@@ -50,7 +50,7 @@ def draw():
     # outros desenhos sobre o fundo aqui
 ```
 
-pode ser conveniente simplesmente usar a função `image()` como visto anteriormente, para desenhar a imagem na área de desenho logo no começo do `draw()`, caso suas dimensões não sejam iguais a área de desenho.
+Pode ser conveniente simplesmente usar a função `image()` como visto anteriormente, para desenhar a imagem na área de desenho logo no começo do `draw()`, caso suas dimensões não sejam iguais a área de desenho.
 
 ```python
 
@@ -71,7 +71,7 @@ def draw():
 
 # Acessando a cor de um pixel da tela ou de uma imagem
 
-use `get()` para os pixels visíveis na tela ou o método `.get()` para os pixels em uma imagem `Py5Image`. como no exemplo abaixo:
+Use `get()` para os pixels visíveis na tela ou o método `.get()` para os pixels em uma imagem `Py5Image`. Como no exemplo abaixo:
 
 ```python
    def setup():
@@ -92,11 +92,11 @@ use `get()` para os pixels visíveis na tela ou o método `.get()` para os pixel
 
 # Copiando uma imagem com `copy()`
 
-podemos copiar imagens digitais previamente carregadas na memória para uma região específica da janela de exibição. se a região a ser copiada e a região a ser colada a imagem tiverem tamanhos diferentes, então o conteúdo será automaticamente redimensionado na região de destino.
+Podemos copiar imagens digitais previamente carregadas na memória para uma região específica da janela de exibição. Se a região a ser copiada e a região a ser colada a imagem tiverem tamanhos diferentes, então o conteúdo será automaticamente redimensionado na região de destino.
 
-os parâmetros aceitos pela função `copy()` são:
+Os parâmetros aceitos pela função `copy()` são:
 
-- `src`: imagem fonte(**opcional**, caso não seja especificada, se refere à própria tela de desenho)
+- `src`: imagem fonte(**Opcional**, caso não seja especificada, se refere à própria tela de desenho)
 - `sx`: coordenada X do ponto superior esquerdo da região a ser copiada da imagem fonte
 - `sy`: coordenada Y do ponto superior esquerdo da região a ser copiada da imagem fonte
 - `sw`: largura da região a ser copiada da imagem fonte
@@ -106,7 +106,7 @@ os parâmetros aceitos pela função `copy()` são:
 - `dw`: largura da região de destino na janela
 - `dy`: altura da região de destino na janela
 
-use `copy()` para copiar pixels de uma imagem `Py5Image`, ou de uma região da tela, para outra região da tela.
+Use `copy()` para copiar pixels de uma imagem `Py5Image`, ou de uma região da tela, para outra região da tela.
 
 ```python
 
@@ -123,7 +123,7 @@ def draw():
 
 ```
 
-![duas da mesma imagem lado a lado](assets/copy1.png "Duas da mesma imagem lado a lado")
+![Duas da mesma imagem lado a lado](assets/copy1.png "Duas da mesma imagem lado a lado")
 
 ```python
 
@@ -141,9 +141,9 @@ def draw():
 
 ```
 
-![uma imagem externa por cima da janela](assets/copy2.png "Uma imagem externa por cima da janela")
+![Uma imagem externa por cima da janela](assets/copy2.png "Uma imagem externa por cima da janela")
 
 # Assuntos relacionados
 
-- estrutura de pixels das imagens em[pixels e imagens](pixels.md)
-- [exportando imagens](exportando_imagem.md)
+- Estrutura de pixels das imagens em[Pixels e imagens](pixels.md)
+- [Exportando imagens](exportando_imagem.md)

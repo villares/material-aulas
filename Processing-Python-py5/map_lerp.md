@@ -2,27 +2,27 @@
 
 # Sumário
 
-- [A função `map()` do processing](  # a-função-map-do-processing)
+- [A função `map()` do Processing](  # a-função-map-do-processing)
 - [A função `lerp()`: interpolação linerar](  # a-função-lerp-interpolação-linear)
 - [A função `lerp_color()`: interpolando cores](  # a-função-lerpcolor-interpolando-cores)
 
 # A função `map()` do Processing
 
-> no processing modo python temos uma situação um pouco curiosa, por ser uma ferramenta híbrida com elementos de processing e de python. essas duas linguagens tem funções de nome `map()` mas com comportamentos/significados totalmente distintos. nesta página vamos explorar o comportamento do `map()` do processing(mas é possível obter o comportamento de `map()` do python também, que explicaremos em outra página).
+> No Processing modo Python temos uma situação um pouco curiosa, por ser uma ferramenta híbrida com elementos de Processing e de Python. Essas duas linguagens tem funções de nome `map()` mas com comportamentos/significados totalmente distintos. Nesta página vamos explorar o comportamento do `map()` do Processing(mas é possível obter o comportamento de `map()` do Python também, que explicaremos em outra página).
 
-A função `map()` converte um valor de uma faixa de números devolvendo um valor equivalente em outra faxia. recebendo um número, que vamos chamar de **`a`**, que está em uma faixa de origem de `a0`  a `a1` , devolve um número **`b`**  na faixa de destino de `b0` a `b1`, de forma que 'mapeia' valores de uma faixa para outra. A sintaxe fica assim, entregamos 5 argumentos e obtemos um valor como resposta:
+A função `map()` converte um valor de uma faixa de números devolvendo um valor equivalente em outra faxia. Recebendo um número, que vamos chamar de **`a`**, que está em uma faixa de origem de `a0`  a `a1` , devolve um número **`b`**  na faixa de destino de `b0` a `b1`, de forma que 'mapeia' valores de uma faixa para outra. A sintaxe fica assim, entregamos 5 argumentos e obtemos um valor como resposta:
 
 ```python
 b=map(a, a0, a1, b0, b1)
 ```
 
-veja uma animação que tenta mostrar como funciona essa conversão de valores de uma escala ou faixa para outra.
+Veja uma animação que tenta mostrar como funciona essa conversão de valores de uma escala ou faixa para outra.
 
 ![](assets/map_2.gif)
 
-note que se você entregar um número **`a`** fora da faixa de origem indicada(entre `a0` e `a1`) vai receber um número 'para fora' da faixa de destino entre `b0` e `b1`.
+Note que se você entregar um número **`a`** fora da faixa de origem indicada(entre `a0` e `a1`) vai receber um número 'para fora' da faixa de destino entre `b0` e `b1`.
 
-em um caso de uso bem simples, o `map()` podemos transformar o valor da posição horizontal do mouse, `mouse_x`, que é um número entre ** 0 ** e a largura da área de desenho(`width`), em um valor para controlar elementos do desenho(na faixa que desejarmos).  no exemplo abaixo, cinzas entre preto e branco podem são criados com números na faixa entre ** 0 ** e ** 255**, e um círculo vai ser movido entre as posições ** x ** de ** 100 ** a ** 300**.
+Em um caso de uso bem simples, o `map()` podemos transformar o valor da posição horizontal do mouse, `mouse_x`, que é um número entre ** 0 ** e a largura da área de desenho(`width`), em um valor para controlar elementos do desenho(na faixa que desejarmos).  No exemplo abaixo, cinzas entre preto e branco podem são criados com números na faixa entre ** 0 ** e ** 255**, e um círculo vai ser movido entre as posições ** x ** de ** 100 ** a ** 300**.
 
 ```python
 def setup():
@@ -43,25 +43,25 @@ def draw():
 
 # A função `lerp()`: interpolação linear
 
-O nome vem, de  < i > **l**inear int**erp**olation < /i > (interpolação linear) e a função permite obter um número intermediário ente do outros números `v0` e `v1` de maneira proporcional a um parâmetro **`t`** . você pode interpretar **`t`** como uma porcentagem, **0 ** faz `lerp()` devolver o primeiro número, `v0`, e ** 1 **  produz o segundo, `v1`.  com o **`t`**  valendo  ** 0.5 ** (50 %) o valor devolvido fica bem no meio do caminho entre os dois números (uma média aritmética).
+O nome vem, de  < i > **l**inear int**erp**olation < /i > (interpolação linear) e a função permite obter um número intermediário ente do outros números `v0` e `v1` de maneira proporcional a um parâmetro **`t`** . Você pode interpretar **`t`** como uma porcentagem, **0 ** faz `lerp()` devolver o primeiro número, `v0`, e ** 1 **  produz o segundo, `v1`.  Com o **`t`**  valendo  ** 0.5 ** (50 %) o valor devolvido fica bem no meio do caminho entre os dois números (uma média aritmética).
 
-isso lembra o `map()` que acabamos de ver, mas com uma faixa de origem (para o **`t`** ) predeterminada de  ** 0 ** a ** 1 ** , veja na animação abaixo.
+Isso lembra o `map()` que acabamos de ver, mas com uma faixa de origem (para o **`t`** ) predeterminada de  ** 0 ** a ** 1 ** , veja na animação abaixo.
 
 ![](assets/lerp_1.gif)
 
-note que assim como em `map()` valores fora da faixa esperada de origem(no caso entre ** 0 ** e ** 1**) produzem valores além dos limites fornecidos.
+Note que assim como em `map()` valores fora da faixa esperada de origem(no caso entre ** 0 ** e ** 1**) produzem valores além dos limites fornecidos.
 
 
 # A função `lerpColor()`: interpolando cores
 
-podemos também obter cores intermediárias com a função `lerp_color()`, um * lerp * especial para cores.
+Podemos também obter cores intermediárias com a função `lerp_color()`, um * lerp * especial para cores.
 
 ![](assets/lerp_3.gif)
 
-veja exemplos de uso abaixo.
+Veja exemplos de uso abaixo.
 
 ```python
-from __future__ import division
+
 
 def setup():
     size(400, 400)
@@ -85,7 +85,7 @@ def draw():
 ![](assets/lerp_3b.gif)
 
 ```python
-from __future__ import division
+
 
 def setup():
     size(400, 400)
@@ -122,4 +122,4 @@ def dots(x1, y1, x2, y2, ca, cb, steps=10, dot_size=10):
 
 # Assuntos relacionados
 
-- [transições com * easing*](easing.md)
+- [Transições com * easing*](easing.md)

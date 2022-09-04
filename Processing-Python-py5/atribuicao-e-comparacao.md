@@ -7,7 +7,7 @@ num = 3  # faça `num` ser uma referência ao valor 3`
 # Resultado: Modificada a variável `num`.
 ```
 
-na prática, do lado direito do `=` aparecem expressões que produzem algum valor, e que são avaliadas(calculadas) primeiro. em seguida acontece a atribuição, a variável à esquerda passa apontar para o valor calculado na memória.
+Na prática, do lado direito do `=` aparecem expressões que produzem algum valor, e que são avaliadas(calculadas) primeiro. Em seguida acontece a atribuição, a variável à esquerda passa apontar para o valor calculado na memória.
 
 
 ```python
@@ -30,14 +30,14 @@ num == 3  # o valor de `num` é igual ao valor 3?`
 # se você fizer print(num == 3), por exemplo
 ```
 
-na prática  `==`  é usado dentro de estruturas como `if` (ou `while`, por exemplo) que permitem a execução condicional de outras instruções:
+Na prática  `==`  é usado dentro de estruturas como `if` (ou `while`, por exemplo) que permitem a execução condicional de outras instruções:
 
 ```python
 if num == 3:  # se valor de `num` for igual a 3
     print("você tem três chances")
 ```
 
-de forma análoga, temos um operador relacional que indica desigualdade `!=':
+De forma análoga, temos um operador relacional que indica desigualdade `!=':
 
 ```python
 if num != 0:  # se num não for igual a zero
@@ -48,15 +48,15 @@ if num != 0:  # se num não for igual a zero
 
 # Assuntos relacionados
 
-- [variáveis](variaveis.md)
-- [condicionais e operadores lógicos](condicionais_py.md)
+- [Variáveis](variaveis.md)
+- [Condicionais e operadores lógicos](condicionais_py.md)
 
 # Glossário
 
-[**variável**](https: // penseallen.github.io/pense_python2e/02-vars-expr-instr.html  # termo:variável) Um nome que se refere a um valor.
+[**variável**](https: // penseallen.github.io/PensePython2e/02-vars-expr-instr.html  # termo:variável) Um nome que se refere a um valor.
 
-[**atribuição**](https: // penseallen.github.io/pense_python2e/02-vars-expr-instr.html  # termo:atribuição) Uma instrução que atribui um valor a uma variável.
+[**atribuição**](https: // penseallen.github.io/PensePython2e/02-vars-expr-instr.html  # termo:atribuição) Uma instrução que atribui um valor a uma variável.
 
-[**operador relacional**](https: // penseallen.github.io/pense_python2e/05-cond-recur.html  # termo:operador%20relacional) Um destes operadores, que compara seus operandos: `==`, `!=`, `>`, `<`, `>=` e `<=`.
+[**operador relacional**](https: // penseallen.github.io/PensePython2e/05-cond-recur.html  # termo:operador%20relacional) Um destes operadores, que compara seus operandos: `==`, `!=`, `>`, `<`, `>=` e `<=`.
 
-[**instrução condicional**](https: // penseallen.github.io/pense_python2e/05-cond-recur.html  # termo:instrução%20condicional) Uma instrução que controla o fluxo de execução, dependendo de alguma condição (expressão avaliada como `True` ou `False`).
+[**instrução condicional**](https: // penseallen.github.io/PensePython2e/05-cond-recur.html  # termo:instrução%20condicional) Uma instrução que controla o fluxo de execução, dependendo de alguma condição (expressão avaliada como `True` ou `False`).

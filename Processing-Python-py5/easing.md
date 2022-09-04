@@ -2,17 +2,17 @@
 
 A ideia por trás de * easing * é a suavização de transições de um movimento, uma vez que, na natureza, os movimento tem variação de velocidade que raramente são instantâneas ou lineares.
 
-um movimento pode iniciar rapidamente  e parar suavemente(*easing out*), iniciar suavemente(*ease in *) ou ainda iniciar e parar suavemente(*easing in and out*).
+Um movimento pode iniciar rapidamente  e parar suavemente(*easing out*), iniciar suavemente(*ease in *) ou ainda iniciar e parar suavemente(*easing in and out*).
 
 # Funções para suavização das transições
 
-para o conteúdo a seguir vamos precisar[manipular faixas de valores com `map()` e `lerp()`](map_lerp.md)
+Para o conteúdo a seguir vamos precisar[manipular faixas de valores com `map()` e `lerp()`](map_lerp.md)
 
-uma estratégia muito comum é  usar funções de * easing * que recebem um valor entre ** 0 ** e ** 1 ** e retornam um valor, grosso modo na mesma faixa, o pelo menos nos extremos(eventualmente passado um pouco para fora). os valores podem ser usados em conjunto com `lerp()` ou simplesmente multiplicando um outro valor.
+Uma estratégia muito comum é  usar funções de * easing * que recebem um valor entre ** 0 ** e ** 1 ** e retornam um valor, grosso modo na mesma faixa, o pelo menos nos extremos(eventualmente passado um pouco para fora). Os valores podem ser usados em conjunto com `lerp()` ou simplesmente multiplicando um outro valor.
 
-em uma função `easing(p)` um `p = 0` devolve ** 0 ** e `p = 1` produz ** 1**, mas a variação intermediária acontece em velocidades diferentes. O * não-easing * é o crescimento linear, em que o valor devolvido é exatamente o mesmo recebido pela função.
+Em uma função `easing(p)` um `p = 0` devolve ** 0 ** e `p = 1` produz ** 1**, mas a variação intermediária acontece em velocidades diferentes. O * não-easing * é o crescimento linear, em que o valor devolvido é exatamente o mesmo recebido pela função.
 
-vejamos um exemplo que fizemos inicialmente na explicação do `map()` de um círculo que anda e vai de preto para branco, mas agora usando `lerp()` e uma função de * easing * exponencial 'sigmóide', na saída e na chegada(* in * e * out*).
+Vejamos um exemplo que fizemos inicialmente na explicação do `map()` de um círculo que anda e vai de preto para branco, mas agora usando `lerp()` e uma função de * easing * exponencial 'sigmóide', na saída e na chegada(* in * e * out*).
 
 ```python
 
@@ -165,4 +165,4 @@ def sigmoid_map(value, start1, stop1, start2, stop2, const=6):
 
 # Assuntos relacionados
 
-- [manipulando faixas de valores com `map()` e `lerp()`](map_lerp.md)
+- [Manipulando faixas de valores com `map()` e `lerp()`](map_lerp.md)

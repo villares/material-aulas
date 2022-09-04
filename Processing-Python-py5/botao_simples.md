@@ -2,7 +2,7 @@
 
 ![botão simples](assets/botao_simples.gif)
 
-aqui um exemplo de um botão muito simplificado, basicamente uma função que desenha um retângulo aredondado com texto e que devolve `True` caso o mouse esteja apertado sobre ele(`False` caso contrário).
+Aqui um exemplo de um botão muito simplificado, basicamente uma função que desenha um retângulo aredondado com texto e que devolve `True` caso o mouse esteja apertado sobre ele(`False` caso contrário).
 
 ```python
 fundo = color(0, 0, 200)
@@ -45,9 +45,9 @@ def botao_simples(x, y, w, h, texto):
         return False
  ```
     
-repare que o comportamento deixa um pouco a desejar em relação a um botão apresentado pela interface do sistema operacional ou de um site. O código anterior é acionado no momento do pressionar do botão do mouse, os botões tradicionais são acionados no momento em que o botão do mouse é solto, completando um 'clique'.
+Repare que o comportamento deixa um pouco a desejar em relação a um botão apresentado pela interface do sistema operacional ou de um site. O código anterior é acionado no momento do pressionar do botão do mouse, os botões tradicionais são acionados no momento em que o botão do mouse é solto, completando um 'clique'.
     
-é possível obter um comportamento semelhante de acionamento com um clique completo repetindo uma chamada de função para os botões, uma vez em `draw()` para visualização e outra na função de evento `mouse_clicked()`, como no código abaixo:
+É possível obter um comportamento semelhante de acionamento com um clique completo repetindo uma chamada de função para os botões, uma vez em `draw()` para visualização e outra na função de evento `mouse_clicked()`, como no código abaixo:
     
 ```python
 fundo = color(0, 0, 200)
@@ -91,5 +91,5 @@ def botao_clique(x, y, w, h, texto):
 
 # Assuntos relacionados
 
-- mais sobre [interação/input com mouse e teclado](input_py.md)
-- fazendo um [botão com orientação a objetos](botao_com_oo.md)
+- Mais sobre [interação/input com mouse e teclado](input_py.md)
+- Fazendo um [botão com orientação a objetos](botao_com_oo.md)
