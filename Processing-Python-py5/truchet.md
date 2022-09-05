@@ -1,6 +1,6 @@
 # Módulos ou mosaicos de Truchet
 
-![image](https://user-images.githubusercontent.com/3694604/119920020-f8a0cf80-bf41-11eb-9238-c30eac1efebd.png)
+![image](https://user-images.githubusercontent.com/3694604/188502514-5a8412cd-421f-40f1-a845-02d597c386cc.png)
 
 O ladrilhamento, ou tesselaçã(isto é o recobrimento de superfícies) por um padrão de quadrados decorados com desenhos que não tem simetria rotacional foi explorada pelo padre dominicano francês Sébastien Truchet.
 
