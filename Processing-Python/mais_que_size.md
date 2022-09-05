@@ -39,6 +39,7 @@ Por questões de implementação do Processing, não é recomendado usar variáv
 
 ```python
 def settings():
+    global img
     img = loadImage('arquivo.jpg')
     size(img.width, img.height)
  
@@ -49,6 +50,7 @@ ou
 
 ```python
 def settings():
+    global img
     img = loadImage('arquivo.jpg')
     size(img.width / 2, img.height / 2)
  
