@@ -4,7 +4,7 @@ Os exemplos nesta página demonstram:
 - Um *sketch* em 'tela cheia'
 - Janela com dimensões calculadas
 - Redimensionando da janela no meio da execução
-<!--- Uso avançado de mais de uma janela -->
+- Uso avançado de mais de uma janela
 
 # Tela cheia
 
@@ -79,37 +79,55 @@ def key_pressed():
                   int(random(200, 500)))
 ```
 
-<!---
+
 # Um *sketch* com duas janelas
 
+Esta técnica, que parte da infraestrutura para executar mais de um sketch simultaneamente, precisa do chamado [*class mode*](http://py5coding.org/content/py5_modes.html#class-mode).
+
 ```python
+from py5 import Sketch
 
-
-def setup():
-    size(200, 300)
-    second_window = OtherWindow("2nd")
-
-
-def draw():
-    background(0)
-    ellipse(mouse_x, mouse_y, 10, 10)
-
-
-class OtherWindow(Sketch):
-
-    def __init__(self, title=""):
-        switches = ('--sketch-path=' + sketch_path(), '')
-        PApplet.runSketch(switches, self)
-        self.surface.set_title(title)
+class SketchySketch(Sketch):
+    def __init__(self, title="", other=None):
+        self.other = other
+        self.title = title
+        self.clicked = False
+        super().__init__()        
 
     def settings(self):
         self.size(300, 200)
 
-    def draw(self):  # este é o draw pra a segunda janela
-        self.background(255)
-        self.fill(0)
+    def setup(self):
+        self.window_resizable(True)
+        if self.title:
+            self.window_title(self.title)
+        if self.other:
+            self.other.other = self
+
+    def draw(self): 
+        if self.title == 'A':
+            self.background(255)
+            self.fill(0)
+        else:
+            self.background(0)
+            self.fill(255)
         self.rect(self.mouse_x, self.mouse_y, 10, 10)
+        
+        if self.clicked:
+            w, h = self.width, self.height
+            self.fill(128, 128)
+            self.circle(w / 2, h / 2, min(w, h) * 0.8)
+            
+    def mouse_pressed(self):
+        self.clicked = not self.clicked
+        if self.other:
+            self.other.clicked = self.clicked
 
-
+a = SketchySketch('A')
+a.run_sketch(block=False)
+b = SketchySketch('B', a)
+b.run_sketch(block=False)
 ```
--->
+
+![sketch_2022_09_05](https://user-images.githubusercontent.com/3694604/188527096-acefba92-7f85-4b20-9804-2392fa7f4d31.png)
+
