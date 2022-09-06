@@ -87,15 +87,15 @@
 
 - [Usando várias abas no IDE](modulos.md)  [REVISAR]
 - [Dicas para portar exemplos do Processing modo Java para o modo Python](java_para_python.md)
-<"--- [Mais sobre Python, Jython e Java](http://arteprog.space/Processando-Processing/tutoriais-PT/python-Python_Jython_e_Java)(página externa) -->
-- [Mais sobre atributos gráficos](mais_atributos_graficos.md)
-- [Desenhando em um espaço fora da tela(offscreen buffer)](offscreen_buffer.md) e recortando imagens
-- [Manipulando a janela](mais_que_size.md)(tela cheia, redimensionamento e múltiplas janelas) [REVISAR]
+<!--- REVISAR [Mais sobre Python, Jython e Java](http://arteprog.space/Processando-Processing/tutoriais-PT/python-Python_Jython_e_Java)(página externa) -->
+* [Mais sobre atributos gráficos](mais_atributos_graficos.md)
+* [Desenhando em um espaço fora da tela(offscreen buffer)](offscreen_buffer.md) e recortando imagens
+* [Manipulando a janela](mais_que_size.md)(tela cheia, redimensionamento e múltiplas janelas) 
 
 
 # Pequenos projetos e outros exemplos
 
-- [Módulos ou mosaicos de Truchet](truchet.md)
+* [Módulos ou mosaicos de Truchet](truchet.md)
 <!-- - [Jogo PONG](pong /) - Estudos para o fazer um jogo
 - [`caneta_automatica_py`](caneta_automatica /) - Módulo para desenhar inspirado na tartaruga de Logo -->
-- [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
+* [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
