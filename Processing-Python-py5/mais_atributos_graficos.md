@@ -24,10 +24,16 @@ def setup():
     size(400, 400)
     seta_vetor((100, 100), (200, 200))
 
+
+def setup():
+    size(400, 400)
+    stroke(0, 150, 0)
+    seta_vetor((100, 100), (200, 200))
+
 def seta_vetor(v, origin=(0, 0), head_size=10):
     """
-    Desenhe uma seta representando um vetor v, partindo da origem (0, 0)
-    ou na posição xo, yo informada como argumentos opcionais
+    Desenhe uma seta representando um vetor `v`, partindo da origem (0, 0)
+    ou na posição informada com o argumentos opcional `origin`.
     """
     v = Py5Vector(*v)
     xo, yo = origin
@@ -36,19 +42,17 @@ def seta_vetor(v, origin=(0, 0), head_size=10):
     head_size = min(head_size, body / 2)
     xh = xo + cos(ang) * body
     yh = yo + sin(ang) * body
+    xha = xh + cos(ang + QUARTER_PI / 2 + PI) * head_size
+    yha = yh + sin(ang + QUARTER_PI / 2 + PI) * head_size
+    xhb = xh + cos(ang - QUARTER_PI / 2 + PI) * head_size
+    yhb = yh + sin(ang - QUARTER_PI / 2 + PI) * head_size
     line(xo, yo, xh, yh)  # corpo com tamanho fixo
-    push()  # preserva os atributos gráficos atuais
-    fill(g._instance.strokeColor)  # usa a cor de traço como preenchimento!
-    no_stroke()
-    with begin_closed_shape():
-        xha = xh + cos(ang + QUARTER_PI / 2 + PI) * head_size
-        yha = yh + sin(ang + QUARTER_PI / 2 + PI) * head_size
-        xhb = xh + cos(ang - QUARTER_PI / 2 + PI) * head_size
-        yhb = yh + sin(ang - QUARTER_PI / 2 + PI) * head_size
-        vertex(xha, yha)
-        vertex(xh, yh)
-        vertex(xhb, yhb)
-        end_shape(CLOSE)
-    pop()  # devolve os atributos ao que eram antes
-
+    with push():  # preserva os atributos gráficos atuais
+        fill(g._instance.strokeColor)  # usa a cor de traço como preenchimento!
+        no_stroke()
+        with begin_closed_shape():
+            vertex(xha, yha)
+            vertex(xh, yh)
+            vertex(xhb, yhb)
+            end_shape(CLOSE)
 ```
