@@ -94,11 +94,6 @@ def setup():
     img.mask(clip_mask)  # esta operação modifica a imagem
     image_mode(CENTER)
 
-
-def draw():
-    pass  # é necessário ter draw(), mesmo que vazio, para a interação com o mouse!
-
-
 def mouse_pressed():
     translate(mouse_x, mouse_y)
     rotate(random(PI))
