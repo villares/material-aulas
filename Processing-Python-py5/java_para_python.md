@@ -45,7 +45,7 @@ Os valores booleanos em Java são `true` e `false`, o que em Python fica `True` 
 | `for (int i=inicio; i < limite; i += passo){ … ` | `for i in range(inicio, limite, passo): …` |
 | `for (Bola b : array_list_bolas){ …`               | `for b in lista_bolas: …`                   |
 | `for (Bola b : array_list_bolas){ …`               | `for b in lista_bolas: …`                   |
-| `fill(#FFCC00) // cor em notação hexadecimal  `  | `fill("#FFCC00") # precisa aspas e não funciona com `color()` |
+| `fill(#FFCC00) // cor em notação hexadecimal  `  | `fill("#FFCC00") # precisa aspas |
 
 E semelhante a `null` de Java temos o valor `None` em Python os usos não são totalmente equivalentes mas é um bom palpite fazer a substituição.
 
@@ -196,7 +196,8 @@ resultado = cond ? a : b
 
 # switch & case
 
-Não existia `switch/case` no Python até recentementte, agora com Python 3.10 temos correspondência de padrões (*pattern matching*), mas acreidto que em geral você pode trocar a estrutura do Java por uma cadeia de `if/elif` ou, se for só para chamar diferentes funções, um dicionário de funções [TO DO página sobre isso].
+Não existia `switch/case` no Python até recentementte, agora com Python 3.10 temos correspondência de padrões (*pattern matching*), mas acredito que em geral você pode trocar a estrutura do Java por uma cadeia de `if/elif` ou, se for só para chamar diferentes funções, um dicionário de funções.
+[TO DO página sobre isso].
 **Java** você pode trocar
 ```java
 char letter = 'b';
@@ -353,12 +354,12 @@ else:
   print("diferentes")
 ```
 
-
+<!---
 # Importando bibliotecas e as outras abas do sketch
 
 No Processing modo Java as bibliotecas são importadas com `import` mas no modo Python essa instrução é mais usada para importar *módulos* da biblioteca padrão do Python, e arquivos **.py** das outras abas do IDE, que ao contrário do modo Java não são automaticamente parte do *sketch*.
 
-Para bibliotecas de terceiros, use o comando do menu **Sketch > Importar Biblioteca...** (ou *Sketch > Import Library...* em inglês) para acrescentar a linha com  `add_library()` e o argumento correto.
+Para bibliotecas de terceiros, [TODO]
 
 **Java**
 
@@ -377,16 +378,11 @@ Para usar múltiplas abas no modo Python, é preciso tratá-las como módulos e 
 ```python
 from outra_aba import *  # importa código do arquivo outra_aba.py
 ```
+-->
 
-Se as outras abas contiverem caracteres *não-ASCII*  é necessário acrescentar como primeira linha este comentário especial:
+## Orientação a objetos
 
-```python
-# -*- coding: utf-8 -*-
-```
-
-# Orientação a objetos
-
-# Obtendo uma instância e acessando métodos e atributos
+### Obtendo uma instância e acessando métodos e atributos
 
 Java precisa da palavra chave **`new`** para criar uma instância de uma classe, é só removê-la! O acesso a métodos e atributos é exatamente igual.
 
@@ -408,11 +404,12 @@ void setup() {
 def  setup() :
     global video_export
     size(600, 600)
+    this = current_sketch()
     video_export = VideoExport(this)
     video_export.start_movie()
 ```
 
-# Declarando uma classe
+### Declarando uma classe
 
 Já as declarações de classe mudam um pouco, grosso modo, o método `__init__()` faz o papel do *construtor* (a definição de método que em Java tem o mesmo nome da classe e faz a inicialização de uma instância do objeto).
 
@@ -488,7 +485,7 @@ class MRect:
                  self.ypos, self.w, height * self.h)
 ```
 
-# Estruturas de dados
+## Estruturas de dados
 
 Arrays como `int[]`, `float[]` ou `Py5Vector[]` podem virar listas em Python (ou quem sabe tuplas, se forem criadas e deixadas quietas). Um *ArrayList* é muito parecido com uma lista:
 
@@ -524,9 +521,9 @@ def setup():
 ```
 
 
-# Arrays 2D 
+### Arrays 2D ou com mais dimensões 
 
-Parar traduzir, arrays de duas dimensões em Java, faça uma lista de listas (não, você não pode usar numpy).
+Parar traduzir, arrays de duas dimensões em Java, você pode fazer lista de listas, ou então partir para as estruturas array do Numpy.
 
 **Java**
 ```java
