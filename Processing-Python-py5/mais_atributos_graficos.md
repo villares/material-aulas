@@ -7,7 +7,7 @@ Esta página tenta ampliar um pouco o assundo dos atributos gráficos, que são 
 - Cor de preenchimento `fill()` ou não-preenchimento `no_fill()`, cor de traço `stroke()` e não-traço `no_stroke()`
 - As cores podem ser indicadas como uma trinca de números de 0 a 255 (R, G, B) ou ainda com um quarto número que define o * alpha * ou opacidade(R, G, B, A) sendo que * alpha * 0 torna a cor totalmente transparente e 255 totalmente opaca. Se usarmos `color_mode(HSB)` podemos indicar matiz(*hue*), saturação(*saturation*) e Brilho(*brightness*), também com o quarto valor para o * alpha * opcional.
 - Espessura de traço `stroke_weight()` (não pode ser menor que zero!)
-- Junções e terminações dos traços[`stroke_join()`](https://py.processing.org/reference/stroke_join.html) e[`stroke_caps()`](https://py.processing.org/reference/stroke_cap.html)
+- Junções e terminações dos traços[`stroke_join()`](https://py5coding.org/reference/sketch_stroke_join.html) e[`stroke_caps()`](https://py5coding.org/reference/sketch_stroke_cap.html)
 
 ## Preservando o estado atual dos atributos (fazendo modificações e depois voltando ao estado anterior)
 
@@ -15,7 +15,7 @@ As funções `push_style()` e `pop_style()` (ou `push()` e `pop()` que combinam 
 
 ## Lendo o estado atual dos atributos de cor "ativos"
 
-Uma carecterística pouco conhecida do Processing é o objeto **`g`** que é no fundo a superfície de tela em que estamos desenhando. Esse objeto mantém nos campos `.fill_color` e `.stroke_color` que podem ser consultados para saber as cores que estão atualmente em uso.
+Uma carecterística pouco conhecida do Processing é o objeto **`g`** que é no fundo a superfície de tela em que estamos desenhando. Podemos consultar `._instance.fillColor` e `._instance.strokeColor` para saber as cores que estão atualmente em uso.
 
 Veja um exemplo de uso, uma função que desenha uma pequena seta cuja cabeça é um triângulo preenchido com a mesma cor 'atual' do traço(_stroke_).
 
