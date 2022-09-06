@@ -108,7 +108,7 @@ def mouse_pressed():
 
 ![image](https://user-images.githubusercontent.com/3694604/188531711-8143041d-515d-41ab-ab81-d6d494d0c45c.png)
 
-# Criando uma máscara dinâmicamente
+# Criando uma máscara dinamicamente
 
 ![offscreen buffer](assets/clipping_mask.gif)
 
