@@ -161,15 +161,15 @@ def setup():
     for _ in range(100):
         offscreen.rect(random(width), random(height), 50, 50)
     offscreen.end_draw()
-
+    clip_mask = create_graphics(width, height)
 
 def draw():
     background(150, 150, 200)
     y = frame_count % height
     line(0, y, width, y)
 
-    clip_mask = create_graphics(width, height)
     clip_mask.begin_draw()
+    clip_mask.clear()
     clip_mask.fill(255)
     clip_mask.circle(mouse_x, mouse_y, 250)
     clip_mask.end_draw()
