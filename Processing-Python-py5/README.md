@@ -6,9 +6,9 @@
 
 - [Primeiros passos e desenho básico](desenho-basico_py.md)
   - [Variáveis](variaveis.md)
-  - [Desenhando polígonos](poligonos_1.md)
   - [O que é indentação?](indentacao.md)
   - [Mais sobre cores(RGB e HSB)](mais_sobre_cores.md)
+  - [Desenhando polígonos](poligonos_1.md)
 - [Condicionais(`if` e `else`)](condicionais_py.md)
   - [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](atribuicao-e-comparacao.md)
   - [Condições aninhadas e outras estruturas condicionais](condicionais_2.md)
