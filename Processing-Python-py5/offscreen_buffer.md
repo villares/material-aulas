@@ -38,11 +38,8 @@ def draw():
 
 ```python
 def setup():
-    size(600, 400)
-
-
-def draw():
     global c0, c1
+    size(600, 400)
     # camada 0
     c0 = create_graphics(600, 400)
     c0.begin_draw()
@@ -58,17 +55,17 @@ def draw():
     c1.fill(0, 0, 200)
     c1.ellipse(200, 200, 200, 200)
     c1.end_draw()
+    
+def draw():
     # desenhe as camandas na tela
     image(c0, 0, 0)
     image(c1, 0, 0)
-
 
 def key_pressed():
     if key == 's':
         c0.save('camada0.png', drop_alpha=False)
         c1.save('camada1.png', drop_alpha=False)
         save_frame("camadas-combinadas.png")
-
 ```
 ![camada0](https://user-images.githubusercontent.com/3694604/70395381-dc6f4280-19dc-11ea-8f64-fad20e2c0993.png)
 ![camada1](https://user-images.githubusercontent.com/3694604/70395382-dc6f4280-19dc-11ea-9d9b-d8a371a1c7d8.png)
