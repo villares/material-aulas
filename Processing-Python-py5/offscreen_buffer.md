@@ -10,39 +10,33 @@ Algumas vantagens dessa estratégia podem ser:
 - Salvar o imagens em camadas separadas para posterior tratamento.
 - Aplicação de máscaras de recorte ou outros tratamentos
 
-Outra estratégia semelhante é desenhar em um objeto ou * grupo * de objetos * Py5Shape*, que pode ser criado com a função[create_shape()](https://py.processing.org/reference/create_shape.html), e pode depois desenhado na tela com `shape()'.
+Outra estratégia semelhante é desenhar em um objeto ou *grupo* de objetos *Py5Shape*, que pode ser criado com a função [create_shape()](http://py5coding.org/reference/sketch_create_shape.html), e pode depois desenhado na tela com `shape()'.
 
 # Um primeiro exemplo
 
 ```python
-
-
 def setup():
     size(400, 400)
     global img
-    img = createGraphics(400, 400)
-    img.beginDraw()
+    img = create_graphics(400, 400)
+    img.begin_draw()
     img.clear()  # limpa os pixels, deixa transparente
     # img.background(200) # fundo (opaco)
     img.fill(255, 0, 0)
     img.rect(100, 100, 100, 100)
-    img.endDraw()
+    img.end_draw()
 
 
 def draw():
-    background(sin(radians(frameCount * 0.5)) * 128 + 128)
+    background(sin(radians(frame_count * 0.5)) * 128 + 128)
     image(img, 0, 0)
     fill(0, 0, 200)
-    circle(mouseX, mouseY, 100)
-
-
+    circle(mouse_x, mouse_y, 100)
 ```
 
 # Camadas que podem ser salvas em separado
 
 ```python
-
-
 def setup():
     size(600, 400)
 
@@ -50,31 +44,30 @@ def setup():
 def draw():
     global c0, c1
     # camada 0
-    c0 = createGraphics(600, 400)
-    c0.beginDraw()
+    c0 = create_graphics(600, 400)
+    c0.begin_draw()
     # c0.background(200) # fundo (opaco)
     c0.clear()  # limpa os pixels, deixa transparente
     c0.fill(255, 0, 0)
     c0.rect(100, 100, 100, 100)
-    c0.endDraw()
+    c0.end_draw()
     # camada 1
-    c1 = createGraphics(600, 400)
-    c1.beginDraw()
+    c1 = create_graphics(600, 400)
+    c1.begin_draw()
     c1.clear()  # limpa os pixels, deixa transparente
     c1.fill(0, 0, 200)
     c1.ellipse(200, 200, 200, 200)
-    c1.endDraw()
+    c1.end_draw()
     # desenhe as camandas na tela
     image(c0, 0, 0)
     image(c1, 0, 0)
 
 
-def keyPressed():
+def key_pressed():
     if key == 's':
-        c0.save('camada0.png')
-        c1.save('camada1.png')
-        saveFrame("camadas-combinadas.png")
-
+        c0.save('camada0.png', drop_alpha=False)
+        c1.save('camada1.png', drop_alpha=False)
+        save_frame("camadas-combinadas.png")
 
 ```
 ![camada0](https://user-images.githubusercontent.com/3694604/70395381-dc6f4280-19dc-11ea-8f64-fad20e2c0993.png)
@@ -86,57 +79,51 @@ def keyPressed():
 
 
 ```python
-
-
 def setup():
     global img
     size(500, 500)
-    img = loadImage("imagem.png")
+    img = load_image('https://garoa.net.br/mediawiki/images/thumb/Convite_NdP_ago.png/750px-Convite_NdP_ago.png')
     # a máscara tem que ter tamanho igual a da imagem que vai ser clipada
-    clip_mask = createGraphics(img.width, img.height)
-    clip_mask.beginDraw()
-    clip_mask.noFill()
+    clip_mask = create_graphics(img.width, img.height)
+    clip_mask.begin_draw()
+    clip_mask.no_fill()
     for i in range(256):
         clip_mask.stroke(255 - i)  # cor de traço vai de branco a preto
         clip_mask.circle(img.width / 2, img.height / 2, i * 2)
-    clip_mask.endDraw()
+    clip_mask.end_draw()
     img.mask(clip_mask)  # esta operação modifica a imagem
-    imageMode(CENTER)
+    image_mode(CENTER)
 
 
 def draw():
     pass  # é necessário ter draw(), mesmo que vazio, para a interação com o mouse!
 
 
-def mousePressed():
-    translate(mouseX, mouseY)
+def mouse_pressed():
+    translate(mouse_x, mouse_y)
     rotate(random(PI))
     image(img, 0, 0)
 
-
 ```
 
-![imagem clipada](assets/image_mask.png)
-
+![image](https://user-images.githubusercontent.com/3694604/188531711-8143041d-515d-41ab-ab81-d6d494d0c45c.png)
 
 # Criando uma máscara dinâmicamente
 
 ![offscreen buffer](assets/clipping_mask.gif)
 
 ```python
-
-
 def setup():
     global offscreen, clip_mask
     size(800, 500)
     # vamos usar uma área de desenho fora da tela "offscreen buffer"
-    offscreen = createGraphics(400, height)
-    offscreen.beginDraw()  # necessário antes de desenhar na área
+    offscreen = create_graphics(400, height)
+    offscreen.begin_draw()  # necessário antes de desenhar na área
     offscreen.background(0, 200, 0)
     offscreen.fill(255)
     for _ in range(100):
         offscreen.rect(random(400), random(height), 50, 50)
-    offscreen.endDraw()  # também é preciso encerrar o desenho
+    offscreen.end_draw()  # também é preciso encerrar o desenho
     cursor(CROSS)  # cursor em cruz
 
 
@@ -146,54 +133,51 @@ def draw():
     # brancas na máscara indicam posiçoes da imagem final que são mostradas,
     # regiões pretas serão ocultadas e as cinzas intermediárias mostradas
     # translúcidas
-    clip_mask = createGraphics(400, height)
-    clip_mask.beginDraw()
-    clip_mask.noFill()  # usaremos círculos vazados
+    clip_mask = create_graphics(400, height)
+    clip_mask.begin_draw()
+    clip_mask.no_fill()  # usaremos círculos vazados
     for i in range(128):
         clip_mask.stroke(255 - i * 2)  # cor de traço variável
-        clip_mask.circle(mouseX, mouseY, i)
-    clip_mask.endDraw()
+        clip_mask.circle(mouse_x, mouse_y, i)
+    clip_mask.end_draw()
 
     result = offscreen.copy()  # uma cópia da imagem original
     result.mask(clip_mask)     # esta operação modifica a imagem
     image(result, 0, 0)        # mostra a imagem modificada
     image(offscreen, 400, 0)   # mostra a imagem original
-
-
 ```
 
 # Exemplo avançado de máscara
+
 ```python
-
-
 def setup():
     global offscreen, clip_mask
     size(500, 500)
-    offscreen = createGraphics(width, height)
-    offscreen.beginDraw()
+    offscreen = create_graphics(width, height)
+    offscreen.begin_draw()
     offscreen.clear()  # fundo transparente
     # offscreen.background(0, 200, 0, 100)  # é possível fundo translúcido
     offscreen.fill(255, 0, 0, 128)  # vermelho translúcido
     for _ in range(100):
         offscreen.rect(random(width), random(height), 50, 50)
-    offscreen.endDraw()
+    offscreen.end_draw()
 
 
 def draw():
     background(150, 150, 200)
-    y = frameCount % height
+    y = frame_count % height
     line(0, y, width, y)
 
-    clip_mask = createGraphics(width, height)
-    clip_mask.beginDraw()
+    clip_mask = create_graphics(width, height)
+    clip_mask.begin_draw()
     clip_mask.fill(255)
-    clip_mask.circle(mouseX, mouseY, 250)
-    clip_mask.endDraw()
+    clip_mask.circle(mouse_x, mouse_y, 250)
+    clip_mask.end_draw()
 
     result = offscreen.copy()
     # sem o mouse apertado é mais rápido (desconsidera alpha da imagem
     # original)
-    if mousePressed:
+    if is_mouse_pressed:
         result.mask(min_alphas(offscreen, clip_mask))
     else:
         result.mask(clip_mask)  # máscara normal
@@ -202,11 +186,10 @@ def draw():
 
 def min_alphas(img1, img2):
     """Devolve pixels com alfa do mais transparente de cada par de pixels"""
-    img1.loadPixels()
-    img2.loadPixels()
+    img1.load_pixels()
+    img2.load_pixels()
     return [min(pix1 >> 24 & 0xFF, pix2 >> 24 & 0xFF)  # dark magic, don't ask
             for pix1, pix2 in zip(img1.pixels, img2.pixels)]
-
 
 ```
 
