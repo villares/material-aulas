@@ -15,27 +15,29 @@ Tudo começa com `begin_shape()`, seguido da repetição da função `vertex()` 
 ```python
 size(400, 200)
 
-begin_shape()  # inicia o polígono da esquerda
+begin_shape()  # inicia o desenho do polígono da esquerda
 vertex(10, 10)
 vertex(50, 50)
 vertex(190, 30)
 vertex(90, 150)
 vertex(30, 100)
-end_shape()  # polígono aberto
+end_shape()  # encerra o desenho de um polígono aberto
 
-begin_shape()  # inicia o polígono da direita
+begin_shape()  # inicia o desenho do polígono da direita
 vertex(210, 10)
 vertex(250, 50)
 vertex(390, 30)
 vertex(290, 150)
 vertex(230, 100)
-end_shape(CLOSE)  # polígono fechado
+end_shape(CLOSE)  # encerra o desenho de um polígono fechado
 ```
 ![e4](assets/beginShape_endShape.png)
 
 ## Uma forma alternativa
 
-O Python tem uma estratégia expecial que é aproveitada por quem prepara as bibliotecas para nós quando é preciso "começar" e "encerrar" uma operação depois de um certo ponto do programa, como no exemplo acima o `begin_shape()` e `end_shape()`. Essa essa estratégia propõe que você comece um "contexto" em que a operação está acontecendo com a palavra chave `with` e uma chamda para uma função que cria um *gerenciador de contexto*. Então você indica pela indentação do código as coisas que precisam acontecer naquele contexto, por exemplo enquanto o o `begin_shape()` está em ação. Quando a indentação acaba, o contexto se encerra, e o *gerenciador de contexto* cuida de encerrar o que tiver que ser encerrado. Veja como é possível desenhar os mesmos polígonos anteriores com essa estratégia.
+O Python tem uma estratégia especial, que é aproveitada por quem prepara as bibliotecas para nós, para quando é preciso "começar" uma operação e depois de um certo ponto do programa garantir que ela é "encerrada", como no exemplo acima fazem o `begin_shape()` e `end_shape()`. 
+
+Essa essa estratégia propõe que você crie um "contexto" em que a operação está acontecendo com a palavra chave `with`. É usado `with` e uma chamda para uma função que cria um *gerenciador de contexto*. Então você indica pela indentação do código as coisas que precisam acontecer naquele contexto, por exemplo enquanto o o `begin_shape()` está em ação. Quando a indentação acaba, o contexto se encerra, e, o *gerenciador de contexto*, cuida de encerrar o que tiver que ser encerrado. Veja como é possível desenhar os mesmos polígonos anteriores com essa estratégia.
 
 ```python
 size(400, 200)
