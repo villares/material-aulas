@@ -150,9 +150,13 @@ def draw():
 # Exemplo avançado de máscara
 
 ```python
+# from https://github.com/py5coding/py5generator/discussions/159#discussioncomment-3567982
+import numpy as np
+
 def setup():
-    global offscreen, clip_mask
+    global offscreen, clip_mask, offscreen_alpha_channel
     size(500, 500)
+    clip_mask = create_graphics(width, height)
     offscreen = create_graphics(width, height)
     offscreen.begin_draw()
     offscreen.clear()  # fundo transparente
@@ -161,7 +165,10 @@ def setup():
     for _ in range(100):
         offscreen.rect(random(width), random(height), 50, 50)
     offscreen.end_draw()
-    clip_mask = create_graphics(width, height)
+    # create a clean copy of the offscreen's alpha channel because the draw() method will ruin it
+    offscreen.load_np_pixels()
+    offscreen_alpha_channel = offscreen.np_pixels.copy()[:, :, 0]
+
 
 def draw():
     background(150, 150, 200)
@@ -169,27 +176,21 @@ def draw():
     line(0, y, width, y)
 
     clip_mask.begin_draw()
-    clip_mask.clear()
+    clip_mask.clear()  # necessary because clip_mask is being recycled
     clip_mask.fill(255)
     clip_mask.circle(mouse_x, mouse_y, 250)
     clip_mask.end_draw()
-
-    result = offscreen.copy()
-    # sem o mouse apertado é mais rápido (desconsidera alpha da imagem
-    # original)
+    clip_mask.load_np_pixels()
+    offscreen.load_np_pixels()
     if is_mouse_pressed:
-        result.mask(min_alphas(offscreen, clip_mask))
+        # calculate the minimum alpha values and set the alpha channel to that
+        offscreen.np_pixels[:, :, 0] = np.where(clip_mask.np_pixels[:, :, 0] < offscreen_alpha_channel,
+                                                clip_mask.np_pixels[:, :, 0], offscreen_alpha_channel)
     else:
-        result.mask(clip_mask)  # máscara normal
-    image(result, 0, 0)  # desenha na tela a imagem com a máscara aplicada
-
-
-def min_alphas(img1, img2):
-    """Devolve pixels com alfa do mais transparente de cada par de pixels"""
-    img1.load_pixels()
-    img2.load_pixels()
-    return [min(pix1 >> 24 & 0xFF, pix2 >> 24 & 0xFF)  # dark magic, don't ask
-            for pix1, pix2 in zip(img1.pixels, img2.pixels)]
+        # copy clip_mask's red channel to offscreen's alpha channel
+        offscreen.np_pixels[:, :, 0] = clip_mask.np_pixels[:, :, 1]
+    offscreen.update_np_pixels()
+    image(offscreen, 0, 0)
 
 ```
 
