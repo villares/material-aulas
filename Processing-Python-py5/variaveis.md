@@ -61,13 +61,13 @@ print(idade)  # resultado: 14
 # você pode escrever `idade += 1` que equivale a `idade = idade + 1`
 ```
 
-# Convenções para os nomes das variáveis
+## Convenções para os nomes das variáveis
 
 Nomear uma variável é algo a se pensar com cuidado, vamos inventar um nome que descreva os valores para os quais a variável vai apontar. Não queremos nem um nome muito longo, que dá preguiça de digitar no programa muitas vezes, nem um nome curto demais que vamos esquecer daqui alguns dias do que se trata... Veja abaixo algumas regras sintáticas do Python e recomendações estilísticas:
 
 ```python
 minhaidademental = 13  # correto, mas não muito legível
-minha_idade_mental = 13  # correto, muito usado por programadores Java
+minhaIdadeMental = 13  # correto, muito usado por programadores Java
 minha_idade_mental = 13  # correto, muito usado por Progradores Python
 d20 = 19
 _idade = 42
@@ -85,7 +85,7 @@ _ = 13  # Usamos em alguns casos, quando queremos ignorar um valor. No console i
 minha idade mental = 13  # palavras com espaços
 minha-idade-mental = 13  # palavra com hifens
 # não pode começar com números! idade_mental_2020 funciona.
-2020idade_mental = 13
+2022idade_mental = 13
 a!idade = 13  # só letras e números e _ por favor!
 ```
 
