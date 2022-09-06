@@ -105,7 +105,7 @@ def mouse_pressed():
 
 # Criando uma máscara dinamicamente
 
-![offscreen buffer](assets/clipping_mask.gif)
+![clipping mask](https://user-images.githubusercontent.com/3694604/188624349-0c7e0880-ad0d-47f1-b594-26da4393d459.png)
 
 ```python
 def setup():
@@ -117,10 +117,10 @@ def setup():
     offscreen.background(0, 200, 0)
     offscreen.fill(255)
     for _ in range(100):
-        offscreen.rect(random(400), random(height), 50, 50)
+        offscreen.rect(random(width / 2), random(height), 50, 50)
     offscreen.end_draw()  # também é preciso encerrar o desenho
     cursor(CROSS)  # cursor em cruz
-
+    clip_mask = create_graphics(int(width / 2), height)
 
 def draw():
     background(150, 150, 200)
@@ -128,8 +128,8 @@ def draw():
     # brancas na máscara indicam posiçoes da imagem final que são mostradas,
     # regiões pretas serão ocultadas e as cinzas intermediárias mostradas
     # translúcidas
-    clip_mask = create_graphics(400, height)
     clip_mask.begin_draw()
+    clip_mask.clear()
     clip_mask.no_fill()  # usaremos círculos vazados
     for i in range(128):
         clip_mask.stroke(255 - i * 2)  # cor de traço variável
