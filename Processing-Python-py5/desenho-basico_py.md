@@ -13,7 +13,7 @@ rect(100, 50, 150, 200)
 
 **Experimente alterar os números entre parênteses e executar novamente...**
 
-# Área de desenho e coordenadas
+## Área de desenho e coordenadas
 
 Usamos a função `size()` para indicar o tamanho da área de desenho que desejamos(sem ela é gerada uma pequena tela de 100 por 100 pixels). Processing nos oferece automaticamente duas variáveis, os nomes `width` e `height`, que referenciam os valores de largura e altura da área de desenho, respectivamente. Podemos mostrar esses valores na parte de baixo da janela, o *console* ou *shell*, usando a função `print()` (exibir).
 
@@ -30,7 +30,7 @@ Note que o eixo X cresce para a direita como de costume(nas aulas de matemática
 
 ![Coordenadas](assets/01-coordenadas.jpg)
 
-# Desenhando algumas formas
+## Desenhando algumas formas
 
 ```python
 rect(20, 10, 40, 80)     # retângulo (x, y, largura, altura)
@@ -41,7 +41,7 @@ square(100, 50, 40)      # quadrado na posição x:100 y:50 e lado:40
 circle(50, 100, 40)      # círculo na posição x:50 y:100 e diâmetro:40
 ```
 
-# Cores e atributos gráficos (preenchimento e traço de contorno)
+## Cores e atributos gráficos (preenchimento e traço de contorno)
 
 Para mudar as cores do preenchimento branco e do traço de contorno preto que são usadas inicialmente para desenhar as formas, indicamos inicialmente 3 números de 0 a 255 para definir uma combinação de vermelho(R), verde(G) e azul(B).
 É preciso definir a cor * antes * de pedir o desenho de uma forma!
@@ -74,18 +74,18 @@ fill('#00FF00')  # preenchimento verde
 ellipse(50, 50, 50, 50)  # produz um círculo verde
 ```
 
-# Fundo (*background*) e limpeza da área de desenho
+## Fundo (*background*) e limpeza da área de desenho
 
 O fundo também serve para apagar a área de desenho
 
 ```python
 background(0, 255, 0)  # fundo verde, limpa a tela background(R, G, B)
 ```
-# Onde encontrar os nomes das funções, o vocabulário, e os seus significados?
+## Onde encontrar os nomes das funções, o vocabulário, e os seus significados?
 
 O tempo todo vamos consultar o que é conhecido documentação de referência. Para o vocabulário de desenho da biblioteca py5 fica em [py5coding.org/reference/sketch.html](https://py5coding.org/reference/sketch.html).
 
-# Comentários, o que são e como criar comentários em Python?
+## Comentários, o que são e como criar comentários em Python?
 
 Comentários são anotações, pedaços de texto no código, que não são executados pelo computador, são ignorados. Em Python, comentários começam com `#` e vão até o final da linha. Quando o `#` é no começo da linha ocupam uma linha inteira, e servem também como uma maneira rápida de desativar um trecho do código! Em inglês tem até uma expressão para isso: *comment out* (desativar por meio de um comentário).
 
@@ -109,7 +109,7 @@ Quando ficam logo no começo do corpo de uma definição de função ou classe, 
 chamados 'docstrings' (textos de documentação).
 """
 ```
-# Próximos passos
+## Próximos passos
 
 - [Variáveis](variaveis.md)
 - [Desenhando polígonos](poligonos_1.md)
@@ -118,4 +118,3 @@ chamados 'docstrings' (textos de documentação).
 ---
 
 Este material é parcialmente baseado nos materiais criados para o curso [Progração Criativa](https://arteprog.space/programacao-criativa/)
-
