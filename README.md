@@ -34,7 +34,6 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 
 ##### Processing modo Java
 
-- [processing.org/reference](http://processing.org/reference) - Tem coisas que funcionam no Python
 - Livro [O código transcendente](https://codigotranscendente.github.io/livro/about.html) de Mateus Berruezo
 - [Programação Criativa](http://arteprog.space/programacao-criativa) de Monica Rizzolli e Alexandre Villares
 - [Guia de programação em Processing](https://www.ranoya.com/aulas/designgenerativo/playgroundDocs/introProcessing.php?theme=dgen&elementos=processing), Prof. Guilherme Ranoya (UFPE).
