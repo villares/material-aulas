@@ -1,39 +1,22 @@
-# Usando as abas no IDE do Processing
-# TL:DR; As abas se comportam como *módulos* de Python
+# Usando as abas no Thonny IDE
+## TL:DR; As abas se comportam como *módulos* de Python
 
+```
 from nome_aba import *
 import random as rnd
 from random import choice`
 from nome_aba import uma_funcao, outra_funcao, Uma_classe, Outra_classe
-Múltiplas abas são utilizadas para organizar melhor um * sketch * mais longo. É comum separar as definições de classes e outras funções em abas "secundárias".
+``` 
+
+
+Múltiplas abas são utilizadas para organizar melhor um *sketch* mais longo. É comum separar as definições de classes e outras funções em abas "secundárias".
 
 **As funções `setup()`,  `draw()` assim como as que são acionadas por eventos, por exemplo, `mouse_dragged()` ou `key_pressed()`, precisam ficar na primeira aba.**
 
-# Abas secundárias no modo Python
+Em princípio quando está executando o código de um outro módulo o Pyrhon não conhece o vocabulário da biblioteca py5.
 
-Diferente das abas do modo Java tradicional, que são tratadas como uma continuidade do código na primeira aba, as abas no modo Python são arquivos `.py` e se comportam como "módulos" Python,  por isso precisam ser "importadas", sendo referenciadas com a instrução `import`.
 
-Ao criar uma nova aba, por exemplo, com o nome `segunda_aba`, ela se torna o arquivo `segunda_aba.py`. Note que a primeira aba do * sketch * é um arquivo com a extensão `.pyde`, extensão que fica oculta.
-
-Na primeira aba, ou em qualquer aba que precise do código de outro módulo/aba, é preciso usar algo como:
-```Python
-```
-Ou ainda, considerado preferível e mais elegante em projetos grandes na comunidade Python:
-```python
-```
-Note que o nome do módulo é escrito ** sem a extensão `.py`.**
-
-# Atenção 1: Não esqueça de salvar sempre quando usar abas!
-
-*Sketches * com mais de uma aba, quando modificados não executam corretamente a menos que sejam salvos!
-
-# Atenção 2: Se as abas secundárias tiverem caracteres não-ASCII
-
-Acrescente `  # -*- coding: utf-8 -*-` na primeira linha do arquivo.
-
-Veja também:  [`
-
-# Exemplo de importação da biblioteca padrão do Python
+## Exemplo de importação da biblioteca padrão do Python
 
 A instrução `import` e suas variantes são usadas para importar ferramentas da biblioteca padrão do Python, módulos que vem junto com o interpretador Python contendo diversas funções e classes, mas que só ficam disponíveis quando requisitados.
 
