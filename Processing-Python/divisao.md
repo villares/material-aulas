@@ -1,4 +1,4 @@
-## Divisão com inteiros, obtendo resultados `float`, divisão por zero e o resto da divisão
+## Divisão com inteiros, divisão por zero e o resto da divisão
 
 ### Um pouco de contexto
 
@@ -13,42 +13,11 @@ a = int(10.654)  # note que eum programação o separador decimal é um ponto (.
 print(a)         # exibe como resultado: 10
 ```
 
-### O problema da divisão estranha no Processing modo Python
+### Divisão no Python 3
 
-Em diferentes versões da linguagem Python (Python 2 e Python 3) temos um comportamento diferente para a divisão de dois números inteiros (`int`) e que pode ser  um tanto surpreendente!
-
-Como o Processing modo Python é um Python 2, por padrão, vamos ter o seguinte resultado:
+Para quem está vindo do Python 2, onde uma divisão entre dois números inteiros era forçada a responder com um inteiro (o que surpreendia algumas vezes, `4 / 10` resultava `0`), no Python 3 o resultado agora pode ser um número de ponto flutuante (float).
 
 ```python
-a = 4 / 10
-print(a)
-# resultado: 0
-```
-
-Isso raramente é o que queremos, então, temos algumas estratégias para obter como resultado um número `float`. Primeiro, no caso dos números estarem diretamente no código é possível indicar que os valores são `float` com um ponto decimal (`4.0` ou `4.`)  e no caso de variáveis podemos pedir uma conversão usando `float()`:
-
-```python
-a = 4 / 10.0  # ou 4. / 10 ou 4. / 10. ou 4 / 10.
-print(a)
-# resultado: 0.4 
-```
-Se os números são o resultado de outras operações e vão ser referenciados por meios de variáveis.
-
-```python
-b = 10
-a = 4 / float(b)
-# resultado: 0.4 
-
-d = float(n) / float(m)
-# Para n = 5 e m = 20 o resultado é 0.25
-```
-
-Podemos também obter o comportamento de Python 3 para a divisão utilizando, **logo na primeira linha de um *sketch***, ou de um módulo (um arquivo `.py`), a  linha `from __future__ import division` . Note o duplo *underscore*, `_` antes e depois da palavra  *future*, e não pode haver outras instruções antes dessa linha (exceto comentários que não contam como instruções):
-
-```python
-# Exemplo de como fazer a divisão ficar como no Python 3
-from __future__ import division
-
 a = 4 / 10
 print(a)
 # resultado: 0.4
@@ -101,7 +70,7 @@ Quando você sabe que os valores do denomidador nunca ficam negativos, e o resul
 ```python
 tangente_aproximada = dy / (0.01 + distancia)
 
-fator_de_crescimento = 1 / (1 + mouseX)  # o resultado é no mínimo 1 e sem divisão por zero se mouseX nunca for negativo
+fator_de_crescimento = 1 / (1 + mouse_x)  # o resultado é no mínimo 1 e sem divisão por zero pois mouse_x nunca fica negativo
 ```
 
 ### Agora a parte divertida! O resto da divisão
@@ -187,7 +156,6 @@ Resultado (truncado, seriam 100 números):
 ## Assuntos relacionados
 
 - [Valores e seus tipos](tipagem_py.md)
-- Outras [diferenças entre Python 2 e Python 3](futuro.md)
 
 #### faltando...
 
