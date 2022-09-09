@@ -4,9 +4,9 @@
 
 > O material deste repositório foi criado inicialmente para que se pudesse aprender a programar usando **Processing modo Python**, uma ferramenta livre de programação com a sintaxe de Python e que inclui o vocabulário, os recursos de desenho e manipulação de imagens do Processing. Existem hoje diversas possibilidades de combinar essas duas linguagens, veja abaixo com obter algumas delas:
 > - Biblioteca [py5](https://py5coding.org), recomendada para a versão mais recente deste material, siga as [**instruções de instalação** usando Thonny IDE + plugin](https://github.com/villares/thonny-py5mode/tree/pt-br).
-> - [pyp5js](https://github.com/berinhard/pyp5js), combina Pyodide e p5js, experimente o [**editor online**](https://berinhard.github.io/pyp5js/pyodide/) do projeto.
-> - [O que é e como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/) (usado na versão anterior desete material).
-> - Veja ainda outras opções neste quadro: [Processing + Python tools table](https://github.com/villares/Resources-for-teaching-programming#processing--python-tools-table)
+> - [pyp5js](https://github.com/berinhard/pyp5js), combina pyodide e p5js, experimente o [**editor online**](https://berinhard.github.io/pyp5js/pyodide/) do projeto.
+> - [O que é e como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/), usado na versão anterior desete material.
+> - Outras opções no quadro [Processing + Python tools table](https://github.com/villares/Resources-for-teaching-programming#processing--python-tools-table).
 
 ### Como colaborar e contribuir?
 
