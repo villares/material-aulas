@@ -99,8 +99,6 @@ Existe uma discussão relativamente complexa mas na qual eu não vou entrar aqui
 [**string**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:string) Um tipo que representa sequências de caracteres.
 
 ---
-Este material é baseado no mateMrial do curso https://arteprog.space/programacao-criativa/
 
----
-Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
+Este material é baseado no material do curso https://arteprog.space/programacao-criativa/ - Texto e imagens: CC BY-NC-SA 4.0; Código: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
 
