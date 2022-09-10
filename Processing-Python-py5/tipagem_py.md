@@ -52,11 +52,11 @@ Algumas funções executam operações mas não devolvem nenhum valor, como `set
 Mas muitas funções devolvem algum valor como resultado. Além da função `random()` que devolve um número *float* como acabamos de comentar, `color()`, por exemplo, devolve um número que representa uma cor, e podemos nós também construir funções que devolvem valores:
 
 ```python
-def cor_sorteada(alpha):
+def cor_sorteada(opacidade):
    r = int(random(256)
    g = int(random(256)
    b = int(random(256)
-   return color(r, g, b, alpha)
+   return color(r, g, b, opacidade)
 
 minha_cor = cor_sorteada(255) # sorteia uma cor 
 ```
