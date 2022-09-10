@@ -36,12 +36,12 @@ def seta_vetor(v, origin=(0, 0), head_size=10):
     ou na posição informada com o argumentos opcional `origin`.
     """
     v = Py5Vector(*v)
-    xo, yo = origin
     body = v.mag
-    ang = v.heading
     head_size = min(head_size, body / 2)
-    xh = xo + cos(ang) * body
-    yh = yo + sin(ang) * body
+    xo, yo = origin
+    xh = xo + v.x
+    yh = yo + v.y
+    ang = v.heading
     xha = xh + cos(ang + QUARTER_PI / 2 + PI) * head_size
     yha = yh + sin(ang + QUARTER_PI / 2 + PI) * head_size
     xhb = xh + cos(ang - QUARTER_PI / 2 + PI) * head_size
