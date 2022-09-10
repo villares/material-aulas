@@ -62,7 +62,7 @@ def draw():
 
 <div id = "iframe_DIV" > <img src = "assets/estrela_indentacao.gif" > </div >
 
-<a id = "iframe_A" href = "https://abav.lugaralgum.com/material-aulas/Processing-Python/assets/indentacao/" > Veja o resultado aqui < /a >
+<a id="iframe_A" href="https://abav.lugaralgum.com/material-aulas/Processing-Python/assets/indentacao/">Veja o resultado aqui</a>
 
 # Assuntos relacionados
 
