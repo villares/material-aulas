@@ -1,11 +1,11 @@
 
 # Valores e seus tipos
 
-Em computação existe uma classificação dos valores armazenados na memória do computador, dizemos que os valores tem um *tipo*.  Diferentes linguagens de programação tratam de como indicamos os tipos, ou de como reconhecemos e manipulamos valores de diferentes tipos, de maneiras diferentes.
+Em computação existe uma classificação dos valores armazenados na memória do computador, dizemos que os valores tem um *tipo*.  Diferentes linguagens de programação tratam da especificação dos tipos, e da forma como manipulamos valores de diferentes tipos, de maneiras diferentes. Em Python, quando fazemos uma atribuição, criando ou alterando uma variável, não somos obrigados a mencionar o tipo. Podemos dizer que os tipos em Python são atributos dos objetos e não das variáveis, os nomes que apontam para eles. 
 
-Em Python, quando fazemos uma atribuição, criando ou alterando uma variável, por exemplo `i = 10`, o `i` é um nome que aponta para um valor na memória, `10`, um número **inteiro**, do tipo *integer* que é normalmente abreviado como `int`. 
+Vejamos alguns exemplos. Fazendo uma atribuição com `i = 10`, o `i` é um nome que aponta para um valor na memória, `10`, um número **inteiro**, do tipo *integer* que é normalmente abreviado como `int`. 
 
-Já `10.5`, `0.2` que tem uma parte fracionária, ou até mesmo `10.` (dez seguido de um ponto), são considerados **números de ponto flutuante**, *floating point* ou abreviadamente `float`. Valores numéricos em Python são, na maior parte das vezes, dos tipos ***inteiro***  ou  ***ponto flutuante***. Mas há também tipos como ***número complexo*** ([mais detalhes na documentação do Python](https://docs.python.org/pt-br/3/library/stdtypes.html#numeric-types-int-float-complex)), entre outros.
+Outros exemplos de valor numérico são `10.5` e `0.2`, números que tem uma parte fracionária, ou até mesmo `10.` (dez seguido de um ponto), são considerados **números de ponto flutuante**, *floating point* ou abreviadamente `float`. Valores numéricos em Python são, na maior parte das vezes, dos tipos ***inteiro***  ou  ***ponto flutuante***. Mas há também tipos como ***número complexo*** ([mais detalhes na documentação do Python](https://docs.python.org/pt-br/3/library/stdtypes.html#numeric-types-int-float-complex)), entre outros.
 
 Textos, que aparecem entre aspas quando no meio do código de um programa, como por exemplo `'hello'` ou `"Eric Idle"`, são do tipo ***string*** (cadeia de caracteres em português) que abreviamos como `str`. Repare que `"1010"` é um *string* enquanto `1010` é um número inteiro, `int`, e `1010.0` é `float`. 
 
