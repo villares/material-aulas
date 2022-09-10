@@ -1,11 +1,41 @@
 # Desenhando polígonos - II
-# Mais sobre polígonos e PShape
+
+## Mais sobre polígonos e outras "polilinhas" com Py5Shape
+
+### Uma forma alternativa ao `begin_shape()`/`close_shape()`
+
+O Python tem uma estratégia especial, que é aproveitada por quem prepara as bibliotecas para nós, para quando é preciso "começar" uma operação e depois de um certo ponto do programa garantir que ela é "encerrada", como no exemplo acima fazem o `begin_shape()` e `end_shape()`. 
+
+Essa essa estratégia propõe que você crie um "contexto" em que a operação está acontecendo com a palavra chave `with`. É usado `with` e uma chamda para uma função que cria um *gerenciador de contexto*. Então você indica pela indentação do código as coisas que precisam acontecer naquele contexto, por exemplo enquanto o o `begin_shape()` está em ação. Quando a indentação acaba, o contexto se encerra, e, o *gerenciador de contexto*, cuida de encerrar o que tiver que ser encerrado. Veja como é possível desenhar os mesmos polígonos anteriores com essa estratégia.
+
+```python
+size(400, 200)
+
+with begin_shape():  # inicia o polígono aberto
+    vertex(10, 10)
+    vertex(50, 50)
+    vertex(190, 30)
+    vertex(90, 150)
+    vertex(30, 100)
+# acaba a indentação e terminou o desenho do polígono
+
+with begin_closed_shape():  # inicia o polígono fechado
+    vertex(210, 10)
+    vertex(250, 50)
+    vertex(390, 30)
+    vertex(290, 150)
+    vertex(230, 100)
+# aqui já acabou o desenho do polígono
+```
+
+![image](https://user-images.githubusercontent.com/3694604/189493248-0bb81ba8-955a-43d8-8ba2-a077bda4c6f6.png)
+
+
+### Usando pontos de uma estrutura de dados
 
 Agora que já sabemos iterar por uma estrutura de dados, podemos usar as coordenadas das tuplas na lista que vimos anteriormente para desenhar um polígono ou mais genericamente um 'forma' Py5Shape:
 
 ```python
-
-
 def setup():
     size(400, 400)
 
@@ -15,9 +45,20 @@ def setup():
     for x, y in pontos:
         vertex(x, y)
     end_shape(CLOSE)
+```
 
+ou ainda mais sintético, se usarmos o gerenciador de contex `with begin_closed_shape()` e a função `vertices()` que aceita um iterável com os pontos dentro!
 
 ```
+def setup():
+    size(400, 400)
+
+    pontos = [(50, 50), (300, 370), (200, 50), (150, 150)]
+
+    with begin_closed_shape():
+        vertices(pontos)
+```
+
 
 ![poligono_2](assets/poligono_2.png)
 
