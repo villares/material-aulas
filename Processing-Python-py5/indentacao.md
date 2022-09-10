@@ -24,11 +24,11 @@ Essa sintaxe com o espaço de indentação, e com `: `, vai ser usada em inúmer
 
 # Animando uma estrela com o movimento do mouse
 
-Vamos ver agora um exemplo que precisa de indentação, avançando um pouco em ideias cujos detalhes você pode retomar depois na página sobre[movimento](movimento_py.md).
+Vamos ver agora um exemplo que precisa de indentação, avançando um pouco em ideias cujos detalhes você pode retomar depois na página sobre [movimento](movimento_py.md).
 
 # A função `setup()` e a função `draw()`
 
-Podemos reorganizar o código anterior mostrado no[primeiro contato com polígonos](poligonos_1.md) colocando os ajustes iniciais(*setup*), como  `size(200, 200)`, dentro da definição de função `def setup(): `, e a parte que desenha(*draw*) dentro de `def draw(): `.
+Podemos reorganizar o código anterior mostrado no [primeiro contato com polígonos](poligonos_1.md) colocando os ajustes iniciais(*setup*), como  `size(200, 200)`, dentro da definição de função `def setup(): `, e a parte que desenha(*draw*) dentro de `def draw(): `.
 
 A função `setup()` vai ser executada apenas uma vez no começo, e a função `draw()` fica repetindo sem parar, permitindo o movimento. Repare como a indentação é o que determina  o que está dentro de cada função.
 
