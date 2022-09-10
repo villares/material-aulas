@@ -49,7 +49,7 @@ def setup():
 
 ou ainda mais sintético, se usarmos o gerenciador de contex `with begin_closed_shape()` e a função `vertices()` que aceita um iterável com os pontos dentro!
 
-```
+```python
 def setup():
     size(400, 400)
 
