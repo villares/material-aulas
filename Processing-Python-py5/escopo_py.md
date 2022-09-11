@@ -40,7 +40,7 @@ Sem a instrução `global x` dentro da função `mouse_pressed()` você não ver
 
 ## Variáveis locais
 
-Quando criamos uma variável dentro da definição de uma função (como a função `setup()`, por exemplo), a variável tem * escopo local*, isto significa que somente o código dentro daquela função reconhece o nome e pode usar os valores a ele atribuídos.
+Quando criamos uma variável dentro da definição de uma função (como a função `setup()`, por exemplo), a variável tem *escopo local*, isto significa que somente o código dentro daquela função reconhece o nome e pode usar os valores a ele atribuídos.
 
 Os parâmetros são os nomes que recebem os valores (argumentos), usados na chamada de uma função, são declarados no cabeçalho da definição da função, e também são nomes do escopo local da função.
 
