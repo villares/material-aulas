@@ -38,10 +38,11 @@ no_fill()  # desliga o preenchimento das formas a ser desenhadas
 
 # O resultado de uma função pode ser usado em uma atribuição, ou dentro de
 # outra estrutura
-a=funcao_com_resultado(valor)
+a = funcao_com_resultado(valor)
 print(funcao_com_resultado(valor))
+
 # um exemplo de função que devolve resultado visto anteriormente
-r=random(256)
+r = random(256)
 # a função inteira usada como argumento de outra função!
 fill(random(256), random(256), random(256))
 ```
@@ -57,7 +58,7 @@ def setup():
     # chamando a função olho várias vezes
     olho(300, 100, 100)  # x, y, tamanho
     olho(100, 200, 50)
-    tamanho_sorteado=random(10, 150)
+    tamanho_sorteado = random(10, 150)
     olho(200, 300, tamanho_sorteado)
 
 # definindo a função olho
@@ -83,10 +84,10 @@ Aqui alguns exemplos:
 ```python
 def cor_sorteada():
     """Sorteia uma cor RGB"""
-    r=random(256)
-    g=random(256)
-    b=random(256)
-    cor=color(r, g, b)
+    r = random(256)
+    g = random(256)
+    b = random(256)
+    cor = color(r, g, b)
     return cor  # instrução que devolve a cor e retorna o fluxo de execução
 ```
 
