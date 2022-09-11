@@ -82,20 +82,20 @@ def olho(x, y, tamanho):  # parâmetros x, y, tamanho
 tamanho_maximo = 50
 
 def setup():
-    global x, y  # para criar uma variáveis globais x e y aqui no setup()
+    global x, y  # para criar variáveis globais x e y aqui dentro do setup()
     size(256, 256)
     y = height * 0.4
     x = tamanho_maximo / 2
 
 def draw():
-    global x  # necessário para poder alterar a variável global x aqui no draw()
-    # repare que vamos 'ler' o valor de y, mas não vamos alterar
+    global x  # para poder alterar a variável global x aqui no draw()
+    # repare que vamos 'ler' o valor de y e de tamanho_maximo sem alterar
     background(0)
     tamanho = random(tamanho_maximo / 5, tamanho_maximo)  # tamanho é uma variável local
-    ellipse(x, y, tamanho, tamanho)  # x e y são variáveis globais
+    ellipse(x, y, tamanho, tamanho)  # x e y são variáveis globais, assim como tamanho_maximo
     x = x + 1
     if x > width:
-        x = tamanho_maximo / 2
+        x = tamanho_maximo / 2  
 ```
 ![vibrando](assets/escopo.gif)
 
