@@ -26,6 +26,8 @@ print(a)
 > ```python
 > a = int(10.654)  # note que eum programação o separador decimal é um ponto (.)
 > print(a)         # exibe como resultado: 10
+> b = round(10.654)
+> print(b)         # experimente e descubra!
 > ```
 
 ### O problema da divisão por zero (e um pouco sobre tratamento de exceções)
