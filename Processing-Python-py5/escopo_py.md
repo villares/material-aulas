@@ -34,7 +34,7 @@ def mouse_pressed():
 
 ![key_pressed](assets/escopo_teclado.gif)
 
-Sem a instrução `global x` dentro da função `key_pressed()` você verá o erro `UnboundLocalError: local variable 'x' referenced before assignment`. Pois o Python acredita que você está tentando altera uma variável local `x` que ele não encontrou.
+Sem a instrução `global x` dentro da função `key_pressed()` você verá o erro `UnboundLocalError: local variable 'x' referenced before assignment`. Pois o Python acredita que você está tentando alterar uma variável local `x` que ele não encontrou.
 
 Sem a instrução `global x` dentro da função `mouse_pressed()` você não verá nenhuma mensagem de erro, mas o clique do mouse não vai fazer o círculo voltar para a posição 0, pois simplesmente será criada uma nova variável local `x` e a variável global `x` não será modificada. Experimente executar este código e fazer modificações para ver o que acontece!
 
