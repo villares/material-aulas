@@ -24,11 +24,9 @@ print(a)
 > A forma mais comum de converter um número de ponto flutuante (`float`) em inteiros (`int`) é usando a função embutida `int()`. Mas note que isso simplesmente joga fora a parte depois da vírgula (que em programação é um ponto!) e não é como outros tipos de 'arredondamento' (experimente usar `round()` para ver o que acontece...).
 > 
 > ```python
-a = int(10.654)  # note que eum programação o separador decimal é um ponto (.)
-print(a)         # exibe como resultado: 10
-```
-
-
+> a = int(10.654)  # note que eum programação o separador decimal é um ponto (.)
+> print(a)         # exibe como resultado: 10
+> ```
 
 ### O problema da divisão por zero (e um pouco sobre tratamento de exceções)
 
