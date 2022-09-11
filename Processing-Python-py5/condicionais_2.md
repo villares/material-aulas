@@ -90,8 +90,10 @@ def quadrado(x, y, tamanho=None):
     tamanho = tamanho if tamanho is not None else 10
     rect(x, y, tamanho, tamanho)
 ```
-ou talvez mais legível:
-```
+
+ou, talvez mais legível:
+
+```python
 def quadrado(x, y, tamanho=None):
     if tamanho is None:
         tamanho = 10
