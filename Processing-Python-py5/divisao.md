@@ -1,18 +1,5 @@
 ## Divisão com inteiros, divisão por zero e o resto da divisão
 
-### Um pouco de contexto
-
-Em computação existem sistemas de classificação para valores armazenados na memória do computador, dizemos que os valores tem um *tipo*. Valores numéricos em Python são, na maior parte das vezes, dos tipos ***inteiro*** (abreviamos `int`), ***ponto flutuante*** (que tem uma parte fracionária, e abreviamos `float`) ou ***número complexo*** (`complex`, sendo `1j` a raiz quadrada de -1, que na escola costumamos chamar de *i*).
-
-#### Conversão em inteiros
-
-A forma mais comum de converter um número de ponto flutuante (`float`) em inteiros (`int`) é usando a função embutida `int()`. Mas note que isso simplesmente joga fora a parte depois da vírgula (que em programação é um ponto!) e não é como outros tipos de 'arredondamento' (experimente usar `round()` para ver o que acontece...).
-
-```python
-a = int(10.654)  # note que eum programação o separador decimal é um ponto (.)
-print(a)         # exibe como resultado: 10
-```
-
 ### Divisão no Python 3
 
 Para quem está vindo do Python 2, onde uma divisão entre dois números inteiros era forçada a responder com um inteiro (o que surpreendia algumas vezes, `4 / 10` resultava `0`), no Python 3 o resultado agora pode ser um número de ponto flutuante (float).
@@ -27,6 +14,21 @@ a = 5 // 2
 print(a)
 # resultado: 2
 ```
+> #### Um pouco de contexto
+>
+> Em computação existem sistemas de classificação para valores armazenados na memória do computador, dizemos que os valores tem um *tipo*. Valores numéricos em Python são, na maior parte das vezes, dos tipos ***inteiro*** (abreviamos `int`), ***ponto flutuante*** (que tem uma parte fracionária, e abreviamos `float`) ou ***número complexo*** (`complex`, sendo `1j` a raiz quadrada de -1, que na escola costumamos chamar de *i*). 
+> Leia mais sobre isso em: [Tipos de valores(inteiros, números de ponto flutuante, texto(strings))](tipagem_py.md)
+>
+> #### Conversão em inteiros
+> 
+> A forma mais comum de converter um número de ponto flutuante (`float`) em inteiros (`int`) é usando a função embutida `int()`. Mas note que isso simplesmente joga fora a parte depois da vírgula (que em programação é um ponto!) e não é como outros tipos de 'arredondamento' (experimente usar `round()` para ver o que acontece...).
+> 
+> ```python
+a = int(10.654)  # note que eum programação o separador decimal é um ponto (.)
+print(a)         # exibe como resultado: 10
+```
+
+
 
 ### O problema da divisão por zero (e um pouco sobre tratamento de exceções)
 
