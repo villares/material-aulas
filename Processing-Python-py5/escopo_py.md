@@ -1,6 +1,6 @@
 # Escopo: variáveis locais e globais
 
-Grosso modo, *escopo* é como nos referimos à região do código onde os nomes das variáveis, ou os nomes de parâmetros de uma função, estão associados a certos valores. Informalmente costumo dizer que é onde no programa uma variável é conhecida. Por exemplo, se você tenta usar uma variável que foi definida em um escopo local fora desse escopo vai obter um `NameError` e o seu programa será interrompido. Outros problemas também podem aparecer se você tentar modificar um nome global saber o que está fazendo.
+Grosso modo, *escopo* é como nos referimos à região do código onde os nomes das variáveis, ou os nomes de parâmetros de uma função, estão associados a certos valores. Informalmente costumo dizer que é onde no programa uma variável é conhecida. Por exemplo, se você tenta usar uma variável que foi definida em um escopo local fora desse escopo vai obter um `NameError` e o seu programa será interrompido. Outros problemas também podem aparecer se você tentar modificar um nome global descuidademente.
 
 ## Variáveis globais
 
