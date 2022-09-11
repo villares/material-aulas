@@ -78,23 +78,24 @@ def olho(x, y, tamanho):  # parâmetros x, y, tamanho
 ### Mais um exemplo, com variáveis globais e locais
 
 ```python
-# y é uma variável global, pode ser usada em qualquer ponto do programa.
-y = 100
+# tamanho_maximo é uma variável global, pode ser usada em qualquer ponto do programa.
+tamanho_maximo = 50
 
 def setup():
-    global x  # para criar uma variável global x aqui no setup()
+    global x, y  # para criar uma variáveis globais x e y aqui no setup()
     size(256, 256)
-    x = width / 2
+    y = height * 0.4
+    x = tamanho_maximo / 2
 
 def draw():
     global x  # necessário para poder alterar a variável global x aqui no draw()
     # repare que vamos 'ler' o valor de y, mas não vamos alterar
     background(0)
-    tamanho = random(10, 50)  # tamanho é uma variável local
+    tamanho = random(tamanho_maximo / 5, tamanho_maximo)  # tamanho é uma variável local
     ellipse(x, y, tamanho, tamanho)  # x e y são variáveis globais
     x = x + 1
     if x > width:
-        x = 0
+        x = tamanho_maximo / 2
 ```
 ![vibrando](assets/escopo.gif)
 
