@@ -12,7 +12,7 @@
 - [Condicionais(`if` e `else`)](condicionais_py.md)
   - [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](atribuicao-e-comparacao.md)
   - [Condições aninhadas e outras estruturas condicionais](condicionais_2.md)
-  - [Divisão com inteiros, obtendo resultados `float`, divisão por zero e o resto da divisão](divisao.md) [REVISAR]
+  - [Divisão com inteiros, divisão por zero e o resto da divisão](divisao.md)
 - [Movimento: uma animação simples usando `setup()` e `draw()`](movimento_py.md)
   - [Escopo de variáveis(local e global)](escopo_py.md)
 - [Declarando novas funções](funcoes_py.md)
