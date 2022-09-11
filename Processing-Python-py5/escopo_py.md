@@ -4,9 +4,9 @@ Grosso modo, *escopo* é como nos referimos à região do código onde os nomes 
 
 # Variáveis globais
 
-Criamos variáveis globais quando atribuímos um valor a um nome fora do corpo das funções do nosso programa(normalmente no começo do programa), também podemos dizer que a variável * tem escopo global*.
+Criamos variáveis globais quando atribuímos um valor a um nome fora do corpo das funções do nosso programa (normalmente no começo do programa), também podemos dizer que a variável *tem escopo global*.
 
-Essas variáveis podem ser usadas ao longo de todo o programa. Se você desejar criar uma nova variável global, ou reatribuir (alterar) o valor de uma variável global de dentro de uma função, em Python, é necessário usar a instrução `global`. Exemplo:
+Essas variáveis podem ser usadas ao longo de todo o programa. Se você desejar criar uma nova variável global, ou reatribuir uma variável global (alterar o valor para o qual o nome da variável aponta) de dentro de uma função, em Python, é necessário usar a instrução `global`. Exemplo:
 
 # Exemplo de uma variável global
 
@@ -15,11 +15,11 @@ x = 0  # x é uma variável global
 
 def setup():
     size(256, 256)
-    background(0, 0, 200)
+    background(0, 0, 200)  # fundo azul
 
 def draw():
     # Podemos usar/ler o valor da variável global x.
-    ellipse(x, height / 2, 100, 100)
+    ellipse(x, height / 2, 100, 100)   # y é 128 e diâmetro 100
 
 def key_pressed():
     # Queremos alterar o valor da variável global x.
@@ -28,6 +28,7 @@ def key_pressed():
     
 def mouse_pressed():
     global x   # Sem esta instrução uma variável local x vai ser criada!
+    background(0, 0, 200)  # limpa a tela com fundo azul
     x = 0
 ```
 
@@ -35,13 +36,13 @@ def mouse_pressed():
 
 Sem a instrução `global x` dentro da função `key_pressed()` você verá o erro `UnboundLocalError: local variable 'x' referenced before assignment`. Pois o Python acredita que você está tentando altera uma variável local `x` que ele não encontrou.
 
-Sem a instrução `global x` dentro da função `mouse_pressed()` você não verá nenhuma mensagem de erro, mas o clique do mouse não vai fazer o círculo voltar para a posição 0, pois simplesmente será criada uma nova variável local `x` e a variável global `x` não será modificada.
+Sem a instrução `global x` dentro da função `mouse_pressed()` você não verá nenhuma mensagem de erro, mas o clique do mouse não vai fazer o círculo voltar para a posição 0, pois simplesmente será criada uma nova variável local `x` e a variável global `x` não será modificada. Experimente executar este código e fazer modificações para ver o que acontece!
 
 # Variáveis locais
 
-Quando criamos uma variável dentro da definição de uma função(como a função `setup()`, por exemplo), a variável tem * escopo local*, isto significa que somente o código dentro daquela função reconhece o nome e pode usar os valores a ele atribuídos.
+Quando criamos uma variável dentro da definição de uma função (como a função `setup()`, por exemplo), a variável tem * escopo local*, isto significa que somente o código dentro daquela função reconhece o nome e pode usar os valores a ele atribuídos.
 
-Os parâmetros são os nomes que recebem os valores, argumentos, usados na chamada de uma função, são declarados no cabeçalho da definição da função, e também são nomes do escopo local da função.
+Os parâmetros são os nomes que recebem os valores (argumentos), usados na chamada de uma função, são declarados no cabeçalho da definição da função, e também são nomes do escopo local da função.
 
 # Exemplo de uma variável local
 
@@ -69,7 +70,7 @@ def olho(x, y, tamanho):  # parâmetros x, y, tamanho
 
 # Recapitulando
 
-- **Variáveis globais** - Frequentemente criadas no início do * sketch*, e fora de qualquer função(incluindo `setup()` e `draw()`), as variáveis globais podem ser consultadas em qualquer parte do programa. É possível criar ou alterar uma variável global dentro de uma função, mas para isso é necessário incluir a instrução `global` antes!
+- **Variáveis globais** - Frequentemente criadas no início do *sketch*, e fora de qualquer função(incluindo `setup()` e `draw()`), as variáveis globais podem ser consultadas em qualquer parte do programa. É possível criar ou alterar uma variável global dentro de uma função, mas para isso é necessário incluir a instrução `global` antes!
 
 - **Variáveis locais** - Criadas dentro de uma função, as variáveis locais são, assim como os nomes dos parâmetros, nomes que  pertencem ao escopo local da função em que foram criados.
 
