@@ -109,7 +109,7 @@ Em *sketches*, programas raramente muito grandes e com propósitos visuais, voc�
 
 ## Glossário
 
-[**variável**](https://penseallen.github.io/pense)ython2e/02-vars-expr-instr.html#termo:variável) Um nome que se refere a um valor.
+[**variável**](https://penseallen.github.io/pensePython2e/02-vars-expr-instr.html#termo:variável) Um nome que se refere a um valor.
 
 [**variável local**](https://penseallen.github.io/pensePython2e/03-funcoes.html#termo:variável%20local) Uma variável definida dentro de uma função. Uma variável local só pode ser usada dentro da sua função.
 
