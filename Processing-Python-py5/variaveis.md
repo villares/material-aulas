@@ -1,6 +1,6 @@
 # Variáveis
 
-Variáveis são nomes que inventamos quando estamos escrevendo um programa, e que apontam para valores na memória do computador. Esses valores podem ser simples como números inteiros(*int*/*integer*), textos(*str*/*string*) ou, de maneira genérica, a entidades que chamamos de * objetos*. Em Python, como vai ser possível perceber futuramente, há muitos tipos de objetos e sempre podemos fazer referência a eles por meio de variáveis.
+Variáveis são nomes que inventamos quando estamos escrevendo um programa, e que apontam para valores na memória do computador. Esses valores podem ser simples como números inteiros(*int*/*integer*), textos(*str*/*string*) ou, de maneira genérica, entidades que chamamos de *objetos*. Em Python, como vai ser possível perceber futuramente, há muitos tipos de objetos e sempre podemos fazer referência a eles por meio de variáveis.
 
 ## Atribuição
 
@@ -8,7 +8,7 @@ Para criar uma nova variável, e também para modificar o valor para o qual uma 
 
 ```python
 lado = 50  # cria a variável `lado` que aponta para o valor 50
-rect(10, 10, lado, lado)  # desenha um retângulo com 50 de largura e 50 de alt
+rect(10, 10, lado, lado)  # desenha um retângulo na posição x:10, y:10, largura:50, altura:50
 
 nome = 'Guido'
 text(nome, 20, 20)  # desenha o texto de `nome` na área de desenho
@@ -20,9 +20,9 @@ text(nome, 20, 20)  # desenha o texto de `nome` na área de desenho
 # do tipo NameError (não conheço `a`)
 
 a = 10  # cria a variável `a` que aponta para o valor 10
-rect(a, 10, 40, 40)  # desenha um retângulo em x:10, y:10
+rect(a, 10, 40, 40)  # desenha um quadrado de lado 40 em x:10, y:10
 a = a + 45  # calcula o valor de `a + 45` e faz a variável `a` apontar para o novo valor*
-rect(a, 10, 40, 40)  # desenha um retângulo em x:55, y:10
+rect(a, 10, 40, 40)  # desenha um quadrado em x:55, y:10
 
 # *ou, em outras palavras: "veja quanto está valendo `a` agora, some 45 e este é o novo valor de `a`
 # isso também pode ser escrito assim: a += 45
@@ -58,7 +58,7 @@ idade = idade + 1
 # realiza a atribuição: idade = 14
 print(idade)  # resultado: 14
 
-# você pode escrever `idade += 1` que equivale a `idade = idade + 1`
+# Você pode encontrar também a forma abreviada `idade += 1` que equivale a `idade = idade + 1`
 ```
 
 ## Convenções para os nomes das variáveis
@@ -67,8 +67,8 @@ Nomear uma variável é algo a se pensar com cuidado, vamos inventar um nome que
 
 ```python
 minhaidademental = 13  # correto, mas não muito legível
-minhaIdadeMental = 13  # correto, muito usado por programadores Java
-minha_idade_mental = 13  # correto, muito usado por Progradores Python
+minhaIdadeMental = 13  # correto, muito usado por pessoas que usam Java
+minha_idade_mental = 13  # correto, muito usado pela comunidade Python
 d20 = 19
 _idade = 42
 x = 100
@@ -79,13 +79,12 @@ MinhaIdadeMental = 13  # Reservamos nomes com a 1ª letra maiúscula para 'class
 
 # Casos especiais
 IDADE_MAXIMA = 200  # Costumamos usar só para valores que não mudam, 'constantes'.
-_ = 13  # Usamos em alguns casos, quando queremos ignorar um valor. No console interativo captura o último valor avaliado.
+_ = 13  # Usamos em alguns casos, quando queremos ignorar um valor.
 
 # Não funciona! Incorreto!
 minha idade mental = 13  # palavras com espaços
 minha-idade-mental = 13  # palavra com hifens
-# não pode começar com números! idade_mental_2020 funciona.
-2022idade_mental = 13
+2022idade_mental = 13  # não pode começar com números! idade_mental_2020 funciona.
 a!idade = 13  # só letras e números e _ por favor!
 ```
 

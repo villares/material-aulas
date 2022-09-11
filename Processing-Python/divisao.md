@@ -1,12 +1,11 @@
-# Divisão com inteiros, obtendo resultados `float`, divisão por zero e o
-# resto da divisão
+# Divisão com inteiros, obtendo resultados `float`, divisão por zero e o resto da divisão
 
-# Um pouco de contexto
+### Um pouco de contexto
 
 
 Em computação existem sistemas de classificação para valores armazenados na memória do computador, dizemos que os valores tem um * tipo*. Valores numéricos em Python são, na maior parte das vezes, dos tipos ** *inteiro*** (abreviamos `int`), ***ponto flutuante*** (que tem uma parte fracionária, e abreviamos `float`) ou ** *número complexo*** (`complex`, sendo `1j` a raiz quadrada de - 1, que na escola costumamos chamar de * i*).
 
-# Conversão em inteiros
+### Conversão em inteiros
 
 A forma mais comum de converter um número de ponto flutuante(`float`) em inteiros(`int`) é usando a função embutida `int()`. Mas note que isso simplesmente joga fora a parte depois da vírgula(que em programação é um ponto!) e não é como outros tipos de 'arredondamento' (experimente usar `round()` para ver o que acontece...).
 
@@ -15,7 +14,7 @@ a = int(10.654)  # note que eum programação o separador decimal é um ponto (.
 print(a)         # exibe como resultado: 10
 ```
 
-# O problema da divisão estranha no Processing modo Python
+### O problema da divisão estranha no Processing modo Python
 
 Em diferentes versões da linguagem Python(Python 2 e Python 3) temos um comportamento diferente para a divisão de dois números inteiros(`int`) e que pode ser  um tanto surpreendente!
 
@@ -60,7 +59,7 @@ print(a)
 # resultado: 2
 ```
 
-# O problema da divisão por zero (e um pouco sobre tratamento de exceções)
+### O problema da divisão por zero (e um pouco sobre tratamento de exceções)
 
 Provavelmente você se lembra que o resultaddo de dividir um número por zero é em geral considerado um valor "indefinido" na maior parte dos contextos matemáticos. Em Python se o seu programa for obrigado a avaliar essa conta ele vai parar tudo e "levantar uma exceção" chamada `ZeroDivisionError`.
 
@@ -95,7 +94,8 @@ try:
 except ZeroDivisionError:
     resultado = 1000000
 ```
-# Uma outra maneira, malandra
+
+### Uma outra maneira, malandra
 
 Quando você sabe que os valores do denomidador nunca ficam negativos, e o resultado da divisão pode ser um número aproximado, é possível somar algum valor que apenas impeça o denomidador de ser zero.
 
@@ -103,10 +103,10 @@ Quando você sabe que os valores do denomidador nunca ficam negativos, e o resul
 tangente_aproximada = dy / (0.01 + distancia)
 
 # o resultado é no mínimo 1 e sem divisão por zero se mouseX nunca for negativo
-fator_de_crescimento = 1 / (1 + mouse_x)
+fator_de_crescimento = 1 / (1 + mousex)
 ```
 
-# Agora a parte divertida! O resto da divisão
+### Agora a parte divertida! O resto da divisão
 
 Em inglês a operação para obter o resto da divisão com inteiros tem o nome de * modulo * ou * modulus * o que pode causar uma grande confusão pois na matemática em português a palavra 'módulo' com a notação `| num |` é usada também para falar do valor absoluto(sem o sinal) de um número(em programação usamos `abs()` para isso), e em Python módulo é o nome de pedaço organizado de uma * biblioteca de funções de programação*, em geral um arquivo `.py`.
 
@@ -119,21 +119,21 @@ print(resto)  # exibe: 1
 ```
 E essa operação é ** extremamente útil**, para saber se um número é par ou ímpar, se é divisível por um certo número ou para produzir sequencias que se repetem!
 
-# Testando se um número é par
+#### Testando se um número é par
 ```python
 if a % 2 == 0:
     print('a é par!')
 else:
     print('a é impar!')
 ```
-# Testando se um número é divisível por outro
+#### Testando se um número é divisível por outro
 ```python
 if a % b == 0:
     print('a é divisível por b!')
 else:
     print('a não é divisível por b!')
 ```
-# Mantendo os números circulando até um valor máximo
+#### Mantendo os números circulando até um valor máximo
 
 Para qualquer valor de ** a**, o resultado da expressão ** a % b ** sempre é menor que ** b**, e no máximo vale ** b - 1**.
 Podemos usar ** n % max ** em uma sequencia crescente de números ** n ** para obter uma sequência de números com repetição periódica da seguinte maneira:
@@ -178,7 +178,7 @@ Resultado(truncado, seriam 100 números):
 4
 ```
 
-# Glossário
+## Glossário
 
 [**tipo**](https://penseallen.github.io/PensePython2e/01-jornada.html  # termo:tipo) Uma categoria de valores. Alguns tipos que vimos por enquanto são números inteiros (tipo `int`), números de ponto flutuante (tipo `float`) e *strings* (tipo `str`).
 
@@ -186,11 +186,11 @@ Resultado(truncado, seriam 100 números):
 
 [**ponto flutuante**](https://penseallen.github.io/PensePython2e/01-jornada.html  # termo:ponto%20flutuante) Um tipo que representa números com partes fracionárias.
 
-# Assuntos relacionados
+## Assuntos relacionados
 
 - [Valores e seus tipos](tipagem_py.md)
 - Outras[diferenças entre Python 2 e Python 3](futuro.md)
 
-# faltando...
+## faltando...
 
 - Erros causados pela representação interna dos números decimais em binário no computador

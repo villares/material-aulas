@@ -33,32 +33,6 @@ end_shape(CLOSE)  # encerra o desenho de um polígono fechado
 ```
 ![e4](assets/beginShape_endShape.png)
 
-## Uma forma alternativa
-
-O Python tem uma estratégia especial, que é aproveitada por quem prepara as bibliotecas para nós, para quando é preciso "começar" uma operação e depois de um certo ponto do programa garantir que ela é "encerrada", como no exemplo acima fazem o `begin_shape()` e `end_shape()`. 
-
-Essa essa estratégia propõe que você crie um "contexto" em que a operação está acontecendo com a palavra chave `with`. É usado `with` e uma chamda para uma função que cria um *gerenciador de contexto*. Então você indica pela indentação do código as coisas que precisam acontecer naquele contexto, por exemplo enquanto o o `begin_shape()` está em ação. Quando a indentação acaba, o contexto se encerra, e, o *gerenciador de contexto*, cuida de encerrar o que tiver que ser encerrado. Veja como é possível desenhar os mesmos polígonos anteriores com essa estratégia.
-
-```python
-size(400, 200)
-
-with begin_shape():  # inicia o polígono aberto
-    vertex(10, 10)
-    vertex(50, 50)
-    vertex(190, 30)
-    vertex(90, 150)
-    vertex(30, 100)
-# acaba a indentação e terminou o desenho do polígono
-
-with begin_closed_shape():  # inicia o polígono fechado
-    vertex(210, 10)
-    vertex(250, 50)
-    vertex(390, 30)
-    vertex(290, 150)
-    vertex(230, 100)
-# aqui já acabou o desenho do polígono
-```
-
 ## Desenhando uma estrela de quatro pontas
 
 Vejamos um exemplo que combina a estrutura que vimos antes com o uso de variáveis para calcular a posição dos vértices, formando um estrela!
@@ -72,15 +46,17 @@ largura_total, largura_menor = 250, 150
 a = largura_total / 2
 b = largura_menor / 2
 
-with begin_closed_shape():
-    vertex(x - a, y - a)
-    vertex(x - b, y)
-    vertex(x - a, y + a)
-    vertex(x, y + b)
-    vertex(x + a, y + a)
-    vertex(x + b, y)
-    vertex(x + a, y - a)
-    vertex(x, y - b)
+begin_shape()
+vertex(x - a, y - a)
+vertex(x - b, y)
+vertex(x - a, y + a)
+vertex(x, y + b)
+vertex(x + a, y + a)
+vertex(x + b, y)
+vertex(x + a, y - a)
+vertex(x, y - b)
+end_shape(CLOSE)
+
 ```
 
 ![e4](assets/estrela_4_pontas.png)
