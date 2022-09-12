@@ -2,7 +2,7 @@
 
 ## Sumário
 
-- [A função `remap()`(#a-função-remap)
+- [A função `remap()`](#a-função-remap)
 - [A função `lerp()`: interpolação linerar](#a-função-lerp-interpolação-linear)
 - [A função `lerp_color()`: interpolando cores](#a-função-lerpcolor-interpolando-cores)
 
