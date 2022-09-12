@@ -5,7 +5,7 @@ Allen Downey[no livro Pense em Python 2e](https://penseallen.github.io/PensePyth
 Para que isso funcione, e não caia em uma cilada conhecida como "recursão infinita", é preciso que a função sendo chamada possa, em certas condições, chegar em uma opção de execução que não requer chamar ela mesma. Essa condição que executa sem recursão é também conhecida como "caso base".
 
 
-# Uma grade recursiva
+## Uma grade recursiva
 
 ```python
 def setup():
@@ -14,7 +14,7 @@ def setup():
     grid(0, 0, width, 4)
 
 def grid(grid_x, grid_y, grid_size, n):
-    cell_size=grid_size / float(n)
+    cell_size = grid_size / n
     for i in range(n):
         x=grid_x + i * cell_size
         for j in range(n):
@@ -34,7 +34,7 @@ def grid(grid_x, grid_y, grid_size, n):
 ![](assets/grade_recursiva.png)
 
 
-# Árvore recursiva
+## Árvore recursiva
 
 ```python
 def setup():
@@ -61,7 +61,7 @@ def galho(tamanho):
 
 [exemplo interativo com pyp5js](https://abav.lugaralgum.com/sketch-a-day/2019/sketch_191025pybr2019/index.html)
 
-< iframe src="https://abav.lugaralgum.com/sketch-a-day/2019/sketch_191025pybr2019/index.html" width=500 height=500 > </iframe >
+<iframe src="https://abav.lugaralgum.com/sketch-a-day/2019/sketch_191025pybr2019/index.html" width=500 height=500></iframe>
 
 
 ---
