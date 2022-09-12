@@ -1,6 +1,42 @@
 # Escopo: variáveis locais e globais
 
-Grosso modo, *escopo* é como nos referimos à região do código onde os nomes das variáveis, ou os nomes de parâmetros de uma função, estão associados a certos valores. Informalmente costumo dizer que é onde no programa uma variável é conhecida. Por exemplo, se você tenta usar uma variável que foi definida em um escopo local fora desse escopo vai obter um `NameError` e o seu programa será interrompido. Outros problemas também podem aparecer se você tentar modificar um nome global descuidademente.
+Grosso modo, *escopo* é como nos referimos à região do código onde os nomes das variáveis, ou os nomes de parâmetros de uma função, estão associados a certos valores. Informalmente costumo dizer que é onde no programa uma variável é conhecida. Por exemplo, se você tenta usar uma variável que foi definida em um escopo local fora desse escopo vai obter um `NameError` e o seu programa será interrompido. Outros problemas também podem aparecer se você tentar criar ou modificar um nome global descuidademente.
+
+## Variáveis locais
+
+Quando criamos uma variável dentro da definição de uma função (como a função `setup()`, por exemplo), a variável tem *escopo local*, isto significa que somente o código dentro daquela função reconhece o nome e pode usar os valores a ele atribuídos.
+
+Os parâmetros são os nomes que recebem os valores (argumentos), usados na chamada de uma função, são declarados no cabeçalho da definição da função, e também são nomes do escopo local da função.
+
+### Exemplo de uma variável local
+
+```python
+def setup():
+    size(256, 256)
+    background(100, 0, 0)
+    metade = 1  # `metade` é uma variável local, no escopo de setup()
+     
+    olho(128, 128, 200)  # Chama a função que desenha um olho com tamanho 200
+    
+    print(metade)   # Exibe 1 no console
+    # Neste caso a variável `metade` só serve para demonstrar que é
+    # diferente da variável local dentro do escopo de olho()
+
+def olho(x, y, tamanho):  # parâmetros x, y, tamanho
+    # 'tamanho' é um nome que funciona como uma variável local
+    metade = tamanho / 2  # 'metade' variável local, no escopo de olho()
+    no_stroke()
+    fill(255)
+    ellipse(x, y, tamanho, metade)
+    fill(200, 200, 0)
+    ellipse(x, y, metade - 5, metade - 5)
+    fill(0)
+    ellipse(x, y, tamanho * 0.2, tamanho * 0.2)
+```
+
+![olho](assets/escopo_olho.png)
+
+O que acontece se você acrescentar `print(tamanho)` no final da função `setup()`?
 
 ## Variáveis globais
 
@@ -38,42 +74,12 @@ Sem a instrução `global x` dentro da função `key_pressed()` você verá o er
 
 Sem a instrução `global x` dentro da função `mouse_pressed()` você não verá nenhuma mensagem de erro, mas o clique do mouse não vai fazer o círculo voltar para a posição 0, pois simplesmente será criada uma nova variável local `x` e a variável global `x` não será modificada. Experimente executar este código e fazer modificações para ver o que acontece!
 
-## Variáveis locais
-
-Quando criamos uma variável dentro da definição de uma função (como a função `setup()`, por exemplo), a variável tem *escopo local*, isto significa que somente o código dentro daquela função reconhece o nome e pode usar os valores a ele atribuídos.
-
-Os parâmetros são os nomes que recebem os valores (argumentos), usados na chamada de uma função, são declarados no cabeçalho da definição da função, e também são nomes do escopo local da função.
-
-### Exemplo de uma variável local
-
-```python
-
-
-def setup():
-    size(256, 256)
-    background(100, 0, 0)
-    olho(128, 128, 200)
-
-def olho(x, y, tamanho):  # parâmetros x, y, tamanho
-    # 'tamanho' é um nome que funciona como uma variável local.
-    metade = tamanho / 2  # 'metade' é uma variável local.
-    no_stroke()
-    fill(255)
-    ellipse(x, y, tamanho, metade)
-    fill(200, 200, 0)
-    ellipse(x, y, metade - 5, metade - 5)
-    fill(0)
-    ellipse(x, y, tamanho * 0.2, tamanho * 0.2)
-```
-
-![olho](assets/escopo_olho.png)
 
 ## Recapitulando
 
+- **Variáveis locais** - Criadas dentro de uma função, as variáveis locais são, assim como os nomes dos parâmetros, nomes que  pertencem ao escopo local da função em que foram criados. Se você tentar usar o nome de uma variável local fora do escopo em que ela foi criada, o programa será interrompido com `NameError`.
+
 - **Variáveis globais** - Frequentemente criadas no início do *sketch*, e fora de qualquer função(incluindo `setup()` e `draw()`), as variáveis globais podem ser consultadas em qualquer parte do programa. É possível criar ou alterar uma variável global dentro de uma função, mas para isso é necessário incluir a instrução `global` antes!
-
-- **Variáveis locais** - Criadas dentro de uma função, as variáveis locais são, assim como os nomes dos parâmetros, nomes que  pertencem ao escopo local da função em que foram criados.
-
 
 ### Mais um exemplo, com variáveis globais e locais
 
@@ -108,7 +114,6 @@ Em projetos grandes, e com muitos programadores, o uso de variáveis globais é 
 Em *sketches*, programas raramente muito grandes e com propósitos visuais, você não deve se preocupar tanto com isso! Use variáveis globais quando precisar e só fique atento às suas modificações. Evite também criar propositalmente uma variável local de mesmo nome que uma global, para evitar confusões, principalmente, evite criar inadvertidamente uma variável local, quando queria reatribuir uma global, por esquecer de escrever a instrução `global` dentro de uma função (o que pode causar tanto erros gritantes como outros mais silenciosos).
 
 ## Glossário
-
 
 [**variável**](https://Penseallen.github.io/PensePython2e/02-vars-expr-instr.html#termo:variável) Um nome que se refere a um valor.
 
