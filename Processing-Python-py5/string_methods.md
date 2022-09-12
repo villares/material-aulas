@@ -1,10 +1,10 @@
 # Métodos dos objetos *string*
 
-*Strings * são um * tipo * de dado armazenado na memória do computador, e mais que isso, em Python, são acompanhados de uma série de funções que podem ser acionadas com a * sintaxe do ponto * (*dot syntax*).
+*Strings* são um * tipo* de dado armazenado na memória do computador, e mais que isso, em Python, são acompanhados de uma série de funções que podem ser acionadas com a *sintaxe do ponto* (*dot syntax*).
 
-<sub > Na programação orientada a objetos vemos que funções atreladas a objetos de uma classe são conhecidas como métodos. < /sub >
+<sub>Na programação orientada a objetos vemos que funções atreladas a objetos de uma classe são conhecidas como métodos.</sub>
 
-# Convertendo caixa alta e baixa (maiúsculas e minúsculas)
+## Convertendo caixa alta e baixa (maiúsculas e minúsculas)
 
 ```python
 # str.lower() devolve string com a versão em caixa baixa
@@ -14,7 +14,7 @@ print('Alexandre'.lower())  # exibe: alexandre
 print('Alexandre'.upper())  # exibe: ALEXANDRE
 ```
 
-# Checando prefixos e sufixos
+## Checando prefixos e sufixos
 
 ```python
 # str.startswith(prefixo) informa se o texto inicia com um certo prefixo
@@ -36,7 +36,7 @@ if nome_arquivo.lower().endswith('.png'):
      print("Arquivo tipo PNG")
 ```
 
-# Procurando sub-strings
+## Procurando sub-strings
 
 Trecho da documentação:
 
@@ -46,7 +46,7 @@ Trecho da documentação:
 > `str.count(sub[, start[, end]])`
 > Retorna o número de ocorrências da sub-string sub que não se sobrepõem no intervalo[start, end]. Argumentos opcionais start e end são interpretados como na notação de fatias.
 
-# Dividindo e juntando *strings*
+## Dividindo e juntando *strings*
 
 ```python
 # str.split(delimitador_opcional) devolve uma lista cujos itens são trechos do texto "divididos"
@@ -78,7 +78,7 @@ print('\n'.joint('xyz')  # \n indica uma quebra de linha
 # z
 ```
 
-# Substituições com `.replace()` e inserções com `.format()`
+## Substituições com `.replace()` e inserções com `.format()`
 
 ```python
 # str.replace(velho, novo) # substitui todas as ocorrências de um texto
@@ -95,7 +95,7 @@ print(u"Olá, {}, você tem mesmo {} anos?".format(nome, idade))
 # exibe: Olá, Alexandre, você tem mesmo 120 anos?
 ```
 
-# Convertendo números em texto
+## Convertendo números em texto
 
 É possível controlar a formatação da conversão de números em string, como o número de casas decimais ou com zeros à esquerda para garantir um certo número de dígitos, usando o método `.format()` e um string com uma notação especial entre as chaves `{}`:
 
@@ -120,6 +120,6 @@ print("{:07.4f}".format(PI))
 print("{:.4%}".format(PI))
 ```
 
-# E tem mais coisas ainda!
+## E tem mais coisas ainda!
 
-Voocê pode ler mais na Documentação do Python sobre os[métodos de String](https://docs.python.org/pt-br/2.7/library/stdtypes.html  # string-methods) e a [mini-linguagem de formatação](https://docs.python.org/pt-br/3.6/library/string.html#formatstrings).
+Voocê pode ler mais na Documentação do Python sobre os [métodos de String](https://docs.python.org/pt-br/3.6/library/stdtypes.html#string-methods) e a [mini-linguagem de formatação](https://docs.python.org/pt-br/3.6/library/string.html#formatstrings).
