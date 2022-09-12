@@ -195,5 +195,5 @@ angulos_para_arredondar = [15.0, 15.5, 40.2, 45.1, 60.8,  75.3]
 angulos_arredondados = list(map(round, angulos_para_arredondar))
 ```
 
->`*` A função `map()` do Processing  é diferente da do Pytho, no py5 usamos [`remap()`](/map_lerp.md) para ela...
+>`*` A função `map()` do Processing  é diferente da do Pytho, no py5 usamos [`remap()`](map_lerp.md) para ela...
 
