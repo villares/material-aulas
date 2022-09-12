@@ -117,9 +117,10 @@ Como as funções são também objetos/valores, podemos guardá-las em listas e 
 
 
 def draw():
-    formas = [lambda x, y, lado: rect(x - lado / 2, y - lado / 2, lado, lado),
-              lambda x, y, lado: ellipse(x, y, lado, lado/2)
-              ]
+    formas = [
+        lambda x, y, lado: rect(x - lado / 2, y - lado / 2, lado, lado),
+        lambda x, y, lado: ellipse(x, y, lado, lado/2)
+        ]
 
     for func in formas:
         func(50, 50, 90)
@@ -134,24 +135,12 @@ ou
 
 def draw():
     formas = {
-        'r': lambda x,
-        y,
-        lado: rect(
-            x - lado / 2,
-            y - lado / 2,
-            lado,
-            lado),
-        'e': lambda x,
-        y,
-        lado: ellipse(
-            x,
-            y,
-            lado,
-            lado/2)}
+        'r': lambda x, y, lado: rect(x - lado / 2, y - lado / 2, lado, lado),
+        'e': lambda x, y, lado: ellipse(x,  y, lado, lado/2)
+        }
 
     formas['r'](50, 50, 80)
     formas['e'](50, 50, 80)
-
 
 ```
 
@@ -206,5 +195,5 @@ angulos_para_arredondar = [15.0, 15.5, 40.2, 45.1, 60.8,  75.3]
 angulos_arredondados = list(map(round, angulos_para_arredondar))
 ```
 
->`*` A função `map()` do Python  é diferente da[função `map() ` do Processing](https://github.com/villares/material-aulas/blob/master/Processing-Python/map_lerp.md), no Processing modo Python temos as duas ao mesmo tempo, e isso é meio estranho..., o ambiente vê comforme os valores que você passou qual das funções vai usar.
->
+>`*` A função `map()` do Python  é diferente da[função `map() ` do Processing](Processing-Python-py5/map_lerp.md), no py5 usamos `remap()` para ela...
+
