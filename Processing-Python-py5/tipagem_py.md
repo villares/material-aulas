@@ -77,15 +77,15 @@ Nesta tabela apresento apenas alguns dos tipos que vamos encontrar programando c
 
 | tipo / classe | descrição | origem |
 | ---      | --- | --- |
-| `int`     | número inteiro, como `-5`, `0` ou `42`| Py |
-| `float`  | número de ponto flutante, como `.5` `3.` ou `6.267` (note que o separador decimal é o ponto)| Py |
-| `bool`| booleano é o tipo dos valores `True` ou `False`| Py |
-| `string` | cadeia de caracteres, são sequencias de glifos, podem ser criados com aspas: `“texto”` ou `'maçã'` | Py |
-| `list`   | lista, coleção ordenada de itens, construída com `list(itens)` ou com colchetes no código `[ ,]` | Py |
-| `tuple`  | coleção ordenada e imutável de itens, construída com `tuple(itens)` ou com parenteses no código `( ,)` | Py |
-| `set`    | conjunto não ordenado de itens 'hasheáveis', com `set(itens)` ou com chaves no código `{ ,}` | Py |
-| `dict`   | dicionário, um 'mapeamento' de chaves (*keys*) e valores, criado com `dict()` ou pares `{chave : valor,}` | Py |
-| `None`   | o "nenhum" é de um tipo especial único `None` é devolvido por funções que não devolvem nada  | Py |
+| `int`     | número inteiro, como `-5`, `0` ou `42`| Python|
+| `float`  | número de ponto flutante, como `.5` `3.` ou `6.267` (note que o separador decimal é o ponto)| Python|
+| `bool`| booleano é o tipo dos valores `True` ou `False`| Python|
+| `string` | cadeia de caracteres, são sequencias de glifos, podem ser criados com aspas: `“texto”` ou `'maçã'` | Python|
+| `list`   | lista, coleção ordenada de itens, construída com `list(itens)` ou com colchetes no código `[ ,]` | Python|
+| `tuple`  | coleção ordenada e imutável de itens, construída com `tuple(itens)` ou com parenteses no código `( ,)` | Python|
+| `set`    | conjunto não ordenado de itens 'hasheáveis', com `set(itens)` ou com chaves no código `{ ,}` | Python|
+| `dict`   | dicionário, um 'mapeamento' de chaves (*keys*) e valores, criado com `dict()` ou pares `{chave : valor,}` | Python|
+| `None`   | o "nenhum" é de um tipo especial único `None` é devolvido por funções que não devolvem nada  | Python|
 | `Py5Image` | imagens raster/bitmap, podem ser criadas/carregadas na memória com `loadImage(arquivo_de_imagem)` | Py5 |
 | `Py5Shape` | contém formas vetoriais, como as descritas num SVG, pode ser criado com `loadShape(arquivo)`| Py5 |
 | `Py5Vector`| vetor, usado geralmente para descrever posição, velocidade ou aceleração (em 2, 3  ou 4 dimensões) | Py5 |
