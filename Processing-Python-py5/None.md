@@ -2,7 +2,7 @@
 
 O Python tem um valor especial chamado `None`, que é um objeto único de um tipo só dele, o `NoneType`, e é em geral usado para representar "nada" ou "nenhum valor". Pode ser usado para indicar a ausência de um valor válido, ou o final de uma sequência de valores(uma estratégia conhecida como "valor sentinela").
 
-# O exemplo da função que carrega uma imagem no Processing
+## O exemplo da função que carrega uma imagem no Processing
 
 A função `load_image()` do Processing, quando consegue carregar os dados de uma imagem, devolve um objeto do tipo `Py5Image`, quando não consegue ela devolve `None`.
 
@@ -34,7 +34,7 @@ else:
     print('Imagem faltando')
 ```
 
-# Funções e métodos que não devolvem nenhum valor
+## Funções e métodos que não devolvem nenhum valor
 
 `None` é o que nos entregam funções que não foram feitas para devolver algum valor.
 
@@ -75,7 +75,8 @@ def area_estragada(a, b):
 
 print(area_estragada(20, 40))  # exibe `None`
 ```
-# Método `get()` dos dicionários
+
+## Método `get()` dos dicionários
 
 Quando usamos dicionários, o método `get` procura por uma chave e devolve o valor atribuido a ela no dicionário, se não encontrar a chave devolve `None`.
 
@@ -89,6 +90,6 @@ else:
     print('Chave não encontrada!')
 ```
 
-# Um exemplo mais longo
+## Um exemplo mais longo
 
 No[exemplo final sobre arrastar círculos](arrastando_circulos.md), se nenhum círculo está sendo arrastado, a variável que mantém o índice do círculo fica valendo `None`.
