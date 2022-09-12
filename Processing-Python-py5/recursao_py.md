@@ -14,7 +14,7 @@ def setup():
     grid(0, 0, width, 4)
 
 def grid(grid_x, grid_y, grid_size, n):
-    cell_size=grid_size / float(n)
+    cell_size = grid_size / n
     for i in range(n):
         x=grid_x + i * cell_size
         for j in range(n):
