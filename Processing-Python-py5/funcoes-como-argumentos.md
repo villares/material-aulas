@@ -87,8 +87,8 @@ A palavra chave `lambda` permite uma forma abreviada de definir funções. Com e
 Só para demonstrar a equivalência, no exemplo a seguir vamos criar a função `ultima_letra` usando a palavra chave `lambda` em vez de `def`, na verdade não é legal usar lambdas desta maneira, para criar uma função com nome é melhor usar a forma tradicional com `def`.
 
 ```python
-def ultima_letra(p): return p[-1]
-
+# def ultima_letra(p): return p[-1]
+ultima_letra = lambda p: p[-1]
 
 frutas = ['morango', 'abacaxi', 'uva', 'banana', 'caju']
 frutas.sort(key=ultima_letra)
