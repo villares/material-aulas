@@ -8,7 +8,7 @@ Pode passar despercebido no começo do aprendizado da linguagem Python que as fu
 
 ### `sort()` e o argumento nomeado `key`.
 
-O método `sort()`, quando chamado em uma lista que contém números, põe os itens da lista em ordem crescente, já em listas contendo * strings * (texto) põe os itens em ordem alfabética:
+O método `sort()`, quando chamado em uma lista que contém números, põe os itens da lista em ordem crescente, já em listas contendo *strings * (texto) põe os itens em ordem alfabética:
 
 ```python
 frutas = ['morango', 'abacaxi', 'uva', 'banana', 'caju']
@@ -21,7 +21,7 @@ A função embutida `len()` do Python, quando aplicada a *strings* nos devolve o
 ```python
 print(len('abacaxi'))  # exibe: 7
 ```
-Se passarmos o nome da função `len()`, isto é `len` sem os parenteses, como o argumento nomeado(*keyword argument*) `key` do método `sort()` a lista vai ser ordenada pelo tamanho(crescente) das palavras!
+Se passarmos o nome da função `len()`, isto é `len` sem os parenteses, como o argumento nomeado (*keyword argument*) `key` do método `sort()` a lista vai ser ordenada pelo tamanho(crescente) das palavras!
 
 ```python
 frutas = ['morango', 'abacaxi', 'uva', 'banana', 'caju']
