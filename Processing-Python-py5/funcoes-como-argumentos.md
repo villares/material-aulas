@@ -16,7 +16,7 @@ frutas.sort()
 print(frutas)  # ['abacaxi', 'banana', 'caju', 'morango', 'uva']
 ```
 
-A função embutida `len()` do Python, quando aplicada a * strings * nos devolve o tamanho, número de caracteres:
+A função embutida `len()` do Python, quando aplicada a *strings* nos devolve o tamanho, número de caracteres:
 
 ```python
 print(len('abacaxi'))  # exibe: 7
@@ -103,7 +103,7 @@ frutas.sort(key=lambda p: p[-1])
 print(frutas)  # ['uva', 'banana', 'abacaxi', 'morango', 'caju']
 ```
 
-Não abuse no uso de * lambdas*, na dúvida defina uma função com nome usando `def`, o código fica mais legível. As funções anônimas * lambda* têm também algumas restrições, seu corpo é uma só expressão(não pode ter várias linhas).
+Não abuse no uso de *lambdas*, na dúvida defina uma função com nome usando `def`, o código fica mais legível. As funções anônimas *lambda* têm também algumas restrições, seu corpo é uma só expressão (não pode ter atribuiçẽos e estruturas aninhadas).
 
 ## Exercício
 
@@ -195,5 +195,5 @@ angulos_para_arredondar = [15.0, 15.5, 40.2, 45.1, 60.8,  75.3]
 angulos_arredondados = list(map(round, angulos_para_arredondar))
 ```
 
->`*` A função `map()` do Processing  é diferente da do Pytho, no py5 usamos [`remap()`](map_lerp.md) para ela...
+>`*` A função `map()` do Processing  é diferente da do Python, no py5 usamos [`remap()`](map_lerp.md) para ela...
 
