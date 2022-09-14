@@ -1,12 +1,12 @@
 # Tipografia
 
-# Trabalhando com fontes e outros ajustes do texto
+## Trabalhando com fontes e outros ajustes do texto
 
 Usamos `text("Lorem Ipsum dolor", x, y)` para escrever um texto na área de desenho. O tamanho pode ser controlado, em pontos, por `text_size()`. O alinhamento pode ser alterado por `text_align()`. A cor vem do `fill()`.
 
-# Exemplo básico
+## Exemplo básico
 
-```pyde
+```python
 """
 Adaptado do tutorial
 https://py.processing.org/tutorials/typography/
@@ -30,45 +30,44 @@ def draw():
     rect(0, 0, width, height)
     fill(0)
     # Se o mouse estiver sobre o texto, mova!
-    if (x <= mouse_x <= x+55 and
-        y-24 <= mouse_y <= y):
+    if (x <= mouse_x <= x + 55 and
+        y - 24 <= mouse_y <= y):
         x += random(-2, 2)
         y += random(-2, 2)
 
-    text(u"Cócegas", x, y)
+    text("Cócegas", x, y)
 
 
 ```
 
-# Definindo a fonte
+## Definindo a fonte
 
 Se não indicarmos alguma, uma fonte padrão será usada, mas podemos criar uma nova fonte(Py5Font) e usar em `text_font()`,
 a partir de uma fonte já instalada ou de um arquivo vetorial ** .ttf ** ou ** .otf ** na pasta * """data**:
 
-```pyde
+```python
 # para ver as fontes instaladas no seu computador
-for font_name in PFont.list():
+for font_name in Py5Font.list():
     print(font_name)
 # para usar a fonte Vera Sans Mono no estilo negrito
-f = createFont("Bitstream Vera Sans Mono Bold", 24)
+f = create_font("Bitstream Vera Sans Mono Bold", 24)
 textFont(f)
 ```
 
 Especialmente no caso de não termos permissão para distribuir o arquivo vetorial da fonte, podemos criar uma fonte bitmap
-a partir da original e distribuir este novo arquivo **.vlw**, na pasta *"""data**.
-Usando a ferramenta ** Tool > Create Font...** produzimos o arquivo da fonte que pode ser carregado da seguinte maneira:
+a partir da original e distribuir este novo arquivo **.vlw**, criado usando a ferramenta **Tool > Create Font...** no Processing IDE, produzimos o arquivo da fonte que pode ser carregado da seguinte maneira:
 
-```pyde
+```python
 font = load_font("LetterGothicStd-32.vlw")
 ```
 
-# Uma grade de letras, símbolos, glifos!
+## Uma grade de letras, símbolos, glifos!
 
 ![grade](https://raw.githubusercontent.com/arteprog/programacao-criativa/master/assets/imagens/typogrid.png)
 
-Copie o arquivo descompactado ** .otf*** da fonte[Garoa Hacker Clube Bold](https://garoa.net.br/wiki/Fonte_Garoa_Hacker_Clube_Bold) na sub-pasta * """data** do seu sketch.
+Baixe o arquivo descompactado ***.otf*** da fonte[Garoa Hacker Clube Bold](https://garoa.net.br/wiki/Fonte_Garoa_Hacker_Clube_Bold).
 
-```pyde
+```python
 glifos = "ABCDEFGHIJKLMNOPQRSTUVWXYZ☂#$*&"
 num_glifos = len(glifos)
 passo = 25
@@ -111,7 +110,7 @@ def mouse_released():
 Este exemplo mostra 23 linhas na tela, e anima a rolagem (scroll) com o giro da [rodinha do mouse](rodinha_mouse.md).
 
 ```python
-zen = u"""\
+zen = """\
 The Zen of Python, by Tim Peters
 
 Beautiful is better than ugly.
@@ -158,11 +157,11 @@ def draw():
 
 def mouse_wheel(e):
     global pos
-    pos += e.count
+    pos += e.get_count()
  ```
 ![grade](assets/zen.gif)
 
-# Sugestão de leitutra
+## Sugestão de leitutra
 
 Tutoriais em:
 

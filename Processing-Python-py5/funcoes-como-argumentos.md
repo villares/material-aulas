@@ -8,7 +8,7 @@ Pode passar despercebido no começo do aprendizado da linguagem Python que as fu
 
 ### `sort()` e o argumento nomeado `key`.
 
-O método `sort()`, quando chamado em uma lista que contém números, põe os itens da lista em ordem crescente, já em listas contendo * strings * (texto) põe os itens em ordem alfabética:
+O método `sort()`, quando chamado em uma lista que contém números, põe os itens da lista em ordem crescente, já em listas contendo *strings * (texto) põe os itens em ordem alfabética:
 
 ```python
 frutas = ['morango', 'abacaxi', 'uva', 'banana', 'caju']
@@ -16,12 +16,12 @@ frutas.sort()
 print(frutas)  # ['abacaxi', 'banana', 'caju', 'morango', 'uva']
 ```
 
-A função embutida `len()` do Python, quando aplicada a * strings * nos devolve o tamanho, número de caracteres:
+A função embutida `len()` do Python, quando aplicada a *strings* nos devolve o tamanho, número de caracteres:
 
 ```python
 print(len('abacaxi'))  # exibe: 7
 ```
-Se passarmos o nome da função `len()`, isto é `len` sem os parenteses, como o argumento nomeado(*keyword argument*) `key` do método `sort()` a lista vai ser ordenada pelo tamanho(crescente) das palavras!
+Se passarmos o nome da função `len()`, isto é `len` sem os parenteses, como o argumento nomeado (*keyword argument*) `key` do método `sort()` a lista vai ser ordenada pelo tamanho(crescente) das palavras!
 
 ```python
 frutas = ['morango', 'abacaxi', 'uva', 'banana', 'caju']
@@ -87,8 +87,8 @@ A palavra chave `lambda` permite uma forma abreviada de definir funções. Com e
 Só para demonstrar a equivalência, no exemplo a seguir vamos criar a função `ultima_letra` usando a palavra chave `lambda` em vez de `def`, na verdade não é legal usar lambdas desta maneira, para criar uma função com nome é melhor usar a forma tradicional com `def`.
 
 ```python
-def ultima_letra(p): return p[-1]
-
+# def ultima_letra(p): return p[-1]
+ultima_letra = lambda p: p[-1]
 
 frutas = ['morango', 'abacaxi', 'uva', 'banana', 'caju']
 frutas.sort(key=ultima_letra)
@@ -103,7 +103,7 @@ frutas.sort(key=lambda p: p[-1])
 print(frutas)  # ['uva', 'banana', 'abacaxi', 'morango', 'caju']
 ```
 
-Não abuse no uso de * lambdas*, na dúvida defina uma função com nome usando `def`, o código fica mais legível. As funções anônimas * lambda* têm também algumas restrições, seu corpo é uma só expressão(não pode ter várias linhas).
+Não abuse no uso de *lambdas*, na dúvida defina uma função com nome usando `def`, o código fica mais legível. As funções anônimas *lambda* têm também algumas restrições, seu corpo é uma só expressão (não pode ter atribuiçẽos e estruturas aninhadas).
 
 ## Exercício
 
@@ -124,8 +124,6 @@ def draw():
 
     for func in formas:
         func(50, 50, 90)
-
-
 ```
 
 ou
