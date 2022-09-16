@@ -33,18 +33,18 @@
 - [Interação: input com teclado e mouse](input_py.md)
 - [Aleatoriedade: `random` e números 'sorteados'](aleatoriedade_1.md)
   - [Mais sobre aleatoriedade e as diferenças ente o `random` de Processing e de Python](aleatoriedade_2.md)
-  - [*Perlin Noise * (ruído de Perlin) um tipo especial de número pseudo-aleatório](noise.md) [REVISAR faixa -1,1]
+  - [*Perlin Noise* (ruído de Perlin) um tipo especial de número pseudo-aleatório](noise.md) [REVISAR faixa -1,1]
   - [Como usar seno `sin()`, cosseno `cos()` e arco tangente `atan2()`](seno_cosseno_atan2.md)
   - [Manipulando números com `remap()` e `lerp()`](map_lerp.md) - e fazendo cores intermediárias!
-  - [O que é * easing *?](easing.md) - transições de movimento
+  - [O que é *easing*?](easing.md) - transições de movimento
 - [Funções como argumentos de outras funções](funcoes-como-argumentos.md) - `sort()` e funções `lambda`
 
 # Mais sobre estruturas de dados
 
 - [Métodos das listas](list_methods.md)
-- [Mais estruturas de dados: dicionário(_dict_)](dicionarios.md)
-- [Mais estruturas de dados: conjunto(_set_)](conjuntos.md)
-- [Compreensão de listas e outras * comprehensions*](comprehension.md)
+- [Mais estruturas de dados: dicionário (_dict_)](dicionarios.md)
+- [Mais estruturas de dados: conjunto (_set_)](conjuntos.md)
+- [Compreensão de listas e outras *comprehensions*](comprehension.md)
 
 # Desenhando em 3D
 
@@ -72,7 +72,7 @@
 - [Lendo um arquivo vetorial(SVG)](recursos_vetoriais_externos.md)
 - [Lendo arquivos de imagem(*bitmap/raster*)](imagens_externas.md)
 - [Lendo todas as imagens da pasta `data`](imagens_externas_pasta2.md) e sorteando uma
-- [Lendo todas as imagens de uma pasta selecionada pela pessoa usuária](imagens_externas_pasta.md)(avançado)
+- [Lendo todas as imagens de uma pasta selecionada pela pessoa usuária](imagens_externas_pasta.md) (avançado)
 - [Lendo e escrevendo texto em arquivos(*file IO*)](file_io.md)
 
 # Orientação a Objetos
@@ -80,7 +80,7 @@
 - [Primeiros passos de orientação a objetos: usando a classe Slider](slider_com_oo.md)
 - [Um botão com orientação a objetos](botao_com_oo.md)
 - [Uma classe de partículas simples](particulas.md)
-- [Operações com vetores e a classe `Py5Vector` do Processing](vetores.md)
+- [Operações com vetores e a classe `Py5Vector` do Processing](vetores.md) [REVIsAR] 
 - [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/mestrado/bandeirinhas /)(página externa)
 
 # Questões mais avançadas da ferramenta
