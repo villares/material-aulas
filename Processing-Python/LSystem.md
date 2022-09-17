@@ -215,6 +215,7 @@ def keyPressed():
  ### Exemplo Dragon Scale
  
 
+```python
 axioma = 'F'
 regras = {
           'F': 'F-H',
@@ -256,5 +257,6 @@ def draw():
             rotate(radians(angulo)) # + random(-5, 5)))
         elif simbolo == '-':
             rotate(radians(-angulo))
+``` 
 
 ![Exemplo Dragon Scale](https://user-images.githubusercontent.com/91154739/140662460-d3974a4b-8d26-4225-99da-4ce7b791163d.png)
