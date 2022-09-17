@@ -2,17 +2,17 @@
 
 A ideia por trás de * easing * é a suavização de transições de um movimento, uma vez que, na natureza, os movimento tem variação de velocidade que raramente são instantâneas ou lineares.
 
-Um movimento pode iniciar rapidamente  e parar suavemente(*easing out*), iniciar suavemente(*ease in *) ou ainda iniciar e parar suavemente(*easing in and out*).
+Um movimento pode iniciar rapidamente  e parar suavemente(*easing out*), iniciar suavemente(*ease in*) ou ainda iniciar e parar suavemente(*easing in and out*).
 
-# Funções para suavização das transições
+## Funções para suavização das transições
 
-Para o conteúdo a seguir vamos precisar[manipular faixas de valores com `map()` e `lerp()`](map_lerp.md)
+Para o conteúdo a seguir vamos precisar [manipular faixas de valores com `remap()` e `lerp()`](map_lerp.md)
 
-Uma estratégia muito comum é  usar funções de * easing * que recebem um valor entre ** 0 ** e ** 1 ** e retornam um valor, grosso modo na mesma faixa, o pelo menos nos extremos(eventualmente passado um pouco para fora). Os valores podem ser usados em conjunto com `lerp()` ou simplesmente multiplicando um outro valor.
+Uma estratégia muito comum é  usar funções de *easing* que recebem um valor entre **0** e **1** e retornam um valor, grosso modo na mesma faixa, ou pelo menos nos extremos (eventualmente passado um pouco para fora). Os valores podem ser usados em conjunto com `lerp()` ou simplesmente multiplicando um outro valor.
 
-Em uma função `easing(p)` um `p = 0` devolve ** 0 ** e `p = 1` produz ** 1**, mas a variação intermediária acontece em velocidades diferentes. O * não-easing * é o crescimento linear, em que o valor devolvido é exatamente o mesmo recebido pela função.
+Em uma função `easing(p)` um `p = 0` devolve **0** e `p = 1` produz **1**, mas a variação intermediária acontece em velocidades diferentes. O *não-easing* é o crescimento linear, em que o valor devolvido é exatamente o mesmo recebido pela função.
 
-Vejamos um exemplo que fizemos inicialmente na explicação do `map()` de um círculo que anda e vai de preto para branco, mas agora usando `lerp()` e uma função de * easing * exponencial 'sigmóide', na saída e na chegada(* in * e * out*).
+Vejamos um exemplo que fizemos inicialmente na explicação do `remap()` de um círculo que anda e vai de preto para branco, mas agora usando `lerp()` e uma função de *easing* exponencial 'sigmóide', na saída e na chegada(*in* e * out*).
 
 ```python
 
@@ -25,11 +25,11 @@ def setup():
 def draw():
     background(200)
 
-    # O map original
-    #   cinza = map(mouseX, 0, width, 0, 255)
-    #   x = map(mouseX, 0, width, 100, 300)
+    # O remap original
+    #   cinza = remap(mouse_x, 0, width, 0, 255)
+    #   x = remap(mouse_x, 0, width, 100, 300)
     # Pode ser expresso em forma de t para usar lerp()
-    t = map(mouse_x, 0, width, 0, 1)
+    t = remap(mouse_x, 0, width, 0, 1)
     cinza = lerp(0, 255, t)
     x = lerp(100, 300, t)
     fill(cinza)
@@ -48,13 +48,6 @@ def sigmoid_easing(p):
     const = 6
     m = lerp(-const, const, p)
     return 1 / (1 + exp(-m))
-
-
-#  # John fez também um map com o easing embutido
-#  def sigmoidMap(value, start1, stop1, start2, stop2, const=6):
-#  """ from John @introscopia """
-#      m = map(value, start1, stop1, -const, const)
-#      return ((stop2 - start2) * (1 / (1 + exp(-m)))) + start2
 ```
 
 ![](assets/easing_1b.gif)
@@ -149,14 +142,14 @@ def back_ease_in_out(p):
 ```
 
 
-# Um map com easing embutido
+# Um remap com easing embutido
 
 ```python
 
 
 def sigmoid_map(value, start1, stop1, start2, stop2, const=6):
     """ from John @introscopia """
-    m = map(value, start1, stop1, -const, const)
+    m = remap(value, start1, stop1, -const, const)
     return ((stop2 - start2) * (1 / (1 + exp(-m)))) + start2
 
 
@@ -165,4 +158,4 @@ def sigmoid_map(value, start1, stop1, start2, stop2, const=6):
 
 # Assuntos relacionados
 
-- [Manipulando faixas de valores com `map()` e `lerp()`](map_lerp.md)
+- [Manipulando faixas de valores com `remap()` e `lerp()`](map_lerp.md)
