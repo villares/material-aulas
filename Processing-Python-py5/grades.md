@@ -113,4 +113,6 @@ def grid(colunas, filas, tam_col=1, tam_fil=1):
     # faz essa função como um todo devolver um objeto gerador que por sua vez vai 
     # produzindo os resultados conforme a necessidade. Dentro de um loop, por exemplo.
 ```
-![](https://github.com/villares/material-aulas/blob/master/Processing-Python/assets/sketch_2020_04_12a.png?raw=true)
+
+![image](https://user-images.githubusercontent.com/3694604/191360083-36e4e723-a117-4d5e-b78c-c3eea72a4586.png)
+
