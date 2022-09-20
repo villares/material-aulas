@@ -8,11 +8,11 @@ Esta página apresenta funções `translate`, `rotate`, e `scale`, mas também a
 
 ## sumário
 
-- [Translação: Movendo a grade](  # translação-movendo-a-grade)
-   - [Qual é a vantagem?](  # qual-é-a-vantagem)
-- [Rotação](  # rotação)
-- [A matriz de transformação](  # a-matriz-de-transformação)
-   - [O significado de * push * e * pop*](  # o-significado-de-push-e-pop)
+- [Translação: Movendo a grade](#translação-movendo-a-grade)
+   - [Qual é a vantagem?](#qual-é-a-vantagem)
+- [Rotação](#rotação)
+- [A matriz de transformação](#a-matriz-de-transformação)
+   - [O significado de * push * e * pop*](#o-significado-de-push-e-pop)
 
 ## Translação: Movendo a grade
 
