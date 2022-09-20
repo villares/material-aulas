@@ -62,7 +62,7 @@ def setup():
 
 ![poligono_2](assets/poligono_2.png)
 
-# Formas com furos
+### Formas com furos
 
 Podemos criar furos dentro de formas `Py5Shape` pendindo uma sequência de vértices, com`vertex()`, entre as funções `begin_contour()` e `end_contour()`, que por sua vez precisam estar entre `begin_shape()` e `end_shape()`.
 
@@ -96,13 +96,13 @@ def setup():
 
 ![furo](assets/contour_furo.png)
 
-# Assuntos relacionados
+## Assuntos relacionados
 
 - [Desenhando Polígonos - I](poligonos_1.md)
 - [Sequências e laços de repetição](lacos_py.md)
 
 
-# EXTRA: Funções para desenhar sequências de pontos em forma de polígono
+### EXTRA: Funções para desenhar sequências de pontos em forma de polígono
 
 **Desafio: ** Você conseguiria encapsular em uma função a parte do código que faz o desenho do polígono?
 
