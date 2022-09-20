@@ -6,7 +6,7 @@ Processing tem funções embutidas que tornam fácil você mover, girar, e cresc
 
 Esta página apresenta funções `translate`, `rotate`, e `scale`, mas também algumas funções que permitem 'guardar' e 'devolver' o estado anterior do sistema de coordenadas(`push_matrix()`  e `pop_matrix()`).
 
-# sumário
+## sumário
 
 - [Translação: Movendo a grade](  # translação-movendo-a-grade)
    - [Qual é a vantagem?](  # qual-é-a-vantagem)
@@ -14,7 +14,7 @@ Esta página apresenta funções `translate`, `rotate`, e `scale`, mas também a
 - [A matriz de transformação](  # a-matriz-de-transformação)
    - [O significado de * push * e * pop*](  # o-significado-de-push-e-pop)
 
-# Translação: Movendo a grade
+## Translação: Movendo a grade
 
 Quando você quer desenhar alguma coisa, especifica as cordenadas. Veja um retângulo simples desenhado com o código `rect(20, 20, 40, 40)`. O sistema de coordenadas é como uma espécie de grade ou papel milimetrado, e está mostrado em cinza.
 
@@ -67,7 +67,7 @@ Vamos olhar o código de conversão em mais detalhes:
 
 Sim, você podia ter feito uma translação `translate(-60, -80)` para mover a grade de volta a sua posição original. No entanto, quando você começa a executar operações mais sofisticadas com o sistema de coordenadas, é mais fácil usar `push_matrix()` e `pop_matrix()` para salvar e restaurar o status em vez de precisar desfazer todas as suas operações. Mais adiante vamos falar da origem desses nomes tão estranhos.
 
-# Qual é a vantagem?
+### Qual é a vantagem?
 
 Você pode estar pensando que pegar o sistema de coordenadas e movê-lo é muito mais complicado do que apenas adicionar às coordenadas. Para um exemplo simples, como o retângulo, você está correto. Mas vamos dar um exemplo de onde o `translate()` pode facilitar a vida. Aqui está um código que desenha uma fileira de casas. Ele usa um loop que chama a função chamada `casa()`, que recebe o * x * e * y * da posição do canto superior esquerdo da casa como parâmetros.
 
@@ -102,7 +102,7 @@ def casa(x, y):
     pop_matrix()
 ```
 
-# Rotação
+## Rotação
 
 Além da translação, que move a grade, é possível girar o sistema de coordenadas com a função `rotate()`. Essa função tem um parâmetro ou argumento, um número de * radianos * que você quer rodar. Em graus, um círculo tem 360°. Quando descrevemos os ângulos em radianos, a circuferência completa tem 2π radianos. Eis aqui um diagrama de como Processing mede ângulos em graus(preto) e radianos(vermelho).
 
@@ -131,7 +131,7 @@ Ei o que aconteceu? Como o quadrado foi movido e cortadao A resposta é: o quadr
 
 ![shows grid rotated 45 degrees clockwise](https://py.processing.org/tutorials/transform2d/imgs/rotated_grid.png)
 
-# Girando da maneira certa
+### Girando da maneira certa
 
 A maneira certa de girar o quadrado depende de fazer uma translação antes:
 
@@ -190,13 +190,13 @@ def draw():
     rect(-50, -50, 100, 100)
     popMatrix()
 ```
-# Para pensar:
+### Para pensar:
 
 - Você conseguiria re-escrever usando `rectMode(CENTER)` pra desenhar os retângulos pelo centro? Ficaria mais simples?
 
 - Este exemplo é útil por demonstrar uma estratégia para girar um objeto, que tem um, ponto inicial arbitrário, no caso o canto superior esquerdo, o girando em torno de outro ponto arbitrário(neste caso o centro). Nem sempre vamos ter disponível, para formas especiais que desenharmos, o equivalente a um `rectMode(CENTER)`.
 
-# A ordem importa
+### A ordem importa
 
 Além da rotação e translação mencionadas anteriormente, é possível também escalar o sistema de coordenadas com a função `scale()`. Quando você faz várias transformações, a ordem faz diferença. Uma rotação seguida de uma translação seguida por uma mudança de escala não produzirá os mesmos resultados que uma translação seguida de uma rotação e uma mudança de escala. Aqui está um exemplo de código e os resultados.
 
@@ -228,28 +228,28 @@ def setup():
 ![ordem importa](assets/2d_transformations_3.png)
 
 
-# A matriz de transformação
+## A matriz de transformação
 
 Sempre que você faz uma rotação, translação ou mudança de escala, as informações necessárias para a transformação são acumuladas em uma tabela de números. Essa tabela, ou matriz, possui apenas algumas linhas e colunas; no entanto, através do milagre da matemática, ela contém todas as informações necessárias para realizar qualquer série de transformações. E é por isso que `pushMatrix()` e `popMatrix()` têm essa palavra * matrix * em seu nome.
 
-# A origem dos termos *push* e *pop*
+### A origem dos termos *push* e *pop*
 
 E a parte * push * e * pop * dos nomes `pushMatrix` e `popMatrix`? Elas vêm de um conceito de computação conhecido como pilha, que funciona como um dispensador de bandejas com mola em uma lanchonete. Quando alguém coloca uma bandeja para a pilha, seu peso empurra a plataforma para baixo. Quando alguém precisa de uma bandeja, ela a pega da parte superior da pilha e as bandejas restantes aparecem um pouco.
 
 De maneira semelhante, `pushMatrix()` coloca o status atual do sistema de coordenadas no topo de uma área de memória, e `popMatrix()` pega de volta o status. O exemplo anterior usou `pushMatrix()` e `popMatrix()` para garantir que o sistema de coordenação estivesse "limpo" antes de cada parte do desenho. Em todos os outros exemplos, as chamadas para essas duas funções não eram realmente necessárias, mas não custa nada salvar e restaurar o status da grade.
 
-# Notas:
-- **Sempre execute `pushMatrix()` e `popMatrix()` em pares ** ou você vai encontrar erros, um deles é meio que uma proteção antes que ocorra o famoso * estouro * ou * transbordamento * da pilha, *stack overflow*, `pushMatrix() cannot use push more than 32 times`. O outro é aviso de que está faltando um * push * anterior: `missing a pushMatrix() to go with that popMatrix()`.
+## Notas:
+- **Sempre execute `pushMatrix()` e `popMatrix()` em pares** ou você vai encontrar erros, um deles é meio que uma proteção antes que ocorra o famoso * estouro * ou * transbordamento * da pilha, *stack overflow*, `pushMatrix() cannot use push more than 32 times`. O outro é aviso de que está faltando um * push * anterior: `missing a pushMatrix() to go with that popMatrix()`.
 
 - Em Processing, o sistema de coordenadas é restaurado ao seu estado original(origem na parte superior esquerda da janela, sem rotação e sem mudança de escala) toda vez que a função `draw()` é executada.
 - É possível também voltar para o estado inicial o sistema de coordenadas com `resetMatrix()`.
 
-# Transformações tridimensionais
+## Transformações tridimensionais
 
 Se você estiver trabalhando em três dimensões, poderá chamar a função `translate()` com três argumentos para as distâncias * x*, *y*, e * z*. Da mesma forma, você chama `scale()` com três argumentos que indicam o quanto você deseja que a grade seja redimensionada em cada uma dessas dimensões
 
 Para rotação, chame as funções `rotateX()`, `rotateY()`, ou `rotateZ()` para girar em torno de cada um dos eixos. Todas essas três funções esperam um argumento: o número de radianos a serem rotacionados.
 
-# Assuntos relacionados
+## Assuntos relacionados
 
 - Veja a[versão completa traduzida do tutorial na qual este material foi baseado](http://arteprog.space/Processando-Processing/tutoriais-PT/python-transformacoes_2D), tem um exemplo bacana de um robô que balança os braços.
