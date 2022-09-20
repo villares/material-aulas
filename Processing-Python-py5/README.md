@@ -81,13 +81,13 @@
 - [Um botão com orientação a objetos](botao_com_oo.md)
 - [Uma classe de partículas simples](particulas.md)
 - [Operações com vetores e a classe `Py5Vector` do Processing](vetores.md) [REVIsAR] 
-- [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/mestrado/bandeirinhas /)(página externa)
+- [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/mestrado/bandeirinhas)(página externa)
 
 # Questões mais avançadas da ferramenta
 
 - [Usando várias abas no IDE](modulos.md)  [REVISAR]
 - [Dicas para portar exemplos do Processing modo Java para o modo Python](java_para_python.md)
-<!--- REVISAR [Mais sobre Python, Jython e Java](http://arteprog.space/Processando-Processing/tutoriais-PT/python-Python_Jython_e_Java)(página externa) -->
+<!--- REVISAR [Mais sobre Python, Jython e Java](http://arteprog.space/Processando-Processing/tutoriais-PT/python-Python_Jython_e_Java) (página externa) -->
 * [Mais sobre atributos gráficos](mais_atributos_graficos.md)
 * [Desenhando em um espaço fora da tela(offscreen buffer)](offscreen_buffer.md) e recortando imagens
 * [Manipulando a janela](mais_que_size.md)(tela cheia, redimensionamento e múltiplas janelas) 
@@ -96,6 +96,6 @@
 # Pequenos projetos e outros exemplos
 
 * [Módulos ou mosaicos de Truchet](truchet.md)
-<!-- - [Jogo PONG](pong /) - Estudos para o fazer um jogo
-- [`caneta_automatica_py`](caneta_automatica /) - Módulo para desenhar inspirado na tartaruga de Logo -->
+<!-- - [Jogo PONG](pong/) - Estudos para o fazer um jogo
+- [`caneta_automatica_py`](caneta_automatica/) - Módulo para desenhar inspirado na tartaruga de Logo -->
 * [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
