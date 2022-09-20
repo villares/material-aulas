@@ -4,7 +4,6 @@ Allen Downey[no livro Pense em Python 2e](https://penseallen.github.io/PensePyth
 
 Para que isso funcione, e não caia em uma cilada conhecida como "recursão infinita", é preciso que a função sendo chamada possa, em certas condições, chegar em uma opção de execução que não requer chamar ela mesma. Essa condição que executa sem recursão é também conhecida como "caso base".
 
-
 ## Uma grade recursiva
 
 ```python
@@ -16,9 +15,9 @@ def setup():
 def grid(grid_x, grid_y, grid_size, n):
     cell_size = grid_size / n
     for i in range(n):
-        x=grid_x + i * cell_size
+        x = grid_x + i * cell_size
         for j in range(n):
-            y=grid_y + j * cell_size
+            y = grid_y + j * cell_size
             if cell_size < 20:
                 fill(0, 200, 0)
                 circle(x + cell_size / 2,
@@ -46,8 +45,8 @@ def draw():
     galho(60)
 
 def galho(tamanho):
-    ang=radians(mouse_x)
-    encurtar=0.8
+    ang = radians(mouse_x)
+    encurtar = 0.8
     line(0, 0, 0, -tamanho)
     if tamanho > 5:  # caso base quando tamanho não é maior que 5
         translate(0, -tamanho)  # desloca origem para ponta do galho
