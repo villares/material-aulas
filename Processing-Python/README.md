@@ -81,7 +81,7 @@
 - [Um botão com orientação a objetos](botao_com_OO.md)
 - [Uma classe de partículas simples](particulas.md)
 - [Operações com vetores e a classe `PVector` do Processing](vetores.md)
-- [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/mestrado/bandeirinhas/) (página externa)
+- [Introdução a orientação a objetos com bandeirinhas](bandeirinhas/README.md)
 
 #### Questões mais avançadas da ferramenta
 
