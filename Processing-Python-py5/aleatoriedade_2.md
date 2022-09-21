@@ -48,12 +48,12 @@ Note que a função `random()` em Python não recebe argumentos (isto é não va
     ![image](https://user-images.githubusercontent.com/3694604/191616197-420869d9-1be3-4ea7-a3db-fbaec345c5c6.png)
     
     ```python
-    for _ in range(10):
+    # Um outro exemplo
+    for _ in range(100):
         valor = random_int(1, 5) # 'sorteia' os números 1, 2, 3, 4, 5
         print(valor)  
     
-    # Resultado: produz 10 valores de 1 a 5, INCLUI O 5!!!
-    # Equivale a from random import randint as random_int
+    # Resultado: produz 100 valores de 1 a 5, INCLUI O 5!!!
     ```
 
 #### Selecionando um único item com `choice()`
@@ -220,43 +220,46 @@ def draw():
 Neste exemplo abaixo usamos uma semente para manter 'congelados' os números gerados por `random()` entre frames do `draw()`, mantendo a interatividade de ajuste do ângulo da árvore com o mouse. Quando uma imagem é exportada, o nome do arquivo contém a semente (_seed_) do gerador de números pseudo-aleatórios.
 
 ```python
-def setup():
+ef setup():
     global seed
     seed = int(random(1000))
     print(seed)
     size(500, 500)
 
-def draw(): 
+
+def draw():
     random_seed(seed)
     background(240, 240, 200)
     translate(250, 300)
     galho(60)
 
-def galho(tamanho): # definição do galho/árvore
-    ang = radians(mouseX)
+
+def galho(tamanho):  # definição do galho/árvore
+    ang = radians(mouse_x)
     reducao = .8
-    strokeWeight(tamanho / 10)
+    stroke_weight(tamanho / 10)
     line(0, 0, 0, -tamanho)
     if tamanho > 5:
-        pushMatrix()
+        push_matrix()
         translate(0, -tamanho)
         rotate(ang)
         galho(tamanho * reducao - random(0, 2))
         rotate(-ang * 2)
         galho(tamanho * reducao - random(0, 2))
-        popMatrix()
+        pop_matrix()
 
-def keyPressed(): # executada quando uma tecla for precinada
-    if keyCode == LEFT:
-         seed = seed - 1
-    if keyCode == RIGHT:
-         seed = seed + 1
+
+def key_pressed():  # executada quando uma tecla for precinada
+    if key_code == LEFT:
+        seed = seed - 1
+    if key_code == RIGHT:
+        seed = seed + 1
     if key == ' ':  # barra de espaço precionada, sorteia nova "seed"
         seed = int(random(100000))
         print(seed)
     if key == 's':  # tecla "s" precionada, salva a imagem PNG
-        nome_arquivo = 'arvore-s{}-a{}.png'.format(seed, mouseX % 360)
-        saveFrame(nome_arquivo)
+        nome_arquivo = 'arvore-s{}-a{}.png'.format(seed, mouse_x % 360)
+        save_frame(nome_arquivo)
         print("PNG salvo")
 ```
 
