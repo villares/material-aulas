@@ -25,7 +25,7 @@ Mas, se fizermos isso "matamos" o `random()` do py5. Uma alternativa, se quiserm
 
 `from random import random as py_random`
 
-Dessa forma usaremos o nome `py_random()`, uma outra opção ainda importar o módulo todo com outro nome.
+Dessa forma ao chamar a função escreveremos `py_random()`, uma outra opção ainda é importar o módulo todo com outro nome.
 
 `import random as rnd` 
 
