@@ -15,22 +15,22 @@
   - 1.1.2 [Condições aninhadas e outras estruturas condicionais](condicionais_2.md)
   - 1.1.3 [Divisão com inteiros, divisão por zero e o resto da divisão](divisao.md)
 
-- 1.2.0 [Movimento: uma animação simples usando `setup()` e `draw()`](movimento_py.md)
+- 1.2.0 [Movimento](movimento_py.md) uma animação simples usando `setup()` e `draw()`
   - 1.2.1 [Escopo de variáveis(local e global)](escopo_py.md)
 
 - 1.3.0 [Declarando novas funções](funcoes_py.md)
-  - 1.3.1 [Modificando as coordenadas com `translate()`, `rotate()` e mais!](transformacoes_coordenadas.md)
+  - 1.3.1 [Modificando as coordenadas](transformacoes_coordenadas.md) com `translate()`, `rotate()` e mais!
   - 1.3.2 [Funções recursivas](recursao_py.md)
   - 1.3.3 [Funções com argumentos padrão(ou opcionais)](funcoes_2.md)
 
-- 1.4.0 [Sequências e laços de repetição(iteração com `for`)](lacos_py.md)
+- 1.4.0 [Sequências e laços de repetição (iteração com `for`)](lacos_py.md)
   - 1.4.1 [Mais sobre sequências e fatias](mais_sequencias.md)
   - 1.4.2 [Grades retangulares: filas e colunas de elementos](grades.md)
   - 1.4.3 [Mais sobre polígonos](poligonos_2.md)
   - 1.4.4 [Desenhando formas curvas](curvas.md)
   - 1.4.5 [Laço de repetição com `while`](while.md)
 
-- 1.5.0 [Tipos de valores(inteiros, números de ponto flutuante, texto(*strings*))](tipagem_py.md)
+- 1.5.0 [Tipos de valores](tipagem_py.md) como inteiros (*int*), números de ponto flutuante (*float*) e texto (*strings*)
   - 1.5.1 [Textos no programa, no console e na tela(*strings*)](strings_py.md)
   - 1.5.2 [Trabalhando com fontes e outros ajustes do texto](tipografia.md) 
   - 1.5.3 [Métodos dos objetos *string*](string_methods.md)
@@ -38,11 +38,11 @@
 
 - 1.6.0 [Interação: input com teclado e mouse](input_py.md)
 
-- 1.7.0[Aleatoriedade: `random` e números 'sorteados'](aleatoriedade_1.md)
-  - 1.7.1 [Mais sobre aleatoriedade e as diferenças ente o `random` de Processing e de Python](aleatoriedade_2.md)
-  - 1.7.2 [*Perlin Noise* (ruído de Perlin) um tipo especial de número pseudo-aleatório](noise.md)
-  - 1.7.3 [Como usar seno `sin()`, cosseno `cos()` e arco tangente `atan2()`](seno_cosseno_atan2.md)
-  - 1.7.4 [Manipulando números com `remap()` e `lerp()`](map_lerp.md) - e fazendo cores intermediárias!
+- 1.7.0[Aleatoriedade: `random` e números "sorteados"](aleatoriedade_1.md)
+  - 1.7.1 [Mais sobre aleatoriedade](aleatoriedade_2.md) e as diferenças ente o `random` do py5 e o do Python]
+  - 1.7.2 [*Perlin Noise* (ruído de Perlin)](noise.md) um tipo especial de número pseudo-aleatório
+  - 1.7.3 [Como usar seno `sin()`, cosseno `cos()` e arco tangente `atan2()`](seno_cosseno_atan2.md) 
+  - 1.7.4 [Manipulando números com `remap()` e `lerp()`](map_lerp.md) e também interpolando cores
   - 1.7.5 [O que é *easing*?](easing.md) - transições de movimento
 
 - 1.8.0 [Funções como argumentos de outras funções](funcoes-como-argumentos.md) - `sort()` e funções `lambda`
