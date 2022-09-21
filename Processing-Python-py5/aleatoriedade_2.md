@@ -6,40 +6,55 @@ Vamos começar revisando a  função `random()` do py5, que produz números pseu
 
 Cada vez que chamamos a função `random()` com um valor de argumento, como em `sorteio = random(1);` um número entre zero e o argumento passado (servindo de limite superior, mas não incluso) é produzido. 
 
-![imagem_exemplo](assets/random1-10.png)
+![image](https://user-images.githubusercontent.com/3694604/191615358-6c68e870-ac4f-47b9-b509-026a769c80f4.png)
 
-Se dois valores forem usados, por exemplo `random (-5, 5)` serão produzidos números entre -5 e 5 (não incluso). E podemos obter números inteiros convertendo o valor usando `int()`, como em `sorteio_inteiro = int(random(1, 11))` que 'sorteia' com igual probabilidades os números de 1 a 10.
+Se dois valores forem usados, por exemplo `random (-5, 5)` serão produzidos números de ponto flutuante (*float*) entre -5 e 5 (não incluso o 5 final). 
 
 ### O módulo `random` da biblioteca padrão do Python
 
-No Python a funçao `random()` precisa ser importada do módulo `random` com a a seguinte  instrução:
+No Python a função `random()` precisa ser importada do módulo `random` com a a seguinte  instrução:
 
 ```python
 from random import random
 ```
 
-> Mas, se fizermos isso "matamos" o `random()` do py5. Uma alternativa, se quisermos manter as duas, é escrever: </br>
-> `from random import random as py_random` </br>
-> e aí usaremos o nome `py_random()`, uma outra opção ainda importar o módulo todo com outro nome </br>
-> `import random as rnd` </br>
-> e nesse caso usaremos `rnd.random()`, por exemplo. </br>
+![image](https://user-images.githubusercontent.com/3694604/191616536-04fd5dc5-84a9-4bc1-be76-daf578c04cb6.png)
 
-A função `random()` em Python não recebe argumentos (isto é não vai nada dentro dos parênteses) e devolve o equivalente a `random(1)` no py5, por esse motivo  não me  parece tão flexível e útil. 
 
-No entanto, o módulo `random` de Python oferece outras funções muito simpáticas, quero dizer, interessantes: `choice()`, `sample()`, e `shuffle()`.
+Mas, se fizermos isso "matamos" o `random()` do py5. Uma alternativa, se quisermos manter as duas, é escrever: 
 
-#### Produzindo números inteiros com `random_int` ou `randint()`
+`from random import random as py_random`
 
-É comum querermos produzir números pseudo-aleatórios inteiros, no Processing costumamos truncar, convertendo com `int()` como em `int(random(1, 6))`, mas com py5 podemos usar `random_int()` assim:
+Dessa forma usaremos o nome `py_random()`, uma outra opção ainda importar o módulo todo com outro nome.
 
-```python
-for _ in range(100):
-    valor = random_int(1, 5) # 'sorteia' os números 1, 2, 3, 4, 5
-    print(valor)  
+`import random as rnd` 
 
-# Resultado: produz 100 valores de 1 a 5, INCLUI O 5!!!
-# Equivale a from random import randint as random_int
-```
+E nesse caso usaremos `rnd.random()`, por exemplo. 
+
+Note que a função `random()` em Python não recebe argumentos (isto é não vai nada dentro dos parênteses) e devolve o equivalente a `random(1)` no py5, por esse motivo  não me  parece tão flexível e útil. No entanto, o módulo `random` de Python oferece outras funções muito simpáticas, quero dizer, interessantes: `choice()`, `sample()`, e `shuffle()`.
+
+#### Produzindo números inteiros com `random.randint` ou `py5.random_int`
+
+É comum querermos produzir números pseudo-aleatórios inteiros, vejamos trê maneiras:
+
+- No Processing tradicional a forma mais comum era truncar, convertendo com `int()`, como em `sorteio_inteiro = int(random(-5, 6))` que 'sorteia' com igual probabilidades os números de -5 a 5.
+
+- Podemos usar a função `randint()` do módulo `random` do Python da seguinte maneira:
+    ```python
+    from random import randint
+    sorteio_inteiro = randint(-5, 5)
+    ```
+- Ou ainda a função `random_int()` do py5, que funciona da mesma maneira. 
+    ![image](https://user-images.githubusercontent.com/3694604/191616197-420869d9-1be3-4ea7-a3db-fbaec345c5c6.png)
+    
+    ```python
+    for _ in range(10):
+        valor = random_int(1, 5) # 'sorteia' os números 1, 2, 3, 4, 5
+        print(valor)  
+    
+    # Resultado: produz 10 valores de 1 a 5, INCLUI O 5!!!
+    # Equivale a from random import randint as random_int
+    ```
 
 #### Selecionando um único item com `choice()`
 
