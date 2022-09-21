@@ -220,19 +220,17 @@ def draw():
 Neste exemplo abaixo usamos uma semente para manter 'congelados' os números gerados por `random()` entre frames do `draw()`, mantendo a interatividade de ajuste do ângulo da árvore com o mouse. Quando uma imagem é exportada, o nome do arquivo contém a semente (_seed_) do gerador de números pseudo-aleatórios.
 
 ```python
-ef setup():
+def setup():
     global seed
+    size(500, 500)
     seed = int(random(1000))
     print(seed)
-    size(500, 500)
-
 
 def draw():
     random_seed(seed)
     background(240, 240, 200)
     translate(250, 300)
     galho(60)
-
 
 def galho(tamanho):  # definição do galho/árvore
     ang = radians(mouse_x)
@@ -248,7 +246,6 @@ def galho(tamanho):  # definição do galho/árvore
         galho(tamanho * reducao - random(0, 2))
         pop_matrix()
 
-
 def key_pressed():  # executada quando uma tecla for precinada
     if key_code == LEFT:
         seed = seed - 1
@@ -262,6 +259,7 @@ def key_pressed():  # executada quando uma tecla for precinada
         save_frame(nome_arquivo)
         print("PNG salvo")
 ```
+![image](https://user-images.githubusercontent.com/3694604/191619761-26477e41-196a-4a28-ab1a-96b15b04c355.png)
 
 ---
 
