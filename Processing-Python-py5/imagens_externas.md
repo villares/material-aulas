@@ -1,26 +1,23 @@
 # Como usar imagens externas
 
-# Acessando um arquivo com `loadImage()`
+## Acessando um arquivo com `load_image()`
 
-Podemos carregar(_load_) na memória imagens digitais a partir de arquivos externos nos formatos PNG, JPG, GIF, TIF entre outros. Para isso usamos a função `load_image()`, mas é preciso indicar onde está o arquivo(o chamado 'caminho completo' do arquivo), ou que ele esteja na pasta `/ data /` dentro da pasta do seu _sketch_(programa).
+Podemos carregar(_load_) na memória imagens digitais a partir de arquivos externos nos formatos PNG, JPG, GIF, TIF entre outros. Para isso usamos a função `load_image()`, mas é preciso indicar onde está o arquivo (o chamado 'caminho completo' do arquivo), ou que ele esteja dentro da mesma pasta que o seu _sketch_ (programa).
 
 ```
-sketch_2020_04a(pasta/folder do sketch)
-   L  sketch_2020_04a.pyde(arquivo com o código)
-    L  data(pasta/folder)
-       L  imagem.jpg(imagem)
+sketch_2022_09a           (pasta/folder do sketch)
+   L  sketch_2022_09.py   (arquivo com o código)
+   L  imagem.jpg          (imagem)
 ```
 
 Note que a operação de carregar o arquivo de imagem é relativamente demorada e nunca deve ser executada dentro do laço `draw()`. Em geral só precisamos carregar uma vez a imagem e fazemos isso no `setup()`. Também é comum criarmos uma variável global que faz referência à imagem, neste exemplo a variável `img`:
 
 ```python
 
-
 def setup():
     size(400, 400)
     global img
     img = load_image("image.jpg")  # arquivo JPG na pasta /data/
-
 
 def draw():
     # é possível forçar um tamanho com image(imagem, 0, 0, 100, 100)
@@ -29,14 +26,11 @@ def draw():
     # podemos mostrar uma imagem com metade da sua largura e altura originais assim:
     # image(img, 0, 0, img.width / 2, img.height / 2)
 
-
 ```
 
 Se a imagem tiver ** exatamente ** a mesma dimensão da área de desenho ela pode ser usada em `background()`.
 
 ```python
-
-
 def setup():
     size(600, 400)
     global imagem_fundo
@@ -69,7 +63,7 @@ def draw():
     # outros desenhos sobre o fundo aqui
 ```
 
-# Acessando a cor de um pixel da tela ou de uma imagem
+## Acessando a cor de um pixel da tela ou de uma imagem
 
 Use `get()` para os pixels visíveis na tela ou o método `.get()` para os pixels em uma imagem `Py5Image`. Como no exemplo abaixo:
 
@@ -90,7 +84,7 @@ Use `get()` para os pixels visíveis na tela ou o método `.get()` para os pixel
         circle(mouse_x, mouse_y, 30)
 ```
 
-# Copiando uma imagem com `copy()`
+## Copiando uma imagem ou parted de uma imagem com `copy()`
 
 Podemos copiar imagens digitais previamente carregadas na memória para uma região específica da janela de exibição. Se a região a ser copiada e a região a ser colada a imagem tiverem tamanhos diferentes, então o conteúdo será automaticamente redimensionado na região de destino.
 
@@ -143,7 +137,7 @@ def draw():
 
 ![Uma imagem externa por cima da janela](assets/copy2.png "Uma imagem externa por cima da janela")
 
-# Assuntos relacionados
+## Assuntos relacionados
 
-- Estrutura de pixels das imagens em[Pixels e imagens](pixels.md)
+- Estrutura de pixels das imagens em [Pixels e imagens](pixels.md)
 - [Exportando imagens](exportando_imagem.md)
