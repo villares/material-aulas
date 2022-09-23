@@ -1,17 +1,15 @@
-# Lendo e escrevendo texto em arquivos (*file IO*)
-# Entrada (*input*) e saída (*output*) de dados em arquivos texto
+# Lendo e escrevendo texto em arquivos (*file IO*) [REVISAR]
 
-# desnecessário no Python 3, isto é para poder usar unicode="utf-8" no Python 2
-from codecs import open
-from os.path import join
+## Entrada (*input*) e saída (*output*) de dados em arquivos texto
+
 Nosso primeiro exemplo vai ser sobre como ler linhas de texto(*strings*) de um arquivo texto(*text file*).
 
 O arquivo `frutas.txt` vai ficar dentro da pasta `/ data /` dentro  do seu sketch:
 ```
 sketch_2020_05a(pasta/folder do sketch)
-  L  sketch_2020_05a.pyde(arquivo com o código)
-  L  data(pasta/folder)
-       L  frutas.txt(arquivo texto)
+  L  sketch_2020_05a.py  (arquivo com o código)
+  L  data                (pasta/folder)
+       L  frutas.txt     (arquivo texto)
 ```
 Conteúdo do aquivo:
 ```
@@ -22,28 +20,25 @@ banana
 jaca
 maracujá
 ```
-A leitura dos dos dados pode ser feita no Python de maneira mais 'universal', o que é útil saber para poder fazer em outros contextos de uso de Python:
+A leitura dos dos dados pode ser feita no Python com o gerenciador de contexto `with open(____) as ____:`  que cuida de fechar o arquivo depois de encerrada a leitura.
 
 ```python
 # No Python - exemplo mais universal
-with open(join('data', 'frutas.txt', 'r', encoding='utf-8') as file:
-    linhas=file.readlines()
+path_arquivo = sketch_path() / 'data' / 'frutas.txt'
+with open(path_arquivo, 'r') as arquivo:
+    linhas = arquivo.readlines()
 ```
-Ou usando uma função bem simples do Processing chamada `load_strings()`:
 
-```python
-# No Processing - mais específico - não use antes do setup()!
-linhas=load_strings("nomes.txt")  # frutas.txt na pasta /data/
-```
-Note que em ambos os casos, ler dados de um arquivo no computador é considerada uma operação relativamente lenta e não deve ser feita repetidas vezes dentro do `draw()` pois vai ser um disperdício e deixa o seu desenho ou animação lentos.
+Note que ler dados de um arquivo no computador é considerada uma operação relativamente lenta e não deve ser feita repetidas vezes dentro do `draw()` pois vai ser um disperdício e deixa o seu desenho ou animação lentos.
 
 ```python
 def setup():
     size(400, 400)
     background(0)
-    # frutas.txt na pasta /data/
-    linhas=load_strings("frutas.txt")
-
+    path_arquivo = sketch_path() / 'data' / 'frutas.txt'
+    # precisa existir este arquivo senão vai acontecer um erro
+    with open(path_arquivo, 'r') as arquivo:
+        linhas = arquivo.readlines()
     fill(100, 100, 255)
     text_align(CENTER, CENTER)
     text_size(24)
@@ -54,13 +49,16 @@ def setup():
 
 ![resultado](assets/read_lines.png)
 
-# Escolhendo um arquivo para abrir
+# [REVISAR REMOVER load_strings()]
+
+## Escolhendo um arquivo para abrir
 
 Usando o a função `select_input()`,  você permite que a pessoa escolha um arquivo para subsequente leitura, como no exemplo anterior, com `load_strings()`. É preciso passar dois argumentos: um texto para o título da janela de seleção, e o nome de uma função que será executada quano a pessoa terminar de selecionar o arquivo(ou cancelar a seleção).
 
 ```python
-linhas=["tecle 'o' para abrir um arquivo",
-          "tecle 'a' para apagar a lista",
+linhas = [
+    "tecle 'o' para abrir um arquivo",
+    "tecle 'a' para apagar a lista",
          ]
 
 def setup():
@@ -95,7 +93,7 @@ def select_file(selection):
 
 ![resultado](assets/select_input.png)
 
-# Escrevendo texto em arquivos (e escolhendo onde salvar um arquivo)
+## Escrevendo texto em arquivos (e escolhendo onde salvar um arquivo)
 
 De maneira análoga, podemos usar `save_strings()` para salvar em um arquivo do disco uma lista de * strings*. No exemplo abaixo usamos `select_output()` para disparar uma janela que pergunta o nome e local para salvar um arquivo.
 
@@ -185,7 +183,7 @@ with open(caminho_arquivo, "w", encoding="utf-8") as file:
  ```
 
 
-# Assuntos relacionados
+## Assuntos relacionados
 
 * [Textos no programa, no console e na tela(*strings*)](strings_py.md)
 * Se quiser ler mais sobre * Filie IO * na documentação do Python: [Python 2.7 Tutorial: Reading and Writing Files](https://docs.python.org/2/tutorial/inputoutput.html  # reading-and-writing-files)
