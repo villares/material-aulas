@@ -79,7 +79,7 @@ def has_image_ext(file_name):
 <details>
   <summary>clique para ver</summary>
 
-    <code>
+<code>
 
     from random import choice
 
@@ -141,7 +141,7 @@ def has_image_ext(file_name):
         file_ext = file_name.split('.')[-1]
         return file_ext.lower() in valid_ext
 
-    </code>
+</code>
 
 </details>
 
