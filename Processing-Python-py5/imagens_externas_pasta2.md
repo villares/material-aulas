@@ -1,136 +1,128 @@
-# Lendo todas as imagens da pasta `data`
+## Lendo todas as imagens da pasta `data`
 
-from random import choice
-import os  # para usar listdir, path.isfile, path.join
 ![imagens sorteadas da pasta](assets/random_images.gif)
 
-> Exemplo de execução usando imagens medievais coletadas pelo artista e educador[Daniel Seda](https://www.danielseda.com/home).
+> Exemplo de execução usando imagens medievais coletadas pelo artista e educador [Daniel Seda](https://www.danielseda.com/home).
 
-Tendo visto previamente como[ler e usar imagens de arquivos externos](imagens_externas.md) com `load_image()`, e a estrutura de dados lista(`list`) neste exemplo vamos carregar todas as imagens encontradas na pasta `data` localizada dentro da pasta do seu * sketch*. Depois vamos "sortear", uma imagem para mostrar usando a função `random.choice`. A cada clique do mouse uma nova imagem será mostrada.
+Tendo visto previamente como [ler e usar imagens de arquivos externos](imagens_externas.md) com `load_image()`, e a estrutura de dados lista (`list`) neste exemplo vamos carregar todas as imagens encontradas na pasta `data` localizada dentro da pasta do seu *sketch*. Depois vamos "sortear", uma imagem para mostrar usando a função `random.choice`. A cada clique do mouse uma nova imagem será mostrada.
 
 Para começar, é preciso criar uma variável global para guardar os dados das imagens carregados dos arquivos encontrados, fazemos isso com a linha `imagens = []` antes do `setup()` que cria uma lista vazia e aponta o nome `imagens` para ela.
 
-Usaremos a função `sketch_path()` do Processing, com o argumento `'data'` para obter o caminho da pasta * data * dentro do seu * sketch*. E vamos também usar funções importadas, trazidas, do módulo `os`do Python para:
+Usaremos a função `sketchPath()` do Processing, com o argumento `'data'` para obter o caminho da pasta *data* dentro do seu *sketch*. E vamos também usar funções importadas, trazidas, do módulo `os`do Python para:
 
 - Listar todos os itens de uma pasta com`os.listdir(caminho_da_pasta)`
 
-- Checar se o item é um arquivo(e não uma sub-pasta) com `os.path.isfile(caminho)`
+- Checar se o item é um arquivo (e não uma sub-pasta) com `os.path.isfile(caminho)`
 
 - Juntar um nome de arquivo com o caminho da pasta, formando o "caminho completo" do item, com `os.path.join(caminho, nome_arquivo)`
 
-Depois do procedimento que popula a lista `caminhos_arquivos`, que contém o caminho completo para os arquivos de imagem(localização da pasta + nome do arquivo), nós vamos pegar cada um desses caminhos e usá-lo para carregar os dados da imagem com a função `load_image()` do Processing. Essa função devolve um objeto `Py5Image` que pode ser mostrado na tela com a função `image()` posteriormente.
+Depois do procedimento que popula a lista `caminhos_arquivos`, que contém o caminho completo para os arquivos de imagem (localização da pasta + nome do arquivo), nós vamos pegar cada um desses caminhos e usá-lo para carregar os dados da imagem com a função `load_image()` do Processing. Essa função devolve um objeto `PImage` que pode ser mostrado na tela com a função `image()` posteriormente.
 
 ```python
+import os  # para usar listdir, path.isfile, path.join
+from random import choice
+from pathlib import Path
 
 imagens = []  # lista que vai receber objetos PImage (Processing Image data)
 
-
 def setup():
     size(400, 400)
     # Ponha as imagens na pasta /data/ dentro da pasta do seu sketch
-    # encontra o caminho da pasta 'data', não funciona fora do setup
-    data_folder = sketch_path('data')
-    # Começa olhando para os itens da pasta, confere se é uma imagem e guarda
-    # na lista caminhos_arquivos
+    data_folder = sketch_path() / 'data'  # não funciona fora do setup
+    # Começa olhando para os itens da pasta, confere se é uma imagem e guarda na lista caminhos_arquivos
     caminhos_arquivos = []
-    for nome_arquivo in os.listdir(data_folder):
-        caminho_arquivo = os.path.join(data_folder, nome_arquivo)
-        if os.path.isfile(caminho_arquivo) and has_image_ext(caminho_arquivo):
+    for caminho_arquivo in data_folder.iterdir():
+        if caminho_arquivo.is_file() and has_image_ext(caminho_arquivo.name):
             caminhos_arquivos.append(caminho_arquivo)
-    # Agora efetivamente carrega na memória cada imagem a partir dos caminhos
-    # listados no passo anterior
+    # Agora efetivamente carrega na memória cada imagem a partir dos caminhos listados no passo anterior
     for caminho_arquivo in caminhos_arquivos:
         img = load_image(caminho_arquivo)
         imagens.append(img)
-    # Vamos congelar a repetição do draw(), clique com o mouse para uma nova
-    # imagem (redraw)
-    no_loop()
-
-
+    # Vamos congelar a repetição do draw(), clique com o mouse para uma nova imagem (redraw)
+    noLoop()  
+        
 def draw():
     background(0)
     random_image = choice(imagens)
-    # Para encolher proporcionalmente a imagem caso ela não caiba na àrea de
-    # desenho
-    fator_escala = 1  # caso a imagem caiba perfeitamente
+    # Para encolher proporcionalmente a imagem caso ela não caiba na àrea de desenho
+    fator_escala = 1 # caso a imagem caiba perfeitamente
     if random_image.width > width:   # se a largura for maior que a largura da tela
         fator_escala = float(width) / random_image.width
-    if random_image.height * \
-        f > height:  # se mesmo tento sido já reduzida, a altura não couber
+    if random_image.height * f > height:  # se mesmo tento sido já reduzida, a altura não couber
         fator_escala = float(height) / random_image.height
     # Mostra a imagem centrada na àrea de desenho
-    image_mode(CENTER)
+    imageMode(CENTER)
     image(random_image, width / 2, height / 2,
           random_image.width * fator_escala, random_image.height * fator_escala
-
+                     
 def mouse_clicked():  # executada quando o mouse é clicado
     redraw()         # pede para executar mais um ciclo da função draw()
-
+    
 def has_image_ext(file_name):
     """Responde se a extansão do arquivo está na tupla contendo extensões válidas para imagens."""
-    valid_ext=('jpg', 'png', 'jpeg', 'gif', 'tif', 'tga')
-    file_ext=file_name.split('.')[-1]
+    valid_ext = ('jpg', 'png', 'jpeg', 'gif', 'tif', 'tga')
+    file_ext = file_name.split('.')[-1]
     return file_ext.lower() in valid_ext
 ```
-# Uma versão que checa se a pasta existe e não dá erro se a pasta estiver vazia
+### Uma versão que checa se a pasta existe e não dá erro se a pasta estiver vazia
 
-< details >
-  < summary > clique para ver < /summary >
+<details>
+  <summary>clique para ver</summary>
 
-< code >
+<code>
 import os  # para usar listdir, path.isfile, path.join
 from random import choice
 
-imagens=[]  # lista que vai receber objetos PImage (Processing Image data)
+imagens = []  # lista que vai receber objetos PImage (Processing Image data)
 
 def setup():
     size(400, 400)
     # Ponha as imagens na pasta /data/ dentro da pasta do seu sketch
-    data_folder=sketch_path('data')  # não funciona fora do setup
-    caminhos_arquivos=[]
+    data_folder = sketch_path('data')  # não funciona fora do setup
+    caminhos_arquivos = []
     try:
-        data_folder_contents=os.listdir(data_folder)
+        data_folder_contents = os.listdir(data_folder)
     except OSError:
         print(u'Pasta não encontrada.')
-        data_folder_contents=[]
+        data_folder_contents = []
     for nome_arquivo in data_folder_contents:
-        caminho_arquivo=os.path.join(data_folder, nome_arquivo)
+        caminho_arquivo = os.path.join(data_folder, nome_arquivo)
         if os.path.isfile(caminho_arquivo) and has_image_ext(caminho_arquivo):
             caminhos_arquivos.append(caminho_arquivo)
     for caminho_arquivo in caminhos_arquivos:
-        img=load_image(caminho_arquivo)
+        img = load_image(caminho_arquivo)
         imagens.append(img)
-    no_loop()  # clique do mouse para redraw
-
+    noLoop()  # clique do mouse para redraw
+        
 def draw():
     background(0)
     if imagens:
-        random_image=choice(imagens)
+        random_image = choice(imagens)
     else:
         print('Nenhuma imagem encontrada.')
         this.exit()
-    f=1
+    f = 1
     if random_image.width > width:
-        f=float(width) / random_image.width
+        f = float(width) / random_image.width
     if random_image.height * f > height:
-        f=float(height) / random_image.height
-    image_mode(CENTER)
+        f = float(height) / random_image.height
+    imageMode(CENTER)
     image(random_image, width / 2, height / 2,
           random_image.width * f, random_image.height * f)
-
-def mouse_clicked():
+                     
+def mouseClicked():
     redraw()
-
+    
 def has_image_ext(file_name):
-    valid_ext=('jpg', 'png', 'jpeg', 'gif', 'tif', 'tga')
-    file_ext=file_name.split('.')[-1]
+    valid_ext = ('jpg', 'png', 'jpeg', 'gif', 'tif', 'tga')
+    file_ext = file_name.split('.')[-1]
     return file_ext.lower() in valid_ext
-< /code >
+</code>
 
-< / details >
+</details>
 
-# Assuntos relacionados
+## Assuntos relacionados
 
-- Estrutura de pixels das imagens em[Pixels e imagens](pixels.md)
-- [Lendo e escrevendo texto em arquivos(*file IO*)](/Processing-Python/file_io.md)
+- Estrutura de pixels das imagens em [Pixels e imagens](pixels.md)
+- [Lendo e escrevendo texto em arquivos (*file IO*)](file_IO.md)
 - [Lendo todas as imagens de uma pasta selecionada pela pessoa usuária](imagens_externas_pasta.md)
