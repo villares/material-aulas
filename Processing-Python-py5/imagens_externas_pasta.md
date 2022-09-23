@@ -3,9 +3,9 @@
 
 ![exemplo de grade de imagens](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/muitas_imagens.png)
 
-> Exemplo de execução carregando 110 imagens medievais coletadas pelo artista e educador[Daniel Seda](https://www.danielseda.com/home).
+> Exemplo de execução carregando 110 imagens medievais coletadas pelo artista e educador[Daniel Seda](https://www.danielseda.com/).
 
-Tendo visto previamente como[ler e usar imagens de arquivos externos](imagens_externas.md) com `load_image()`, e a estrutura de dados lista(`list`) neste exemplo mais avançado vamos permitir que a pessoa escolha uma pasta e o * sketch * vai carregar todas as imagens nela encontradas.
+Tendo visto previamente como [ler e usar imagens de arquivos externos](imagens_externas.md) com `load_image()`, e a estrutura de dados lista(`list`) neste exemplo mais avançado vamos permitir que a pessoa escolha uma pasta e o *sketch* vai carregar todas as imagens nela encontradas.
 
 A seleção da pasta começa com uma chamada da função `select_folder()`, quando pressioanada a tecla 'o' (na função de evento `key_pressed()`).
 
@@ -14,14 +14,14 @@ A seleção da pasta começa com uma chamada da função `select_folder()`, quan
 
 def key_pressed():
     if key == 'o':
-        select_folder("Selecione uma pasta", "adicionar_imagens")
+        select_folder("Selecione uma pasta", adicionar_imagens)
 
 
 ```
 
-Note que o primeiro argumento de `select_folder()` é `"Selecione uma pasta"` o texto(*string*) que vai como título da janela de seleção. O segundo argumento `"adicionar_imagens"` é mais curioso, trata-se de um * string * com o nome de uma função que será chamada quando a pessoa terminar de interagir com a janela de seleção de pasta(diretório / *folder*). Isso é uma estratégia conhecida em programação como designar uma "função de retorno" ou, em inglês, *callback*.
+Note que o primeiro argumento de `select_folder()` é `"Selecione uma pasta"` o texto(*string*) que vai como título da janela de seleção. O segundo argumento `adicionar_imagens` é mais curioso, trata-se do nome de uma função que será chamada quando a pessoa terminar de interagir com a janela de seleção de pasta(diretório / *folder*). Isso é uma estratégia conhecida em programação como designar uma "função de retorno" ou, em inglês, *callback*.
 
-Na estratégia com * callback * uma função definida é chamada para nós quando algum evento acontece. Neste nosso caso, a função `adicionar_imagens()` é chamada no encerramento da janela de selecionar pastas(esta parte de abrir a janela para selecionar pastas é iniciada com a execução de `select_folder()`, mas o momento do encerramento depende da pessoa usando o programa).
+Na estratégia com *callback* uma função definida é chamada para nós quando algum evento acontece. Neste nosso caso, a função `adicionar_imagens()` é chamada no encerramento da janela de selecionar pastas (esta parte de abrir a janela para selecionar pastas é iniciada com a execução de `select_folder()`, mas o momento do encerramento depende da pessoa usando o programa).
 
 É preciso criar uma variável global para guardar as informações dos arquivos encontrados, fazemos isso com esta linha antes do `setup()` que cria uma lista vazia e aponta o nome `imagens` para ela:
 
@@ -32,93 +32,87 @@ imagens = []
 A função `adicionar_imagens()` é executada só quando a pessoa terminou de escolher uma pasta ou se tiver cancelado o processo, ela tem um parâmetro `selection` que recebe a pasta selecionada ou o valor especial `None` (se a pessoa fechou a janela sem selecionar uma pasta):
 
 ```python
-
-
 def adicionar_imagens(selection):
     if selection == None:
         print("Seleção cancelada.")
     else:
-        dir_path = selection.get_absolute_path()
-        print("Pasta selecionada: " + dir_path)
-        for file_name, file_path in lista_imagens(dir_path):
+        print(f'Pasta selecionada: {selection}')
+        for file_path in lista_imagens(selection):
             img = load_image(file_path)
-            img_name = file_name.split('.')[0]
-            print("imagem " + img_name + " carregada.")
-            imagens.append((img_name, img))
+            print(f'imagem {file_path.name} carregada.')
+            imagens.append((file_path.name, img))
         print('Número de imagens: ' + str(len(imagens)))
-
-
 ```
 
-Saiba que o código que cuida da janela do sistema operacional para escolhermos a pasta, e também o código da função `adicionar_imagens()`, chamada em seguida, são executados em linhas de execução(*threads*) separadas do * sketch * principal, isto é correm em separado, e por conta disso não interrompem execução do `draw()`, o chamado 'laço principal de repetição' do Processing.
+Saiba que o código que cuida da janela do sistema operacional para escolhermos a pasta, e também o código da função `adicionar_imagens()`, chamada em seguida, são executados em linhas de execução(*threads*) separadas do *sketch* principal, isto é correm em separado, e por conta disso não interrompem execução do `draw()`, o chamado 'laço principal de repetição' do Processing.
 
 O carregamento das imagens é um procedimento razoavelmente lento e por isso é possível vê-las aparecendo aos poucos na tela, conforme são acrescentadas na lista `imagens` pela execução do laço `for` em `adicionar_imagens()`.
 
 Uma boa parte da solução da nossa tarefa, na verdade, está encapsulada em `lista_imagens()`, função que usamos em `adicionar_imagens()`. Ela recebe o caminho completo da pasta selecionada e devolve uma lista com tuplas dos nomes dos arquivos das imagens e o caminho completo delas para ser usado no `load_image()`:
 
 ```python
-
-
 def lista_imagens(dir=None):
-    from os import listdir
-    from os.path import isfile, join
-    data_path = dir or sketch_path('data')
+    from pathlib import Path
+    data_path = Path(dir) or sketch_path('data')
     try:
-        f_list = [(f, join(data_path, f)) for f in listdir(data_path)
-                  if isfile(join(data_path, f)) and imgext(f)]
+        f_list = [item for item in data_path.iterdir()
+                  if item.is_file() and has_image_ext(item.name)]
     except Exception as e:
         print("Erro ({0}): {1}".format(e.errno, e.strerror))
         return []
     return f_list
-
-
 ```
-Não vamos entrar em detalhes aqui, mas você pode querer ler mais sobre[compreensão de listas](https://panda.ime.usp.br/pensepy/static/pensepy/09-Listas/listas.html  # list-comprehensions) (a maneira compacta de produzir uma lista usada para criar a `f_list`) e [tratamento de exceções](http://turing.com.br/pydoc/2.7/tutorial/errors.html#excecoes) (o trecho dentro dentro de `try:` e  `except... :`) para entender melhor a função `lista_imagens()`.
+
+Não vamos entrar em detalhes aqui, mas você pode querer ler mais sobre [compreensão de listas](https://panda.ime.usp.br/pensepy/static/pensepy/09-Listas/listas.html  # list-comprehensions) (a maneira compacta de produzir uma lista usada para criar a `f_list`) e [tratamento de exceções](http://turing.com.br/pydoc/3.8/tutorial/errors.html#excecoes) (o trecho dentro dentro de `try:` e  `except... :`) para entender melhor a função `lista_imagens()`.
 
 Repare que usamos a pequena função `has_image_ext()` para responder se  os nomes fornecidos por `os.listdir()` tem a terminação mencionada na tupla `valid_ext`.
 
 ```python
 def has_image_ext(file_name):
     # extensões dos formatos de imagem que o Processing aceita!
-    valid_ext=('jpg', 'png', 'jpeg', 'gif', 'tif', 'tga')
-    file_ext=file_name.split('.')[-1]
+    valid_ext = ('jpg', 'png', 'jpeg', 'gif', 'tif', 'tga')
+    file_ext = file_name.split('.')[-1]
     return file_ext.lower() in valid_ext
 ```
 
 Por fim, aqui vai o código completo do sketch, que desenha uma grade de imagens no `draw()` com os itens da lista `imagens`:
 
 ```python
-
-
-imagens=[]
-w, h=80, 55
+imagens = []
+w, h = 80, 55  # largura e altura do espaço para cada imagem
 
 def setup():
     global colunas, linhas
     size(880, 550)
-    colunas, linhas=width // w, height // h
-    print('Posições na grade: ' + str(colunas * linhas))
+    colunas, linhas = width // w, height // h
+    print(f'Posições na grade: {colunas * linhas}')
 
 def draw():
     background(0)
-    # Desenha grade com `imagens` com colunas fixas de largura `w`, imagens
-    # mais largas são sobrepostas
-    contador=0
+    # Desenha grade com `imagens` com colunas fixas de largura `w`,
+    # imagens mais largas são sobrepostas pela pr
+    contador = 0
     for c in range(colunas):
         x=c * w
         for l in range(linhas):
             y=l * h
             if contador < len(imagens):
-                img=imagens[contador][1]
-                fator=h / img.height
+                nome, img = imagens[contador]
+                fator = h / img.height
                 image(img, x, y, img.width * fator, img.height * fator)
                 contador += 1
+                
+    if not imagens:   # if len(imagens) == 0:
+        text_size(20)
+        text("aperte 'o' para selecionar uma pasta\n"  # note ausência da vírgula aqui
+             "aperte a barra de espaço para limpar a grade",
+             100, 100)
 
 def key_pressed():
     if key == 'o':
-        select_folder("Selecione uma pasta", "adicionar_imagens")
+        select_folder("Selecione uma pasta", adicionar_imagens)
     if key == ' ':
-        imagens[:]=[]
+        imagens[:] = []  # esvazia a lista de imagens
     if key == 'p':
         save_frame('####.png')
 
@@ -126,27 +120,25 @@ def adicionar_imagens(selection):
     if selection == None:
         print("Seleção cancelada.")
     else:
-        dir_path=selection.getAbsolutePath()
+        dir_path = selection
         print("Pasta selecionada: " + dir_path)
-        for file_name, file_path in lista_imagens(dir_path):
-            img=loadImage(file_path)
-            img_name=file_name.split('.')[0]
-            print("imagem " + img_name + " carregada.")
-            imagens.append((img_name, img))
+        for file_path in lista_imagens(dir_path):
+            img = load_image(file_path)
+            print(f'imagem {file_path.name} carregada.')
+            imagens.append((file_path.name, img))
         print('Número de imagens: ' + str(len(imagens)))
 
 def lista_imagens(dir=None):
     """
-    Devolve uma a lista de tuplas com os nomes dos arquivos de imagem e os caminhos
-    completos para cada uma das images na pasta `dir` ou na pasta /data/ do sketch.
+    Devolve uma a lista dos caminhos (objetos pathlib.Path) dos arquivos
+    de imagem contidos na pasta `dir` (ou na pasta /data/ próxima ao sketch).
     Requer a função has_image_ext() para decidir quais extensões aceitar.
     """
-    from os import listdir
-    from os.path import isfile, join
-    data_path=dir or sketchPath('data')
+    from pathlib import Path
+    data_path = Path(dir) or sketch_path('data')
     try:
-        f_list=[(f, join(data_path, f)) for f in listdir(data_path)
-                  if isfile(join(data_path, f)) and has_image_ext(f)]
+        f_list=[item for item in data_path.iterdir()
+                 if item.is_file() and has_image_ext(item.name)]
     except Exception as e:
         print("Erro ({0}): {1}".format(e.errno, e.strerror))
         return []
@@ -154,8 +146,8 @@ def lista_imagens(dir=None):
 
 def has_image_ext(file_name):
     # extensões dos formatos de imagem que o Processing aceita!
-    valid_ext=('jpg', 'png', 'jpeg', 'gif', 'tif', 'tga')
-    file_ext=file_name.split('.')[-1]
+    valid_ext = ('jpg', 'png', 'jpeg', 'gif', 'tif', 'tga')
+    file_ext = file_name.split('.')[-1]
     return file_ext.lower() in valid_ext
 ```
 
@@ -166,10 +158,10 @@ def draw():
     background(0)
     # Desenha `imagens` em filas de altura 'h', deslocando na horizontal com
     # largura de cada imagem.
-    x=y=0
+    x = y = 0
     for nome, img in imagens:
         print(img)
-        fator=h / img.height
+        fator = h / img.height
         if x + img.width * fator > width:
             x=0
             y += h
