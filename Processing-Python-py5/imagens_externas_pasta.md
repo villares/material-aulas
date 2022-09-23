@@ -41,31 +41,30 @@ def draw():
     ...
 ```
 
-A função `adicionar_imagens()` é executada só quando a pessoa terminou de escolher uma pasta ou se tiver cancelado o processo, ela tem um parâmetro `selection` que recebe a pasta selecionada ou o valor especial `None` (se a pessoa fechou a janela sem selecionar uma pasta):
+A função `adicionar_imagens()` é executada só quando a pessoa terminou de escolher uma pasta ou se tiver cancelado o processo, ela tem um parâmetro `dir_path` que recebe a pasta selecionada ou o valor especial `None` (se a pessoa fechou a janela sem selecionar uma pasta):
 
 ```python
-def adicionar_imagens(selection):
-    if selection == None:
+def adicionar_imagens(dir_path):
+    if dir_path == None:
         print("Seleção cancelada.")
     else:
-        print(f'Pasta selecionada: {selection}')
-        for file_path in lista_imagens(selection):
+        print(f'Pasta selecionada: {dir_path}')
+        for file_path in lista_imagens(dir_path):
             img = load_image(file_path)
             print(f'imagem {file_path.name} carregada.')
             imagens.append((file_path.name, img))
-        print('Número de imagens: ' + str(len(imagens)))
+        print(f'Número de imagens: {len(imagens)}')
 ```
 
 Saiba que o código que cuida da janela do sistema operacional para escolhermos a pasta, e também o código da função `adicionar_imagens()`, chamada em seguida, são executados em linhas de execução(*threads*) separadas do *sketch* principal, isto é correm em separado, e por conta disso não interrompem execução do `draw()`, o chamado 'laço principal de repetição' do Processing.
 
 O carregamento das imagens é um procedimento razoavelmente lento e por isso é possível vê-las aparecendo aos poucos na tela, conforme são acrescentadas na lista `imagens` pela execução do laço `for` em `adicionar_imagens()`.
 
-Uma boa parte da solução da nossa tarefa, na verdade, está encapsulada em `lista_imagens()`, função que usamos em `adicionar_imagens()`. Ela recebe o caminho completo da pasta selecionada e devolve uma lista com tuplas dos nomes dos arquivos das imagens e o caminho completo delas para ser usado no `load_image()`:
+Uma boa parte da solução da nossa tarefa, na verdade, está encapsulada em `lista_imagens()`, função que usamos em `adicionar_imagens()`. Ela recebe o caminho da pasta selecionada (*path*, um objeto `pathlib.Path`) e devolve uma lista com tuplas dos nomes dos arquivos das imagens e o caminho (*path*) delas para ser usado no `load_image()`:
 
 ```python
-def lista_imagens(dir=None):
-    from pathlib import Path
-    data_path = Path(dir) or sketch_path('data')
+def lista_imagens(data_path=None):
+    data_path = data_path or sketch_path('data')  # objeto pathlib.Path
     try:
         f_list = [item for item in data_path.iterdir()
                   if item.is_file() and has_image_ext(item.name)]
@@ -129,29 +128,27 @@ def key_pressed():
     if key == 'p':
         save_frame('####.png')
 
-def adicionar_imagens(selection):
-    if selection == None:
+def adicionar_imagens(dir_path):
+    if dir_path == None:
         print("Seleção cancelada.")
     else:
-        dir_path = selection
         print("Pasta selecionada: " + dir_path)
         for file_path in lista_imagens(dir_path):
             img = load_image(file_path)
             print(f'imagem {file_path.name} carregada.')
             imagens.append((file_path.name, img))
-        print('Número de imagens: ' + str(len(imagens)))
+        print(f'Número de imagens: {len(imagens)}')
 
-def lista_imagens(dir=None):
+def lista_imagens(data_path=None):
     """
     Devolve uma a lista dos caminhos (objetos pathlib.Path) dos arquivos
-    de imagem contidos na pasta `dir` (ou na pasta /data/ próxima ao sketch).
+    de imagem contidos na pasta `data_path` (ou na pasta /data/ próxima ao sketch).
     Requer a função has_image_ext() para decidir quais extensões aceitar.
     """
-    from pathlib import Path
-    data_path = Path(dir) or sketch_path('data')
+    data_path = data_path or sketch_path('data')  # objeto pathlib.Path
     try:
-        f_list=[item for item in data_path.iterdir()
-                 if item.is_file() and has_image_ext(item.name)]
+        f_list = [item for item in data_path.iterdir()
+                  if item.is_file() and has_image_ext(item.name)]
     except Exception as e:
         print("Erro ({0}): {1}".format(e.errno, e.strerror))
         return []
