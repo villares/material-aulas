@@ -181,5 +181,5 @@ def draw():
 
 # Assuntos relacionados
 
-- Estrutura de pixels das imagens em[Pixels e imagens](pixels.md)
-- [Lendo e escrevendo texto em arquivos(*file IO*)](/file_IO.md)
+- Estrutura de pixels das imagens em [Pixels e imagens](pixels.md)
+- [Lendo e escrevendo texto em arquivos (*file IO*)](file_IO.md)
