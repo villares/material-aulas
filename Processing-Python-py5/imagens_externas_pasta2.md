@@ -8,15 +8,19 @@ Tendo visto previamente como [ler e usar imagens de arquivos externos](imagens_e
 
 Para começar, é preciso criar uma variável global para guardar os dados das imagens carregados dos arquivos encontrados, fazemos isso com a linha `imagens = []` antes do `setup()` que cria uma lista vazia e aponta o nome `imagens` para ela.
 
-Usaremos a função `sketchPath()` do Processing, com o argumento `'data'` para obter o caminho da pasta *data* dentro do seu *sketch*. E vamos também usar funções importadas, trazidas, do módulo `os`do Python para:
+Usaremos a função `sketch_path()` do py5, com o argumento `'data'` para obter o caminho da pasta *data* que est do seu *sketch*.
 
-- Listar todos os itens de uma pasta com`os.listdir(caminho_da_pasta)`
+> Note que essa informação do caminho não é um simples *string* mas um objeto especial da biblioteca padrão do Python, do tipo `pathlib.Path` que sabe fazer uma porção de coisas úteis.
+> 
+> - Listar os itens nele contidos, se for uma pasta com`p.iterdir()`, entregando objetos `pathlib.Path` para cada um deles.
+> - Informar se é um arquivo (e não pasta/sub-pasta) com `p.is_file()`
+> - Não vamos usar aqui, mas é possível juntar um nome de arquivo ou de uma sub-pasta com o caminho da pasta mãe, formando o "caminho completo" do item: 
+>  ```python
+>   caminho_imagem = sketch_path('data')  / 'uma_imagem.png'
+>  ```
+> Isso pode ser importante saber no futuro pois em diferentes sistemas operacionais os strings que representam o caminho para um arquivo ou pasta (path) usam símbolos diferentes em cada sistema, melhor deixar o Python fazer a junção para você!
 
-- Checar se o item é um arquivo (e não uma sub-pasta) com `os.path.isfile(caminho)`
-
-- Juntar um nome de arquivo com o caminho da pasta, formando o "caminho completo" do item, com `os.path.join(caminho, nome_arquivo)`
-
-Depois do procedimento que popula a lista `caminhos_arquivos`, que contém o caminho completo para os arquivos de imagem (localização da pasta + nome do arquivo), nós vamos pegar cada um desses caminhos e usá-lo para carregar os dados da imagem com a função `load_image()` do Processing. Essa função devolve um objeto `PImage` que pode ser mostrado na tela com a função `image()` posteriormente.
+Depois do procedimento que popula a lista `caminhos_arquivos`, que contém o caminho completo para os arquivos de imagem, nós vamos pegar cada um desses caminhos e usá-lo para carregar os dados da imagem com a função `load_image()` do py5. Essa função aceita um *string* com a localização de um arquivo no disco, mas aceita também um objeto `pathlib.Path`,e devolve um objeto `Py5Image` que pode ser mostrado na tela com a função `image()` posteriormente.
 
 ```python
 from random import choice
