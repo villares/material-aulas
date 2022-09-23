@@ -10,12 +10,16 @@ Tendo visto previamente como [ler e usar imagens de arquivos externos](imagens_e
 A seleção da pasta começa com uma chamada da função `select_folder()`, quando pressioanada a tecla 'o' (na função de evento `key_pressed()`).
 
 ```python
+def setup():
+    size(880, 550)
 
+def draw():
+    background(0)
+    # aqui vai ter o código que põe as imagens na tela
 
 def key_pressed():
     if key == 'o':
         select_folder("Selecione uma pasta", adicionar_imagens)
-
 
 ```
 
@@ -26,7 +30,15 @@ Na estratégia com *callback* uma função definida é chamada para nós quando 
 É preciso criar uma variável global para guardar as informações dos arquivos encontrados, fazemos isso com esta linha antes do `setup()` que cria uma lista vazia e aponta o nome `imagens` para ela:
 
 ```python
+
 imagens = []
+
+def setup():
+    size(880, 550)
+
+def draw():
+    background(0)
+    ...
 ```
 
 A função `adicionar_imagens()` é executada só quando a pessoa terminou de escolher uma pasta ou se tiver cancelado o processo, ela tem um parâmetro `selection` que recebe a pasta selecionada ou o valor especial `None` (se a pessoa fechou a janela sem selecionar uma pasta):
@@ -75,9 +87,10 @@ def has_image_ext(file_name):
     return file_ext.lower() in valid_ext
 ```
 
-Por fim, aqui vai o código completo do sketch, que desenha uma grade de imagens no `draw()` com os itens da lista `imagens`:
+Por fim, aqui vai o código completo do sketch, contendo a parte que desenha uma grade de imagens no `draw()` com os itens da lista `imagens`:
 
 ```python
+
 imagens = []
 w, h = 80, 55  # largura e altura do espaço para cada imagem
 
