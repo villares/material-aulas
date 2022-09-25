@@ -1,5 +1,5 @@
 # Pixels e imagens
-> Baseado em ** arteprog ** Programação Criativa / [Pixel e imagens](https://github.com/arteprog/programacao-criativa/blob/master/conteudo/pixels-e-imagens.md)
+> Baseado em **arteprog** Programação Criativa / [Pixel e imagens](https://github.com/arteprog/programacao-criativa/blob/master/conteudo/pixels-e-imagens.md)
 
 Uma imagem digital, por vezes chamada de uma imagem bitmap, nada mais é do que uma sequência de números indicando variações de vermelho, verde e azul numa localização particular de uma grade de ** *pixels***, um neologismo cunhado na década de 60 juntado * pix*, abreviação de * picture*, e * el * de * element*, é o menor elemento de uma imagem.
 
