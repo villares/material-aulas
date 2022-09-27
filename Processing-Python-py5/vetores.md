@@ -88,16 +88,18 @@ Neste segundo exemplo a diferença(subtração) entre um vetor criado com as cor
 | [random(dim=3)](https://py5coding.org/reference/py5vector_random3D.html) | Cria um novo vetor unitário 3D com uma direção aleatória. |
 | [from_heading()](https://py5coding.org/reference/py5vector_from_heading.html) | Cria um novo vetor unitário 2D a partir de um ângulo. |
 | [copy](https://py5coding.org/reference/py5vector_copy.html) | Produz um novo vetor, cópia do original. |
+| [data](https://py5coding.org/reference/py5vector_data.html) | O array Numpy usado para guardar os valores do vetor. |
+| [dim](https://py5coding.org/reference/py5vector_dim.html) | Informa as dimensões do do vetor (2, 3, ou 4). |
 | [mag](https://py5coding.org/reference/py5vector_mag.html) | Calcula a magnitude do vetor. |
 | [mag_sq](https://py5coding.org/reference/py5vector_mag_sq.html) | Calcula a magnitude ao quadrado do vetor. É mais rápido que calcular a magnitude! |
 | [dist()](https://py5coding.org/reference/py5vector_dist.html) | Calcula a distância entre dois pontos representados por dois vetores. |
 | [dot()](https://py5coding.org/reference/py5vector_dot.html) | Calcula o produto escalar(*dot product*) entre dois vetores. |
 | [cross()](https://py5coding.org/reference/py5vector_cross.html) | Calcula o produto vetorial(*cross product*) entre dois vetores. |
-| [from_heading](https://py5coding.org/reference/py5vector_from_heading.html) | Cria vetor a partir de uma direção, ângulo em radianos. |
+| [from_heading()](https://py5coding.org/reference/py5vector_from_heading.html) | Cria vetor a partir de uma direção, ângulo em radianos. |
 | [normalize()](https://py5coding.org/reference/py5vector_normalize.html) | Normaliza o vetor, isto é faz com que fique com a magnitude 1, mantendo a mesma direção. |
-| [norm](https://py5coding.org/reference/py5vector_normalize.html) | Cópia "normalizada", com magnitude 1, do vetor, mantendo a direção. |
+| [norm](https://py5coding.org/reference/py5vector_norm.html) | Cópia "normalizada", com magnitude 1, do vetor, mantendo a direção. |
 | [set_mag()](https://py5coding.org/reference/py5vector_set_mag.html) | Define, isto é, altera, a magnitude do vetor. |
-| [heading](https://py5coding.org/reference/py5vector_heading.html) | Calcula o ângulo de rotação do vetor, isto é, para onde ele aponta. |
-| [rotate()](https://py5coding.org/reference/py5vector_rotate.html) | Gira o vetor um certo ângulo em radianos(funciona apenas em 2D). |
+| [heading](https://py5coding.org/reference/py5vector_heading.html) | O ângulo de rotação do vetor, isto é, para onde ele aponta. |
+| [rotate()](https://py5coding.org/reference/py5vector_rotate.html) | Gira o vetor um certo ângulo em radianos (funciona apenas com vetores 2D e 3D). |
 | [lerp()](https://py5coding.org/reference/py5vector_lerp.html) | Produz o resultado da interpolação linear entre dois vetores. |
 | [angle_between()](https://py5coding.org/reference/py5vector_angle_between.html) | Calcula o ângulo entre dois vetores. |
