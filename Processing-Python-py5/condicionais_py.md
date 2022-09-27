@@ -12,7 +12,18 @@
 
 ## Sintaxe `if` e `if`/`else`
 
-Imagine o seguinte cenário...
+```python 
+if «condição»: #  se a condição for verdadeira, execute:
+    «corpo» 
+    
+if «condição»: #  se a condição for verdadeira, execute:
+    «corpo do if» 
+else:          #  senão (se a condição é falsa) execute:
+   «corpo do else»
+```
+
+### Imagine o seguinte cenário...
+
 Saindo de casa, se (`if`) está chovendo, a condição "chovendo" é verdadeira (`True`), então levo o guarda-chuva;
 Opcionalmente, podemos definir que, senão (`else`), quando a condição "chovendo" é falsa (`False`), devo levar óculos de sol.
 
