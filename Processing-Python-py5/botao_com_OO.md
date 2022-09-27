@@ -1,13 +1,11 @@
 # Um botão com orientação a objetos
 
-# precisa do módulo botao.py (o arquivo na pasta do sketch, uma aba no IDE)
-from botao import Botao
-Primeiro vamos ver como usar um botão, instanciando dois objetos da classe `Botao`.
+Primeiro vamos ver como usar um botão, instanciando dois objetos da classe `Botao`. 
 
 ```python
+from botao import Botao  # precisa do módulo botao.py (um outro arquivo na pasta do sketch)
 
 estado_inicial = True
-
 
 def setup():
     global b1, b2
@@ -34,8 +32,7 @@ def draw():
 Aqui a classe utilizada no exemplo.
 
 ```python
-# arquivo botao.py
-
+# para o arquivo botao.py
 
 class Botao():
 
@@ -73,6 +70,4 @@ class Botao():
             self.pressed = False
 
         return False
-
-
 ```
