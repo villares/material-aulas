@@ -17,9 +17,9 @@ if «condição»: #  se a condição for verdadeira, execute:
     «corpo» 
     
 if «condição»: #  se a condição for verdadeira, execute:
-    «corpo do if» 
+    «corpo do `if`» 
 else:          #  senão (se a condição é falsa) execute:
-   «corpo do else»
+   «corpo do `else`»
 ```
 
 ### Imagine o seguinte cenário...
