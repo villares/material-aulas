@@ -81,7 +81,7 @@
 - 6.2.0 [Lendo arquivos de imagem(*bitmap/raster*)](imagens_externas.md)
   - 6.2.1 [Lendo todas as imagens da pasta `data`](imagens_externas_pasta2.md) e sorteando uma
   - 6.2.1 [Lendo todas as imagens de uma pasta selecionada pela pessoa usuária](imagens_externas_pasta.md) (avançado)
-- 6.3.1 [Lendo e escrevendo texto em arquivos(*file IO*)](file_io.md)
+- 6.3.1 [Lendo e escrevendo texto em arquivos(*file IO*)](file_IO.md)
 
 ### Orientação a Objetos
 
