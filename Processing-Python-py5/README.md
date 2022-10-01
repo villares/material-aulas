@@ -56,7 +56,7 @@
 
 ### Desenhando em 3D
 
-- 3.1.0 [Primeiros passos com `size(…, …, P3D)`](desenho-3_d.md)
+- 3.1.0 [Primeiros passos com `size(…, …, P3D)`](desenho-3D.md)
 
 ### Mais sobre interação com o teclado e mouse
 
@@ -85,15 +85,15 @@
 
 ### Orientação a Objetos
 
-- 7.1.1 [Primeiros passos de orientação a objetos: usando a classe Slider](slider_com_oo.md)
-- 7.2.1 [Um botão com orientação a objetos](botao_com_oo.md)
+- 7.1.1 [Primeiros passos de orientação a objetos: usando a classe Slider](slider_com_OO.md)
+- 7.2.1 [Um botão com orientação a objetos](botao_com_OO.md)
 - 7.3.1 [Uma classe de partículas simples](particulas.md)
-- 7.4.1 [Operações com vetores e a classe `Py5Vector` do Processing](vetores.md) [REVIsAR] 
-- 7.5.1 [Introdução a orientação a objetos com bandeirinhas](bandeirinhas/README.md)
+- 7.4.1 [Operações com vetores e a classe `Py5Vector` do Processing](vetores.md) 
+- 7.5.1 [Introdução a orientação a objetos com bandeirinhas](bandeirinhas)
 
 ### Questões mais avançadas das ferramentas
 
-- 8.1.1 [Usando várias abas no IDE](modulos.md)  [REVISAR]
+- 8.1.1 [Usando várias abas no IDE](modulos.md)
 - 8.2.1 [Dicas para portar exemplos do Processing modo Java para o modo Python](java_para_python.md)
 <!-- - 8.2.2 REVISAR [Mais sobre Python, Jython e Java](http://arteprog.space/Processando-Processing/tutoriais-PT/python-Python_Jython_e_Java) (página externa) -->
 - 8.3.1 [Mais sobre atributos gráficos](mais_atributos_graficos.md)
