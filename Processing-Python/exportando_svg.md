@@ -83,10 +83,11 @@ def draw():
         endRecord()
         save_frame = False
 
-def salvaSVG(selection, ):
-     if selection == None:
+def salvaSVG(selection):
+    global output
+    if selection == None:
         println("Salvar cancelado.")
-     else:
+    else:
         println("Salvando em: " + selection.getAbsolutePath())
         output = createGraphics(int(width * fator_escala),
                                 int(height * fator_escala),
