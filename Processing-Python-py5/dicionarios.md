@@ -14,7 +14,7 @@ Dicionários em especial são tão poderosos e flexíveis que são usados intern
 
 Ou ainda este meme aqui:
 
-![](https://pbs.twimg.com/media/EelzOpCX0AAIeYV?format=png & name=small)
+![](https://pbs.twimg.com/media/EelzOpCX0AAIeYV?format=png&name=small)
 
 # Uma metáfora para dicionários
 
