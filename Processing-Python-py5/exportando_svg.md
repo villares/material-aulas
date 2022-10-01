@@ -1,15 +1,7 @@
 # Exportando SVG
 
-from java.io import File
-Muito semelhante a exportação de PDF, para salvar um arquivo vetorial SVG, é necessário adicionar uma biblioteca de exportação, que já vem com o Processing, acrescentando esta linha no início do * sketch*:
 
-``` python
-add_library('svg')
-```
-Isso pode ser feito manualmente ou pelo menu * Sketch * do Processing IDE:
-***Sketch > Importar Biblioteca > SVG Export***
-
-# Usando um objeto PGraphics
+## Usando um objeto Py5Graphics
 
 A estratégia mostrada a seguir permite mostrar na tela o desenho mas salvar um arquivo ajustes especiais, como por exemplo dimensões escaladas.
 
@@ -19,8 +11,6 @@ A estratégia mostrada a seguir permite mostrar na tela o desenho mas salvar um 
 """
 Tecle 'e' para salvar um único frame e encerrar o sketch
 """
-
-add_library('svg')
 
 save_frame = False
 fator_escala = 3.78  # 255px -> ~255mm
@@ -41,8 +31,7 @@ def draw():
         begin_record(svg_output)
         svg_output.stroke_weight(.33)  # linha mais fina ainda!
         svg_output.scale(fator_escala)
-        # svg_output.background(200)  # sem background, fundo transparente no
-        # SVG
+        # svg_output.background(200)  # sem background, fundo transparente no SVG
 
     # desenhando aqui, sai na tela e no arquivo
     fill(255, 0, 0, 100)
@@ -52,7 +41,7 @@ def draw():
 
     if save_frame:
         end_record()  # encerra a gravação do arquivo
-        exit()  # encerra o sketch
+        exit_sketch()  # encerra o sketch, sem isso o arquivo nao salva
 
 
 def key_pressed():
@@ -63,23 +52,20 @@ def key_pressed():
 
 ```
 
-# Permitindo que a pessoa escolha onde salvar
+## Permitindo que a pessoa escolha onde salvar
 
 ```python
 
-add_library('svg')
-
-save_frame = False
+save_now = False
 fator_escala = 3
-
 
 def setup():
     size(400, 400)
 
 
 def draw():
-    global save_frame
-    if (save_frame):
+    global save_now
+    if save_now:
         begin_record(output)
         output.scale(fator_escala)
 
@@ -87,37 +73,39 @@ def draw():
     background(200, 255, 255)
     rect(100, 100, 100, 100)
 
-    if save_frame:
+    if save_now:
         end_record()
-        save_frame = False
+        exit_sketch()
+        
 
-
-def salva_svg(selection, ):
+def salva_svg(selection):
+    global save_now, output
     if selection is None:
         print("Salvar cancelado.")
     else:
-        print("Salvando em: " + selection.get_absolute_path())
+        print("Salvando em: " + selection)
         output = create_graphics(int(width * fator_escala),
                                  int(height * fator_escala),
-                                 SVG, selection.get_absolute_path())
-        save_frame = True
+                                 SVG, selection)
+        save_now = True
 
 
 def key_pressed():
     if key == 's':
-        sugestao = File("exemplo.svg")
-        select_output("Salvar:", "salvaSVG", sugestao)
+        sugestao = "exemplo.svg"
+        select_output("Salvar:", salva_svg, sugestao)
 
 
 ```
 
-# Limitações
+## Limitações
 
 O que não funciona quando exportamos em SVG?
 
 - `blend_mode(MULTIPLY)`ou qualquer outra variante de `blend_mode()` não tem efeito no SVG(só na tela).
+- Atualmente não é possível salvar múltiplos SVG em um mesmo sketch.
 
-# Exportação de desenho 3D em arquivos vetoriais 2D
+### Exportação de desenho 3D em arquivos vetoriais 2D
 
 É possível exportar a geometria 3D em si para arquivos DXF ou ainda outros formatos apropriados, assunto que não vamos tratar neste momento.
 
@@ -133,17 +121,13 @@ O resultado, infelizmente,  é  bastante limitado, como pode ser visto abaixo:
 Tecle 'e' para salvar um único frame e encerrar o sketch
 """
 
-add_library('svg')
-# add_library('pdf')
-
 save_frame = False
-
 
 def setup():
     global output
     size(500, 500, P3D)  # P3D para denhar em 3D
     output = create_graphics(width, height, SVG, "3D.svg")
-    # output = createGraphics(width, height, PDF, "3D.pdf")
+    # output = create_graphics(width, height, PDF, "3D.pdf")
     text_mode(SHAPE)
 
 
@@ -173,7 +157,7 @@ def draw():
 
     if save_frame:
         end_raw()  # encerra a gravação do arquivo
-        exit()  # encerra o sketch
+        exit_sketch()  # encerra o sketch
 
 
 def key_pressed():
@@ -184,6 +168,6 @@ def key_pressed():
 
 ```
 
-# Assuntos relacionados:
+## Assuntos relacionados:
 
 - [Exportando PDF](exportando_pdf.md)
