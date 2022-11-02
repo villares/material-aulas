@@ -146,7 +146,7 @@ def key_released():
 
 Você viu um `65535` no meio das teclas?
 
-Significa que uma tecla *codificada* (`CODED`) foi pressionada, como `SHIFT`, por exemplo. Precisamos lembrar que algumas teclas são identificadas de maneira ligeiramente diferente, as ditas teclas *codificadas*. Quando `key == CODED` você precisa usar a variável `keyCode` para saber qual tecla foi apertada (ou solta), em geral comparando com uma constante numérica destas aqui:
+Significa que uma tecla *codificada* (`CODED`) foi pressionada, como `SHIFT`, por exemplo. Precisamos lembrar que algumas teclas são identificadas de maneira ligeiramente diferente, as ditas teclas *codificadas*. Quando `key == CODED` você precisa usar a variável `key_code` para saber qual tecla foi apertada (ou solta), em geral comparando com uma constante numérica destas aqui:
 
 `UP DOWN LEFT RIGHT ALT CONTROL SHIFT`
 
@@ -221,7 +221,7 @@ def key_pressed():
     if key != CODED:
         teclas_apertadas.add(key)
     else:
-        teclas_apertadas.add(keyCode)
+        teclas_apertadas.add(key_code)
 
     # Impeça que o sketch seja encerrado com ESC!
     if key == ESC:
@@ -231,7 +231,7 @@ def key_released():
     if key != CODED:
         teclas_apertadas.discard(key)
     else:
-        teclas_apertadas.discard(keyCode)
+        teclas_apertadas.discard(key_code)
 ```
 ![](assets/teclas_simultaneas_3.gif)
 
@@ -240,22 +240,22 @@ def key_released():
 * Uma vez que certas teclas modificam o efeito de outras, por exemplo, `SHIFT` faz a tecla `1`  aparecer como `!`, então certas sequências podem trazer resultados estranhos:
 
   Apertar`SHIFT`, depois `1 `, soltar `SHIFT`e por fim soltar `1`. faz o sketch ficar sem ver a tecla `!` ser 'solta'. 
-  Uma solução possível é manter registro só do `keyCode` das teclas que permanece sempre o mesmo, mas podemos converter o `keyCode` , que é um número, em algo mais legível, no caso das teclas não codificadas, usando chr()`:
+  Uma solução possível é manter registro só do `key_code` das teclas que permanece sempre o mesmo, mas podemos converter o `key_code` , que é um número, em algo mais legível, no caso das teclas não codificadas, usando chr()`:
 
   ```python
   def key_pressed():
       if key != CODED:
-          teclas_apertadas.add(chr(keyCode))
+          teclas_apertadas.add(chr(key_code))
       else:
-          teclas_apertadas.add(keyCode)
+          teclas_apertadas.add(key_code)
 
   def key_released():
       if key != CODED:
-          teclas_apertadas.discard(chr(keyCode))
+          teclas_apertadas.discard(chr(key_code))
       else:
-          teclas_apertadas.discard(keyCode) 
+          teclas_apertadas.discard(key_code) 
   ```
-  Note que agora `a` e  `A` devem aparecer como ` A` e , `1` e `!`  como`1` . Fique atento e teste para evitar surpresas! No meu computador o `keyCode` de `+` e `-` do teclado numérico lateral, por exemplo, aparecem como `k` e `m`.
+  Note que agora `a` e  `A` devem aparecer como ` A` e , `1` e `!`  como`1` . Fique atento e teste para evitar surpresas! No meu computador o `key_code` de `+` e `-` do teclado numérico lateral, por exemplo, aparecem como `k` e `m`.
 - Foi usada `sorted()` para obter uma lista ordenada a partir do conjunto `teclas_apertadas`
 - Dentro do `key_pressed()` tem um pequeno truque que impede o *sketch*  de ser interrompido pela tecla `ESC`.
 - No dicionário acrescentei alguns códigos de teclas que vi, estando no Linux, os códigos e nomes das teclas podem variar dependendo do seu sistema operacional.
@@ -295,10 +295,10 @@ def setup():
 def draw():
     global cor_fundo
     if anima_fundo:
-        cor_fundo = abs(cor_fundo + sin(frameCount / 60.)) % 256
+        cor_fundo = abs(cor_fundo + sin(frame_count / 60.)) % 256
     background(cor_fundo)
     for p in players:
-        print p
+        # print(p)  # debug
         fill(p['fill'])
         stroke(p['stroke'])
         ellipse(p['x'], p['y'], 50, 50)
@@ -313,15 +313,15 @@ def draw():
             p['x'] += 1
 
 def key_pressed():
-    teclas_apertadas.add(keyCode if key == CODED else chr(keyCode))
+    teclas_apertadas.add(key_code if key == CODED else chr(key_code))
     for p in players:
         if p['inv'] in teclas_apertadas:
             p['fill'], p['stroke'] = p['stroke'], p['fill']
 
 def key_released():
     global anima_fundo
-    teclas_apertadas.discard(keyCode if key == CODED else chr(keyCode))
-    if keyCode == SHIFT:
+    teclas_apertadas.discard(key_code if key == CODED else chr(key_code))
+    if key_code == SHIFT:
         anima_fundo = not anima_fundo
     if key == ' ':
         pa['x'], pa['y'] = 128, 128
