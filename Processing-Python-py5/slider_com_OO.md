@@ -113,6 +113,7 @@ def galho(tamanho):
 Veja uma primeira versão da classe Slider
 
 ```python
+
 class Slider:
 
     def __init__(self, low, high, default, label=''):
@@ -120,14 +121,14 @@ class Slider:
         self.value = default
         self.label = label
         self.w, self.h = 120, 20
-        self.position(20, 20)  # default position
+        self.position(25, 25)  # default position
 
     def position(self, x, y):
         self.x, self.y = x, y
         self.rectx = self.x + remap(self.value, self.low, self.high, 0, self.w)
 
     def update(self):
-        if mouse_pressed and dist(mouse_x, mouse_y, self.rectx, self.y) < self.h:
+        if is_mouse_pressed and dist(mouse_x, mouse_y, self.rectx, self.y) < self.h:
             self.rectx = mouse_x
         self.rectx = constrain(self.rectx, self.x, self.x + self.w)
         self.value = remap(self.rectx, self.x, self.x + self.w, self.low, self.high)
@@ -143,7 +144,8 @@ class Slider:
         stroke(200)
         line(self.x, self.y, self.x + self.w, self.y)
         stroke_weight(1)
-        # stroke(0)
+        stroke(0)
+        line(self.x + self.w / 24, self.y, self.x + self.w - self.w / 24, self.y)
         fill(255)
         stroke(0)
         rect(self.rectx, self.y, self.w / 12, self.h)
@@ -180,7 +182,7 @@ class Slider:
         self.value = default
         self.label = label
         self.w, self.h = 120, 20
-        self.position(20, 20)  # Pos default
+        self.position(25, 25)  # Pos default
 
     def position(self, x, y):
         """Define as coordenadas na tela, e calcula rectx, pos. do 'handle'"""
@@ -192,7 +194,7 @@ class Slider:
     def update(self):
         """Atualiza o slider e devolve o valor (self.value). Chama display()"""
         # mousePressed moves slider
-        if mouse_pressed and dist(mouse_x, mouse_y, self.rectx, self.y) < self.h:
+        if is_mouse_pressed and dist(mouse_x, mouse_y, self.rectx, self.y) < self.h:
             self.rectx = mouse_x
         # constrain rectangle
         self.rectx = constrain(self.rectx, self.x, self.x + self.w)
