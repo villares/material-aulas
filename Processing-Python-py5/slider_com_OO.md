@@ -124,13 +124,13 @@ class Slider:
 
     def position(self, x, y):
         self.x, self.y = x, y
-        self.rectx = self.x + map(self.value, self.low, self.high, 0, self.w)
+        self.rectx = self.x + remap(self.value, self.low, self.high, 0, self.w)
 
     def update(self):
         if mouse_pressed and dist(mouse_x, mouse_y, self.rectx, self.y) < self.h:
             self.rectx = mouse_x
         self.rectx = constrain(self.rectx, self.x, self.x + self.w)
-        self.value = map(self.rectx, self.x, self.x + self.w, self.low, self.high)
+        self.value = remap(self.rectx, self.x, self.x + self.w, self.low, self.high)
         self.display()
         return self.value
         
@@ -151,7 +151,7 @@ class Slider:
         text_align(CENTER, CENTER)
         text("{:.1f}".format(self.value), self.rectx, self.y + self.h)
         text(self.label, self.x + self.w / 2, self.y - self.h)
-        pop()  # popStyle() and popMat
+        pop()  # popStyle() and popMatrix
 ```
     
 # Páginas relacionadas
@@ -187,7 +187,7 @@ class Slider:
         self.x = x
         self.y = y
         # the position of the rect you slide:
-        self.rectx = self.x + map(self.value, self.low, self.high, 0, self.w)
+        self.rectx = self.x + remap(self.value, self.low, self.high, 0, self.w)
 
     def update(self):
         """Atualiza o slider e devolve o valor (self.value). Chama display()"""
@@ -196,7 +196,7 @@ class Slider:
             self.rectx = mouse_x
         # constrain rectangle
         self.rectx = constrain(self.rectx, self.x, self.x + self.w)
-        self.value = map(self.rectx,
+        self.value = remap(self.rectx,
                          self.x, self.x + self.w,
                          self.low, self.high)
         self.display()
