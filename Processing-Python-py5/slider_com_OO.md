@@ -4,15 +4,15 @@ No começo do curso os principais exemplos de código que vimos se valem, em ger
 
 Vamos começar apresentando os primeiros elementos e vocabulários da orientação a objetos.
 
-# Ideias principais e vocabulário
+## Ideias principais e vocabulário
 
-# Classe (_class_), tipo (_type_) ou uma "categoria de objetos"
+### Classe (_class_), tipo (_type_) ou uma "categoria de objetos"
 
 Tratando como equivalentes os termos classe e tipo, quando falamos sobre os valores manipulados pelo nosso programa é comum mencionarmos a categoria a que pertencem, isto é, de que tipo ou classe são. Os valores mais fundamentais, ditos primitivos, como os números que manipulamos, são em geral do tipo _float_(ponto flutuante) ou _int_(abreviação de _integer_, inteiros), já os textos são da classe _str_(abreviação de _string_, uma cadeia de caracteres). Estruturas como listas são objetos do tipo _list_ e assim por diante. Você pode não ter visto mas o Processing nos entrega os dados de imagens carregadas do disco na forma de um objeto `Py5Image`. Cada tipo de objeto pode ter propriedades e funcionalidades específicas(atributos e métodos) que os tornam mais úteis em determinados contextos.
 
 Note que fora os tipos embutidos(acima mencionamos _int_, _float_, _str_ e _list_, mas há vários outros), as classes normalmente seguem a convenção de ter a primeira letra maiúscula no nome, com `Slider` que veremos mais à frente, e é especialmente recomendável seguir essa convençao para as classes que você criar.
 
-# Atributos (propriedades ou campos)
+### Atributos (propriedades ou campos)
 
 Objetos tem "valores ou propriedades" chamadas de atributos, que podem ser consultados usando a "sintaxe do ponto" (`objeto.atributo`).
 Por exemplo, quando carregamos uma imagem no Processing podemos consultar as dimensões dela nos atributos `.width` e `.height`:
@@ -23,7 +23,7 @@ w = img.width  # largura em pixels
 h = img.height  # altura em pixels
 ```
 
-# Métodos (ou funções associadas aos objetos)
+### Métodos (ou funções associadas aos objetos)
 
 Objetos tem funções associadas, conhecidas como métodos, que podem ser invocadas com a "sintaxe do ponto" (`objeto.metodo()`).
 Uma lista em Python, por exemplo, [possui diversos métodos](list_methods.md) e já vimos pelo menos um deles, o `.append()` que é chamado para incluir elementos na lista.
@@ -34,7 +34,7 @@ frutas.append('kiwi')
 print(frutas)  # ['uva', 'banana', 'kiwi']
 ```
 
-# Instanciar (criar uma nova instância de um objeto)
+### Instanciar (criar uma nova instância de um objeto)
 
 Fora casos especiais em que podemos criar objetos diretammente no código(como a lista de frutas que acabamos de ver) ou com uma função ajudante, no caso de `load_image(nome_arquivo)` que cria um objeto `Py5Image`, costumamos criar novos objetos chamando o nome da classe, e isso pode ou não demandar argumentos. No exemplo que veremos a seguir vamos criar um slider.
 
@@ -42,11 +42,11 @@ Fora casos especiais em que podemos criar objetos diretammente no código(como a
 s1 = Slider(0, 90, 50, 'tamanho')  # mínimo, máximo, valor_inicial, etiqueta
 ```
 
-# O que ficou de fora
+## O que ficou de fora
 
 Não vamos ver ainda neste momento em detalhes de como funciona a definição ou criação da classe(a parte que segue `class Slider: `), que codifica como ela produz e inicializa os objetos ou como são definidos os métodos, nem trataremos do assunto mais avançado "herança" em que uma classe é baseada em outra, recebendo desta parte das suas características.
 
-# Exemplo de uso da classe `Slider`
+## Exemplo de uso da classe `Slider`
 
 Veja agora um exemplo comentado de como instanciar e usar objetos da classe `Slider` que vão servir de interface gráfica para modificar um desenho de uma àrvore.
 
@@ -103,10 +103,10 @@ def galho(tamanho):
 ![slider](assets/slider.png) 
        
        
-# Como é a definição da classe `Slider`? (a classe por dentro)       
+## Como é a definição da classe `Slider`? (a classe por dentro)       
 
 > **Atenção: o código abaixo faz parte do exemplo acima.**
-> A boa prática diz que, principalmente para projetos mais complexos, é interessante separar as classes em outro arquivo para facilitar a manipulação e leitura do código. Para isso, basta cria uma nova aba *slider*, que se torna um arquivo `slider.py`. Nesse caso é preciso usar a instrução `from slider import Slider` no começo do seu código. Se não quiser fazer isso, simplesmente cole-o na aba principal, após o código anterior`.
+> Em projetos grandes, mais complexos, pode ser interessante separar as classes em outro arquivo para facilitar a manipulação e leitura do código. Para isso, crie um novo arquivo, que pode se chamar, por exemplo `slider.py`, vizinho ao seu arquivo principal. No arquivo principal é preciso usar a instrução `from slider import Slider` no começo do seu código. Se não quiser fazer isso, simplesmente cole-o no final do seu arquivo principal, após o código anterior`.
     
 Veja uma primeira versão da classe Slider
 
@@ -160,9 +160,9 @@ class Slider:
 - [Uma classe de partículas simples](Processing-Python/particulas.md)
 - [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/mestrado/bandeirinhas/) (página externa)
     
-# Extra: Uma segunda versão da classe `Slider`    
+## Extra: Uma segunda versão da classe `Slider`    
     
-Acrescentando alguns extras e comentários à classe `Slider`. Permite o uso de sliders em *sketchs* com 3_d.
+Acrescentando algumas funcionalidades extra e comentários à classe `Slider`.
 
 ```python
 class Slider:
@@ -206,7 +206,7 @@ class Slider:
         """Desenha o slider na tela, usando coordenadas sem transformar"""
         push()         # Combina pushMatrix() e pushStyle()
         reset_matrix()  # push(), seguido de resetMatrix() e camera() permitem...
-        camera()       # ... desenhar o slider no sistema de coordenadas original
+        camera()       # .maldino@fediscience.org.. desenhar o slider no sistema de coordenadas original
         rect_mode(CENTER)
         # Linha cinza sob o slider
         stroke_weight(4)
