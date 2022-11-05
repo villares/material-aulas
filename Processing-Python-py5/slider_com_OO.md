@@ -36,7 +36,7 @@ print(frutas)  # ['uva', 'banana', 'kiwi']
 
 ### Instanciar (criar uma nova instância de um objeto)
 
-Fora casos especiais em que podemos criar objetos diretammente no código(como a lista de frutas que acabamos de ver) ou com uma função ajudante, no caso de `load_image(nome_arquivo)` que cria um objeto `Py5Image`, costumamos criar novos objetos chamando o nome da classe, e isso pode ou não demandar argumentos. No exemplo que veremos a seguir vamos criar um slider.
+Fora casos especiais em que podemos criar objetos diretammente no código (como a lista de frutas que acabamos de ver) ou com uma função ajudante, no caso de `load_image(nome_arquivo)` que cria um objeto `Py5Image`, costumamos criar novos objetos *chamando* o nome da classe (usando os parênteses, como em uma chamada de funç, e isso pode ou não demandar argumentos. No exemplo que veremos a seguir vamos criar um slider.
 
 ```python
 s1 = Slider(0, 90, 50, 'tamanho')  # mínimo, máximo, valor_inicial, etiqueta
