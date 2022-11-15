@@ -2,7 +2,7 @@
 
 ## Uma breve visão geral
 
-A biblioteca **py5** pode ser usada de varias maneiras, estilos ou contextos de programação, que chamamos de "modos". Mais detalhes podem ser encontrados em [py5coding.org - The Four py5 Modes](http://py5coding.org/content/py5_modes.html).
+A biblioteca **py5** pode ser usada de várias maneiras, são estilos ou contextos de programação que chamamos de "modos". Mais detalhes podem ser encontrados em [py5coding.org - The Four py5 Modes](http://py5coding.org/content/py5_modes.html).
 
 > ⚠️ **Se estiver em um Mac:**<br>
 > Leia [Special Notes for OSX Users](http://py5coding.org/content/osx_users.html).
