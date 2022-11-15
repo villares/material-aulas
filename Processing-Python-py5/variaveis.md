@@ -11,7 +11,7 @@ lado = 50  # cria a variável `lado` que aponta para o valor 50
 rect(10, 10, lado, lado)  # desenha um retângulo na posição x:10, y:10, largura:50, altura:50
 
 nome = 'Guido'
-text(nome, 20, 20)  # desenha o texto de `nome` na área de desenho
+text(nome, 20, 75)  # desenha o texto de `nome` na área de desenho
 ```
 ![exemplo 1](assets/variaveis_Guido.png)
 
