@@ -9,7 +9,7 @@ A biblioteca **py5** pode ser usada de várias maneiras, são estilos ou context
 
 ### Module mode (modo de módulo)
 
-Este modo pode parecer familiar para alguns programadores Python. Você importa a biblioteca no começo do código e define algumas funções especiais que o py5 chama para você, como `setup()` (executa uma vez quando o sketch é iniciado), `draw()` (repete continuamente, usado para interação e animações ) e quem sabe algumas outras [funções de evento](http://py5coding.org/reference/sketch.html). No final você chama `py5.run_sketch()`.
+Este modo pode parecer familiar para alguns programadores Python. Você importa a biblioteca no começo do código e define algumas funções especiais que o py5 chama para você, como `setup()` (executa uma vez quando o sketch é iniciado), `draw()` (repete continuamente, usado para interação e animações ) e, se quiser, algumas outras [funções de evento](http://py5coding.org/reference/sketch.html). No final você chama `py5.run_sketch()`.
 
 O exemplo a seguir cria um pequeno sketch que desenha retângulos na posição atual do mouse:
 
@@ -31,8 +31,8 @@ py5.run_sketch()
 > ⚠️ **Cuidado:**<br>
 > Não use `from py5 import *`, isso quebra muitas coisas! Se você quiser evitar os prefixos `py5.`, considere usar o *imported mode*.
 
-> ℹ️ **Observação:**<br>
-> Se você não definiu `settings()` (opcional neste modo), a função `setup()` será dividida em `setup()` e `settings()` para você sob o capô, de acordo com algumas regras, como `size()` precisa ficar em `settings()`, um requisito do Processing.
+> ℹ️ **Detalhe interno:**<br>
+> Se você não definir uma função `settings()` (opcional neste modo), a função `setup()` será dividida em `setup()` e `settings()` para você "automagicamente" sob o capô, de acordo com algumas regras especiais, pois a infra do Processing requer que `size()` esteja em `settings()`, mas você não precisa se preocupar com isso.
 
 ### Imported mode (modo importado)
 
