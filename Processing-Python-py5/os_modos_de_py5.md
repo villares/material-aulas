@@ -42,7 +42,7 @@ Para usar este modo, você precisa do *py5 Jupyter Notebook Kernel* ([instruçõ
 
 Outra opção é usar o *Thonny IDE* com o plug-in [thonny-py5mode](https://github.com/tabreturn/thonny-py5mode/) instalado, que cria um menu *py5* com a opção *Imported mode for py5*, que, quando estiver marcada, faz o Thonny executar a ferramenta `run_sketch` para você.
 
-Este é o exemplo anterior escrito para *impoeted mode*:
+Este é o exemplo anterior escrito para *imported mode*:
 
 ``` python
 def setup():
@@ -52,9 +52,11 @@ def setup():
 def draw():
     rect(mouse_x, mouse_y, 10, 10)
 
-# Se você estiver usando um Jupyter Notebook, adicione isto:
+# Se estiver usando um Jupyter Notebook precisa acrescentar:
 run_sketch()
 ```
+
+> Se estiver usando a ferramenta `run_sketch` ou o plugin `thonny-py5mode` no Thonny não precisa `run_sketch()` no final.
 
 ### Static mode (modo estático)
 
