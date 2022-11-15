@@ -1,4 +1,4 @@
-# Os modos do py5
+# Os modos de py5
 
 ## Uma breve visão geral
 
