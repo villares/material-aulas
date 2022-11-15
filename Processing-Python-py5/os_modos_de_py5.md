@@ -60,7 +60,7 @@ run_sketch()
 
 ### Static mode (modo estático)
 
-*Static mode* permite criar imagens estáticas usando código sem função. Ele é projetado para programadores iniciantes que estão dando seus primeiros passos na programação Python.
+No *static mode* podemos criar imagens estáticas usando código sem precisar de declarações de função. Ele foi pensado para quem está dando seus primeiros passos na programação com Python.
 
 O código abaixo, escrito para *static mode*, criará uma imagem de 300 por 200 pixels com fundo cinza e 20 quadrados posicionados aleatoriamente:
 
