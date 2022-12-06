@@ -49,6 +49,6 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 ---
 ### Licenças
 
-**Texto e imagens:** Alexandre B A Villares - [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR), exceto onde indicado, confira atribuições em cada página para materiais adaptados/remixados de outras fontes. Agradeço aos colaboradores do repositório que doam suas contribuições nestes termos!
+**Texto e imagens:** Alexandre B A Villares - Licença [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR), para o material acrescentado a partir de 2022 (usando a biblioteca py5), exceto onde indicado, confira atribuições em cada página para materiais adaptados/remixados de outras fontes. Material até 2022 (usando Processing Modo Python) sob [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR), sujeito às mesmas exceções. Agradeço aos colaboradores do repositório que doam suas contribuições nestes termos!
 
 **Código:** GNU GPL v3.0, exceto onde for indicado, por alguma razão.
