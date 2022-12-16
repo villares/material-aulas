@@ -1,6 +1,7 @@
 ## Material para py5 com Thonny IDE
 
 - 0.0.0 [O que é e como instalar o py5 e o Thonny IDE](https://abav.lugaralgum.com/como-instalar-py5/)
+   - 0.0.1 [Sumário traduzido da referência do py5](sumario-referencia-py5.md)
 
 ### Elementos fundamentais
 
