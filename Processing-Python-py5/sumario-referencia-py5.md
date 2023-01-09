@@ -1,31 +1,18 @@
 # Sumário da Referência do py5
 
-* [Desenhando formas](#Desenhando-formas):
-    *  [Elementos básicos](#Elementos-básicos) | [Formas 3D](#Formas-3D) | [Formas baseadas em vértices](#Formas-baseadas-em-vértices) | [Curvas independentes](#Curvas-independentes) | [Criando e exibindo objetos Py5Shape](#Criando-e-exibindo-objetos-Py5Shape)
-* [Cor e outros atributos gráficos](#Cor-e-outros-atributos-gráficos):
-    *  [Criando e atribuindo cores](#Criando-e-atribuindo-cores) | [Analisando cores](#Analisando-cores) | [Atributos de traço e controle de estilo](#Atributos-de-traço-e-controle-de-estilo)
-* [Entrada de dados (*Input*)](#Entrada-de-dados-Input):
-    *  [Lendo arquivos](#Lendo-arquivos) | [Variáveis do teclado](#Variáveis-do-teclado) | [Funções de evento do teclado](#Funções-de-evento-do-teclado) | [Variáveis do mouse](#Variáveis-do-mouse) | [Funções de evento do mouse](#Funções-de-evento-do-mouse) | [Funções auxiliares de data e horário](#Funções-auxiliares-de-data-e-horário)
-* [Saída de dados (*Output*)](#Saída-de-dados-Output):
-    *  [Escrevendo arquivos](#Escrevendo-arquivos) | [Saída de imagens](#Saída-de-imagens) | [Área de texto (console)](#Área-de-texto-console)
-* [Tipografia](#Tipografia):
-    *  [Desenhando texto](#Desenhando-texto) | [Carregando e selecionando fontes](#Carregando-e-selecionando-fontes) | [Métricas de texto](#Métricas-de-texto)
-* [Transformações do Sistema de Coordenadas](#Transformações-do-Sistema-de-Coordenadas): 
-    * [Operações Básicas](#Operações-Básicas) | [Rotações 3D](#Rotações-3D) | [Operações com a matrix de transformações](#Operações-com-a-matrix-de-transformações)
-* [Ambiente do Sketch](#Ambiente-do-Sketch):
-    *  [Configuração e variáveis](#Configuração-e-variáveis) | [Outros controles da janela do sketch](#Outros-controles-da-janela-do-sketch)
-* [Relacionadas à matemática](#Relacionadas-à-matemática):
-    *  [Cálculo](#Cálculo) | [Aleatoriedade (*Random*)](#Aleatoriedade-Random) | [Trigonometria](#Trigonometria)
-* [Trabalhando com imagens](#Trabalhando-com-imagens):
-    *  [Carregando e exibindo](#Carregando-e-exibindo) | [Pixels](#Pixels) | [Texturas](#Texturas) | [Objetos de imagem](#Objetos-de-imagem)
-* [Cena 3D](#Cena-3D):
-    *  [Câmera](#Câmera) | [Coordenadas](#Coordenadas) | [Luzes](#Luzes) | [Propriedade dos materiais](#Propriedade-dos-materiais)
-* [Apresentação (*Rendering*)](#Apresentação-Rendering):
-    *  [Contexto gráfico](#Contexto-gráfico) | [Shaders](#Shaders)
-* [Execução do sketch](#Execução-do-sketch):
-    *  [Controle do laço de repetição *draw*](#Controle-do-laço-de-repetição-draw) | [Controle avançado da execução](#Controle-avançado-da-execução) | [Análise da Performance (*Performance Profiling*)](#Análise-da-Performance-Performance-Profiling) | [Linhas de execução (*Threading*)](#Linhas-de-execução-Threading) | [Constantes da JVM](#Constantes-da-JVM)
-* [Classes e outras ferramentas do py5](#Classes-e-outras-ferramentas-do-py5):
-    *  [Classes](#Classes) | [Ferramentas](#Ferramentas) 
+* [Desenhando formas](#desenhando-formas): [Elementos básicos](#elementos-básicos); [Formas 3D](#formas-3d); [Formas baseadas em vértices](#formas-baseadas-em-vértices); [Curvas independentes](#curvas-independentes); [Criando e exibindo objetos Py5Shape](#criando-e-exibindo-objetos-py5shape).
+* [Cor e outros atributos gráficos](#cor-e-outros-atributos-gráficos): [Criando e atribuindo cores](#criando-e-atribuindo-cores); [Analisando cores](#analisando-cores); [Atributos de traço e controle de estilo](#atributos-de-traço-e-controle-de-estilo).
+* [Entrada de dados (*Input*)](#entrada-de-dados-input): [Lendo arquivos](#lendo-arquivos); [Variáveis do teclado](#variáveis-do-teclado); [Funções de evento do teclado](#funções-de-evento-do-teclado); [Variáveis do mouse](#variáveis-do-mouse); [Funções de evento do mouse](#funções-de-evento-do-mouse); [Funções auxiliares de data e horário](#funções-auxiliares-de-data-e-horário).
+* [Saída de dados (*Output*)](#saída-de-dados-output): [Escrevendo arquivos](#escrevendo-arquivos); [Saída de imagens](#saída-de-imagens); [Área de texto (console)](#área-de-texto-console).
+* [Tipografia](#tipografia): [Desenhando texto](#desenhando-texto); [Carregando e selecionando fontes](#carregando-e-selecionando-fontes); [Métricas de texto](#métricas-de-texto).
+* [Transformações do Sistema de Coordenadas](#transformações-do-sistema-de-coordenadas): [Operações Básicas](#operações-básicas); [Rotações 3D](#rotações-3d); [Operações com a matrix de transformações](#operações-com-a-matrix-de-transformações).
+* [Ambiente do Sketch](#ambiente-do-sketch): [Configuração e variáveis](#configuração-e-variáveis); [Outros controles da janela do sketch](#outros-controles-da-janela-do-sketch).
+* [Relacionadas à matemática](#relacionadas-à-matemática): [Cálculo](#cálculo); [Aleatoriedade (*Random*)](#aleatoriedade-random); [Trigonometria](#trigonometria).
+* [Trabalhando com imagens](#trabalhando-com-imagens): [Carregando e exibindo](#carregando-e-exibindo); [Pixels](#pixels); [Texturas](#texturas); [Objetos de imagem](#objetos-de-imagem).
+* [Cena 3D](#cena-3d): [Câmera](#câmera); [Coordenadas](#coordenadas); [Luzes](#luzes); [Propriedade dos materiais](#propriedade-dos-materiais)
+* [Apresentação (*Rendering*)](#apresentação-rendering): [Contexto gráfico](#contexto-gráfico); [Shaders](#shaders).
+* [Execução do sketch](#execução-do-sketch): [Controle do laço de repetição *draw*](#controle-do-laço-de-repetição-draw); [Controle avançado da execução](#controle-avançado-da-execução); [Análise da Performance (*Performance Profiling*)](#análise-da-performance-performance-profiling); [Linhas de execução (*Threading*)](#linhas-de-execução-threading); [Constantes da JVM](#constantes-da-jvm).
+* [Classes e outras ferramentas do py5](#classes-e-outras-ferramentas-do-py5): [Classes](#classes); [Ferramentas](#ferramentas).
 
 ### Desenhando formas
 
@@ -326,7 +313,7 @@
 * [acos()](http://py5coding.org/reference/sketch_acos.html) - O inverso de `cos()` retorna o arco cosseno de um valor.
 * [asin()](http://py5coding.org/reference/sketch_asin.html) - O inverso de `sin()` retorna o arco seno de um valor.
 * [atan()](http://py5coding.org/reference/sketch_atan.html) - O inverso de `tan()` retorna o arco tangente de um valor.
-* [atan2()](http://py5coding.org/reference/sketch_atan2.html) - Calcula o ângulo (em radianos) - de um ponto especificado até a origem da coordenada medida a partir do eixo x positivo.
+* [atan2()](http://py5coding.org/reference/sketch_atan2.html) - Calcula a inclinação (um ângulo em radianos) do segmento que liga um ponto à origem. Exemplo de uso: `ang = atan2(ya - yb, xa - xb)` (para um sengmento com extremidades em `xa, ya` e `xb, yb`).
 * [cos()](http://py5coding.org/reference/sketch_cos.html) - Calcula o cosseno de um ângulo.
 * [degrees()](http://py5coding.org/reference/sketch_degrees.html) - Converte uma medida em radianos em seu valor correspondente em graus.
 * [radians()](http://py5coding.org/reference/sketch_radians.html) - Converte uma medida de grau em seu valor correspondente em radianos.
@@ -486,7 +473,7 @@
 
 #### Classes
 
-* [Py5Graphics](http://py5coding.org/reference/py5graphics.html) - Gráficos principais e contexto de renderização, bem como a implementação básica da API para o “núcleo” do Processing.
+* [Py5Graphics](http://py5coding.org/reference/py5graphics.html) - Gráficos principais e contexto de renderização, bem como a implementação básica da API para o "núcleo" do Processing.
 * [Py5Image](http://py5coding.org/reference/py5image.html) - Um tipo de dados para armazenar imagens. Permite carregar, converter e exibir formatos de imagem externos, bem como manipulação eficiente de pixels como matrizes NumPy.
 * [Py5Shape](http://py5coding.org/reference/py5shape.html) - Tipo de dados para armazenar formas. Permite carregar e exibir formas SVG (Scalable Vector Graphics) e OBJ.
 * [Py5Shader](http://py5coding.org/reference/py5shader.html) - Esta classe encapsula um programa de shader GLSL, incluindo um vértice e um fragment shader.
