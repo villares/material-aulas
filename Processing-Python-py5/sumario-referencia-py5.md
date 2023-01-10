@@ -424,6 +424,7 @@
 * [reset_shader()](http://py5coding.org/reference/sketch_reset_shader.html) - Restaura os shaders padrão.
 * [shader()](http://py5coding.org/reference/sketch_shader.html)Aplica o shader especificado pelos parâmetros.
 
+[sobe](#top)
 
 ### Execução do sketch
 
