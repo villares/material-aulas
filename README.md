@@ -22,7 +22,8 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 
 ##### Biblioteca py5 (Python 3 + Processing)
 
-- [py5coding.org/reference/sketch.html](https://py5coding.org/reference/sketch.html) - Referência oficial da biblioteca py5
+- [py5coding.org/reference/summary.html](https://py5coding.org/reference/summary.html) - Sumário da Referência da biblioteca py5
+- [py5coding.org/tutorials/intro_to_py5_and_python.html](https://py5coding.org/tutorials/intro_to_py5_and_python.html) - Tutoriais py5
 - [py5_cc.pdf](https://github.com/villares/processing.py-cheat-sheet/blob/pt-br/py5/py5_cc.pdf) - Referências rápida (colinha)
 
 ##### Processing modo Python
