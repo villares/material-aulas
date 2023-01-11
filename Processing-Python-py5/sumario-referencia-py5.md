@@ -470,21 +470,7 @@
 
 [sobe](#top)
 
-### <ul>
-  <li><a href="#desenhando-formas">Desenhando formas</a>: <a href="#elementos-básicos">Elementos básicos</a>; <a href="#formas-3d">Formas 3D</a>; <a href="#formas-baseadas-em-vértices">Formas baseadas em vértices</a>; <a href="#curvas-independentes">Curvas independentes</a>; <a href="#criando-e-exibindo-objetos-py5shape">Criando e exibindo objetos Py5Shape</a>.</li>
-  <li><a href="#cor-e-outros-atributos-gráficos">Cor e outros atributos gráficos</a>: <a href="#criando-e-atribuindo-cores">Criando e atribuindo cores</a>; <a href="#analisando-cores">Analisando cores</a>; <a href="#atributos-de-traço-e-controle-de-estilo">Atributos de traço e controle de estilo</a>.</li>
-  <li><a href="#entrada-de-dados-input">Entrada de dados (<em>Input</em>)</a>: <a href="#lendo-arquivos">Lendo arquivos</a>; <a href="#variáveis-do-teclado">Variáveis do teclado</a>; <a href="#funções-de-evento-do-teclado">Funções de evento do teclado</a>; <a href="#variáveis-do-mouse">Variáveis do mouse</a>; <a href="#funções-de-evento-do-mouse">Funções de evento do mouse</a>; <a href="#funções-auxiliares-de-data-e-horário">Funções auxiliares de data e horário</a>.</li>
-  <li><a href="#saída-de-dados-output">Saída de dados (<em>Output</em>)</a>: <a href="#escrevendo-arquivos">Escrevendo arquivos</a>; <a href="#saída-de-imagens">Saída de imagens</a>; <a href="#área-de-texto-console">Área de texto (console)</a>.</li>
-  <li><a href="#tipografia">Tipografia</a>: <a href="#desenhando-texto">Desenhando texto</a>; <a href="#carregando-e-selecionando-fontes">Carregando e selecionando fontes</a>; <a href="#métricas-de-texto">Métricas de texto</a>.</li>
-  <li><a href="#transformações-do-sistema-de-coordenadas">Transformações do Sistema de Coordenadas</a>: <a href="#operações-básicas">Operações Básicas</a>; <a href="#rotações-3d">Rotações 3D</a>; <a href="#operações-com-a-matrix-de-transformações">Operações com a matrix de transformações</a>.</li>
-  <li><a href="#ambiente-do-sketch">Ambiente do Sketch</a>: <a href="#configuração-e-variáveis">Configuração e variáveis</a>; <a href="#outros-controles-da-janela-do-sketch">Outros controles da janela do sketch</a>.</li>
-  <li><a href="#relacionadas-à-matemática">Relacionadas à matemática</a>: <a href="#cálculo">Cálculo</a>; <a href="#aleatoriedade-random">Aleatoriedade (<em>Random</em>)</a>; <a href="#trigonometria">Trigonometria</a>.</li>
-  <li><a href="#trabalhando-com-imagens">Trabalhando com imagens</a>: <a href="#carregando-e-exibindo">Carregando e exibindo</a>; <a href="#pixels">Pixels</a>; <a href="#texturas">Texturas</a>; <a href="#objetos-de-imagem">Objetos de imagem</a>.</li>
-  <li><a href="#cena-3d">Cena 3D</a>: <a href="#câmera">Câmera</a>; <a href="#coordenadas">Coordenadas</a>; <a href="#luzes">Luzes</a>; <a href="#propriedade-dos-materiais">Propriedade dos materiais</a></li>
-  <li><a href="#apresentação-rendering">Apresentação (<em>Rendering</em>)</a>: <a href="#contexto-gráfico">Contexto gráfico</a>; <a href="#shaders">Shaders</a>.</li>
-  <li><a href="#execução-do-sketch">Execução do sketch</a>: <a href="#controle-do-laço-de-repetição-draw">Controle do laço de repetição <em>draw</em></a>; <a href="#controle-avançado-da-execução">Controle avançado da execução</a>; <a href="#análise-da-performance-performance-profiling">Análise da Performance (<em>Performance Profiling</em>)</a>; <a href="#linhas-de-execução-threading">Linhas de execução (<em>Threading</em>)</a>; <a href="#constantes-da-jvm">Constantes da JVM</a>.</li>
-  <li><a href="#classes-e-outras-ferramentas-do-py5">Classes e outras ferramentas do py5</a>: <a href="#classes">Classes</a>; <a href="#ferramentas">Ferramentas</a>.</li>
-</ul>Classes e outras ferramentas do py5
+### Classes e outras ferramentas do py5
 
 #### Classes
 
