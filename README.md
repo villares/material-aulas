@@ -14,11 +14,14 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 
  Você pode também [fazer pequenas doações](https://gumroad.com/villares)! 
 
-## [Material para Python 3 com py5](Processing-Python-py5/README.md) (*Novo!* Em construção.)
+## [Material para Python 3 com py5](Processing-Python-py5/README.md) (*Novo!*)
 
 ## [Material para Processing modo Python](Processing-Python/) (2019—2022)
 
 #### Recursos relacionados
+
+- [Resources for teaching programming for artists, designers and architects](https://github.com/villares/Resources-for-teaching-programming) - Outras opções de desenho com Python
+- [Paper objects with Processing and Python](https://github.com/villares/Paper-objects-with-Processing-and-Python)
 
 ##### Biblioteca py5 (Python 3 + Processing)
 
@@ -43,7 +46,7 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 #### Livros de Python
 
 - DOWNEY, Allen. [Pense em Python 2e](https://penseallen.github.io/PensePython2e/)
-- BORGES, Luiz Eduardo. [Python para desenvolvedores 3e](https://ricardoduarte.github.io/python-para-desenvolvedores/#conteudo)
+- MELO, Wendel. [IUP - Introdução ao Universo da Programação com Python: Um livro aberto para aprender programação](https://wendelmelo.net/iup/)
 - SWEIGART, Al. Automatize tarefas maçantes com Python (traduzido pela Novatec)<br> ou [automatetheboringstuff.com](https://automatetheboringstuff.com) (site do autor em Inglês)
 - VANDERPLAS, Jake. [Whirlwind Tour of Python](https://jakevdp.github.io/WhirlwindTourOfPython)
 
