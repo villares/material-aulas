@@ -2,11 +2,15 @@
 
 L-Systems são as estruturas e procedimentos criados por Aristide Lindenmayer para estudar o crescimento de algas e plantas, por meio da manipulação de sequências de símbolos. As sequências são geradas por sucessivas iterações da aplicação de regras de substituição. A tradução computacional dessas estruturas foi discutida pela primeira vez em * Lecture Notes in Biomathematics * por Przemyslaw Prusinkiewcz e James Hanan.
 
+<mark>
+
 Referências externas:
-- [The Algorithmic Beauty of Plants](http://algorithmicbotany.org/papers /#abop) (+ diversos livros e artigos)
+- [The Algorithmic Beauty of Plants](http://algorithmicbotany.org/papers/#abop) (+ diversos livros e artigos)
 - https://www.cgjennings.ca/articles/l-systems /
 - http://www.paulbourke.net/fractals/lsys /
 
+</mark>
+          
 ## Um exemplo completo
 
 ```python
