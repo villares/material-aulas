@@ -35,7 +35,22 @@
 #### Formas 3D
 
 * [box()](http://py5coding.org/reference/sketch_box.html) - Uma caixa é um retângulo com extrusão. Você precisará definir o renderizador `P3D` em `size()` para usá-la.
-* [sphere()](http://py5coding.org/reference/sketch_sphere.html) - Uma esfera é uma bola oca feita de triângulos em mosaico. Você precisará do renderizador `P3D`.
+* [sphere()](http://py5coding.org/reference/sketch_sphere.html) - Uma esfera é uma bola oca feita de triângulos em malha (*mesh*). Você precisará do renderizador `P3D`.
+* [sphere_detail()](http://py5coding.org/reference/sketch_sphere_detail.html) - Controla o grau de detalhes usado para criar uma esfera ajustando o número de vértices da malha.
+
+#### Formas baseadas em vértices
+
+* [begin_closed_shape()](http://py5coding.org/reference/sketch_begin_closed_shape.html) - Este método é usado para iniciar uma forma fechada personalizada.
+* [begin_contour()](http://py5coding.org/reference/sketch_begin_contour.html) - Use os métodos `begin_contour()` e `end_contour()` para criar formas negativas dentro de formas como o centro da letra 'O'.
+* [begin_shape()](http://py5coding.org/reference/sketch_begin_shape.html) - O uso das funções `begin_shape()` e `end_shape()` permite a criação de formas mais complexos.
+* [bezier_vertex()](http://py5coding.org/reference/sketch_bezier_vertex.html) - Especifica coordenadas de vértice para curvas de Bezier.
+* [bezier_vertices()](http://py5coding.org/reference/sketch_bezier_vertices.html) - Crie uma coleção de vértices bezier.
+* [curve_vertex()](http://py5coding.org/reference/sketch_curve_vertex.html) - Especifica coordenadas de vértice para curvas.
+* [curve_vertices()](http://py5coding.org/reference/sketch_curve_vertices.html) - Crie uma coleção de vértices de curva.
+* [end_contour()](http://py5coding.org/reference/sketch_end_contour.html) - Use os métodos `begin_contour()` e `end_contour()` para criar formas negativas dentro de formas como o centro da letra 'O'.
+* [end_shape()](http://py5coding.org/reference/sketch_end_shape.html) - A função `end_shape()` é a companheira de `begin_shape()` e só pode ser chamada depois de begin_shape().
+* [quadratic_vertex()](http://py5coding.org/reference/sketch_quadratic_vertex.html) - Especifica as coordenadas do vértice para curvas quadráticas de Bezier.
+* [quadratic_vertices()](http://py5coding.org/reference/sketch_quadratic_vertices.html) - Adicione uma coleção de vértices quadráticos.
 * [vertex()](http://py5coding.org/reference/sketch_vertex.html) - Adicione um novo vértice a uma forma.
 * [vertices()](http://py5coding.org/reference/sketch_vertices.html) - Adicione uma coleção de vértices a uma forma.
 
