@@ -1,7 +1,7 @@
 
 # Como contribuir com este material
 
-> **Antes de contribuir com *Pull Request*, converse em uma  issue!** Ao contribuir você está doando a propriedade intelectual do material produzido para este projeto iniciado por Alexandre B A Villares, que conta com as licenças GPL v3 para o código e CC BY-NC-SA 4.0 para texto e imagens, como descrito na página inicial. Tenha cuidado caso pretenda adaptar materiais de outras fontes, discutindo se isso é apropriado com as pessoas mantenedoras.
+> **Antes de contribuir com *Pull Request*, converse em uma  issue!** Ao contribuir você está doando a propriedade intelectual do material produzido para este projeto iniciado por Alexandre B A Villares, que conta com as licenças GPL v3 para o código e CC BY-SA 4.0 para texto e imagens, como descrito na página inicial. Tenha cuidado caso pretenda adaptar materiais de outras fontes, discutindo se isso é apropriado com as pessoas mantenedoras.
 
 ## Passo 0
 
