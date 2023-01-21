@@ -27,7 +27,6 @@ def setup():
     size(1000, 1000)
     translate(10, 10)
     fill(255, 0, 0)
-    no_smooth()
     for i in range(rows):
         for j in range(cols):
             tiles[i][j] = Tile(j * tile_size, i * tile_size, tile_size, ic, oc)
