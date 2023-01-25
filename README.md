@@ -1,4 +1,6 @@
-## Material para cursos e oficinas ([repositório](https://github.com/villares/material-aulas/))
+<h2>Material para cursos e oficinas</h2> 
+
+([repositório](https://github.com/villares/material-aulas/))
 
 ### Ferramentas de programação utilizadas: combinações de Processing com Python
 
@@ -14,7 +16,7 @@ Este material didático pode ser modificado e usado para dar aulas. Leia as [ins
 
 Você pode também [fazer pequenas doações](https://gumroad.com/villares)! 
 
-## [Material para Python 3 com py5](Processing-Python-py5/README.md) (*Novo!*)</br>
+## [Material para Python 3 com py5](Processing-Python-py5/README.md) (*Novo!*)
 
 ## [Material para Processing modo Python](Processing-Python/) (2019—2022)
 
