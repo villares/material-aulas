@@ -12,9 +12,9 @@
 
 Este material didático pode ser modificado e usado para dar aulas. Leia as [instruções para colaborar com este repositório](https://github.com/villares/material-aulas/blob/master/sobre/como-contribuir.md) e abra [*issues*](https://github.com/villares/material-aulas/issues) apontando problemas, sugerindo assuntos e melhorias, ou contribua com *Pull Requests* para o repositório.
 
- Você pode também [fazer pequenas doações](https://gumroad.com/villares)! 
+Você pode também [fazer pequenas doações](https://gumroad.com/villares)! 
 
-## [Material para Python 3 com py5](Processing-Python-py5/README.md) (*Novo!*)
+## [Material para Python 3 com py5](Processing-Python-py5/README.md) (*Novo!*)</br>
 
 ## [Material para Processing modo Python](Processing-Python/) (2019—2022)
 
