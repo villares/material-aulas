@@ -1,3 +1,5 @@
+<h1 id="toc"></h1>
+
 # L-System - Sistema de Lindenmayer
 
 L-Systems são as estruturas e procedimentos criados por Aristide Lindenmayer para estudar o crescimento de algas e plantas, por meio da manipulação de sequências de símbolos. As sequências são geradas por sucessivas iterações da aplicação de regras de substituição. A tradução computacional dessas estruturas foi discutida pela primeira vez em * Lecture Notes in Biomathematics * por Przemyslaw Prusinkiewcz e James Hanan.
