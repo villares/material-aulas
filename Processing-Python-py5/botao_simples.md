@@ -92,4 +92,4 @@ def botao_clique(x, y, w, h, texto):
 # Assuntos relacionados
 
 - Mais sobre [interação/input com mouse e teclado](input_py.md)
-- Fazendo um [botão com orientação a objetos](botao_com_oo.md)
+- Fazendo um [botão com orientação a objetos](botao_com_OO.md)
