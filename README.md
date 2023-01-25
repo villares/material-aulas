@@ -1,24 +1,22 @@
-<h2>Material para cursos e oficinas</h2> 
-
-([repositório](https://github.com/villares/material-aulas/))
-
-### Ferramentas de programação utilizadas: combinações de Processing com Python
-
-> O material deste repositório foi criado inicialmente para que se pudesse aprender a programar usando **Processing modo Python**, uma ferramenta livre de programação com a sintaxe de Python e que inclui o vocabulário, os recursos de desenho e manipulação de imagens do Processing. Existem hoje diversas possibilidades de combinar essas duas linguagens, veja abaixo com obter algumas delas:
+> **Material para cursos e oficinas ([repositório](https://github.com/villares/material-aulas/))**
+>
+> Este material didático foi criado inicialmente para ensinar/aprender a programar usando **Processing modo Python**, uma ferramenta livre de programação com a sintaxe de Python e que inclui o vocabulário, os recursos de desenho e manipulação de imagens do Processing. Atualmente há outras possibilidades de combinar essas duas linguagens, veja abaixo com obter algumas delas:
 > - Biblioteca [py5](https://py5coding.org), recomendada para a versão mais recente deste material, siga as [**instruções de instalação** usando Thonny IDE + plugin](https://github.com/villares/thonny-py5mode/tree/pt-br).
 > - [pyp5js](https://github.com/berinhard/pyp5js), combina pyodide e p5js, experimente o [**editor online**](https://berinhard.github.io/pyp5js/pyodide/) do projeto.
 > - [O que é e como instalar o Processing modo Python](https://abav.lugaralgum.com/como-instalar-o-processing-modo-python/), usado na versão anterior desete material.
 > - Outras opções no quadro [Processing + Python tools table](https://github.com/villares/Resources-for-teaching-programming#processing--python-tools-table).
 
-### Como colaborar e contribuir?
-
-Este material didático pode ser modificado e usado para dar aulas. Leia as [instruções para colaborar com este repositório](https://github.com/villares/material-aulas/blob/master/sobre/como-contribuir.md) e abra [*issues*](https://github.com/villares/material-aulas/issues) apontando problemas, sugerindo assuntos e melhorias, ou contribua com *Pull Requests* para o repositório.
-
-Você pode também [fazer pequenas doações](https://gumroad.com/villares)! 
+### Conteúdo
 
 **[Material para Python 3 com py5](Processing-Python-py5/README.md) (*Novo!*)**
 
 **[Material para Processing modo Python](Processing-Python/) (2019—2022)**
+
+#### Como colaborar e contribuir?
+
+Este material didático pode ser modificado e usado para dar aulas. Leia as [instruções para colaborar com este repositório](https://github.com/villares/material-aulas/blob/master/sobre/como-contribuir.md) e abra [*issues*](https://github.com/villares/material-aulas/issues) apontando problemas, sugerindo assuntos e melhorias, ou contribua com *Pull Requests* para o repositório.
+
+Você pode também [fazer pequenas doações](https://gumroad.com/villares)! 
 
 #### Recursos relacionados
 
@@ -45,7 +43,7 @@ Você pode também [fazer pequenas doações](https://gumroad.com/villares)!
 - [Guia de programação em Processing](https://www.ranoya.com/aulas/designgenerativo/playgroundDocs/introProcessing.php?theme=dgen&elementos=processing), Prof. Guilherme Ranoya (UFPE).
 - [Tradução da referência da linguagem - versão 1.0 (2005)](http://www.dainf.ct.utfpr.edu.br/~merkle/processing/reference/ptBR/index.html), Prof. Luiz Merkle (UFTPR)
 
-#### Livros de Python
+##### Livros de Python
 
 - DOWNEY, Allen. [Pense em Python 2e](https://penseallen.github.io/PensePython2e/)
 - MELO, Wendel. [IUP - Introdução ao Universo da Programação com Python: Um livro aberto para aprender programação](https://wendelmelo.net/iup/)
