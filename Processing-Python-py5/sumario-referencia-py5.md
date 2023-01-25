@@ -18,7 +18,7 @@
 * [Classes e outras ferramentas do py5](#classes-e-outras-ferramentas-do-py5): [Classes](#classes); [Ferramentas](#ferramentas).
 -->
 
-### Desenhando formas </br>
+### Desenhando formas 
 
 #### Elementos básicos
 
@@ -80,7 +80,7 @@
 
 [sobe](#top)
 
-### Cor e outros atributos gráficos  </br>
+### Cor e outros atributos gráficos  
 
 #### Criando e atribuindo cores
 
@@ -117,7 +117,7 @@
 
 [sobe](#top)
 
-### Entrada de dados (*Input*)  </br>
+### Entrada de dados (*Input*)  
 
 #### Lendo arquivos
 
@@ -175,7 +175,7 @@
 
 [sobe](#top)
 
-### Saída de dados (*Output*)  </br>
+### Saída de dados (*Output*)  
 
 #### Escrevendo arquivos
 
@@ -201,7 +201,7 @@
 
 [sobe](#top)
 
-### Tipografia  </br>
+### Tipografia  
 
 #### Desenhando texto
 
@@ -225,7 +225,7 @@
 
 [sobe](#top)
 
-### Transformações do Sistema de Coordenadas  </br>
+### Transformações do Sistema de Coordenadas  
 
 #### Operações Básicas
 
@@ -253,7 +253,7 @@
 
 [sobe](#top)
 
-### Ambiente do Sketch  </br>
+### Ambiente do Sketch  
 
 #### Configuração e variáveis
 
@@ -295,7 +295,7 @@
 
 [sobe](#top)
 
-### Relacionadas à matemática  </br>
+### Relacionadas à matemática  
 
 #### Cálculo
 
@@ -381,7 +381,7 @@
 
 [sobe](#top)
 
-### Cena 3D  </br>
+### Cena 3D  
 
 #### Câmera
 
@@ -424,7 +424,7 @@
 
 [sobe](#top)
 
-### Apresentação (*Rendering*)  </br>
+### Apresentação (*Rendering*)  
 
 #### `Contexto gráfico` 
 
@@ -489,7 +489,7 @@
 
 [sobe](#top)
 
-### Classes e outras ferramentas do py5  </br>
+### Classes e outras ferramentas do py5  
 
 #### Classes
 
