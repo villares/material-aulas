@@ -33,6 +33,7 @@ Aqui a classe utilizada no exemplo.
 
 ```python
 # para o arquivo botao.py
+from py5 import *
 
 class Botao():
 
