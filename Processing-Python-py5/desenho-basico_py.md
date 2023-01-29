@@ -55,12 +55,12 @@ ellipse(50, 50, 50, 50)  # produz um círculo verde
 
 ```python
 no_fill()  # sem preenchimento, formas vazadas
-stroke(0, 0, 255)  # exemplo de cor do traço azul cor(R, G, B)
+stroke(0, 0, 255)  # exemplo de cor do traço azul cor (R, G, B)
 stroke_weight(10)  # espessura do traço de contorno 10 pixels
 no_stroke()  # sem traço de contorno
 ```
 
-A cor indicada pode ser indicada com 3 números R (*red*), G (*green*) e B (*blue*).
+A cor indicada pode ser indicada com 3 números R, G, B.
 
 ```python
 # preenchimento vermelho (R:Vermelho, G:Verde, B:Azul)
@@ -83,7 +83,7 @@ background(0, 255, 0)  # fundo verde, limpa a tela background(R, G, B)
 ```
 ## Onde encontrar os nomes das funções, o vocabulário, e os seus significados?
 
-O tempo todo vamos consultar o que é conhecido documentação de referência. Para o vocabulário de desenho da biblioteca py5 fica em [py5coding.org/reference/sketch.html](https://py5coding.org/reference/sketch.html).
+O tempo todo vamos consultar o que é conhecido documentação de referência. Para o vocabulário de desenho da biblioteca py5 fica em [py5coding.org/reference/summary.html](https://py5coding.org/reference/summary.html).
 
 ## Comentários, o que são e como criar comentários em Python?
 
