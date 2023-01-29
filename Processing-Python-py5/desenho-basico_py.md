@@ -83,7 +83,7 @@ background(0, 255, 0)  # fundo verde, limpa a tela background(R, G, B)
 ```
 ## Onde encontrar os nomes das funções, o vocabulário, e os seus significados?
 
-O tempo todo vamos consultar o que é conhecido documentação de referência. Para o vocabulário de desenho da biblioteca py5 fica em [py5coding.org/reference/summary.html](https://py5coding.org/reference/summary.html).
+O tempo todo vamos consultar o que é conhecido documentação de referência. Para o vocabulário de desenho da biblioteca py5 fica em [py5coding.org](https://py5coding.org/reference/summary.html), e [aqui está um sumário traduzido da referência](sumario-referencia-py5.md) que você pode consultar!.
 
 ## Comentários, o que são e como criar comentários em Python?
 
