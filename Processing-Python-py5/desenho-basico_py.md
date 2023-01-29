@@ -83,7 +83,9 @@ background(0, 255, 0)  # fundo verde, limpa a tela background(R, G, B)
 ```
 ## Onde encontrar os nomes das funções, o vocabulário, e os seus significados?
 
-O tempo todo vamos consultar o que é conhecido documentação de referência. Para o vocabulário de desenho da biblioteca py5 fica em [py5coding.org](https://py5coding.org/reference/summary.html), e [aqui está um sumário traduzido da referência](sumario-referencia-py5.md) que você pode consultar!.
+O tempo todo vamos consultar o que é conhecido documentação de referência. Para o vocabulário de desenho da biblioteca py5, que é o que estamos usando para desenhar, ela fica em [py5coding.org](https://py5coding.org/reference/summary.html), mas aqui mesmo neste material tem um [sumário traduzido da referência](sumario-referencia-py5.md) que você pode consultar!
+
+Para a linguagem Python em si, sua sintaxe, palavras-chave, funções embutidas e a chamada "biblioteca padrão" do Python que é enorme, você pode consultar a documentação do Pythin em [docs.python.org/pt-br/3.8/](https://docs.python.org/pt-br/3.8/).
 
 ## Comentários, o que são e como criar comentários em Python?
 
