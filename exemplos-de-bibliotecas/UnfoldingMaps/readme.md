@@ -7,7 +7,7 @@ The offical site does not show the Processing 3.0 compativle library... so, from
 
 2. Navigate to ~/Documents/Processing/libraries on your machine.
 3. Drag and drop the unzipped Unfolding Maps folder into ~/Documents/Processing/libraries.
-4. Quit and re-open Processing it is running;
+4. Quit and re-open Processing if it is running;
 5. From the Sketch menu > Import Library > Unfolding Maps.
 
 ### References
