@@ -146,16 +146,15 @@ def lista_imagens(data_path):
     return f_list
 ```
 
-Uma variante do `draw()` que permite largura variável das imagens, fixando a altura, como no exemplo anterior, mas:
+Uma variante do `draw()` que permite largura variável das imagens, fixando a altura, como no exemplo anterior, mas deslocando na horizontal:
 
 ```python
 def draw():
     background(0)
-    # Desenha `imagens` em filas de altura 'h', deslocando na horizontal com
-    # largura de cada imagem.
+    # Desenha `imagens` em filas de altura `h`,
+    #  deslocando na horizontal a largura de cada imagem.
     x = y = 0
     for nome, img in imagens:
-        print(img)
         fator = h / img.height
         if x + img.width * fator > width:
             x=0
