@@ -60,14 +60,15 @@ Saiba que o código que cuida da janela do sistema operacional para escolhermos 
 
 O carregamento das imagens é um procedimento razoavelmente lento e por isso é possível vê-las aparecendo aos poucos na tela, conforme são acrescentadas na lista `imagens` pela execução do laço `for` em `adicionar_imagens()`.
 
-Uma boa parte da solução da nossa tarefa, na verdade, está encapsulada em `lista_imagens()`, função que usamos em `adicionar_imagens()`. Ela recebe o caminho da pasta selecionada (*path*, um objeto `pathlib.Path`) e devolve uma lista com tuplas dos nomes dos arquivos das imagens e o caminho (*path*) delas para ser usado no `load_image()`:
+Uma boa parte da solução da nossa tarefa, na verdade, está encapsulada em `lista_imagens()`, função que usamos em `adicionar_imagens()`. Ela recebe o caminho da pasta selecionada (*path*) e devolve uma lista com tuplas dos nomes dos arquivos das imagens e o caminho (*path*) delas para ser usado no `load_image()`:
 
 ```python
-def lista_imagens(data_path=None):
-    data_path = Path(data_path) or sketch_path('data')  # objeto pathlib.Path
+def lista_imagens(data_path):
+    data_path = Path(data_path) # Garante um objeto pathlib.Path
+    img_ext = ('jpg', 'png', 'jpeg', 'gif', 'tif', 'tga')
     try:
         f_list = [item for item in data_path.iterdir()
-                  if item.is_file() and has_image_ext(item.name)]
+                  if item.is_file() and item.suffix.lower()[1:] in img_ext]
     except Exception as e:
         print(e)
         return []
@@ -75,16 +76,6 @@ def lista_imagens(data_path=None):
 ```
 
 Não vamos entrar em detalhes aqui, mas você pode querer ler mais sobre [compreensão de listas](https://panda.ime.usp.br/pensepy/static/pensepy/09-Listas/listas.html#list-comprehensions) (a maneira compacta de produzir uma lista usada para criar a `f_list`) e [tratamento de exceções](http://turing.com.br/pydoc/3.8/tutorial/errors.html#excecoes) (o trecho dentro dentro de `try:` e  `except... :`) para entender melhor a função `lista_imagens()`.
-
-Repare que usamos a pequena função `has_image_ext()` para responder se  os nomes fornecidos por `os.listdir()` tem a terminação mencionada na tupla `valid_ext`.
-
-```python
-def has_image_ext(file_name):
-    # extensões dos formatos de imagem que o Processing aceita!
-    valid_ext = ('jpg', 'png', 'jpeg', 'gif', 'tif', 'tga')
-    file_ext = file_name.split('.')[-1]
-    return file_ext.lower() in valid_ext
-```
 
 Por fim, aqui vai o código completo do sketch, contendo a parte que desenha uma grade de imagens no `draw()` com os itens da lista `imagens`:
 
@@ -139,26 +130,20 @@ def adicionar_imagens(dir_path):
             imagens.append((file_path.name, img))
         print(f'Número de imagens: {len(imagens)}')
 
-def lista_imagens(data_path=None):
+def lista_imagens(data_path):
     """
     Devolve uma a lista dos caminhos (objetos pathlib.Path) dos arquivos
     de imagem contidos na pasta `data_path` (ou na pasta /data/ próxima ao sketch).
-    Requer a função has_image_ext() para decidir quais extensões aceitar.
     """
-    data_path = Path(data_path) or sketch_path('data')  # objeto pathlib.Path
+    data_path = Path(data_path) # Garante um objeto pathlib.Path
+    img_ext = ('jpg', 'png', 'jpeg', 'gif', 'tif', 'tga')
     try:
         f_list = [item for item in data_path.iterdir()
-                  if item.is_file() and has_image_ext(item.name)]
+                  if item.is_file() and item.suffix.lower()[1:] in img_ext]
     except Exception as e:
         print(e)
         return []
     return f_list
-
-def has_image_ext(file_name):
-    # extensões dos formatos de imagem que o Processing aceita!
-    valid_ext = ('jpg', 'png', 'jpeg', 'gif', 'tif', 'tga')
-    file_ext = file_name.split('.')[-1]
-    return file_ext.lower() in valid_ext
 ```
 
 Uma variante do `draw()` que permite largura variável das imagens, fixando a altura, como no exemplo anterior, mas:
