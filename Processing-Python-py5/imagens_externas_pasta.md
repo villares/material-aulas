@@ -64,12 +64,12 @@ Uma boa parte da solução da nossa tarefa, na verdade, está encapsulada em `li
 
 ```python
 def lista_imagens(data_path=None):
-    data_path = data_path or sketch_path('data')  # objeto pathlib.Path
+    data_path = Path(data_path) or sketch_path('data')  # objeto pathlib.Path
     try:
         f_list = [item for item in data_path.iterdir()
                   if item.is_file() and has_image_ext(item.name)]
     except Exception as e:
-        print("Erro ({0}): {1}".format(e.errno, e.strerror))
+        print(e)
         return []
     return f_list
 ```
@@ -145,12 +145,12 @@ def lista_imagens(data_path=None):
     de imagem contidos na pasta `data_path` (ou na pasta /data/ próxima ao sketch).
     Requer a função has_image_ext() para decidir quais extensões aceitar.
     """
-    data_path = data_path or sketch_path('data')  # objeto pathlib.Path
+    data_path = Path(data_path) or sketch_path('data')  # objeto pathlib.Path
     try:
         f_list = [item for item in data_path.iterdir()
                   if item.is_file() and has_image_ext(item.name)]
     except Exception as e:
-        print("Erro ({0}): {1}".format(e.errno, e.strerror))
+        print(e)
         return []
     return f_list
 
