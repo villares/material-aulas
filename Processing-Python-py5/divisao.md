@@ -1,6 +1,8 @@
-## Divisão com inteiros, divisão por zero e o resto da divisão
+<h1 id='toc'></h1>
 
-### Divisão no Python 3
+# Divisão com inteiros, divisão por zero e o resto da divisão
+
+## Divisão no Python 3
 
 Para quem está vindo do Python 2, onde uma divisão entre dois números inteiros era forçada a responder com um inteiro (o que surpreendia algumas vezes, `4 / 10` resultava `0`), no Python 3 o resultado agora pode ser um número de ponto flutuante (float).
 
@@ -31,7 +33,7 @@ print(a)
 > 
 > ```
 
-### O problema da divisão por zero (e um pouco sobre tratamento de exceções)
+## O problema da divisão por zero (e um pouco sobre tratamento de exceções)
 
 Provavelmente você se lembra que o resultaddo de dividir um número por zero é em geral considerado um valor "indefinido" na maior parte dos contextos matemáticos. Em Python se o seu programa for obrigado a avaliar essa conta ele vai parar tudo e "levantar uma exceção" chamada `ZeroDivisionError`.
 
@@ -66,7 +68,7 @@ try:
 except ZeroDivisionError:
     resultado = 1000000
 ```
-##### Uma outra maneira, malandra
+### Uma outra maneira, malandra
 
 Quando você sabe que os valores do denomidador nunca ficam negativos, e o resultado da divisão pode ser um número aproximado, é possível somar algum valor que apenas impeça o denomidador de ser zero.
 
@@ -76,7 +78,7 @@ tangente_aproximada = dy / (0.01 + distancia)
 fator_de_crescimento = 1 / (1 + mouse_x)  # o resultado é no mínimo 1 e sem divisão por zero pois mouse_x nunca fica negativo
 ```
 
-### Agora a parte divertida! O resto da divisão
+## Agora a parte divertida! O resto da divisão
 
 Em inglês a operação para obter o resto da divisão com inteiros tem o nome de *modulo* ou *modulus* o que pode causar uma grande confusão pois na matemática em português a palavra 'módulo' com a notação `|num|` é usada também para falar do valor absoluto (sem o sinal) de um número (em programação usamos `abs()` para isso), e em Python módulo é o nome de pedaço organizado de uma *biblioteca de funções de programação*, em geral um arquivo `.py`.
 
@@ -96,14 +98,14 @@ if a % 2 == 0:
 else:
     print('a é impar!')
 ```
-##### Testando se um número é divisível por outro
+#### Testando se um número é divisível por outro
 ```python
 if a % b == 0:
     print('a é divisível por b!')
 else:
     print('a não é divisível por b!')
 ```
-##### Mantendo os números circulando até um valor máximo
+#### Mantendo os números circulando até um valor máximo
 
 Para qualquer valor de **a**, o resultado da expressão **a % b** sempre é menor que **b**, e no máximo vale **b - 1**.
 Podemos usar **n % max** em uma sequencia crescente de números **n** para obter uma sequência de números com repetição periódica da seguinte maneira:
@@ -160,6 +162,5 @@ Resultado (truncado, seriam 100 números):
 
 - [Valores e seus tipos](tipagem_py.md)
 
-#### faltando...
-
-- Erros causados pela representação interna dos números decimais em binário no computador
+- Explicação na documentação do Python sobre os 
+problemas causados pela representação interna dos números decimais em binário no computador [Aritimética de ponto flutuante: problemas e limitaçhttps://docs.python.org/pt-br/3/tutorial/floatingpoint.html)
