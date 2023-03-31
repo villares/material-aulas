@@ -163,4 +163,4 @@ Resultado (truncado, seriam 100 números):
 - [Valores e seus tipos](tipagem_py.md)
 
 - Explicação na documentação do Python sobre os 
-problemas causados pela representação interna dos números decimais em binário no computador; [Aritimética de ponto flutuante: problemas e limitações]https://docs.python.org/pt-br/3/tutorial/floatingpoint.html)
+problemas causados pela representação interna dos números decimais em binário no computador; [Aritimética de ponto flutuante: problemas e limitações](https://docs.python.org/pt-br/3/tutorial/floatingpoint.html)
