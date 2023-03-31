@@ -4,7 +4,7 @@
 
 ## Divisão no Python 3
 
-Para quem está vindo do Python 2, onde uma divisão entre dois números inteiros era forçada a responder com um inteiro (o que surpreendia algumas vezes, `4 / 10` resultava `0`), no Python 3 o resultado agora pode ser um número de ponto flutuante (float).
+Para quem está vindo do Python 2, onde uma divisão entre dois números inteiros era forçada a responder com um inteiro (o que surpreendia algumas vezes, `4 / 10` resultava `0`), no Python 3 o resultado agora pode ser um número de ponto flutuante (*float*).
 
 ```python
 a = 4 / 10
@@ -163,4 +163,4 @@ Resultado (truncado, seriam 100 números):
 - [Valores e seus tipos](tipagem_py.md)
 
 - Explicação na documentação do Python sobre os 
-problemas causados pela representação interna dos números decimais em binário no computador [Aritimética de ponto flutuante: problemas e limitaçhttps://docs.python.org/pt-br/3/tutorial/floatingpoint.html)
+problemas causados pela representação interna dos números decimais em binário no computador; [Aritimética de ponto flutuante: problemas e limitações]https://docs.python.org/pt-br/3/tutorial/floatingpoint.html)
