@@ -1,18 +1,8 @@
-# Instruções condicionais e operadores lógicos
-## As bifurcações no caminho de execução do código
-
 <h1 id='toc'></h1>
 
-<!---
-###  Sumário
+# Instruções condicionais e operadores lógicos
 
-- [Sintaxe](#sintaxe-if-e-ifelse)
-- [Comparações: operadores relacionais e operadores lógicos](#comparações-operadores-relacionais-e-operadores-lógicos)
-   - [Um exemplo completo](#um-exemplo-completo)
-- [Quadro de operadores](#quadro-de-operadores)
-   - [Alguns exemplos e comentários](#alguns-exemplos-e-comentários)
-- [Assuntos relacionados](#assuntos-relacionados)
---->
+## As bifurcações no caminho de execução do código
 
 ## Sintaxe `if` e `if`/`else`
 
