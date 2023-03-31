@@ -1,5 +1,7 @@
 # Condicões aninhadas e outras estruturas condicionais
 
+<h1 id='toc'></h1>
+
 ## Se, senão se, senão
 
 É comum encontraramos, além da composição das condições usando operadores lógicos, `ìf` dentro de um `ìf` ou de um `else`.
