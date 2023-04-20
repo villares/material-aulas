@@ -105,7 +105,7 @@ def draw():
         file_name = f'{frame_count}.png'
     # seu desenho vai aqui
     background(0, 100, 0) 
-    circle(width / 3, height / 3, width / 2)
+    circle(mouse_x, mouse_y, width / 2)
     if salvar_png:
         salvar_png = False
         end_record()
