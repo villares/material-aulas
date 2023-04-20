@@ -4,7 +4,7 @@ Um quadro (*frame*) é o resultado visual produzido na área de desenho do *sket
 
 Passamos como argumento o nome do arquivo que deve ser salvo, e a extensão de três letras após o ponto no nome do arquivo indica o formato que deve ser salvo. Por exemplo `save_frame("imagem.jpg")` salva um arquivo JPG na pasta do *sketch*. Se utilizarmos alguns caracteres "#" no nome do arquivo eles serão substituídos pelo número do *frame*.
 
-# Um exemplo bem simples
+## Um exemplo simples
 
 O código abaixo exemplifica como salvar uma imagem PNG de um quadro. Quando uma tecla é pressionada, é executada a função `key_pressed()` e se for identificada a tecla "s" (`key == 's'`) é execuatada a função `save_frame()`, que grava uma imagem.
 
@@ -29,7 +29,7 @@ Resulta em arquivo semelhante a este "frame421.png" na pasta do *sketch*:
 
 ![frame421.png](assets/frame.png)
 
-# `save_frame()` dentro do `draw()`
+## `save_frame()` dentro do `draw()`
 
 Usar `saveFrame()`dentro do laço principal `draw()` torna o * sketch * muito mais lento, pois salva uma imagem a cada * frame * do draw. Acrescentando alguns carateres `#` no nome do arquivo a ser salvo, um número grande de quadros pode ser salvo em alguns segundos, o que deve ser feito com cuidado (pode entupir o disco do seu computador). Normalmente é criada uma condição que interrompe o sketch com `exit()` ou que só permite salvar um certo número de imagens(no exemplo abaixo, um quadro a cada 5 com `frame_count % 5 == 0 and frame_count <= 100`).
 
@@ -59,7 +59,7 @@ def draw():
         exit()  # interrompe a execução do sketch
 ```
 
-# Exportando em resolução maior do que a da tela
+## Exportando em resolução maior do que a da tela
 
 Um objeto * Py5Graphics * é uma espécie de tela virtual que pode gravar o resultado do desenho em paralelo à área de desenho normal, podendo também receber ajustes especiais aplicados apenas a esse objeto-tela, como `.scale()` no exemplo abaixo, o que permite exportar uma imagem 10 vezes maior do que a mostrada na tela.
 
@@ -90,31 +90,28 @@ Repare que a espessura de linha está sendo ajustada para um valor diferente com
 
 ![](assets/exportando_imagem_ampliada.png)
 
-# Exportando apenas parte da tela (e em um local selecionado!)
+## Exportando apenas parte da tela (e em um local selecionado!)
 
 No exemplo a seguir, vamos usar a estratégia de desenhar em um objeto `Py5Graphics` como no exemplo anterior, e demonstrar também as seguintes possibilidades:
 
 * Salvar um frame de um sketch interativo(com `draw()`)
-
 - Salvar apenas parte da imagem na tela(útil para remover elementos de interface/controle)
 - Acrescentar ajustes ou elementos apenas na imagem salva
 - Escolher onde salvar a imagem(fora da pasta do sketch).
 
-![](assets/exportando_parcial_0.png)
+![image](https://user-images.githubusercontent.com/3694604/233478591-07162252-2e31-492a-9342-7abf025be26c.png)
 
 Ambos os textos da imagem acima, em preto e em branco, não estarão presentes no arquivo salvo, assim como toda a àrea cinza em volta ou qualquer elemento nela desenhado.
 
 ```python
 salvar = False
 
-
 def setup():
     size(500, 500)
     global w, h, offset, f
     # dimensões da imagem e um deslocamento / margem
     w, h, margem = 400, 400, 50
-    f = createGraphics(w, h)
-
+    f = create_graphics(w, h)
 
 def draw():
     global salvar
@@ -124,10 +121,10 @@ def draw():
     # transparente
     background(100)  # fundo geral na tela apenas
     fill(0)
-    text(u'Só na tela', 0, -20)
+    text('Só na tela', 0, -20)
     # início da gravação
     if salvar:
-        beginRecord(f)  # início da gravação
+        begin_record(f)  # início da gravação
     # As instruções aqui aparecem na tela e no arquivo
     noStroke()
     fill(0, 0, 200)
@@ -138,32 +135,24 @@ def draw():
     if salvar:
         # instruções com 'f.' aparecem só na gravação
         f.fill(255, 0, 0)
-        f.text(u'Só na gravação', 20, 300)
-        endRecord()
+        f.text('Só na gravação', 20, 300)
+        end_record()
         salvar = False
         # em vez de f.save("arquivo_na_pasta_do_sketch.png")
         # vamos usar esta função selectOtuput que chama por nós salva_arquivo()
-        selectOutput("Escolha onde Salvar", "salva_arquivo")
-    # instruções depois do endRecord também aparecem só na tela
+        select_output("Escolha onde Salvar", "salva_arquivo")
+    # instruções depois do end_record também aparecem só na tela
     fill(255)
     text(u'Também só na tela', 10, 20)
 
 
-def keyPressed():
+def key_pressed():
     global salvar
     if key == 's':
         salvar = True
 
 
 def salva_arquivo(selection):
-    """
-    Um alerta: Cuidado! Possíveis 'falhas' nesta função,
-    como erros de gravação (por disco cheio, ou falta de
-    permissão para gravar em um diretório), mas também
-    qualquer outros bugs que você introduzir ampliando
-    este código, vão interromper esta linha de execução
-    silencionamente, sem mostrar nenhum aviso de erro :(
-    """
     if selection is not None:
         # importante usar unicode() em vez de str() aqui!
         nome = unicode(selection)
