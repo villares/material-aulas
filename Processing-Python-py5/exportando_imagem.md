@@ -31,11 +31,11 @@ Resulta em arquivo semelhante a este "frame421.png" na pasta do *sketch*:
 
 ## `save_frame()` dentro do `draw()`
 
-Usar `save_frame()`dentro do laço principal `draw()` torna o *sketch* muito mais lento, pois salva uma imagem a cada *frame* do draw. Acrescentando alguns carateres `#` no nome do arquivo a ser salvo, um número grande de quadros pode ser salvo em alguns segundos, o que deve ser feito com cuidado (pode entupir o disco do seu computador). Normalmente é criada uma condição que interrompe o sketch com `exit()` ou que só permite salvar um certo número de imagens(no exemplo abaixo, um quadro a cada 5 com `frame_count % 5 == 0 and frame_count <= 100`).
+Usar `save_frame()`dentro do laço principal `draw()` torna o *sketch* muito mais lento, pois salva uma imagem a cada *frame* do draw. Se o nome do arquivo for sempre o mesmo, ele vai ser sobreescrito, mas podemos acrescentar alguns carateres `#` no nome do arquivo, que serão substitúidos pelo número do quadro, e dessa maneira, um número grande de quadros pode ser salvo em alguns segundos, o que deve ser feito com cuidado (pode entupir o disco do seu computador). 
+
+Normalmente é criada uma condição que interrompe o sketch com `exit()` ou que só permite salvar um certo número de imagens (no exemplo abaixo, um quadro a cada 5 com `frame_count % 5 == 0` e também fazemos um limite com `frame_count <= 100`).
 
 ```python
-
-
 def draw():
     # desenho
     ...
@@ -44,7 +44,7 @@ def draw():
         save_frame("imagem###.png")
 ```
 
-Neste outro exemplo, data e horário no nome do arquivo e interrupção do sketch.
+Neste outro exemplo, data e horário no nome do arquivo, e interrupção do sketch com `exit()` ao final.
 
 ```python
 nome_output = '{}-{}-{}-{}-{}-{}-frame###.png'.format(
