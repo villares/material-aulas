@@ -45,7 +45,7 @@ def galho(tamanho):
     """
     ang = radians(mouseX)
     reducao = .8
-    strokeWeight(tamanho / 10)
+    stroke_weight(tamanho / 10)
     line(0, 0, 0, -tamanho)
     if tamanho > 5:
         push_matrix()
@@ -76,30 +76,25 @@ def key_pressed():
 Não é possível capturar diretamente o produto da acumulação do desenho na tela, como acontece com a exportação de uma imagem raster que fazemos usando `saveFrame()`, mas é possível gravar o PDF durante vários frames, acumulando os desenhos produzidos no arquivo e na tela ao mesmo tempo. Neste exemplo você  'liga' e 'desliga'  a gravação de frames no PDF usando a tecla 'p'.
 
 ```python
-
-
 gravando_pdf = False  # 'flag'/indicador de gravação do PDF
-
 
 def setup():
     size(500, 500)
     background(0)
 
-
 def draw():
-    colorMode(HSB)    # se puser ajustes no setup não entram na gravação!
-    rectMode(CENTER)  # fazendo o PDF ficar diferente do resultado na tela
-    if mousePressed:
+    color_mode(HSB)    # se puser ajustes no setup não entram na gravação!
+    rect_mode(CENTER)  # fazendo o PDF ficar diferente do resultado na tela
+    if mouse_pressed:
         fill(random(255), 200, 200, 100)
         rect(mouseX, mouseY, 50, 50)
 
     if not gravando_pdf:
         textSize(18)
         fill(255)
-        text(u"Não está gravando o PDF\n" +
-             u"aperte 'p' para começar e parar a gravação",
+        text("Não está gravando o PDF\n" +
+             "aperte 'p' para começar e parar a gravação",
              20, 20)
-
 
 def key_pressed():
     global gravando_pdf
@@ -108,10 +103,10 @@ def key_pressed():
         if gravando_pdf:
             begin_record(PDF, "####.pdf")  # inicia a gravação do PDF
             background(0)                 # sem isso, fundo branco...
-            print(u"iniciando gravação de PDF: {:04n}".format(frame_count))
+            print("iniciando gravação de PDF: {:04n}".format(frame_count))
         else:
             end_record()                   # encerra a gravação do PDF
-            print(u"encerrando gravação de PDF")
+            print("encerrando gravação de PDF")
 
 
 ```
@@ -181,7 +176,7 @@ Usando `create_graphics()` podemos mostrar na tela o desenho mas salvar o arquiv
 
 f = create_graphics(width * 2, height * 2, PDF, "file.pdf")
 begin_record(f)  # inicia a gravação do arquivo
-f.strokeWeight(2)
+f.stroke_weight(2)
 f.scale(2)
 # o seu desenho vai aqui
 
@@ -212,7 +207,7 @@ def draw():
     x, y = random(t, width - t), random(t, height - t)
     ellipse(x, y, t * 2, t * 2)
 
-    if frameCount == 10:
+    if frame_count == 10:
         end_record()
         exit()
     else:
@@ -226,8 +221,7 @@ def draw():
 O que não funciona quando exportamos em PDF?
 
 - A chamada `blend_mode(MULTIPLY)` ou qualquer outra variante de `blend_mode()` não tem efeito no PDF(só na tela).
-
-- Para exportar desenhos em 3D, é preciso usar `begin_raw()`  e `end_raw()` em lugar de `begin_record/end_record` e o resultado é um tanto deficiente(veja exemplo em[Exportando SVG](exportando_svg.md)).
+- Para exportar desenhos em 3D, é preciso usar `begin_raw()`  e `end_raw()` em lugar de `begin_record/end_record` e o resultado é um tanto deficiente(veja exemplo em [Exportando SVG](exportando_svg.md)).
 
 # O que pode dar errado? Algumas considerações finais
 
@@ -236,7 +230,7 @@ Se não estiver funcionando, confira se não está esquecendo algo sobre exporta
 - Pense com cuidado se seu sketch precisa salvar apenas um frame ou acumular frames(muda a estratégia um pouco)
 - Não esqueça que só aparecem na gravação ações e ajustes feitos depois do begin_record() ou beginRaw() e isso é bastante crítico em relação a:
     - `background()`
-    - ajustes como `colorMode()`, `rectMode()` ou outros ajustes de atributos
+    - ajustes como `color_mode()`, `rect_mode()` ou outros ajustes de atributos
 - não esqueça de declarar com `global` o flag/indicador tanto no `draw()` como no `key_pressed()`, se apropriado, para alterar o estado ou início da gravação.
 
 # Assuntos relacionados:
