@@ -6,9 +6,9 @@ Saver salvar um PDF é muito útil, pois é formato que preserva informação ve
 
 Veja nos exemplos abaixo as llinhas de código que você precisa acrescentar ao longo so seu *sketch*, dependendo do que quer exportar.
 
-# PDF simples
+## PDF simples
 
-# Salvando um frame único do `draw()`, sem acumulação
+### Salvando um frame único do `draw()`, sem acumulação
 
 A estratégia a seguir permite a interatividade, com o uso de `draw()`, mas exige que desenho seja realizado inteiro em cada frame.
 
@@ -71,7 +71,7 @@ def key_pressed():
 
 [Exemplo de PDF com um frame](assets/exemplo.pdf)
 
-# Salvando a acumulação na tela de vários frames
+### Salvando a acumulação na tela de vários frames
 
 Não é possível capturar diretamente o produto da acumulação do desenho na tela, como acontece com a exportação de uma imagem raster que fazemos usando `saveFrame()`, mas é possível gravar o PDF durante vários frames, acumulando os desenhos produzidos no arquivo e na tela ao mesmo tempo. Neste exemplo você  'liga' e 'desliga'  a gravação de frames no PDF usando a tecla 'p'.
 
@@ -166,9 +166,9 @@ def key_pressed():
 ```
 
 
-# Outras estratégias
+## Outras estratégias
 
-# Usando um objeto PGraphics
+### Usando um objeto PGraphics
 
 Usando `create_graphics()` podemos mostrar na tela o desenho mas salvar o arquivo do desenho com alguns ajustes especiais.
 
@@ -185,7 +185,7 @@ end_record()
 ```
 Veja um exemplo mais completo desta estratégia no exemplo a seguir, que produz um PDF com várias páginas.
 
-# Salvando um PDF com múltiplas páginas
+### Salvando um PDF com múltiplas páginas
 
 ```python
 
