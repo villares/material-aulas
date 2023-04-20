@@ -1,21 +1,17 @@
 # Como exportar uma imagem
 
-Um * frame * é o resultado visual produzido na área de desenho do * sketch * no Processing em um determinado momento. Para salvar um * frame * em um arquivo bitmap/raster, como por exemplo PNG, TIF ou JPG, usamos a função `save_frame()`.
+Um quadro (*frame*) é o resultado visual produzido na área de desenho do *sketch* no Processing em um determinado momento. Para salvar um quadro em um arquivo bitmap/raster, como por exemplo PNG, TIF ou JPG, usamos a função `save_frame()`.
 
-Passamos como argumento o nome do arquivo que deve ser salvo, e a extensão de três letras após o ponto no nome do arquivo indica o formato que deve ser salvo. Por exemplo `save_frame("imagem.jpg")` salva um arquivo JPG na pasta do * sketch*. Se utilizarmos alguns caracteres "#" no nome do arquivo eles serão substituídos pelo número do * frame*.
-
-O código abaixo exemplifica como salvar uma imagem PNG de um frame. Quando uma tecla é pressionada, é executada a função `keyPressed()` e se for identificada a tecla "s" (`key == 's'`) é execuatada a função saveFrame(), que grava uma imagem na pasta do sketch.
+Passamos como argumento o nome do arquivo que deve ser salvo, e a extensão de três letras após o ponto no nome do arquivo indica o formato que deve ser salvo. Por exemplo `save_frame("imagem.jpg")` salva um arquivo JPG na pasta do *sketch*. Se utilizarmos alguns caracteres "#" no nome do arquivo eles serão substituídos pelo número do *frame*.
 
 # Um exemplo bem simples
 
-O código abaixo exemplifica como salvar uma imagem PNG de um frame. Quando uma tecla é pressionada, é executada a função `keyPressed()` e se for identificada a tecla "s" (`key == 's'`) é executada a função `saveFrame()`, que grava uma imagem na pasta do * sketch*.
+O código abaixo exemplifica como salvar uma imagem PNG de um quadro. Quando uma tecla é pressionada, é executada a função `key_pressed()` e se for identificada a tecla "s" (`key == 's'`) é execuatada a função `save_frame()`, que grava uma imagem.
+
 
 ```python
-
-
 def setup():
     size(500, 500)
-
 
 def draw():
     background(0, 0, 200)
@@ -25,21 +21,17 @@ def draw():
 
 def keyPressed():
     if key == 's':
-        saveFrame("frame.png")
+        save_frame("frame###.png")
         print("PNG salvo")
-
-
 ```
-Reulta no aquivo "frame421.png" na pasta do * sketch*:
+
+Resulta em arquivo semelhante a este "frame421.png" na pasta do *sketch*:
 
 ![frame421.png](assets/frame.png)
 
-# `saveFrame()` dentro do `draw()`
+# `save_frame()` dentro do `draw()`
 
-# `` no nome do arquivo a ser salvo,  um número grande de quadros pode ser salvo em alguns segundos, o que deve ser feito com cuidado (pode entupir o disco do seu computador).
-Usar `saveFrame()`dentro do laço principal `draw()` torna o * sketch * muito mais lento, pois salva uma imagem a cada * frame * do draw. Acrescentando carateres ``
-
-Normalmente é criada uma condição que interrompe o sketch com `exit()` ou que só permite salvar um certo número de imagens(no exemplo abaixo, um quadro a cada 5 com `frameCount % 5 == 0`).
+Usar `saveFrame()`dentro do laço principal `draw()` torna o * sketch * muito mais lento, pois salva uma imagem a cada * frame * do draw. Acrescentando alguns carateres `#` no nome do arquivo a ser salvo, um número grande de quadros pode ser salvo em alguns segundos, o que deve ser feito com cuidado (pode entupir o disco do seu computador). Normalmente é criada uma condição que interrompe o sketch com `exit()` ou que só permite salvar um certo número de imagens(no exemplo abaixo, um quadro a cada 5 com `frame_count % 5 == 0 and frame_count <= 100`).
 
 ```python
 
@@ -48,10 +40,8 @@ def draw():
     # desenho
     ...
     # salva só a cada 5 frames até o frame 100
-    if frameCount % 5 == 0 and frameCount <= 100:
+    if frame_Count % 5 == 0 and frame_count <= 100:
         saveFrame("imagem###.png")
-
-
 ```
 
 Neste outro exemplo, data e horário no nome do arquivo e interrupção do sketch.
@@ -65,15 +55,13 @@ def draw():
     # desenho
     ...
     saveFrame(nome_output)
-    if frameCount > 100:
+    if frame_count > 100:
         exit()  # interrompe a execução do sketch
-
-
 ```
 
 # Exportando em resolução maior do que a da tela
 
-Um objeto * PGraphics * é uma espécie de tela virtual que pode gravar o resultado do desenho em paralelo à área de desenho normal, podendo também receber ajustes especiais aplicados apenas a esse objeto-tela, como `.scale()` no exemplo abaixo, o que permite exportar uma imagem 10 vezes maior do que a mostrada na tela.
+Um objeto * Py5Graphics * é uma espécie de tela virtual que pode gravar o resultado do desenho em paralelo à área de desenho normal, podendo também receber ajustes especiais aplicados apenas a esse objeto-tela, como `.scale()` no exemplo abaixo, o que permite exportar uma imagem 10 vezes maior do que a mostrada na tela.
 
 ```python
 
@@ -82,19 +70,18 @@ def setup():
     size(50, 50)
     # preparo da gravação
     scale = 10
-    f = createGraphics(width * scale, height * scale)
-    beginRecord(f)  # início da gravação
+    f = create_graphics(width * scale, height * scale)
+    begin_record(f)  # início da gravação
     # ajustes que só afetam o arquivo sendo gravado
     f.scale(scale)
-    f.strokeWeight(.5)
+    f.stroke_weight(.5)
 
-    # instruções que afentam a tela e o arquivo
-    # sem background após o beginRecord o arquivo fica com fundo transparente!
+    # instruções que afetam a tela e o arquivo
     background(0, 200, 0)
     circle(6, 6, 10)
 
     # fim da gravação
-    endRecord()
+    end_record()
     f.save("exportando_imagem_ampliada.png")
 
 
@@ -105,9 +92,9 @@ Repare que a espessura de linha está sendo ajustada para um valor diferente com
 
 # Exportando apenas parte da tela (e em um local selecionado!)
 
-No exemplo a seguir, vamos usar a estratégia de desenhar em um objeto `PGraphics` como no exemplo anterior, e demonstrar também as seguintes possibilidades:
+No exemplo a seguir, vamos usar a estratégia de desenhar em um objeto `Py5Graphics` como no exemplo anterior, e demonstrar também as seguintes possibilidades:
 
-* Salvar um frame de um skeetch interativo(com `draw()`)
+* Salvar um frame de um sketch interativo(com `draw()`)
 
 - Salvar apenas parte da imagem na tela(útil para remover elementos de interface/controle)
 - Acrescentar ajustes ou elementos apenas na imagem salva
