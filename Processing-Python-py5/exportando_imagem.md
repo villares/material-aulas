@@ -63,32 +63,61 @@ def draw():
 
 Um objeto * Py5Graphics * é uma espécie de tela virtual que pode gravar o resultado do desenho em paralelo à área de desenho normal, podendo também receber ajustes especiais aplicados apenas a esse objeto-tela, como `.scale()` no exemplo abaixo, o que permite exportar uma imagem 10 vezes maior do que a mostrada na tela.
 
+### Exportando um sketch estático
+
 ```python
-
-
 def setup():
     size(50, 50)
     # preparo da gravação
-    scale = 10
-    f = create_graphics(width * scale, height * scale)
+    fator_escala = 10
+    f = create_graphics(width * fator_escala, height * fator_escala)
     begin_record(f)  # início da gravação
     # ajustes que só afetam o arquivo sendo gravado
-    f.scale(scale)
-    f.stroke_weight(.5)
-
+    f.scale(fator_escala)
+    f.stroke_weight(0.5)
     # instruções que afetam a tela e o arquivo
     background(0, 200, 0)
     circle(6, 6, 10)
-
     # fim da gravação
     end_record()
     f.save("exportando_imagem_ampliada.png")
-
-
 ```
 Repare que a espessura de linha está sendo ajustada para um valor diferente com `f.strokeWeight()`. Sem o ajuste ela ficaria 10 vezes maior no arquivo do que na área de desenho normal(acompanhando e resto da imagem) e desta maneira ela fica apenas 5 vezes maior no arquivo.
 
 ![](assets/exportando_imagem_ampliada.png)
+
+### Exportando um único frame de um sketch interativo
+
+```python
+fator_escala = 10
+salvar_png = False
+
+def setup():
+    size(200, 200)  # com fator 10, vira 2000px x 2000px
+
+def draw():
+    global salvar_png
+    if salvar_png:
+        output_buffer = create_graphics(width * fator_escala,
+                                        height * fator_escala)
+        begin_record(output_buffer)
+        output_buffer.scale(fator_escala)   
+        file_name = f'{frame_count}.png'
+    # seu desenho vai aqui
+    background(0, 100, 0) 
+    circle(width / 3, height / 3, width / 2)
+    if salvar_png:
+        salvar_png = False
+        end_record()
+        output_buffer.save(file_name)
+        print(f'{file_name} salvo.')
+
+def key_pressed():
+    global salvar_png
+    if key == 'h':
+        salvar_png = True
+```
+![3069](https://user-images.githubusercontent.com/3694604/233481566-b1757f01-f477-4663-b02e-8b60f5471a5d.png)
 
 ## Exportando apenas parte da tela (e em um local selecionado!)
 
@@ -108,7 +137,7 @@ salvar = False
 
 def setup():
     size(500, 500)
-    global w, h, offset, f
+    global w, h, margem, f
     # dimensões da imagem e um deslocamento / margem
     w, h, margem = 400, 400, 50
     f = create_graphics(w, h)
@@ -126,7 +155,7 @@ def draw():
     if salvar:
         begin_record(f)  # início da gravação
     # As instruções aqui aparecem na tela e no arquivo
-    noStroke()
+    no_stroke()
     fill(0, 0, 200)
     rect(0, 0, w, h)  # fundo no arquivo usando um retângulo
     fill(0, 200, 0)
@@ -140,30 +169,10 @@ def draw():
         salvar = False
         # em vez de f.save("arquivo_na_pasta_do_sketch.png")
         # vamos usar esta função selectOtuput que chama por nós salva_arquivo()
-        select_output("Escolha onde Salvar", "salva_arquivo")
+        select_output("Escolha onde Salvar", salva_arquivo)
     # instruções depois do end_record também aparecem só na tela
     fill(255)
-    text(u'Também só na tela', 10, 20)
-
-
-def key_pressed():
-    global salvar
-    if key == 's':
-        salvar = True
-
-
-def salva_arquivo(selection):
-    if selection is not None:
-        # importante usar unicode() em vez de str() aqui!
-        nome = unicode(selection)
-        if not nome.lower().endswith('.png'):
-            nome += '.png'
-        f.save(nome)
-        print("Imagem, salva em: " + nome)
-    else:
-        print("operação de salvar cancelada")
-
-
+    text('Também só na tela', 10, 20)
 ```
 
 ![](assets/exportando_parcial_1.png)
