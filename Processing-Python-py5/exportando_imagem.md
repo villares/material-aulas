@@ -40,7 +40,7 @@ def draw():
     # desenho
     ...
     # salva só a cada 5 frames até o frame 100
-    if frame_Count % 5 == 0 and frame_count <= 100:
+    if frame_count % 5 == 0 and frame_count <= 100:
         save_frame("imagem###.png")
 ```
 
