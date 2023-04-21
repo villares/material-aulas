@@ -113,7 +113,7 @@ No exemplo a seguir mostramos como exportar desenhos tridimensionais em formato 
 
 O resultado, infelizmente,  é  bastante limitado, como pode ser visto abaixo:
 
-![a](assets/3_da.svg) ![b](assets/3_db.svg)
+![a](assets/3Da.svg) ![b](assets/3Db.svg)
 
 
 ```python
