@@ -168,7 +168,7 @@ def key_pressed():
 
 ## Outras estratégias
 
-### Usando um objeto PGraphics
+### Usando um objeto Py5Graphics
 
 Usando `create_graphics()` podemos mostrar na tela o desenho mas salvar o arquivo do desenho com alguns ajustes especiais.
 
