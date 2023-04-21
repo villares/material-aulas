@@ -183,4 +183,4 @@ Note o texto em vermelho que só aparece no arquivo salvo.
 
 - [Desenhando fora da vista com *Py5Graphics* (*offscreen buffer*)](offscreen_buffer.md)
 - [Exportando PDF](exportando_pdf.md)
-- [Exportando SVG](exportando_Svg.md)
+- [Exportando SVG](exportando_svg.md)
