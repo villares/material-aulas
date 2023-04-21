@@ -108,9 +108,9 @@
 - 9.1.1 [Módulos ou mosaicos de Truchet](truchet.md)
 - 9.1.2 [Jogo PONG](pong/) - Estudos para o fazer um jogo
 <!-- 9.1.3 [`caneta_automatica_py`](caneta_automatica/) - Módulo para desenhar inspirado na tartaruga de Logo -->
-- 9.1.4 [Sistemas de Lindenmayer](L-System)
+- 9.1.4 [Sistemas de Lindenmayer](LSystem.)
 
-### Externos
+### Externosmd
 
 - 9.2.1 [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
 - 9.2.2 [Paper Objects with Processing and Python](https://abav.lugaralgum.com/Paper-objects-with-Processing-and-Python)
