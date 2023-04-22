@@ -20,9 +20,9 @@ def draw():
 
 
 def keyPressed():
-    if key == 's':
-        save_frame("frame###.png")
-        print("PNG salvo")
+    if key == 's':     
+        save_frame('frame#####.png')   # os ##### viram o número do frame no nome do arquivo
+        print(f'PNG do frame {frame_count} salvo')
 ```
 
 Resulta em arquivo semelhante a este "frame421.png" na pasta do *sketch*:
@@ -41,13 +41,13 @@ def draw():
     ...
     # salva só a cada 5 frames até o frame 100
     if frame_count % 5 == 0 and frame_count <= 100:
-        save_frame("imagem###.png")
+        save_frame("imagem#####.png")
 ```
 
 Neste outro exemplo, data e horário no nome do arquivo, e interrupção do sketch com `exit()` ao final.
 
 ```python
-nome_output = '{}-{}-{}-{}-{}-{}-frame###.png'.format(
+nome_output = '{}-{}-{}-{}-{}-{}-frame#####.png'.format(
     year(), month(), day(), hour(), minute(), second())
 
 
@@ -61,7 +61,7 @@ def draw():
 
 ## Exportando em resolução maior do que a da tela
 
-Um objeto * Py5Graphics * é uma espécie de tela virtual que pode gravar o resultado do desenho em paralelo à área de desenho normal, podendo também receber ajustes especiais aplicados apenas a esse objeto-tela, como `.scale()` no exemplo abaixo, o que permite exportar uma imagem 10 vezes maior do que a mostrada na tela.
+Um objeto * Py5Graphics * é uma espécie de tela virtual que pode gravar o resultado do desenho em paralelo à área de desenho normal, podendo também receber ajustes especiais aplicados apenas a esse objeto-tela, como `.scale()` no exemplo abaixo, o que permite exportar uma imagem 10 vezes maior do que a mostrada na tela. Outro ponto interessante deste método é que permite exportar imagens com o fundo transparente.
 
 ### Exportando um sketch estático
 
@@ -69,18 +69,20 @@ Um objeto * Py5Graphics * é uma espécie de tela virtual que pode gravar o resu
 def setup():
     size(50, 50)
     # preparo da gravação
-    fator_escala = 10
+    fator_escala = 10  # um número que multiplica a largura e altura da imagem
     f = create_graphics(width * fator_escala, height * fator_escala)
-    begin_record(f)  # início da gravação
+    begin_record(f)    # início da gravação
     # ajustes que só afetam o arquivo sendo gravado
     f.scale(fator_escala)
     f.stroke_weight(0.5)
-    # instruções que afetam a tela e o arquivo
-    background(0, 200, 0)
+    # instruções que aparecem na tela e no arquivo
+    background(0, 200, 0)  # não use background() se quiser o fundo transparente
     circle(6, 6, 10)
-    # fim da gravação
-    end_record()
-    f.save("exportando_imagem_ampliada.png")
+    end_record()  # fim da gravação
+    # se acrescentar instruções de desenho daqui em diante aparecerem só na tela
+    f.save('imagem_ampliada.png')  # finalmente salva o arquivo
+    # use f.save('imagem_ampliada.png', drop_alpha=False) para exportar um png com fundo transparente  
+
 ```
 Repare que a espessura de linha está sendo ajustada para um valor diferente com `f.strokeWeight()`. Sem o ajuste ela ficaria 10 vezes maior no arquivo do que na área de desenho normal(acompanhando e resto da imagem) e desta maneira ela fica apenas 5 vezes maior no arquivo.
 
@@ -102,7 +104,7 @@ def draw():
                                         height * fator_escala)
         begin_record(output_buffer)
         output_buffer.scale(fator_escala)   
-        file_name = f'{frame_count}.png'
+        file_name = f'{frame_count}.png'    # outra maneira 
     # seu desenho vai aqui
     background(0, 100, 0) 
     circle(mouse_x, mouse_y, width / 2)
