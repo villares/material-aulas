@@ -121,6 +121,45 @@ def key_pressed():
 ```
 ![3069](https://user-images.githubusercontent.com/3694604/233481566-b1757f01-f477-4663-b02e-8b60f5471a5d.png)
 
+### Gravando frames acumulados de um sketch
+
+Este exemplo começa a gravar a acumulação de frames quando se aperta a tecla 'r'. O resultado é um PNG com fundo transparente e escalado 10 vezes em relação ao que vemos na tela.
+
+```python
+fator_escala = 10
+gravando = False
+
+def setup():
+    size(200, 200)  # com fator 10, vira 2000px x 2000px
+
+def draw():
+    # Este exemplo não usa background no draw(), e na tele se vê um fundo cinza
+    # mas no PNG gravado o fundo ficará transparente
+    if gravando:
+        output_buffer.scale(fator_escala) # precisa escalar novamente a cada frame
+    circle(mouse_x, mouse_y, width / 5)        
+        
+def key_pressed():
+    global gravando, file_name, output_buffer
+    if key == 'r':   # a tecla 'r' liga e desliga a gravação (recording)
+        if not gravando:
+            gravando = True
+            background(200) # limpa a tela (mas não entra na gravação)
+            output_buffer = create_graphics(width * fator_escala,
+                                        height * fator_escala)
+            begin_record(output_buffer)
+            file_name = f'{frame_count}.png' 
+            print(f'iniciando a gravação de {file_name}')
+        else:
+            gravando = False
+            # drop_alpha=False é necessário no momento para salvar fundo transparente
+            output_buffer.save(file_name, drop_alpha=False)  
+            print(f'{file_name} gravado.')
+```
+
+![126](https://user-images.githubusercontent.com/3694604/233814450-7a7d015f-476a-4c42-bf32-13ee07646525.png)
+
+
 ## Exportando apenas parte da tela (e em um local selecionado!)
 
 No exemplo a seguir, vamos usar a estratégia de desenhar em um objeto `Py5Graphics` como no exemplo anterior, e demonstrar também as seguintes possibilidades:
