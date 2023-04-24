@@ -70,10 +70,10 @@
 
 ### Exportação de imagens e outras saídas
 
-- 5.1.1 [Exportando imagens(bitmap/raster)](exportando_imagem.md)
-- 5.2.1 [Exportando PDF(saída vetorial)](exportando_pdf.md)
-- 5.3.1 [Exportando SVG(saída vetorial)](exportando_svg.md)
-- 5.4.1 [Exportando animações(vídeos ou GIF)](exportar_animacoes.md)
+- 5.1.1 [Exportando imagens (bitmap/raster)](exportando_imagem.md)
+- 5.2.1 [Exportando PDF (saída vetorial)](exportando_pdf.md)
+- 5.3.1 [Exportando SVG (saída vetorial)](exportando_svg.md)
+- 5.4.1 [Exportando animações (vídeos ou GIF)](exportar_animacoes.md)
 <!-- 5.5.1 [Exportando um aplicativo independente](export_application.md) [REVISAR] -->
 
 ### Arquivos externos
@@ -110,7 +110,7 @@
 <!-- 9.1.3 [`caneta_automatica_py`](caneta_automatica/) - Módulo para desenhar inspirado na tartaruga de Logo -->
 - 9.1.4 [Sistemas de Lindenmayer](LSystem.)
 
-### Externosmd
+#### Externos
 
 - 9.2.1 [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
 - 9.2.2 [Paper Objects with Processing and Python](https://abav.lugaralgum.com/Paper-objects-with-Processing-and-Python)
