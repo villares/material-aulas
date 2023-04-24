@@ -152,6 +152,7 @@ def key_pressed():
             print(f'iniciando a gravação de {file_name}')
         else:
             gravando = False
+            end_record()
             # drop_alpha=False é necessário no momento para salvar fundo transparente
             output_buffer.save(file_name, drop_alpha=False)  
             print(f'{file_name} gravado.')
