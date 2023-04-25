@@ -102,8 +102,9 @@ def key_pressed():
 
 O que não funciona quando exportamos em SVG?
 
-- `blend_mode(MULTIPLY)`ou qualquer outra variante de `blend_mode()` não tem efeito no SVG(só na tela).
+- `blend_mode(MULTIPLY)`ou qualquer outra variante de `blend_mode()` não tem efeito no SVG (só na tela).
 - Atualmente não é possível salvar múltiplos SVG em um mesmo sketch.
+- Parece não ser possível acumular múltiplos frames na gravação. Será preciso usar uma estratégia que permita desenhar de uma vez só em um único frame o produto do desenho acumulado.
 
 ### Exportação de desenho 3D em arquivos vetoriais 2D
 
