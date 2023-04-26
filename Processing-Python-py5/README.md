@@ -115,3 +115,4 @@
 - 9.2.1 [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
 - 9.2.2 [Paper Objects with Processing and Python](https://abav.lugaralgum.com/Paper-objects-with-Processing-and-Python)
 - 9.2.3 [Arc, tangents & Bezier studies](https://github.com/villares/arc_tangents_and_bezier_studies)
+- 9.2.4 [Simulações física 2D com PyMunk - Pinball](https://github.com/villares/pymunk-pinball-paulista)
