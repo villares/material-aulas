@@ -1,11 +1,141 @@
 # Módulos ou mosaicos de Truchet
 
-![image](https://user-images.githubusercontent.com/3694604/188502514-5a8412cd-421f-40f1-a845-02d597c386cc.png)
-
 O ladrilhamento, ou tesselação, isto é o recobrimento de superfícies, por um padrão de quadrados decorados com desenhos que não tem simetria rotacional foi explorada pelo padre dominicano francês Sébastien Truchet.
 
-Veremos aqui uma variante dessa ideia usando arcos que, ao que parece, foi popularizada pelo trabalho de Cyril Stanley Smith and Pauline Boucher, [The Tiling Patterns of Sebastien Truchet and the Topology of Structural Hierarchy](https://www.jstor.org/stable/1578535?origin=crossref&seq=1#metadata_info_tab_contents) em um exemplo traduzido para Python inspirado no código para Processing Java do livro [Processing: Creative Coding and Generative Art in Processing 2](https://rd.springer.com/book/10.1007/978-1-4302-4465-3).
+Veremos aqui uma variante dessa ideia usando arcos que, ao que parece, foi popularizada pelo trabalho de Cyril Stanley Smith and Pauline Boucher, [The Tiling Patterns of Sebastien Truchet and the Topology of Structural Hierarchy](https://www.jstor.org/stable/1578535?origin=crossref&seq=1#metadata_info_tab_contents).
 
+
+
+## Preenchimentos contíguos
+
+Exemplo inspirado em um código para Processing Java do livro [Processing: Creative Coding and Generative Art in Processing 2](https://rd.springer.com/book/10.1007/978-1-4302-4465-3).
+
+### Versão interativa
+
+![image](https://user-images.githubusercontent.com/3694604/234663923-94ac2e2c-adb1-4773-bb20-e45046932943.png)
+
+```python
+from itertools import product
+
+lado = 40
+filas = 40
+colunas = 30
+
+def setup():
+    size(600, 400)
+    stroke_weight(3)
+    for coluna in range(colunas):
+        for fila in range(filas):
+            celula = Celula(coluna, fila, lado)
+            celula.gira(random_int(0, 1))
+            celula.arruma_cor()
+            
+def draw():
+    background(200)
+    for celula in Celula.grade.values():
+        celula.desenha()
+
+def mouse_clicked():
+    for celula in Celula.grade.values():
+        if celula.sob_mouse(mouse_x, mouse_y):
+            if is_key_pressed and key_code == SHIFT:
+                celula.muda_desenho()
+            else:
+                celula.gira()
+
+def key_pressed():
+    for i, j in product(range(colunas), range(filas)):
+        celula = Celula.grade[i, j]
+        if key == 'm' and random(100) < 50:
+            celula.muda_desenho()
+        elif key == 'r' and random(100) < 50:
+            celula.gira()
+        elif key == ' ':
+            celula.arruma_cor()
+
+def modulo1(x, y, lado):
+    #no_stroke()
+    rect_mode(CENTER)
+    fill(0, 0, 200)
+    ml = lado / 2 # metade da lado
+    rect(x, y, lado, lado)
+    fill(0)
+    arc(x - ml, y - ml, lado, lado, 0, PI / 2)
+    arc(x + ml, y + ml, lado, lado, PI, 3 * PI / 2)
+    
+def modulo2(x, y, lado):
+    no_stroke()
+    rect_mode(CENTER)
+    fill(0)
+    ml = lado / 2 # metade da lado
+    rect(x, y, lado, lado)
+    fill(0, 0, 200)
+    arc(x - ml, y - ml, lado, lado, 0, PI / 2)
+    arc(x + ml, y + ml, lado, lado, PI, 3 * PI / 2)
+
+class Celula:
+    grade = {}
+    variantes = [modulo2, modulo1]
+    
+    def __init__(self, i, j, lado):
+        self.coluna = self.i = i
+        self.fila = self.j = j
+        self.x = lado / 2 + i * lado
+        self.y = lado / 2 + j * lado
+        self.lado = lado
+        self.variante = 0
+        self.rot = 0
+        Celula.grade[i, j] = self
+    
+    def desenha(self):
+        push_matrix()
+        translate(self.x, self.y)
+        rotate(HALF_PI * self.rot)
+        funcao_desenho = self.variantes[self.variante]
+        funcao_desenho(0, 0, self.lado)
+        pop_matrix()
+ 
+    def sob_mouse(self, x, y):
+        return (self.x - self.lado / 2 < x < self.x + self.lado / 2 and
+                self.y - self.lado / 2 < y < self.y + self.lado / 2)
+         
+    def gira(self, rot=None):
+        if rot is None:
+            self.rot = not self.rot 
+        else:
+            self.rot = rot
+
+    def muda_desenho(self, i=None):
+        if i is None:
+            self.variante = not self.variante
+        else:
+            self.variante = i
+            
+    def arruma_cor(self):
+        """
+        Baseado em "Processing: Creative Coding and Generative Art in Processing 2"
+        by Ira Greenberg, Dianna Xu, Deepak Kumar
+        """
+        i, j = self.i, self.j
+        if i > 0 and j == 0:   # first tile of a row, starting from the 2nd row
+            # same rot as tile directly above
+            if Celula.grade[i-1, 0].rot == self.grade[i, 0].rot:
+                # set to opposite coloring of my neighbor above
+                self.grade[i, 0].variante = not self.grade[i-1, 0].variante
+            else:
+                # set to same coloring of my neighbor above
+                self.grade[i, 0].variante = self.grade[i-1, 0].variante
+        if j > 0:  # subsequent grade in a row, including the first
+            # same rot as tile to the left
+            if self.grade[i, j-1].rot == self.grade[i, j].rot:
+                # set to opposite coloring of my neighbor to the left
+                self.grade[i, j].variante = not self.grade[i, j-1].variante
+            else:
+                # set to same coloring of my neighbor to the left
+                self.grade[i, j].variante = self.grade[i, j-1].variante        
+```
+
+### Versão estática mais parecida com o código original
 
 ```python
 # Translated to Processing Python mode from the Java example at
@@ -52,7 +182,6 @@ def color_swap(i, j):
             # set to same coloring of my neighbor to the left
             tiles[i][j].swapped_colors = tiles[i][j-1].swapped_colors
 
-
 class Tile:
 
     def __init__(self, x, y, w, ic, oc):
@@ -89,3 +218,4 @@ class Tile:
         pop_matrix()
 
 ```
+![image](https://user-images.githubusercontent.com/3694604/188502514-5a8412cd-421f-40f1-a845-02d597c386cc.png)
