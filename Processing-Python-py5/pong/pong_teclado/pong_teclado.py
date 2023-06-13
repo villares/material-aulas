@@ -1,7 +1,11 @@
 """
-PONG - Sesc Av. Paulista
-começando com Processing Modo Python
+PONG - Inicialmente para atividade no Sesc Av. Paulista, convertido para py5
+
+Dois jogadores com teclado.
+Use as teclas, A, Z e setas para cima e para baixo.
+Espaço para iniciar.
 """
+
 TAM_BOLA = 10
 MEIA_BOLA = TAM_BOLA / 2
 TAM_JOGADOR = 80
@@ -12,11 +16,10 @@ p1_desce = p1_sobe = p2_desce = p2_sobe = False
 
 vx, vy = 0, 0
 
-
 def setup():
     """ Executado no início """
     global x, y, p1x, p1y, p2x, p2y
-    size(700, 400)
+    size(900, 500)
     rect_mode(CENTER)
     x = width / 2
     y = height / 2

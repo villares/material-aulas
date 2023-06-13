@@ -5,8 +5,6 @@ No Linux pode ser que precise fazer sudo chmod 666 /dev/tty_usb0 (ou equivalente
 """
 
 # ARDUINO
-add_library('serial')  # import processing.serial.*;
-add_library('arduino')  # import cc.arduino.*;
 POT_AMARELO = 0   # Pino que vai ser lido controle 'jogador Amarelo'
 POT_VERDE = 5   # Pino que vai ser lido controle 'jogador Verde'
 SERIAL = 0  # MUDE para o índice do seu Arduino na lista de portas seriais!
@@ -15,15 +13,15 @@ SERIAL = 0  # MUDE para o índice do seu Arduino na lista de portas seriais!
 MEIA_ALTURA_JOGADOR = 50  # tamanho de meia altura do jogador
 LARGURA_JOGADOR = 10
 
+from inputs import get_arduino
 
 def setup():
     size(600, 400)  # tamanho da tela
     global arduino
-    for indice, porta in enumerate(Arduino.list()):
-        # Para ver a lista de portas seriais!
-        print("{}: {}".format(indice, porta))
-    arduino = Arduino(this, Arduino.list()[SERIAL], 57600)
-
+    arduino = get_arduino()
+    if arduino is None:
+        print('Não encontrei um Arduino.')
+        exit_sketch()
 
 def draw():
     background(0)  # limpa a tela

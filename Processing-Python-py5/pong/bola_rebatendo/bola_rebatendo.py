@@ -1,5 +1,5 @@
 """
-PONG - Sesc Av. Paulista
+Só uma "bola quadrada" rebatendo.
 """
 
 TAM_BOLA = 20

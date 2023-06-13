@@ -1,8 +1,7 @@
-add_library('sound')
 """
-PONG - Sesc Av. Paulista
-começando com Processing Modo Python
+PONG - QUEBRADO - Procurar solução para o som.
 """
+
 TAM_BOLA = 10
 MEIA_BOLA = TAM_BOLA / 2
 TAM_JOGADOR = 80

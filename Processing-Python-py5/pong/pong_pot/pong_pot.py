@@ -1,10 +1,9 @@
 """
-PONG - Sesc Av. Paulista
-começando com Processing Modo Python
+PONG - Com dois poteciômetros
 """
+from inputs import get_arduino
+
 # ARDUINO
-add_library('serial')  # import processing.serial.*;
-add_library('arduino')  # import cc.arduino.*;
 POT_AMARELO = 0   # Pino que vai ser lido controle 'jogador Amarelo'
 POT_VERDE = 5   # Pino que vai ser lido controle 'jogador Verde'
 SERIAL = 0  # MUDE para o índice do seu Arduino na lista de portas seriais!
@@ -17,17 +16,16 @@ game_over = False
 
 vx, vy = 0, 0
 
-
 def setup():
     """ Executado no início """
-    global x, y, p1x, p2x
+    size(900, 500)
+    rect_mode(CENTER)
+    
     # ARDUINO SETUP
     global arduino
-    # println((Arduino.list())) # Para ver a lista de portas seriais!
-    arduino = Arduino(this, Arduino.list()[SERIAL], 57600)
-
-    size(700, 400)
-    rect_mode(CENTER)
+    arduino = get_arduino()
+    # POSITIONS
+    global x, y, p1x, p2x
     x = width / 2
     y = height / 2
     p1x = MEIA_BOLA
@@ -39,9 +37,10 @@ def draw():
     global x, y, vx, vy, p1y, p2y
     global game_over
     background(0)
-    p1y = map(arduino.analog_read(POT_AMARELO), 0, 1023, 0, height)
-    p2y = map(arduino.analog_read(POT_VERDE), 0, 1023, 0, height)
+    p1y = remap(arduino.analog_read(POT_AMARELO), 0, 1023, 0, height)
+    p2y = remap(arduino.analog_read(POT_VERDE), 0, 1023, 0, height)
     # desenha bola
+    fill(0, 0, 255)
     rect(x, y, TAM_BOLA, TAM_BOLA)
     # anda com a bola
     if not game_over:
@@ -68,7 +67,9 @@ def draw():
             game_over = True
 
             # desenha jogadores
+    fill(255, 255, 0)
     rect(p1x, p1y, TAM_BOLA, TAM_JOGADOR)
+    fill(0, 255, 0)
     rect(p2x, p2y, TAM_BOLA, TAM_JOGADOR)
 
 

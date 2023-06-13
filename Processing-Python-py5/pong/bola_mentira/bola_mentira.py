@@ -1,6 +1,5 @@
 """
-PONG - Sesc Av. Paulista
-começando com Processing Modo Python
+PONG - Começo do jogo, faltando a checagem do rebatimento pelo jogador
 """
 
 TAM_BOLA = 10
