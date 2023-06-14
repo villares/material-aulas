@@ -24,6 +24,8 @@ def setup():
     # ARDUINO SETUP
     global arduino
     arduino = get_arduino()
+    if arduino is None:
+        exit_sketch()
     # POSITIONS
     global x, y, p1x, p2x
     x = width / 2
