@@ -67,7 +67,7 @@
 - 4.5.1 [Parando o `draw()`](no_loop.md)
 - 4.6.1 [Uma janela de diálogo com um campo de texto](input_janela.md)
 
-#### Exportação de imagens e outras saídas
+### Exportação de imagens e outras saídas
 
 - 5.1.1 [Exportando imagens(bitmap/raster)](exportando_imagem.md)
 - 5.2.1 [Exportando PDF(saída vetorial)](exportando_pdf.md)
