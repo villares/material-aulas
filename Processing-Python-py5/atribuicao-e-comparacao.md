@@ -1,6 +1,6 @@
-# Qual a diferença entre ```=``` e ```==``` em Python?
+# Qual a diferença entre <code>=</code> e <code>==</code> em Python?
 
-# O símbolo ```=``` é o operador de "atribuição"
+## O símbolo <code>=</code> é o operador de "atribuição"
 
 ```python
 num = 3  # faça `num` ser uma referência ao valor 3`
@@ -21,7 +21,7 @@ contador = contador + 1
 contador += 1  # equivale a contador = contador + 1
 ```
 
-# O símbolo ```==``` é o operador relacional que faz a "comparação de igualdade"
+## O símbolo <code>==</code> é o operador relacional que faz a "comparação de igualdade"
 
 ```python
 num == 3  # o valor de `num` é igual ao valor 3?`
@@ -46,12 +46,12 @@ if num != 0:  # se num não for igual a zero
 # equivalente a: if not num == 0
 ```
 
-# Assuntos relacionados
+## Assuntos relacionados
 
 - [Variáveis](variaveis.md)
 - [Condicionais e operadores lógicos](condicionais_py.md)
 
-# Glossário
+## Glossário
 
 [**variável**](https://penseallen.github.io/PensePython2e/02-vars-expr-instr.html#termo:variável) Um nome que se refere a um valor.
 
