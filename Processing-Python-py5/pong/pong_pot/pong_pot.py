@@ -1,26 +1,27 @@
 """
 PONG - Com dois poteciômetros
+
+Aperte qualquer tecla para começar ou recomeçar.
 """
+
 from inputs import get_arduino
 
 # ARDUINO
 POT_AMARELO = 0   # Pino que vai ser lido controle 'jogador Amarelo'
-POT_VERDE = 5   # Pino que vai ser lido controle 'jogador Verde'
-SERIAL = 0  # MUDE para o índice do seu Arduino na lista de portas seriais!
-
+POT_VERDE = 5     # Pino que vai ser lido controle 'jogador Verde'
+# DIMENSÕES
 TAM_BOLA = 10
 MEIA_BOLA = TAM_BOLA / 2
 TAM_JOGADOR = 80
 MEIO_JOGADOR = TAM_JOGADOR / 2
-game_over = False
 
-vx, vy = 0, 0
+game_over = False
+vx, vy = 0, 0  #inicia com bola parada
 
 def setup():
     """ Executado no início """
     size(900, 500)
     rect_mode(CENTER)
-    
     # ARDUINO SETUP
     global arduino
     arduino = get_arduino()
@@ -75,18 +76,20 @@ def draw():
     rect(p2x, p2y, TAM_BOLA, TAM_JOGADOR)
 
 
+def inicia_jogo():
+    global x, y, p1y, p2y, game_over, vx, vy
+    x = width / 2
+    y = height / 2
+    p1y = p2y = y
+    game_over = False
+    if random(100) > 50:
+        vx = -5
+    else:
+        vx = 5
+    if random(100) > 50:
+        vy = -2
+    else:
+        vy = 2
+
 def key_pressed():
-    global x, y, vx, vy, game_over
-    if key == ' ':
-        if game_over:
-            x = width / 2
-            y = height / 2
-            game_over = False
-        if random(100) > 50:
-            vx = -5
-        else:
-            vx = 5
-        if random(100) > 50:
-            vy = -2
-        else:
-            vy = 2
+    inicia_jogo()
