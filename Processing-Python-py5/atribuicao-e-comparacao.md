@@ -1,6 +1,6 @@
-# Qual a diferença entre <code>=</code> e <code>==</code> em Python?
+# Qual a diferença entre "=" e "==" em Python?
 
-## O símbolo <code>=</code> é o operador de "atribuição"
+## O símbolo "=" é o operador de atribuição
 
 ```python
 num = 3  # faça `num` ser uma referência ao valor 3`
@@ -21,10 +21,10 @@ contador = contador + 1
 contador += 1  # equivale a contador = contador + 1
 ```
 
-## O símbolo <code>==</code> é o operador relacional que faz a "comparação de igualdade"
+## O símbolo "==" é o operador relacional que faz a comparação de igualdade
 
 ```python
-num == 3  # o valor de `num` é igual ao valor 3?`
+num == 3  # o valor de `num` é igual ao valor 3?
 # Ninguém escreve isso desse jeito, em geral vai dentro de outra estrutura.
 # Mas o resultado seria o valor `True` ou `False`
 # se você fizer print(num == 3), por exemplo
