@@ -23,11 +23,11 @@ O espaço que faz os itens ficarem 'dentro' das categorias é a *indentação*. 
 
 Essa sintaxe com o espaço de indentação, e com `:`, vai ser usada em inúmeras estruturas de Python, como `if`/`elif`/`else`,  nos laços de repetição `for` e `while`, na definição de novas funções com `def`, entre outras.
 
-# Animando uma estrela com o movimento do mouse
+## Animando uma estrela com o movimento do mouse
 
 Vamos ver agora um exemplo que precisa de indentação, avançando um pouco em ideias cujos detalhes você pode retomar depois na página sobre [movimento](movimento_py.md).
 
-# A função `setup()` e a função `draw()`
+### A função `setup()` e a função `draw()`
 
 Podemos reorganizar o código anterior mostrado no [primeiro contato com polígonos](poligonos_1.md) colocando os ajustes iniciais(*setup*), como  `size(200, 200)`, dentro da definição de função `def setup(): `, e a parte que desenha(*draw*) dentro de `def draw(): `.
 
@@ -64,7 +64,7 @@ def draw():
 <div id = "iframe_DIV" > <img src = "assets/estrela_indentacao.gif" > </div>
 <a id="iframe_A" href="https://abav.lugaralgum.com/material-aulas/Processing-Python/assets/indentacao/">Veja o resultado aqui</a>
 
-# Assuntos relacionados
+## Assuntos relacionados
 
 - Mais sobre[animações com `setup()` e `draw()`](movimento_py.md)
 - Estrelas de muitas pontas com[laços de repetição `while`](https://github.com/villares/material-aulas/blob/master/Processing-Python/while.md)
