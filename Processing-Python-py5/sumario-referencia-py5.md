@@ -432,8 +432,7 @@
 * [clip()](http://py5coding.org/reference/sketch_clip.html) - Limita a renderização aos limites de um retângulo definido pelos parâmetros.
 * [create_graphics()](http://py5coding.org/reference/sketch_create_graphics.html) - Cria e retorna um novo objeto `Py5Graphics`.
 * [flush()](http://py5coding.org/reference/sketch_flush.html) - Flush comandos de desenho para o renderizador.
-* [g](http://py5coding.org/reference/sketch_g.html) - O objeto `Py5Graphics` usado pelo Sketch.
-* [get_graphics()](http://py5coding.org/reference/sketch_get_graphics.html) - Obtenha o objeto `Py5Graphics` usado pelo Sketch.
+* [get_graphics()](http://py5coding.org/reference/sketch_get_graphics.html) - Obtenha o objeto `Py5Graphics` usado pelo Sketch (conhecido como `g` no Processing).
 * [hint()](http://py5coding.org/reference/sketch_hint.html) - Esta função é usada para ativar ou desativar recursos especiais que controlam como os gráficos são desenhados.
 * [no_clip()](http://py5coding.org/reference/sketch_no_clip.html) - Desativa o recorte iniciado anteriormente pela função `clip()`.
 
