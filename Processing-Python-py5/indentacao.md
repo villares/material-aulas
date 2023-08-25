@@ -34,8 +34,6 @@ Podemos reorganizar o código anterior mostrado no [primeiro contato com polígo
 A função `setup()` vai ser executada apenas uma vez no começo, e a função `draw()` fica repetindo sem parar, permitindo o movimento. Repare como a indentação é o que determina  o que está dentro de cada função.
 
 ```python
-
-
 def setup():
     size(400, 400)
 
@@ -57,8 +55,6 @@ def draw():
     vertex(x + a, y - a)
     vertex(x, y - b)
     end_shape(CLOSE)
-
-
 ```
 
 <div id = "iframe_DIV" > <img src = "assets/estrela_indentacao.gif" > </div>
@@ -66,7 +62,7 @@ def draw():
 
 ## Assuntos relacionados
 
-- Mais sobre[animações com `setup()` e `draw()`](movimento_py.md)
-- Estrelas de muitas pontas com[laços de repetição `while`](https://github.com/villares/material-aulas/blob/master/Processing-Python/while.md)
-- Você pode ver usos mais avançados de `begin_shape()` na[referência](https://py.processing.org/reference/begin_shape.html).
-- Você pode montar os vértices a partir de[estruturas de dados com laços de repetição ou fazer polígonos com furos](https://github.com/villares/material-aulas/blob/master/Processing-Python/poligonos_2.md)
+- Mais sobre [animações com `setup()` e `draw()`](movimento_py.md)
+- Estrelas de muitas pontas com [laços de repetição `while`](while.md)
+- Você pode ver usos mais avançados de `begin_shape()` na [referência](https://py5coding.org/reference/sketch_begin_shape.html).
+- Você pode montar os vértices a partir de [estruturas de dados com laços de repetição ou fazer polígonos com furos](poligonos_2.md)
