@@ -51,7 +51,7 @@ Os parâmetros, quando existem, são nomes lá dentro da definição da função
 
 ## Um exemplo de função, uma função `olho()`
 
-![](/assets/funcao_olhp.png)
+![olho](assets/funcao_olho.png)
 
 ```python
 def setup():
