@@ -8,7 +8,7 @@ Antes do "laço principal de repetição", que é como costumamos descrever a ex
 
 Resumindo: Dentro do `setup()` vai tudo aquilo que precisamos fazer apenas uma vez e no começo, como, por exemplo, definir a àrea de desenho com `size()`. Já no `draw()` vão principalmente as instruções de desenho propriamente ditas, em geral precedidas por uma limpeza da tela ou fundo, e são acionados os cálculos de atualização dos elementos da animação.
 
-Note que no exemplo a seguir, a posição e velocidade do círculo é mantida em algumas variáveis, `px`, `py`, `vx` e `vy`, que precisam ser 'lembradas' entre os ciclos de repetição do `draw()` e dentro dele são modificadas. Isso é o que chamamamos de * variáveis globais*, em contraste com variáveis que fossem criadas dentro do `draw()` e que seriam * variáveis locais*. Leia mais sobre isso na página[Escopo: variáveis globais e locais](escopo_py.md).
+Note que no exemplo a seguir, a posição e velocidade do círculo é mantida em algumas variáveis, `px`, `py`, `vx` e `vy`, que precisam ser 'lembradas' entre os ciclos de repetição do `draw()` e dentro dele são modificadas. Isso é o que chamamamos de *variáveis globais*, em contraste com variáveis que fossem criadas dentro do `draw()` e que são *variáveis locais*. Leia mais sobre isso na página [Escopo: variáveis globais e locais](escopo_py.md).
 
 # Círculo rebatendo nas bordas
 
