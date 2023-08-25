@@ -73,7 +73,7 @@ minha_cor = cor_sorteada(255) # sorteia uma cor
 
 ## Alguns tipos/classes de valores/objetos
 
-Nesta tabela apresento apenas alguns dos tipos que vamos encontrar programando com Processing modo Python. Vou marcar com *Py* os que são naturais do Python, mesmo que existam equivalentes no Processing modo Java, e *Py5* os que vem do Processing, e não existem no Python sozinho.
+Nesta tabela apresento apenas alguns dos tipos que vamos encontrar. Vou marcar com *Python* os que são nativos do Python e *Py5* os que vem do Processing, e não existem no Python sozinho.
 
 | tipo / classe | descrição | origem |
 | ---      | --- | --- |
