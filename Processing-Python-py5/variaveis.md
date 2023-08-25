@@ -1,6 +1,6 @@
 # Variáveis
 
-Variáveis são nomes que inventamos quando estamos escrevendo um programa, e que apontam para valores na memória do computador. Esses valores podem ser simples como números inteiros(*int*/*integer*), textos(*str*/*string*) ou, de maneira genérica, entidades que chamamos de *objetos*. Em Python, como vai ser possível perceber futuramente, há muitos tipos de objetos e sempre podemos fazer referência a eles por meio de variáveis.
+Variáveis são nomes que inventamos quando estamos escrevendo um programa, e que apontam para valores na memória do computador. Esses valores podem ser simples como números inteiros (*int*/*integer*), textos (*str*/*string*) ou, de maneira genérica, entidades que chamamos de *objetos*. Em Python, como vai ser possível perceber futuramente, há muitos tipos de objetos e sempre podemos fazer referência a eles por meio de variáveis.
 
 ## Atribuição
 
@@ -32,7 +32,7 @@ rect(a, 10, 40, 40)  # desenha um quadrado em x:55, y:10
 <details >
    <summary > clique para ver o resultado </summary>
 
-<img src = "https://abav.lugaralgum.com/material-aulas/Processing-Python/assets/variaveis_2.png" >
+<img src = "/assets/variaveis_2.png" >
 
 </details >
 
