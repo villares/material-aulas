@@ -51,6 +51,8 @@ Os parâmetros, quando existem, são nomes lá dentro da definição da função
 
 ## Um exemplo de função, uma função `olho()`
 
+![](/assets/funcao_olhp.png)
+
 ```python
 def setup():
     size(400, 400)
@@ -58,8 +60,7 @@ def setup():
     # chamando a função olho várias vezes
     olho(300, 100, 100)  # x, y, tamanho
     olho(100, 200, 50)
-    tamanho_sorteado = random(10, 150)
-    olho(200, 300, tamanho_sorteado)
+    olho(200, 300, 75)
 
 # definindo a função olho
 def olho(x, y, tamanho):
