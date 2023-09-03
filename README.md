@@ -15,7 +15,8 @@
 
 Este material didático pode ser modificado e usado para dar aulas. Leia as [instruções para colaborar com este repositório](https://github.com/villares/material-aulas/blob/master/sobre/como-contribuir.md) e abra [*issues*](https://github.com/villares/material-aulas/issues) apontando problemas, sugerindo assuntos e melhorias, ou contribua com *Pull Requests* para o repositório.
 
-Você pode também [fazer pequenas doações](https://gumroad.com/villares)! 
+Se você quer que eu continue a escrever material didático aberto, agradeço se puder fazer um PIX `46c37783-5edb-4f1c-b3a8-1309db11488c`, [doação de qualquer valor aqui](https://www.paypal.com/donate/?hosted_button_id=5B4MZ78C9J724) ou também em 
+[gumroad.com/villares](https://gumroad.com/villares)! 
 
 #### Recursos relacionados
 
