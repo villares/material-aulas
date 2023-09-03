@@ -20,7 +20,7 @@ Se você quer que eu continue a escrever material didático aberto, agradeço se
 
 #### Recursos relacionados
 
-- Fazines e pôsters [**`desenho()`**](https://desenho.lugaralgum.com) """Para desenhar com código, para desenhar junto, com o computador e com outras pessoas!"""
+- Fazines e pôsters [**`desenho()`**](https://desenho.lugaralgum.com) `"""Para desenhar com código, para desenhar junto, com o computador e com outras pessoas!"""`
 - Meus desenhos diários: [sketch-a-day](https://abav.lugaralgum.com/sketch-a-day)
 - [Paper objects with Processing and Python](https://github.com/villares/Paper-objects-with-Processing-and-Python)
 - [Trabalho em andamento] [Quebra cabeças de Parsons com resultado visual](https://abav.lugaralgum.com/faded-parsons-visual/)
