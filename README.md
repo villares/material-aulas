@@ -20,12 +20,12 @@ Se você quer que eu continue a escrever material didático aberto, agradeço se
 
 #### Recursos relacionados
 
-- [Quebra cabeças de Parsons com resultado visual](https://abav.lugaralgum.com/faded-parsons-visual/) Trabalho em andamento
-- [NumPy para leigos](https://hackmd.io/@villares/numpy-para-leigos) Tabalho em andamento
-- [Resources for teaching programming for artists, designers and architects](https://github.com/villares/Resources-for-teaching-programming) - Outras opções de desenho com Python
-- [Paper objects with Processing and Python](https://github.com/villares/Paper-objects-with-Processing-and-Python)
+- [Resources for teaching programming for artists, designers and architects](https://github.com/villares/Resources-for-teaching-programming) - 
 - Meus desenhos diários: [sketch-a-day](https://abav.lugaralgum.com/sketch-a-day)
+- [Trabalho em andamento] [Quebra cabeças de Parsons com resultado visual](https://abav.lugaralgum.com/faded-parsons-visual/)
+- [Trabalho em andamento] [NumPy para leigos](https://hackmd.io/@villares/numpy-para-leigos)
 - [Outros recursos e livros de Processing e Python](outros_recursos.md)
+- Outras opções de desenho com Python: [Paper objects with Processing and Python](https://github.com/villares/Paper-objects-with-Processing-and-Python)
 
 ---
 ### Licenças
