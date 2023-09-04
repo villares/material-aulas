@@ -23,14 +23,14 @@ Se você quer que eu continue a escrever material didático aberto, agradeço se
 - Fazines e pôsters [**`desenho()`**](https://desenho.lugaralgum.com) `"""Para desenhar com código, para desenhar junto, com o computador e com outras pessoas!"""`
 - Meus desenhos diários: [sketch-a-day](https://abav.lugaralgum.com/sketch-a-day)
 - [Paper objects with Processing and Python](https://github.com/villares/Paper-objects-with-Processing-and-Python)
-- [Trabalho em andamento] [Quebra cabeças de Parsons com resultado visual](https://abav.lugaralgum.com/faded-parsons-visual/)
+- [Trabalho em andamento] [Quebra-acabeças de Parsons com resultado visual](https://abav.lugaralgum.com/faded-parsons-visual/)
 - [Trabalho em andamento] [NumPy para leigos](https://hackmd.io/@villares/numpy-para-leigos)
-- [Outros recursos e livros de Processing e Python](outros_recursos.md)
 - Outras opções de desenho com Python: [Resources for teaching programming for artists, designers and architects](https://github.com/villares/Resources-for-teaching-programming) 
+- [Outros recursos e livros de Processing e Python](sobre/outros_recursos.md)
 
 ---
 ### Licenças
 
-**Texto e imagens:** Alexandre B A Villares - Licença [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR), para o material acrescentado a partir de 2022 (usando a biblioteca py5), exceto onde indicado, confira atribuições em cada página para materiais adaptados/remixados de outras fontes. Material até 2022 (usando Processing Modo Python) sob [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR), sujeito às mesmas exceções. Agradeço aos colaboradores do repositório que doam suas contribuições nestes termos!
+**Texto e imagens:** © 2019-2023 Alexandre B A Villares - Licença [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR), para o material acrescentado a partir de 2022 (usando a biblioteca py5), exceto onde indicado, confira atribuições em cada página para materiais adaptados/remixados de outras fontes. Material até 2022 (usando Processing Modo Python) sob [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR), sujeito às mesmas exceções. Agradeço aos colaboradores do repositório que doam suas contribuições nestes termos!
 
 **Código:** GNU GPL v3.0, exceto onde for indicado, por alguma razão.
