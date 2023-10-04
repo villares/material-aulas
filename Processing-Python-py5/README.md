@@ -108,7 +108,7 @@
 - 9.1.1 [Módulos ou mosaicos de Truchet](truchet.md)
 - 9.1.2 [Jogo PONG](pong/) - Estudos para o fazer um jogo
 <!-- 9.1.3 [`caneta_automatica_py`](caneta_automatica/) - Módulo para desenhar inspirado na tartaruga de Logo -->
-- 9.1.4 [Sistemas de Lindenmayer](LSystem.)
+- 9.1.4 [Sistemas de Lindenmayer](LSystem.md)
 
 #### Externos
 
