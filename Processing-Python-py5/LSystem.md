@@ -133,7 +133,7 @@ def key_pressed():
 
 ## Exemplo 3D
 
-![animacao](assets/LSystem-3D)
+![animacao](assets/LSystem-3D.gif)
 
 Exemplo usando `P3D` e adicionando `rotate_y()`
 
