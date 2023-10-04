@@ -8,12 +8,54 @@ L-Systems são as estruturas e procedimentos criados por Aristide Lindenmayer pa
 
 Referências externas:
 - [The Algorithmic Beauty of Plants](http://algorithmicbotany.org/papers/#abop) (+ diversos livros e artigos)
-- https://www.cgjennings.ca/articles/l-systems /
-- http://www.paulbourke.net/fractals/lsys /
+- https://www.cgjennings.ca/articles/l-systems/
+- http://www.paulbourke.net/fractals/lsys/
 
 </mark>
           
-## Um exemplo completo
+## Um exemplo simples
+
+![image](https://github.com/villares/material-aulas/assets/3694604/e0e6f78d-047c-4070-9218-4d1a7e91d183)
+
+```python
+axioma = "X"
+regras = {"X": "F+[[X]-X]-F[-FX]+X",
+          "F": "FF"
+          }
+
+tamanho = 10
+angulo = 25
+iteracoes = 4  # repeticoes (voltas na aplicação das regras)
+xo, yo = 300, 500
+
+def setup():
+    size(600, 600)
+    frase_inicial = axioma
+    for i in range(iteracoes):
+        frase = ""
+        for simbolo in frase_inicial:
+            substituicao = regras.get(simbolo, simbolo)
+            frase = frase + substituicao
+        frase_inicial = frase
+    print(len(frase))
+
+    background(240, 240, 200)
+    translate(xo, yo)
+    for simbolo in frase:
+        if simbolo == "F":
+            line(0, 0, 0, -tamanho)
+            translate(0, -tamanho)
+        if simbolo == "+":
+            rotate(radians(angulo))
+        if simbolo == "-":
+            rotate(radians(-angulo))
+        if simbolo == "[":
+            push_matrix()
+        if simbolo == "]":
+            pop_matrix()
+```
+
+## Uma versão com interatividade
 
 ```python
 axioma = "X"
@@ -28,7 +70,7 @@ xo, yo = 300, 500
 def setup():
     global frase
     size(600, 600)
-    frase = gerar_sistema(iteracoes, aximoa, regras)
+    frase = gerar_sistema(iteracoes, axioma, regras)
     print(len(frase))
 
 def draw():
@@ -81,21 +123,21 @@ def key_pressed():
         angulo += 1
     if key == 'q':
         iteracoes -= 1
-        frase=gerar_sistema(iteracoes, axioma, regras)
+        frase = gerar_sistema(iteracoes, axioma, regras)
         print(len(frase))
     if key == 'w':
         iteracoes += 1
-        frase=gerar_sistema(iteracoes, axioma, regras)
+        frase = gerar_sistema(iteracoes, axioma, regras)
         print(len(frase))
 ```
 
-
 ## Exemplo 3D
+
+![animacao](assets/LSystem-3D)
 
 Exemplo usando `P3D` e adicionando `rotate_y()`
 
 ```python
-
 axioma = 'X'
 regras = {
     'X': 'F+[[X]-X]-F[-FX]+X',
@@ -122,7 +164,7 @@ def draw():
     background(210, 210, 150)
     stroke_weight(3)
     angulo = 25
-    # angulo = mouseX / 70.0
+    # angulo = mouse_x / 70.0
     translate(width / 2, height * 0.8)
     rotate_y(frame_count / 100.0)
     for simbolo in frase_resultado:
