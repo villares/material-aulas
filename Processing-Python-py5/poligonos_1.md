@@ -4,7 +4,7 @@
 
 Processing oferece funções para desenhar triângulos `triangle()` e quadriláteros `quad()` que são chamadas usando 3 e 4 pares de números, as coordenadas para 3 e 4 vértices, respectivamente. Veja o exemplo a seguir:
 
-![triângulo e quadrilátero](https://user-images.githubusercontent.com/3694604/188685363-824deb7a-8af9-4e4b-928e-4a84380ef69c.png)
+![](assets/triangle_quad.png)
 
 Mas e se quisermos desenhar um polígono com 5, 6 ou com um número arbitrário de vértices?
 
@@ -31,6 +31,7 @@ vertex(290, 150)
 vertex(230, 100)
 end_shape(CLOSE)  # encerra o desenho de um polígono fechado
 ```
+
 ![e4](assets/beginShape_endShape.png)
 
 ## Desenhando uma estrela de quatro pontas
@@ -56,7 +57,6 @@ vertex(x + b, y)
 vertex(x + a, y - a)
 vertex(x, y - b)
 end_shape(CLOSE)
-
 ```
 
 ![e4](assets/estrela_4_pontas.png)
@@ -64,6 +64,6 @@ end_shape(CLOSE)
 # Assuntos relacionados
 
 - Animando uma estrela com[`setup()`, `draw()` e o movimento do mouse](indentacao.md).
-- Usos mais avançados de `begin_shape()` na[referência](https://py.processing.org/reference/begin_shape.html).
+- Usos mais avançados de `begin_shape()` na [referência](https://py5coding.org/reference/sketch_begin_shape.html).
 - [Criando os vértices a partir de estruturas de dados com laços de repetição e como fazer polígonos com furos](poligonos_2.md).
-- Crie estrelas de muitas pontas usando[laços de repetição `while`](while.md).
+- Crie estrelas de muitas pontas usando [laços de repetição `while`](while.md).
