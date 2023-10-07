@@ -1,32 +1,29 @@
 # Uma função geradora (*generator*) que devolve tuplas de coordenadas
 
-Em python, se usarmos a palavra chave `yield` no lugar de `return` dentro de um laço em uma função, isso produz um maquinário todo chamado * função geradora * que suspende a execução do laço a cada encontro com o `yield` e retorna quando um novo item é pedido para esse maquinário. A função, quando invocada não devolve um item ou mesmo uma lista de itens, devolve esse maquinário, na forma de um objeto gerador(ou * generator * em inglês) que pode ser iterado como uma lista(ou outro iterável qualquer).
+Neste exemplo, a parte central da construção da grade, os laços encaixados produzindo as coordenadas, foi encapsulada em uma função separada, a qual passamos um certo número de filas e colunas. Os dois últimos argumentos, opcionais, definem a largura da coluna e altura da fila.
 
-A parte central da construção da grade, os laços encaixados produzindo as coordenadas, pode ser encapsulado em uma função separada. neste exemplo `grid()` devove um objeto que a cada iteração devolve uma tupla(x, y) de uma grade com um certo número de filas e colunas, os dois últimos argumentos, opcionais, definem a largura da coluna e altura da fila.
+Agora a grande diferença deste exemplo é que, se usarmos a palavra chave `yield` do Python no lugar de `return` dentro de um laço em uma função, isso produz uma *função geradora* que suspende a execução do laço a cada encontro com o `yield` e retorna em outro momento quando um novo item é pedido para o código que estava suspenso. A função, quando invocada não devolve um item ou mesmo uma lista de itens, devolve esse maquinário todo, na forma de um objeto gerador (ou *generator* em inglês) que pode ser iterado como uma lista (ou outro iterável qualquer).
+
+Note que esse maquinário uma vez percorrido em um laço `for`, por exemplo, consumimndo os seus itens, é exaurido. Se você precisa iterar mais de uma vez pelos itens de um objeto gerador, pode convertê-lo primeiro em uma lista (para a qual você deve guardar uma referência, atribuindo a uma variável, por exemplo).
 
 ```python
-
-
 def setup():
     size(400, 400)
     color_mode(HSB)
-
 
 def draw():
     background(0)
     no_stroke()
     colunas, filas = 10, 10
-    tam_coluna, tam_fila = width / colunas, height / \
-        filas  # largura coluna, altura fila
-    offset_x, offset_y = tam_coluna / 2., tam_fila / \
-        2.  # deslocamento de meio tamanho
-    for x, y in grid(colunas, filas, tam_coluna, tam_fila):
+    w_coluna = width / colunas # largura coluna
+    h_fila =  height / filas  # altura fila
+    for x, y in grid(colunas, filas, w_coluna, h_fila):
         # desenho do elemento em x, y
-        s = 25 + 15 * cos(radians(x + y))
-        h = 128 + 128 * sin(x - y)
-        c = color(h, 255, 200)
-        fill(c)
-        ellipse(x + offset_x, y + offset_y, s, s)
+        d = 25 + 15 * cos(radians(x + y))
+        matiz = 128 + 128 * sin(x - y)
+        cor = color(matiz, 255, 200)
+        fill(cor)
+        circle(x + w_coluna / 2, y + h_fila / 2, d)
 
 
 def grid(colunas, filas, tam_col=1, tam_fil=1):
@@ -43,9 +40,13 @@ def grid(colunas, filas, tam_col=1, tam_fil=1):
             # o yield no lugar de return muda tudo
             yield (x * tam_col, y * tam_fil)
 
-    # faz essa função como um todo devolver um objeto gerador que por sua vez vai
+    # faz essa função como um todo devolve um objeto gerador que por sua vez vai
     # produzindo os resultados conforme a necessidade. Dentro de um loop, por
     # exemplo.
 ```
+
+### Assuntos relacionados
+
+- [Cores com HSB (Matiz, Saturação e Brilho)](cores_HSB.md)
 
 ![](assets/sketch_2020_04_12a.png)
