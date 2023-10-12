@@ -55,7 +55,7 @@ No jargão do desenvolvimento de interfaces isso é chamado de * tratamento de e
 
 As funções precisam ser definidas fora do bloco de `draw()`, e note que a definição de `draw()` precisa existir, mesmo que vazio, para garantir a execução de um "laço principal" no Processing.
 
-# Exemplo com `mouseDragged()` e `keyPressed()`
+# Exemplo com *mouseDragged()* e *keyPressed()*
 
 ![](assets/mouse_dragged.gif)
 
@@ -90,15 +90,15 @@ def key_pressed():          # Esta função executa uma vez quando uma tecla é 
 
 | nome da função | descrição do evento |
 | --- | --- |
-| mouseReleased() | executada quando o botão do mouse é solto depois de pressionado
-| mouseWheel(event) | executada quando a rodinha do mouse é girada(deslocamento obtido com `event.getCount()`)
-| mouseClicked() | executada quando o mouse é clicado(já solto o botão)
-| mouseDragged() | executada quando o mouse é movido pressionado
-| mouseMoved() | executada quando o mouse é movido
-| mousePressed() | executada quando o botão do mouse é pressionado
-| keyPressed() | executada quando uma tecla é pressionada
-| keyReleased() | executada quando uma tecla é solta
-| keyTyped() | executada quando uma tecla alfa-numérica é digitada
+| mouse_released() | executada quando o botão do mouse é solto depois de pressionado
+| mouse_wheel(event) | executada quando a rodinha do mouse é girada (deslocamento obtido com `event.get_count()`)
+| mouse_clicked() | executada quando o mouse é clicado(já solto o botão)
+| mouse_dragged() | executada quando o mouse é movido pressionado
+| mouse_moved() | executada quando o mouse é movido
+| mouse_pressed() | executada quando o botão do mouse é pressionado
+| key_pressed() | executada quando uma tecla é pressionada
+| key_released() | executada quando uma tecla é solta
+| key_typed() | executada quando uma tecla alfa-numérica é digitada
 
 # Algumas constantes úteis
 
@@ -130,7 +130,7 @@ DELETE    '\x7f'
 - [Arrastando círculos](arrastando_circulos.md)
 - [Como ler a rodinha do mouse(*mouse wheel * ou * scroll wheel*)](rodinha_mouse.md)
 
-- --
+---
 Este material é baseado no material do curso https://arteprog.space/programacao-criativa /
 
 ---
