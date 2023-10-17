@@ -1,30 +1,30 @@
 
 # Desenhando curvas - I
 
-Agora que já sabemos[desenhar um polígonos com `begin_shape()` e `end_shape()` ou `end_shape(CLOSE)`](poligonos_2.md) podemos experimentar formas curvas.
+Agora que já sabemos [desenhar um polígonos com `begin_shape()` e `end_shape()` ou `end_shape(CLOSE)`](poligonos_2.md) podemos experimentar formas curvas.
 
 # Sumário
 
-[Curvas Bezier com `bezier_vertex()`](  # curvas-bezier-com-beziervertex)
+[Curvas Bezier com `bezier_vertex()`](#curvas-bezier-com-beziervertex)
 
-[Curvas com `curve_vertex()`](  # curvas-com-curvevertex)
-- [Exemplo 1: Comportamento inesperado](  # exemplo-1-comportamento-inesperado)
-- [Exemplo 2: Fechando a curva corretamente](  # exemplo-2-fechando-a-curva-corretamente)
-- [Exemplo 3: Curva aberta](  # exemplo-3-curva-aberta)
-- [Exemplo 4: Curva aberta usando diferentes pontos](  # exemplo-4-curva-aberta-usando-diferentes-pontos)
-- [Exemplo 5: Usando `end_shape(CLOSE)`](  # exemplo-5-usando-endshapeclose)
+[Curvas com `curve_vertex()`](#curvas-com-curvevertex)
+- [Exemplo 1: Comportamento inesperado](#exemplo-1-comportamento-inesperado)
+- [Exemplo 2: Fechando a curva corretamente](#exemplo-2-fechando-a-curva-corretamente)
+- [Exemplo 3: Curva aberta](#exemplo-3-curva-aberta)
+- [Exemplo 4: Curva aberta usando diferentes pontos](#exemplo-4-curva-aberta-usando-diferentes-pontos)
+- [Exemplo 5: Usando `end_shape(CLOSE)`](#exemplo-5-usando-endshapeclose)
 
-[Simulando arcos e filetes com Bezier](  # simulando-arcos-e-filetes-com-bezier)
+[Simulando arcos e filetes com Bezier](#simulando-arcos-e-filetes-com-bezier)
 
-[Assuntos relacionados](  # assuntos-relacionados)
+[Assuntos relacionados](#assuntos-relacionados)
 
-[Extra: Um testador de curvas interativo](  # extra-um-testador-de-curvas-interativo)
+[Extra: Um testador de curvas interativo](#extra-um-testador-de-curvas-interativo)
 
 # Curvas Bezier com `bezierVertex()`
 
 As famosas curvas Bezier levam o nome de Pierre Bézier, que as desenvolveu em seus trabalhos na década de 1960 na indústria automotiva, elas descrevem curvas a partir das coordenadas de pontos, ou âncoras, que delimitam o início e o fim de uma curva, mas também precisam de "pontos de controle" que em geral ficam fora da curva, mas controlam o seu comportamento.
 
-Você pode usar um ou mais vértices * Bezier * entre o `begin_shape()` e o `end_shape()`, e ela pode ser aberta ou fechada(com `end_shape(CLOSE)`), mas antes de cada `bezier_vertex()` é preciso que haja algum outro vértice, um ponto âncora, que marca o início e que pode ser feito com `vertex()`, como neste exemplo a seguir.
+Você pode usar um ou mais vértices * Bezier * entre o `begin_shape()` e o `end_shape()`, e ela pode ser aberta ou fechada (com `end_shape(CLOSE)`), mas antes de cada `bezier_vertex()` é preciso que haja algum outro vértice, um ponto âncora, que marca o início e que pode ser feito com `vertex()`, como neste exemplo a seguir.
 
 No `bezier_vertex()` propriamente dito, os quatro primeiros argumentos são as cordenadas de dois pontos de controle e os últimos dois são as coordenadas do vértice(que pode servir de âncora inicial para um próximo vértice Bezier).
 
@@ -42,9 +42,9 @@ No `bezier_vertex()` propriamente dito, os quatro primeiros argumentos são as c
 
 ![errada](assets/curve_bezier.png)
 
-< details >
-< summary > Código completo para reproduzir a imagem acima < /summary >
-< pre >
+<details>
+<summary> Código completo para reproduzir a imagem acima </summary>
+<pre>
 
 def setup():
     size(300, 300)
@@ -83,8 +83,8 @@ def draw():
         t="{}: {:3}, {:3}".format(i, x, y)
         text(t, x+5, y-5)
 
-< /pre >
-< / details >
+</pre>
+</details>
 
 # Curvas com `curveVertex()`
 
@@ -120,10 +120,10 @@ end_shape(CLOSE)
 
 ![errada](assets/curve_wrong.png)
 
-< details >
-< summary > Código completo para reproduzir a imagem acima < /summary >
+<details>
+<summary> Código completo para reproduzir a imagem acima </summary>
 
- < pre >
+ <pre>
  pontos=[
     (100, 50),
     (150, 100),
@@ -153,8 +153,8 @@ def draw():
         fill(255)
         ellipse(x, y, 5, 5)
         text(i, x+5, y-5)
-< /pre >
-< / details >
+</pre>
+</details>
 
 # Exemplo 2: Fechando a curva corretamente
 
@@ -171,10 +171,10 @@ end_shape(CLOSE)
 
 ![fechada](assets/curve_closed_smooth.png)
 
-< details >
-< summary > Código completo para reproduzir a imagem acima < /summary >
+<details>
+<summary> Código completo para reproduzir a imagem acima </summary>
 
- < pre >
+ <pre>
 pontos=[
     (100, 50),
     (150, 100),
@@ -208,8 +208,8 @@ def draw():
         ellipse(x, y, 5, 5)
         text(i, x + 5, y - 5)
 
-< /pre >
-< / details >
+</pre>
+</details>
 
 # Exemplo 3: Curva aberta
 
@@ -225,9 +225,9 @@ end_shape()
 
 ![aberta com a forma da fechada](assets/curve_smooth.png)
 
-< details >
-< summary > Código completo para reproduzir a imagem acima < /summary >
-< pre >
+<details>
+<summary> Código completo para reproduzir a imagem acima </summary>
+<pre>
 pontos=[
     (100, 50),
     (150, 100),
@@ -264,8 +264,8 @@ def draw():
     ]
 
 
-< /pre >
-< / details >
+</pre>
+</details>
 
 
 
@@ -284,9 +284,9 @@ end_shape()
 
 ![aberta normal](assets/curve.png)
 
-< details >
-< summary > Código completo para reproduzir a imagem acima < /summary >
-< pre >
+<details>
+<summary> Código completo para reproduzir a imagem acima </summary>
+<pre>
 pontos=[
     (100, 50),
     (150, 100),
@@ -318,8 +318,8 @@ def draw():
         fill(255)
         ellipse(x, y, 5, 5)
         text(i, x+5, y-5)
-< /pre >
-< / details >
+</pre>
+</details>
 
 
 # Exemplo 5: Usando `endShape(CLOSE)`
@@ -328,9 +328,9 @@ Veja como ficaria acrescentando-se o `CLOSE` em `end_shape(CLOSE)`
 
 ![aberta normal](assets/curve_closed.png)
 
-< details >
-< summary > Código completo para reproduzir a imagem acima < /summary >
-< pre >
+<details>
+<summary> Código completo para reproduzir a imagem acima </summary>
+<pre>
 pontos=[
     (100, 50),
     (150, 100),
@@ -362,8 +362,8 @@ def draw():
         fill(255)
         ellipse(x, y, 5, 5)
         text(i, x+5, y-5)
-< /pre >
-< / details >
+</pre>
+</details>
 
 # Assuntos relacionados
 
@@ -373,15 +373,15 @@ def draw():
 
 # EXTRA: Um testador de curvas interativo
 
-** Desafio: ** Você conseguiria escrever o código que permite testar as curvas arrastando os pontos com o mouse?
+**Desafio:** Você conseguiria escrever o código que permite testar as curvas arrastando os pontos com o mouse?
 
 ![errada](assets/curves_animate.gif)
 
-< details >
+<details>
 
-< summary > Resposta: Usando a mesma estratégia de "arrastar círculos". < /summary >
+<summary> Resposta: Usando a mesma estratégia de "arrastar círculos". </summary>
 
-< pre >
+<pre>
   arrastando=None
 
   pontos=[
@@ -444,6 +444,6 @@ def draw():
           x += mouse_x - pmouse_x
           y += mouse_y - pmouse_y
           pontos[arrastando]=(x, y)
-< /pre >
+</pre>
 
-< / details >
+</details>
