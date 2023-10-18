@@ -8,7 +8,7 @@ Há mais de uma estratégia possível para exportar imagens em movimento, seja e
 Podemos usar `save_frame()` dentro do `draw()`, como neste exemplo:
 
 ```python
-diameter=1
+diameter = 1
 
 def setup():
     size(200, 200)
@@ -18,14 +18,13 @@ def draw():
     # o desenho da aminação vai aqui
     global diameter
     ellipse(50, 50, diameter, diameter)
-    diameter=diameter + 1
-    print(frame_count)
-
+    diameter = diameter + 1
     # e no final do draw()
-    if frame_count < 250:
+    if frame_count < 250 and frame_count % 2 == 1:
+        print(frame_count)
         save_frame('imagem####.tga')
     else:
-        exit()
+        exit_sektch()
 ```
 Para a converter esses 'frames' em um vídeo ou em um GIF animado, podemos usar:
 - A ferramenta **Movie Maker** do IDE do Processing(Vídeo)
