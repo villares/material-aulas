@@ -30,7 +30,7 @@ Para a converter esses 'frames' em um vídeo ou em um GIF animado, podemos usar:
 - A ferramenta **Movie Maker** do IDE do Processing (Vídeo)
 - [**Gimp**](https://gimp.org) com o comando 'abrir como camadas' (GIF animado)
 - Ferramentas online como **https://ezgif.com/** (GIF animado)
-- Alguma outra ferramenta da sua escolha, como o [**ffmpeg**](http//www.ffmpeg.org) na linha de comando (ou[via uma GUI](https://github.com/amiaopensource/ffmpeg-amia-wiki/wiki/3 % 29-Graphical-User-Interface-Applications-using-FFmpeg)).
+- Alguma outra ferramenta da sua escolha, como o [**ffmpeg**](http//www.ffmpeg.org) na linha de comando (ou [via uma GUI](https://github.com/amiaopensource/ffmpeg-amia-wiki/wiki/3%29-Graphical-User-Interface-Applications-using-FFmpeg)).
 - Um script Python que combina PNGs usando `imageio`, [na linha de comando](https://github.com/villares/sketch-a-day/blob/main/admin_scripts/pngs_to_gif.py) ou [com GUI](https://github.com/villares/sketch-a-day/blob/main/admin_scripts/pngs_to_gif_gui.py).
 
 # B. Exportação de GIF pelo py5
