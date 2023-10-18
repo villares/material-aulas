@@ -43,7 +43,7 @@ Para a converter esses 'frames' em um vídeo ou em um GIF animado, podemos usar:
 Uma última estratégia que pode ser útil para documentar e compartilhar o resultado de *sketches* é gravar a tela do computador, ou parte dela.
 
 - [pypeek](https://github.com/firatkiral/pypeek) - Linux, Windows e Mac, exporta GIF e mp4.
-- [Blue Recorder](https://github.com/xlmnxp/blue-recorder/) - Linux - exporta GIF e vídeos.
-- [LICEcap](https://www.cockos.com/licecap /) - Windows e MacOS - exporta GIF
-- [OBS Studio](https://obsproject.com /) - Windows, MacOS e Linux - exporta vídeos
+- [Blue Recorder](https://github.com/xlmnxp/blue-recorder) - Linux - exporta GIF e vídeos.
+- [LICEcap](https://www.cockos.com/licecap) - Windows e MacOS - exporta GIF
+- [OBS Studio](https://obsproject.com) - Windows, MacOS e Linux - exporta vídeos
 - [GifCam](https://gifcam.br.uptodown.com/windows) - Windows - exporta e edita GIF
