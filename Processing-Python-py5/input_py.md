@@ -6,7 +6,7 @@ No Processing, o teclado e o mouse são duas as principais formas de entrada de 
 
 As variáveis de sistema como `mouse_x`, `mouse_y` e `mouse_pressed` oferecem a todo instante informações sobre o estado do mouse. Podem ser consultadas em qualquer lugar do programa e são vistas frequentemente em condicionais dentro do bloco de `draw()`.
 
-De maneira análoga, `key_pressed`, `key` e `key_code` tratam do estado do teclado. A variável `key_pressed` indica se há uma tecla pressionada naquele instante, `key` indica qual foi a última tecla 'comum' pressionada, se for igual à constante `CODED` então é possível consultar `key_code` para saber qual foi a última tecla 'codificada', a comparando, por exemplo, com as constantes `SHIFT`, `ALT` e `CONTROL`, ou as constantes das setas do teclado(`UP`, `DOWN`, `LEFT`, `RIGHT`), entre [algumas outras constantes listadas no final da página](#contantes-para-usar-com-keycode-e-o-correspondente-valor-numérico).
+De maneira análoga, `key_pressed`, `key` e `key_code` tratam do estado do teclado. A variável `key_pressed` indica se há uma tecla pressionada naquele instante, `key` indica qual foi a última tecla 'comum' pressionada, se for igual à constante `CODED` então é possível consultar `key_code` para saber qual foi a última tecla 'codificada', a comparando, por exemplo, com as constantes `SHIFT`, `ALT` e `CONTROL`, ou as constantes das setas do teclado (`UP`, `DOWN`, `LEFT`, `RIGHT`), entre [algumas outras constantes listadas no final da página](#contantes-para-usar-com-keycode-e-o-correspondente-valor-numérico).
 
 ### Exemplo
 
@@ -89,7 +89,7 @@ def key_pressed():          # Esta função executa uma vez quando uma tecla é 
 ```
 ### O uso de *key_typed()* 
 
-A função `key_typed()`, quando definida, náo é acionada por teclas pelas teclas 'codificadas'(`CODED`), nem as modificadoras como `SHIFT`, `CONTROL`, `ALT`, nem as setas. E permite a captura na variável `key` de glifos que dependem de combinações de teclas, como as letras acentuadas, `àéîõü`, por exemplo.
+A função `key_typed()`, quando definida, náo é acionada por teclas pelas teclas 'codificadas' (`CODED`), nem as modificadoras como `SHIFT`, `CONTROL`, `ALT`, nem as setas. E permite a captura na variável `key` de glifos que dependem de combinações de teclas, como as letras acentuadas, `àéîõü`, por exemplo.
 
 ### Quadro das funções acionadas por eventos
 
