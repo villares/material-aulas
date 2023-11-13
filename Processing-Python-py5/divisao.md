@@ -8,7 +8,7 @@
 >
 > Em computação existem sistemas de classificação para valores armazenados na memória do computador, dizemos que os valores tem um *tipo*. Valores numéricos em Python são, na maior parte das vezes, dos tipos ***inteiro*** (abreviamos `int`), ***número de ponto flutuante*** (que tem uma parte fracionária, e abreviamos `float`) ou ***número complexo*** (`complex`, sendo `1j` a raiz quadrada de -1, que na escola costumamos chamar de *i*). Leia mais sobre isso em: [Tipos de valores(inteiros, números de ponto flutuante, texto(strings))](tipagem_py.md)
 
-Veja este exemplo que mostra a divisão de dois números inteiros (*int*), 4 dividido por 10. O resultado, 0.4, é um número de ponto flutuante (*float*). Em programação a "vírgula" é um ponto.
+Veja este exemplo que mostra a divisão de dois números inteiros (*int*), `4` dividido por `10`. O resultado, `0.4`, é um número de ponto flutuante (*float*). Em programação a "vírgula" é um ponto.
 
 ```python
 a = 4 / 10
@@ -40,9 +40,9 @@ print(a)
 
 ## O problema dos números *float*
 
-É uma coisa um pouco assustadora, mas o Python assim como a maior parte das linguagens de programação, fazem "arredondamentos estranhos" em valores que pra nós parecem perfeitamente "redondos", de representação finita. É que muitos números que tem uma representação finita em decimal, como 1 / 10, ou 0.1, quando convertidos em *float* não tem uma representação finita em binário.
+É uma coisa um pouco assustadora, mas o Python assim como a maior parte das linguagens de programação, fazem "arredondamentos estranhos" em valores que pra nós parecem perfeitamente "redondos", de representação finita. É que muitos números que tem uma representação finita em decimal, como `1 / 10`, ou `0.1`, quando representados em binário na memória do computador, como *float*, não tem uma representação finita.
 
-Isso é parecido com a dificuldade da representação decimal de certas frações, por exemplo 1 / 3, que representamos "0.33333...". Dizemos que tem uma "dízima periódica", e, ao interrompermos os infinitos 3 depois da vírgula, no caso do Python o ponto, estamos fazendo uma representação aproximada. 
+Isso é parecido com a dificuldade da representação decimal de certas frações, por exemplo `1 / 3`, que representamos "0.33333...". Dizemos que é uma "dízima periódica", e, ao interrompermos os infinitos 3 depois da vírgula, no caso do Python o ponto, estamos fazendo uma representação aproximada. 
 
 Veja o problema de forma mais explícita nesta soma e comparação de valores.
 
