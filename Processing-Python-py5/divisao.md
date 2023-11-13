@@ -16,7 +16,7 @@ print(a)
 # resultado: 0.4
 ```
 
-Antigamente, no Python 2, uma divisão entre dois números inteiros era forçada a responder com um inteiro, o que surpreendia algumas vezes, por exemplo, `4 / 10` resultava `0`. Agora no Python 3 o resultado pode ser um número de ponto flutuante (*float*), como vimos no exemplo anterior. Para obter o comportamento antigo, da divisão com resultado inteiro, use o operador `//` (*floor division*).
+Antigamente, no Python 2, uma divisão entre dois números inteiros era forçada a responder com um inteiro, o que surpreendia algumas vezes, por exemplo, `4 / 10` resultava `0`. Agora no Python 3 o resultado pode ser um número de ponto flutuante, como vimos no exemplo anterior. Para obter o comportamento antigo, da divisão com resultado inteiro, use o operador `//` (*floor division*).
 
 ```python
 a = 5 // 2
@@ -40,15 +40,16 @@ print(a)
 
 ## O problema dos números *float*
 
-É uma coisa um pouco assustadora, mas, o Python, assim como a maior parte das linguagens de programação, fazem "arredondamentos estranhos" em valores que pra nós parecem perfeitamente "redondos", isto é, de representação finita. A cause disso é que muitos números que tem uma representação finita em decimal, como `1 / 10`, isto é `0.1`, quando representados em binário na memória do computador, como *float*, não tem uma representação finita.
+É uma coisa um pouco assustadora, mas, o Python, assim como a maior parte das linguagens de programação, fazem "arredondamentos estranhos" em valores que pra nós parecem perfeitamente "redondos", isto é, de representação finita. A causa do problema é que muitos números que tem uma representação finita em decimal, como `1 / 10`, isto é `0.1`, quando representados em binário na memória do computador, como *float*, não tem uma representação finita.
 
-Isso é parecido com a dificuldade da representação decimal de certas frações, por exemplo `1 / 3`, que representamos "0.33333...". Dizemos que é uma "dízima periódica", e, ao interrompermos os infinitos 3 depois da vírgula, no caso do Python o ponto, estamos fazendo uma representação aproximada. 
+Isso é parecido com a dificuldade da representação decimal de certas frações, como `1 / 3`, por exemplo, que representamos "0.33333...". Dizemos que é uma "dízima periódica", e, ao interrompermos os infinitos 3 depois da vírgula, no caso do Python o ponto, estamos fazendo uma representação aproximada. Não dá pra escrever infinitos números 3, não dá pra representar de maneira finita como um número na base 10.
 
-Veja o problema de forma mais explícita nesta soma e comparação de valores.
+Veja o problema de forma mais explícita nesta soma e comparação de valores no Python.
 
 ```python
 a = 0.1 + 0.1 + 0.1
-print(a == 0.3)
+b = 0.3
+print(a == b)
 # resultado: False
 print(a)
 # resultado: 0.30000000000000004
