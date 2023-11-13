@@ -40,7 +40,7 @@ print(a)
 
 ## O problema dos números *float*
 
-É uma coisa um pouco assustadora, mas o Python assim como a maior parte das linguagens de programação, fazem "arredondamentos estranhos" em valores que pra nós parecem perfeitamente "redondos", de representação finita. É que muitos números que tem uma representação finita em decimal, como `1 / 10`, ou `0.1`, quando representados em binário na memória do computador, como *float*, não tem uma representação finita.
+É uma coisa um pouco assustadora, mas, o Python, assim como a maior parte das linguagens de programação, fazem "arredondamentos estranhos" em valores que pra nós parecem perfeitamente "redondos", isto é, de representação finita. A cause disso é que muitos números que tem uma representação finita em decimal, como `1 / 10`, isto é `0.1`, quando representados em binário na memória do computador, como *float*, não tem uma representação finita.
 
 Isso é parecido com a dificuldade da representação decimal de certas frações, por exemplo `1 / 3`, que representamos "0.33333...". Dizemos que é uma "dízima periódica", e, ao interrompermos os infinitos 3 depois da vírgula, no caso do Python o ponto, estamos fazendo uma representação aproximada. 
 
