@@ -37,7 +37,7 @@ print(a == 0.3)
 # resultado: False
 print(a)
 # resultado: 0.30000000000000004
-`´`
+```
 
 Existem maneiras elaboradas de contornar esse problema (usando as classes `Decimal` e `Fraction` do Python), mas o nosso contexto de desenho e geometria, em geral é suficiente saber que não devemos contar com o operador de igualdade (`==`) entre números *float* e de que o resultado de certas operações matemáticas é uma (muito boa) aproximação. Veja como usar a função `isclose()` do módulo `math` da biblioteca padrão, em vez de uma comparação de igualdade.
 
