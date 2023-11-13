@@ -16,10 +16,9 @@ print(a)
 # resultado: 0.4
 ```
 
-Antigamente, no Python 2, uma divisão entre dois números inteiros era forçada a responder com um inteiro (o que surpreendia algumas vezes, `4 / 10` resultava `0`), agora no Python 3 o resultado pode ser um número de ponto flutuante (*float*).
+Antigamente, no Python 2, uma divisão entre dois números inteiros era forçada a responder com um inteiro (o que surpreendia algumas vezes, `4 / 10` resultava `0`), agora no Python 3 o resultado pode ser um número de ponto flutuante (*float*). Para obter o comportamento antigo, da divisão com resultado inteiro, use o operador `//` (*floor division*).
 
 ```python
-# Para a divisão com resultado inteiro (floor division) use //
 a = 5 // 2
 print(a)
 # resultado: 2
@@ -27,9 +26,11 @@ print(a)
 
 ## O problema dos números *float*
 
-É uma coisa um pouco assustadora, mas o Python assim como a maior parte das linguagens de programação, fazem arredondamentos em valores que pra nós parecem perfeitamente "redondos", de representação finita. É que muitos números que tem uma representação finita em decimal, como 1 / 10, ou 0.1, quando convertidos em *float* não tem uma representação finita em binário.
+É uma coisa um pouco assustadora, mas o Python assim como a maior parte das linguagens de programação, fazem "arredondamentos estranhos" em valores que pra nós parecem perfeitamente "redondos", de representação finita. É que muitos números que tem uma representação finita em decimal, como 1 / 10, ou 0.1, quando convertidos em *float* não tem uma representação finita em binário.
 
-Isso é parecido com o que acontece com a representação decimal de certas frações, por exemplo 1 / 3, que é representamos "0.33333...", e dizemos que tem uma "dízima periódica". Ao interrompermos depois da vírgula, no caso do Python o ponto, os infinitos 3 na representação, estamos fazendo uma aproximação. 
+Isso é parecido com a dificuldade da representação decimal de certas frações, por exemplo 1 / 3, que representamos "0.33333...". Dizemos que tem uma "dízima periódica", e, ao interrompermos os infinitos 3 depois da vírgula, no caso do Python o ponto, estamos fazendo uma representação aproximada. 
+
+Veja o problema de forma mais explícita nesta soma e comparação de valores.
 
 ```python
 a = 0.1 + 0.1 + 0.1
@@ -39,7 +40,9 @@ print(a)
 # resultado: 0.30000000000000004
 ```
 
-Existem maneiras elaboradas de contornar esse problema (usando as classes `Decimal` e `Fraction` do Python), mas o nosso contexto de desenho e geometria, em geral é suficiente saber que não devemos contar com o operador de igualdade (`==`) entre números *float* e de que o resultado de certas operações matemáticas é uma (muito boa) aproximação. Veja como usar a função `isclose()` do módulo `math` da biblioteca padrão, em vez de uma comparação de igualdade.
+Existem maneiras um tanto elaboradas de contornar esse problema, usando os módulos `decimal` e `fraction` da biblioteca padrão do Python, mas no nosso contexto de desenho e geometria, em geral, é suficiente saber que não devemos contar com precisão absoluta, ou com o operador de igualdade (`==`) entre números *float*. O resultado de certas operações matemáticas com *float* que derivam de certos números é uma (muito boa) aproximação. 
+
+Veja como usar a função `isclose()` do módulo `math` da biblioteca padrão, em vez de uma comparação de igualdade.
 
 ```python
 from math import isclose
