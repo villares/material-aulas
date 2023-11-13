@@ -8,7 +8,7 @@
 >
 > Em computação existem sistemas de classificação para valores armazenados na memória do computador, dizemos que os valores tem um *tipo*. Valores numéricos em Python são, na maior parte das vezes, dos tipos ***inteiro*** (abreviamos `int`), ***número de ponto flutuante*** (que tem uma parte fracionária, e abreviamos `float`) ou ***número complexo*** (`complex`, sendo `1j` a raiz quadrada de -1, que na escola costumamos chamar de *i*). Leia mais sobre isso em: [Tipos de valores(inteiros, números de ponto flutuante, texto(strings))](tipagem_py.md)
 
-Veja este exemplo que mostra a divisão de dois números inteiros (*int*), 4 dividido por 10. O resultado é um número *float*.
+Veja este exemplo que mostra a divisão de dois números inteiros (*int*), 4 dividido por 10. O resultado, 0.4, é um número de ponto flutuante (*float*). Em programação a "vírgula" é um ponto.
 
 ```python
 a = 4 / 10
@@ -27,14 +27,15 @@ print(a)
 > #### Conversão em inteiros
 > 
 > Certas situações em Python exigem números inteiros, como, por exemplo,  ao se usar `for n in range(inicio, parada):`. `inicio` e `parada` precisam ser números inteiros.
-> A forma mais comum de converter um número de ponto flutuante (`float`) em inteiros (`int`) é usando a função embutida `int()`. Mas note que isso simplesmente joga fora a parte depois da vírgula (que em programação é um ponto!) e não é como outros tipos de 'arredondamento' (experimente usar `round()` para ver o que acontece...).
+> A forma mais comum de converter um número de ponto flutuante (`float`) em inteiros (`int`) é usando a função embutida `int()`. Mas note que isso simplesmente joga fora a parte depois do ponto, e não é como outros tipos de "arredondamento". Experimente usar `round()` para ver o que acontece!
 > 
 > ```python
 > a = int(10.654)  # Note que eum programação o separador decimal é um ponto (.)
 > print(a)         # Exibe como resultado: 10
 > b = round(10.654)
-> print(b)         # Experimente e descubra! Experimente também print(round(10.5))...
-> 
+> print(b)         # Experimente e descubra!
+> # resultado: ?
+> # Experimente também print(round(10.5))...
 > ```
 
 ## O problema dos números *float*
