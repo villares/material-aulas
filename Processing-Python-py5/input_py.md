@@ -89,7 +89,7 @@ def key_pressed():          # Esta função executa uma vez quando uma tecla é 
 ```
 ### O uso de *key_typed()* 
 
-A função `key_typed()`, quando definida, náo é acionada por teclas pelas teclas 'codificadas' (`CODED`), nem as modificadoras como `SHIFT`, `CONTROL`, `ALT`, nem as seta, mas tem a vantagem de permitir a captura, na variável `key`, de glifos que dependem de combinações de teclas, como as letras acentuadas, `àéîõü`, por exemplo.
+A função `key_typed()`, quando definida, náo é acionada por teclas pelas teclas 'codificadas' (`CODED`), como as teclas modificadoras como `SHIFT`, `CONTROL`, `ALT`, ou as setas `UP`,`DOWN`,`LEFT`, `RIGHT`, mas tem a vantagem de permitir a captura, na variável `key`, de glifos que dependem de combinações de teclas, por exemplo, letras acentuadas como `àéîõü`, entre muitas outras.
 
 ### Quadro das funções acionadas por eventos
 
