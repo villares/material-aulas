@@ -58,7 +58,7 @@ print(c, type(c))
 
 ### O problema não muito visível dos números *float*
 
-Pode parecer um pouco assustador o que você vai ler agora mas é bom saber que o os computadores, quando usamos Python e a maior parte das linguagens de programação, fazem "arredondamentos estranhos" ao armazenar na memória valores que pra nós parecem perfeitamente "redondos", isto é, de representação finita. A causa do problema é o fato de que muitos números que tem uma representação decimal finita (na base 10), como `1 / 10`, isto é, `0.1`, quando representados na memória do computador em binário (na base 2), usando *float* ([ponto flutuante](https://pt.wikipedia.org/wiki/V%C3%ADrgula_flutuante)), não tem uma representação finita equivalente.
+Pode parecer um pouco assustador o que você vai ler agora mas é bom saber que computadores, quando usamos Python e a maior parte das linguagens de programação, fazem "arredondamentos estranhos" ao armazenar na memória valores que pra nós parecem perfeitamente "redondos", isto é, de representação finita. A causa do problema é o fato de que muitos números que tem uma representação decimal finita (na base 10), como `1 / 10`, isto é, `0.1`, quando representados na memória do computador em binário (na base 2), usando *float* ([ponto flutuante](https://pt.wikipedia.org/wiki/V%C3%ADrgula_flutuante)), não tem uma representação finita equivalente.
 
 Isso é parecido com a dificuldade da representação decimal de certas frações, como `1 / 3`, por exemplo, que representamos "0.33333...". Dizemos que é uma "dízima periódica", e, ao interrompermos os infinitos 3 depois da vírgula, no caso do Python o ponto, estamos fazendo uma representação aproximada. Não dá pra escrever infinitos números 3, não dá pra representar de maneira finita `1 / 3` como um número na base 10.
 
@@ -73,7 +73,7 @@ print(a)
 # resultado: 0.30000000000000004
 ```
 
-Não existe solução simples para isso, mas existem maneiras, um tanto elaboradas, de contornar o problema, usando os módulos `decimal` e `fraction` da biblioteca padrão do Python, que não vamos discutira aqui.
+Não existem soluções simples para isso, mas, existem maneiras, um tanto elaboradas, de contornar o problema, usando os módulos [`decimal`](https://docs.python.org/pt-br/3.9/library/decimal.html) e [`fractions`](https://docs.python.org/pt-br/3.11/library/fractions.html) da biblioteca padrão do Python, só que não vamos discuti-las aqui.
 
 No nosso contexto de desenho e geometria, em geral, é suficiente saber que não devemos contar com precisão absoluta, nem com o operador de igualdade (`==`) entre números *float*. O resultado de certas operações matemáticas com *float* que dependem de números de representação decimal finita, mas de representação binária *float* aproximada, torna-se uma (muito boa) aproximação. 
 
