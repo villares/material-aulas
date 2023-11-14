@@ -1,8 +1,9 @@
 <h1 id='toc'></h1>
 
-# Divisão, números de ponto flutuante, inteiros, divisão por zero e o resto da divisão
+# Questões da divisão em programação
+## Números de ponto flutuante, inteiros, divisão por zero e o resto da divisão
 
-## Divisão no Python 3 e os números inteiros
+### A divisão no Python 3 e os números inteiros
 
 > #### Um pouco de contexto
 >
@@ -19,7 +20,7 @@ print(a)
 
 Antigamente, no Python 2, uma divisão entre dois números inteiros era forçada a responder com um inteiro, o que surpreendia algumas vezes, por exemplo, `4 / 10` resultava `0`. Agora no Python 3 o resultado pode ser um número de ponto flutuante, como vimos no exemplo anterior.
 
-Para obter o comportamento próximo ao antigo, é possível usar o operador `//` (*floor division*). Se os operandos forem inteiros, o resultado será inteiro também, mas, se um deles for *float* o resultado, mesmo que "numericamente inteiro", será do tipo *float*. Uma outra solução pode ser converter o resultado da divisão em *int*, usando `int()`.
+Para obter o comportamento próximo ao antigo é possível usar o operador `//` (*floor division*), se os operandos forem inteiros, o resultado será inteiro também, mas, se um deles for *float* o resultado, mesmo que "numericamente inteiro", será do tipo *float*. Uma outra solução, que garante um número do tipo *int*, pode ser converter o resultado da divisão usando `int()`.
 
 ```python
 a = 5 // 2
@@ -37,9 +38,9 @@ print(c, type(c))
 
 > #### Conversão em inteiros
 > 
-> Certas situações em Python exigem números inteiros, como, por exemplo,  ao se usar `for n in range(inicio, parada):`. `inicio` e `parada` precisam ser números inteiros.
+> Certas situações em Python exigem números inteiros, como, por exemplo,  ao se usar `for n in range(inicio, parada):`, os valores de `inicio` e `parada` precisam ser números inteiros.
+> 
 > A forma mais comum de converter um número de ponto flutuante (`float`) em inteiros (`int`) é usando a função embutida `int()`.
->
 > Mas note que `int()` simplesmente joga fora a parte depois do ponto, e não é como outros tipos de "arredondamento". Experimente usar a função embutida `round()`, que também devolve um número do tipo inteiro para ver o que acontece!
 > 
 > ```python
@@ -54,7 +55,7 @@ print(c, type(c))
 > # Experimente também...
 > print(round(10.5))
 
-## O problema dos números *float*
+### O problema não muito visível dos números *float*
 
 É uma coisa um pouco assustadora, mas, o Python, assim como a maior parte das linguagens de programação, fazem "arredondamentos estranhos" em valores que pra nós parecem perfeitamente "redondos", isto é, de representação finita. A causa do problema é que muitos números que tem uma representação finita em decimal, como `1 / 10`, isto é `0.1`, quando representados em binário na memória do computador, como *float*, não tem uma representação finita.
 
@@ -71,7 +72,9 @@ print(a)
 # resultado: 0.30000000000000004
 ```
 
-Existem maneiras um tanto elaboradas de contornar esse problema, usando os módulos `decimal` e `fraction` da biblioteca padrão do Python, mas no nosso contexto de desenho e geometria, em geral, é suficiente saber que não devemos contar com precisão absoluta, ou com o operador de igualdade (`==`) entre números *float*. O resultado de certas operações matemáticas com *float* que derivam de certos números é uma (muito boa) aproximação. 
+Não existe solução simples para isso, mas existem maneiras, um tanto elaboradas, de contornar o problema, usando os módulos `decimal` e `fraction` da biblioteca padrão do Python, que não vamos discutira aqui.
+
+No nosso contexto de desenho e geometria, em geral, é suficiente saber que não devemos contar com precisão absoluta, nem com o operador de igualdade (`==`) entre números *float*. O resultado de certas operações matemáticas com *float* que dependem de números de representação decimal finita, mas de representação binária *float* aproximada, torna-se uma (muito boa) aproximação. 
 
 Veja como usar a função `isclose()` do módulo `math` da biblioteca padrão, em vez de uma comparação de igualdade.
 
@@ -86,7 +89,7 @@ print(isclose(a, b))
 
 Você pode ler mais sobre os problemas causados pela representação interna dos números decimais em binário no computador em [Aritimética de ponto flutuante: problemas e limitações](https://docs.python.org/pt-br/3/tutorial/floatingpoint.html).
 
-## O problema da divisão por zero (e um pouco sobre tratamento de exceções)
+### O problema da divisão por zero (e um pouco sobre tratamento de exceções)
 
 Provavelmente você se lembra que o resultaddo de dividir um número por zero é em geral considerado um valor "indefinido" na maior parte dos contextos matemáticos. Em Python se o seu programa for obrigado a avaliar essa conta ele vai parar tudo e "levantar uma exceção" chamada `ZeroDivisionError`.
 
@@ -121,7 +124,7 @@ try:
 except ZeroDivisionError:
     resultado = 1000000
 ```
-### Uma outra maneira, malandra
+#### Uma outra maneira, malandra
 
 Quando você sabe que os valores do denomidador nunca ficam negativos, e o resultado da divisão pode ser um número aproximado, é possível somar algum valor que apenas impeça o denomidador de ser zero.
 
@@ -131,7 +134,7 @@ tangente_aproximada = dy / (0.01 + distancia)
 fator_de_crescimento = 1 / (1 + mouse_x)  # o resultado é no mínimo 1 e sem divisão por zero pois mouse_x nunca fica negativo
 ```
 
-## Agora a parte divertida! O resto da divisão
+### Agora a parte divertida! O resto da divisão
 
 Em inglês a operação para obter o resto da divisão com inteiros tem o nome de *modulo* ou *modulus* o que pode causar uma grande confusão pois na matemática em português a palavra 'módulo' com a notação `|num|` é usada também para falar do valor absoluto (sem o sinal) de um número (em programação usamos `abs()` para isso), e em Python módulo é o nome de pedaço organizado de uma *biblioteca de funções de programação*, em geral um arquivo `.py`.
 
@@ -144,7 +147,7 @@ print(resto)  # exibe: 1
 ```
 E essa operação é **extremamente útil**, para saber se um número é par ou ímpar, se é divisível por um certo número ou para produzir sequencias que se repetem!
 
-##### Testando se um número é par
+#### Testando se um número é par
 ```python
 if a % 2 == 0:
     print('a é par!')
@@ -175,10 +178,6 @@ Resultado:
 1
 0
 1
-0
-1
-0
-1
 ```
 Outro exemplo.
 ```python
@@ -187,11 +186,6 @@ for n in range(100):  # pegue um n para cada número de 0 a 99
 ```
 Resultado (truncado, seriam 100 números):
 ```
-0
-1
-2
-3
-4
 0
 1
 2
