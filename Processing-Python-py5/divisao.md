@@ -14,29 +14,45 @@ Veja este exemplo que mostra a divisão de dois números inteiros (*int*), `4` d
 a = 4 / 10
 print(a)
 # resultado: 0.4
+# Note que em Python o separador decimal é um ponto (.)
 ```
 
-Antigamente, no Python 2, uma divisão entre dois números inteiros era forçada a responder com um inteiro, o que surpreendia algumas vezes, por exemplo, `4 / 10` resultava `0`. Agora no Python 3 o resultado pode ser um número de ponto flutuante, como vimos no exemplo anterior. Para obter o comportamento antigo, da divisão com resultado inteiro, use o operador `//` (*floor division*).
+Antigamente, no Python 2, uma divisão entre dois números inteiros era forçada a responder com um inteiro, o que surpreendia algumas vezes, por exemplo, `4 / 10` resultava `0`. Agora no Python 3 o resultado pode ser um número de ponto flutuante, como vimos no exemplo anterior.
+
+Para obter o comportamento próximo ao antigo, é possível usar o operador `//` (*floor division*). Se os operandos forem inteiros, o resultado será inteiro também, mas, se um deles for *float* o resultado, mesmo que "numericamente inteiro", será do tipo *float*. Uma outra solução pode ser converter o resultado da divisão em *int*, usando `int()`.
 
 ```python
 a = 5 // 2
-print(a)
-# resultado: 2
+print(a, type(a))
+# resultado: 2 <class 'int'>
+
+b = 5.0 // 2
+print(b, type(b))
+# resultado: 2.0 <class 'float'>
+
+c = int(5 / 2)
+print(c, type(c))
+# resultado: 2 <class 'int'>
 ```
 
 > #### Conversão em inteiros
 > 
 > Certas situações em Python exigem números inteiros, como, por exemplo,  ao se usar `for n in range(inicio, parada):`. `inicio` e `parada` precisam ser números inteiros.
-> A forma mais comum de converter um número de ponto flutuante (`float`) em inteiros (`int`) é usando a função embutida `int()`. Mas note que isso simplesmente joga fora a parte depois do ponto, e não é como outros tipos de "arredondamento". Experimente usar `round()` para ver o que acontece!
+> A forma mais comum de converter um número de ponto flutuante (`float`) em inteiros (`int`) é usando a função embutida `int()`.
+>
+> Mas note que `int()` simplesmente joga fora a parte depois do ponto, e não é como outros tipos de "arredondamento". Experimente usar a função embutida `round()`, que também devolve um número do tipo inteiro para ver o que acontece!
 > 
 > ```python
-> a = int(10.654)  # Note que eum programação o separador decimal é um ponto (.)
-> print(a)         # Exibe como resultado: 10
+> a = int(10.654) 
+> print(a)
+> # resultado: 10
+>
 > b = round(10.654)
 > print(b)         # Experimente e descubra!
 > # resultado: ?
-> # Experimente também print(round(10.5))...
-> ```
+> 
+> # Experimente também...
+> print(round(10.5))
 
 ## O problema dos números *float*
 
