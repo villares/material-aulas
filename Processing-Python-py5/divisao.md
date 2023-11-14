@@ -97,7 +97,7 @@ else:
     resultado = 1000000
 ```
 
-Uma outra maneira, talvez mais sofisticada, é usar uma extrutura para exceções do Python, que futuramente vai servir em casos como erros na manipulação de arquivos e outros em que você precisa "tentar" fazer a operação que pode não funcionar (que pode "levantar uma exceção"):
+Uma outra maneira, talvez mais sofisticada, é usar uma estrutura para exceções do Python, que futuramente vai servir em casos como erros na manipulação de arquivos e outros em que você precisa "tentar" fazer a operação que pode não funcionar (que pode "levantar uma exceção"):
 
 ```python
 try:
