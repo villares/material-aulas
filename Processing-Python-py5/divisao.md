@@ -54,12 +54,13 @@ print(c, type(c))
 > 
 > # Experimente também...
 > print(round(10.5))
+> ```
 
 ### O problema não muito visível dos números *float*
 
-É uma coisa um pouco assustadora, mas, o Python, assim como a maior parte das linguagens de programação, fazem "arredondamentos estranhos" em valores que pra nós parecem perfeitamente "redondos", isto é, de representação finita. A causa do problema é que muitos números que tem uma representação finita em decimal, como `1 / 10`, isto é `0.1`, quando representados em binário na memória do computador, como *float*, não tem uma representação finita.
+Pode parecer um pouco assustador o que você vai ler agora mas é bom saber que o os computadores, quando usamos Python e a maior parte das linguagens de programação, fazem "arredondamentos estranhos" ao armazenar na memória valores que pra nós parecem perfeitamente "redondos", isto é, de representação finita. A causa do problema é o fato de que muitos números que tem uma representação decimal finita (na base 10), como `1 / 10`, isto é, `0.1`, quando representados na memória do computador em binário (na base 2), usando *float* ([ponto flutuante](https://pt.wikipedia.org/wiki/V%C3%ADrgula_flutuante)), não tem uma representação finita equivalente.
 
-Isso é parecido com a dificuldade da representação decimal de certas frações, como `1 / 3`, por exemplo, que representamos "0.33333...". Dizemos que é uma "dízima periódica", e, ao interrompermos os infinitos 3 depois da vírgula, no caso do Python o ponto, estamos fazendo uma representação aproximada. Não dá pra escrever infinitos números 3, não dá pra representar de maneira finita como um número na base 10.
+Isso é parecido com a dificuldade da representação decimal de certas frações, como `1 / 3`, por exemplo, que representamos "0.33333...". Dizemos que é uma "dízima periódica", e, ao interrompermos os infinitos 3 depois da vírgula, no caso do Python o ponto, estamos fazendo uma representação aproximada. Não dá pra escrever infinitos números 3, não dá pra representar de maneira finita `1 / 3` como um número na base 10.
 
 Veja o problema de forma mais explícita nesta soma e comparação de valores no Python.
 
@@ -134,7 +135,7 @@ tangente_aproximada = dy / (0.01 + distancia)
 fator_de_crescimento = 1 / (1 + mouse_x)  # o resultado é no mínimo 1 e sem divisão por zero pois mouse_x nunca fica negativo
 ```
 
-### Agora a parte divertida! O resto da divisão
+### Agora a parte divertida: O resto da divisão
 
 Em inglês a operação para obter o resto da divisão com inteiros tem o nome de *modulo* ou *modulus* o que pode causar uma grande confusão pois na matemática em português a palavra 'módulo' com a notação `|num|` é usada também para falar do valor absoluto (sem o sinal) de um número (em programação usamos `abs()` para isso), e em Python módulo é o nome de pedaço organizado de uma *biblioteca de funções de programação*, em geral um arquivo `.py`.
 
