@@ -6,8 +6,9 @@ L-Systems são as estruturas e procedimentos criados por Aristide Lindenmayer pa
 
 >Referências externas:
 >- [The Algorithmic Beauty of Plants](http://algorithmicbotany.org/papers/#abop) (+ diversos livros e artigos)
->- https://www.cgjennings.ca/articles/l-systems/
->- http://www.paulbourke.net/fractals/lsys/
+>- [Lindenmayer systems: Describing how things grow with strings of letters, bye Christopher G Jennings](https://www.cgjennings.ca/articles/l-systems/)
+>- [L-System User Notes, by Paul Bourke](http://www.paulbourke.net/fractals/lsys/)
+>- [Wikipedia: L-system](https://en.wikipedia.org/wiki/L-system)
          
 ## Um exemplo simples
 
