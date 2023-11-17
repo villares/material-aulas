@@ -5,7 +5,7 @@ Em computação existe uma classificação dos valores armazenados na memória d
 
 Vejamos alguns exemplos. Fazendo uma atribuição com `i = 10`, o `i` é um nome que aponta para um valor na memória, `10`, um número **inteiro**, do tipo *integer* que é normalmente abreviado como `int`. 
 
-Outros exemplos de valor numérico são `10.5` e `0.2`, números que tem uma parte fracionária, ou até mesmo `10.` (dez seguido de um ponto), são considerados **números de ponto flutuante**, *floating point* ou abreviadamente `float`. Valores numéricos em Python são, na maior parte das vezes, dos tipos ***inteiro***  ou  ***ponto flutuante***. Mas há também tipos como ***número complexo*** ([mais detalhes na documentação do Python](https://docs.python.org/pt-br/3/library/stdtypes.html#numeric-types-int-float-complex)), entre outros.
+Outros exemplos de valor numérico são `10.5` e `0.2`, números que tem uma parte fracionária, ou até mesmo `10.` (dez seguido de um ponto), são considerados **números de ponto flutuante**, *floating point* ou abreviadamente `float`. Valores numéricos em Python são, na maior parte das vezes, dos tipos ***inteiro***  ou  ***número de ponto flutuante***. Mas há também tipos como ***número complexo*** ([mais detalhes na documentação do Python](https://docs.python.org/pt-br/3/library/stdtypes.html#numeric-types-int-float-complex)), entre outros.
 
 Textos, que aparecem entre aspas (tanto faz duplas ou simples) quando no meio do código de um programa, como por exemplo `'hello'` ou `"Eric Idle"`, são do tipo ***string*** (cadeia de caracteres em português) que abreviamos como `str`. Repare que `"1010"` é um *string* enquanto `1010` é um número inteiro, `int`, e `1010.0` é `float`. 
 
@@ -51,11 +51,11 @@ print(f'Red: {r}')  # exibe o string `Red: 12`
 ```
 ### Como saber os tipos dos argumentos
 
-Para descobrir quais são os tipos dos argumentos que devemos usar com uma determinada função, precisamos ler a documentação (no caso de funções embutidas, pré-definidas, ou de bibliotecas externas) ou então olhar a definição da função. 
+Para descobrir quais são os tipos dos argumentos que devemos usar com uma determinada função, precisamos ler a documentação (no caso de funções embutidas, pré-definidas, ou de bibliotecas externas) ou então olhar a definição da função. Alguns editores de código (IDE) conseguem apresentar os *docstrings* e dicas de tipos dos parâmetros (tambbém chamados de "assinatura") da função.
 
 ### Tipos dos valores devolvidos
 
-Da mesma forma, é do nosso interesse saber o tipo dos valores devolvidos por uma função. Isso também pode ser descoberto lendo a documentação, a definição da função, ou ainda usando `print(type(valor))`.
+Da mesma forma, é do nosso interesse saber o tipo dos valores devolvidos por uma função. Isso também pode ser descoberto lendo a documentação, a definição da função, ou ainda usando `print(type(valor))` com o valor obtido.
 
 Algumas funções executam operações mas não devolvem nenhum valor, como `setup()`, `draw()`, `noStroke()` e `rect()`, por exemplo. Sendo mais precisos, em Python, essas funções devolvem o valor especial [`None`](None.md) (que poderíamos imaginar como "nada" ou "nenhum").
 
@@ -89,9 +89,9 @@ Nesta tabela apresento apenas alguns dos tipos que vamos encontrar. Vou marcar c
 | `Py5Image` | imagens raster/bitmap, podem ser criadas/carregadas na memória com `loadImage(arquivo_de_imagem)` | Py5 |
 | `Py5Shape` | contém formas vetoriais, como as descritas num SVG, pode ser criado com `loadShape(arquivo)`| Py5 |
 | `Py5Vector`| vetor, usado geralmente para descrever posição, velocidade ou aceleração (em 2, 3  ou 4 dimensões) | Py5 |
-| `color`<sup>＊</sup>| uma cor é um `int` disfarçado, que pode ser construída com `color(R,G,B)` ou `color(R,G,B,Alfa)`| Py5 |
+| `color`<sup>＊</sup>| uma cor é um `int` disfarçado, que pode ser construída com `color(R,G,B, Alfa)`, se estivermos no modo RGB | Py5 |
 
-> ＊ Preciso contar que a as cores não são um tipo 'de verdade', independente, são um jeito do Processing deixar as coisas mais elegantes pra nós, tem um termo em programação pra isso: 'açucar sintático' (*syntatic sugar*). Por baixo do capô as cores do Processing são apenas números inteiros grandes, com 4 bytes, para R, G, B e Alpha (opacidade) respectivamente, a função `color()` monta esse número grande pra nós. É útil (mais fácil) pensar em cores como um tipo especial de valores.
+> ＊ Preciso contar que a as cores inicialmente não são um tipo 'de verdade' no Processing, são apenas números inteiros grandes, com 4 bytes, para R, G, B e Alpha (opacidade) respectivamente, a função `color()` monta esse número grande pra nós. É útil (mais fácil) pensar em cores como um tipo especial de valores.
 
 Existe uma discussão relativamente complexa sobre o tipo `bytes` do Python que lembra um *string* mas só com caracteres *ASCII*, e isso dá uma certa confusão com os *strings*, pois não são texto *Unicode*, mas essa é uma questão avançada que eu queria evitar neste primeiro momento.
 
@@ -107,8 +107,4 @@ Existe uma discussão relativamente complexa sobre o tipo `bytes` do Python que 
 [**ponto flutuante**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:ponto%20flutuante) Um tipo que representa números com partes fracionárias.
 
 [**string**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:string) Um tipo que representa sequências de caracteres.
-
----
-
-Este material é baseado no material do curso https://arteprog.space/programacao-criativa/ - Texto e imagens: CC BY-NC-SA 4.0; Código: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
 

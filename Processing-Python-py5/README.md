@@ -14,7 +14,7 @@
 - 1.1.0 [Condicionais(`if` e `else`)](condicionais_py.md)
   - 1.1.1 [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](atribuicao-e-comparacao.md)
   - 1.1.2 [Condições aninhadas e outras estruturas condicionais](condicionais_2.md)
-  - 1.1.3 [Divisão com inteiros, divisão por zero e o resto da divisão](divisao.md)
+  - 1.1.3 [Questões da divisão em programação](divisao.md) - Números de ponto flutuante, inteiros, divisão por zero e o resto da divisão
 
 - 1.2.0 [Movimento](movimento_py.md) uma animação simples usando `setup()` e `draw()`
   - 1.2.1 [Escopo de variáveis(local e global)](escopo_py.md)
@@ -40,7 +40,7 @@
 - 1.6.0 [Interação: input com teclado e mouse](input_py.md)
 
 - 1.7.0[Aleatoriedade: `random` e números "sorteados"](aleatoriedade_1.md)
-  - 1.7.1 [Mais sobre aleatoriedade](aleatoriedade_2.md) e as diferenças ente o `random` do py5 e o do Python]
+  - 1.7.1 [Mais sobre aleatoriedade](aleatoriedade_2.md) e as diferenças ente o `random` do py5 e o do Python
   - 1.7.2 [*Perlin Noise* (ruído de Perlin)](noise.md) um tipo especial de número pseudo-aleatório
   - 1.7.3 [Como usar seno `sin()`, cosseno `cos()` e arco tangente `atan2()`](seno_cosseno_atan2.md) 
   - 1.7.4 [Manipulando números com `remap()` e `lerp()`](map_lerp.md) e também interpolando cores
@@ -108,7 +108,7 @@
 - 9.1.1 [Módulos ou mosaicos de Truchet](truchet.md)
 - 9.1.2 [Jogo PONG](pong/) - Estudos para o fazer um jogo
 <!-- 9.1.3 [`caneta_automatica_py`](caneta_automatica/) - Módulo para desenhar inspirado na tartaruga de Logo -->
-- 9.1.4 [Sistemas de Lindenmayer](LSystem.md)
+- 9.1.4 [L-System](LSystem.md) - Sistema de Lindenmayer
 
 #### Externos
 

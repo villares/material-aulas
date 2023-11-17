@@ -6,7 +6,7 @@ No Processing, o teclado e o mouse são duas as principais formas de entrada de 
 
 As variáveis de sistema como `mouse_x`, `mouse_y` e `mouse_pressed` oferecem a todo instante informações sobre o estado do mouse. Podem ser consultadas em qualquer lugar do programa e são vistas frequentemente em condicionais dentro do bloco de `draw()`.
 
-De maneira análoga, `key_pressed`, `key` e `key_code` tratam do estado do teclado. A variável `key_pressed` indica se há uma tecla pressionada naquele instante, `key` indica qual foi a última tecla 'comum' pressionada, se for igual à constante `CODED` então é possível consultar `key_code` para saber qual foi a última tecla 'codificada', a comparando, por exemplo, com as constantes `SHIFT`, `ALT` e `CONTROL`, ou as constantes das setas do teclado(`UP`, `DOWN`, `LEFT`, `RIGHT`), entre[algumas outras constantes listadas no final da página](  # contantes-para-usar-com-keycode-e-o-correspondente-valor-numérico).
+De maneira análoga, `key_pressed`, `key` e `key_code` tratam do estado do teclado. A variável `key_pressed` indica se há uma tecla pressionada naquele instante, `key` indica qual foi a última tecla 'comum' pressionada, se for igual à constante `CODED` então é possível consultar `key_code` para saber qual foi a última tecla 'codificada', a comparando, por exemplo, com as constantes `SHIFT`, `ALT` e `CONTROL`, ou as constantes das setas do teclado (`UP`, `DOWN`, `LEFT`, `RIGHT`), entre [algumas outras constantes listadas no final da página](#contantes-para-usar-com-keycode-e-o-correspondente-valor-numérico).
 
 ### Exemplo
 
@@ -51,9 +51,11 @@ def draw():
 
 Quando definimos funções com certos nomes especiais 'encomendados', como `key_pressed()`, `mouse_pressed()`, ou alguma outra listada no quadro mais abaixo, elas serão executadas pelo Processing quando certos eventos do mouse ou do teclado acontecerem.
 
-No jargão do desenvolvimento de interfaces isso é chamado de * tratamento de eventos*. Repare que não chamamos essas funções no nosso código, o Processing chama por nós as funções nos 'eventos' apropriados, caso elas tenham sido definidas.
+No jargão do desenvolvimento de interfaces isso é chamado de *tratamento de eventos*. Repare que não chamamos essas funções no nosso código, o Processing chama por nós as funções nos 'eventos' apropriados, caso elas tenham sido definidas.
 
-As funções precisam ser definidas fora do bloco de `draw()`, e note que a definição de `draw()` precisa existir, mesmo que vazio, para garantir a execução de um "laço principal" no Processing.
+As funções precisam ser definidas fora do bloco de `draw()`. 
+
+Ao contrário do Processing Java (e o antigo Modo Python), não é necessário definir uma função `draw()` para que exista um laço principal que redesenha a tela.
 
 ### Exemplo com *mouse_dragged()* e *key_pressed()*
 
@@ -85,6 +87,9 @@ def key_pressed():          # Esta função executa uma vez quando uma tecla é 
         # mostre no console o número do frame
         println("salvo o frame {}.".format(frameCount))
 ```
+### O uso de *key_typed()* 
+
+A função `key_typed()`, quando definida, náo é acionada por teclas pelas teclas 'codificadas' (`CODED`), como as teclas modificadoras como `SHIFT`, `CONTROL`, `ALT`, ou as setas `UP`,`DOWN`,`LEFT`, `RIGHT`, mas tem a vantagem de permitir a captura, na variável `key`, de glifos que dependem de combinações de teclas, por exemplo, letras acentuadas como `àéîõü`, entre muitas outras.
 
 ### Quadro das funções acionadas por eventos
 
@@ -128,7 +133,7 @@ DELETE    '\x7f'
 - [Escutando teclas simultâneas](teclas_simultaneas.md)
 - [Um botão simples](botao_simples.md)
 - [Arrastando círculos](arrastando_circulos.md)
-- [Como ler a rodinha do mouse(*mouse wheel * ou * scroll wheel*)](rodinha_mouse.md)
+- [Como ler a rodinha do mouse (*mouse wheel* ou *scroll wheel*)](rodinha_mouse.md)
 
 ---
 Este material é baseado no material do curso https://arteprog.space/programacao-criativa /
