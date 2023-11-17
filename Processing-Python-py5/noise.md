@@ -11,7 +11,7 @@ Nesta altura você possívelmente já experimentou fazer algo usando[números(ps
 
 # *Perlin Noise* 1D
 
-O primeiro exemplo de Ruído de Perlin, apresentado a seguir, usa a função `noise()`, que gera um número entre ** 0 ** e ** 1**, inicialmente com apenas um argumento. Vamos comparar o resultado com `random(1)` na parte de cima da àrea de desenho. Note que na parte de baixo, com `noise()` os valores produzidos tem relação com os vizinhos, ao contrário do `random()`, produzindo uma curva relativamente suave. A amplitude pode ser ajustada mudando o valor pelo qual multiplicamos o resultado de `noise()`, ou então, usando `lerp()`.
+O primeiro exemplo de Ruído de Perlin, apresentado a seguir, usa a função `noise()` do py5, que gera um número entre **0** e **1**, inicialmente com apenas um argumento. Vamos comparar o resultado com `random(1)` na parte de cima da àrea de desenho. Note que na parte de baixo, com `noise()` os valores produzidos tem relação com os vizinhos, ao contrário do `random()`, produzindo uma curva relativamente suave. A amplitude pode ser ajustada mudando o valor pelo qual multiplicamos o resultado de `noise()`, ou então, usando `lerp()`.
 
 Pense no argumento que usamos na chamada de `noise()` como um X, um valor que deslocamos no espaço com uma certa * velocidade*. A velocidade é ajustada pela variável `escala` que vai multiplicar o X. Podemos experimentar mudar o valor dessa * escala * ou * velocidade * dos passos dados pelo argumento de entrada no espaço e também podemos deslocar esse X uma certa distância arbitraria(somando `desloca_x`). Saiba que os resultados de `noise()` são simétricos para valores negativos de X.
 
@@ -52,7 +52,7 @@ def key_pressed():
 
 ```
 
-![](assets/perlin1_d.gif)
+![](assets/perlin1D.gif)
 
 > Na imagem acima, na parte superior a altura das linha é calculada a partir do `random(height / 2)`,
 > já as linhas da parte de baixo tem suas alturas produzidas a partir de uma chamada a `noise()`.
@@ -86,7 +86,7 @@ def draw():
 
 ```
 
-![](assets/perlin2_d_1.gif)
+![](assets/perlin2D_1.gif)
 
 Agora o mesmo exemplo desenhando um único polígono com `begin_shape()` e `end_shape()`
 
@@ -113,7 +113,7 @@ def draw():
 
 ```
 
-![](assets/perlin2_d_3.gif)
+![](assets/perlin2D_3.gif)
 
 # *Perlin Noise* em uma grade 2D
 
@@ -160,7 +160,7 @@ def key_pressed():
 
 
 ```
-![](assets/perlin2_d_2.gif)
+![](assets/perlin2D_2.gif)
 
 # *Perlin Noise* 3D, acrescentando um Z
 
@@ -201,7 +201,7 @@ def key_pressed():
 
 
 ```
-![](assets/perlin3_d.gif)
+![](assets/perlin3D.gif)
 
 Agora, praticamente a mesma ideia mas visualizada em 3D
 
@@ -257,7 +257,7 @@ def key_pressed():
 
 ```
 
-![](assets/perlin3_d_3_d.gif)
+![](assets/perlin3D_3D.gif)
 
 # Campo "vetorial" de ruído
 

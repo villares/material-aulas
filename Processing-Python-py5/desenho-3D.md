@@ -37,7 +37,7 @@ Desta maneira é possível desenhar os mesmos elementos 2D que utilizamos até a
 
 # Alguns objetos desenhados em 3D
 
-![imagem exemplo 3D](assets/passos3_d.gif)
+![imagem exemplo 3D](assets/passos3D.gif)
 
 ```python
 
@@ -82,7 +82,7 @@ def caixa(x, y, z, *tam):
 
 # Desenhando uma caixa entre dois pontos
 
-Usando um volume * box() girado em 3_d.
+Usando um volume `box()` girado em 3D.
 
 ```python
 def setup():

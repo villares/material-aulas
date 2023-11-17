@@ -106,7 +106,7 @@ def mouse_pressed():
 def mouse_released():
     no_loop()
 ```
-É possível desenhar texto no modo `P3D` (veja mais sobre isso na página sobre [Desenho em 3D](desenho-3_d.md) )
+É possível desenhar texto no modo `P3D` (veja mais sobre isso na página sobre [Desenho em 3D](desenho-3D.md) )
 Este exemplo mostra 23 linhas na tela, e anima a rolagem (scroll) com o giro da [rodinha do mouse](rodinha_mouse.md).
 
 ```python
