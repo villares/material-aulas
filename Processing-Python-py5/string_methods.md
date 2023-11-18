@@ -97,8 +97,12 @@ Se você quer inserir um *string*, ou um outro valor, no meio de um *string*, po
 nome, idade = 'Alexandre', 120
 
 # usando string_original_com_chaves.format(valor, outro_valor)
-print('Olá, {}, você tem mesmo {} anos?'.format(nome, idade))
+print('Olá, {}, você tem mesmo {} anos?'.format(nome, idade))   # o número de posições e argumentos deve ser o mesmo
 # exibe: Olá, Alexandre, você tem mesmo 120 anos?
+
+# Ou então, é possível indicar com um índice nas chaves qual o argumento que vai ser usado em cada posição.
+print('{1} anos, {0}? Você espera que eu acredite, {0}?'.format(nome, idade))
+# exibe: 120 anos, Alexandre? Você espera que eu acredite, Alexandre?
 
 # Usando um f-string, repare no  `f` antes das aspas
 print(f'Olá, {nome}, você tem mesmo {idade} anos?')
