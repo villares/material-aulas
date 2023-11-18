@@ -111,7 +111,7 @@ print(f'Olá, {nome}, você tem mesmo {idade} anos?')
 
 ## Mais sobre a conversão de números em texto (*string*)
 
-É possível controlar a formatação da conversão de números em string, como o número de casas decimais ou com zeros à esquerda para garantir um certo número de dígitos, usando o método `.format()` e um string com uma notação especial entre as chaves `{}`:
+É possível controlar a formatação da conversão de números em *string*, como o número de casas decimais ou com zeros à esquerda, para garantir um certo número de dígitos, usando o método `.format()`, ou os *f-strings*, com uma notação especial entre as chaves `{}`:
 
 ```python
 # Ambas as formas exibem o valor valor com duas casas decimais
