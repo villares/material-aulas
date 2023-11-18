@@ -101,7 +101,7 @@ print('Olá, {}, você tem mesmo {} anos?'.format(nome, idade))
 # exibe: Olá, Alexandre, você tem mesmo 120 anos?
 
 # Usando um f-string, repare no  `f` antes das aspas
-print('Olá, {nome}, você tem mesmo {idade} anos?')
+print(f'Olá, {nome}, você tem mesmo {idade} anos?')
 # exibe: Olá, Alexandre, você tem mesmo 120 anos?
 ```
 
