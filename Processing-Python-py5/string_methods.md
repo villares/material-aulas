@@ -1,6 +1,6 @@
 # Métodos dos objetos *string*
 
-*Strings* são um *tipo* de dado armazenado na memória do computador para representar texto (uma sequência de caracteres) e, mais que isso, em Python, são acompanhados de uma série de funções que podem ser acionadas com a *sintaxe do ponto* (*dot syntax*).
+*Strings* são um tipo de dado armazenado na memória do computador para representar texto (uma sequência de caracteres, do tipo, ou dizemos também classe, `str`) e, mais que isso, em Python, são acompanhados de uma série de funções que podem ser acionadas com a *sintaxe do ponto* (*dot syntax*).
 
 <sub>Na programação orientada a objetos vemos que funções atreladas a objetos de uma classe são conhecidas como métodos.</sub>
 
@@ -90,7 +90,7 @@ frase = frase.replace('são', 'é')
 print(frase)  # exibe: a pessoa é estranha
 ```
 
-Se você quer inserir um *string*, ou um outro valor, que será convertido em *string* no meio de um *string*, existem várias maneiras, as duas que sugiro você conhecer e usar são, o método `.format()` e os *f-strings* que foram acrescentados no Python 3.6. Ambas as estratégias permitem substituir valores em pontos especiais do *string* original, marcados com chaves (`{}`).
+Se você quer inserir um *string*, ou um outro valor, no meio de um *string*, pode fazer isso de várias várias maneiras, uma das quais está já entrando em desuso, usando o operador `%`, que não recomendo. As duas maneiras que sugiro que você use são: o método `.format()` e os *f-strings*, esses últimos acrescentados na linguagem no Python 3.6. Ambas as estratégias permitem substituir valores em pontos marcados com chaves (`{}`) de um *string* inicial.
 
 ```python
 # repare que `nome` é um valor do tipo <str> e a `idade` <int>, a idade será convertida em <str>.
