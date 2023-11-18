@@ -1,6 +1,6 @@
 # Métodos dos objetos *string*
 
-*Strings* são um * tipo* de dado armazenado na memória do computador, e mais que isso, em Python, são acompanhados de uma série de funções que podem ser acionadas com a *sintaxe do ponto* (*dot syntax*).
+*Strings* são um *tipo* de dado armazenado na memória do computador para representar texto (uma sequência de caracteres) e, mais que isso, em Python, são acompanhados de uma série de funções que podem ser acionadas com a *sintaxe do ponto* (*dot syntax*).
 
 <sub>Na programação orientada a objetos vemos que funções atreladas a objetos de uma classe são conhecidas como métodos.</sub>
 
@@ -71,53 +71,68 @@ coisas = ('a', 'b', 'c')
 print('-'.join(coisas))
 # exibe: a-b-c
 
-print('\n'.joint('xyz')  # \n indica uma quebra de linha
+print('\n'.join('xyz')  # \n indica uma quebra de linha
 # exibe em 3 linhas:
 # x
 # y
 # z
 ```
 
-## Substituições com `.replace()` e inserções com `.format()`
+## Substituições com `.replace()`, inserções com `.format()` e *f-strings*
+
+Para substituir toda as ocorrências, caso existam, de um *string* (uma sequência de caracteres) dentro de outro *string*, podemos usar `.replace()`. Lembrando que como *strings* são imutáveis, o texto original não é modificado e sim um novo *string* é produzido.
+Não é problema se não existirem ocorrências do texto buscado, nada acontece, e o texto original é devolvido. 
 
 ```python
-# str.replace(velho, novo) # substitui todas as ocorrências de um texto
-# dentro de outro, se houver
-frase=u'as pessoas são estranhas'.replace('as', 'a')
-frase=frase.replace(u'são', u'é')
+# str.replace(velho, novo) 
+frase = 'as pessoas são estranhas'.replace('as', 'a')
+frase = frase.replace('são', 'é')
 print(frase)  # exibe: a pessoa é estranha
+```
 
-# str.format(valor, outro) substitui valores em pontos especiais do texto
-# marcados com chaves: {}
-# repare que o nome é <str> e a idade <int>, a idade será convertida em <str>.
-nome, idade='Alexandre', 120
-print(u"Olá, {}, você tem mesmo {} anos?".format(nome, idade))
+Se você quer inserir um *string*, ou um outro valor, que será convertido em *string* no meio de um *string*, existem várias maneiras, as duas que sugiro você conhecer e usar são, o método `.format()` e os *f-strings* que foram acrescentados no Python 3.6. Ambas as estratégias permitem substituir valores em pontos especiais do *string* original, marcados com chaves (`{}`).
+
+```python
+# repare que `nome` é um valor do tipo <str> e a `idade` <int>, a idade será convertida em <str>.
+nome, idade = 'Alexandre', 120
+
+# usando string_original_com_chaves.format(valor, outro_valor)
+print('Olá, {}, você tem mesmo {} anos?'.format(nome, idade))
+# exibe: Olá, Alexandre, você tem mesmo 120 anos?
+
+# Usando um f-string, repare no  `f` antes das aspas
+print('Olá, {nome}, você tem mesmo {idade} anos?')
 # exibe: Olá, Alexandre, você tem mesmo 120 anos?
 ```
 
-## Convertendo números em texto
+## Mais sobre a conversão de números em texto (*string*)
 
 É possível controlar a formatação da conversão de números em string, como o número de casas decimais ou com zeros à esquerda para garantir um certo número de dígitos, usando o método `.format()` e um string com uma notação especial entre as chaves `{}`:
 
 ```python
-# Exibe valor com duas casas decimais
-print("ângulo calculado: {:.2f}".format(ang))
+# Ambas as formas exibem o valor valor com duas casas decimais
+ang = 14.5
+print("ângulo calculado: {:.2f}".format(ang)) 
+print(f"ângulo calculado: {ang:.2f}"
 
-# Produz um string para nome_arquivo: "arq00123.svg"
-nome_arquivo="arq{:0>5}.svg".format(123)
+# Produzindo um string para nome_arquivo: "arq00123.svg"
+n = 123
+nome_arquivo = "arq{:0>5}.svg".format(n)
+# ou, equivalente nome_arquivo = f"arq{n:0>5}.svg"
 ```
 
 Veja mais alguns exemplos.
 
 ```python
-print(u"π: {:+n}".format(PI))  # com sinal, exibe π: +3.14159
+from math import pi  # Você pode também usar a constante PI da biblioteca py5
+print("π: {:+n}".format(pi))  # com sinal, exibe π: +3.14159
 # com vinte posições decimais, exibe 3.14159274101257324219
-print("{:.20f}".format(PI))
-print("{:.4f}".format(PI))  # com quatro posições decimais, exibe 3.1416
+print("{:.20f}".format(pi))
+print("{:.4f}".format(pi))  # com quatro posições decimais, exibe 3.1416
 # preenche com zeros até 8 caracteres, exibe 003.1416
-print("{:07.4f}".format(PI))
+print("{:07.4f}".format(pi))
 # interpreta o número como uma porcentagem e exibe 314.1593%
-print("{:.4%}".format(PI))
+print("{:.4%}".format(pi))
 ```
 
 ## E tem mais coisas ainda!
