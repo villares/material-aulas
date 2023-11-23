@@ -11,6 +11,7 @@ A tradução computacional dessas estruturas foi discutida pela primeira vez na 
 >- [The Algorithmic Beauty of Plants](http://algorithmicbotany.org/papers/#abop) (+ diversos livros e artigos)
 >- [Lindenmayer systems: Describing how things grow with strings of letters, bye Christopher G Jennings](https://www.cgjennings.ca/articles/l-systems/)
 >- [L-System User Notes, by Paul Bourke](http://www.paulbourke.net/fractals/lsys/)
+>- [Using Lindenmayer Systems to Introduce Computer Science Concepts](https://www.russellgordon.ca/cemc/2017/lindenmayer-systems/)
 >- [Wikipedia: L-system](https://en.wikipedia.org/wiki/L-system)
          
 ## Um exemplo simples
