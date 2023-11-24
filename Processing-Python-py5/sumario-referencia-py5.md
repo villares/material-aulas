@@ -8,7 +8,7 @@
 * [Entrada de dados (*Input*)](#entrada-de-dados-input): [Lendo arquivos](#lendo-arquivos); [Variáveis do teclado](#variáveis-do-teclado); [Funções de evento do teclado](#funções-de-evento-do-teclado); [Variáveis do mouse](#variáveis-do-mouse); [Funções de evento do mouse](#funções-de-evento-do-mouse); [Funções auxiliares de data e horário](#funções-auxiliares-de-data-e-horário).
 * [Saída de dados (*Output*)](#saída-de-dados-output): [Escrevendo arquivos](#escrevendo-arquivos); [Saída de imagens](#saída-de-imagens); [Área de texto (console)](#área-de-texto-console).
 * [Tipografia](#tipografia): [Desenhando texto](#desenhando-texto); [Carregando e selecionando fontes](#carregando-e-selecionando-fontes); [Métricas de texto](#métricas-de-texto).
-* [Transformações do Sistema de Coordenadas](#transformações-do-sistema-de-coordenadas): [Operações Básicas](#operações-básicas); [Rotações 3D](#rotações-3d); [Operações com a matrix de transformações](#operações-com-a-matrix-de-transformações).
+* [Transformações do Sistema de Coordenadas](#transformações-do-sistema-de-coordenadas): [Operações Básicas](#operações-básicas); [Rotações 3D](#rotações-3d); [Operações com a matriz de transformações](#operações-com-a-matriz-de-transformações).
 * [Ambiente do Sketch](#ambiente-do-sketch): [Configuração e variáveis](#configuração-e-variáveis); [Outros controles da janela do sketch](#outros-controles-da-janela-do-sketch).
 * [Relacionadas à matemática](#relacionadas-à-matemática): [Cálculo](#cálculo); [Aleatoriedade (*Random*)](#aleatoriedade-random); [Trigonometria](#trigonometria).
 * [Trabalhando com imagens](#trabalhando-com-imagens): [Carregando e exibindo](#carregando-e-exibindo); [Pixels](#pixels); [Texturas](#texturas); [Objetos de imagem](#objetos-de-imagem).
@@ -243,7 +243,7 @@
 * [rotate_y()](http://py5coding.org/reference/sketch_rotate_y.html) - Gira em torno do eixo Y de acordo com o ângulo indicado.
 * [rotate_z()](http://py5coding.org/reference/sketch_rotate_z.html) - Gira em torno do eixo Z de acordo com o ângulo indicado.
 
-#### Operações com a matrix de transformações
+#### Operações com a matriz de transformações
 
 * [apply_matrix()](http://py5coding.org/reference/sketch_apply_matrix.html) - Multiplica a matriz atual pela especificada por meio dos argumentos passados.
 * [get_matrix()](http://py5coding.org/reference/sketch_get_matrix.html) - Obtenha a matriz atual como um array numpy.
@@ -356,14 +356,15 @@
 * [apply_filter()](http://py5coding.org/reference/sketch_apply_filter.html) - Filtra a janela de exibição usando um filtro predefinido ou com um sombreador personalizado.
 * [blend()](http://py5coding.org/reference/sketch_blend.html) - Combina uma região de pixels de uma imagem em outra (ou nela mesma novamente) - com suporte total ao canal alfa.
 * [copy()](http://py5coding.org/reference/sketch_copy.html) - Copia uma região de pixels da janela de exibição para outra área da janela de exibição e copia uma região de pixels de uma imagem usada como src_img parâmetro na janela de exibição.
-* [get()](http://py5coding.org/reference/sketch_get.html) - Lê a cor de qualquer pixel ou captura uma seção da superfície de desenho.
-* [load_np_pixels()](http://py5coding.org/reference/sketch_load_np_pixels.html) - Carrega os dados de pixel da janela de exibição atual na matriz np_pixels[].
-* [load_pixels()](http://py5coding.org/reference/sketch_load_pixels.html) - Carrega os dados de pixel da janela de exibição atual na matriz pixels[].
-* [np_pixels[]](http://py5coding.org/reference/sketch_np_pixels.html) - A matriz np_pixels[] contém os valores para todos os pixels na janela de exibição.
-* [pixels[]](http://py5coding.org/reference/sketch_pixels.html) - A matriz pixels[] contém os valores para todos os pixels na janela de exibição.
-* [set_np_pixels()](http://py5coding.org/reference/sketch_set_np_pixels.html) - Defina todo o conteúdo de np_pixels[] para o conteúdo de outro array numpy dimensionado e digitado adequadamente.
-* [update_np_pixels()](http://py5coding.org/reference/sketch_update_np_pixels.html) - Atualiza a janela de exibição com os dados na matriz np_pixels[].
-* [update_pixels()](http://py5coding.org/reference/sketch_update_pixels.html) - Atualiza a janela de exibição com os dados na matriz pixels[].
+* [get_pixels()](http://py5coding.org/reference/sketch_get_pixels.html) - Lê a cor de qualquer pixel ou captura uma seção da superfície de desenho.
+* [load_np_pixels()](http://py5coding.org/reference/sketch_load_np_pixels.html) - Carrega os dados de pixel da janela de exibição atual no array `np_pixels[]` .
+* [load_pixels()](http://py5coding.org/reference/sketch_load_pixels.html) - Carrega os dados de pixel da janela de exibição atual no array `pixels[]`.
+* [np_pixels[]](http://py5coding.org/reference/sketch_np_pixels.html) - O array `np_pixels[]` contém os valores para todos os pixels na janela de exibição.
+* [pixels[]](http://py5coding.org/reference/sketch_pixels.html) - O array `pixels[]` contém os valores para todos os pixels na janela de exibição.
+* [set_np_pixels()](http://py5coding.org/reference/sketch_set_np_pixels.html) - Substitui todo o conteúdo de `np_pixels[]` pelo conteúdo de outro array numpy com dimensões e tipagem, adequadas.
+* [set_pixels()](http://py5coding.org/reference/sketch_set_pixels.html) - Altera a cor de qualquer pixel ou sobreescreve uma imagem diretamente na superfície de desenho.
+* [update_np_pixels()](http://py5coding.org/reference/sketch_update_np_pixels.html) - Atualiza a janela de exibição com os dados do array `np_pixels[]`.
+* [update_pixels()](http://py5coding.org/reference/sketch_update_pixels.html) - Atualiza a janela de exibição com os dados do array `pixels[]`.
 
 #### Texturas
 
@@ -493,7 +494,7 @@
 #### Classes
 
 * [Py5Graphics](http://py5coding.org/reference/py5graphics.html) - Gráficos principais e contexto de renderização, bem como a implementação básica da API para o "núcleo" do Processing.
-* [Py5Image](http://py5coding.org/reference/py5image.html) - Um tipo de dados para armazenar imagens. Permite carregar, converter e exibir formatos de imagem externos, bem como manipulação eficiente de pixels como matrizes NumPy.
+* [Py5Image](http://py5coding.org/reference/py5image.html) - Um tipo de dados para armazenar imagens. Permite carregar, converter e exibir formatos de imagem externos, bem como manipulação eficiente de pixels como arrays NumPy.
 * [Py5Shape](http://py5coding.org/reference/py5shape.html) - Tipo de dados para armazenar formas. Permite carregar e exibir formas SVG (Scalable Vector Graphics) e OBJ.
 * [Py5Shader](http://py5coding.org/reference/py5shader.html) - Esta classe encapsula um programa de shader GLSL, incluindo um vértice e um fragment shader.
 * [Py5Surface](http://py5coding.org/reference/py5surface.html) - O objeto `Py5Surface` é a janela na qual o py5 desenha as animações. Use-o para interagir com a janela e alterar algumas de suas características, como o título ou a localização.
