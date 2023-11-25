@@ -1,31 +1,20 @@
 
 # Um pouco de ângulos, com seno, cosseno e arco tangente
 
-# `sin()`, `cos()` e `atan2()`
+## *sin()*, *cos()* e *atan2()*
 
 As funções trigonométricas não são nenhum bicho de sete cabeças, 2π cabeças, no máximo...
 
-Para começar é preciso saber que quando uma dessas funções pede um ângulo como argumento(o valor entre parênteses), espera que você informe esse ângulo em * radianos*, por isso, se você pensa em graus, use `radians(angulo_em_graus)` para converter. Outras funções, como `atan2()`, que vamos ver nesta página, devolvem um ângulo, em radianos, que por sua vez pode ser convertido em graus com `degrees(angulo_em_radianos)`se você precisar.
+Para começar é preciso saber que quando uma dessas funções pede um ângulo como argumento (o valor entre parênteses), espera que você informe esse ângulo em *radianos*, por isso, se você pensa em graus, use `radians(angulo_em_graus)` para converter. Outras funções, como `atan2()`, que vamos ver nesta página, devolvem um ângulo, em radianos, que por sua vez pode ser convertido em graus com `degrees(angulo_em_radianos)`se você precisar.
 
-# Sumário
-- [seno e cosseno](  # seno-e-cosseno)
-- [`sin()` e `cos()` no espaço](  # sin-e-cos-no-espaço)
-    - [outra versão com algumas indicações](  # outra-versão-com-algumas-indicações)
-- [`sin()` e `cos()` no tempo](  # sin-e-cos-no-tempo)
-- [Seno e cosseno fornecem as coordenadas dos pontos de um círculo!](  # seno-e-cosseno-fornecem-as-coordenadas-dos-pontos-de-um-círculo)
-    - [Uma versão animada e com algumas indicações](  # uma-versão-animada-e-com-algumas-indicações)
-- [A função do arco tangente](  # a-função-do-arco-tangente)
-    - [Como descobrir a inclinação de um segmento de reta?](  # como-descobrir-a-inclinação-de-um-segmento-de-reta)
-    - [Desenhando uma seta com `atan2()`](  # desenhando-uma-seta-com-atan2)
-    - [Apontando para o mouse](  # apontando-para-o-mouse)
 
-# Seno e cosseno
+### Seno e cosseno
 
 Na origem essas funções tratam das relações entre ângulos e proporções das medidas dos triângulos, sendo muito estudas, demonstradas, em triângulos retângulos ou em um círculo de raio unitário(o ciclo trigronométrico), mas para além desse contexto, das coisas mais úteis que você pode querer saber, e acredito não ser difícil demonstrar aqui, é que essas funções devolvem valores entre ** -1 ** e ** 1 ** de maneira cíclica, periódica.
 
 Os primeiros exemplos a seguir são para visualizar como se dá o comportamento do seno e do cosseno.
 
-# `sin()` e `cos()` no espaço
+#### *sin()* e *cos()* no espaço
 
 ![](assets/seno_cosseno_0.png)
 
@@ -53,7 +42,7 @@ print(cos(0))  # exibe no console: 1.0
 
 O seno é o que começa à esquerda no ** 0**, na meia altura da tela, e o cosseno é o que começa no alto valendo ** 1**.
 
-# Outra versão com algumas indicações
+#### Outra versão com algumas indicações
 
 Desta vez o exemplo usa `translate()` e `scale()` para deslocar e inverter o eixo Y. E o X vai de ** 0 ** a aproximadamente ** 2π ** mutiplicado por ** 100 **
 
@@ -95,7 +84,7 @@ def indicacoes():
     text("seno", 10, -50)
 ```
 
-# `sin()` e `cos()` no tempo
+#### *sin()* e *cos()* no tempo
 
 Seno e cosseno são muito úteis para fazer animações cíclicas, é muito fácil usar a contagem pronta dos quadros oferecida pelo Processing,  `frame_count` como se fosse um ângulo em graus, converta em radianos e * voi-lá *!
 
@@ -134,7 +123,7 @@ def indicacoes():
 ```
 Note que seno ou cosseno valendo zero significa que a bolinha fica com tamanho ** 100**, com valor ** -1 ** ela deseaparece e com o valor ** 1 ** ela ganha o seu diâmetro máximo de ** 200 ** pixels.
 
-# Seno e cosseno fornecem as coordenadas dos pontos de um círculo!
+#### Seno e cosseno fornecem as coordenadas dos pontos de um círculo!
 
 Com seno, cosseno, o raio e coordenadas do centro, é possível calcular o X e Y de um ponto para cada ângulo em um círculo, isso permite desenhar polígonos regulares e[estrelas](while.md), por exemplo.
 
@@ -152,7 +141,7 @@ for graus in range(0, 360, 18):  # cada 18°
     point(x, y)
 ```
 
-# Uma versão animada e com algumas indicações
+#### Uma versão animada e com algumas indicações
 
 Vamos agora desenhar atualizando o ângulo com o tempo, dessa forma animando o ponto no círculo.
 
@@ -202,9 +191,9 @@ def indicacoes():
     text("seno: {:+.2f}".format(seno), 10, 60)
 ```
 
-# A função do arco tangente
+### A função do arco tangente
 
-# Como descobrir a inclinação de um segmento de reta?
+#### Como descobrir a inclinação de um segmento de reta?
 
 A função `atan()` (arco tangente) devolve o ângulo a partir da tangente desse ângulo, e é possível calcular a tangente dividindo o cateto oposto pelo cateto adjacente, no caso os lados paralelos aos eixos, do triângulo formado pelos pontos de uma 'linha' (como chamamos informalmente um segmento de reta definido por dois pontos).
 
@@ -214,7 +203,7 @@ O cateto oposto é a diferença dos valores de Y e o adjacente a diferença dos 
 
 Note que vamos obter ângulos com valores entre ** -π ** e ** π ** (entre ** -180 ** e ** 180 ** graus) em vez de ** 0 ** a ** 2π**. Você pode somar a constate `PI` do Processing ao valor se preferir essa segunda faixa.
 
-# Desenhando uma seta com `atan2()`
+#### Desenhando uma seta com *atan2()*
 
 Para demonstrar a utilidade de se saber o ângulo de uma linha, vamos desenhar uma seta! Na verdade, saber o ângulo de uma linha da qual conhecemos as coordenadas permite desenhar todo tipo de elemento alinhado ou com ângulo a ela relacionado.
 
@@ -263,7 +252,7 @@ def seta(xa, ya, xb, yb):
     line(xb, yb, xpd, ypd)  # parte direita da ponta
 ```
 
-# Apontando para o mouse
+#### Apontando para o mouse
 
 Ampliando a estratégia mostrada na segunda versão da seta, em que a coordenada dos pontos são calculados usando seno e cosseno, é possível fazer setas de tamanho fixo, apontadas para o mouse. O ângulo continua sendo providenciado pela função do arco tangente.
 
@@ -300,3 +289,7 @@ def seta_tam_fixo(xa, ya, xb, yb, tam):
 ![](assets/seta_curta.gif)
 
 Note que ocultei a setinha do mouse com `no_cursor()`, é possível voltar com o cursor, e escolher outros formatos ou até uma imagem como cursor, consulte a documentação de[`cursor()`](https://py.processing.org/reference/cursor.html).
+
+## Assuntos relacionados
+
+- [Transformações no sistema de coordenadas](transformacose_coordenadas.md)
