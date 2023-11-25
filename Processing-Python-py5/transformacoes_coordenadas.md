@@ -50,20 +50,48 @@ def setup():
     square(0, 0, 200)
 ```
 
-![](assets/2d_transformations_2.png)
+![](assets/2d_transformations_1.png)
 
 Note que o segundo e terceiro quadrados são desenhados com `square(0, 0, 200)`, nas novas coordenadas do centro da tela após o `translate(250, 250)`, e não mais em `square(250, 250, 200)`.
 
-## A segunda parte do problema
+## O sutil problema de *translate()* e *rotate()*
 
 A segunda parte do problema, que se manifestou sutilmente até agora, é de que as transformações do sistema de coordenadas não cumulativas. Veja este exemplo ingênuo de uma função que desenha um quadrado girado, e veja como ele falha em permitir que desenhemos uma fila de quadrados girados.
 
+```python
+def setup():
+    size(500, 500)
+    rect_mode(CENTER)
+    no_fill()
+
+def quadrado_girado(x, y, lado, rot):
+    translate(x, y)
+    rotate(rot)
+    square(0, 0, lado)
+    
+def draw():
+    background(200)
+    quadrado_girado(100, 100, 100, radians(10))
+    quadrado_girado(250, 100, 100, radians(10))
+    quadrado_girado(400, 100, 100, radians(10))
+```
+![](assets/2d_transformations_2.png)
 
 
+## A solução com *push_matrix* e *pop_matrix*
 
-## Mudando a escala
+É possível fazer uma espécie de "backup" do atual sistema de coordenadas, usando a função `push_matrix()` depois de feito o desenho que precisamos com as coordenadas alteradas, `pop_matrix()` devolve ao sketch o estado anterior do sistema de coordenadas.
 
+```python
+def quadrado_girado(x, y, lado, rot):
+    push_matrix()
+    translate(x, y)
+    rotate(rot)
+    square(0, 0, lado)
+    pop_matrix()
+```
 
+![](assets/2d_transformations_3.png)
 
 
 ### A matriz de transformação e a origem de *push_matrix* e *pop_matrix*
@@ -87,9 +115,26 @@ Tradicionalmente, adicionamos itens em uma pilha com instruções nomeadas `push
 
 De maneira parecida então, `push_matrix()` coloca a descrição do estado atual do sistema de coordenadas no topo de uma pilha na memória, e `pop_matrix()` remove e restaura a última descrição de estado da pilha. 
 
+### Uma forma alternativa de uso do *push_matrix*
+
+No py5 é possível usar a sintaxe dos chamados "gerenciadores de contexto" com `with` para indicar um bloco de código onde está valendo uma certa transformação do sistema de coordenadas. Quando a indentação acaba, acontece um `pop_matrix()` "automático".
+
+```python
+def quadrado_girado(x, y, lado, rot):
+    with push_matrix():
+        translate(x, y)
+        rotate(rot)
+        square(0, 0, lado)
+```
+
 > Notas:
 > - **Sempre execute `push_matrix()` e `pop_matrix()` em pares** ou **use o gerenciador de contexto `with push_matrix():`** senão você vai encontrar erros. Um dos erros é basicamente uma proteção antes do famoso *estouro* ou *transbordamento* da pilha, *stack overflow*, `push_matrix() cannot use push more than 32 times`. O outro erro é o aviso de que está faltando um *push* anterior, e a pilha está vazia, `missing a push_matrix() to go with that pop_matrix()`.
 > - No py5, como no Processing, o sistema de coordenadas é restaurado ao seu estado original (origem na parte superior esquerda da janela, sem rotação e sem mudança de escala) toda vez que a função `draw()` é executada. É possível também voltar para o estado inicial o sistema de coordenadas com `reset_matrix()`.
+
+
+## Mudando a escala
+
+  TODO
 
 ## Transformações tridimensionais
 
