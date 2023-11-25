@@ -7,13 +7,11 @@ Esta página apresenta funções `translate`, `rotate`, e `scale`, mas também a
 Isso torna possível, entre outras coisas,  desenhar um retângulo girado na tela, uma vez que a função `rect()` só sabe desenhar retângulos com os lados alinhados com o sistema de coordenadas. A alternativa, a aprender girar o sistema de coordendadas, seria pegar as coordenadas dos pontos de um retângulo e calcular a posição girada de cada um deles para desenhá-los como um polígono usando `begin_shape()` e `end_shape()`.
 
 
-
 ## Começando com a rotação, para ver como as coisas são estranhas
 
-> Nota: 
-> Para começar é preciso saber que no py5 quando uma função pede um ângulo como argumento, espera que você informe esse ângulo em *radianos*, por isso, se você pensa em graus, use `radians(angulo_em_graus)` para converter.
+> Nota: É preciso saber que no py5 quando uma função pede um ângulo como argumento, espera que você informe esse ângulo em *radianos*, por isso, se você pensa em graus, use `radians(angulo_em_graus)` para converter.
 
-Vejamos o que acontece quando tentamos girar um quadrado que desenhamos no meio da tela. Para isso vamos primeiro desenhar o quadrado, usar a função `rotate()` e desenhar o "mesmo quadradado" novamente. Vamos repetir a rotação e o desenho mais uma vez.
+Vejamos o que acontece quando tentamos girar um quadrado que desenhamos no meio da tela. Para isso vamos primeiro desenhar o quadrado, usar a função `rotate()` e desenhar o "mesmo quadrado" novamente. Por fim, vamos repetir a rotação e o desenho do quadrado mais uma vez.
 
 ```python
 def setup():
@@ -33,14 +31,11 @@ Você percebe o que está acontecendo? Pense nestas questões:
 - Em primeiro lugar, onde está o centro de rotação? É possível escolher o centro da rotação?
 - Por qual motivo o segundo pedido de rotação, sendo igual ao primeiro, não fez o terceiro quadrado cair sobre o primeiro?
 
-A resposta para as perguntas iniciais é, a rotação está acontecento em torno da *origem do sistema de coordenadas*, isto é (0, 0), o ponto onde x e y valem zero. E é possível escolher esse ponto usando `translate()` mara movera a origam.
-
-Guarde na cabeça ainda a última indagação, sobre a repetição das istruções não resultar no mesmo desenho sobreposto, que resolveremos mais tarde.
+As respostas para essas perguntas são: A rotação está acontecento em torno da *origem do sistema de coordenadas*, isto é (0, 0), o ponto onde x e y valem zero. É possível escolher esse ponto usando `translate()` mara mover a origem. As operações de transformação do sistema de coordenadas, como a rotação com a função `rotate()`, são cumulativas, e isso vai ser um problema a ser resolvido um pouco mais a frente.
 
 ## Resolvendo a primeira parte do problema da rotação, usando a translação
 
 Se movermos a origem para o ponto no centro da área de desenho, usando `translate(250, 250)` consguimos girar o sitema de coordenadas em torno do centro e obtemos o seguinte resultado:
-
 
 ```
 def setup():
@@ -51,15 +46,17 @@ def setup():
     translate(250, 250)
     rotate(radians(10))
     square(0, 0, 200)
+    rotate(radians(10))
+    square(0, 0, 200)
 ```
 
 ![](assets/2d_transformations_2.png)
 
-Note que o segundo quadrado é desenhado com `square(0, 0, 200)`, nas novas coordenadas do centro da tela após o `translate(250, 250)`, e não mais em `square(250, 250, 200)`.
+Note que o segundo e terceiro quadrados são desenhados com `square(0, 0, 200)`, nas novas coordenadas do centro da tela após o `translate(250, 250)`, e não mais em `square(250, 250, 200)`.
 
 ## A segunda parte do problema
 
-A segunda parte do problema, que se manifestou sutilmente no primeiro exemplo desta explicação, é de que as transformações do sistema de coordenadas não cumulativas. Veja este exemplo ingênuo de uma função que desenha um quadrado girado, e veja como ele falha em permitir que desenhemos uma fila de quadrados girados.
+A segunda parte do problema, que se manifestou sutilmente até agora, é de que as transformações do sistema de coordenadas não cumulativas. Veja este exemplo ingênuo de uma função que desenha um quadrado girado, e veja como ele falha em permitir que desenhemos uma fila de quadrados girados.
 
 
 
