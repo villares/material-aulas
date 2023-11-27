@@ -1,5 +1,3 @@
-<h1 id='toc'></h1>
-
 # Condicões aninhadas e outras estruturas condicionais
 
 ## Se, senão se, senão

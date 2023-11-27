@@ -1,6 +1,6 @@
-<h1 id='toc'></h1>
-
 # Instruções condicionais e operadores lógicos
+
+É possível criar instruções que alteram quais partes do seu código que são executadas, isso acontece dinamicamente, durante a execução do seu programa. Para entender como isso funciona, e as possibilidades enormes que isso proporciona, é importante considerar a ideia de "condição", um valor que dependendo das circunstâncias pode ser verdadeiro (`True`) ou falso (`False`). Também é comum dizer que "a condição é verdadeira" ou "a condição é falsa". Vamos falar sobre a origem dos valores que avaliamos como condição mais pra frente, por hora, observe os exemplos de código "fantasioso" mais a seguir, que seguem uma estrutura sintática real do Python descrita abaixo, mudando o que é executado se uma condição é verdadeira ou falsa.
 
 ## As bifurcações no caminho de execução do código
 
@@ -18,8 +18,8 @@ else:          #  senão (se a condição é falsa) execute:
 
 ### Imagine o seguinte cenário...
 
-Saindo de casa, se (`if`) está chovendo, a condição "chovendo" é verdadeira (`True`), então levo o guarda-chuva;
-Opcionalmente, podemos definir que, senão (`else`), quando a condição "chovendo" é falsa (`False`), devo levar óculos de sol.
+Saindo de casa, se (`if`) está chovendo, a condição *`chovendo`* é verdadeira (`True`), então levo o guarda-chuva;
+Opcionalmente, podemos definir que, senão (`else`), quando a condição *`chovendo`* é falsa (`False`), devo levar óculos de sol.
 
 ``` python
 # a condição "chovendo" é avaliada como True (verdadeiro) ou False (falso)
@@ -28,7 +28,7 @@ if chovendo:
     levar_guarda_chuva()  
 # termina o bloco do “se/então”, continua o passeio.
 ```
-<img src="https://arteprog.space/programacao-criativa/assets/imagens/condicional-sem-else.jpg" title="Exemplo de if - desenho: Monica Rizzolli">
+<img src="assets/condicional-sem-else.jpg" title="Exemplo de if - desenho: Monica Rizzolli">
 
 ``` python
 # a condição "chovendo" é avaliada como True (verdadeiro) ou False (falso)
@@ -39,17 +39,24 @@ else:               # termina o “se/então” e começa o “senão”
     levar_oculos()   # este bloco será executado apenas quando "chovendo" é falso
 # termina o bloco do “senão”, continua o passeio.
 ```
-<img src="https://arteprog.space/programacao-criativa/assets/imagens/condicional-com-else.jpg" title="Exemplo de if/else - desenho: Monica Rizzolli">
+<img src=assets/condicional-com-else.jpg" title="Exemplo de if/else - desenho: Monica Rizzolli">
 
-## Comparações: operadores relacionais e operadores lógicos
+## Operadores relacionais ou de comparação e operadores lógicos
 
-Os valores `True` (verdadeiro) e `False` (falso) são o resultado de expressões booleanas (*boolean*, em homenagem a [George Boole](https:#pt.wikipedia.org/wiki/George_Boole)) como as comparações com operadores relacionais, `==` (igualdade), `>` (maior que) ou ainda operações lógicas **e** (`and`), **ou** (`or`) e **não** (`not`). 
+Os valores especiais `True` (verdadeiro) e `False` (falso) são chamados booleanos (*boolean*, em homenagem a [George Boole](https:#pt.wikipedia.org/wiki/George_Boole)), e são frequentemene resultado da avaliação de comparações com operadores relacionais, `==` (igualdade), `>` (maior que) ou ainda são resultado das operações lógicas **e** (`and`), **ou** (`or`) e **não** (`not`). 
 
 Valores `True` e `False` podem ser atribuidos a variáveis, muitas vezes representando um *estado* no programa, são os valores que obtemos quando usamos as variáveis de sistema *is_mouse_pressed* e *is_key_pressed*, por exemplo. É comum termos variáveis indicadoras (*flags*) que apontam para um estado da operação do programa: `gravando = True`,  `soma_concluida = False`.
 
+São inúmeras as situações que produzem este tipo de valores, veja alguns exemplos:
+
+- A **comparação de igualdade** entre dois valores ou dados fornecido ao seu programa. `nome == 'Cordeiro'` é como se fosse uma pergunta, o valor referenciado por `nome` equivale a `Cordeiro`?
+- A **comparação de ordem** entre dois valores. `idade >= 18` é como a pergunta "`idade` é maior ou igual a 18?". Resulta `True` se `idade` for maior ou igual a 18, ou `False` se for menor.
+- O botão do mouse estar apertado (**estado do botão do mouse**), `is_mouse_pressed` pode ser `True` (apertado) ou `False` (não apertado).
+- Uma tecla foi apertada **e** a tecla era 'a'. `is_key_pressed and key == 'a'`. Verdadeiro `True` apenas se a tecla 'a' estiver sendo apertada, senão `False`.
+
 ### Um exemplo completo
 
-No exemplo a abaixo usamos uma estrutura `if`/ `else` para escolher a cor de preenchimento dos círculos, como resultado da comparação `mouse_y < 128`. Usamos o valor booleano de `mousePressed` (`True` ou `False`) em um `if` que determina se algum círculo yé desenhado ou não. Por fim usamos um `if` que combina dois valores usando `and`(**e**), `is_key_pressed` e a comparação de igualdade `==`, para decidir se deve apagar o desenho (`is_key_pressed and key == 'a'`).
+No exemplo a abaixo usamos uma estrutura `if`/ `else` para escolher a cor de preenchimento dos círculos, como resultado da comparação `mouse_y < 128`. Usamos o valor booleano de `is_mouse_pressed` (`True` ou `False`) em um `if` que determina se algum círculo yé desenhado ou não. Por fim usamos um `if` que combina dois valores usando `and`(**e**), `is_key_pressed` e a comparação de igualdade `==`, para decidir se deve apagar o desenho (`is_key_pressed and key == 'a'`).
 
 ``` python
 def setup():
@@ -75,9 +82,11 @@ def draw():
 ```
 ![exemplo condicional](assets/condicional.gif)
 
-## Quadro de operadores 
+## Quadro de operadores
+
+Operadores são símbolos que indicam operações que devem ser realizadas sobre os "operandos". Por exemplo, `+` é um operador de soma, ele faz com que a expressão `2 + 3` resulte na soma dos operandos `2` e `3`, que no caso é 5. Conheça agora operadores relacionais e lógicos, que resultam em valores booleanos.
  
-|operador | uso | descrição |
+|operador | exemplo de uso | descrição |
 |:---:  |:---: |--- |
 | `>` | `a > b` |  verdadeiro se *a* **maior** que *b* |
 | `>=` | `a >= b` | verdadeiro se *a* **maior ou igual** a *b* |
@@ -91,7 +100,8 @@ def draw():
 | `in` | `a in b` | verdadeiro se elemento *a* **existe dentro** da coleção *b* |
 | `is` | `a is b` | verdadeiro se *a* **é o mesmo objeto** do que *b*, não bastando serem iguais |
 
-### Alguns exemplos e comentários
+### Exemplos de expressões com alguns dos operadores
+
 ```python
 # maior que
 n = 12
@@ -147,14 +157,14 @@ print(bool([]))    # exibe False  (uma lista vazia)
 print(bool([0]))   # exibe True   (uma lista com um zero dentro)
 ```
 
-Sobre o operador `is`, não acredito que você vá precisar dele tão cedo (na dúvida, não use!) mas já que ele estava no quadro, veja o exemplo a seguir, pois demonstra uma característica importante do Python chamada *aliasing*, ou "apelidamento".
+O operador `is` é usado mais raramente, em geral você vai querer checar a "igualdade" e não a "identidade" de dois objetos na memória, mas veja o exemplo a seguir, pois demonstra uma característica importante do Python chamada *aliasing*, ou "apelidamento".
 
 ```python
-ponto_a = (10, 20)
-ponto_b = (10, 20)
-ponto_c = ponto_a  # ponto_c é um outro "apelido" (alias) para o objeto que chamamos de ponto_a
+ponto_a = (10, 20) # uma tupla representand coordenadas de um ponto
+ponto_b = (10, 20) # uma outra tupla, com valores iguais, mas que é outro objeto na memória
+ponto_c = ponto_a  # ponto_c é um "apelido" (alias) para o objeto que chamamos de ponto_a
 
-print(ponto_a == ponto_b)  # exibe True, as coordenadas são iguais
+print(ponto_a == ponto_b)  # exibe True, as tuplas são iguais
 print(ponto_a is ponto_b)  # exibe False, são objetos diferentes na memória 
 print(ponto_a is ponto_c)  # exibe True, são o mesmo objeto na memória
 ```
@@ -177,4 +187,4 @@ print(ponto_a is ponto_c)  # exibe True, são o mesmo objeto na memória
 
 ---
 
-Este material é baseado no material do curso https://arteprog.space/programacao-criativa/ - Texto e imagens: CC BY-NC-SA 4.0; Código: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
+Parte desta página é baseada no material do curso https://arteprog.space/programacao-criativa/, em especial os desenhos de Monica Rizzolli, por conta disso se aplicam as seguintes liceças: Texto e imagens: CC BY-NC-SA 4.0; Código: GNU GPL v3.0
