@@ -2,7 +2,7 @@
 
 O py5 tem funções embutidas que tornam fácil você mover, girar, e crescer ou encolher objetos por meio da manipulação do sistema de coordenadas. 
 
-Esta página apresenta funções `translate`, `rotate`, e `scale`, mas também algumas funções que permitem 'guardar' e 'devolver' o estado anterior do sistema de coordenadas(`push_matrix()`  e `pop_matrix()`).
+Esta página apresenta funções `translate()`, `rotate()`, e `scale()`, mas também algumas funções que permitem 'guardar' e 'devolver' o estado anterior do sistema de coordenadas(`push_matrix()`  e `pop_matrix()`).
 
 Isso torna possível, entre outras coisas,  desenhar um retângulo girado na tela, uma vez que a função `rect()` só sabe desenhar retângulos com os lados alinhados com o sistema de coordenadas. A alternativa, a aprender girar o sistema de coordendadas, seria pegar as coordenadas dos pontos de um retângulo e calcular a posição girada de cada um deles para desenhá-los como um polígono usando `begin_shape()` e `end_shape()`.
 
@@ -11,7 +11,7 @@ Isso torna possível, entre outras coisas,  desenhar um retângulo girado na tel
 
 > Nota: É preciso saber que no py5 quando uma função pede um ângulo como argumento, espera que você informe esse ângulo em *radianos*, por isso, se você pensa em graus, use `radians(angulo_em_graus)` para converter.
 
-Vejamos o que acontece quando tentamos girar um quadrado que desenhamos no meio da tela. Para isso vamos primeiro desenhar o quadrado, usar a função `rotate()` e desenhar o "mesmo quadrado" novamente. Por fim, vamos repetir a rotação e o desenho do quadrado mais uma vez.
+Vejamos o que acontece quando tentamos girar um quadrado que desenhamos no meio da tela. Para isso vamos primeiro desenhar o quadrado, usar a função [`rotate()`](https://py5coding.org/reference/sketch_rotate.html)  e desenhar o "mesmo quadrado" novamente. Por fim, vamos repetir a rotação e o desenho do quadrado mais uma vez.
 
 ```python
 def setup():
@@ -35,7 +35,7 @@ As respostas para essas perguntas são: A rotação está acontecento em torno d
 
 ## Resolvendo a primeira parte do problema da rotação, usando a translação
 
-Se movermos a origem para o ponto no centro da área de desenho, usando `translate(250, 250)` consguimos girar o sitema de coordenadas em torno do centro e obtemos o seguinte resultado:
+Se movermos a origem para o ponto no centro da área de desenho, usando [`translate()`](https://py5coding.org/reference/sketch_translate.html), com os argumentos `250, 250`,  conseguiremos girar o sitema de coordenadas em torno do centro.
 
 ```
 def setup():
@@ -54,7 +54,7 @@ def setup():
 
 Note que o segundo e terceiro quadrados são desenhados com `square(0, 0, 200)`, nas novas coordenadas do centro da tela após o `translate(250, 250)`, e não mais em `square(250, 250, 200)`.
 
-## O sutil problema de *translate()* e *rotate()*
+## O sutil problema de `translate()` e `rotate()`
 
 A segunda parte do problema, que se manifestou sutilmente até agora, é de que as transformações do sistema de coordenadas não cumulativas. Veja este exemplo ingênuo de uma função que desenha um quadrado girado, e veja como ele falha em permitir que desenhemos uma fila de quadrados girados.
 
@@ -80,7 +80,7 @@ def draw():
 
 ## A solução com *push_matrix* e *pop_matrix*
 
-É possível fazer uma espécie de "backup" do atual sistema de coordenadas, usando a função `push_matrix()` depois de feito o desenho que precisamos com as coordenadas alteradas, `pop_matrix()` devolve ao sketch o estado anterior do sistema de coordenadas.
+É possível fazer uma espécie de "backup" do atual sistema de coordenadas, usando a função [`push_matrix()`](https://py5coding.org/reference/sketch_push_matrix.html) depois de feito o desenho que precisamos com as coordenadas alteradas,  [`pop_matrix()`](https://py5coding.org/reference/sketch_pop_matrix.html) devolve ao sketch o estado anterior do sistema de coordenadas.
 
 ```python
 def quadrado_girado(x, y, lado, rot):
@@ -93,23 +93,44 @@ def quadrado_girado(x, y, lado, rot):
 
 ![](assets/2d_transformations_3.png)
 
+## Mudando a escala
+
+Além da translação e rotação é possível também escalar os sistema de coordenada com  [`scale()`](https://py5coding.org/reference/sketch_scale.html) e entortar com [`shear_x()`](https://py5coding.org/reference/sketch_shear_x.html) e  [`shear_y()`](https://py5coding.org/reference/sketch_shear_y.html).
+
+
 
 ### A matriz de transformação e a origem de *push_matrix* e *pop_matrix*
 
- Na matemática temos a ideia de matriz, que são objetos formados por linhas e colunas de números. Sempre que você faz uma rotação, translação ou mudança de escala, as informações necessárias para essa transformação são guardadas em uma matriz de 3 colunas e duas linhas, e é por isso que as funções `push_matrix()` e `pop_matrix()` têm essa palavra *matrix* no nome.
+Na matemática temos a ideia de matriz, que são objetos formados por linhas e colunas de números. Sempre que você faz uma rotação, translação ou mudança de escala, as informações necessárias para essa transformação são armazenadas em uma matriz de 3 colunas e duas linhas, e é por isso que as funções `push_matrix()` e `pop_matrix()` têm essa palavra *matrix* no nome.
+
+Você não precisa interagir diretamante com essa "matriz de transformações" se não quiser, mas por curiosidade veja o exemplo abaixo que exibe os valores dela com `print_matrix()`.
 
 ```python
 def setup():
     size(500, 500)
+    print('estado inicial')
+    print_matrix()
+    translate(250, 250)
+    print('depois de translate(250, 250)')
+    print_matrix()
+    rotate(radians(10))        
+    print('depois de rotate(radians(10))')
     print_matrix()
 ```
 O resultado no console:
 ```
+estado inicial
  1.0000  0.0000  0.0000
  0.0000  1.0000  0.0000
+depois de translate(250, 250)
+ 001.0000  000.0000  250.0000
+ 000.0000  001.0000  250.0000
+depois de rotate(radians(10))
+ 000.9848 -000.1736  250.0000
+ 000.1736  000.9848  250.0000
 ```
 
-E a parte *push* e *pop* dos nomes vêm de uma estrutura de dados muito comum na computação conhecida como pilha.  Imagine uma pilha de livros, e considere que se você acrescenta um livro na pilha ele vai por cima, e se acrescentar mais um ele vai por cima do anterior. Já na hora de tirar livros o mais natural é remover o mais de cima antes do seguinte, e assim por diante. 
+Já a parte *push* e *pop* dos nomes vêm de uma estrutura de dados muito comum na computação conhecida como pilha (*stack*).  Imagine uma pilha de livros, e considere que se você acrescenta um livro na pilha ele vai por cima, e se acrescentar mais um ele vai por cima do anterior. Já na hora de tirar livros o mais natural é remover o mais de cima antes do seguinte, e assim por diante. 
 
 Tradicionalmente, adicionamos itens em uma pilha com instruções nomeadas `push` e removemos com instruções nomeadas `pop`. A influência dessa nomenclatura é tão grande que, no Python, usamos `.pop()` para acessar e remover o último item de uma lista, e, no JavaScript, `.push()` é usado para acrescentar itens em um array (semelhante ao `.append()` para listas no Python).
 
@@ -117,7 +138,7 @@ De maneira parecida então, `push_matrix()` coloca a descrição do estado atual
 
 ### Uma forma alternativa de uso do *push_matrix*
 
-No py5 é possível usar a sintaxe dos chamados "gerenciadores de contexto" com `with` para indicar um bloco de código onde está valendo uma certa transformação do sistema de coordenadas. Quando a indentação acaba, acontece um `pop_matrix()` "automático".
+No py5 é possível usar a sintaxe do que chamamos "gerenciadores de contexto", a linha `with push_matrix():` indica o início de um bloco de código onde vai acontecer uma transformação do sistema de coordenadas, e quando a indentação acaba, acontece um `pop_matrix()` "automático".
 
 ```python
 def quadrado_girado(x, y, lado, rot):
@@ -132,9 +153,7 @@ def quadrado_girado(x, y, lado, rot):
 > - No py5, como no Processing, o sistema de coordenadas é restaurado ao seu estado original (origem na parte superior esquerda da janela, sem rotação e sem mudança de escala) toda vez que a função `draw()` é executada. É possível também voltar para o estado inicial o sistema de coordenadas com `reset_matrix()`.
 
 
-## Mudando a escala
 
-  TODO
 
 ## Transformações tridimensionais
 
