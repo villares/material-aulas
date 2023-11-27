@@ -118,6 +118,3 @@
 - 9.2.2 [Paper Objects with Processing and Python](https://abav.lugaralgum.com/Paper-objects-with-Processing-and-Python)
 - 9.2.3 [Arc, tangents & Bezier studies](https://github.com/villares/arc_tangents_and_bezier_studies)
 - 9.2.4 [Simulações física 2D com PyMunk - Pinball](https://github.com/villares/pymunk-pinball-paulista)
-
- ---
-Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado.
