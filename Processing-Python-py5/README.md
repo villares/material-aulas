@@ -14,7 +14,7 @@
 - 1.1.0 [Condicionais(`if` e `else`)](condicionais_py.md)
   - 1.1.1 [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](atribuicao-e-comparacao.md)
   - 1.1.2 [Condições aninhadas e outras estruturas condicionais](condicionais_2.md)
-  - 1.1.3 [Questões da divisão em programação](divisao.md) - Números de ponto flutuante, inteiros, divisão por zero e o resto da divisão
+  - 1.1.3 [Divisão por zero e o resto da divisão](divisao.md) 
 
 - 1.2.0 [Movimento](movimento_py.md) uma animação simples usando `setup()` e `draw()`
   - 1.2.1 [Escopo de variáveis(local e global)](escopo_py.md)
@@ -36,6 +36,8 @@
   - 1.5.2 [Trabalhando com fontes e outros ajustes do texto](tipografia.md) 
   - 1.5.3 [Métodos dos objetos *string*](string_methods.md)
   - 1.5.4 [O valor especial `None`](None.md)
+  - 1.5.5 [Números inteiros (*int*) e de ponto flutuante (*float*)](numeros.md)
+
 
 - 1.6.0 [Interação: input com teclado e mouse](input_py.md)
 
