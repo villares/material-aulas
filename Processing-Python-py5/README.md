@@ -19,8 +19,8 @@
   - 1.1.5 [Divisão por zero e o resto da divisão](divisao.md) 
 
 - 1.3.0 [Declarando novas funções](funcoes_py.md)
-  - 1.3.1 [Modificando as coordenadas](transformacoes_coordenadas.md) com `translate()`, `rotate()` e mais!
-  - 1.3.2 [Funções recursivas](recursao_py.md)
+  - 1.3.1 [Modificando o sistema de coordenadas](transformacoes_coordenadas.md) com `translate()`, `rotate()`, `scale()` e mais!
+  - 1.3.2 [Funções recursivas](recursao_py.md) - usando a recursividade no seu desenho 
   - 1.3.3 [Funções com argumentos padrão(ou opcionais)](funcoes_2.md)
   - 1.3.4 [Condições aninhadas e outras estruturas condicionais](condicionais_2.md)
 
