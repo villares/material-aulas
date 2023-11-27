@@ -290,6 +290,42 @@ def seta_tam_fixo(xa, ya, xb, yb, tam):
 
 Note que ocultei a setinha do mouse com `no_cursor()`, é possível voltar com o cursor, e escolher outros formatos ou até uma imagem como cursor, consulte a documentação de[`cursor()`](https://py.processing.org/reference/cursor.html).
 
+### Extra: Calculando a rotação de pontos na unha
+
+A função `rotate_point()` abaixo permite calcular qual seria a posição de um ponto, fazendo a rotação em torno de um outro ponto indicado e um ângulo.
+
+Com ela é possível calcular, por exemplo, os vértices de um retângulo, como implementado na função `rect_points()`, e desenhar um retângulo inclinado sem usar as transformações do sistema de coordenadas.
+
+![](assets/rect_rot.png)
+
+```python
+def setup():
+    size(500, 500)
+    background(100, 0, 100)
+    pontos = rect_points(250, 250, 300, 200, angulo=radians(30), modo=CENTER)
+    with begin_closed_shape():
+        vertices(pontos)
+
+def rotate_point(x_original, y_original, angulo, x_centro=0, y_centro=0):
+    x, y = x_original - x_centro, y_original - y_centro
+    xr = x * cos(angulo) - y * sin(angulo)
+    yr = y * cos(angulo) + x * sin(angulo)
+    return (xr + x_centro, yr + y_centro)
+
+
+def rect_points(ox, oy, w, h, angulo=None, modo=CORNER):
+    if modo == CENTER:
+        x, y = ox - w / 2.0, oy - h / 2.0
+    else:
+        x, y = ox, oy
+    pts = [(x, y), (x + w, y), (x + w, y + h), (x, y + h)]
+    if angulo is None:
+        return points
+    else:
+        return [rotate_point(x, y, angulo, ox, oy)
+                for x, y in pts]
+```
+
 ## Assuntos relacionados
 
 - [Transformações no sistema de coordenadas](transformacose_coordenadas.md)
