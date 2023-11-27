@@ -11,18 +11,18 @@
   - 1.0.3 [Mais sobre cores(RGB e HSB)](mais_sobre_cores.md)
   - 1.0.4 [Desenhando polígonos](poligonos_1.md)
 
-- 1.1.0 [Condicionais(`if` e `else`)](condicionais_py.md)
-  - 1.1.1 [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](atribuicao-e-comparacao.md)
-  - 1.1.2 [Condições aninhadas e outras estruturas condicionais](condicionais_2.md)
-  - 1.1.3 [Divisão por zero e o resto da divisão](divisao.md) 
-
-- 1.2.0 [Movimento](movimento_py.md) uma animação simples usando `setup()` e `draw()`
-  - 1.2.1 [Escopo de variáveis(local e global)](escopo_py.md)
+- 1.1.0 [Movimento e interatividade](setup_draw.md) a estrutura `setup()` e `draw()`	
+  - 1.1.1 [Execução condicional (`if`/`else`), operadores de comparação e lógicos](condicionais_py.md)
+  - 1.1.2 [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](atribuicao-e-comparacao.md)
+  - 1.1.3 [Criando uma animação simples](movimento_py.md)	
+  - 1.1.4 [Escopo de variáveis(local e global)](escopo_py.md)
+  - 1.1.5 [Divisão por zero e o resto da divisão](divisao.md) 
 
 - 1.3.0 [Declarando novas funções](funcoes_py.md)
   - 1.3.1 [Modificando as coordenadas](transformacoes_coordenadas.md) com `translate()`, `rotate()` e mais!
   - 1.3.2 [Funções recursivas](recursao_py.md)
   - 1.3.3 [Funções com argumentos padrão(ou opcionais)](funcoes_2.md)
+  - 1.3.4 [Condições aninhadas e outras estruturas condicionais](condicionais_2.md)
 
 - 1.4.0 [Sequências e laços de repetição (iteração com `for`)](lacos_py.md)
   - 1.4.1 [Mais sobre sequências e fatias](mais_sequencias.md)
@@ -118,3 +118,6 @@
 - 9.2.2 [Paper Objects with Processing and Python](https://abav.lugaralgum.com/Paper-objects-with-Processing-and-Python)
 - 9.2.3 [Arc, tangents & Bezier studies](https://github.com/villares/arc_tangents_and_bezier_studies)
 - 9.2.4 [Simulações física 2D com PyMunk - Pinball](https://github.com/villares/pymunk-pinball-paulista)
+
+ ---
+Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado.
