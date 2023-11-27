@@ -199,7 +199,7 @@ def setup():
     color_mode(HSB)  # matiz, saturacao, brilho
 
 def draw():
-    seed(mouseX)
+    seed(mouse_x)
     posicoes = []  # lista vazia
     for y in range(0, height, tam):
         for x in range(0, width, tam): 

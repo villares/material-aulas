@@ -49,7 +49,7 @@ Valores `True` e `False` podem ser atribuidos a variáveis, muitas vezes represe
 
 ### Um exemplo completo
 
-No exemplo a abaixo usamos uma estrutura `if`/ `else` para escolher a cor de preenchimento dos círculos, como resultado da comparação `mouseY < 128`. Usamos o valor booleano de `mousePressed` (`True` ou `False`) em um `if` que determina se algum círculo yé desenhado ou não. Por fim usamos um `if` que combina dois valores usando `and`(**e**), `is_key_pressed` e a comparação de igualdade `==`, para decidir se deve apagar o desenho (`is_key_pressed and key == 'a'`).
+No exemplo a abaixo usamos uma estrutura `if`/ `else` para escolher a cor de preenchimento dos círculos, como resultado da comparação `mouse_y < 128`. Usamos o valor booleano de `mousePressed` (`True` ou `False`) em um `if` que determina se algum círculo yé desenhado ou não. Por fim usamos um `if` que combina dois valores usando `and`(**e**), `is_key_pressed` e a comparação de igualdade `==`, para decidir se deve apagar o desenho (`is_key_pressed and key == 'a'`).
 
 ``` python
 def setup():
@@ -59,9 +59,9 @@ def setup():
 def draw():
     # se a posição Y do mouse for menor que 128 (mouse na metade de cima da tela)
     if mouse_y < 128:    
-        fill(255)  # então pede preenchimento branco (se mouseY é menor que 128)
+        fill(255)  # então pede preenchimento branco (se mouse_y é menor que 128)
     else:          # termina o bloco “se/então” e começa o do “senão”
-        fill(100)  # preenchimento cinza 100 (se mouseY não é menor que 128)
+        fill(100)  # preenchimento cinza 100 (se mouse_y não é menor que 128)
                    # termina o bloco do “senão”
                    
     # Se o mouse estiver pressionado

@@ -43,7 +43,7 @@ def galho(tamanho):
     """
     função recursiva que desenha galhos
     """
-    ang = radians(mouseX)
+    ang = radians(mouse_x)
     reducao = .8
     stroke_weight(tamanho / 10)
     line(0, 0, 0, -tamanho)
@@ -87,7 +87,7 @@ def draw():
     rect_mode(CENTER)  # fazendo o PDF ficar diferente do resultado na tela
     if mouse_pressed:
         fill(random(255), 200, 200, 100)
-        rect(mouseX, mouseY, 50, 50)
+        rect(mouse_x, mouse_y, 50, 50)
 
     if not gravando_pdf:
         textSize(18)

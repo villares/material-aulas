@@ -57,9 +57,9 @@ def mouse_released():  # quando um botão do mouse é solto
 def mouse_dragged():  # quando o mouse é movido apertado
     global x_circulo, y_circulo
     if arrastando:
-        # mouseX - pmouseX é o que o mouse foi arrastado em X
+        # mouse_x - pmouse_x é o que o mouse foi arrastado em X
         x_circulo += mouse_x - pmouse_x
-        # mouseY - pmouseY é o que o mouse foi arrastado em Y
+        # mouse_y - pmouse_y é o que o mouse foi arrastado em Y
         y_circulo += mouse_y - pmouse_y
 
 

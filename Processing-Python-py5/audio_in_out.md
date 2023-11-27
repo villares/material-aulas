@@ -75,7 +75,7 @@ def setup():
 
 def draw():
     global current_oscillator
-    # Only play one of the four oscillators, based on mouseY
+    # Only play one of the four oscillators, based on mouse_y
     mouse_selection = floor(map(mouse_y, 0, height, 0, len(oscillators)))
     next_oscillator = constrain(mouse_selection, 0, len(oscillators) - 1)
     oscillator = oscillators[current_oscillator]
@@ -89,7 +89,7 @@ def draw():
         # Play
         oscillator.play()
 
-    # Map mouseX from 20Hz to 22000Hz for frequency.
+    # Map mouse_x from 20Hz to 22000Hz for frequency.
     frequency = map(mouse_x, 0, width, 20.0, 22000.0)
     # Update oscillator frequency.
     oscillator.freq(frequency)

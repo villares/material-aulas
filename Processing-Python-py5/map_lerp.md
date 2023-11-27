@@ -74,7 +74,7 @@ def draw():
     xb, yb = 300, 300
     ca = color(200, 0, 0)
     cb = color(0, 0, 200)
-    n = 1 + int(mouse_x / 10)  # ou 1 + int(map(mouseX, 0, width, 0, 40))
+    n = 1 + int(mouse_x / 10)  # ou 1 + int(map(mouse_x, 0, width, 0, 40))
     for t in range(n + 1):
         xc = lerp(xa, xb, t / n)
         yc = lerp(ya, yb, t / n)

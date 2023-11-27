@@ -24,7 +24,7 @@ def draw():
     tamanho = random(20, 60)
     fill(r, g, b, 128)  # cor 'sorteada' 50% translúcida
     if is_mouse_pressed:
-        ellipse(mouseX, mouseY, tamanho, tamanho)
+        ellipse(mouse_x, mouse_y, tamanho, tamanho)
         
 def keyPressed():
     if key == ' ':  # tecle espaço para limpar a tela

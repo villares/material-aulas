@@ -191,7 +191,7 @@ class Slider:
 
     def update(self):
         """Atualiza o slider e devolve o valor (self.value). Chama display()"""
-        # mousePressed moves slider
+        # is_mouse_pressed moves slider
         if is_mouse_pressed and dist(mouse_x, mouse_y, self.rectx, self.y) < self.h:
             self.rectx = mouse_x
         # constrain rectangle
