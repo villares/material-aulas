@@ -5,11 +5,11 @@ Em computação existe uma classificação dos valores armazenados na memória d
 
 Vejamos alguns exemplos. Fazendo uma atribuição com `i = 10`, o `i` é um nome que aponta para um valor na memória, `10`, um número **inteiro**, do tipo *integer* que é normalmente abreviado como `int`. 
 
-Outros exemplos de valor numérico são `10.5` e `0.2`, números que tem uma parte fracionária, ou até mesmo `10.` (dez seguido de um ponto), são considerados **números de ponto flutuante**, *floating point* ou abreviadamente `float`. Valores numéricos em Python são, na maior parte das vezes, dos tipos ***inteiro***  ou  ***número de ponto flutuante***. Mas há também tipos como ***número complexo*** ([mais detalhes na documentação do Python](https://docs.python.org/pt-br/3/library/stdtypes.html#numeric-types-int-float-complex)), entre outros.
+Outros exemplos de valor numérico são `10.5` e `0.2`, números que tem uma parte fracionária, ou até mesmo `10.` (dez seguido de um ponto), são considerados **números de ponto flutuante**, *floating point* ou abreviadamente `float`. Valores numéricos em Python são, na maior parte das vezes, dos tipos ***inteiro***  ou  ***número de ponto flutuante***. Mas há também tipos como ***número complexo***, entre outros que você pode encontrar na [documentação do Python](https://docs.python.org/pt-br/3/library/stdtypes.html#numeric-types-int-float-complex).
 
 Textos, que aparecem entre aspas (tanto faz duplas ou simples) quando no meio do código de um programa, como por exemplo `'hello'` ou `"Eric Idle"`, são do tipo ***string*** (cadeia de caracteres em português) que abreviamos como `str`. Repare que `"1010"` é um *string* enquanto `1010` é um número inteiro, `int`, e `1010.0` é `float`. 
 
-Outro tipo importante que já encontramos é o **booleano** (*boolean*), com apenas os dois valores `True` ou `False` (verdadeiro ou falso), é o tipo dos valores resultantes das operações lógicas (como `and`,  `or` e `not`), comparações (como `==`, `!=`,  `>`, `<`, `>=` e etc.) ou ainda valores que indicam um estado (como `mousePressed` é verdadeiro ou falso dependendo do estado dos botões do mouse)
+Outro tipo importante que já encontramos é o **booleano** (*boolean*), com apenas os dois valores `True` ou `False` (verdadeiro ou falso), é o tipo dos valores resultantes das operações lógicas (como `and`,  `or` e `not`), comparações (como `==`, `!=`,  `>`, `<`, `>=` e etc.) ou ainda valores que indicam um estado (como `is_mouse_pressed` é verdadeiro ou falso dependendo do estado dos botões do mouse)
 
 ### Objetos, tipos e classes
 
@@ -96,7 +96,7 @@ Nesta tabela apresento apenas alguns dos tipos que vamos encontrar. Vou marcar c
 Existe uma discussão relativamente complexa sobre o tipo `bytes` do Python que lembra um *string* mas só com caracteres *ASCII*, e isso dá uma certa confusão com os *strings*, pois não são texto *Unicode*, mas essa é uma questão avançada que eu queria evitar neste primeiro momento.
 
 
-### Glossário
+## Glossário
 
 [**valor**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:valor) Uma das unidades básicas de dados, como um número ou *string*, que um programa manipula.
 
@@ -108,3 +108,8 @@ Existe uma discussão relativamente complexa sobre o tipo `bytes` do Python que 
 
 [**string**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:string) Um tipo que representa sequências de caracteres.
 
+## Assuntos relacionados
+
+- [Números inteiros (*int*) e de ponto flutuante (*float*)](numeros.md)
+- [Primeiros passos de orientação a objetos: usando a classe Slider](slider_com_OO.md)
+- Externo: [Documentação do Python sobre tipos numéricos](https://docs.python.org/pt-br/3/library/stdtypes.html#numeric-types-int-float-complex)
