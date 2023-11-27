@@ -1,16 +1,39 @@
 # Uma janela de diálogo com um campo de texto como *input*
 
-Nas implementações mais conhecidas de Python existe uma função chamada `input()` que 'pergunta' a quem estiver executando o programa um valor por meio da digitação no console, o texto digitado é devolvido então para o programa como * string*.
+## Contexto histórico
 
-O Processing modo Python não tem essa função, mas com o código a seguir podemos disparar uma janela de diálogo, com um campo de texto, para fazer o mesmo papel!
+Em quase todas as implementações de Python existe uma função chamada `input()` que 'pergunta' a quem estiver executando o programa um valor por meio da digitação no console, o texto digitado é devolvido então para o programa como *string*.
 
 ```python
+while True:
+    nome = input('Qual o seu nome?\n')
+    if nome.strip():
+        print(f'Olá, {nome}!\n')
+    else:
+        print('Olá, você deixou a resposta vazia, vou encerrar!')
+        exit()  # Melhor exit_sketch() se estiver usando o py5
+```
 
+Resultados possíveis no console
 
-def input(question='', suggestion=''):
+```
+Qual o seu nome?   
+Alexandre
+Olá, Alexandre!
+
+Qual o seu nome?   
+Olá, você deixou a resposta vazia, vou encerrar!
+
+```
+
+O Processing modo Python não tinha essa função, e a solução a seguir era um contorno possível. Com py5 agora é possível usar `input()` e interagor no console, mas ainda pode ser legal  disparar uma janela de diálogo, com um campo de texto. Especialmente se você estiver usando a tela toda (*fullscreen*) e não for muito prático ver o console.
+
+## *showInputDialog* do Java swing
+
+```python
+def gui_input(question='', suggestion=''):
     from javax.swing import JOptionPane
     return JOptionPane.showInputDialog(None, question, suggestion)
-
 
 ```
 
@@ -34,7 +57,7 @@ def draw():
 
 def mouse_pressed():
     global texto
-    resposta = input('escreva um novo texto')
+    resposta = gui_input('escreva um novo texto')
     if resposta:
         texto = resposta
     elif resposta == "":
@@ -43,9 +66,7 @@ def mouse_pressed():
         print(resposta)  # se cancelada a janela exibe `None` no console
 
 
-def input(question='', suggestion=''):
+def gui_input(question='', suggestion=''):
     from javax.swing import JOptionPane
     return JOptionPane.showInputDialog(None, question, suggestion)
-
-
 ```
