@@ -1,6 +1,6 @@
 # Criando uma animação simples
 
-## Redesenhando quadros com `draw()` e outras consideraçẽoes
+## Redesenhando quadros com `draw()` e outras considerações
 
 Para produzir movimento nos valemos de uma ideia presente em todo tipo de animação, a ideia dos "quadros" (*frames*) que são as imagens mostradas em uma rápida sucessão. Usando py5, a geração dessas imagens acontece dentro de uma função que devemos definir chamada `draw()`. 
 
