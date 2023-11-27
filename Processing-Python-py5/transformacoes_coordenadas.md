@@ -2,7 +2,7 @@
 
 O py5 tem funções embutidas que tornam relativamene fácil você mover, girar, crescer ou encolher objetos por meio da manipulação do sistema de coordenadas. São as funções `translate()`, `rotate()`, e `scale()`, apresentadas nesta págima. De grande importância, também serão apresentadas as funções que permitem 'guardar' e 'devolver' o estado anterior do sistema de coordenadas, são elas `push_matrix()` e `pop_matrix()`.
 
-Essas funções tornan possível, entre outras coisas, desenhar um retângulo inclinado na tela, uma vez que as função `rect()` só sabe desenhar retângulos com os lados alinhados com o sistema de coordenadas. Uma outra forma de desenhar um retângulo inclinado seria elencar as coordenadas dos pontos do retângulo e calcular a posição girada de cada um deles, [usando seno e cosseno](seno_cosseno_atan2.md), para por fim desenhar um polígono com os novos pontos usando `begin_shape()` e `end_shape()`, o que pode ser interessante também, mas costuma ser mais trabalhoso.
+Essas funções tornam possível, entre outras coisas, desenhar um retângulo inclinado na tela, uma vez que as função `rect()` só sabe desenhar retângulos com os lados alinhados com o sistema de coordenadas. Uma outra forma de desenhar um retângulo inclinado seria elencar as coordenadas dos pontos do retângulo e calcular a posição girada de cada um deles, [usando seno e cosseno](seno_cosseno_atan2.md), para por fim desenhar um polígono com os novos pontos usando `begin_shape()` e `end_shape()`, o que pode ser interessante também, mas costuma ser mais trabalhoso.
 
 ## Começando com a rotação, para ver como as coisas são estranhas
 
