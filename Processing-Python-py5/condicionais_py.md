@@ -39,7 +39,7 @@ else:               # termina o “se/então” e começa o “senão”
     levar_oculos()   # este bloco será executado apenas quando "chovendo" é falso
 # termina o bloco do “senão”, continua o passeio.
 ```
-<img src=assets/condicional-com-else.jpg" title="Exemplo de if/else - desenho: Monica Rizzolli">
+<img src="assets/condicional-com-else.jpg" title="Exemplo de if/else - desenho: Monica Rizzolli">
 
 ## Operadores relacionais ou de comparação e operadores lógicos
 
