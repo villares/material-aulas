@@ -26,7 +26,7 @@ Olá, você deixou a resposta vazia, vou encerrar!
 
 ```
 
-O Processing modo Python não tinha essa função, e a solução a seguir era um contorno possível. Com py5 agora é possível usar `input()` e interagor no console, mas ainda pode ser legal  disparar uma janela de diálogo, com um campo de texto. Especialmente se você estiver usando a tela toda (*fullscreen*) e não for muito prático ver o console.
+O Processing modo Python não tinha essa função, e a solução a seguir era um contorno possível. Com py5 agora é possível usar `input()` e interagir no console, mas ainda pode ser legal  disparar uma janela de diálogo, com um campo de texto. Especialmente se você estiver usando a tela toda (*fullscreen*) e não for muito prático ver o console.
 
 ## *showInputDialog* do Java swing
 
