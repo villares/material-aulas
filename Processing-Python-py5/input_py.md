@@ -53,9 +53,7 @@ Quando definimos funções com certos nomes especiais 'encomendados', como `key_
 
 No jargão do desenvolvimento de interfaces isso é chamado de *tratamento de eventos*. Repare que não chamamos essas funções no nosso código, py5 chama por nós as funções nos 'eventos' apropriados, caso elas tenham sido definidas.
 
-As funções precisam ser definidas fora do bloco de `draw()`. 
-
-Ao contrário do Processing Java (e o antigo Modo Python), não é necessário definir uma função `draw()` para que exista um laço principal que redesenha a tela.
+As funções precisam ser definidas fora do bloco de `draw()`. Ao contrário do Processing Java (e o antigo Modo Python), não é necessário definir uma função `draw()` para que exista um laço principal que redesenha a tela.
 
 ### Exemplo com as funções `mouse_dragged()` e `key_pressed()`
 
@@ -66,9 +64,7 @@ def setup():
     size(400, 400)
     background(100, 200, 100)
 
-def draw():
-    # é necessário um draw(), mesmo que vazio, para que exista um laço
-    # principal e funcionem os eventos
+def draw():  # opcional
     pass
 
 def mouse_dragged():
@@ -76,7 +72,7 @@ def mouse_dragged():
     # Desenha uma linha da posição anterior do mouse até a atual
     line(pmouse_x, pmouse_y, mouse_x, mouse_y)
 
-def key_pressed():          # Esta função executa uma vez quando uma tecla é pressionada
+def key_pressed():         # Esta função executa uma vez quando uma tecla é pressionada
     if key == 'a':         # Se a tecla do caractere 'a' foi a última pressionada
         # Apague a tela com um fundo verde (só executa sob as condições acima)
         background(100, 200, 100)
