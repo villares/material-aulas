@@ -10,7 +10,7 @@ De maneira análoga, `is_key_pressed`, `key` e `key_code` tratam do estado do te
 
 ### Exemplo
 
-![](assets/key_pressed_key_code.gif)
+![](assets/keyPressed_keyCode.gif)
 
 ```python
 def setup():
@@ -59,7 +59,7 @@ Ao contrário do Processing Java (e o antigo Modo Python), não é necessário d
 
 ### Exemplo com as funções `mouse_dragged()` e `key_pressed()`
 
-![](assets/mouse_dragged.gif)
+![](assets/mouseDragged.gif)
 
 ```python
 def setup():
