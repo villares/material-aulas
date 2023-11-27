@@ -45,12 +45,12 @@ else:               # termina o “se/então” e começa o “senão”
 
 Os valores especiais `True` (verdadeiro) e `False` (falso) são chamados booleanos (*boolean*, em homenagem a [George Boole](https:#pt.wikipedia.org/wiki/George_Boole)), e são frequentemene resultado da avaliação de comparações com operadores relacionais, `==` (igualdade), `>` (maior que) ou ainda são resultado das operações lógicas **e** (`and`), **ou** (`or`) e **não** (`not`). 
 
-Valores `True` e `False` podem ser atribuidos a variáveis, muitas vezes representando um *estado* no programa, são os valores que obtemos quando usamos as variáveis de sistema *is_mouse_pressed* e *is_key_pressed*, por exemplo. É comum termos variáveis indicadoras (*flags*) que apontam para um estado da operação do programa: `gravando = True`,  `soma_concluida = False`.
+Valores `True` e `False` podem ser atribuidos a variáveis, muitas vezes representando um *estado* no programa, são os valores que obtemos quando usamos as variáveis de sistema `is_mouse_pressed` e  `is_key_pressed`, por exemplo. É comum também termos variáveis indicadoras (*flags*) que apontam para um estado da operação do programa: `gravando = True`,  `soma_concluida = False`.
 
-São inúmeras as situações que produzem este tipo de valores, veja alguns exemplos:
+São inúmeras as situações que produzem este tipo de valores, veja mais alguns exemplos:
 
-- A **comparação de igualdade** entre dois valores ou dados fornecido ao seu programa. `nome == 'Cordeiro'` é como se fosse uma pergunta, o valor referenciado por `nome` equivale a `Cordeiro`?
-- A **comparação de ordem** entre dois valores. `idade >= 18` é como a pergunta "`idade` é maior ou igual a 18?". Resulta `True` se `idade` for maior ou igual a 18, ou `False` se for menor.
+- A **comparação de igualdade** entre dois valores ou dados fornecido ao seu programa. `key == 's'` é como se fosse uma pergunta, o valor referenciado por `key` equivale a "s"?
+- A **comparação de ordem** entre dois valores. `tamanho <= 10` é como a pergunta "`tamanho` é menor ou igual a 10?". Resulta `True` se `tamanho` for menor ou igual a 10, ou `False` se for maior.
 - O botão do mouse estar apertado (**estado do botão do mouse**), `is_mouse_pressed` pode ser `True` (apertado) ou `False` (não apertado).
 - Uma tecla foi apertada **e** a tecla era 'a'. `is_key_pressed and key == 'a'`. Verdadeiro `True` apenas se uma tecla estiver sendo apertada e a tecla era 'a', senão `False`.
 
