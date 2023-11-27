@@ -34,7 +34,7 @@ As respostas para essas perguntas são: A rotação está acontecento em torno d
 
 Se movermos a origem para o ponto no centro da área de desenho, usando [`translate()`](https://py5coding.org/reference/sketch_translate.html), com os argumentos `250, 250`,  conseguiremos girar o sitema de coordenadas em torno do centro.
 
-```
+```python
 def setup():
     size(500, 500)
     rect_mode(CENTER)
