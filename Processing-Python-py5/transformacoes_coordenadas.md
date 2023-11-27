@@ -1,15 +1,12 @@
 # Transformando o sistema de coordenandas
 
-O py5 tem funções embutidas que tornam fácil você mover, girar, e crescer ou encolher objetos por meio da manipulação do sistema de coordenadas. 
+O py5 tem funções embutidas que tornam relativamene fácil você mover, girar, crescer ou encolher objetos por meio da manipulação do sistema de coordenadas. São as funções `translate()`, `rotate()`, e `scale()`, apresentadas nesta págima. De grande importância, também serão apresentadas as funções que permitem 'guardar' e 'devolver' o estado anterior do sistema de coordenadas, são elas `push_matrix()` e `pop_matrix()`.
 
-Esta página apresenta funções `translate()`, `rotate()`, e `scale()`, mas também algumas funções que permitem 'guardar' e 'devolver' o estado anterior do sistema de coordenadas(`push_matrix()`  e `pop_matrix()`).
-
-Isso torna possível, entre outras coisas,  desenhar um retângulo girado na tela, uma vez que a função `rect()` só sabe desenhar retângulos com os lados alinhados com o sistema de coordenadas. A alternativa, a aprender girar o sistema de coordendadas, seria pegar as coordenadas dos pontos de um retângulo e calcular a posição girada de cada um deles para desenhá-los como um polígono usando `begin_shape()` e `end_shape()`.
-
+Essas funções tornan possível, entre outras coisas, desenhar um retângulo inclinado na tela, uma vez que as função `rect()` só sabe desenhar retângulos com os lados alinhados com o sistema de coordenadas. Uma outra forma de desenhar um retângulo inclinado seria elencar as coordenadas dos pontos do retângulo e calcular a posição girada de cada um deles, [usando seno e cosseno](seno_cosseno_atan2.md), para por fim desenhar um polígono com os novos pontos usando `begin_shape()` e `end_shape()`, o que pode ser interessante também, mas costuma ser mais trabalhoso.
 
 ## Começando com a rotação, para ver como as coisas são estranhas
 
-> Nota: É preciso saber que no py5 quando uma função pede um ângulo como argumento, espera que você informe esse ângulo em *radianos*, por isso, se você pensa em graus, use `radians(angulo_em_graus)` para converter.
+> Nota: Saiba que no py5 quando uma função pede um ângulo como argumento, espera que você informe esse ângulo em *radianos*, por isso, se você pensa em graus, use `radians(angulo_em_graus)` para converter.
 
 Vejamos o que acontece quando tentamos girar um quadrado que desenhamos no meio da tela. Para isso vamos primeiro desenhar o quadrado, usar a função [`rotate()`](https://py5coding.org/reference/sketch_rotate.html)  e desenhar o "mesmo quadrado" novamente. Por fim, vamos repetir a rotação e o desenho do quadrado mais uma vez.
 
@@ -84,19 +81,64 @@ def draw():
 
 ```python
 def quadrado_girado(x, y, lado, rot):
-    push_matrix()
+    push_matrix()  # guarda a matriz atual do sistema de coordenadas
     translate(x, y)
     rotate(rot)
     square(0, 0, lado)
-    pop_matrix()
+    pop_matrix()  # recupera a matriz do sistema de coordenadas anterior
 ```
 
 ![](assets/2d_transformations_3.png)
 
 ## Mudando a escala
 
-Além da translação e rotação é possível também escalar os sistema de coordenada com  [`scale()`](https://py5coding.org/reference/sketch_scale.html) e entortar com [`shear_x()`](https://py5coding.org/reference/sketch_shear_x.html) e  [`shear_y()`](https://py5coding.org/reference/sketch_shear_y.html).
+Além da translação e rotação é possível também escalar o sistema de coordenada com  [`scale()`](https://py5coding.org/reference/sketch_scale.html) e entortar com [`shear_x()`](https://py5coding.org/reference/sketch_shear_x.html) e [`shear_y()`](https://py5coding.org/reference/sketch_shear_y.html). Vejamos um exemplo da mudança de escala.
 
+![](assets/2d_transformations_scale.png)
+
+```python
+def setup():
+    size(500, 500)
+    rect_mode(CENTER)
+    no_fill()
+    no_loop()
+    square(100, 100, 50)
+    scale(1.5)
+    square(100, 100, 50)
+    scale(1.5)
+    square(100, 100, 50)
+    scale(1.5)
+    square(100, 100, 50)
+    scale(1.5)
+```
+
+Repare como a aplicação do fator de escala acontece baseada na origem do sistema de coordanadas (que nesta caso não foi modificado) e é cumulativa. Note também como a escala afeta a espessura de linha do traço, o atributo gráfico que pode ser controlado com `stroke_weight()`.
+
+Você consegue imaginar qual o código que gera a imagem a seguir?
+
+![](assets/2d_transformations_scale2.png)
+
+<details>
+  <summary>Pense em como você escreveria o código e depois clique para a resposta</summary>
+
+<pre>
+def setup():
+    size(500, 500)
+    rect_mode(CENTER)
+    no_fill()
+    no_loop()
+    translate(250, 250)
+    square(0, 0, 50)
+    scale(1.5)
+    square(0, 0, 50)
+    scale(1.5)
+    square(0, 0, 50)
+    scale(1.5)
+    square(0, 0, 50)
+    scale(1.5)
+</pre>
+
+</details>
 
 
 ### A matriz de transformação e a origem de *push_matrix* e *pop_matrix*
@@ -151,8 +193,6 @@ def quadrado_girado(x, y, lado, rot):
 > Notas:
 > - **Sempre execute `push_matrix()` e `pop_matrix()` em pares** ou **use o gerenciador de contexto `with push_matrix():`** senão você vai encontrar erros. Um dos erros é basicamente uma proteção antes do famoso *estouro* ou *transbordamento* da pilha, *stack overflow*, `push_matrix() cannot use push more than 32 times`. O outro erro é o aviso de que está faltando um *push* anterior, e a pilha está vazia, `missing a push_matrix() to go with that pop_matrix()`.
 > - No py5, como no Processing, o sistema de coordenadas é restaurado ao seu estado original (origem na parte superior esquerda da janela, sem rotação e sem mudança de escala) toda vez que a função `draw()` é executada. É possível também voltar para o estado inicial o sistema de coordenadas com `reset_matrix()`.
-
-
 
 
 ## Transformações tridimensionais
