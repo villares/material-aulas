@@ -31,12 +31,12 @@
   - 1.4.4 [Desenhando formas curvas](curvas.md)
   - 1.4.5 [Laço de repetição com `while`](while.md)
 
-- 1.5.0 [Tipos de valores](tipagem_py.md) como inteiros (*int*), números de ponto flutuante (*float*) e texto (*strings*)
-  - 1.5.1 [Textos no programa, no console e na tela(*strings*)](strings_py.md)
+- 1.5.0 [Tipos de valores](tipagem_py.md) como texto (*strings*) e números inteiros (*int*) ou de ponto flutuante (*float*) 
+  - 1.5.1 [Textos no programa, no console e na tela (*strings*)](strings_py.md)
   - 1.5.2 [Trabalhando com fontes e outros ajustes do texto](tipografia.md) 
   - 1.5.3 [Métodos dos objetos *string*](string_methods.md)
   - 1.5.4 [O valor especial `None`](None.md)
-  - 1.5.5 [Números inteiros (*int*) e de ponto flutuante (*float*)](numeros.md)
+  - 1.5.5 [Números inteiros (*int*) e números de ponto flutuante (*float*)](numeros.md)
 
 
 - 1.6.0 [Interação: input com teclado e mouse](input_py.md)
