@@ -1,6 +1,6 @@
-# Instruções condicionais e operadores lógicos
+# Execução condicional, operadores de comparação e lógicos
 
-É possível criar instruções que alteram quais partes do seu código serão executadas, dinamicamente, durante a execução do seu programa. Para entender como isso funciona, e as possibilidades enormes que isso proporciona, vamos introduzir a ideia de "condição", um valor que, dependendo das circunstâncias, pode ser verdadeiro (`True`) ou falso (`False`). Podemos dizer que ou bem "a condição é verdadeira" ou "a condição é falsa". Deixaremos para mais tarde falar sobre a origem dos valores que avaliamos e consideramos como "condição", por hora, observe os trechos de código "fantasiosos" mais a abaixo, que seguem as estruturas sintáticas reais do Python, descritas logo a seguir, e que exemplificam as mudanças no fluxo de execução se uma condição é verdadeira ou falsa.
+É possível criar instruções que alteram quais partes do seu código serão executadas, dinamicamente, durante a execução do seu programa. Para entender como isso funciona, e as possibilidades enormes que isso proporciona, vamos introduzir a ideia de "condição", um valor que, dependendo das circunstâncias, pode ser verdadeiro (`True`) ou falso (`False`). Podemos dizer que ou bem "a condição é verdadeira" ou "a condição é falsa". Deixaremos para mais tarde falar sobre a origem dos valores que avaliamos e consideramos como "condição", por hora, observe os trechos de código "fantasiosos" mais a abaixo, mas que seguem as estruturas sintáticas reais do Python, apresentadas logo a seguir, ilustrando as mudanças no fluxo de execução se uma condição é verdadeira ou falsa.
 
 ## As bifurcações no caminho de execução do código
 
@@ -41,7 +41,7 @@ else:               # termina o “se/então” e começa o “senão”
 ```
 <img src="assets/condicional-com-else.jpg" title="Exemplo de if/else - desenho: Monica Rizzolli">
 
-## Operadores relacionais ou de comparação e operadores lógicos
+## Operadores de comparação (ou relacionais) e operadores lógicos
 
 Os valores especiais `True` (verdadeiro) e `False` (falso) são chamados booleanos (*boolean*, em homenagem a [George Boole](https:#pt.wikipedia.org/wiki/George_Boole)), e são frequentemene resultado da avaliação de comparações com operadores relacionais, `==` (igualdade), `>` (maior que) ou ainda são resultado das operações lógicas **e** (`and`), **ou** (`or`) e **não** (`not`). 
 
