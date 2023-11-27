@@ -12,7 +12,7 @@ Para se obter o efeito de uma animação de elementos se deslocando na tela é p
 
 No exemplo a seguir, usamos uma [execução condicional](condicionais_py.md), isto é uma estrutura com `if`, para executar as ações que fazem o círculo rebater nas bordas.
 
-Repare também como a posição e velocidade do círculo é mantida em algumas variáveis, `px`, `py`, `vx` e `vy`, que precisam ser 'lembradas' entre os ciclos de repetição do `draw()` e dentro dele são modificadas. Isso é o que chamamamos de *variáveis globais*, em contraste com variáveis que fossem criadas dentro do `draw()` e que são *variáveis locais*. Leia mais sobre isso na página [Escopo: variáveis globais e locais](escopo_py.md). 
+Repare também como a posição e velocidade do círculo é mantida em algumas variáveis, `px`, `py`, `vx` e `vy`, que precisam ser 'lembradas' entre os ciclos de repetição do `draw()` e dentro de `draw()` são modificadas. Isso é o que chamamamos de *variáveis globais*, em contraste com variáveis que criadas dentro do `draw()`, que seriam. *variáveis locais*. Leia mais sobre isso na página [Escopo: variáveis globais e locais](escopo_py.md). 
 
 
 ![](assets/bola_rebate.gif)
@@ -51,7 +51,7 @@ Experimente desligar por meio de um `#` tornando um comentário a linha do `back
 
 # Assuntos relacionados
 
-- [Condicionais(`if` e `else`)](condicionais_py.md(
+- [Condicionais(`if` e `else`)](condicionais_py.md)
 - [Escopo: variáveis globais e locais](escopo_py.md)
 - [Como exportar animações](exportar_animacoes.md)
 
