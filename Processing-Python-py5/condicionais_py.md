@@ -1,6 +1,6 @@
 # Instruções condicionais e operadores lógicos
 
-É possível criar instruções que alteram quais partes do seu código que são executadas, isso acontece dinamicamente, durante a execução do seu programa. Para entender como isso funciona, e as possibilidades enormes que isso proporciona, é importante considerar a ideia de "condição", um valor que dependendo das circunstâncias pode ser verdadeiro (`True`) ou falso (`False`). Também é comum dizer que "a condição é verdadeira" ou "a condição é falsa". Vamos falar sobre a origem dos valores que avaliamos como condição mais pra frente, por hora, observe os exemplos de código "fantasioso" mais a seguir, que seguem uma estrutura sintática real do Python descrita abaixo, mudando o que é executado se uma condição é verdadeira ou falsa.
+É possível criar instruções que alteram quais partes do seu código serão executadas, dinamicamente, durante a execução do seu programa. Para entender como isso funciona, e as possibilidades enormes que isso proporciona, vamos introduzir a ideia de "condição", um valor que, dependendo das circunstâncias, pode ser verdadeiro (`True`) ou falso (`False`). Podemos dizer que ou bem "a condição é verdadeira" ou "a condição é falsa". Deixaremos para mais tarde falar sobre a origem dos valores que avaliamos e consideramos como "condição", por hora, observe os trechos de código "fantasiosos" mais a abaixo, que seguem as estruturas sintáticas reais do Python, descritas logo a seguir, e que exemplificam as mudanças no fluxo de execução se uma condição é verdadeira ou falsa.
 
 ## As bifurcações no caminho de execução do código
 
@@ -52,7 +52,7 @@ São inúmeras as situações que produzem este tipo de valores, veja alguns exe
 - A **comparação de igualdade** entre dois valores ou dados fornecido ao seu programa. `nome == 'Cordeiro'` é como se fosse uma pergunta, o valor referenciado por `nome` equivale a `Cordeiro`?
 - A **comparação de ordem** entre dois valores. `idade >= 18` é como a pergunta "`idade` é maior ou igual a 18?". Resulta `True` se `idade` for maior ou igual a 18, ou `False` se for menor.
 - O botão do mouse estar apertado (**estado do botão do mouse**), `is_mouse_pressed` pode ser `True` (apertado) ou `False` (não apertado).
-- Uma tecla foi apertada **e** a tecla era 'a'. `is_key_pressed and key == 'a'`. Verdadeiro `True` apenas se a tecla 'a' estiver sendo apertada, senão `False`.
+- Uma tecla foi apertada **e** a tecla era 'a'. `is_key_pressed and key == 'a'`. Verdadeiro `True` apenas se uma tecla estiver sendo apertada e a tecla era 'a', senão `False`.
 
 ### Um exemplo completo
 
