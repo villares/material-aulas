@@ -1,4 +1,4 @@
-<h1 id="toc"></h1>
+
 
 # L-System - Sistema de Lindenmayer
 

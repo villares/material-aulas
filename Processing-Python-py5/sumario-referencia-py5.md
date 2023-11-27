@@ -1,6 +1,6 @@
 # Sumário da Referência do py5
 
-<h1 id="toc"></h1>
+
 
 <!--
 * [Desenhando formas](#desenhando-formas): [Elementos básicos](#elementos-básicos); [Formas 3D](#formas-3d); [Formas baseadas em vértices](#formas-baseadas-em-vértices); [Curvas independentes](#curvas-independentes); [Criando e exibindo objetos Py5Shape](#criando-e-exibindo-objetos-py5shape).
