@@ -303,10 +303,7 @@ def setup():
         ellipse((xa + xb) / 2, (ya + yb) / 2, 5, 5)
 ```
 
-
 ![`enumerara()` ](assets/for_com_enumerate.png)
-
-
 
 ## Assuntos relacionados
 
@@ -332,9 +329,3 @@ Veja mais em: [Grades retangulares: filas e colunas de elementos](grades.md)
 ### Glossário
 
 [**loop**](https://penseallen.github.io/PensePython2e/04-caso-interface.html#termo:loop) **(laço)** Parte de um programa que pode ser executada repetidamente.
-
----
-Este material é baseado no material do curso https://arteprog.space/programacao-criativa/
-
----
-Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.
