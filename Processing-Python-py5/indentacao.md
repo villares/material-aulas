@@ -33,21 +33,20 @@ Vamos ver agora um exemplo que precisa de indentação, avançando um pouco em i
 
 Podemos reorganizar o código anterior mostrado no [primeiro contato com polígonos](poligonos_1.md) colocando os configurações iniciais (*setup*), como  `size(200, 200)`, dentro da definição de função `def setup(): `, e a parte que desenha (*draw*) dentro de `def draw(): `.
 
-A função `setup()` vai ser executada apenas uma vez no começo, e a função `draw()` fica repetindo sem parar, permitindo o movimento. Repare como a indentação é o que determina  o que está dentro de cada função.
+A função `setup()` vai ser executada apenas uma vez no começo, e a função `draw()` fica repetindo sem parar, permitindo o movimento. Dentro do `draw()` a linha `background(0, 0, 200)` pinta o fundo de azul, mas também apaga o desenho do quadro anterior.
+
+Repare como a indentação é o que determina o que está dentro de cada função.
 
 ```python
 def setup():
     size(400, 400)
 
-
 def draw():
     background(0, 0, 200)  # para limpar a área de desenho
     x, y = width / 2, height / 2  # coordenadas do centro
-
-    a = mouse_x / 4
-    b = mouse_y / 4
-
-    begin_shape()
+    a = mouse_x / 4  # `a` é calculado dividindo o X do mouse por 4
+    b = mouse_y / 4  # `b` é calculado dividindo o Y do mouse por 4
+    begin_shape()    # começa a desenhar o polígono
     vertex(x - a, y - a)
     vertex(x - b, y)
     vertex(x - a, y + a)
@@ -56,7 +55,7 @@ def draw():
     vertex(x + b, y)
     vertex(x + a, y - a)
     vertex(x, y - b)
-    end_shape(CLOSE)
+    end_shape(CLOSE)  # garante que o polígono é fechado
 ```
 
 <div id = "iframe_DIV" > <img src = "assets/estrela_indentacao.gif" > </div>
