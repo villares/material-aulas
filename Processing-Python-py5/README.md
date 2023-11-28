@@ -12,7 +12,7 @@
   - 1.0.4 [Desenhando polígonos](poligonos_1.md)
 
 - 1.1.0 [Movimento e interatividade](setup_draw.md) a estrutura `setup()` e `draw()`	
-  - 1.1.1 [Execução condicional (`if`/`else`), operadores de comparação e lógicos](condicionais_py.md)
+  - 1.1.1 [Execução condicional (`if`/`else`)](condicionais_py.md), operadores relacionais e operadores lógicos
   - 1.1.2 [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](atribuicao-e-comparacao.md)
   - 1.1.3 [Criando uma animação simples](movimento_py.md)	
   - 1.1.4 [Escopo de variáveis(local e global)](escopo_py.md)
