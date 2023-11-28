@@ -25,7 +25,7 @@ Essa sintaxe com o espaço de indentação, e com `:`, vai ser usada em inúmera
 
 ## Animando uma estrela com o movimento do mouse
 
-Vamos ver agora um exemplo que precisa de indentação, avançando um pouco em ideias cujos detalhes você pode retomar depois na página sobre [movimento e interatividade](setup-draw.md).
+Vamos ver agora um exemplo que precisa de indentação, avançando um pouco em ideias cujos detalhes você pode retomar depois na página sobre [movimento e interatividade](setup_draw.md).
 
 ### A função `setup()` e a função `draw()`
 
