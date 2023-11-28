@@ -84,7 +84,9 @@ def draw():
 
 ## Quadro de operadores
 
-Operadores são símbolos que indicam operações que devem ser realizadas sobre os "operandos". Por exemplo, `+` é um operador de soma, ele faz com que a expressão `2 + 3` resulte na soma dos operandos `2` e `3`, que no caso é 5. Conheça agora operadores relacionais e lógicos, que resultam em valores booleanos.
+> "Operadores" são os símbolos que indicam as operações que devem ser realizadas sobre os "operandos". Por exemplo, `+` é um operador de soma, numa [notação infixa](https://pt.wikipedia.org/wiki/Nota%C3%A7%C3%A3o_infixa), ele faz com que a expressão `2 + 3` resulte na soma dos operandos `2` e `3`, que no caso é 5. 
+
+Conheça os operadores relacionais e lógicos, que resultam em valores booleanos.
  
 |operador | exemplo de uso | descrição |
 |:---:  |:---: |--- |
@@ -171,7 +173,7 @@ print(ponto_a is ponto_c)  # exibe True, são o mesmo objeto na memória
 
 ## Assuntos relacionados
 
-* [Condições aninhadas e outras estruturas condicionais](condicionais_2.md)
+- [Condições aninhadas e outras estruturas condicionais](condicionais_2.md)
 
 ## Glossário
 
