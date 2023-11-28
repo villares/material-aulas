@@ -6,9 +6,9 @@ Essas funções tornam possível, entre outras coisas, desenhar um retângulo in
 
 ## Começando com a rotação, para ver como as coisas são estranhas
 
-> Nota: Saiba que no py5 quando uma função pede um ângulo como argumento, espera que você informe esse ângulo em *radianos*, por isso, se você pensa em graus, use `radians(angulo_em_graus)` para converter.
-
 Suponha que queremos desenhar um quadrado no centro da tela, inclinado 10 graus. Vejamos o que acontece quando tentamos girar o sistema de coordenadas, para isso vamos primeiro desenhar um quadrado usando as coordendadas da metade da largura e da altura da área de desenho, e depois usar a função [`rotate()`](https://py5coding.org/reference/sketch_rotate.html), em seguida vamos desenhar o "mesmo quadrado" novamente. Por fim, vamos repetir tanto a rotação como o desenho do quadrado mais uma vez.
+
+> Nota: No py5 quando uma função pede um ângulo como argumento, espera que você informe esse ângulo em *radianos*, por isso, se você pensa em graus, use `radians(angulo_em_graus)` para converter.
 
 ```python
 def setup():
@@ -32,8 +32,8 @@ Você percebe o que está acontecendo? Pense nestas questões:
 - Por qual motivo o segundo pedido de rotação, sendo igual ao primeiro, não fez o terceiro quadrado cair sobre o primeiro?
 
 As respostas para essas perguntas são:
-- A rotação está acontecento em torno da *origem do sistema de coordenadas*, isto é (0, 0), o ponto onde X e Y valem zero.
-- É sim possível escolher esse ponto usando `translate()` mara mover a origem. 
+- A rotação está acontecento em torno da *origem do sistema de coordenadas*, isto é (0, 0), o ponto onde X e Y valem zero. Imagine um papel milimetrado com uma tachinha fixada na origen, estamos girando o papel em torno da taxinha.
+- É sim possível escolher esse ponto usando `translate()` mara mover a origem. Podemos tirar a tachinha, mover o papel e fixá-la novamente.
 - As operações de transformação do sistema de coordenadas, como a rotação com a função `rotate()`, são cumulativas, e isso vai ser um problema a ser resolvido um pouco mais a frente.
 
 ## Resolvendo a primeira parte, a escolha do centro da rotação, usando a translação
@@ -59,9 +59,9 @@ Note que o segundo e terceiro quadrados são desenhados com `square(0, 0, 200)`,
 
 ## A sutil questão da acumulação de `translate()` e `rotate()`
 
-A segunda parte do problema, que se manifestou sutilmente até agora, é de que as transformações do sistema de coordenadas não cumulativas. 
+A segunda parte do problema, que se manifestou sutilmente até agora, é de que as transformações do sistema de coordenadas não cumulativas. Como mover e girar o mesmo papel milimetrado sucessivamente.
 
-Suponha que queremos desenhar uma fila de quadrados girados, e veja este exemplo ingênuo de uma função `quadrado_girado()` que desenha, bem,  um quadrado girado. Este código falha em permitir que desenhemos uma fila com os quadrados alinhados com Y valendo 100, como parecem indicar as nossas coordenadas (100, 100), (250, 100) e (400, 100).
+Suponha que queremos desenhar uma fila de quadrados girados, e veja este exemplo ingênuo de uma função `quadrado_girado()` que desenha, bem, um quadrado girado. Este código falha em permitir que desenhemos uma fila com os quadrados alinhados com Y valendo 100, como parecem indicar as coordenadas (100, 100), (250, 100) e (400, 100).
 
 ```python
 def setup():
@@ -101,7 +101,7 @@ def quadrado_girado(x, y, lado, rot):
 
 ## Mudando a escala
 
-Além da translação e rotação é possível também escalar o sistema de coordenada com  [`scale()`](https://py5coding.org/reference/sketch_scale.html) e entortar com [`shear_x()`](https://py5coding.org/reference/sketch_shear_x.html) e [`shear_y()`](https://py5coding.org/reference/sketch_shear_y.html). Vejamos um exemplo da mudança de escala.
+Além da translação e rotação é possível também escalar o sistema de coordenada com  [`scale()`](https://py5coding.org/reference/sketch_scale.html) e entortar com [`shear_x()`](https://py5coding.org/reference/sketch_shear_x.html) e [`shear_y()`](https://py5coding.org/reference/sketch_shear_y.html). São transformações um pouco mais difíceis de imaginar com a metáfora do papel milimetrado, que precisaria ser de uma borracha mágica, mas, vejamos um exemplo curto só com a transformação da mudança de escala.
 
 ![](assets/2d_transformations_scale.png)
 
