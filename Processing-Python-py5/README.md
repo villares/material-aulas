@@ -7,19 +7,20 @@
 
 - 1.0.0 [Primeiros passos e desenho básico](desenho-basico_py.md)
   - 1.0.1 [Variáveis](variaveis.md)
-  - 1.0.2 [O que é indentação?](indentacao.md)
-  - 1.0.3 [Mais sobre cores(RGB e HSB)](mais_sobre_cores.md)
-  - 1.0.4 [Desenhando polígonos](poligonos_1.md)
-  - 1.0.5 [Divisão por zero e o resto da divisão](divisao.md) 
+  - 1.0.2 [Desenhando polígonos](poligonos_1.md)
+  - 1.0.3 [O que é indentação?](indentacao.md) - primeiro contato com `setup()` e `draw()`
+  - 1.0.4 [Mais sobre cores(RGB e HSB)](mais_sobre_cores.md)
 
-- 1.1.0 [Movimento e interatividade](setup_draw.md) a estrutura `setup()` e `draw()`	
-  - 1.1.1 [Execução condicional (`if`/`else`)](condicionais_py.md), operadores relacionais e operadores lógicos
+- 1.1.0 [Execução condicional (`if`/`else`)](condicionais_py.md), operadores 
+  - 1.1.0 [Mais movimento e interatividade com `setup()` e `draw()` e condicionais](setup_draw.md) 	
+relacionais e operadores lógicos
   - 1.1.2 [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](atribuicao-e-comparacao.md)
-  - 1.1.3 [Criando uma animação simples](movimento_py.md)	
+  - 1.1.3 [Criando uma animação](movimento_py.md)	
   - 1.1.4 [Escopo de variáveis(local e global)](escopo_py.md)
   - 1.1.5 [Aleatoriedade: `random` e números "sorteados"](aleatoriedade_1.md)
+  - 1.1.6 [Divisão por zero e o resto da divisão](divisao.md) 
 
-- 1.2.0 [Declarando novas funções](funcoes_py.md)
+- 1.2.0 [Definindo novas funções](funcoes_py.md)
   - 1.2.1 [Funções com argumentos padrão(ou opcionais)](funcoes_2.md)
   - 1.2.2 [Condições aninhadas e outras estruturas condicionais](condicionais_2.md)
   - 1.2.3 [Modificando o sistema de coordenadas](transformacoes_coordenadas.md) com `translate()`, `rotate()`, `scale()` e mais!
