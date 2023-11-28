@@ -11,9 +11,8 @@
   - 1.0.3 [O que é indentação?](indentacao.md) - primeiro contato com `setup()` e `draw()`
   - 1.0.4 [Mais sobre cores(RGB e HSB)](mais_sobre_cores.md)
 
-- 1.1.0 [Execução condicional (`if`/`else`)](condicionais_py.md), operadores 
-  - 1.1.0 [Mais movimento e interatividade com `setup()` e `draw()` e condicionais](setup_draw.md) 	
-relacionais e operadores lógicos
+- 1.1.0 [Execução condicional (`if`/`else`)](condicionais_py.md), operadores relacionais e operadores lógicos
+  - 1.1.0 [Mais movimento e interatividade com `setup()` e `draw()`](setup_draw.md)
   - 1.1.2 [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](atribuicao-e-comparacao.md)
   - 1.1.3 [Criando uma animação](movimento_py.md)	
   - 1.1.4 [Escopo de variáveis(local e global)](escopo_py.md)
@@ -104,7 +103,6 @@ relacionais e operadores lógicos
 
 - [Módulos ou mosaicos de Truchet](truchet.md)
 - [Jogo PONG](pong/) - Estudos para o fazer um jogo
-<!-- 9.1.3 [`caneta_automatica_py`](caneta_automatica/) - Módulo para desenhar inspirado na tartaruga de Logo -->
 - [L-System](LSystem.md) - Sistema de Lindenmayer
 
 #### Externos
