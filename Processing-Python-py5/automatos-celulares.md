@@ -2,220 +2,279 @@
 
 # O que são os autômatos celulares, de onde veio essa ideia?
 
-Criados inicalmente como ferramentas de exploração teórica/matemática, robôs auto-replicantes imaginados por von Neuman ou crescimento de cristais, mas também uma atividade lúdica, tornada relativamente popular pela coluna do Martin Gardner de recreações matemáticas na revista Scientific America, que apresentou o jogo da vida do Conway. Pesquisados em profundidade por Wolfram.
+Criados inicalmente como ferramentas de exploração teórica/matemática, robôs auto-replicantes imaginados por von Neuman ou crescimento de cristais, mas também uma atividade lúdica, tornada relativamente popular pela coluna do Martin Gardner de recreações matemáticas na revista Scientific America, que apresentou o jogo da vida do Conway, um dos mais famosos conjuntos de regras para simulação de autômatos celulares em plano (2D). Mais recentemente pesquisadores de urbanismo os estudam como uma ferramenta de simulação, aplicando-os na análise da evolução de trechos de cidade, entre outras tentativas de aplicação.
 
-Foram adotados por artista visuais que se interessam por computação por conta dos padrões interessantes que geram e o impacto da sua evolução(isso de lembrarem elemento vivos). Neste material didático os olhamos deste ponto de vista, assim como do ponto de vista didático(para quem quer aprender/ensinar programação), exploratório, lúdico e estético. Talvez um pouco histórico-cultural também...
+Os autômatos celulares foram pesquisados em profundidade por [Stephen Wolfram](https://www.wolframscience.com/nks/), que desenvolveu um ultra-simplificado sistema de autômatos celulares em uma linha (1D), mas foram também  adotados por artista visuais que se interessam por computação por conta dos padrões interessantes que geram e o impacto da sua evolução (isso de lembrarem elemento vivos).
 
-Mais recentemente pesquisadores de urbanismo os estudam como uma ferramenta de simulação, aplicando-os na análise da evolução de trechos de cidade.
+Neste material didático os olhamos deste ponto de vista, assim como do ponto de vista didático (para quem quer aprender/ensinar programação), exploratório, lúdico e estético. 
 
-# Alguns exemplos
+### Alguns exemplos
 - "Autômato Celular Elementar" de Wolfram(1D)
+  - TODO
 - Jogo da vida de Conway(*Conway's game of life*)
   - Exemplo do Jogo da vida de Conway com tabuleiro de lista de listas
   - Exemplo do Jogo da vida de Conway com tabuleiro infinito em um conjunto(set) e a biblioteca py5
+  - Exemplo do Jogo da vida de Conway com Numpy
+  - Estudar exemplo https://rosettacode.org/wiki/Conway%27s_Game_of_Life#Python
 
-# Um trecho do capítulo sobre autômatos celulares do *Nature of Code* de
-# Daniel Shiffman
-
-Um autômato celular(CA) é um modelo de um sistema de objetos "celulares" com as seguintes características:
-
-- As células vivem em uma grade. (Os exemplos a seguir serão em uma e duas dimensões neste capítulo, embora um autômato celular possa existir em qualquer número finito de dimensões.)
-
-- Cada célula tem um estado. O número de possibilidades de Estado é tipicamente finito. O exemplo mais simples tem as duas possibilidades de 1 e 0 (também referidas como "on" e "off" ou "viva" e "morta").
-
-- Cada célula tem um bairro. Isso pode ser definido de várias maneiras, mas é tipicamente uma lista de células adjacentes.
-
-
-![image](https://user-images.githubusercontent.com/88688270/138708935-cc5a1244-28c7-4fe8-ba6c-c263d78b0d14.png)
-
-
-# Autômato Celular Elementar
-
-Os exemplos neste capítulo começarão com uma simulação do trabalho de Wolfram. Para entender o CA elementar de Wolfram, devemos nos perguntar: "Qual é o autômato celular mais simples que podemos imaginar?" O que é emocionante sobre essa pergunta e sua resposta é que, mesmo com o CA mais simples imaginável, veremos as propriedades de sistemas complexos em ação.
-Quais são os três elementos-chave de um CA?
-
-**_1) Grade._** A grade mais simples seria unidimensional: uma linha de células.
-
-![image](https://user-images.githubusercontent.com/88688270/138709430-77179e96-0537-4f5b-894a-8beec76e16a6.png)
-
-
-** _2) Estados._** O conjunto mais simples de estados(além de ter apenas um estado) seriam dois estados: 0 ou 1.
-
-![image](https://user-images.githubusercontent.com/88688270/138709446-6c68a081-dc9d-4be6-add5-b83b5f46b13a.png)
-
-
-** _3) Bairro._** O bairro mais simples em uma dimensão para qualquer célula seria a própria célula e seus dois vizinhos adjacentes: um para a esquerda e outro para a direita.
-
-![image](https://user-images.githubusercontent.com/88688270/138709466-fa61542f-a6b5-4634-afba-2f5a1e057d74.png)
-
-
-Então começamos com uma linha de células, cada uma com um estado inicial(digamos que é aleatório), e cada uma com dois vizinhos. Teremos que descobrir o que queremos fazer com as células nas bordas(já que elas têm apenas um vizinho cada), mas isso é algo que podemos resolver mais tarde.
-
-![image](https://user-images.githubusercontent.com/88688270/138709799-f3c06fe5-99da-4a90-bf79-63eacb849b27.png)
-
-
-Ainda não discutimos, no entanto, qual é talvez o detalhe mais importante de como os autômatos celulares funcionam: o tempo. Não estamos realmente falando sobre o tempo real aqui, mas sobre o CA viver durante um período de tempo, que também poderia ser chamado de geração e, no nosso caso, provavelmente se referirá à contagem de quadros de uma animação. Os números acima nos mostram que o CA no momento é igual a 0 ou geração 0. As perguntas que temos que nos fazer são: Como calcular os estados para todas as células da geração 1? E geração 2? E assim por diante.
-
-
-![image](https://user-images.githubusercontent.com/88688270/138709822-828b47bd-4436-41f7-806e-34f84b82a27a.png)
-
-
-Digamos que temos uma célula individual no AC, e vamos chamá-la de CELL. A fórmula para calcular o estado do CELL a qualquer momento t é a seguinte:
-
-**_Estado celular no tempo t=f(bairro cell no tempo t - 1)_**
-
-Em outras palavras, o novo estado de uma célula é uma função de todos os estados do bairro da célula no momento anterior(ou durante a geração anterior). Calculamos um novo valor estatal olhando para todos os estados vizinhos anteriores.
-
-![image](https://user-images.githubusercontent.com/88688270/138710778-647e9cbd-c37d-428e-bc5b-d326edc1d80c.png)
-
-Agora, no mundo dos autômatos celulares, há muitas maneiras de calcular o estado de uma célula a partir de um grupo de células. O novo estado de um pixel(ou seja, sua cor) é a média de todas as cores de seus vizinhos. Com o CA elementar de Wolfram, no entanto, podemos realmente fazer algo um pouco mais simples e aparentemente absurdo: Podemos olhar para todas as configurações possíveis de uma célula e seu vizinho e definir o resultado do estado para cada configuração possível.
-
-Temos três células, cada uma com um estado de 0 ou 1. De quantas maneiras possíveis podemos configurar os estados? Se você ama binário, você notará que três células definem um número de 3 bits, e quão alto você pode contar com 3 bits? Até 8.
-
-![image](https://user-images.githubusercontent.com/88688270/138711227-9505cca9-ce72-4dbc-9b47-b75b99f8ad10.png)
-
-Uma vez definidos todos os bairros possíveis, precisamos definir um resultado(novo valor estadual: 0 ou 1) para cada configuração do bairro.
-
-![image](https://user-images.githubusercontent.com/88688270/138711341-e748849e-9206-4136-92bb-da7f328a4a5a.png)
-
-O modelo wolfram padrão é começar a geração 0 com todas as células tendo um estado de 0, exceto para a célula média, que deve ter um estado de 1.
-
-![image](https://user-images.githubusercontent.com/88688270/138711395-c795b03f-dc2b-43c1-b86e-0d23ac293d38.png)
-
-Referindo-se ao ruleset acima, vamos ver como uma determinada célula(vamos escolher a central) mudaria de geração 0 para geração 1.
-
-![image](https://user-images.githubusercontent.com/88688270/138711439-b8964ed4-8d19-4bc3-8932-82c11a9db0bf.png)
-
-Tente aplicar a mesma lógica em todas as células acima e preencha as células vazias.
-Agora, vamos passar de apenas uma geração e colorir as células — 0 significa branco, 1 significa preto — e empilhar as gerações, com cada nova geração aparecendo abaixo da anterior.
-
-![image](https://user-images.githubusercontent.com/88688270/138711566-64d90b32-eecd-43a6-a7fe-83c7fb1b60a4.png)
-
-A forma de baixa resolução que estamos vendo acima é o "triângulo Sierpiński". Nomeado em homenagem ao matemático polonês Wacław Sierpiński, é um padrão fractal que examinaremos no próximo capítulo. Isso mesmo: este sistema incrivelmente simples de 0s e 1s, com pequenos bairros de três células, pode gerar uma forma tão sofisticada e detalhada quanto o triângulo Sierpiński. Vamos olhar para ele novamente, apenas com cada célula um único pixel de largura para que a resolução seja muito maior.
-
-![image](https://user-images.githubusercontent.com/88688270/138711649-d4ccbfdf-1650-46a7-89c7-40d64498ab8e.png)
-
-Este resultado em particular não aconteceu por acidente. Eu escolhi este conjunto de regras por causa do padrão que ele gera. Dê uma olhada na Figura 7.8 mais uma vez. Observe como existem oito configurações possíveis de bairro; por isso, definimos um "ruleset" como uma lista de 8 bits.
-
-Assim, esta regra em particular pode ser ilustrada da seguinte forma:
-
-![image](https://user-images.githubusercontent.com/88688270/138711696-aaa167c3-e9ca-47d7-b800-585e25a62908.png)
-
-Oito 0s e 1s significa um número de 8 bits. Quantas combinações de oito 0s e 1 existem? 256. É assim como definimos os componentes de uma cor RGB. Temos 8 bits para vermelho, verde e azul, o que significa que fazemos cores com valores de 0 a 255 (256 possibilidades).
-
-
-# O Jogo da Vida
-
-Tendo como base o conceito de autômatos celulares, vamos compor o Jogo da Vida, que é o princípio do Campo Minado e de simulações de crescimento de bactérias.
-
-Primeiro, é necessário criar um "tabuleiro", ou um campo. Esse campo vai atender dois valores: 0 e 1, ou "vivo" e "morto"
+#### GoL com lista de listas
 
 ```python
-tam=20
-board=[]
+"""
+The Game of Life is a cellular automaton devised by the British
+mathematician John Horton Conway in 1970. It is the best-known example
+of a cellular automaton.
+
+Based on Jeremy Douglass' Processing code & Villares Processing Python mode code
+https://rosettacode.org/wiki/Conway%27s_Game_of_Life#Processing_Python_mode
+"""
+
+cell_size = 5
+sample = 1
+play = False   # simulation is running
+last_cell = 0
 
 def setup():
-    global n_colunas, n_linhas
-    size(500, 500)
-    stroke(255, 0, 0)
-    n_colunas=int(width / tam)  # calcula numeto de colunas
-    n_linhas=int(height / tam)  # calcula numero de linhas
-    # ivnentando o tabuleiro
-    for _ in range(n_colunas):
-        board.append([0] * n_linhas)  # jogando uma coluna para dentro
-    # sorteando algumas celulas vivas (posição com valor 1)
-    for c in range(n_colunas):  # 0, 1, 2, ... n_colunas - 1
-        for l in range(n_linhas):  # 0, 1, 3, ... n_colunas - 1
-            if random(100) < 15:
-                board[c][l]=1
+    global grid, next_grid, rows, cols
+    size(800, 800)
+    no_stroke()
+    rows = height // cell_size
+    cols = width // cell_size
+    grid = empty_grid()
+    next_grid = empty_grid()
+    randomize_grid()
+
+    print("Press 'space' to start/stop")
+    print("'e' to clear all cells")
+    print("'b' demonstrate 'blinker'")
+    print("'g' demonstrate glider")
+    print("'r' to randomize grid")
+    print("'+' and '-' to change speed")
 
 def draw():
-    background(0, 0, 100)
-    for c in range(n_colunas):  # sequência de números para colunas
-        for l in range(n_linhas):
-            if board[c][l] == 1:
-                fill(255)
-                rect(c * tam, l * tam, tam, tam)
-            fill(255, 0, 0)
-            text(vizinhos_vivos(c, l), c * tam + tam / 2, l * tam + tam / 2)
-            # é uma grade que começamos a desenhar
+    background(0)
+    for i in range(cols):
+        x = i * cell_size
+        for j in range(rows):
+            y = j * cell_size
+            current_state = grid[i][j]
+            fill(255)
+            if current_state:
+                rect(x, y, cell_size, cell_size)
+            if play:
+                ngbs_alive = calc_ngbs_alive(i, j)
+                result = rule(current_state, ngbs_alive)
+                next_grid[i][j] = result
 
-def vizinhos_vivos(i, j):
-    viz=((-1, -1), (-1, 0), (-1, -1), (0, -1),
-           (0, 1), (1, -1), (1, 0), (1, 1))
-    vivos=0
-    for oi, oj in viz:
-        estado_vizinha=board[(i + oi) % n_colunas][(j + oj) % n_linhas]
-        vivos=vivos + estado_vizinha
-    return vivos
+    if play and frame_count % sample == 0 and not is_mouse_pressed:
+        step()
+
+def step():
+    global grid, next_grid
+    grid = next_grid
+    next_grid = empty_grid()
+
+def rule(current, ngbs):
+    """ classic Conway's Game of Life rule """
+    if ngbs < 2 or ngbs > 3:
+        return 0  # dies / dead
+    elif ngbs == 3:
+        return 1  # born / alive
+    else:
+        return current  # stays the same (ngbs == 2)
+
+def calc_ngbs_alive(i, j):
+    NEIGHBOURS = ((-1, 00), (0o1, 00),  # a tuple describing the neighbourhood of a cell
+                  (-1, -1), (00, -1),
+                  (0o1, -1), (-1, 0o1),
+                  (00, 0o1), (0o1, 0o1))
+    alive = 0
+    for iv, jv in NEIGHBOURS:
+        alive += grid[(i + iv) % cols][(j + jv) % rows]
+    return alive
+
+def empty_grid():
+    grid = []
+    for _ in range(cols):
+        grid.append([0] * rows)
+    return grid
+
+def randomize_grid():
+    from random import choice
+    for i in range(cols):
+        for j in range(rows):
+            grid[i][j] = choice((0, 1))
+
+def key_released():
+    global grid, play, sample
+    if key == "e":
+        grid = empty_grid()
+    if key == "r":
+        randomize_grid()
+    if key == "g":
+        grid[10][10:13] = [0, 1, 0]
+        grid[11][10:13] = [0, 0, 1]
+        grid[12][10:13] = [1, 1, 1]
+    if key == "b":
+        grid[10][10:13] = [0, 1, 0]
+        grid[11][10:13] = [0, 1, 0]
+        grid[12][10:13] = [0, 1, 0]
+    if key == " ":
+        play = not play
+    if str(key) in '+=':
+        sample = max(sample - 1, 1)
+    if key == '-':
+        sample += 1
+
+def mouse_pressed():
+    paint()
+
+def mouse_dragged():
+    paint()
+
+def paint():
+    global last_cell
+    i, j = mouse_x // cell_size, mouse_y // cell_size
+    p = j * cols + i
+    if p != last_cell:
+        last_cell = p
+        grid[i][j] = (1, 0)[grid[i][j]]
 ```
 
-![image](https://user-images.githubusercontent.com/88688270/138721627-4f69781c-9cd3-4f7a-9f2e-16b466fce1d1.png)
-
-Para entender melhor, basta analisar a imagem a seguir. O zero central(com fundo branco) é uma célula 'viva', mas que não possui células vivas ao seu redor(por isso o valor zero). As células ao seu redor são células 'mortas' que sinalizam que tem uma ou duas células vivas.
-
-![image](https://user-images.githubusercontent.com/88688270/138721737-544c50e6-27a4-47db-b334-d2ad2d8bfc72.png)
-
-
-Agora, para entender melhor como funcionam as gerações anteriormente citadas, no código a seguir, têm-se uma geração 0, que consecutivamente forma uma nova geração(geração 1), que formará uma outra, e assim por diante.
+#### GoL com tabuleiro infinito
 
 ```python
-tam=5    # cria variavel global tam (tamanho das celulas)
-board=[]  # lista vazia que vai ser o tabuleiro
+from collections import Counter
+from random import randint
+import py5
+
+cell_size = 4
+current_board = set()
 
 def setup():
-    global n_colunas, n_linhas
-    size(600, 600)
-    # stroke(255, 0, 0)  # cor de traço
-    n_colunas=int(width / tam)  # calcula numero de colunas
-    n_linhas=int(height / tam)  # calcula numero de linhas
-    # inventando o tabuleiro
-    for _ in range(n_colunas):
-        board.append([0] * n_linhas)  # jogando uma coluna pra dentro
-    # sorteando algumas celulas vivas (posição com valor 1)
-    for c in range(n_colunas):  # 0, 1, 2, ... n_colunas - 1
-        for l in range(n_linhas):  # 0, 1, 3, ... n_linhas - 1
-            if random(100) < 15:
-                board[c][l]=1
+    py5.size(512, 512)
+    global ox, oy
+    ox, oy = py5.width / 2, py5.height / 2
+    py5.no_stroke()
+    add_cells()
 
+def add_cells():
+    for _ in range(500):
+        cell = randint(-50, 50), randint(-50, 50)
+        current_board.add(cell)
+            
 def draw():
-    background(0, 0, 100)
-    for c in range(n_colunas):
-        for l in range(n_linhas):
-            if board[c][l] == 1:
-                fill(255)
-                rect(c * tam, l * tam, tam, tam)
-            # fill(255, 0, 0)
-            # text(vizinhos_vivos(c, l),
-            #      c * tam + tam / 2, l * tam + tam / 2)
-    if frameCount % 5 == 0:  # 1, 2, 3, 4, 5, 6, 7,
-        atualizar_tabuleiro()
-
-def atualizar_tabuleiro():
-    global board
-    next_board=[]
-    for _ in range(n_colunas):
-        next_board.append([0] * n_linhas)
-    for c in range(n_colunas):
-        for l in range(n_linhas):
-           vivos=vizinhos_vivos(c, l)
-           if vivos == 3:
-               next_board[c][l]=1
-           elif vivos < 2 or vivos > 3:
-               next_board[c][l]=0
-           else:
-               next_board[c][l]=board[c][l]
-    board=next_board
-
-def vizinhos_vivos(i, j):
-    viz=((-1, -1), (-1, 0), (-1, 1), (0, -1),
-                  (0, 1), (1, -1), (1, 0), (1, 1))
-    vivos=0
-    for oi, oj in viz:
-        estado_vizinha=board[(i + oi) % n_colunas][(j + oj) % n_linhas]
-        vivos=vivos + estado_vizinha
-    return vivos
+    py5.translate(ox * cell_size, oy * cell_size)
+    py5.background(0)
+    for x, y in current_board:
+        py5.square(x * cell_size, y * cell_size, cell_size)
+    if py5.frame_count % 2 == 0:
+        update()
+        
+def update():
+    global current_board
+    n_counts = Counter()
+    for x, y in current_board:
+        n_counts.update(neighbours(x, y))
+    next_board = set()
+    for cell in n_counts.keys():
+        live_n = n_counts[cell]
+        if live_n < 2 or live_n > 3:
+            continue
+        elif live_n == 3:
+            next_board.add(cell)
+        elif cell in current_board:
+            next_board.add(cell)
+    current_board = next_board          
+            
+def neighbours(x, y):    
+    neighbourhood = ((-1, 0), (1, 0), (-1, -1), (0, -1),
+                     (1, -1), (-1, 1), (0, 1), (1, 1))
+    return [((x + i),  (y + j)) for i, j in neighbourhood]
+    
+    
+def mouse_dragged():
+    cell = (py5.mouse_x  // cell_size - ox), (py5.mouse_y // cell_size - oy)
+    current_board.add(cell)
+    
+def key_pressed():
+    global cell_size, ox, oy
+    if py5.key == ' ':
+        add_cells()
+    elif py5.key == 'a':
+        cell_size *= 2
+    elif py5.key == 'z' and cell_size > 0.5:
+        print(cell_size)
+        cell_size /= 2
+    elif py5.key_code == py5.UP:
+        oy -= 16
+    elif py5.key_code == py5.DOWN:
+        oy += 16
+    elif py5.key_code == py5.LEFT:
+        ox -= 16
+    elif py5.key_code == py5.RIGHT:
+        ox += 16
+        
+py5.run_sketch()
 ```
 
-** BIBLIOGRAFIA **
-SHIFFMAN, Daniel. _Cellular Automata_. In: < https://natureofcode.com/book/chapter-7-cellular-automata/>.
+#### GoL com Numpy
+
+```python
+# baseado em on https://www.jpytr.com/post/game_of_life/
+
+import py5
+import numpy as np
+from scipy.signal import convolve2d
+
+board_img = count_img = None
+play = True
+sample = 10
+
+def setup():
+    global status
+    py5.size(800, 800)
+    py5.no_smooth()
+    status = get_init_status((py5.height // 2, py5.width // 2))
+
+def draw():
+    global status, board_img, count_img
+    py5.scale(2)
+    if play and py5.frame_count % sample == 0 and not mouse_pressed:
+        status = apply_conways_game_of_life_rules(status)
+    board_img = py5.create_image_from_numpy(status * 255, 'L', dst=board_img)
+    py5.image(board_img, 0, 0)
+    #count_img = py5.create_image_from_numpy(live_neighbors * 32, 'L', dst=count_img)
+    #py5.image(count_img, 0, 0) 
+
+def get_init_status(size, initial_prob_life=0.5):
+    status = np.random.uniform(0, 1, size=size) <= initial_prob_life
+    return status
+
+def apply_conways_game_of_life_rules(status):
+    global live_neighbors
+    """Applies Conway's Game of Life rules given the current status of the game"""
+    live_neighbors = count_live_neighbors(status)
+    survive_underpopulation = live_neighbors >= 2
+    survive_overpopulation = live_neighbors <= 3
+    survive = status * survive_underpopulation * survive_overpopulation
+    new_status = np.where(live_neighbors==3, True, survive)  # Born
+    return new_status 
+
+def count_live_neighbors(status):
+    """Counts the number of neighboring live cells"""
+    kernel = np.array([
+        [1, 1, 1],
+        [1, 0, 1],
+        [1, 1, 1]
+    ])
+    return convolve2d(status, kernel, mode='same', boundary="wrap")
+
+py5.run_sketch()
+```
+
+## Bibliografia
+
+- SHIFFMAN, Daniel. _Cellular Automata_. In: < https://natureofcode.com/book/chapter-7-cellular-automata/>.
+
+<!-- Versão traduzida do NoC cap 7 https://github.com/villares/material-aulas/blob/db11434439fc166893da4e9f931c95ca3c72137a/Processing-Python-py5/automatos-celulares.md?plain=1#L17 -->
