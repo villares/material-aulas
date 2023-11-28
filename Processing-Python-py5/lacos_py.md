@@ -2,11 +2,15 @@
 
 É muito comum em programação pedir ao computador que repita uma ação várias vezes, possivelmente com variações. Para fazer isso frequentemente usamos os chamados laços de repetição (*loops*) e o processo também pode ser chamado de iteração (note que não é i**n**teração, que é outra coisa).
 
-Antes de chegar na execução das repetições com o laço `for`, propriamente, é útil saber como criar rapidamente sequências de valores. Existe uma função em Python que produz valores inteiros, o `range()`, que no Processing modo Python devolve uma lista (no Python 3 produz um 'iterador' que por sua vez devolve os valores, mas isso não importa agora).
+Antes de chegar na execução das repetições com o laço `for`, propriamente, é útil saber como criar rapidamente sequências de valores. Existe uma função em Python que produz um "máquina" que produz valores inteiros, o `range()`, poderíamos talvez traduzir *range* como "faixa" e `range()` então produz geradore de "faixas de números inteiros". Podemos obter sequências chamadas listas, a partir do range usando `list(range(n))`, como veremos a seguir.
 
 ## Produzindo sequências de inteiros com `range()`
 
-Executando a função `range()` com o argumento 10, `range(10)`, vamos obter uma lista de 10 números inteiros.
+Usando `range()` com o argumento 10, `range(10)`, no código abaixo, vamos obter uma lista de 10 números inteiros.
+
+```python
+print(list(range(10)))
+```
 
 #### Você consegue imaginar quais são?
 <details>
@@ -15,7 +19,12 @@ Executando a função `range()` com o argumento 10, `range(10)`, vamos obter uma
 <code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</code>
 </details>
 
-#### Qual você acha que é o resultado de `range(1, 11)`?
+#### Qual você acha que é o resultado de usar `range(1, 11)`?
+
+```python
+print(list(range(1, 11)))
+```
+
 <details>
   <summary>clique para ver a resposta</summary>
 
@@ -118,7 +127,7 @@ for j in range(14):
     line(x, 30, x, 80)
 </pre>
 
-<img src="https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/verticais.png">
+<img src="https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python-py5/assets/verticais.png">
 </details>
 
 #### Você consegue imaginar um desenho usando esse tipo de repetição e números [pseudo-aleatórios](aleatoriedade_1.md) com `random()`?
