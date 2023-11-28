@@ -10,7 +10,7 @@ Para produzir movimento nos valemos de uma ideia presente em todo tipo de anima�
 
 Tudo que é desenhado dentro de `draw()` é na verdade redesenhado cerca de 60 vezes por segundo, no máximo, essa é a taxa de atualização, também conhecida como *frame rate*. 
 
-> Essa taxa de quadros por segundo pode ser reduzida voluntariamente se usarmos a função `frame_rate()`, ou involutariamente, quando fazemos coisas muito custosas computacionalmente, isto é, demoradas, dentro do `draw()`. Não é possível forçar um aumento da taxa de atualização, se o que estamos fazendo ficar demorado, isso acarrete em um limite, senão, o limite são os 60 quadros por segundo. É possível saber uma média móvel da taxa de quadros com a função `get_frame_rate()`.
+> Essa taxa de quadros por segundo pode ser reduzida voluntariamente se usarmos a função `frame_rate()`, ou involutariamente, quando fazemos coisas muito custosas computacionalmente, isto é, demoradas, dentro do `draw()`. Não é possível forçar um aumento da taxa de atualização, se o que estamos fazendo ficar demorado, isso acarreta em um limite, de outra forma, o limite são os 60 quadros por segundo. É possível saber uma média móvel da taxa de atualização om a função `get_frame_rate()`.
 
 Para se obter o efeito de uma animação de elementos se deslocando na tela é preciso ainda "limpar" o quadro no começo de cada `draw()` frequentemente com a instrução `background()`. Se desenharmos sem essa "limpeza" da tela os elementos "acumulam" ou "deixam um rastro".
 
