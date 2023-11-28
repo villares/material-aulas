@@ -1,6 +1,6 @@
 # Mais sobre os atributos gráficos
 
-Esta página tenta ampliar um pouco o assundo dos atributos gráficos, que são os ajustes que podemos fazer nas formas que desenhamos, mencionados desde os[primeiros passos](https://github.com/villares/material-aulas/blob/main/Processing-Python/desenho-basico_py.md) e também quando falamos[mais sobre as cores](https://github.com/villares/material-aulas/blob/main/Processing-Python/mais_sobre_cores.md).
+Esta página tenta ampliar um pouco o assundo dos atributos gráficos, que são os ajustes que podemos fazer nas formas que desenhamos, mencionados desde os [primeiros passos](https://github.com/villares/material-aulas/blob/main/Processing-Python/desenho-basico_py.md) e também quando falamos [mais sobre as cores](https://github.com/villares/material-aulas/blob/main/Processing-Python/mais_sobre_cores.md).
 
 ## Quais são os ajustes que podemos fazer nos atributos gráficos das formas que desenhamos?
 
@@ -15,7 +15,7 @@ As funções `push_style()` e `pop_style()` (ou `push()` e `pop()` que combinam 
 
 ## Lendo o estado atual dos atributos de cor "ativos"
 
-Uma carecterística pouco conhecida do Processing é o objeto **`g`** que é no fundo a superfície de tela em que estamos desenhando. Podemos consultar `._instance.fillColor` e `._instance.strokeColor` para saber as cores que estão atualmente em uso.
+Usando `pg = get_graphics()` podemos obter uma referência ao objeto Py5Graphics do sketch, que é a superfície em que estamos desenhando. Podemos consultar `pg._instance.fillColor` e `pg._instance.strokeColor` para saber as cores que estão atualmente em uso.
 
 Veja um exemplo de uso, uma função que desenha uma pequena seta cuja cabeça é um triângulo preenchido com a mesma cor 'atual' do traço(_stroke_).
 
@@ -28,13 +28,16 @@ def setup():
 def setup():
     size(400, 400)
     stroke(0, 150, 0)
-    seta_vetor((100, 100), (200, 200))
+    translate(200, 200)
+    seta_vetor((100, 100))
 
 def seta_vetor(v, origin=(0, 0), head_size=10):
     """
     Desenhe uma seta representando um vetor `v`, partindo da origem (0, 0)
     ou na posição informada com o argumentos opcional `origin`.
     """
+    sg = get_graphics()
+    current_stroke = sg._instance.strokeColor
     v = Py5Vector(*v)
     body = v.mag
     head_size = min(head_size, body / 2)
@@ -48,7 +51,7 @@ def seta_vetor(v, origin=(0, 0), head_size=10):
     yhb = yh + sin(ang - QUARTER_PI / 2 + PI) * head_size
     line(xo, yo, xh, yh)  # corpo com tamanho fixo
     with push():  # preserva os atributos gráficos atuais
-        fill(g._instance.strokeColor)  # usa a cor de traço como preenchimento!
+        fill(current_stroke)  # usa a cor de traço como preenchimento!
         no_stroke()
         with begin_closed_shape():
             vertex(xha, yha)
