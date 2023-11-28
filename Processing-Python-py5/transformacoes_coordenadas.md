@@ -8,7 +8,7 @@ Essas funções tornam possível, entre outras coisas, desenhar um retângulo in
 
 > Nota: Saiba que no py5 quando uma função pede um ângulo como argumento, espera que você informe esse ângulo em *radianos*, por isso, se você pensa em graus, use `radians(angulo_em_graus)` para converter.
 
-Vejamos o que acontece quando tentamos girar um quadrado que desenhamos no meio da tela. Para isso vamos primeiro desenhar o quadrado, usar a função [`rotate()`](https://py5coding.org/reference/sketch_rotate.html)  e desenhar o "mesmo quadrado" novamente. Por fim, vamos repetir a rotação e o desenho do quadrado mais uma vez.
+Suponha que queremos desenhar um quadrado no centro da tela, inclinado 10 graus. Vejamos o que acontece quando tentamos girar o sistema de coordenadas, para isso vamos primeiro desenhar um quadrado usando as coordendadas da metade da largura e da altura da área de desenho, e depois usar a função [`rotate()`](https://py5coding.org/reference/sketch_rotate.html), em seguida vamos desenhar o "mesmo quadrado" novamente. Por fim, vamos repetir tanto a rotação como o desenho do quadrado mais uma vez.
 
 ```python
 def setup():
@@ -22,15 +22,21 @@ def setup():
     square(250, 250, 200)
 ```
 
+O resultado é o seguinte.
+
 ![](assets/2d_transformations_0.png)
 
 Você percebe o que está acontecendo? Pense nestas questões:
-- Em primeiro lugar, onde está o centro de rotação? É possível escolher o centro da rotação?
+- Em primeiro lugar, onde está o centro de rotação?
+- Será que é possível escolhermos o centro da rotação?
 - Por qual motivo o segundo pedido de rotação, sendo igual ao primeiro, não fez o terceiro quadrado cair sobre o primeiro?
 
-As respostas para essas perguntas são: A rotação está acontecento em torno da *origem do sistema de coordenadas*, isto é (0, 0), o ponto onde x e y valem zero. É possível escolher esse ponto usando `translate()` mara mover a origem. As operações de transformação do sistema de coordenadas, como a rotação com a função `rotate()`, são cumulativas, e isso vai ser um problema a ser resolvido um pouco mais a frente.
+As respostas para essas perguntas são:
+- A rotação está acontecento em torno da *origem do sistema de coordenadas*, isto é (0, 0), o ponto onde X e Y valem zero.
+- É sim possível escolher esse ponto usando `translate()` mara mover a origem. 
+- As operações de transformação do sistema de coordenadas, como a rotação com a função `rotate()`, são cumulativas, e isso vai ser um problema a ser resolvido um pouco mais a frente.
 
-## Resolvendo a primeira parte do problema da rotação, usando a translação
+## Resolvendo a primeira parte, a escolha do centro da rotação, usando a translação
 
 Se movermos a origem para o ponto no centro da área de desenho, usando [`translate()`](https://py5coding.org/reference/sketch_translate.html), com os argumentos `250, 250`,  conseguiremos girar o sitema de coordenadas em torno do centro.
 
@@ -51,9 +57,11 @@ def setup():
 
 Note que o segundo e terceiro quadrados são desenhados com `square(0, 0, 200)`, nas novas coordenadas do centro da tela após o `translate(250, 250)`, e não mais em `square(250, 250, 200)`.
 
-## O sutil problema de `translate()` e `rotate()`
+## A sutil questão da acumulação de `translate()` e `rotate()`
 
-A segunda parte do problema, que se manifestou sutilmente até agora, é de que as transformações do sistema de coordenadas não cumulativas. Veja este exemplo ingênuo de uma função que desenha um quadrado girado, e veja como ele falha em permitir que desenhemos uma fila de quadrados girados.
+A segunda parte do problema, que se manifestou sutilmente até agora, é de que as transformações do sistema de coordenadas não cumulativas. 
+
+Suponha que queremos desenhar uma fila de quadrados girados, e veja este exemplo ingênuo de uma função `quadrado_girado()` que desenha, bem,  um quadrado girado. Este código falha em permitir que desenhemos uma fila com os quadrados alinhados com Y valendo 100, como parecem indicar as nossas coordenadas (100, 100), (250, 100) e (400, 100).
 
 ```python
 def setup():
@@ -74,10 +82,11 @@ def draw():
 ```
 ![](assets/2d_transformations_2.png)
 
+Cada chamada a função `quadrado_girado()` empurra a origem do sistema de coordenadas mais um pouco, e também gira 10 graus, então o segundo quadrado girado cai mais longe e mais girago, o terceiro já fica para fora da tela, mais abaixo à direita!
 
-## A solução com *push_matrix* e *pop_matrix*
+### A solução com *push_matrix* e *pop_matrix*
 
-É possível fazer uma espécie de "backup" do atual sistema de coordenadas, usando a função [`push_matrix()`](https://py5coding.org/reference/sketch_push_matrix.html) depois de feito o desenho que precisamos com as coordenadas alteradas,  [`pop_matrix()`](https://py5coding.org/reference/sketch_pop_matrix.html) devolve ao sketch o estado anterior do sistema de coordenadas.
+É possível fazer uma espécie de "backup" do atual sistema de coordenadas, usando a função [`push_matrix()`](https://py5coding.org/reference/sketch_push_matrix.html) depois de feito o desenho que precisamos com as coordenadas alteradas,  [`pop_matrix()`](https://py5coding.org/reference/sketch_pop_matrix.html) devolve ao sketch o estado anterior do sistema de coordenadas. Com esta versão modificada da função `quadrado_girado()` conseguimos posicionar à vontade nossos quadrados girados.
 
 ```python
 def quadrado_girado(x, y, lado, rot):
