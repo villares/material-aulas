@@ -68,6 +68,26 @@ if a % 2 == 0:
 else:
     print('a é impar!')
 ```
+
+Um exemplo visual, em que a cor do círculo muda se o número do quadro é par ou impar.
+
+```python
+def setup():
+    size(500, 500)
+    background(0, 100, 100)
+    no_stroke()  
+    
+def draw():
+    # se o número do do quadro for par, preenchimento preto
+    if frame_count % 2:
+        fill(0)
+    else:  # senão, preenchimento branco
+        fill(255)
+    circle(mouse_x, mouse_y, 100)
+```
+
+![](assets/resto_da_divisao.png)
+
 ### Testando se um número é divisível por outro
 ```python
 if a % b == 0:
@@ -110,7 +130,22 @@ Resultado (truncado, seriam 100 números):
 …
 4
 ```
+Um exemplo visual, em que as cores são definidas pelo matiz, com um número que vai de 0 a 255 e volta para o 0, calculado a partir do resto da divisão do número do quadro (`frame_count`) por 256.
 
+```python
+def setup():
+    size(500, 500)
+    background(0, 100, 100)
+    no_stroke()
+    color_mode(HSB) # matiz, saturação, brilho
+    
+def draw():
+    matiz = frame_count % 256
+    fill(matiz, 255, 255)
+    circle(mouse_x, mouse_y, 50)
+```
+
+![](assets/resto_divisao_256.png)
 
 ## Assuntos relacionados
 
