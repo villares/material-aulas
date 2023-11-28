@@ -6,7 +6,11 @@ Essas funções tornam possível, entre outras coisas, desenhar um retângulo in
 
 ## Começando com a rotação, para ver como as coisas são estranhas
 
-Suponha que queremos desenhar um quadrado no centro da tela, inclinado 10 graus. Vejamos o que acontece quando tentamos girar o sistema de coordenadas, para isso vamos primeiro desenhar um quadrado usando as coordendadas da metade da largura e da altura da área de desenho, e depois usar a função [`rotate()`](https://py5coding.org/reference/sketch_rotate.html), em seguida vamos desenhar o "mesmo quadrado" novamente. Por fim, vamos repetir tanto a rotação como o desenho do quadrado mais uma vez.
+Suponha que queremos desenhar um quadrado no centro da tela, inclinado em 10 graus. Vejamos o que acontece quando usamos a função  [`rotate()`](https://py5coding.org/reference/sketch_rotate.html) que gira o sistema de coordenadas.
+
+Para termos um elemento inicial de comparação, vamos primeiro desenhar um quadrado sem girar, usando as coordendadas da metade da largura e da altura da área de desenho (vamos chamar este de "quadrado 0").
+
+Então, vamos usar a função `rotate()`, e em seguida vamos desenhar um quadrado com os mesmos argumentos novamente ("quadrado 1"). Por fim, vamos repetir tanto a rotação como o a chamada de função que desenha o quadrado mais uma vez ("quadrado 2").
 
 > Nota: No py5 quando uma função pede um ângulo como argumento, espera que você informe esse ângulo em *radianos*, por isso, se você pensa em graus, use `radians(angulo_em_graus)` para converter.
 
@@ -15,11 +19,11 @@ def setup():
     size(500, 500)
     rect_mode(CENTER)
     no_fill()
-    square(250, 250, 200)
+    square(250, 250, 200)  # quadrado 0
     rotate(radians(10))
-    square(250, 250, 200)
+    square(250, 250, 200)  # quadrado 1
     rotate(radians(10))
-    square(250, 250, 200)
+    square(250, 250, 200)  # quadrado 2
 ```
 
 O resultado é o seguinte.
@@ -29,7 +33,7 @@ O resultado é o seguinte.
 Você percebe o que está acontecendo? Pense nestas questões:
 - Em primeiro lugar, onde está o centro de rotação?
 - Será que é possível escolhermos o centro da rotação?
-- Por qual motivo o segundo pedido de rotação, sendo igual ao primeiro, não fez o terceiro quadrado cair sobre o primeiro?
+- Por qual motivo o último pedido de rotação e desenho, sendo exatamente igual ao anterior, não faz o "quadrado 2" cair sobre o "quadrado 1"?
 
 As respostas para essas perguntas são:
 - A rotação está acontecento em torno da *origem do sistema de coordenadas*, isto é (0, 0), o ponto onde X e Y valem zero. Imagine um papel milimetrado com uma tachinha fixada na origen, estamos girando o papel em torno da taxinha.
@@ -38,7 +42,7 @@ As respostas para essas perguntas são:
 
 ## Resolvendo a primeira parte, a escolha do centro da rotação, usando a translação
 
-Se movermos a origem para o ponto no centro da área de desenho, usando [`translate()`](https://py5coding.org/reference/sketch_translate.html), com os argumentos `250, 250`,  conseguiremos girar o sitema de coordenadas em torno do centro.
+Se movermos a origem para o ponto no centro da área de desenho, usando [`translate()`](https://py5coding.org/reference/sketch_translate.html), com os argumentos `250, 250`,  conseguiremos girar o sitema de coordenadas em torno desta novo centro.
 
 ```python
 def setup():
