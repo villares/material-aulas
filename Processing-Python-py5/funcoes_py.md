@@ -49,9 +49,11 @@ fill(random(256), random(256), random(256))
 
 Os parâmetros, quando existem, são nomes lá dentro da definição da função, que recebem os valores dos argumentos usados quando a função é chamada.
 
-> ## :Alerta: Mágica confusa!
-> Para que uma função seja executada pelo Python, ela precisa ser "chamada", isto é "invocada" com seu nome e os parênteses justapostos. Mas se você olhar atentamente, onde estão as chamadas para `setup()` e `draw()`?
-> A biblioteca py5 põe essas chamadas dentro da função `py5.run_sketch()`. Quando usada com um *plug-in* no Thonny IDE, para simplificar o trabalho de quem está programando, py5 introduz uma "chamadas auto-mágica" para `py5.run_sketch()` que por sua vez chama as funções especialmente nomeadas `setup()` e `draw()`. `setup()` é executada logo que pedimos a execução do sketch, e `draw()` fica sendo executada sem parar no que é conhecido às vezes como "laço principal de animação" do sketch. Da mesma forma, as "funções de evento", como `key_pressed()` são chamadas para você pela biblioteca py5.
+## Alerta: Mágica confusa!
+
+Para que uma função seja executada pelo Python, ela precisa ser "chamada", isto é "invocada" com seu nome e os parênteses justapostos. Mas se você olhar atentamente, onde estão as chamadas para `setup()` e `draw()`?
+
+A biblioteca py5 põe essas chamadas dentro da função `py5.run_sketch()`. Quando usada com um *plug-in* no Thonny IDE, para simplificar o trabalho de quem está programando, py5 introduz uma "chamada auto-mágica" para `py5.run_sketch()` que por sua vez chama as funções especialmente nomeadas `setup()` e `draw()`. A função `setup()` é executada logo no ínicio apenas uma vez, e `draw()` fica sendo executada sem parar no que é conhecido às vezes como "laço principal de animação" do sketch. Da mesma forma, as "funções de evento", como `key_pressed()`, e outras tantas, são chamadas para você pela biblioteca py5.
 
 ## Um exemplo de função, uma função `olho()`
 
