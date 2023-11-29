@@ -104,6 +104,7 @@
 - [Módulos ou mosaicos de Truchet](truchet.md)
 - [Jogo PONG](pong/) - Estudos para o fazer um jogo
 - [L-System](LSystem.md) - Sistema de Lindenmayer
+- [Autômatos Celulares](automatos-celulates.md)
 
 #### Externos
 
@@ -111,3 +112,16 @@
 - [Paper Objects with Processing and Python](https://abav.lugaralgum.com/Paper-objects-with-Processing-and-Python)
 - [Arc, tangents & Bezier studies](https://github.com/villares/arc_tangents_and_bezier_studies)
 - [Simulações física 2D com PyMunk - Pinball](https://github.com/villares/pymunk-pinball-paulista)
+
+---
+
+    <script>
+        const currentURL = window.location.href;
+        const constantToReplace = "abav.lugaralgum.com/material-aulas/";
+        const newConstant = "github.com/villares/material-aulas/";
+        const newURL = currentURL.replace(constantToReplace, newConstant);
+        const linkElement = document.createElement('a');
+        linkElement.href = newURL;
+        linkElement.textContent = 'fonte desta página no repositório <pre>material-aulas</pre>';
+        document.body.appendChild(linkElement);
+    </script>
