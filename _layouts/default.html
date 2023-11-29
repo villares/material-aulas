@@ -21,6 +21,17 @@ com Python em um contexto visual</a></h1>
     <footer>
       <div class="container">
       </div>
+---
+<script>
+const currentURL = window.location.href;
+const constantToReplace = "abav.lugaralgum.com/material-aulas/";
+const newConstant = "github.com/villares/material-aulas/tree/main/";
+const newURL = currentURL.replace(constantToReplace, newConstant);
+const linkElement = document.createElement('a');
+linkElement.href = newURL;
+linkElement.textContent = 'veja esta página no repositório';
+document.body.appendChild(linkElement);
+</script>      
     </footer>
     <script>
 	function iframeFix(aId, divId) {
