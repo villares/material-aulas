@@ -60,6 +60,6 @@ def draw():
 ## Assuntos relacionados
 
 - [Execução condicional (`if`/`else`)](condicionais_py.md), operadores relacionais e operadores lógicos
-- [Criando uma animação simples](movimento_py.md)
+- [Criando uma animação](movimento_py.md) - que move sem usarmos o mouse
 
 
