@@ -115,13 +115,13 @@
 
 ---
 
-    <script>
-        const currentURL = window.location.href;
-        const constantToReplace = "abav.lugaralgum.com/material-aulas/";
-        const newConstant = "github.com/villares/material-aulas/";
-        const newURL = currentURL.replace(constantToReplace, newConstant);
-        const linkElement = document.createElement('a');
-        linkElement.href = newURL;
-        linkElement.textContent = 'fonte desta página no repositório <pre>material-aulas</pre>';
-        document.body.appendChild(linkElement);
-    </script>
+<script>
+const currentURL = window.location.href;
+const constantToReplace = "abav.lugaralgum.com/material-aulas/";
+const newConstant = "github.com/villares/material-aulas/";
+const newURL = currentURL.replace(constantToReplace, newConstant);
+const linkElement = document.createElement('a');
+linkElement.href = newURL;
+linkElement.textContent = 'fonte desta página no repositório <pre>material-aulas</pre>';
+document.body.appendChild(linkElement);
+</script>
