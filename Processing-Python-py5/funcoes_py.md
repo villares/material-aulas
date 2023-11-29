@@ -49,12 +49,6 @@ fill(random(256), random(256), random(256))
 
 Os parâmetros, quando existem, são nomes lá dentro da definição da função, que recebem os valores dos argumentos usados quando a função é chamada.
 
-## Alerta: Mágica confusa!
-
-Para que uma função seja executada pelo Python, ela precisa ser "chamada", isto é "invocada" com seu nome e os parênteses justapostos. Mas se você olhar atentamente, onde estão as chamadas para `setup()` e `draw()`?
-
-A biblioteca py5 põe essas chamadas dentro da função `py5.run_sketch()`. Quando usada com um *plug-in* no Thonny IDE, para simplificar o trabalho de quem está programando, py5 introduz uma "chamada auto-mágica" para `py5.run_sketch()` que por sua vez chama as funções especialmente nomeadas `setup()` e `draw()`. A função `setup()` é executada logo no ínicio apenas uma vez, e `draw()` fica sendo executada sem parar no que é conhecido às vezes como "laço principal de animação" do sketch. Da mesma forma, as "funções de evento", como `key_pressed()`, e outras tantas, são chamadas para você pela biblioteca py5.
-
 ## Um exemplo de função, uma função `olho()`
 
 ![olho](assets/funcao_olho.png)
@@ -138,7 +132,27 @@ else:
      print('quer uma cerveja?')
 ```
 
-# Glossário
+## Alerta: Mágica escondida!
+
+Para que uma função seja executada pelo Python, ela precisa ser "chamada", também dizemos "invocada", por meio de seu nome e os parênteses justapostos. Mas se você olhar atentamente, onde estão as chamadas para `setup()` e `draw()`?
+
+A biblioteca py5 faz essas chamadas para nós dentro da função `run_sketch()`, que por sua vez está sendo chamada automáticamente 
+para pelo *plug-in* `thonny-py5mode`, quando a opção *imported mode for py5* está ligada, no Thonny IDE. A função `run_sketch()` cuida então de chamar para nós a função `setup()` logo no ínicio apenas uma vez, e `draw()` sem parar, no que é conhecido às vezes como "laço principal de animação" do sketch. Da mesma forma, as "funções de evento", como `key_pressed()`, e outras tantas, são chamadas pela biblioteca.
+
+> Mais detalhes ainda (se você tiver curiosidade): Isso tudo foi feito para simplificar a experiência de quem está programando. Além chamar as funções apropriadas, o plug-in também evita que tenhamos que digitar `py5.` como prefixo em todas as funções que vem da biblioteca. Então isso tudo é um pouco mágico e pode parecer um pouco confuso.
+> As coisas acontecem de maneira um pouco mais explícita quando usamos o chamado *module mode*, que é o estilo que tem `import py5` no começo do código e termina em geral justamente com `py5.run_sketch()`. E nesse caso todas as funções que vem da biblioteca precisam do prefixo `py5.`, e ficam assim:
+> ```python
+> import py5
+> 
+> def setup():
+>     py5.size(500, 500)
+>     py5.background(200, 200, 0)
+>     ...
+> py5.run_sketch()  # aqui dentro py5 vai chamar, setup(), draw() e as funções de evento
+> ```
+> Mas tem ainda outras malandragens ocultas que a biblioteca faz, mesmo no *module mode*, como desmembrar a função `setup()` em `setup()` e `settings()` para nos facilitar a vida!
+
+## Glossário
 
 [**encapsulamento**](https://penseallen.github.io/PensePython2e/04-caso-interface.html#termo:encapsulamento) O processo de transformar uma sequência de instruções em uma definição de função.
 
