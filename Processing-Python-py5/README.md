@@ -104,7 +104,7 @@
 - [Módulos ou mosaicos de Truchet](truchet.md)
 - [Jogo PONG](pong/) - Estudos para o fazer um jogo
 - [L-System](LSystem.md) - Sistema de Lindenmayer
-- [Autômatos Celulares](automatos-celulates.md)
+- [Autômatos Celulares](automatos-celulares.md)
 
 #### Externos
 
