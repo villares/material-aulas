@@ -1,27 +1,28 @@
-> **Material para cursos e oficinas ([repositório](https://github.com/villares/material-aulas/))**
->
-> Este material didático foi criado inicialmente para ensinar/aprender a programar usando **Processing modo Python**, uma ferramenta livre de programação com a sintaxe de Python e que inclui o vocabulário, os recursos de desenho e manipulação de imagens do Processing. Atualmente há outras possibilidades de combinar essas duas linguagens, veja abaixo com obter algumas delas:
-> - Biblioteca [py5](https://py5coding.org), recomendada para a versão mais recente deste material, siga as [**instruções de instalação** usando Thonny IDE + plugin](https://github.com/villares/thonny-py5mode/tree/pt-br).
-> - [pyp5js](https://github.com/berinhard/pyp5js), combina pyodide e p5js, experimente uma [**variante do editor online**](https://abav.lugaralgum.com/pyp5js/py5mode/) do projeto.
-> - Outras opções no quadro [Processing + Python tools table](https://github.com/villares/Resources-for-teaching-programming#processing--python-tools-table).
+Material para cursos e oficinas desenvolvido neste [repositório](https://github.com/villares/material-aulas/).
 
-### Conteúdo
+## Conteúdos didáticos
 
 **[Material para Python 3 com py5](Processing-Python-py5/README.md)**
 
 > Legado [Material para Processing modo Python](Processing-Python/) (2019—2022)
 
-#### Como colaborar e contribuir?
+### Contexto
+> Este material didático foi criado inicialmente para ensinar/aprender a programar usando **Processing modo Python**, uma ferramenta livre de programação com a sintaxe de Python e que inclui o vocabulário, os recursos de desenho e manipulação de imagens do Processing. Atualmente há outras possibilidades de combinar essas duas linguagens, veja abaixo com obter algumas delas:
+> - Biblioteca [py5](https://py5coding.org), recomendada para a versão mais recente deste material, siga as [**instruções de instalação** usando Thonny IDE + plugin](https://github.com/villares/thonny-py5mode/tree/pt-br).
+> - [pyp5js](https://github.com/berinhard/pyp5js), combina pyodide e p5js, experimente uma [**variante do editor online**](https://abav.lugaralgum.com/pyp5js/py5mode/) do projeto.
+> - Outras opções no quadro [Processing + Python tools table](https://github.com/villares/Resources-for-teaching-programming#processing--python-tools-table).
+
+### Como colaborar e contribuir?
 
 Este material didático pode ser modificado e usado para dar aulas. Leia as [instruções para colaborar com este repositório](https://github.com/villares/material-aulas/blob/master/sobre/como-contribuir.md) e abra [*issues*](https://github.com/villares/material-aulas/issues) apontando problemas, sugerindo assuntos e melhorias, ou contribua com *Pull Requests* para o repositório.
 
-Se você quer que eu continue a escrever material didático aberto, agradeço se puder fazer um PIX `46c37783-5edb-4f1c-b3a8-1309db11488c`, [doação de qualquer valor aqui](https://www.paypal.com/donate/?hosted_button_id=5B4MZ78C9J724) ou também em 
+Se você quer apoiar a continuidade deste projeto, que produz material didático aberto, faça um PIX `46c37783-5edb-4f1c-b3a8-1309db11488c`, [doação de qualquer valor aqui](https://www.paypal.com/donate/?hosted_button_id=5B4MZ78C9J724) ou também em 
 [gumroad.com/villares](https://gumroad.com/villares)! 
 
-#### Recursos relacionados
+### Recursos relacionados
 
 - Fazines e pôsters [**`desenho()`**](https://desenho.lugaralgum.com) `"""Para desenhar com código, para desenhar junto, com o computador e com outras pessoas!"""`
-- Meus desenhos diários: [sketch-a-day](https://abav.lugaralgum.com/sketch-a-day)
+- Desenhos diários: [sketch-a-day](https://abav.lugaralgum.com/sketch-a-day)
 - [Paper objects with Processing and Python](https://github.com/villares/Paper-objects-with-Processing-and-Python)
 - [Trabalho em andamento] [Quebra-acabeças de Parsons com resultado visual](https://abav.lugaralgum.com/faded-parsons-visual/)
 - [Trabalho em andamento] [NumPy para leigos](https://hackmd.io/@villares/numpy-para-leigos)
