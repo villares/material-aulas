@@ -305,14 +305,7 @@ def draw():
 
 # Strings
 
-
-Se o código contiver strings com caracteres *não-ASCII* (como letras acentuadas ou emojis) pode ser uma boa ideia iniciar o *sketch* com a seguinte linha:
-
-```python
-
-```
-
-De outra forma você terá que preceder cada string com `u` da seguinte maneira:  `u"maçã"`.
+Em Python 3 por padrão os strings agora são unicode (não era assim no Python 2). Existe um tipo `bytes` que não é unicode.
 
 **Tipo *char* em Java**
 
