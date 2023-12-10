@@ -7,10 +7,10 @@
 # Considerações gerais
 
 - Como você provavelmente sabe, em Python o que conta para saber se uma linha de código está 'dentro' de uma função ou de outra estrutura qualquer, como um `if`, é a indentação. No Java são as chaves `{}` que mandam, mas é comum a indentação refletir a hierarquia, mesmo isso não sendo obrigatório. Por isso, use a ferramenta de auto-formatação do IDE antes de começar e avance com cuidado!
-- As chaves precisam ser removidas, e você deve trocar cada `{` por `: ` no começo de um bloco de instruções(isso só não vale para as definições de * arrays*, que tem chaves mas não definem um bloco de instruções, e viram uma lista ou uma tupla com `[]` ou` ()`).
-- Remova os `; ` no final das linhas.
-- Comentários com `//` no Java viram comentários com `  # `. Comentários de várias linhas com `/* … */ ` podem virar *docstrings*, com aspas triplas no Python, `""" … """`.
-- Java é uma linguagem de * tipagem estática * e Python é uma linguagem de * tipagem dinâmica * isso significa que vamos remover todas as declarações de tipo. Remova `int `, `float`, `String`, `color`, `boolean`  das declarações de variáveis. Por exemplo,  `int i = 0; ` se torna `i = 0`.
+- As chaves precisam ser removidas, e você deve trocar cada `{` por `:` no começo de um bloco de instruções(isso só não vale para as definições de *arrays*, que tem chaves mas não definem um bloco de instruções, e viram uma lista ou uma tupla com `[]` ou` ()`).
+- Remova os `;` no final das linhas.
+- Comentários com `//` no Java viram comentários com `#`. Comentários de várias linhas com `/* … */` podem virar *docstrings*, com aspas triplas no Python, `""" … """`.
+- Java é uma linguagem de *tipagem estática* e Python é uma linguagem de *tipagem dinâmica* isso significa que vamos remover todas as declarações de tipo. Remova `int `, `float`, `String`, `color`, `boolean`  das declarações de variáveis. Por exemplo,  `int i = 0; ` se torna `i = 0`.
 - Podemos também remover `void` ou  tipo na declaração de uma função e colocar no lugar o `def` do Python.  Depois remover a declaração de tipo dos parâmetros da função.
 
    **Java**
@@ -529,6 +529,19 @@ board = [[0] * grid_w for _ in range(grid_h)]
 ```
 
 Em vez do `0` você pode usar outro valor calculado ou `None` como 'segurador de lugar' (*placeholder*) caso a estrutura vá servir para outros tipos de dados.
+
+**Python com Numpy**
+
+Você pode consultar a [documentação do Numpy](https://numpy.org/doc/stable/user/basics.creation.html)
+
+```python
+import numpy as np
+
+board = np.zeros((2, 3))
+print(board)
+# array([[0., 0., 0.],
+#        [0., 0., 0.]]
+``` 
 
 ---
 
