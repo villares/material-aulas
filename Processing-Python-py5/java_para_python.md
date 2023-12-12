@@ -77,7 +77,9 @@ while angulo < TWO_PI:
 # Implementando um range com passos não inteiros:
 
 ```python
-def frange(start, stop, step):
+def frange(start, stop=None, step=1):
+    if stop is None:
+        stop, start = start, 0
     assert step != 0, "step can't be zero"
     invalid_limit_error =  (
         'start must be smaller than stop for positive step'
@@ -96,6 +98,7 @@ for angulo in frange(0, TWO_PI, passo):
     …    
 
 ```
+Nota: Cuidado com a comparação de *floats* que pode ser perigosa...
 
 Aqui um exemplo de laço é feito apenas para pegar objetos de uma estrutura de dados:
 
