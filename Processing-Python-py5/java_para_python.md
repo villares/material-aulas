@@ -74,7 +74,7 @@ while angulo < TWO_PI:
     angulo += passo
 ```
 
-# Implementando um range com passos não inteiros:
+### Implementando um range com passos não inteiros:
 
 ```python
 def frange(start, stop=None, step=1):
@@ -100,7 +100,7 @@ for angulo in frange(0, TWO_PI, passo):
 ```
 Nota: Cuidado com a comparação de *floats* que pode ser perigosa...
 
-Aqui um exemplo de laço é feito apenas para pegar objetos de uma estrutura de dados:
+# Aqui um exemplo de laço é feito apenas para pegar objetos de uma estrutura de dados:
 
 
 ```java
