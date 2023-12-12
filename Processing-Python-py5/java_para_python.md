@@ -78,8 +78,17 @@ while angulo < TWO_PI:
 
 ```python
 def frange(start, stop, step):
-    from itertools import count, takewhile
-    return takewhile(lambda x: x < stop, count(start, step))
+    assert step != 0, "step can't be zero"
+    invalid_limit_error =  (
+        'start must be smaller than stop for positive step'
+        if step > 0 else
+        'stop must be smaller than start for negative step'
+    )
+    assert stop > start if step > 0 else stop < start, invalid_limit_error
+    count = start
+    while count < stop:
+        yield count
+        count += step
 
 # em uso no exemplo...
 passo = TWO_PI / 18
