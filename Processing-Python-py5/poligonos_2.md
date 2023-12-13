@@ -123,20 +123,21 @@ def setup():
 
 ### EXTRA: Uma função para desenhar polígonos com furos
 
-</details >
+Imagine uma função que desenha uma forma poligonal baseada em vértices (*Py5Shape*) com furos se mandarmos uma lista de pontos, mais uma lista de furos com listas de pontos dentro.
 
-Imagine uma função que desenha um Py5Shape com furos se mandarmos uma lista de pontos, mais uma lista de furos com polígonos dentro.
+<details>
+<summary>clique para ver o código</summary>
 
-```python
+<pre>
 def setup():
     size(400, 400)
 
     pontos_shape = [(20, 20), (330, 50), (300, 370)]
     pontos_furo = [(290, 300), (300, 60), (100, 40)]
 
-    poly_and_holes(pontos_shape, [pontos_furo])
+    poly_shape(pontos_shape, [pontos_furo])  # note os colchetes extra, uma lista com uma lista dentro
 
-def poly_and_holes(pts, holes=None, closed=True):
+def poly_shape(pts, holes=None, closed=True):
     """
     Aceita como pontos sequencias de tuplas, listas ou vetores com (x, y) ou (x, y, z).
     Note que `holes` espera uma sequencias de sequencia de pontos, que precisam estar
@@ -153,6 +154,6 @@ def poly_and_holes(pts, holes=None, closed=True):
         end_shape(CLOSE)
     else:
         end_shape()
-```
+</pre>
 
-</details >
+</details>
