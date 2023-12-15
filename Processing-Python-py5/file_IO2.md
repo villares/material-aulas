@@ -2,23 +2,16 @@
 
 # *Comma Separated Values*, um formato de intercâmbio primitivo, porém ainda útil
 
-
-import unicodecsv as csv
-Vamos agora falar sobre como ler e escrever dados simples em um arquivo CSV, um arquivo texto com valores separados por vígula. Tanto o Processing como o a biblioteca padrão do Python tem ferramentas para ajudar a lidar com este formato.
-
-*AVISO: * Infelizmente o módulo **`csv`** da biblioteca padrão do Jython, o Python 2 que estamos usando, não entende de Unicode então vamos usar uma biblioteca chamada **`unicodecsv`** que resolve isso para nós.
-
-Em preparação para o nosso primeiro exemplo, note que precisaremos de um arquivo[`dados.csv`](https://raw.githubusercontent.com/villares/material-aulas/main/Processing-Python/assets/dados.csv) que deve ficar dentro da pasta `/ data /` dentro  do seu sketch, e de uma cópia de[`unicodecsv.py`](https://raw.githubusercontent.com/villares/material-aulas/main/Processing-Python/assets/unicodecsv.py)(clique com o botão da direita do mouse para salvar no seu computador)
+Vamos agora falar sobre como ler e escrever dados simples em um arquivo CSV, o nome vem de *Comma Separated Values*, isto é, um arquivo texto com valores separados por vígula (mas às vezes se usam outros separadores como tabulções, no que teoricamente deveriam ser um TSV...).  Tanto o Processing como o a biblioteca padrão do Python tem ferramentas para ajudar a lidar com este formato.
 
 ```
-sketch_2020_05a(pasta/folder do sketch)
-  L  sketch_2020_05a.pyde(arquivo com o código)
-  L  unicodecsv.py(biblioteca de ajuda)
-  L  data(pasta/folder)
-       L  dados.csv(arquivo CSV)
+sketch_csv(pasta/folder do sketch)
+  L  sketch_csv.py (o arquivo do seu programa)
+  L  data (uma pasta/folder)
+       L  dados.csv (o arquivo CSV)
 ```
 
-Conteúdo do aquivo:
+Conteúdo do aquivo [`dados.csv`](assets/dados.csv):
 
 ```
 nome, valor, area, largura, comprimento, x, y
@@ -29,11 +22,17 @@ A3, 2520, 252, 14, 18, 2, 17
 Exemplo que lê o arquivo
 
 ```python
+import csv
 
+with open('dados.csv', newline='') as csvfile:
+    reader = csv.DictReader(csvfile)
+    for row in reader:
+        print(row['nome'], row['valor'])
 
+print(row)
 ```
 
 # Assuntos relacionados
 
 * [Textos no programa, no console e na tela(*strings*)](strings_py.md)
-* Se quiser ler mais sobre * Filie IO * na documentação do Python: [Python 2.7 Tutorial: Reading and Writing Files](https://docs.python.org/2/tutorial/inputoutput.html  # reading-and-writing-files)
+* Se quiser ler mais sobre CSV na documentação do Python: [`csv` — CSV File Reading and Writing](https://docs.python.org/3/library/csv.html)
