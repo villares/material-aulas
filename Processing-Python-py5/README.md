@@ -82,12 +82,13 @@
 
 ### Arquivos externos
 
-- 6.1.1 [Lendo um arquivo vetorial(SVG)](recursos_vetoriais_externos.md)
+- 6.1.0 [Carregado formas de um arquivo vetorial (SVG)](recursos_vetoriais_externos.md)
 - 6.2.0 [Lendo arquivos de imagem(*bitmap/raster*)](imagens_externas.md)
   - 6.2.1 [Lendo todas as imagens da pasta `data`](imagens_externas_pasta2.md) e sorteando uma
   - 6.2.1 [Lendo todas as imagens de uma pasta selecionada pela pessoa usuária](imagens_externas_pasta.md) (avançado)
-- 6.3.1 [Lendo e escrevendo texto em arquivos(*file IO*)](file_IO.md)
-
+- 6.3.0 [Lendo e escrevendo texto em arquivos (*file IO*)](file_IO.md)
+  - 6.3.1 [Lendo e escrevendo dados "tabulados" em CSV](file_IO2.md)
+   
 ### Questões mais avançadas das ferramentas
 
 - 7.1.1 [Usando várias abas no IDE](modulos.md)
