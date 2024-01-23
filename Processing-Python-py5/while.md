@@ -7,17 +7,6 @@ Quando é comum usar o `while`?
 - Você precisa de contadores ou uma sequênica de números não-inteiros e a forma do laço `for` com `for i in range(inicio, parada, passo):` só funciona com inteiros. Isso pode ser resolvido implementando um [`frange()`](java_para_python.md#implementando-um-range-com-passos-não-inteiros) mas é mais comum ser feito com `while`;
 - Você só vai saber a hora de parar o laço no meio do processo de repetições, isto é, o número de de iterações, o número de "voltas" do laço, não é conhecido com antecedência, é um chamado "laço indetermidado".
 
-## Sumário
-
-- [Sintaxe dos laços while](#sintaxe-dos-laços-while)
-- [Primeiro exemplo](#primeiro-exemplo)
-- [Uma variante com círculos](#uma-variante-com-círculos)
-- [Acumulando itens em uma coleção](#acumulando-itens-em-uma-coleção)
-- [Somando larguras variáveis](#somando-larguras-variáveis)
-- [While e else](#while-e-else)
-
-[Assuntos relacionados](#assuntos-relacionados)
-
 ### Sintaxe dos laços `while`
 
 De forma geral os laços de repetição baseados no `while` tem a seguinte estrutura: 
