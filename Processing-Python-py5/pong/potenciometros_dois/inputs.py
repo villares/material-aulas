@@ -13,6 +13,9 @@ def get_arduino(port=None):
     both analog_read() and digital_read() functions that mimic Processing's
     Firmata library interface:
     Readings are never None, and analog pins return a value between 0 and 1023.
+    
+    On Linux might need chmod 666 /dev/tty_usb0 (or the dial group thing)
+
     """   
     from pyfirmata import Arduino, util
     from serial.tools import list_ports
