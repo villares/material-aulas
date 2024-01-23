@@ -1,13 +1,10 @@
 """
-Código para a leitura dos potenciômetros, requer biblioteca Firmata (Arduino)
-Você deve ajustar o valor de SERIAL para porta USB com seu Arduino
-No Linux pode ser que precise fazer sudo chmod 666 /dev/tty_usb0 (ou equivalente).
+Código para a leitura dos potenciômetros, requer biblioteca PyFirmata e arquivo inputs.py
 """
 
 # ARDUINO
 POT_AMARELO = 0   # Pino que vai ser lido controle 'jogador Amarelo'
 POT_VERDE = 5   # Pino que vai ser lido controle 'jogador Verde'
-SERIAL = 0  # MUDE para o índice do seu Arduino na lista de portas seriais!
 
 # JOGADORES
 MEIA_ALTURA_JOGADOR = 50  # tamanho de meia altura do jogador
