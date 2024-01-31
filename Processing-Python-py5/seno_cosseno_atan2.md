@@ -302,27 +302,27 @@ Com ela é possível calcular, por exemplo, os vértices de um retângulo, como 
 def setup():
     size(500, 500)
     background(100, 0, 100)
-    pontos = rect_points(250, 250, 300, 200, angulo=radians(30), modo=CENTER)
+    rps = rect_points(250, 250, 300, 200, ang=radians(30), mode=CENTER)
     with begin_closed_shape():
-        vertices(pontos)
+        vertices(rps)
 
-def rotate_point(x_original, y_original, angulo, x_centro=0, y_centro=0):
+def rotate_point(x_original, y_original, ang, x_centro=0, y_centro=0):
     x, y = x_original - x_centro, y_original - y_centro
-    xr = x * cos(angulo) - y * sin(angulo)
-    yr = y * cos(angulo) + x * sin(angulo)
+    xr = x * cos(ang) - y * sin(ang)
+    yr = y * cos(ang) + x * sin(ang)
     return (xr + x_centro, yr + y_centro)
 
 
-def rect_points(ox, oy, w, h, angulo=None, modo=CORNER):
-    if modo == CENTER:
+def rect_points(ox, oy, w, h, ang=None, mode=CORNER):
+    if mode == CENTER:
         x, y = ox - w / 2.0, oy - h / 2.0
     else:
         x, y = ox, oy
     pts = [(x, y), (x + w, y), (x + w, y + h), (x, y + h)]
-    if angulo is None:
+    if ang is None:
         return pts
     else:
-        return [rotate_point(x, y, angulo, ox, oy)
+        return [rotate_point(x, y, ang, ox, oy)
                 for x, y in pts]
 ```
 
