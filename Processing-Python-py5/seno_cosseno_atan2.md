@@ -10,7 +10,7 @@ Para começar é preciso saber que quando uma dessas funções pede um ângulo c
 
 ### Seno e cosseno
 
-Na origem essas funções tratam das relações entre ângulos e proporções das medidas dos triângulos, sendo muito estudas, demonstradas, em triângulos retângulos ou em um círculo de raio unitário(o ciclo trigronométrico), mas para além desse contexto, das coisas mais úteis que você pode querer saber, e acredito não ser difícil demonstrar aqui, é que essas funções devolvem valores entre ** -1 ** e ** 1 ** de maneira cíclica, periódica.
+Na origem essas funções tratam das relações entre ângulos e proporções das medidas dos triângulos, sendo muito estudas, demonstradas, em triângulos retângulos ou em um círculo de raio unitário(o ciclo trigronométrico), mas para além desse contexto, das coisas mais úteis que você pode querer saber, e acredito não ser difícil demonstrar aqui, é que essas funções devolvem valores entre **-1** e **1** de maneira cíclica, periódica.
 
 Os primeiros exemplos a seguir são para visualizar como se dá o comportamento do seno e do cosseno.
 
@@ -18,7 +18,7 @@ Os primeiros exemplos a seguir são para visualizar como se dá o comportamento 
 
 ![](assets/seno_cosseno_0.png)
 
-Para produzir a imagem acima, criamos um laço repetição que produz um `x` de ** 0 ** a ** 720 ** , convertemos esse `x`num ângulo em radianos e dividimos por ** 2**, de forma a obter ângulos de ** 0 ** a ** 2π ** radianos (ou ** 0°** a ** 360°** ).
+Para produzir a imagem acima, criamos um laço repetição que produz um `x` de **0** a **720** , convertemos esse `x`num ângulo em radianos e dividimos por **2**, de forma a obter ângulos de **0** a **2π** radianos (ou **0°** a **360°** ).
 
 Vamos  multiplicar o valor do seno e do cosseno do ângulo pela metade da altura da tela(aproveitando para inverter o sinal pois o eixo Y do Processing cresce para baixo e estamos acostumados a ver os gráficos com a parte positiva para cima). Para deslocar a origem para baixo somamos esse mesmo valor de metade da altura da tela.
 
@@ -40,11 +40,11 @@ print(sin(0))  # exibe no console: 0.0
 print(cos(0))  # exibe no console: 1.0
 ```
 
-O seno é o que começa à esquerda no ** 0**, na meia altura da tela, e o cosseno é o que começa no alto valendo ** 1**.
+O seno é o que começa à esquerda no **0**, na meia altura da tela, e o cosseno é o que começa no alto valendo **1**.
 
 #### Outra versão com algumas indicações
 
-Desta vez o exemplo usa `translate()` e `scale()` para deslocar e inverter o eixo Y. E o X vai de ** 0 ** a aproximadamente ** 2π ** mutiplicado por ** 100 **
+Desta vez o exemplo usa `translate()` e `scale()` para deslocar e inverter o eixo Y. E o X vai de **0** a aproximadamente **2π** mutiplicado por **100**
 
 ![](assets/seno_cosseno.png)
 
@@ -86,7 +86,7 @@ def indicacoes():
 
 #### *sin()* e *cos()* no tempo
 
-Seno e cosseno são muito úteis para fazer animações cíclicas, é muito fácil usar a contagem pronta dos quadros oferecida pelo Processing,  `frame_count` como se fosse um ângulo em graus, converta em radianos e * voi-lá *!
+Seno e cosseno são muito úteis para fazer animações cíclicas, é muito fácil usar a contagem pronta dos quadros oferecida pelo Processing,  `frame_count` como se fosse um ângulo em graus, converta em radianos e *voi-lá*!
 
 ![](assets/seno_cosseno.gif)
 
@@ -121,7 +121,7 @@ def indicacoes():
     fill(0, 200, 200)
     text("seno", 10, 60)
 ```
-Note que seno ou cosseno valendo zero significa que a bolinha fica com tamanho ** 100**, com valor ** -1 ** ela deseaparece e com o valor ** 1 ** ela ganha o seu diâmetro máximo de ** 200 ** pixels.
+Note que seno ou cosseno valendo zero significa que a bolinha fica com tamanho **100**, com valor **-1** ela deseaparece e com o valor **1** ela ganha o seu diâmetro máximo de **200** pixels.
 
 #### Seno e cosseno fornecem as coordenadas dos pontos de um círculo!
 
@@ -172,7 +172,7 @@ def draw():
 
 def indicacoes():
     stroke(255)
-    stroke_weight(1)
+    stroke_weight(1)ou o sumário
     no_fill()
     circle(x_centro, y_centro, raio * 2)
     line(x_centro, y_centro - raio,
@@ -201,7 +201,7 @@ O cateto oposto é a diferença dos valores de Y e o adjacente a diferença dos 
 
 ![](assets/atan2.gif)
 
-Note que vamos obter ângulos com valores entre ** -π ** e ** π ** (entre ** -180 ** e ** 180 ** graus) em vez de ** 0 ** a ** 2π**. Você pode somar a constate `PI` do Processing ao valor se preferir essa segunda faixa.
+Note que vamos obter ângulos com valores entre **-π** e **π** (entre **-180** e **180** graus) em vez de **0** a **2π**. Você pode somar a constate `PI` do Processing ao valor se preferir essa segunda faixa.
 
 #### Desenhando uma seta com *atan2()*
 
@@ -320,7 +320,7 @@ def rect_points(ox, oy, w, h, angulo=None, modo=CORNER):
         x, y = ox, oy
     pts = [(x, y), (x + w, y), (x + w, y + h), (x, y + h)]
     if angulo is None:
-        return points
+        return pts
     else:
         return [rotate_point(x, y, angulo, ox, oy)
                 for x, y in pts]
