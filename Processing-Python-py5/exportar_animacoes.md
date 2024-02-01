@@ -20,7 +20,7 @@ def draw():
     ellipse(50, 50, diameter, diameter)
     diameter = diameter + 1
     # e no final do draw()
-    if frame_count < 250 and frame_count % 2 == 1:
+    if frame_count < 500 and frame_count % 2 == 1:
         print(frame_count)
         save_frame('imagem####.tga')
     else:
@@ -33,9 +33,9 @@ Para a converter esses 'frames' em um vídeo ou em um GIF animado, podemos usar:
 - Alguma outra ferramenta da sua escolha, como o [**ffmpeg**](http//www.ffmpeg.org) na linha de comando (ou [via uma GUI](https://github.com/amiaopensource/ffmpeg-amia-wiki/wiki/3%29-Graphical-User-Interface-Applications-using-FFmpeg)).
 - Um script Python que combina PNGs usando `imageio`, [na linha de comando](https://github.com/villares/sketch-a-day/blob/main/admin_scripts/pngs_to_gif.py) ou [com GUI](https://github.com/villares/sketch-a-day/blob/main/admin_scripts/pngs_to_gif_gui.py).
 
-# B. Exportação de GIF pelo py5
+# B. Exportação de GIF direto com py5
 
-A biblioteca py5 tem um módulo chamado `py5_toos` que, entre outras ferramentas, tem uma função para ajudar a exportar GIFs usando a infraestrutura do Pillow. 
+A biblioteca py5 tem um módulo chamado `py5_tools` que, entre outras ferramentas, tem uma função para ajudar a exportar GIFs usando a infraestrutura do Pillow. 
 
 ```python
 import py5_tools
@@ -61,7 +61,7 @@ Veja a documentação completa em [py5coding.org/reference/py5tools_animated_gif
 
 # C. Gravando a tela do computador
 
-Uma última estratégia que pode ser útil para documentar e compartilhar o resultado de *sketches* é gravar a tela do computador, ou parte dela.
+Uma última estratégia que pode ser útil para documentar e compartilhar o resultado de *sketches*, especialmente quando eles são interativos, é gravar a tela do computador, ou parte dela.
 
 - [pypeek](https://github.com/firatkiral/pypeek) - Linux, Windows e Mac, exporta GIF e mp4.
 - [Blue Recorder](https://github.com/xlmnxp/blue-recorder) - Linux - exporta GIF e vídeos.
