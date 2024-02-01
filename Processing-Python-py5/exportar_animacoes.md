@@ -35,7 +35,29 @@ Para a converter esses 'frames' em um vídeo ou em um GIF animado, podemos usar:
 
 # B. Exportação de GIF pelo py5
 
-- https://py5coding.org/reference/py5tools_animated_gif.html
+A biblioteca py5 tem um módulo chamado `py5_toos` que, entre outras ferramentas, tem uma função para ajudar a exportar GIFs usando a infraestrutura do Pillow. 
+
+```python
+import py5_tools
+
+diameter = 1
+
+def setup():
+    size(200, 200)
+    smooth()
+    frames = list(range(0, 500, 2))  # 250 frames: 0, 2, 4, 6 ... 498
+    py5_tools.animated_gif('anima.gif', frame_numbers=frames, duration=0.1)
+
+def draw():
+    # o desenho da aminação vai aqui
+    global diameter
+    ellipse(50, 50, diameter, diameter)
+    diameter = diameter + 1
+```
+
+Veja a documentação completa em [py5coding.org/reference/py5tools_animated_gif.html](https://py5coding.org/reference/py5tools_animated_gif.html)
+
+![anima](https://github.com/villares/material-aulas/assets/3694604/7ff938cf-37f8-474a-998f-47a60f016677)
 
 # C. Gravando a tela do computador
 
