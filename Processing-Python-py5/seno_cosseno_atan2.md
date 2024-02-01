@@ -328,4 +328,4 @@ def rect_points(ox, oy, w, h, ang=None, mode=CORNER):
 
 ## Assuntos relacionados
 
-- [Transformações no sistema de coordenadas](transformacose_coordenadas.md)
+- [Modificando o sistema de coordenadas](transformacoes_coordenadas.md)
