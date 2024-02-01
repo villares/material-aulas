@@ -65,7 +65,7 @@ Note que o segundo e terceiro quadrados são desenhados com `square(0, 0, 200)`,
 
 A segunda parte do problema, que se manifestou sutilmente até agora, é de que as transformações do sistema de coordenadas não cumulativas. Como mover e girar o mesmo papel milimetrado sucessivamente.
 
-Suponha que queremos desenhar uma fila de quadrados girados, e veja este exemplo ingênuo de uma função `quadrado_girado()` que desenha, bem, um quadrado girado. Este código falha em permitir que desenhemos uma fila com os quadrados alinhados com Y valendo 100, como parecem indicar as coordenadas (100, 100), (250, 100) e (400, 100).
+Suponha que queremos desenhar uma fila de quadrados girados, e veja este exemplo ingênuo de uma função `quadrado_girado_errado()` que desenha, bem, um quadrado girado. O código a seguir, usando a função `quadrado_girado_errado()`  falha horrívelmente na missão de desenhar uma fila com os quadrados alinhados com Y valendo 100, como parecem indicar as coordenadas passadas como argumentos (100, 100), (250, 100) e (400, 100).
 
 ```python
 def setup():
@@ -73,24 +73,24 @@ def setup():
     rect_mode(CENTER)
     no_fill()
 
-def quadrado_girado(x, y, lado, rot):
+def quadrado_girado_errado(x, y, lado, rot):
     translate(x, y)
     rotate(rot)
     square(0, 0, lado)
     
 def draw():
     background(200)
-    quadrado_girado(100, 100, 100, radians(10))
-    quadrado_girado(250, 100, 100, radians(10))
-    quadrado_girado(400, 100, 100, radians(10))
+    quadrado_girado_errado(100, 100, 100, radians(10))
+    quadrado_girado_errado(250, 100, 100, radians(10))
+    quadrado_girado_errado(400, 100, 100, radians(10))
 ```
 ![](assets/2d_transformations_2.png)
 
-Cada chamada a função `quadrado_girado()` empurra a origem do sistema de coordenadas mais um pouco, e também gira 10 graus, então o segundo quadrado girado cai mais longe e mais girago, o terceiro já fica para fora da tela, mais abaixo à direita!
+Cada chamada a função `quadrado_girado_errado()` empurra a origem do sistema de coordenadas mais um pouco, e também gira 10 graus, então o segundo quadrado girado cai mais longe e mais girado, o terceiro já fica para fora da tela, mais abaixo à direita!
 
 ### A solução com *push_matrix* e *pop_matrix*
 
-É possível fazer uma espécie de "backup" do atual sistema de coordenadas, usando a função [`push_matrix()`](https://py5coding.org/reference/sketch_push_matrix.html) depois de feito o desenho que precisamos com as coordenadas alteradas,  [`pop_matrix()`](https://py5coding.org/reference/sketch_pop_matrix.html) devolve ao sketch o estado anterior do sistema de coordenadas. Com esta versão modificada da função `quadrado_girado()` conseguimos posicionar à vontade nossos quadrados girados.
+É possível fazer uma espécie "backup" do atual sistema de coordenadas, usando a função [`push_matrix()`](https://py5coding.org/reference/sketch_push_matrix.html) depois de feito o desenho que precisamos com as coordenadas alteradas,  [`pop_matrix()`](https://py5coding.org/reference/sketch_pop_matrix.html) devolve ao sketch o estado anterior do sistema de coordenadas. Com esta versão modificada da função `quadrado_girado()` conseguimos posicionar à vontade nossos quadrados girados.
 
 ```python
 def quadrado_girado(x, y, lado, rot):
