@@ -42,7 +42,7 @@ As respostas para essas perguntas são:
 
 ## Resolvendo a primeira parte, a escolha do centro da rotação, usando a translação
 
-Se movermos a origem para o ponto no centro da área de desenho, usando [`translate()`](https://py5coding.org/reference/sketch_translate.html), com os argumentos `250, 250`,  conseguiremos girar o sitema de coordenadas em torno desta novo centro.
+Se movermos a origem para o ponto no centro da área de desenho, usando [`translate()`](https://py5coding.org/reference/sketch_translate.html), com os argumentos `250, 250`,  conseguiremos girar o sitema de coordenadas em torno de um novo centro.
 
 ```python
 def setup():
