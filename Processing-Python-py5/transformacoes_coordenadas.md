@@ -218,5 +218,5 @@ Se você estiver trabalhando em três dimensões, poderá chamar a função `tra
 
 - [Um pouco de ângulos, com seno, cosseno e arco tangente](seno_cosseno_atan2.md)
 - [Desenhando em 3D: Primeiros passos com `size(…, …, P3D)`](desenho-3D.md)
-- Páginas externas: Tutorial [2D Transformations](https://py.processing.org/tutorials/transform2d /) de J. David Eisenberg ([versão traduzida em português](http://arteprog.space/Processando-Processing/tutoriais-PT/python-transformacoes_2D)) 
+- Páginas externas: Tutorial [2D Transformations](https://py.processing.org/tutorials/transform2d/) de J. David Eisenberg ([versão traduzida em português](http://arteprog.space/Processando-Processing/tutoriais-PT/python-transformacoes_2D)) 
 
