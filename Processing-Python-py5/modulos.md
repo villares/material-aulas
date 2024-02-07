@@ -1,4 +1,4 @@
-# Usando as abas no Thonny IDE e importando de outros módulos
+# Usando as abas no Thonny IDE e importando código de outros módulos
 
 Para organizar melhor um *sketch* mais longo é comum separar as definições de classes e outras funções em "arquivos secundários", e é comum também trabalhar com esses vários arquivos abertos em diferentes abas do Thoony. 
 
