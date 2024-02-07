@@ -2,17 +2,17 @@
 
 Para organizar melhor um *sketch* mais longo é comum separar as definições de classes e outras funções em "arquivos secundários", e é comum também trabalhar com esses vários arquivos abertos em diferentes abas do Thoony. 
 
-No Processing Java a integração entre arquivos é feita magicamente para você unindo todas das as abas abertas do Processing IDE modo Java como se fossem um só arquivo. Com o modo Python, e agora no Thonny, é diferente, você precisa pedir para o arquivo principal "importar" código dos outros, e aqui vamos ver um pouco sobre como isso funciona.
+No Processing Java a integração entre arquivos é feita magicamente para você unindo todas as abas abertas do Processing IDE no modo Java, como se tudo fossem um só arquivo. Com o modo Python, e agora no Thonny IDE com py5, é diferente, você precisa pedir para o arquivo principal "importar" código dos outros, e aqui vamos ver um pouco sobre como isso funciona.
 
 ## Exemplos de importação de módulos em Python
 
-Cada arquivo que escrevemos tem o potencial de conter código que se comporta da mesma maneira como um *módulo* da biblioteca padrão em Python, veja alguns exemplos de importação, as instruções que trazem nomes de outros módulos para você usar no seu programa.
+Cada arquivo que escrevemos tem o potencial de conter código que se comporta da mesma maneira como um *módulo* da biblioteca padrão em Python, veja alguns exemplos de importação, as instruções que trazem os nomes de outros módulos para você usar no seu programa.
 
 ```
-from nome_aba import *
-import random as rnd
-from random import choice`
-from nome_arquivo import uma_funcao, outra_funcao, Uma_classe, Outra_classe
+import random as rnd         # traga o módulo random da biblioteca padrão, com outro nome, usando o apelido rnd
+from random import choice    # traga a função choice() do módulo random
+from nome_arquivo import *   # traga todos os nomes de nome_arquivo.py (não é muito recomendado)
+from nome_arquivo import uma_funcao, outra_funcao, Uma_classe, Outra_classe   # traga estes nomes no nome_arquivo.py
 ``` 
 
 ### Exemplo de importação da biblioteca padrão do Python
@@ -41,9 +41,9 @@ sorteio = rnd.choice(colecao)
 
 ### Usando vários arquivos com o py5
 
-As funções `setup()`,  `draw()` assim como as que são acionadas por eventos, por exemplo, `mouse_dragged()` ou `key_pressed()`, precisam ficar no mesmo arquivo principal.
+As funções `setup()`, `draw()` assim como as que são acionadas por eventos, por exemplo, `mouse_dragged()` ou `key_pressed()`, precisam ficar no mesmo arquivo principal.
 
-Saba também que, em princípio, quando está executando o código que está em um outro módulo, o Python não conhece o vocabulário da biblioteca py5, isso pode não ser um problema, mas também pode ser remediado com as extratégias [explicadas na documentação do py5](http://py5coding.org/content/importing_py5_code.html). Veja um exemplo usando a estratégia do "comentário especial" para marcar arquivos secundários com código que usa as funções do py5 no modo importado;
+Saba também que, em princípio, quando está executando o código que está em um outro módulo, o Python não conhece o vocabulário da biblioteca py5, isso pode não ser um problema, mas também pode ser remediado com a extratégia [explicada na documentação do py5](http://py5coding.org/content/importing_py5_code.html) que consiste em adicionar um "comentário especial" para marcar arquivos secundários com código que queremos separar, e que use as funções do py5 no modo importado.
 
 Arquivo principal `meu_sketch.py`:
 
