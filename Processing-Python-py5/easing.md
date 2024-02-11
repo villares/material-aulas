@@ -1,22 +1,20 @@
 # O que é *easing*?
 
-A ideia por trás de * easing * é a suavização de transições de um movimento, uma vez que, na natureza, os movimento tem variação de velocidade que raramente são instantâneas ou lineares.
+A ideia por trás de *easing* é a suavização de transições de um movimento, uma vez que, na natureza, os movimento tem variação de velocidade que raramente são instantâneas ou lineares.
 
-Um movimento pode iniciar rapidamente  e parar suavemente(*easing out*), iniciar suavemente(*ease in*) ou ainda iniciar e parar suavemente(*easing in and out*).
+Um movimento pode iniciar rapidamente e parar suavemente (*easing out*), iniciar suavemente (*ease in*) ou ainda iniciar e parar suavemente (*easing in and out*).
 
 ## Funções para suavização das transições
 
 Para o conteúdo a seguir vamos precisar [manipular faixas de valores com `remap()` e `lerp()`](map_lerp.md)
 
-Uma estratégia muito comum é  usar funções de *easing* que recebem um valor entre **0** e **1** e retornam um valor, grosso modo na mesma faixa, ou pelo menos nos extremos (eventualmente passado um pouco para fora). Os valores podem ser usados em conjunto com `lerp()` ou simplesmente multiplicando um outro valor.
+Uma estratégia muito comum é  usar funções de *easing* que recebem um valor entre **0** e **1** e retornam um valor, grosso modo na mesma faixa (eventualmente passado um pouco para fora e voltando). Os valores podem ser usados em conjunto com `lerp()` ou simplesmente multiplicando um outro valor.
 
 Em uma função `easing(p)` um `p = 0` devolve **0** e `p = 1` produz **1**, mas a variação intermediária acontece em velocidades diferentes. O *não-easing* é o crescimento linear, em que o valor devolvido é exatamente o mesmo recebido pela função.
 
 Vejamos um exemplo que fizemos inicialmente na explicação do `remap()` de um círculo que anda e vai de preto para branco, mas agora usando `lerp()` e uma função de *easing* exponencial 'sigmóide', na saída e na chegada(*in* e * out*).
 
 ```python
-
-
 def setup():
     size(400, 400)
     stroke_weight(3)
