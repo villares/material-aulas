@@ -12,7 +12,7 @@ Uma estratégia muito comum é  usar funções de *easing* que recebem um valor 
 
 Em uma função `easing(p)` um `p = 0` devolve **0** e `p = 1` produz **1**, mas a variação intermediária acontece em velocidades diferentes. O *não-easing* é o crescimento linear, em que o valor devolvido é exatamente o mesmo recebido pela função.
 
-Vejamos um exemplo que fizemos inicialmente na explicação do `remap()` de um círculo que anda e vai de preto para branco, mas agora usando `lerp()` e uma função de *easing* exponencial 'sigmóide', na saída e na chegada(*in* e * out*).
+Vejamos um exemplo que fizemos inicialmente na explicação do `remap()` de um círculo que anda e vai de preto para branco, mas agora usando `lerp()` e uma função de *easing* exponencial 'sigmóide', na saída e na chegada(*in* e *out*).
 
 ```python
 def setup():
@@ -111,7 +111,7 @@ def cubic_ease_in_out(p):
         return 0.5 * f ** 3 + 1
 
 
-def sigmoid_easing(p, const=6):  # na animação usada com a constantr 12 também
+def sigmoid_easing(p, const=6):  # na animação usada com a constante 12 também
     """ from John @introscopia """
     m = lerp(-const, const, p)
     return 1 / (1 + exp(-m))
