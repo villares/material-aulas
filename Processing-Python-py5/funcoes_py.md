@@ -152,6 +152,10 @@ para pelo *plug-in* `thonny-py5mode`, quando a opção *imported mode for py5* e
 > ```
 > Mas tem ainda outras malandragens ocultas que a biblioteca faz, mesmo no *module mode*, como desmembrar a função `setup()` em `setup()` e `settings()` para nos facilitar a vida!
 
+## Abstração
+
+Você vai ouvir as pessoas falando sobre a ideia de abstração e encapsulamento na programação, isso tem a ver com o poder de se dar um nome a um conjunto coisas que captura de alguma forma a essencia do que esse conjunto faz. Isso é o que fazemos ao criar e nomear uma função. Posteriormente podemos comport abstrações ainda maiores usando funções que criamos anteriormente.
+
 ## Glossário
 
 [**encapsulamento**](https://penseallen.github.io/PensePython2e/04-caso-interface.html#termo:encapsulamento) O processo de transformar uma sequência de instruções em uma definição de função.
