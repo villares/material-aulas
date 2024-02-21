@@ -32,6 +32,6 @@ Se você quer apoiar a continuidade deste projeto, que produz material didático
 ---
 ### Licenças
 
-**Texto e imagens:** © 2019-2023 Alexandre B A Villares - Licença [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR), para o material acrescentado a partir de 2022 (usando a biblioteca py5), exceto onde indicado, confira atribuições em cada página para materiais adaptados/remixados de outras fontes. Material até 2022 (usando Processing Modo Python) sob [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR), sujeito às mesmas exceções. Agradeço aos colaboradores do repositório que doam suas contribuições nestes termos!
+**Texto e imagens:** © 2019-2024 Alexandre B A Villares - Licença [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR), para o material acrescentado a partir de 2022 (usando a biblioteca py5), exceto onde indicado, confira atribuições em cada página para materiais adaptados/remixados de outras fontes. Material até 2022 (usando Processing Modo Python) sob [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.pt_BR), sujeito às mesmas exceções. Agradeço aos colaboradores do repositório que doam suas contribuições nestes termos!
 
 **Código:** GNU GPL v3.0, exceto onde for indicado, por alguma razão.
