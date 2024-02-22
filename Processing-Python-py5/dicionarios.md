@@ -199,7 +199,7 @@ Resultado:
 """
 ```
 
-Podemos pedir uma espécie de fatia dos primeiros itens dessa lista passando um argumento `n` em `.most_comon(n)'. Repare que mesmo pedindo apenas um dos "itens mais comuns", teremos ainda uma lista de tuplas (nesse caso com uma única tupla dentro).
+Podemos pedir uma espécie de fatia dos primeiros itens dessa lista passando um argumento `n` em `.most_comon(n)`. Repare que mesmo pedindo apenas um dos "itens mais comuns", teremos ainda uma lista de tuplas (nesse caso com uma única tupla dentro).
 
 ```python
 print(contador.most_comon(2))
