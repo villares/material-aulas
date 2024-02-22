@@ -93,6 +93,7 @@
    
 ### Questões mais avançadas das ferramentas
 
+- 7.1.0 [Os "modos de uso" da biblioteca py5](os_modos_de_py5.md)
 - 7.1.1 [Usando várias abas no IDE e importando código de outros módulos](modulos.md) 
 - 7.2.1 [Dicas para portar exemplos do Processing modo Java para o modo Python](java_para_python.md)
 - 7.3.1 [Manipulando a janela](mais_que_size.md) (Tela cheia, redimensionamento e múltiplas janelas) 
