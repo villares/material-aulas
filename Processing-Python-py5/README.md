@@ -53,6 +53,7 @@
 - 2.2.1 [Mais estruturas de dados: dicionário (_dict_)](dicionarios.md)
 - 2.3.1 [Mais estruturas de dados: conjunto (_set_)](conjuntos.md)
 - 2.4.1 [Compreensão de listas e outras *comprehensions*](comprehension.md)
+- 2.5.1 [Removendo itens de coleções](removendo_itens.md)
 
 ### Aprofundando algumas ideias
 
@@ -63,6 +64,7 @@
 - 3.5.1 [Manipulando números com `remap()` e `lerp()`](map_lerp.md) e também interpolando cores
 - 3.6.1 [O que é *easing*?](easing.md) - transições de movimento
 - 3.7.1 [Funções como argumentos de outras funções](funcoes-como-argumentos.md) - `sort()` e funções `lambda`
+- 3.7.2 [Detectando a sobreposição de elementos geométricos](colisoes.md) - o chamado problema das "colisões"
 
 ### Orientação a Objetos
 
