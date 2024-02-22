@@ -20,7 +20,7 @@ Vejamos um exemplo prático em que um dicionário serve para guardar uma paleta 
 | "amarelo" | color(220, 220, 0) |
 | "vermelho" | color(200, 0, 0) |
 
-Em Python podemos definir um dicionário diretamente no código com a sintaxe `{chave: valor, }`.
+Em Python podemos definir um dicionário diretamente no código com a sintaxe `{chave: valor, }` ou apenas `{}` se quisermos um dicionário vazio para começar.
 
 ```python
 cores = {
@@ -93,15 +93,86 @@ estados['SP'] = {'capital': 'São Paulo', 'pop': 46289333}
 print(estados['ES']['capital'])  # exibe: Vitória
 ```
 
-## A questão da ordem dos elementos
+### A questão da ordem dos elementos
 
 Vale notar que até pouco tempo atrás os dicionários comuns em Python não guardavam ou garantiam a ordem das chaves. Em Python 3 atual isso mudou, e em Python 2 é possível recorrer a `OrderedDict` se você precisar manter registro da ordem em que as chaves foram criadas.
 
-## Um exemplo com tuplas como chaves: um tabuleiro
+## Removendo itens de um dicionário
+
+O método `.pop(chave)` semelhante ao que existe nas listas, devolve o valor para uma determinada chave, ao mesmo tempo que a remove do dicionário. Mas, ao contrário das listas, não pode ser usado sem argumentos para se obter e remover o último item/valor.
 
 ```python
-# Exemplo de diconário com uma tupla como chave - batalha naval
+letras_chave = {'A': 1, 'B': 10, 'C': 100}
+letras_chave.pop('B')
+print(letras_chave)
+# Exibe: {'A': 1, 'C': 100}
 
+letras_chave.pop('D')  # KeyError!
+```
+
+Se temos certeza de que chave existe, e não estamos interessados no valor, podemos usar a instrução `del`, senão podemos usar o método `.pop()` com um segundo argumento `None`:
+
+```python
+del letras_chave['A']  # KeyError se não houver 'A'
+letras_chave.pop('D', None) # Seguro, não acontece nada se não houver a chave. None é necessário.
+```
+
+### Um exemplo com tuplas como chaves: um tabuleiro
+
+```python
+tam_tabuleiro = 15
+tam_casa = 35
+meia_casa = tam_casa / 2
+borda = 36
+tabuleiro = {}  # cria um dicionário vazio
+
+def setup():
+    size(600, 600)
+    text_align(CENTER, CENTER)
+
+def draw():
+    background(200)
+    for i in range(tam_tabuleiro):
+        for j in range(tam_tabuleiro):
+            c = tabuleiro.get((i, j))
+            if not c:
+                fill(255)
+            else:
+                fill(200, 200, 0)
+            square(i * tam_casa + borda,
+                   j * tam_casa + borda,
+                   tam_casa) 
+            if c:
+                fill(0)
+                text(c,
+                     i * tam_casa + borda + meia_casa,
+                     j * tam_casa + borda + meia_casa)
+
+def mouse_to_tabuleiro(x, y):
+    i = (x - borda) // tam_casa
+    j = (y - borda) // tam_casa
+    return i, j
+    
+def mouse_pressed():
+    if (borda < mouse_x < width - borda and
+        borda < mouse_y < height - borda):
+        i, j = mouse_to_tabuleiro(mouse_x, mouse_y)
+
+        if not tabuleiro.pop((i, j), None):  # remove item se houver
+            # se não houver inclui item
+            tabuleiro[i, j] = 'E' if mouse_button == LEFT else 'D'
+            
+#        if (i, j) in tabuleiro:
+#            del tabuleiro[i, j]
+#        else:
+#            tabuleiro[i, j] = 'E' if mouse_button == LEFT else 'D'
+```
+
+![imagem do tabuleiro](assets/tabuleiro.png)
+
+### Um exemplo de tabuleiro de batalha naval
+
+```python
 tam_tabuleiro = 15
 tam_casa = 35
 meia_casa = tam_casa / 2
@@ -151,7 +222,8 @@ def draw():
         text(n, pos, height - meia_casa)
 ```
 
-![imagem do tabuleiro aqui](assets/batalha-naval.png)
+![imagem do tabuleiro de batalha naval](assets/batalha-naval.png)
+
 
 ## `Counter` um objeto contador com interface de dicionário
 
