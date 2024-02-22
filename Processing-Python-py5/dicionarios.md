@@ -45,49 +45,50 @@ cores['amarelo'] = color(255, 255, 0)  # modifica valor de 'amarelo'
 No caso da consulta, se não houver a chave no dicionário, teremos um erro! Se não temos certeza da existência da chave podemos usar uma segunda forma de consulta com `.get()`.
 
 ```python
-cinza=cores['cinza']  # KeyError!
+cinza = cores['cinza']  # KeyError!
 
-laranja=cores.get('laranja')  # Caso não haja 'laranja' obtemos `None`
-if laranja:          # None é considerado 'False' e neste caso
+laranja = cores.get('laranja')  # Caso não haja 'laranja' obtemos `None`
+if laranja:          # None é considerado semelhante-a-falso e neste caso
     fill(laranja)    # em um primeiro momento fill() não executa
 
 # podemos também propor um resultado padrão quando a chave não está lá
-roxo=cores.get('roxo', color(200))  # se não houver 'roxo' cinza claro
+roxo = cores.get('roxo', color(200))  # se não houver 'roxo' cinza claro
 fill(roxo)  # enquanto não houver 'roxo' no dicionário teremos color(200)
 ```
 
 ## Exemplo de dicionário com dicionários dentro
 
-Não é incomum termos como valores de um dicionário, outros dicionários. O formato de intercâmbio de infomações JSON(lê-se *djeizon*, vem de *JavaScript Object Notation*), é muito parecido com isto, praticamente uma porção de dicionários aninhados.
+Não é incomum termos como valores de um dicionário, outros dicionários. O formato de intercâmbio de infomações JSON (lê-se *djeizon*, vem de *JavaScript Object Notation*), é um tanto parecido com isto, em geral é quase uma lista com uma porção de dicionários aninhados dentro.
 
 ```python
 # Fonte IBGE 2020
 
-estados = {'MG': {'capital': 'Belo Horizonte', 'pop': 21292666},
-           'AC': {'capital': 'Rio Branco', 'pop': 894470},
-           'RJ': {'capital': 'Rio de Janeiro', 'pop': 17366189},
-           'BH': {'capital': 'Salvador', 'pop': 14930634},
-           'PR': {'capital': 'Curitiba', 'pop': 11516840},
-           'AC': {'capital': 'Rio Branco', 'pop': 894470},
-           'RS': {'capital': 'Porto Alegre', 'pop': 11422973},
-           'PE': {'capital': 'Recife', 'pop': 9616621},
-           'CE': {'capital': 'Fortaleza', 'pop': 9187103},
-           'PA': {'capital': u'Belém', 'pop': 8690745},
-           'SC': {'capital': 'Joinville', 'pop': 7252502},
-           'MA': {'capital': u'São Luís', 'pop': 7114598},
-           'GO': {'capital': u'Goiânia', 'pop': 7113540},
-           'AM': {'capital': 'Manaus', 'pop': 4207714},
-           'ES': {'capital': u'Vitória', 'pop': 4064052},
-           'PB': {'capital': u'João Pessoa', 'pop': 4039277},
-           'RN': {'capital': 'Natal', 'pop': 3534165},
-           'MT': {'capital': u'Cuiabá', 'pop': 3526220},
-           'AL': {'capital': u'Maceió', 'pop': 3351543},
-           'TO': {'capital': u'Palmas', 'pop': 1607363},
-           'MS': {'capital': u'Campo Grande', 'pop': 2839188},
-           }
+estados = {
+    'MG': {'capital': 'Belo Horizonte', 'pop': 21292666},
+    'AC': {'capital': 'Rio Branco', 'pop': 894470},
+    'RJ': {'capital': 'Rio de Janeiro', 'pop': 17366189},
+    'BH': {'capital': 'Salvador', 'pop': 14930634},
+    'PR': {'capital': 'Curitiba', 'pop': 11516840},
+    'AC': {'capital': 'Rio Branco', 'pop': 894470},
+    'RS': {'capital': 'Porto Alegre', 'pop': 11422973},
+    'PE': {'capital': 'Recife', 'pop': 9616621},
+    'CE': {'capital': 'Fortaleza', 'pop': 9187103},
+    'PA': {'capital': 'Belém', 'pop': 8690745},
+    'SC': {'capital': 'Joinville', 'pop': 7252502},
+    'MA': {'capital': 'São Luís', 'pop': 7114598},
+    'GO': {'capital': 'Goiânia', 'pop': 7113540},
+    'AM': {'capital': 'Manaus', 'pop': 4207714},
+    'ES': {'capital': 'Vitória', 'pop': 4064052},
+    'PB': {'capital': 'João Pessoa', 'pop': 4039277},
+    'RN': {'capital': 'Natal', 'pop': 3534165},
+    'MT': {'capital': 'Cuiabá', 'pop': 3526220},
+    'AL': {'capital': 'Maceió', 'pop': 3351543},
+    'TO': {'capital': 'Palmas', 'pop': 1607363},
+    'MS': {'capital': 'Campo Grande', 'pop': 2839188},
+    }
 
 # Acrescenta estado, a chave é a sigla, o valor um outro dicionário
-estados['SP'] = {'capital': u'São Paulo', 'pop': 46289333}
+estados['SP'] = {'capital': 'São Paulo', 'pop': 46289333}
 
 print(estados['ES']['capital'])  # exibe: Vitória
 ```
@@ -101,10 +102,10 @@ Vale notar que até pouco tempo atrás os dicionários comuns em Python não gua
 ```python
 # Exemplo de diconário com uma tupla como chave - batalha naval
 
-tam_tabuleiro=15
-tam_casa=35
-meia_casa=tam_casa / 2
-borda=36
+tam_tabuleiro = 15
+tam_casa = 35
+meia_casa = tam_casa / 2
+borda = 36
 tabuleiro_a = {
     (1, 1): "C",
     (2, 1): "C",
@@ -143,7 +144,6 @@ def draw():
                 text(c,
                      i * tam_casa + borda + meia_casa,
                      j * tam_casa + borda + meia_casa)
-
     fill(0)
     for n in range(tam_tabuleiro):
         pos = n * tam_casa + borda + meia_casa
