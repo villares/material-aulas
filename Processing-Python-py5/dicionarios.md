@@ -2,7 +2,7 @@
 
 Dicionários(*dict*), juntamente com as listas (*list*), tuplas (*tuple*) e conjuntos (*set*), são das mais importantes estruturas de dados de alto nível disponíveis embutidas em Python.
 
-## Uma metáfora simplificadora para dicionários
+## Uma metáfora simplificadora para chaves e valores
 
 Imagine um dicionário como uma tabela de duas colunas que permite que busquemos um item, que chamamos de **chave**, o procurando na coluna da esquerda. Se o encontrarmos podemos consultar na coluna da direita um **valor** correspondente. Um dicionário é feito de pares chave-valor.
 
@@ -55,47 +55,6 @@ if laranja:          # None é considerado semelhante-a-falso e neste caso
 roxo = cores.get('roxo', color(200))  # se não houver 'roxo' cinza claro
 fill(roxo)  # enquanto não houver 'roxo' no dicionário teremos color(200)
 ```
-
-## Exemplo de dicionário com dicionários dentro
-
-Não é incomum termos como valores de um dicionário, outros dicionários. O formato de intercâmbio de infomações JSON (lê-se *djeizon*, vem de *JavaScript Object Notation*), é um tanto parecido com isto, em geral é quase uma lista com uma porção de dicionários aninhados dentro.
-
-```python
-# Fonte IBGE 2020
-
-estados = {
-    'MG': {'capital': 'Belo Horizonte', 'pop': 21292666},
-    'AC': {'capital': 'Rio Branco', 'pop': 894470},
-    'RJ': {'capital': 'Rio de Janeiro', 'pop': 17366189},
-    'BH': {'capital': 'Salvador', 'pop': 14930634},
-    'PR': {'capital': 'Curitiba', 'pop': 11516840},
-    'AC': {'capital': 'Rio Branco', 'pop': 894470},
-    'RS': {'capital': 'Porto Alegre', 'pop': 11422973},
-    'PE': {'capital': 'Recife', 'pop': 9616621},
-    'CE': {'capital': 'Fortaleza', 'pop': 9187103},
-    'PA': {'capital': 'Belém', 'pop': 8690745},
-    'SC': {'capital': 'Joinville', 'pop': 7252502},
-    'MA': {'capital': 'São Luís', 'pop': 7114598},
-    'GO': {'capital': 'Goiânia', 'pop': 7113540},
-    'AM': {'capital': 'Manaus', 'pop': 4207714},
-    'ES': {'capital': 'Vitória', 'pop': 4064052},
-    'PB': {'capital': 'João Pessoa', 'pop': 4039277},
-    'RN': {'capital': 'Natal', 'pop': 3534165},
-    'MT': {'capital': 'Cuiabá', 'pop': 3526220},
-    'AL': {'capital': 'Maceió', 'pop': 3351543},
-    'TO': {'capital': 'Palmas', 'pop': 1607363},
-    'MS': {'capital': 'Campo Grande', 'pop': 2839188},
-    }
-
-# Acrescenta estado, a chave é a sigla, o valor um outro dicionário
-estados['SP'] = {'capital': 'São Paulo', 'pop': 46289333}
-
-print(estados['ES']['capital'])  # exibe: Vitória
-```
-
-### A questão da ordem dos elementos
-
-Vale notar que até pouco tempo atrás os dicionários comuns em Python não guardavam ou garantiam a ordem das chaves. Em Python 3 atual isso mudou, e em Python 2 é possível recorrer a `OrderedDict` se você precisar manter registro da ordem em que as chaves foram criadas.
 
 ## Removendo itens de um dicionário
 
@@ -294,6 +253,47 @@ Lembre que um *string* é um iterável, ou seja, pode ser interpretado como uma 
 print(Counter('abracadabra'))
 # Counter({'a': 5, 'b': 2, 'r': 2, 'c': 1, 'd': 1})
 ```
+
+## Exemplo de dicionário com dicionários dentro
+
+Não é incomum termos como valores de um dicionário, outros dicionários. O formato de intercâmbio de infomações JSON (lê-se *djeizon*, vem de *JavaScript Object Notation*), é um tanto parecido com isto, em geral é quase uma lista com uma porção de dicionários aninhados dentro.
+
+```python
+# Fonte IBGE 2020
+
+estados = {
+    'MG': {'capital': 'Belo Horizonte', 'pop': 21292666},
+    'AC': {'capital': 'Rio Branco', 'pop': 894470},
+    'RJ': {'capital': 'Rio de Janeiro', 'pop': 17366189},
+    'BH': {'capital': 'Salvador', 'pop': 14930634},
+    'PR': {'capital': 'Curitiba', 'pop': 11516840},
+    'AC': {'capital': 'Rio Branco', 'pop': 894470},
+    'RS': {'capital': 'Porto Alegre', 'pop': 11422973},
+    'PE': {'capital': 'Recife', 'pop': 9616621},
+    'CE': {'capital': 'Fortaleza', 'pop': 9187103},
+    'PA': {'capital': 'Belém', 'pop': 8690745},
+    'SC': {'capital': 'Joinville', 'pop': 7252502},
+    'MA': {'capital': 'São Luís', 'pop': 7114598},
+    'GO': {'capital': 'Goiânia', 'pop': 7113540},
+    'AM': {'capital': 'Manaus', 'pop': 4207714},
+    'ES': {'capital': 'Vitória', 'pop': 4064052},
+    'PB': {'capital': 'João Pessoa', 'pop': 4039277},
+    'RN': {'capital': 'Natal', 'pop': 3534165},
+    'MT': {'capital': 'Cuiabá', 'pop': 3526220},
+    'AL': {'capital': 'Maceió', 'pop': 3351543},
+    'TO': {'capital': 'Palmas', 'pop': 1607363},
+    'MS': {'capital': 'Campo Grande', 'pop': 2839188},
+    }
+
+# Acrescenta estado, a chave é a sigla, o valor um outro dicionário
+estados['SP'] = {'capital': 'São Paulo', 'pop': 46289333}
+
+print(estados['ES']['capital'])  # exibe: Vitória
+```
+
+## A questão da ordem dos itens armazenados
+
+Vale notar que até a versão 3.7 do Python, dicionários comuns não guardavam ou garantiam a ordem das chaves, assim como os conjuntos (*sets*), agora as chaves ficam na ordem em que foram foram criadas. Mas pode ser legal conhecer [`OrderedDict`](https://docs.python.org/3/library/collections.html#collections.OrderedDict), que foi criado especialmente para esses casos e tem mais métodos relacionados a reordenar os itens.
 
 ## Fazendo piadas sobre Python e os dicionários
 
