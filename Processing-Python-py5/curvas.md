@@ -3,24 +3,9 @@
 
 Agora que já sabemos [desenhar um polígonos com `begin_shape()` e `end_shape()` ou `end_shape(CLOSE)`](poligonos_2.md) podemos experimentar formas curvas.
 
-# Sumário
 
-[Curvas Bezier com `bezier_vertex()`](#curvas-bezier-com-beziervertex)
 
-[Curvas com `curve_vertex()`](#curvas-com-curvevertex)
-- [Exemplo 1: Comportamento inesperado](#exemplo-1-comportamento-inesperado)
-- [Exemplo 2: Fechando a curva corretamente](#exemplo-2-fechando-a-curva-corretamente)
-- [Exemplo 3: Curva aberta](#exemplo-3-curva-aberta)
-- [Exemplo 4: Curva aberta usando diferentes pontos](#exemplo-4-curva-aberta-usando-diferentes-pontos)
-- [Exemplo 5: Usando `end_shape(CLOSE)`](#exemplo-5-usando-endshapeclose)
-
-[Simulando arcos e filetes com Bezier](#simulando-arcos-e-filetes-com-bezier)
-
-[Assuntos relacionados](#assuntos-relacionados)
-
-[Extra: Um testador de curvas interativo](#extra-um-testador-de-curvas-interativo)
-
-# Curvas Bezier com `bezierVertex()`
+## Curvas Bezier com `bezierVertex()`
 
 As famosas curvas Bezier levam o nome de Pierre Bézier, que as desenvolveu em seus trabalhos na década de 1960 na indústria automotiva, elas descrevem curvas a partir das coordenadas de pontos, ou âncoras, que delimitam o início e o fim de uma curva, mas também precisam de "pontos de controle" que em geral ficam fora da curva, mas controlam o seu comportamento.
 
@@ -86,7 +71,7 @@ def draw():
 </pre>
 </details>
 
-# Curvas com `curveVertex()`
+## Curvas com `curveVertex()`
 
 Agora que já sabemos iterar por uma estrutura de dados, e como usar as coordenadas das tuplas para desenhar um polígono, podemos experimentar a mesma estratégia com outros tipos de vértice.
 
@@ -107,7 +92,7 @@ pontos=[
     ]
 ```
 
-# Exemplo 1: Comportamento inesperado
+### Exemplo 1: Comportamento inesperado
 
 Se chamarmos uma vez `curve_vertex()` para cada vértice dentro de um contexto de `begin_shape()` e `end_shape(CLOSE)`obteremos o seguinte resultado, esquisito(estou aqui omitindo parte do código que controla os atributos gráficos e mostra os texto com os índices dos pontos):
 
@@ -156,7 +141,7 @@ def draw():
 </pre>
 </details>
 
-# Exemplo 2: Fechando a curva corretamente
+### Exemplo 2: Fechando a curva corretamente
 
 Para obter o resultado esperado(ou, caro leitor, pelo menos o que eu esperava) temos que acrescentar uma chamada com as coordenadas do último vértice antes do primeiro, e do primeiro e segundo vértices depois do último! Diga lá se não é estranho isso!
 
@@ -211,7 +196,7 @@ def draw():
 </pre>
 </details>
 
-# Exemplo 3: Curva aberta
+### Exemplo 3: Curva aberta
 
 É possível fazer uma curva aberta com os mesmo pontos e a mesma influência do último ponto no primeiro, e do primeiro no último, omitindo o `CLOSE`:
 
@@ -267,9 +252,7 @@ def draw():
 </pre>
 </details>
 
-
-
-# Exemplo 4: Curva aberta usando diferentes pontos
+### Exemplo 4: Curva aberta usando diferentes pontos
 
 Agora se não queremos essa influência da curva fechada, é preciso repetir o primeiro e o último vértice.
 
@@ -322,7 +305,7 @@ def draw():
 </details>
 
 
-# Exemplo 5: Usando `endShape(CLOSE)`
+### Exemplo 5: Usando `endShape(CLOSE)`
 
 Veja como ficaria acrescentando-se o `CLOSE` em `end_shape(CLOSE)`
 
@@ -365,13 +348,13 @@ def draw():
 </pre>
 </details>
 
-# Assuntos relacionados
+## Assuntos relacionados
 
 - [Desenhando Polígonos - I](poligonos_1.md)
 - [Desenhando Polígonos - II](poligonos_2.md)
 - [Sequências e laços de repetição](lacos_py.md)
 
-# EXTRA: Um testador de curvas interativo
+### EXTRA: Um testador de curvas interativo
 
 **Desafio:** Você conseguiria escrever o código que permite testar as curvas arrastando os pontos com o mouse?
 
