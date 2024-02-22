@@ -23,7 +23,7 @@ Vejamos um exemplo prático em que um dicionário serve para guardar uma paleta 
 Em Python podemos definir um dicionário diretamente no código com a sintaxe `{chave: valor, }`.
 
 ```python
-cores={
+cores = {
     "branco": color(255),
     "preto": color(0),
     "azul": color(0, 0, 200),
