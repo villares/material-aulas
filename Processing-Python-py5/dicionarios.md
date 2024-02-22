@@ -10,7 +10,7 @@ Como regra simplificada, podemos usar como chaves objetos *imutáveis*, como nú
 
 > Uma explicação mais detalhadas sobre as limitações técnicas dos tipos que podemos usar nos dicionários não cabe neste texto introdutório, mas a sua curiosidade pode fazer você querer ler mais sobre eles em [Estruturas de dados (na documentação do Python)](https://docs.python.org/pt-br/3/tutorial/datastructures.html#dictionaries).
 
-Vejamos um exemplo prático em que um dicionário serve para guardar uma paleta de cores nomeadas, os nomes das cores (*strings*) vão ser as chaves, e as cores produzidas pela função `color()`do Processing vão ser os valores(que podem no final das contas serem usados nas funções `fill()`, `stroke()` e `background()`, por exemplo).
+Vejamos um exemplo prático em que um dicionário serve para guardar uma paleta de cores nomeadas, os nomes das cores (*strings*) vão ser as chaves, e as cores produzidas pela função `color()` do py5 vão ser os valores (que podem no final das contas ser usados nas funções `fill()`, `stroke()` e `background()`, por exemplo).
 
 | chaves(*keys*) | valores(*values*) |
 | --------------- | ------------------ |
