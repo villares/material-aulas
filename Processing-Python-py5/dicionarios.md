@@ -254,6 +254,8 @@ print(Counter('abracadabra'))
 # Counter({'a': 5, 'b': 2, 'r': 2, 'c': 1, 'd': 1})
 ```
 
+<!-- Já para contar palavras, os liguistas costuma remover palavras muito frequentes e que acrescentam pouco conteúdo semântico como artigos, conectivos e etc., conhecidas em inglês como "stopwords".-->
+
 ## Exemplo de dicionário com dicionários dentro
 
 Não é incomum termos como valores de um dicionário, outros dicionários. O formato de intercâmbio de infomações JSON (lê-se *djeizon*, vem de *JavaScript Object Notation*), é um tanto parecido com isto, em geral é quase uma lista com uma porção de dicionários aninhados dentro.
@@ -311,6 +313,6 @@ Ou ainda este meme aqui:
 
 ![](https://pbs.twimg.com/media/EelzOpCX0AAIeYV?format=png&name=small)
 
-# Assuntos relacionados
+## Assuntos relacionados
 
 - [Conjuntos](conjuntos.md)
