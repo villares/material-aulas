@@ -172,7 +172,7 @@ print(contador)
 # Counter({1999: 4, 1994: 2, 2014: 2, 1995: 1, 2011: 1, 2013: 1, 2022: 1, 2024: 1})
 ```
 
-Podemos obter a frequência de um item/chave com colchetes, mas ao contrário de um dicionário comum, em vez de uma excessão `KeyError` se o item não existir, teremos 0.
+Podemos obter a frequência de um item da coleção original com colchetes, como se fosse uma chave do dicionário criado por `Counter`, mas ao contrário de um dicionário comum, em vez de uma excessão `KeyError` se o item não existir, teremos 0.
 
 ```python
 print(contador[1994])
