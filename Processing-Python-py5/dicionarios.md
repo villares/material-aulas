@@ -2,29 +2,15 @@
 
 Dicionários(*dict*), juntamente com as listas (*list*), tuplas (*tuple*) e conjuntos (*set*), são das mais importantes estruturas de dados de alto nível disponíveis embutidas em Python.
 
-Dicionários em especial são tão poderosos e flexíveis que são usados internamente para fazer funcionar muito da linguagem Python. Isso se reflete nesta piada sobre linguagens de programação:
-
-> E se tudo fosse uma lista? LISP
->
-> E se tudo fosse uma pilha(*stack*)? Forth
->
-> E se tudo fosse um ponteiro? C
->
-> E se tudo fosse um dicionário? Python!
-
-Ou ainda este meme aqui:
-
-![](https://pbs.twimg.com/media/EelzOpCX0AAIeYV?format=png&name=small)
-
-# Uma metáfora para dicionários
+## Uma metáfora simplificadora para dicionários
 
 Imagine um dicionário como uma tabela de duas colunas que permite que busquemos um item, que chamamos de **chave**, o procurando na coluna da esquerda. Se o encontrarmos podemos consultar na coluna da direita um **valor** correspondente. Um dicionário é feito de pares chave-valor.
 
-Como regra simplificada, podemos usar como chaves objetos *imutáveis*, como números, texto(*strings*) ou tuplas cujos elementos internos também sejam imutáveis. Não podemos usar listas, uma vez que são *mutáveis*. Já os valores podem ser qualquer tipo de objeto/valor de Python, incluido listas e até mesmo outros dicionários!
+Como regra simplificada, podemos usar como chaves objetos *imutáveis*, como números, texto (*strings*) ou tuplas cujos elementos internos também sejam imutáveis. Não podemos usar listas, uma vez que são *mutáveis*. Já os valores podem ser qualquer tipo de objeto/valor de Python, incluido listas e até mesmo outros dicionários!
 
 > Uma explicação mais detalhadas sobre as limitações técnicas dos tipos que podemos usar nos dicionários não cabe neste texto introdutório, mas a sua curiosidade pode fazer você querer ler mais sobre eles em [Estruturas de dados (na documentação do Python)](https://docs.python.org/pt-br/3/tutorial/datastructures.html#dictionaries).
 
-Vejamos um exemplo prático em que um dicionário serve para guardar uma paleta de cores nomeadas, os nomes das cores vão ser as chaves, e as cores produzidas pela função `color()`do Processing vão ser os valores(que podem no final das contas serem usados nas funções `fill()`, `stroke()` e `background()`, por exemplo).
+Vejamos um exemplo prático em que um dicionário serve para guardar uma paleta de cores nomeadas, os nomes das cores (*strings*) vão ser as chaves, e as cores produzidas pela função `color()`do Processing vão ser os valores(que podem no final das contas serem usados nas funções `fill()`, `stroke()` e `background()`, por exemplo).
 
 | chaves(*keys*) | valores(*values*) |
 | --------------- | ------------------ |
@@ -70,7 +56,7 @@ roxo=cores.get('roxo', color(200))  # se não houver 'roxo' cinza claro
 fill(roxo)  # enquanto não houver 'roxo' no dicionário teremos color(200)
 ```
 
-# Exemplo de diconário com dicionários dentro
+## Exemplo de dicionário com dicionários dentro
 
 Não é incomum termos como valores de um dicionário, outros dicionários. O formato de intercâmbio de infomações JSON(lê-se *djeizon*, vem de *JavaScript Object Notation*), é muito parecido com isto, praticamente uma porção de dicionários aninhados.
 
@@ -106,11 +92,11 @@ estados['SP'] = {'capital': u'São Paulo', 'pop': 46289333}
 print(estados['ES']['capital'])  # exibe: Vitória
 ```
 
-# A questão da ordem dos elementos
+## A questão da ordem dos elementos
 
 Vale notar que até pouco tempo atrás os dicionários comuns em Python não guardavam ou garantiam a ordem das chaves. Em Python 3 atual isso mudou, e em Python 2 é possível recorrer a `OrderedDict` se você precisar manter registro da ordem em que as chaves foram criadas.
 
-# Um exemplo com tuplas como chaves: um tabuleiro
+## Um exemplo com tuplas como chaves: um tabuleiro
 
 ```python
 # Exemplo de diconário com uma tupla como chave - batalha naval
@@ -167,8 +153,92 @@ def draw():
 
 ![imagem do tabuleiro aqui](assets/batalha-naval.png)
 
+## `Counter` um objeto contador com interface de dicionário
+
+A biblioteca padrão do Python vem com uma estrutura de dados muito interessante que podemos descrever como um "dicionário contador", [`collections.Counter`](https://docs.python.org/3/library/collections.html#collections.Counter).
+
+### Um primeiro exemplo, contando números
+
+Vamos imaginar como exemplo mínimo que queremos contar quantas vezes cada número aparece em uma lista:
+
+```python
+from collections import Counter
+
+numeros = [1994, 1994, 1995, 1999, 1999, 1999, 1999, 2011, 2013, 2014, 2014, 2022, 2024]
+contador = Counter(numeros)
+
+print(contador)
+# Resultado:
+# Counter({1999: 4, 1994: 2, 2014: 2, 1995: 1, 2011: 1, 2013: 1, 2022: 1, 2024: 1})
+```
+
+Podemos obter a frequência de um item/chave com colchetes, mas ao contrário de um dicionário comum, em vez de uma excessão `KeyError` se o item não existir, teremos 0.
+
+```python
+print(contador[1994])
+# 2
+print(contador[1996])
+# 0
+```
+
+Podemos ainda obter uma sequência ordenada que começa pelos itens mais frequentes com o método `.most_common()`, é uma lista de tuplas (chave, contagem):
+
+```python
+for num, contagem in contador.most_common():
+    print(f'{num}: {contagem}')
+"""
+Resultado:
+1999: 4
+1994: 2
+2014: 2
+1995: 1
+2011: 1
+2013: 1
+2022: 1
+2024: 1
+"""
+```
+
+Podemos pedir uma espécie de fatia dos primeiros itens dessa lista passando um argumento `n` em `.most_comon(n)'. Repare que mesmo pedindo apenas um dos "itens mais comuns", teremos ainda uma lista de tuplas (nesse caso com uma única tupla dentro).
+
+```python
+print(contador.most_comon(2))
+# [(1999, 4), (1994, 2)]
+print(contador.most_comon(1))
+# [(1999, 4)]
+```
+
+Isso pode produzir código um tanto desengonçado:
+
+```python
+num, contagem = contador.most_comon(1)[0]
+```
+
+### Contando outras coisas
+
+Lembre que um *string* é um iterável, ou seja, pode ser interpretado como uma sequência de letras:
+
+```python
+print(Counter('abracadabra'))
+# Counter({'a': 5, 'b': 2, 'r': 2, 'c': 1, 'd': 1})
+```
+
+## Fazendo piadas sobre Python e os dicionários
+
+Dicionários em especial são tão poderosos e flexíveis que são usados internamente para fazer funcionar muito da linguagem Python. Isso se reflete nesta piada sobre linguagens de programação:
+
+> E se tudo fosse uma lista? LISP
+>
+> E se tudo fosse uma pilha (*stack*)? Forth
+>
+> E se tudo fosse um ponteiro? C
+>
+> E se tudo fosse um dicionário? Python!
+
+Ou ainda este meme aqui:
+
+![](https://pbs.twimg.com/media/EelzOpCX0AAIeYV?format=png&name=small)
 
 # Assuntos relacionados
-
 
 - [Conjuntos](conjuntos.md)
