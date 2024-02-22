@@ -114,7 +114,7 @@ Se temos certeza de que chave existe, e não estamos interessados no valor, pode
 
 ```python
 del letras_chave['A']  # KeyError se não houver 'A'
-letras_chave.pop('D', None) # Seguro, não acontece nada se não houver a chave. None é necessário.
+letras_chave.pop('D', None) # Seguro, e devolve None se não houver a chave.
 ```
 
 ### Um exemplo com tuplas como chaves: um tabuleiro
