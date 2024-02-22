@@ -25,7 +25,7 @@ def point_in_circle(px, py, cx, cy, r):
 ```
 
 
-# Retângulo e retângulo
+## Retângulo e retângulo
 
 ```python
 def rect_in_area(xm, ym, wm, hm, xa, ya, wa, ha):
@@ -34,7 +34,7 @@ def rect_in_area(xm, ym, wm, hm, xa, ya, wa, ha):
 
 ```
 
-# Ponto e polígono
+## Ponto e polígono
 
 ```python
 def point_in_poly(*args):
