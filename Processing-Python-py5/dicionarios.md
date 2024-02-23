@@ -76,14 +76,21 @@ del letras_chave['A']  # KeyError se não houver 'A'
 letras_chave.pop('D', None) # Seguro, e devolve None se não houver a chave.
 ```
 
-### Um exemplo com tuplas como chaves: um tabuleiro
+### Peças de um tabuleiro em um dicionário com tuplas como chaves
 
 ```python
+"""
+Um tabuleiro que permite acrescentar e remover peças com o clique do mouse
+O botão da direita põe uma peça "D" e o da esquerda põe uma peça "E"
+- Clicando sobre uma peça ela é removida
+"""
+
 tam_tabuleiro = 15
 tam_casa = 35
 meia_casa = tam_casa / 2
 borda = 36
 tabuleiro = {}  # cria um dicionário vazio
+cores = {'E': color(200, 0, 0), 'D': color(0, 200, 0)}  # cores para as peças
 
 def setup():
     size(600, 600)
@@ -94,15 +101,15 @@ def draw():
     for i in range(tam_tabuleiro):
         for j in range(tam_tabuleiro):
             c = tabuleiro.get((i, j))
-            if not c:
-                fill(255)
+            if c:
+                fill(cores[c])
             else:
-                fill(200, 200, 0)
+                fill(255)
             square(i * tam_casa + borda,
                    j * tam_casa + borda,
                    tam_casa) 
             if c:
-                fill(0)
+                fill(255)
                 text(c,
                      i * tam_casa + borda + meia_casa,
                      j * tam_casa + borda + meia_casa)
@@ -117,14 +124,15 @@ def mouse_pressed():
         borda < mouse_y < height - borda):
         i, j = mouse_to_tabuleiro(mouse_x, mouse_y)
 
-        if not tabuleiro.pop((i, j), None):  # remove item se houver
-            # se não houver inclui item
+        if (i, j) in tabuleiro:
+            del tabuleiro[i, j]
+        else:
             tabuleiro[i, j] = 'E' if mouse_button == LEFT else 'D'
-            
-#        if (i, j) in tabuleiro:
-#            del tabuleiro[i, j]
-#        else:
-#            tabuleiro[i, j] = 'E' if mouse_button == LEFT else 'D'
+#       # Outra versão para remover e acrescentar peças
+#       # remove peça se houver
+#       if not tabuleiro.pop((i, j), None):  
+#       # se não houver inclui peça
+#           tabuleiro[i, j] = 'E' if mouse_button == LEFT else 'D'
 ```
 
 ![imagem do tabuleiro](assets/tabuleiro.png)
