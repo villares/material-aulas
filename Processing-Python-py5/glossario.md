@@ -8,19 +8,19 @@ Este glossário, com pequenas modificações é baseado nos glossários dos cap�
 
 # O que é um programa, escrito em uma liguagem de programação?
 
-Um ** programa ** é uma sequência de instruções que especifica como executar uma operação de computação. A operação de computação pode ser algo matemático[...] mas também pode ser uma operação de computação simbólica, como a busca e a substituição de textos em um documento; ou algo gráfico, como o processamento de uma imagem ou a reprodução de um vídeo.
+Um **programa** é uma sequência de instruções que especifica como executar uma operação de computação. A operação de computação pode ser algo matemático [...] mas também pode ser uma operação de computação simbólica, como a busca e a substituição de textos em um documento; ou algo gráfico, como o processamento de uma imagem ou a reprodução de um vídeo.
 
 Os detalhes parecem diferentes em linguagens diferentes, mas algumas instruções básicas aparecem em quase todas as linguagens:
 
-**entrada: ** Receber dados do teclado, de um arquivo, da rede ou de algum outro dispositivo.
+**entrada:** Receber dados do teclado, de um arquivo, da rede ou de algum outro dispositivo.
 
-**saída: ** Exibir dados na tela, salvá-los em um arquivo, enviá-los pela rede etc.
+**saída:** Exibir dados na tela, salvá-los em um arquivo, enviá-los pela rede etc.
 
-**matemática: ** Executar operações matemáticas básicas como adição e multiplicação.
+**matemática:** Executar operações matemáticas básicas como adição e multiplicação.
 
-**execução condicional: ** Verificar a existência de certas condições e executar o código adequado(como as estruturas com `if` em muitas linguagens)
+**execução condicional:** Verificar a existência de certas condições e executar o código adequado(como as estruturas com `if` em muitas linguagens)
 
-**repetição: ** Executar várias vezes alguma ação, normalmente com algumas variações(Iteração, *loops * ou laços de repetição)
+**repetição:** Executar várias vezes alguma ação, normalmente com algumas variações (Iteração, *loops* ou laços de repetição)
 
 ---
 
@@ -148,7 +148,7 @@ Juntar dois operandos pelas extremidades.
 
 Informações em um programa destinadas a outros programadores(ou qualquer pessoa que leia o texto fonte) que não têm efeito sobre a execução do programa.
 
-[**erro de sintaxe**](https://penseallen.github.io/PensePython2e/02-vars-expr-instr.html#termo:erro de sintaxe)
+[**erro de sintaxe**](https://penseallen.github.io/PensePython2e/02-vars-expr-instr.html#termo:erro%20de%20sintaxe)
 
 Um erro em um programa que torna sua análise impossível(e por isso impossível de interpretar).
 
@@ -174,27 +174,27 @@ Um erro que faz com que um programa faça algo diferente do que o programador pr
 
 Uma sequência nomeada de declarações que executa alguma operação útil. As funções podem receber argumentos ou não e podem ou não produzir algum resultado.
 
-[**definição de função**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:definição de função)
+[**definição de função**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:definição%20de%20função)
 
 Uma instrução que cria uma função nova, especificando seu nome, parâmetros e as instruções que contém.
 
-[**objeto da função**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:objeto da função)
+[**objeto da função**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:objeto%20da%20função)
 
-Um valor é criado por uma definição de função. O nome da função é uma variável que se refere a um objeto de função.
+Um valor é criado por uma definição de função. O nome da função é uma variável que se refere a um objeto da função. Isso permite passar uma função como argumento de outra função, ou que uma função devolva uma função como resultado. 
 
-[**cabeçalho**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:cabeçalho) **(de uma função)**
+[**cabeçalho**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:cabeçalho) **(de%20uma%20função)**
 
 A primeira linha de uma definição de função.
 
-[**corpo**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:corpo) **(de uma função)**
+[**corpo**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:corpo) **(de%20uma%20função)**
 
 A sequência de instruções dentro de uma definição de função.
 
-[**parâmetro**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:parâmetro) **(de uma função)**
+[**parâmetro**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:parâmetro) **(de%20uma%20função)**
 
 Um nome usado dentro de uma função para se referir ao valor passado como argumento.
 
-[**chamada de função**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:chamada de função)
+[**chamada de função**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:chamada%20de%20função)
 
 Uma instrução que executa uma função. É composta pelo nome da função seguido de uma lista de argumentos entre parênteses.
 
@@ -202,11 +202,11 @@ Uma instrução que executa uma função. É composta pelo nome da função segu
 
 Um valor apresentado a uma função quando a função é chamada. Este valor é atribuído ao parâmetro correspondente na função.
 
-[**variável local**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:variável local)
+[**variável local**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:variável%20local)
 
 Uma variável definida dentro de uma função. Uma variável local só pode ser usada dentro da sua função.
 
-[**valor de retorno**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:valor de retorno)
+[**valor de retorno**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:valor%20de%20retorno)
 
 O resultado de uma função. Se uma chamada de função for usada como uma expressão, o valor de retorno é o valor da expressão.
 
@@ -226,11 +226,11 @@ Um valor especial apresentado por funções nulas.
 
 Um arquivo que contém uma coleção de funções relacionadas e outras definições.
 
-[**instrução de importação**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:instrução de importação)
+[**instrução de importação**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:instrução%20de%20importação)
 
 Uma instrução que lê um arquivo de módulo e cria um objeto de módulo.
 
-[**notação de ponto**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:notação de ponto)
+[**notação de ponto**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:notação%20de%20ponto)
 
 A sintaxe para chamar uma função em outro módulo especificando o nome do módulo seguido de um ponto e o nome da função.
 
@@ -242,11 +242,7 @@ O uso de uma expressão como parte de uma expressão maior ou de uma instrução
 
 A ordem na qual as instruções são executadas.
 
-
-
 \----
-
-
 
 [**método**](https://penseallen.github.io/PensePython2e/04-caso-interface.html#termo:método)
 
@@ -264,7 +260,7 @@ O processo de transformar uma sequência de instruções em uma definição de f
 
 O processo de substituir algo desnecessariamente específico(como um número) por algo adequadamente geral(como uma variável ou parâmetro).
 
-[**argumento de palavra-chave**](https://penseallen.github.io/PensePython2e/04-caso-interface.html#termo:argumento de palavra-chave)
+[**argumento de palavra-chave**](https://penseallen.github.io/PensePython2e/04-caso-interface.html#termo:argumento%20de%20palavra-chave)
 
 Um argumento que inclui o nome do parâmetro como uma “palavra-chave”.
 
@@ -276,7 +272,7 @@ Uma descrição de como usar uma função, incluindo o nome e as descrições do
 
 O processo de alterar um programa funcional para melhorar a interface de funções e outras qualidades do código.
 
-[**plano de desenvolvimento**](https://penseallen.github.io/PensePython2e/04-caso-interface.html#termo:plano de desenvolvimento)
+[**plano de desenvolvimento**](https://penseallen.github.io/PensePython2e/04-caso-interface.html#termo:plano%20de%20desenvolvimento)
 
 Um processo de escrever programas.
 
@@ -284,33 +280,29 @@ Um processo de escrever programas.
 
 Uma string que aparece no início de uma definição de função para documentar a interface da função.
 
-
-
 \----
 
-
-
-[**divisão pelo piso**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:divisão pelo piso)
+[**divisão pelo piso**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:divisão%20pelo%20piso)
 
 Um operador, denotado por //, que divide dois números e arredonda o resultado para baixo (em direção ao zero), a um número inteiro.
 
-[**operador módulo**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:operador módulo)
+[**operador módulo**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:operador%20módulo)
 
 Um operador, denotado com um sinal de percentagem ( % ), que funciona com números inteiros e devolve o resto quando um número é dividido por outro.
 
-[**expressão booleana**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:expressão booleana)
+[**expressão booleana**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:expressão%20booleana)
 
 Uma expressão cujo valor é True (verdadeiro) ou False (falso).
 
-[**operador relacional**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:operador relacional)
+[**operador relacional**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:operador%20relacional)
 
 Um destes operadores, que compara seus operandos: `==`, `!=`, `>`, `<`, `>=` e `<=`.
 
-[**operador lógico**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:operador lógico)
+[**operador lógico**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:operador%20lógico)
 
 Um destes operadores, que combina expressões booleanas: and (e), or (ou) e not (não).
 
-[**instrução condicional**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:instrução condicional)
+[**instrução condicional**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:instrução%20condicional)
 
 Uma instrução que controla o fluxo de execução, dependendo de alguma condição.
 
@@ -318,7 +310,7 @@ Uma instrução que controla o fluxo de execução, dependendo de alguma condiç
 
 A expressão booleana em uma instrução condicional que determina qual ramo deve ser executado.
 
-[**instrução composta**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:instrução composta)
+[**instrução composta**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:instrução%20composta)
 
 Uma instrução composta de um cabeçalho e um corpo. O cabeçalho termina em dois pontos (:). O corpo é endentado em relação ao cabeçalho.
 
@@ -326,15 +318,15 @@ Uma instrução composta de um cabeçalho e um corpo. O cabeçalho termina em do
 
 Uma das sequências alternativas de instruções em uma instrução condicional.
 
-[**condicional encadeada**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:condicional encadeada)
+[**condicional encadeada**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:condicional%20encadeada)
 
 Uma instrução condicional com uma série de ramos alternativos.
 
-[**condicional aninhada**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:condicional aninhada)
+[**condicional aninhada**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:condicional%20aninhada)
 
 Uma instrução condicional que aparece em um dos ramos de outra instrução condicional.
 
-[**instrução de retorno**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:instrução de retorno)
+[**instrução de retorno**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:instrução%20de%20retorno)
 
 Uma instrução que faz uma função terminar imediatamente e voltar a quem a chamou.
 
@@ -346,25 +338,22 @@ O processo de chamar a função que está sendo executada no momento.
 
 Um ramo condicional em uma função recursiva que não faz uma chamada recursiva.
 
-[**recursividade infinita**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:recursividade infinita)
+[**recursividade infinita**](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:recursividade%20infinita)
 
 Recursividade que não tem um caso-base, ou nunca o atinge. A recursividade infinita eventualmente causa um erro em tempo de execução.
 
 
-
 \------
 
-
-
-[**variável temporária**](https://penseallen.github.io/PensePython2e/06-funcoes-result.html#termo:variável temporária)
+[**variável temporária**](https://penseallen.github.io/PensePython2e/06-funcoes-result.html#termo:variável%20temporária)
 
 Uma variável usada para guardar um valor intermediário em um cálculo complexo.
 
-[**código morto**](https://penseallen.github.io/PensePython2e/06-funcoes-result.html#termo:código morto)
+[**código morto**](https://penseallen.github.io/PensePython2e/06-funcoes-result.html#termo:código%20morto)
 
 A parte de um programa que nunca pode ser executada, muitas vezes porque aparece depois de uma instrução return.
 
-[**desenvolvimento incremental**](https://penseallen.github.io/PensePython2e/06-funcoes-result.html#termo:desenvolvimento incremental)
+[**desenvolvimento incremental**](https://penseallen.github.io/PensePython2e/06-funcoes-result.html#termo:desenvolvimento%20incremental)
 
 Um plano de desenvolvimento de programa para evitar a depuração, que acrescenta e testa poucas linhas de código de cada vez.
 
@@ -375,9 +364,6 @@ O código que se usa durante o desenvolvimento de programa, mas que não faz par
 [**guardião**](https://penseallen.github.io/PensePython2e/06-funcoes-result.html#termo:guardião)
 
 Um padrão de programação que usa uma instrução condicional para verificar e lidar com circunstâncias que possam causar erros.
-
-
-
 
 
 [**reatribuição**](https://penseallen.github.io/PensePython2e/07-iteracao.html#termo:reatribuição)
@@ -412,11 +398,7 @@ Um loop no qual a condição de término nunca é satisfeita.
 
 Um processo geral para resolver uma categoria de problemas.
 
-
-
 \-----
-
-
 
 [objeto](https://penseallen.github.io/PensePython2e/08-strings.html#termo:objeto)
 
@@ -438,7 +420,7 @@ Um valor inteiro usado para selecionar um item em uma sequência, como um caract
 
 Parte de uma string especificada por um intervalo de índices.
 
-[string vazia](https://penseallen.github.io/PensePython2e/08-strings.html#termo:string vazia)
+[string vazia](https://penseallen.github.io/PensePython2e/08-strings.html#termo:string%20vazia)
 
 Uma string sem caracteres e de comprimento 0, representada por duas aspas.
 
@@ -462,17 +444,11 @@ Uma variável usada para contar algo, normalmente inicializada com zero e então
 
 Uma instrução que chama um método.
 
-[argumento opcional](https://penseallen.github.io/PensePython2e/08-strings.html#termo:argumento opcional)
+[argumento opcional](https://penseallen.github.io/PensePython2e/08-strings.html#termo:argumento%20opcional)
 
 Um argumento de função ou método que não é necessário.
 
-
-
 \------
-
-
-
-
 
 Uma sequência de valores.
 
@@ -480,7 +456,7 @@ Uma sequência de valores.
 
 Um dos valores em uma lista(ou outra sequência), também chamado de item.
 
-[lista aninhada](https://penseallen.github.io/PensePython2e/10-listas.html#termo:lista aninhada)
+[lista aninhada](https://penseallen.github.io/PensePython2e/10-listas.html#termo:lista%20aninhada)
 
 Uma lista que é um elemento de outra lista.
 
@@ -488,7 +464,7 @@ Uma lista que é um elemento de outra lista.
 
 Variável usada em um loop para adicionar ou acumular um resultado.
 
-[atribuição aumentada](https://penseallen.github.io/PensePython2e/10-listas.html#termo:atribuição aumentada)
+[atribuição aumentada](https://penseallen.github.io/PensePython2e/10-listas.html#termo:atribuição%20aumentada)
 
 Instrução que atualiza o valor de uma variável usando um operador como += .
 
@@ -528,10 +504,6 @@ Uma circunstância onde duas ou mais variáveis se referem ao mesmo objeto.
 
 Um caractere ou uma string usada para indicar onde uma string deve ser dividida.
 
-
-
-
-
 [mapeamento](https://penseallen.github.io/PensePython2e/11-dicionarios.html#termo:mapeamento)
 
 Relação na qual cada elemento de um conjunto corresponde a um elemento de outro conjunto.
@@ -540,7 +512,7 @@ Relação na qual cada elemento de um conjunto corresponde a um elemento de outr
 
 Mapeamento de chaves aos seus valores correspondentes.
 
-[par chave-valor](https://penseallen.github.io/PensePython2e/11-dicionarios.html#termo:par chave-valor)
+[par chave-valor](https://penseallen.github.io/PensePython2e/11-dicionarios.html#termo:par%20chave-valor)
 
 Representação do mapeamento de uma chave a um valor.
 
@@ -646,13 +618,7 @@ Coleção de valores relacionados, muitas vezes organizados em listas, dicionár
 
 Erro causado pelo fato de o valor ter a forma incorreta; isto é, tipo ou tamanho incorreto.
 
-
-
 \-----
-
-
-
-
 
 Relativo a um programa que faz a mesma coisa cada vez que é executado, se receber as mesmas entradas.
 
@@ -676,11 +642,7 @@ Processo de escolha entre estruturas de dados pela implementação de alternativ
 
 Depurar explicando o problema a um objeto inanimado como um pato de borracha. Articular o problema pode ajudar a resolvê-lo, mesmo se o pato de borracha não conhecer Python.
 
-
-
 \----
-
-
 
 [persistente](https://penseallen.github.io/PensePython2e/14-arquivos.html#termo:persistente)
 
@@ -694,7 +656,7 @@ Um operador, %, que recebe uma string de formatação e uma tupla e gera uma str
 
 String usada com o operador de formatação, que contém sequências de formatação.
 
-[sequência de formatação](https://penseallen.github.io/PensePython2e/14-arquivos.html#termo:sequência%20de%20 formatação)
+[sequência de formatação](https://penseallen.github.io/PensePython2e/14-arquivos.html#termo:sequência%20de%20formatação)
 
 Sequência de caracteres em uma string de formatação, como % d, que especifica como um valor deve ser formatado.
 
@@ -714,7 +676,7 @@ String que identifica um arquivo.
 
 Caminho que inicia no diretório atual.
 
-[caminho absoluto](https://penseallen.github.io/PensePython2e/14-arquivos.html#termo:caminho absoluto)
+[caminho absoluto](https://penseallen.github.io/PensePython2e/14-arquivos.html#termo:caminho%20absoluto)
 
 Caminho que inicia no diretório de posição mais alta(raiz) no sistema de arquivos.
 
@@ -722,11 +684,11 @@ Caminho que inicia no diretório de posição mais alta(raiz) no sistema de arqu
 
 Impedir uma exceção de encerrar um programa usando as instruções try e except.
 
-[banco de dados](https://penseallen.github.io/PensePython2e/14-arquivos.html#termo:banco de dados)
+[banco de dados](https://penseallen.github.io/PensePython2e/14-arquivos.html#termo:banco%20de%20dados)
 
 Um arquivo cujo conteúdo é organizado como um dicionário, com chaves que correspondem a valores.
 
-[objeto bytes](https://penseallen.github.io/PensePython2e/14-arquivos.html#termo:objeto%20 bytes)
+[objeto bytes](https://penseallen.github.io/PensePython2e/14-arquivos.html#termo:objeto%20bytes)
 
 Objeto semelhante a uma string.
 
@@ -738,11 +700,7 @@ Programa que permite aos usuários digitar comandos e executá-los para iniciar 
 
 Objeto que representa um programa em execução, permitindo que um programa do Python execute comandos e leia os resultados.
 
-
-
 \-----
-
-
 
 [classe](https://penseallen.github.io/PensePython2e/15-classes-objetos.html#termo:classe)
 
@@ -780,11 +738,7 @@ Copiar o conteúdo de um objeto, bem como qualquer objeto integrado, e qualquer 
 
 Diagrama que mostra objetos, seus atributos e os valores dos atributos.
 
-
-
 \----
-
-
 
 [função pura](https://penseallen.github.io/PensePython2e/16-classes-funcoes.html#termo:função%20pura)
 
@@ -806,11 +760,7 @@ Condição que sempre deve ser verdadeira durante a execução de um programa.
 
 Instrução que verifica uma condição e levanta uma exceção se esta falhar.
 
-
-
 \-----
-
-
 
 [linguagem orientada a objeto](https://penseallen.github.io/PensePython2e/17-classes-metodos.html#termo:linguagem%20orientada%20a%20objeto)
 
@@ -848,11 +798,7 @@ Pertinente a uma função que pode funcionar com mais de um tipo.
 
 Princípio segundo o qual a interface fornecida por um objeto não deve depender da sua implementação, especialmente em relação à representação dos seus atributos.
 
-
-
 \-----
-
-
 
 [codificar](https://penseallen.github.io/PensePython2e/18-heranca.html#termo:codificar)
 
