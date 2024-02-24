@@ -2,7 +2,7 @@
 
 ---
 
-Este glossário, com pequenas modificações, é baseado nos glossários dos capítulos de [Pense em Python 2e e Allen Downey.](https://github.com/PenseAllen/PensePython2e). Os links são para o site da tradução aberta em portugUẽs.
+Este glossário, com pequenas modificações, é baseado nos glossários dos capítulos de [Pense em Python 2e e Allen Downey.](https://github.com/PenseAllen/PensePython2e). Os links são para o site da tradução aberta do livro em portuguẽs.
 
 ---
 
