@@ -182,15 +182,15 @@ Uma instrução que cria uma função nova, especificando seu nome, parâmetros 
 
 Um valor é criado por uma definição de função. O nome da função é uma variável que se refere a um objeto da função. Isso permite passar uma função como argumento de outra função, ou que uma função devolva uma função como resultado. 
 
-[**cabeçalho**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:cabeçalho) **(de%20uma%20função)**
+[**cabeçalho**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:cabeçalho) (de uma função)
 
 A primeira linha de uma definição de função.
 
-[**corpo**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:corpo) **(de%20uma%20função)**
+[**corpo**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:corpo) (de uma função)
 
 A sequência de instruções dentro de uma definição de função.
 
-[**parâmetro**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:parâmetro) **(de%20uma%20função)**
+[**parâmetro**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:parâmetro) (de uma função)
 
 Um nome usado dentro de uma função para se referir ao valor passado como argumento.
 
@@ -870,6 +870,6 @@ Uma expressão com um loop for entre parênteses que produz um objeto gerador.
 
 Entidade matemática que representa um mapeamento entre os elementos de um conjunto e o número de vezes que aparecem.
 
-[fábrica(factory)](https://penseallen.github.io/PensePython2e/19-extra.html#termo:fábrica%20(factory))
+[fábrica (*factory*)](https://penseallen.github.io/PensePython2e/19-extra.html#termo:fábrica%20(factory))
 
 Função normalmente passada como parâmetro, usada para criar objetos.
