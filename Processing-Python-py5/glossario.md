@@ -238,7 +238,7 @@ A sintaxe para chamar uma função em outro módulo especificando o nome do mód
 
 O uso de uma expressão como parte de uma expressão maior ou de uma instrução como parte de uma instrução maior.
 
-[**fluxo de execução**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:fluxo de execução)
+[**fluxo de execução**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:fluxo%20de%20execução)
 
 A ordem na qual as instruções são executadas.
 
@@ -748,7 +748,7 @@ Função que não altera nenhum dos objetos que recebe como argumento. A maior p
 
 Função que modifica um ou vários dos objetos que recebe como argumento. A maior parte dos modificadores são nulos; isto é, retornam None.
 
-[programação funcional](https://penseallen.github.io/PensePython2e/16-classes-funcoes.html#termo:programação funcional)
+[programação funcional](https://penseallen.github.io/PensePython2e/16-classes-funcoes.html#termo:programação%20funcional)
 
 Estilo de projeto de programa no qual a maioria das funções são puras.
 
