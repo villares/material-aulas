@@ -18,9 +18,9 @@ salvar_pdf = False  # um indicador ('flag') dispara a exportação
 
 def setup():
     global seed
+    size(500, 500)
     seed = int(random(1000))
     print(seed)
-    size(500, 500)
 
 
 def draw():
