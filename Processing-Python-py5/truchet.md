@@ -43,9 +43,51 @@ def azulejo(x, y, tam, rot):
 def key_pressed():
     save('truchet_diagonal.png')
 ```
-![truched diagonal](/assets/truchet_diagonal.png)
+![truched diagonal](assets/truchet_diagonal.png)
 
-<!-- ## Um exemplo simples com arcos sem preenchimento -->
+## Um exemplo com arcos sem preenchimento
+
+Infelizmente o antialiasing dos arcos, nas saídas raster (como PNG) tem apresentado visualmente pequenas discontinuidades nos arcos ("dentes"), se exportarmos uma versão vetorial (como SVG) é possível confirmar que a geometria dos arcos está correta, bem encaixada, sem discontinuidades. 
+
+```python
+COLS = FILS = 10
+
+def setup():
+    global tam
+    size(800, 800)
+    rect_mode(CENTER)   # retângulos pelo centro
+    no_stroke()         # formas sem contorno
+    tam = width / COLS  # tamanho do módulo
+    
+def draw():
+    angulo = 90
+    for fila in range(FILS):
+        y = tam / 2 + tam * fila
+        for coluna in range(COLS):
+            x = tam / 2 + tam * coluna
+            azulejo(x, y, tam, radians(angulo))
+            if (fila + coluna) % 2 == 0:
+                angulo = angulo + 90
+
+def azulejo(x, y, tam, rot):
+    push_matrix()    # guarda coordenadas atuais
+    translate(x, y)  # muda o 0, 0
+    rotate(rot)
+    fill(255)
+    no_stroke()
+    square(0, 0, tam)
+    no_fill()
+    stroke(0)
+    stroke_weight(6)
+    arc(-tam / 2, -tam / 2, tam, tam, 0, PI / 2)
+    arc(tam / 2, tam / 2, tam, tam, PI, 3 * PI / 2)
+    pop_matrix()  # volta coordenadas anteriores
+
+def key_pressed():
+    save('truchet_arcos.png')
+```
+
+![truched diagonal](assets/truchet_arcos.png)
 
 ## Um exemplo com arcos e regiões preenchidas
 
