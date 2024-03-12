@@ -47,17 +47,20 @@ def key_pressed():
 
 ## Um exemplo com arcos sem preenchimento
 
-Infelizmente o antialiasing dos arcos, nas saídas raster (como PNG) tem apresentado visualmente pequenas discontinuidades nos arcos ("dentes"), se exportarmos uma versão vetorial (como SVG) é possível confirmar que a geometria dos arcos está correta, bem encaixada, sem discontinuidades. 
+Infelizmente o antialiasing dos arcos, nas saídas raster (como PNG) tem apresentado visualmente pequenas discontinuidades nos arcos ("dentes"), por isso eu estou chamando `no_smooth()` no setup (precisa ser logo após `size()`). Note que se exportarmos uma versão vetorial (como PDF ou SVG) é possível confirmar que a geometria dos arcos está correta, bem encaixada, sem discontinuidades. 
 
 ```python
 COLS = FILS = 10
 
 def setup():
     global tam
-    size(800, 800)
+    size(600, 600)
+    # desliga antialiasing
+    no_smooth()  # precisa estar logo após size()
     rect_mode(CENTER)   # retângulos pelo centro
     no_stroke()         # formas sem contorno
     tam = width / COLS  # tamanho do módulo
+ 
     
 def draw():
     angulo = 90
