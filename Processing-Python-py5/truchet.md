@@ -1,14 +1,55 @@
 # Módulos ou mosaicos de Truchet
 
-O ladrilhamento, ou tesselação, isto é o recobrimento de superfícies, por um padrão de quadrados decorados com desenhos que não tem simetria rotacional foi explorada pelo padre dominicano francês Sébastien Truchet.
+O padre dominicano francês Sébastien Truchet explorou largamente padrões formados pelo ladrilhamento, ou tesselação, isto é o recobrimento de superfícies, com um padrão de quadrados decorados, com desenhos que não tem simetria rotacional. Esses estudos inspiraram gerações de designers e artistas que fizeram trabalhos com esses módulos, seja em trabalhos gráficos seja com cerâmicas e azulejos.
 
-Veremos aqui uma variante dessa ideia usando arcos que, ao que parece, foi popularizada pelo trabalho de Cyril Stanley Smith and Pauline Boucher, [The Tiling Patterns of Sebastien Truchet and the Topology of Structural Hierarchy](https://www.jstor.org/stable/1578535?origin=crossref&seq=1#metadata_info_tab_contents).
+Vamos começar com uma grade de quadrados, e uma função que seja capaz desenhar um elemento gráfico que costumamos chamar de módulo, e que possa ser girado 0, 90, 180 ou 270 graus. O primeiro exemplo vai ser próximo aos azulejos divididos na diagonal e com duas cores que Truchet usou.
+
+Também veremos uma variante dessa ideia usando arcos que, ao que parece, foi popularizada pelo trabalho de Cyril Stanley Smith and Pauline Boucher, [The Tiling Patterns of Sebastien Truchet and the Topology of Structural Hierarchy](https://www.jstor.org/stable/1578535?origin=crossref&seq=1#metadata_info_tab_contents).
 
 
+## Um primeiro exemplo com diagonais
 
-## Preenchimentos contíguos
+```python
+COLS = FILS = 15
 
-Exemplo inspirado em um código para Processing Java do livro [Processing: Creative Coding and Generative Art in Processing 2](https://rd.springer.com/book/10.1007/978-1-4302-4465-3).
+def setup():
+    global tam
+    size(600, 600)
+    rect_mode(CENTER)   # retângulos pelo centro
+    no_stroke()         # formas sem contorno
+    tam = width / COLS  # tamanho do módulo
+    
+def draw():
+    angulo = 0
+    for fila in range(FILS):
+        y = tam / 2 + tam * fila
+        for coluna in range(COLS):
+            x = tam / 2 + tam * coluna
+            azulejo(x, y, tam, radians(angulo))
+            angulo = angulo + 90
+
+def azulejo(x, y, tam, rot):
+    push_matrix()    # guarda coordenadas atuais
+    translate(x, y)  # muda o 0, 0
+    rotate(rot)
+    fill(255)
+    square(0, 0, tam)
+    fill(0)
+    triangle(tam / 2, -tam / 2,
+             tam / 2,  tam / 2,
+            -tam / 2,  tam / 2)
+    pop_matrix()  # volta coordenadas anteriores
+
+def key_pressed():
+    save('truchet_diagonal.png')
+```
+![truched diagonal](/assets/truchet_diagonal.png)
+
+<!-- ## Um exemplo simples com arcos sem preenchimento -->
+
+## Um exemplo com arcos e regiões preenchidas
+
+Exemplo, bastante mais avançado, é inspirado em um código para Processing Java do livro [Processing: Creative Coding and Generative Art in Processing 2](https://rd.springer.com/book/10.1007/978-1-4302-4465-3), depende de uma classe Celula, e permite a interação com cliques do mouse. 
 
 ### Versão interativa
 
@@ -135,7 +176,9 @@ class Celula:
                 self.grade[i, j].variante = self.grade[i, j-1].variante        
 ```
 
-### Versão estática mais parecida com o código original
+### Uma versão estática mais parecida com o código original
+
+Esta versão tem uma estrutura mais pareceida com a do exemplo original em Java.
 
 ```python
 # Translated to Processing Python mode from the Java example at
@@ -152,7 +195,6 @@ tiles = [[None] * rows for _ in range(cols)]
 ic = color(100, 125, 0)     # orange # ic = color(100, 125, 0)
 oc = color(20, 150, 255)    # blue # oc = color(20, 150, 255)
 
-
 def setup():
     size(1000, 1000)
     translate(10, 10)
@@ -162,7 +204,6 @@ def setup():
             tiles[i][j] = Tile(j * tile_size, i * tile_size, tile_size, ic, oc)
             color_swap(i, j)
             tiles[i][j].display()
-
 
 def color_swap(i, j):
     if i > 0 and j == 0:   # first tile of a row, starting from the 2nd row
@@ -216,6 +257,5 @@ class Tile:
         arc(0, 0, self.sz, self.sz, 0, PI / 2)
         arc(self.sz, self.sz, self.sz, self.sz, PI, 3 * PI / 2)
         pop_matrix()
-
 ```
 ![image](https://user-images.githubusercontent.com/3694604/188502514-5a8412cd-421f-40f1-a845-02d597c386cc.png)
