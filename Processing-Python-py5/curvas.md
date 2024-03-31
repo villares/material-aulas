@@ -71,7 +71,7 @@ Quando há o alinhamento entre o segundo ponto de controle de um vértice, o pr�
 
 ## Curvas Bézier quadráticas com `quadratic_vertex()`
 
-Essas curvas também precisam começar com um vértice-âncora usando a função `vertex()`, em seguinda, cada chamada a `quadratic_vertex()` inclui nos argumentos as coordenades de um ponto de controle seguidas das coordenadas do novo vértice (que por sua vez pode servir de âncora para vértices Bézier subsequentes).
+Estas curvas também são construídas dentro de um contexto `begin_shape()`/`end_shape()` e também precisam de um vértice-âncora. comummente obtido usando uma chamada da função `vertex()`, em seguinda, cada chamada a `quadratic_vertex()` inclui nos argumentos as coordenades de um ponto de controle seguidas das coordenadas do novo vértice (que por sua vez pode servir de âncora para vértices Bézier subsequentes).
 
 ```python
 begin_shape()
