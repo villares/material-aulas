@@ -67,7 +67,7 @@ def draw():
 </pre>
 </details>
 
-Quando há o alinhamento entre o segundo ponto de controle de um vértice, o próprio vértice, e o primeiro ponto de controle do próximo vértice em uma sequência de véretices, haverá continuidade na curva de um trecho para outro.
+Quando há o alinhamento entre o segundo ponto de controle de um vértice, o próprio vértice, e o primeiro ponto de controle do próximo vértice em uma sequência de vértices, haverá continuidade na curva de um trecho para outro.
 
 ## Curvas Bézier quadráticas com `quadratic_vertex()`
 
