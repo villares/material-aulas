@@ -75,11 +75,11 @@ Essas curvas também precisam começar com um vértice-âncora usando a função
 begin_shape()
 vertex(100, 50)              # 0: vertex inicial
 quadratic_vertex(150, 100,   # 1: ponto de controle
-                 250, 100)   # 2: ponto
+                 250, 100)   # 2: vértice-âncora
 quadratic_vertex(250, 200,   # 3: ponto de controle
-                 150, 200)   # 4: ponto de controle
+                 150, 200)   # 4: vértice-âncora
 quadratic_vertex(50, 200,    # 5: ponto de controle
-                 50, 100)    # 6: ponto de controle
+                 50, 100)    # 6: vértice-âncora final
 end_shape()
 ```
 
