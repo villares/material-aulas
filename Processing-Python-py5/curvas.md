@@ -23,7 +23,7 @@ No `bezier_vertex()` propriamente dito, os quatro primeiros argumentos são as c
     end_shape(),
 ```
 
-![errada](assets/curve_bezier.png)
+![bezier](assets/curve_bezier.png)
 
 <details>
 <summary> Código completo para reproduzir a imagem acima </summary>
@@ -73,7 +73,7 @@ def draw():
 
 Agora que já sabemos iterar por uma estrutura de dados, e como usar as coordenadas das tuplas para desenhar um polígono, podemos experimentar a mesma estratégia com outros tipos de vértice.
 
-Vejamos agora o `curve_vertex()`, uma forma de descrever curvas que não tem os pontos de controle como as Bezier, mas tem a curiosa propriedade dos pontos/vértices serem influenciados pelos pontos que vem antes e depois deles.
+Vejamos agora o `curve_vertex()`, uma forma de descrever curvas que não tem os pontos de controle como as Bezier, mas tem a curiosa propriedade dos pontos/vértices serem influenciados pelos pontos que vem antes e depois deles. É como se cada ponto fosse ao mesmo tempo sua própria âncora/vértice e ponto de controle de um outro ponto.
 
 Vamos iterar por uma estrutura de dados, e usar as coordenadas de tuplas, da mesma forma que fizemos para desenhar um polígono, só que desta vez vamos experimentar essa estratégia com outros tipos de vértice, os vértices de curva, que acabamos de mencionar. Considere esta lista de pontos:
 
@@ -263,7 +263,7 @@ curve_vertex(pontos[-1][0], pontos[-1][1])
 end_shape()
 ```
 
-![aberta normal](assets/curve.png)
+![curva aberta sem influência dos extremos](assets/curve.png)
 
 <details>
 <summary> Código completo para reproduzir a imagem acima </summary>
@@ -305,9 +305,9 @@ def draw():
 
 ### Exemplo 5: Usando `end_shape(CLOSE)`
 
-Veja como ficaria acrescentando-se o `CLOSE` em `end_shape(CLOSE)`
+Veja como ficaria acrescentando-se o `CLOSE` em `end_shape(CLOSE)`. Fica um tanto estranha.
 
-![aberta normal](assets/curve_closed.png)
+![curva fechada sem influência dos extremos](assets/curve_closed.png)
 
 <details>
 <summary> Código completo para reproduzir a imagem acima </summary>
@@ -346,17 +346,11 @@ def draw():
 </pre>
 </details>
 
-## Assuntos relacionados
-
-- [Desenhando Polígonos - I](poligonos_1.md)
-- [Desenhando Polígonos - II](poligonos_2.md)
-- [Sequências e laços de repetição](lacos_py.md)
-
-### EXTRA: Um testador de curvas interativo
+### Extra: Um testador de curvas interativo
 
 **Desafio:** Você conseguiria escrever o código que permite testar as curvas arrastando os pontos com o mouse, usando a estratégia do exemplo ["arrastando vários círculos"](https://github.com/villares/material-aulas/blob/main/Processing-Python-py5/arrastando_circulos.md#arrastando-v%C3%A1rios-c%C3%ADrculos)?
 
-![errada](assets/curves_animate.gif)
+![animação arrastando pontos da curva](assets/curves_animate.gif)
 
 <details>
 
@@ -384,8 +378,6 @@ def draw():
       no_fill()
 
       begin_shape()
-      global pontos
-      global arrastando
       curve_vertex(pontos[-1][0], pontos[-1][1])
       for x, y in pontos:
           curve_vertex(x, y)
@@ -393,21 +385,23 @@ def draw():
       end_shape(CLOSE)
       stroke_weight(1)
       for i, ponto in enumerate(pontos):
-          x, y=ponto
+          x, y = ponto
           if i == arrastando:
               fill(200, 0, 0)
+          elif dist(mouse_x, mouse_y, x, y) < 10:
+              fill(255, 255, 0)
           else:
               fill(255)
-          ellipse(x, y, 5, 5)
-          t="{}: {:03}, {:03}".format(i, x, y)
+          circle(x, y, 5)
+          t = '{}: {:03}, {:03}'.format(i, x, y)
           text(t, x + 5, y - 5)
 
-  def mouse_pressed():            # quando um botão do mouse é apertado
+  def mouse_pressed():
+      # quando um botão do mouse é apertado
       global arrastando
       for i, ponto in enumerate(pontos):
           x, y = ponto
-          dist_mouse_ponto = dist(mouse_x, mouse_y, x, y)
-          if dist_mouse_ponto < 10:
+          if dist(mouse_x, mouse_y, x, y) < 10:
               arrastando = i
               break  # encerra o laço
 
@@ -424,7 +418,84 @@ def draw():
           x, y = pontos[arrastando]
           x += mouse_x - pmouse_x
           y += mouse_y - pmouse_y
-          pontos[arrastando] = (x, y)
+          pontos[arrastando] = x, y
 </pre>
 
 </details>
+
+## Curvas com `quadratic_vertex()`
+
+Essas curvas precisam começar com uma âncora usando a função `vertex()`, em seguinda, cada chamada a `quadratic_vertex()`  inclui um ponto de controle e um novo vértice/ancora.
+
+![exemplo de curva com vértices quadráticos](assets/curve_quadratic.png)
+
+```python
+arrastando = None
+
+pontos = [
+    (100, 50),   # 0: vertex() âncora inicial 
+    (150, 100),  # 1: ponto de controle
+    (250, 100),  # 2: vértice e âncora do próximo
+    (250, 200),  # 3: ponto de controle
+    (150, 200),  # 4: vértice e âncora do próximo
+    (50, 200),   # 5: ponto de controle
+    (50, 100),   # 6: vértice final
+]
+
+def setup():
+    size(400, 300)
+
+def draw():
+    background(100)
+    stroke_weight(3)
+    stroke(0)
+    no_fill()
+
+    with begin_shape():
+        vertex(pontos[0][0], pontos[0][1])  # primeiro ponto (índice 0)
+        for (px, py), (x, y) in zip(pontos[1::2], pontos[2::2]):  
+            # do segundo e terceiro pontos (índices 1 e 2) em diante 
+            quadratic_vertex(px, py, x, y)
+    
+    stroke_weight(1)
+    for i, ponto in enumerate(pontos):
+        x, y = ponto
+        if i == arrastando:
+            fill(200, 0, 0)
+        elif dist(mouse_x, mouse_y, x, y) < 10:
+            fill(255, 255, 0)
+        else:
+            fill(255)
+        ellipse(x, y, 5, 5)
+        t = f'{i}: {"vertex" if i == 0 else "control" if i % 2 else "quadratic"}'
+        text(t, x + 5, y - 5)
+
+def mouse_pressed():
+    global arrastando
+    for i, ponto in enumerate(pontos):
+        x, y = ponto
+        if dist(mouse_x, mouse_y, x, y) < 10:
+            arrastando = i
+            break 
+
+def mouse_released():
+    global arrastando
+    arrastando = None
+
+def mouse_dragged():
+    global pontos
+    global arrastando
+    if arrastando is not None:
+        x, y = pontos[arrastando]
+        x += mouse_x - pmouse_x
+        y += mouse_y - pmouse_y
+        pontos[arrastando] = x, y
+```
+
+## Assuntos relacionados
+
+- [Desenhando Polígonos - I](poligonos_1.md)
+- [Desenhando Polígonos - II](poligonos_2.md)
+- [Sequências e laços de repetição](lacos_py.md)
+
+
