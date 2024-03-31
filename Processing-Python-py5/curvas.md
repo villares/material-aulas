@@ -67,7 +67,8 @@ def setup():
 
 </details>
 
-Quando há o alinhamento entre o segundo ponto de controle de um vértice, o próprio vértice, e o primeiro ponto de controle do próximo vértice em uma sequência de vértices, haverá continuidade na curva de um trecho para outro.
+
+Repare neste exemplo que quando há o alinhamento entre o segundo ponto de controle de um vértice (2), o próprio vértice (3), e o primeiro ponto de controle (4), pertencente ao próximo vértice em uma sequência de vértices, haverá continuidade na curva de um trecho para outro.
 
 ## Curvas Bézier quadráticas com `quadratic_vertex()`
 
@@ -101,13 +102,13 @@ def draw():
     no_fill()
 
     begin_shape()
-    vertex(100, 50)              # 0: vertex inicial
+    vertex(100, 50)              # 0: vertex âncora inicial
     quadratic_vertex(150, 100,   # 1: ponto de controle
-                     250, 100)   # 2: ponto
+                     250, 100)   # 2: vértice
     quadratic_vertex(250, 200,   # 3: ponto de controle
-                     150, 200)   # 4: ponto de controle
+                     150, 200)   # 4: vértice
     quadratic_vertex(50, 200,    # 5: ponto de controle
-                     50, 100)    # 6: ponto de controle
+                     50, 100)    # 6: vértice
     end_shape()
 
     pontos = [
@@ -130,7 +131,7 @@ def draw():
 </pre>
 </details>
 
-Note como neste exemplo, na sequência final de trechos, há o alinhamento entre o ponto de controle de um vértice, o próprio vértice, e o ponto de controle do próximo vértice, produzindo continuidade na curva de um trecho para outro.
+Note como neste exemplo, na sequência final de trechos, há o alinhamento entre o ponto de controle de um vértice (3), o próprio vértice (4), e o ponto de controle (5) do próximo vértice, produzindo continuidade na curva de um trecho para outro.
 
 ## Curvas *Catmull-Rom* com `curve_vertex()`
 
