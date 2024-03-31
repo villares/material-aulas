@@ -1,7 +1,7 @@
 
 # Desenhando Curvas - I
 
-Agora que já sabemos [desenhar um polígonos com `begin_shape()` e `end_shape()` ou `end_shape(CLOSE)`](poligonos_2.md) podemos experimentar formas curvas no py5, primeiro curvas Bezier, com as funções [`bezier_vertex()`](https://py5coding.org/reference/sketch_bezier_vertex.html), em seguida uma implementação de *splines* Catmull-Rom com [`curve_vertex()`](https://py5coding.org/reference/sketch_curve_vertex.html) e por fim quadráticas com [`quadratic_vertex()`](https://py5coding.org/reference/sketch_quadratic_vertex.html).
+Agora que já sabemos [desenhar um polígonos com `begin_shape()` e `end_shape()` ou `end_shape(CLOSE)`](poligonos_2.md) podemos experimentar formas curvas no py5, primeiro curvas Bezier, com as funções [`bezier_vertex()`](https://py5coding.org/reference/sketch_bezier_vertex.html), em seguida curvas quadráticas com [`quadratic_vertex()`](https://py5coding.org/reference/sketch_quadratic_vertex.html) e uma implementação de *Catmull-Rom splines* com [`curve_vertex()`](https://py5coding.org/reference/sketch_curve_vertex.html).
 
 ## Curvas Bezier com `bezier_vertex()`
 
@@ -11,16 +11,16 @@ Você pode usar um ou mais vértices Bezier entre o `begin_shape()` e o `end_sha
 
 No `bezier_vertex()` propriamente dito, os quatro primeiros argumentos são as cordenadas de dois pontos de controle e os últimos dois são as coordenadas do vértice(que pode servir de âncora inicial para um próximo vértice Bezier).
 
-```
- begin_shape()
-    vertex(100, 50)         # 0: âncora inicial
-    bezier_vertex(150, 150,  # 1: primeiro ponto de controle do primeiro vértice
-                 250, 100,  # 2: segundo ponto de controle do primeiro vértice
-                 250, 200),  # 3: vértice final da primeira curva, âncora da segunda
-    bezier_vertex(150, 250,  # 4: primeiro ponto de controle do segundo vértice
-                 50, 200,   # 5: segundo ponto de controle do segundo vértice
-                 50, 100)   # 6: segundo vértice bezier (final)
-    end_shape(),
+```python
+begin_shape()
+vertex(100, 50)           # 0: âncora inicial
+bezier_vertex(150, 150,   # 1: primeiro ponto de controle do primeiro vértice
+              250, 100,   # 2: segundo ponto de controle do primeiro vértice
+              250, 200),  # 3: vértice final da primeira curva, âncora da segunda
+bezier_vertex(150, 250,   # 4: primeiro ponto de controle do segundo vértice
+              50, 200,    # 5: segundo ponto de controle do segundo vértice
+              50, 100)    # 6: segundo vértice bezier (final)
+end_shape()
 ```
 
 ![bezier](assets/curve_bezier.png)
@@ -48,8 +48,7 @@ def draw():
                     50, 100)
     end_shape()
 
-
-    pontos=[
+    pontos = [
         (100, 50),
         (150, 150),
         (250, 100),
@@ -60,10 +59,70 @@ def draw():
         ]
     stroke_weight(1)
     for i, ponto in enumerate(pontos):
-        x, y=ponto
+        x, y = ponto
         fill(255)
-        ellipse(x, y, 5, 5)
+        circle(x, y, 5)
         t="{}: {:3}, {:3}".format(i, x, y)
+        text(t, x+5, y-5)
+</pre>
+</details>
+
+## Curvas com `quadratic_vertex()`
+
+Essas curvas precisam começar co um vértice-âncora usando a função `vertex()`, em seguinda, cada chamada a `quadratic_vertex()` inclui nos argumentos as coordenades de um ponto de controle e de um novo vértice (que pode servir de âncora para vértices curvos subsequentes).
+
+```python
+begin_shape()
+vertex(100, 50)              # 0: vertex inicial
+quadratic_vertex(150, 100,   # 1: ponto de controle
+                 250, 100)   # 2: ponto
+quadratic_vertex(250, 200,   # 3: ponto de controle
+                 150, 200)   # 4: ponto de controle
+quadratic_vertex(50, 200,    # 5: ponto de controle
+                 50, 100)    # 6: ponto de controle
+end_shape()
+```
+
+![exemplo de curva com vértices quadráticos](assets/curve_quadratic.png)
+
+<details>
+<summary> Código completo para reproduzir a imagem acima </summary>
+<pre>
+
+def setup():
+    size(300, 300)
+
+def draw():
+    background(100)
+    stroke_weight(3)
+    stroke(0)
+    no_fill()
+
+    begin_shape()
+    vertex(100, 50)              # 0: vertex inicial
+    quadratic_vertex(150, 100,   # 1: ponto de controle
+                     250, 100)   # 2: ponto
+    quadratic_vertex(250, 200,   # 3: ponto de controle
+                     150, 200)   # 4: ponto de controle
+    quadratic_vertex(50, 200,    # 5: ponto de controle
+                     50, 100)    # 6: ponto de controle
+    end_shape()
+
+    pontos = [
+        (100, 50),
+        (150, 150),
+        (250, 100),
+        (250, 200),
+        (150, 250),
+        (50, 200),
+        (50, 100),
+        ]
+    stroke_weight(1)
+    for i, ponto in enumerate(pontos):
+        x, y = ponto
+        fill(255)
+        circle(x, y, 5)
+        t = f'{i}: {"vertex" if i == 0 else "control" if i % 2 else "quadratic"}'
         text(t, x+5, y-5)
 
 </pre>
@@ -71,15 +130,12 @@ def draw():
 
 ## Curvas com `curve_vertex()`
 
-Agora que já sabemos iterar por uma estrutura de dados, e como usar as coordenadas das tuplas para desenhar um polígono, podemos experimentar a mesma estratégia com outros tipos de vértice.
+Vejamos agora as *Catmull-Rom splines*, uma forma de descrever curvas que não tem os pontos de controle "fora da curva" como as Bezier e as quadráticas, ao contrário, tem a curiosa propriedade dos pontos/vértices serem influenciados pelos pontos que vem antes e depois deles: é como se cada ponto fosse ao mesmo tempo sua própria âncora/vértice e ponto de controle de outros pontos anteriores e posteriores.
 
-Vejamos agora o `curve_vertex()`, uma forma de descrever curvas que não tem os pontos de controle como as Bezier, mas tem a curiosa propriedade dos pontos/vértices serem influenciados pelos pontos que vem antes e depois deles. É como se cada ponto fosse ao mesmo tempo sua própria âncora/vértice e ponto de controle de um outro ponto.
-
-Vamos iterar por uma estrutura de dados, e usar as coordenadas de tuplas, da mesma forma que fizemos para desenhar um polígono, só que desta vez vamos experimentar essa estratégia com outros tipos de vértice, os vértices de curva, que acabamos de mencionar. Considere esta lista de pontos:
-
+Vamos iterar por uma lista de coordenadas em forma de tuplas, da mesma forma que fizemos para desenhar um polígono, só que desta vez vamos experimentar essa estratégia com, os `curve_vertex()` que acabamos de mencionar. Considere esta lista de pontos:
 
 ```python
-pontos=[
+pontos = [
     (100, 50),
     (150, 100),
     (250, 100),
@@ -107,7 +163,7 @@ end_shape(CLOSE)
 <summary> Código completo para reproduzir a imagem acima </summary>
 
  <pre>
- pontos=[
+ pontos = [
     (100, 50),
     (150, 100),
     (250, 100),
@@ -132,9 +188,9 @@ def draw():
     end_shape(CLOSE)
     stroke_weight(1)
     for i, ponto in enumerate(pontos):
-        x, y=ponto
+        x, y = ponto
         fill(255)
-        ellipse(x, y, 5, 5)
+        circle(x, y, 5)
         text(i, x+5, y-5)
 </pre>
 </details>
@@ -158,7 +214,7 @@ end_shape(CLOSE)
 <summary> Código completo para reproduzir a imagem acima </summary>
 
  <pre>
-pontos=[
+pontos = [
     (100, 50),
     (150, 100),
     (250, 100),
@@ -188,7 +244,7 @@ def draw():
     for i, ponto in enumerate(pontos):
         x, y=ponto
         fill(255)
-        ellipse(x, y, 5, 5)
+        circle(x, y, 5)
         text(i, x + 5, y - 5)
 
 </pre>
@@ -211,7 +267,7 @@ end_shape()
 <details>
 <summary> Código completo para reproduzir a imagem acima </summary>
 <pre>
-pontos=[
+pontos = [
     (100, 50),
     (150, 100),
     (250, 100),
@@ -236,7 +292,7 @@ def draw():
         curve_vertex(x, y)
     curve_vertex(pontos[0][0], pontos[0][1])
     curve_vertex(pontos[1][0], pontos[1][1])
-    pontos=[
+    pontos = [
     (100, 50),
     (150, 100),
     (250, 100),
@@ -295,9 +351,9 @@ def draw():
     end_shape()
     stroke_weight(1)
     for i, ponto in enumerate(pontos):
-        x, y=ponto
+        x, y = ponto
         fill(255)
-        ellipse(x, y, 5, 5)
+        circle(x, y, 5)
         text(i, x+5, y-5)
 </pre>
 </details>
@@ -312,7 +368,7 @@ Veja como ficaria acrescentando-se o `CLOSE` em `end_shape(CLOSE)`. Fica um tant
 <details>
 <summary> Código completo para reproduzir a imagem acima </summary>
 <pre>
-pontos=[
+pontos = [
     (100, 50),
     (150, 100),
     (250, 100),
@@ -341,7 +397,7 @@ def draw():
     for i, ponto in enumerate(pontos):
         x, y=ponto
         fill(255)
-        ellipse(x, y, 5, 5)
+        circle(x, y, 5)
         text(i, x+5, y-5)
 </pre>
 </details>
@@ -354,7 +410,7 @@ def draw():
 
 <details>
 
-<summary> Resposta: Usando a mesma estratégia de "arrastar círculos". </summary>
+<summary> Resposta: Testador para curve_vertex() com pontos arrastáveis. </summary>
 
 <pre>
   arrastando = None
@@ -423,13 +479,11 @@ def draw():
 
 </details>
 
-## Curvas com `quadratic_vertex()`
+<details>
 
-Essas curvas precisam começar com uma âncora usando a função `vertex()`, em seguinda, cada chamada a `quadratic_vertex()`  inclui um ponto de controle e um novo vértice/ancora.
+<summary> Resposta: Testador para quadratic_vertex() com pontos arrastáveis. </summary>
 
-![exemplo de curva com vértices quadráticos](assets/curve_quadratic.png)
-
-```python
+<pre>
 arrastando = None
 
 pontos = [
@@ -490,7 +544,10 @@ def mouse_dragged():
         x += mouse_x - pmouse_x
         y += mouse_y - pmouse_y
         pontos[arrastando] = x, y
-```
+</pre>
+
+</details>
+
 
 ## Assuntos relacionados
 
