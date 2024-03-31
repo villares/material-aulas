@@ -9,7 +9,7 @@ As curvas Bézier levam o nome do engenheiro francês Pierre Bézier, que as des
 
 Podemos criar uma forma curva aberta com uma ou mais chamadas a `bezier_vertex()` entre o `begin_shape()` e o `end_shape()`. A curva pode ser fechada se usarmos `end_shape(CLOSE)` ao final.
 
-Note que antes de cada `bezier_vertex()` é preciso que haja algum vértice, um ponto âncora, então, antes da primeira chamada a `bezier_vertex()` em geral é usado `vertex()`, como neste exemplo a seguir. Este tipo de curva Bézier requer dois pontos de controle para cada novo vértice, sem levar em conta o primeiro vértice-âncora. Na função `bezier_vertex()` os quatro primeiros argumentos são as cordenadas de dois pontos de controle e os últimos dois são as coordenadas do vértice (que por sua vez pode servir de âncora para um próximo vértice Bézier).
+Note que antes de cada `bezier_vertex()` é preciso que haja algum vértice, um ponto âncora, então, antes da primeira chamada a `bezier_vertex()` em geral é usada uma chamada da função `vertex()`, como neste exemplo a seguir. Este primeiro tipo de curva Bézier que veremos requer dois pontos de controle para cada novo vértice, sem levar em conta o primeiro vértice-âncora, por isso, na função `bezier_vertex()` os quatro primeiros argumentos são as cordenadas de dois pontos de controle e os últimos dois são as coordenadas do vértice. Cada vértice Bézier por sua vez pode servir de âncora para um próximo vértice Bézier, permitindo o encadeamento de trechos curvos.
 
 ```python
 begin_shape()
@@ -66,6 +66,8 @@ def draw():
         text(t, x+5, y-5)
 </pre>
 </details>
+
+Quando há o alinhamento entre o segundo ponto de controle de um vértice, o próprio vértice, e o primeiro ponto de controle do próximo vértice em uma sequência de véretices, haverá continuidade na curva de um trecho para outro.
 
 ## Curvas Bézier quadráticas com `quadratic_vertex()`
 
@@ -128,9 +130,11 @@ def draw():
 </pre>
 </details>
 
+Note como neste exemplo, na sequência final de trechos, há o alinhamento entre o ponto de controle de um vértice, o próprio vértice, e o ponto de controle do próximo vértice, produzindo continuidade na curva de um trecho para outro.
+
 ## Curvas *Catmull-Rom* com `curve_vertex()`
 
-Vejamos agora as *Catmull-Rom splines*, uma forma de descrever curvas que não tem os pontos de controle como as curvas Bézier, a curvatura em seus vértices é influenciada pelos vértices que vem antes e depois deles: é como se cada vértice fosse ao mesmo tempo sua própria âncora e ponto de controle de outros vértices anteriores e posteriores.
+Vejamos agora as *Catmull-Rom splines*, uma forma de descrever curvas que não tem os pontos de controle independentes como as curvas Bézier, a curvatura em seus vértices é influenciada pelos vértices que vem antes e depois deles: é como se cada vértice fosse ao mesmo tempo sua própria âncora e ponto de controle de outros vértices anteriores e posteriores.
 
 Vamos iterar por uma lista de coordenadas em forma de tuplas, da mesma forma que fizemos para desenhar um polígono, só que desta vez vamos experimentar usar `curve_vertex()` que acabamos de mencionar. Considere esta lista de pontos:
 
