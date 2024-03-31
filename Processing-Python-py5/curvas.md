@@ -15,8 +15,8 @@ Note que antes de cada `bezier_vertex()` é preciso que haja algum vértice, um 
 begin_shape()
 vertex(100, 50)           # 0: âncora inicial
 bezier_vertex(150, 150,   # 1: primeiro ponto de controle do primeiro vértice
-              250, 100,   # 2: segundo ponto de controle do primeiro vértice
-              250, 200),  # 3: vértice final da primeira curva, âncora da segunda
+              250, 150,   # 2: segundo ponto de controle do primeiro vértice
+              200, 200),  # 3: vértice final da primeira curva, âncora da segunda
 bezier_vertex(150, 250,   # 4: primeiro ponto de controle do segundo vértice
               50, 200,    # 5: segundo ponto de controle do segundo vértice
               50, 100)    # 6: segundo vértice bezier (final)
@@ -26,36 +26,35 @@ end_shape()
 ![bezier](assets/curve_bezier.png)
 
 <details>
+  
 <summary> Código completo para reproduzir a imagem acima </summary>
+
 <pre>
-
 def setup():
-    size(300, 300)
-
-def draw():
+    size(400, 300)
     background(100)
     stroke_weight(3)
     stroke(0)
     no_fill()
 
     begin_shape()
-    vertex(100, 50)
-    bezier_vertex(150, 150,
-                    250, 100,
-                    250, 200),
-    bezier_vertex(150, 250,
-                    50, 200,
-                    50, 100)
+    vertex(100, 50)            # 0: vértice âncora
+    bezier_vertex(150, 150,    # 1: ponto de controle
+                  250, 150,    # 2: ponto de controle
+                  200, 200),   # 3: vértice
+    bezier_vertex(150, 250,    # 4: ponto de controle
+                  50, 200,     # 5: ponto de controle
+                  50, 100)     # 6: vértice
     end_shape()
 
     pontos = [
-        (100, 50),
-        (150, 150),
-        (250, 100),
-        (250, 200),
-        (150, 250),
-        (50, 200),
-        (50, 100),
+        (100, 50),   # 0 
+        (150, 150),  # 1
+        (250, 150),  # 2
+        (200, 200),  # 3
+        (150, 250),  # 4
+        (50, 200),   # 5
+        (50, 100),   # 6
         ]
     stroke_weight(1)
     for i, ponto in enumerate(pontos):
@@ -65,6 +64,7 @@ def draw():
         t="{}: {:3}, {:3}".format(i, x, y)
         text(t, x+5, y-5)
 </pre>
+
 </details>
 
 Quando há o alinhamento entre o segundo ponto de controle de um vértice, o próprio vértice, e o primeiro ponto de controle do próximo vértice em uma sequência de vértices, haverá continuidade na curva de um trecho para outro.
