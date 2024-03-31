@@ -402,7 +402,7 @@ def draw():
 </pre>
 </details>
 
-### Extra: Um testador de curvas interativo
+## Extra: Um testador de curvas interativo
 
 **Desafio:** Você conseguiria escrever o código que permite testar as curvas arrastando os pontos com o mouse, usando a estratégia do exemplo ["arrastando vários círculos"](https://github.com/villares/material-aulas/blob/main/Processing-Python-py5/arrastando_circulos.md#arrastando-v%C3%A1rios-c%C3%ADrculos)?
 
