@@ -1,15 +1,13 @@
 
-# Desenhando curvas - I
+# Desenhando Curvas - I
 
-Agora que já sabemos [desenhar um polígonos com `begin_shape()` e `end_shape()` ou `end_shape(CLOSE)`](poligonos_2.md) podemos experimentar formas curvas.
+Agora que já sabemos [desenhar um polígonos com `begin_shape()` e `end_shape()` ou `end_shape(CLOSE)`](poligonos_2.md) podemos experimentar formas curvas no py5, primeiro curvas Bezier, com as funções [`bezier_vertex()`](https://py5coding.org/reference/sketch_bezier_vertex.html) e em seguida uma implementação de *splines* Catmull-Rom com [`curve_vertex()`](https://py5coding.org/reference/sketch_curve_vertex.html).
 
-
-
-## Curvas Bezier com `bezierVertex()`
+## Curvas Bezier com `bezier_vertex()`
 
 As famosas curvas Bezier levam o nome de Pierre Bézier, que as desenvolveu em seus trabalhos na década de 1960 na indústria automotiva, elas descrevem curvas a partir das coordenadas de pontos, ou âncoras, que delimitam o início e o fim de uma curva, mas também precisam de "pontos de controle" que em geral ficam fora da curva, mas controlam o seu comportamento.
 
-Você pode usar um ou mais vértices * Bezier * entre o `begin_shape()` e o `end_shape()`, e ela pode ser aberta ou fechada (com `end_shape(CLOSE)`), mas antes de cada `bezier_vertex()` é preciso que haja algum outro vértice, um ponto âncora, que marca o início e que pode ser feito com `vertex()`, como neste exemplo a seguir.
+Você pode usar um ou mais vértices Bezier entre o `begin_shape()` e o `end_shape()`, e ela pode ser aberta ou fechada (com `end_shape(CLOSE)`), mas antes de cada `bezier_vertex()` é preciso que haja algum outro vértice, um ponto âncora, que marca o início e que pode ser feito com `vertex()`, como neste exemplo a seguir.
 
 No `bezier_vertex()` propriamente dito, os quatro primeiros argumentos são as cordenadas de dois pontos de controle e os últimos dois são as coordenadas do vértice(que pode servir de âncora inicial para um próximo vértice Bezier).
 
@@ -71,7 +69,7 @@ def draw():
 </pre>
 </details>
 
-## Curvas com `curveVertex()`
+## Curvas com `curve_vertex()`
 
 Agora que já sabemos iterar por uma estrutura de dados, e como usar as coordenadas das tuplas para desenhar um polígono, podemos experimentar a mesma estratégia com outros tipos de vértice.
 
@@ -94,7 +92,7 @@ pontos=[
 
 ### Exemplo 1: Comportamento inesperado
 
-Se chamarmos uma vez `curve_vertex()` para cada vértice dentro de um contexto de `begin_shape()` e `end_shape(CLOSE)`obteremos o seguinte resultado, esquisito(estou aqui omitindo parte do código que controla os atributos gráficos e mostra os texto com os índices dos pontos):
+Se chamarmos uma vez `curve_vertex()` para cada vértice dentro de um contexto de `begin_shape()` e `end_shape(CLOSE)`obteremos o seguinte resultado, esquisito (estou aqui omitindo parte do código que controla os atributos gráficos e mostra os texto com os índices dos pontos):
 
 ```python
 begin_shape()
@@ -143,7 +141,7 @@ def draw():
 
 ### Exemplo 2: Fechando a curva corretamente
 
-Para obter o resultado esperado(ou, caro leitor, pelo menos o que eu esperava) temos que acrescentar uma chamada com as coordenadas do último vértice antes do primeiro, e do primeiro e segundo vértices depois do último! Diga lá se não é estranho isso!
+Para obter o resultado esperado (ou, caro leitor, pelo menos o que eu esperava) temos que acrescentar uma chamada com as coordenadas do último vértice antes do primeiro, e do primeiro e segundo vértices depois do último! Diga lá se não é estranho isso!
 
 ```python
 curve_vertex(pontos[-1][0], pontos[-1][1])
@@ -305,7 +303,7 @@ def draw():
 </details>
 
 
-### Exemplo 5: Usando `endShape(CLOSE)`
+### Exemplo 5: Usando `end_shape(CLOSE)`
 
 Veja como ficaria acrescentando-se o `CLOSE` em `end_shape(CLOSE)`
 
@@ -356,7 +354,7 @@ def draw():
 
 ### EXTRA: Um testador de curvas interativo
 
-**Desafio:** Você conseguiria escrever o código que permite testar as curvas arrastando os pontos com o mouse?
+**Desafio:** Você conseguiria escrever o código que permite testar as curvas arrastando os pontos com o mouse, usando a estratégia do exemplo ["arrastando vários círculos"](https://github.com/villares/material-aulas/blob/main/Processing-Python-py5/arrastando_circulos.md#arrastando-v%C3%A1rios-c%C3%ADrculos)?
 
 ![errada](assets/curves_animate.gif)
 
@@ -365,9 +363,9 @@ def draw():
 <summary> Resposta: Usando a mesma estratégia de "arrastar círculos". </summary>
 
 <pre>
-  arrastando=None
+  arrastando = None
 
-  pontos=[
+  pontos = [
       (100, 50),
       (150, 100),
       (250, 100),
@@ -407,26 +405,26 @@ def draw():
   def mouse_pressed():            # quando um botão do mouse é apertado
       global arrastando
       for i, ponto in enumerate(pontos):
-          x, y=ponto
-          dist_mouse_ponto=dist(mouse_x, mouse_y, x, y)
+          x, y = ponto
+          dist_mouse_ponto = dist(mouse_x, mouse_y, x, y)
           if dist_mouse_ponto < 10:
-              arrastando=i
+              arrastando = i
               break  # encerra o laço
 
   def mouse_released():
       # quando um botão do mouse é solto
       global arrastando
-      arrastando=None
+      arrastando = None
 
   def mouse_dragged():
        # quando o mouse é movido apertado
        global pontos
        global arrastando
        if arrastando is not None:
-          x, y=pontos[arrastando]
+          x, y = pontos[arrastando]
           x += mouse_x - pmouse_x
           y += mouse_y - pmouse_y
-          pontos[arrastando]=(x, y)
+          pontos[arrastando] = (x, y)
 </pre>
 
 </details>
