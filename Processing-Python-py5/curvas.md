@@ -7,9 +7,9 @@ As curvas Bézier levam o nome do engenheiro francês Pierre Bézier, que as des
 
 ## Curvas Bézier cúbicas com `bezier_vertex()`
 
-Você pode usar um ou mais chamadas a `bezier_vertex()` entre o `begin_shape()` e o `end_shape()`, e a curva pode ser aberta ou fechada (com `end_shape(CLOSE)`). Antes de cada `bezier_vertex()` é preciso que haja algum outro vértice, um ponto âncora, que marca o início, então antes da primeira chamada a `bezier_vertex()` é preciso usar `vertex()`, como neste exemplo a seguir. 
+Podemos criar uma forma curva aberta com uma ou mais chamadas a `bezier_vertex()` entre o `begin_shape()` e o `end_shape()`. A curva pode ser fechada se usarmos `end_shape(CLOSE)` ao final.
 
-Este tipo de curva Bézier requer dois pontos de controle para cada novo vértice (não levando em conta o primeiro vértice âncora). Na função `bezier_vertex()` os quatro primeiros argumentos são as cordenadas de dois pontos de controle e os últimos dois são as coordenadas do vértice (que pode servir de âncora inicial para um próximo vértice Bézier).
+Note que antes de cada `bezier_vertex()` é preciso que haja algum vértice, um ponto âncora, então, antes da primeira chamada a `bezier_vertex()` em geral é usado `vertex()`, como neste exemplo a seguir. Este tipo de curva Bézier requer dois pontos de controle para cada novo vértice, sem levar em conta o primeiro vértice-âncora. Na função `bezier_vertex()` os quatro primeiros argumentos são as cordenadas de dois pontos de controle e os últimos dois são as coordenadas do vértice (que por sua vez pode servir de âncora para um próximo vértice Bézier).
 
 ```python
 begin_shape()
