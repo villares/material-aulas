@@ -128,11 +128,11 @@ def draw():
 </pre>
 </details>
 
-## Curvas com `curve_vertex()`
+## Curvas *Catmull-Rom* com `curve_vertex()`
 
-Vejamos agora as *Catmull-Rom splines*, uma forma de descrever curvas que não tem os pontos de controle "fora da curva" como as Bézier e as quadráticas, ao contrário, tem a curiosa propriedade dos pontos/vértices serem influenciados pelos pontos que vem antes e depois deles: é como se cada ponto fosse ao mesmo tempo sua própria âncora/vértice e ponto de controle de outros pontos anteriores e posteriores.
+Vejamos agora as *Catmull-Rom splines*, uma forma de descrever curvas que não tem os pontos de controle como as curvas Bézier, a curvatura em seus vértices é influenciada pelos vértices que vem antes e depois deles: é como se cada vértice fosse ao mesmo tempo sua própria âncora e ponto de controle de outros vértices anteriores e posteriores.
 
-Vamos iterar por uma lista de coordenadas em forma de tuplas, da mesma forma que fizemos para desenhar um polígono, só que desta vez vamos experimentar essa estratégia com, os `curve_vertex()` que acabamos de mencionar. Considere esta lista de pontos:
+Vamos iterar por uma lista de coordenadas em forma de tuplas, da mesma forma que fizemos para desenhar um polígono, só que desta vez vamos experimentar usar `curve_vertex()` que acabamos de mencionar. Considere esta lista de pontos:
 
 ```python
 pontos = [
