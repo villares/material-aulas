@@ -1,7 +1,7 @@
 
 # Desenhando Curvas - I
 
-Agora que já sabemos [desenhar um polígonos com `begin_shape()` e `end_shape()` ou `end_shape(CLOSE)`](poligonos_2.md) podemos experimentar formas curvas no py5, primeiro curvas Bezier, com as funções [`bezier_vertex()`](https://py5coding.org/reference/sketch_bezier_vertex.html) e em seguida uma implementação de *splines* Catmull-Rom com [`curve_vertex()`](https://py5coding.org/reference/sketch_curve_vertex.html).
+Agora que já sabemos [desenhar um polígonos com `begin_shape()` e `end_shape()` ou `end_shape(CLOSE)`](poligonos_2.md) podemos experimentar formas curvas no py5, primeiro curvas Bezier, com as funções [`bezier_vertex()`](https://py5coding.org/reference/sketch_bezier_vertex.html), em seguida uma implementação de *splines* Catmull-Rom com [`curve_vertex()`](https://py5coding.org/reference/sketch_curve_vertex.html) e por fim quadráticas com [`quadratic_vertex()`](https://py5coding.org/reference/sketch_quadratic_vertex.html).
 
 ## Curvas Bezier com `bezier_vertex()`
 
