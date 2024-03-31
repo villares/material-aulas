@@ -405,74 +405,83 @@ def setup():
 
 <details>
 
-<summary> Resposta: Testador para curve_vertex() com pontos arrastáveis. </summary>
+<summary>Resposta: Testador para bezier_vertex() com pontos arrastáveis.</summary>
 
 <pre>
-  arrastando = None
+arrastando = None
 
-  pontos = [
-      (100, 50),
-      (150, 100),
-      (250, 100),
-      (250, 200),
-      (150, 200),
-      (50, 200),
-      (50, 100)]
+pontos = [
+    (100, 50),   # 0: vertex ponto âncora inicial 
+    (150, 150),  # 1: primeiro ponto de controle
+    (250, 150),  # 2: segundo ponto de controle
+    (200, 200),  # 3: vértice bezier
+    (150, 250),  # 4: primeiro ponto de controle
+    (50, 200),   # 5: segundo ponto de controle
+    (50, 100),   # 6: vértice bezier
+    ]
 
-  def setup():
-      size(300, 300)
+s = 2 # scale factor
 
-  def draw():
-      background(100)
-      stroke_weight(3)
-      stroke(0)
-      no_fill()
+def setup():
+    size(800, 600)
 
-      begin_shape()
-      curve_vertex(pontos[-1][0], pontos[-1][1])
-      for x, y in pontos:
-          curve_vertex(x, y)
-      curve_vertex(pontos[0][0], pontos[0][1])
-      end_shape(CLOSE)
-      stroke_weight(1)
-      for i, ponto in enumerate(pontos):
-          x, y = ponto
-          if i == arrastando:
-              fill(200, 0, 0)
-          elif dist(mouse_x, mouse_y, x, y) < 10:
-              fill(255, 255, 0)
-          else:
-              fill(255)
-          circle(x, y, 5)
-          t = '{}: {:03}, {:03}'.format(i, x, y)
-          text(t, x + 5, y - 5)
+def draw():
+    scale(s)
+    background(100)
+    stroke_weight(3)
+    stroke(0)
+    no_fill()
 
-  def mouse_pressed():
-      # quando um botão do mouse é apertado
-      global arrastando
-      for i, ponto in enumerate(pontos):
-          x, y = ponto
-          if dist(mouse_x, mouse_y, x, y) < 10:
-              arrastando = i
-              break  # encerra o laço
+    begin_shape()
+    for i, (x, y) in enumerate(pontos):
+        if i == 0:
+            vertex(x, y)
+        elif i % 3 == 0:  # elementos divisíveis por 3 da lista
+            c1x, c1y = pontos[i - 2]
+            c2x, c2y = pontos[i - 1]
+            bezier_vertex(c1x, c1y,  #  primeiro ponto de controle
+                          c2x, c2y,  #  segundo ponto de controle
+                          x, y),     #  vértice
+    end_shape()
+    
+    stroke_weight(1)
+    for i, ponto in enumerate(pontos):
+        x, y = ponto
+        if i == arrastando:
+            fill(200, 0, 0)
+        elif dist(mouse_x / s, mouse_y / s, x, y) < 10:
+            fill(255, 255, 0)
+        else:
+            fill(255)
+        ellipse(x, y, 5, 5)
+        t = f'{i}: {"vertex" if i == 0 else f"control-{i%3}" if i % 3 else "bezier"}'
+        text(t, x + 5, y - 5)
 
-  def mouse_released():
-      # quando um botão do mouse é solto
-      global arrastando
-      arrastando = None
+def mouse_pressed():
+    global arrastando
+    for i, ponto in enumerate(pontos):
+        x, y = ponto
+        if dist(mouse_x / s, mouse_y / s, x, y) < 10:
+            arrastando = i
+            break 
 
-  def mouse_dragged():
-       # quando o mouse é movido apertado
-       global pontos
-       global arrastando
-       if arrastando is not None:
-          x, y = pontos[arrastando]
-          x += mouse_x - pmouse_x
-          y += mouse_y - pmouse_y
-          pontos[arrastando] = x, y
+def mouse_released():
+    global arrastando
+    arrastando = None
+
+def mouse_dragged():
+    global pontos
+    global arrastando
+    if arrastando is not None:
+        x, y = pontos[arrastando]
+        x += (mouse_x - pmouse_x) / s
+        y += (mouse_y - pmouse_y) / s
+        pontos[arrastando] = x, y 
 </pre>
-
+  
 </details>
+
+
 
 <details>
 
@@ -535,6 +544,77 @@ def mouse_dragged():
     global pontos
     global arrastando
     if arrastando is not None:
+        x, y = pontos[arrastando]
+        x += mouse_x - pmouse_x
+        y += mouse_y - pmouse_y
+        pontos[arrastando] = x, y
+</pre>
+
+</details>
+
+<details>
+
+<summary> Resposta: Testador para curve_vertex() com pontos arrastáveis. </summary>
+
+<pre>
+arrastando = None
+
+pontos = [
+    (100, 50),
+    (150, 100),
+    (250, 100),
+    (250, 200),
+    (150, 200),
+    (50, 200),
+    (50, 100)]
+
+def setup():
+    size(300, 300)
+
+def draw():
+    background(100)
+    stroke_weight(3)
+    stroke(0)
+    no_fill()
+
+    begin_shape()
+    curve_vertex(pontos[-1][0], pontos[-1][1])
+    for x, y in pontos:
+        curve_vertex(x, y)
+    curve_vertex(pontos[0][0], pontos[0][1])
+    end_shape(CLOSE)
+    stroke_weight(1)
+    for i, ponto in enumerate(pontos):
+        x, y = ponto
+        if i == arrastando:
+            fill(200, 0, 0)
+        elif dist(mouse_x, mouse_y, x, y) < 10:
+            fill(255, 255, 0)
+        else:
+            fill(255)
+        circle(x, y, 5)
+        t = '{}: {:03}, {:03}'.format(i, x, y)
+        text(t, x + 5, y - 5)
+
+def mouse_pressed():
+    # quando um botão do mouse é apertado
+    global arrastando
+    for i, ponto in enumerate(pontos):
+        x, y = ponto
+        if dist(mouse_x, mouse_y, x, y) < 10:
+            arrastando = i
+            break  # encerra o laço
+
+def mouse_released():
+    # quando um botão do mouse é solto
+    global arrastando
+    arrastando = None
+
+def mouse_dragged():
+     # quando o mouse é movido apertado
+     global pontos
+     global arrastando
+     if arrastando is not None:
         x, y = pontos[arrastando]
         x += mouse_x - pmouse_x
         y += mouse_y - pmouse_y
