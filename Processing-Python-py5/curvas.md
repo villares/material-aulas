@@ -89,13 +89,12 @@ end_shape()
 ![exemplo de curva com vértices quadráticos](assets/curve_quadratic.png)
 
 <details>
+
 <summary> Código completo para reproduzir a imagem acima </summary>
+
 <pre>
-
 def setup():
-    size(300, 300)
-
-def draw():
+    size(400, 300)
     background(100)
     stroke_weight(3)
     stroke(0)
@@ -165,6 +164,7 @@ end_shape(CLOSE)
 ![errada](assets/curve_wrong.png)
 
 <details>
+  
 <summary> Código completo para reproduzir a imagem acima </summary>
 
  <pre>
@@ -180,8 +180,6 @@ end_shape(CLOSE)
 
 def setup():
     size(300, 300)
-
-def draw():
     background(100)
     stroke_weight(3)
     stroke(0)
@@ -231,8 +229,6 @@ pontos = [
 
 def setup():
     size(300, 300)
-
-def draw():
     background(100)
     stroke_weight(3)
     stroke(0)
@@ -283,9 +279,7 @@ pontos = [
     ]
 
 def setup():
-    size(600, 600)
-
-def draw():
+    size(300, 300)
     background(100)
     stroke_weight(3)
     stroke(0)
@@ -340,9 +334,7 @@ pontos=[
     ]
 
 def setup():
-    size(600, 600)
-
-def draw():
+    size(300, 300)
     background(100)
     stroke_weight(3)
     stroke(0)
@@ -361,8 +353,8 @@ def draw():
         circle(x, y, 5)
         text(i, x+5, y-5)
 </pre>
-</details>
 
+</details>
 
 ### Exemplo 5: Usando `end_shape(CLOSE)`
 
@@ -384,9 +376,7 @@ pontos = [
     ]
 
 def setup():
-    size(600, 600)
-
-def draw():
+    size(300, 300)
     background(100)
     stroke_weight(3)
     stroke(0)
