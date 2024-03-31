@@ -67,7 +67,8 @@ def setup():
 
 </details>
 
-Quando há o alinhamento entre o segundo ponto de controle de um vértice, o próprio vértice, e o primeiro ponto de controle do próximo vértice em uma sequência de vértices, haverá continuidade na curva de um trecho para outro.
+
+Repare neste exemplo que quando há o alinhamento entre o segundo ponto de controle de um vértice (2), o próprio vértice (3), e o primeiro ponto de controle (4), pertencente ao próximo vértice em uma sequência de vértices, haverá continuidade na curva de um trecho para outro.
 
 ## Curvas Bézier quadráticas com `quadratic_vertex()`
 
@@ -88,26 +89,25 @@ end_shape()
 ![exemplo de curva com vértices quadráticos](assets/curve_quadratic.png)
 
 <details>
+
 <summary> Código completo para reproduzir a imagem acima </summary>
+
 <pre>
-
 def setup():
-    size(300, 300)
-
-def draw():
+    size(400, 300)
     background(100)
     stroke_weight(3)
     stroke(0)
     no_fill()
 
     begin_shape()
-    vertex(100, 50)              # 0: vertex inicial
+    vertex(100, 50)              # 0: vertex âncora inicial
     quadratic_vertex(150, 100,   # 1: ponto de controle
-                     250, 100)   # 2: ponto
+                     250, 100)   # 2: vértice
     quadratic_vertex(250, 200,   # 3: ponto de controle
-                     150, 200)   # 4: ponto de controle
+                     150, 200)   # 4: vértice
     quadratic_vertex(50, 200,    # 5: ponto de controle
-                     50, 100)    # 6: ponto de controle
+                     50, 100)    # 6: vértice
     end_shape()
 
     pontos = [
@@ -130,7 +130,7 @@ def draw():
 </pre>
 </details>
 
-Note como neste exemplo, na sequência final de trechos, há o alinhamento entre o ponto de controle de um vértice, o próprio vértice, e o ponto de controle do próximo vértice, produzindo continuidade na curva de um trecho para outro.
+Note como neste exemplo, na sequência final de trechos, há o alinhamento entre o ponto de controle de um vértice (3), o próprio vértice (4), e o ponto de controle (5) do próximo vértice, produzindo continuidade na curva de um trecho para outro.
 
 ## Curvas *Catmull-Rom* com `curve_vertex()`
 
@@ -164,6 +164,7 @@ end_shape(CLOSE)
 ![errada](assets/curve_wrong.png)
 
 <details>
+  
 <summary> Código completo para reproduzir a imagem acima </summary>
 
  <pre>
@@ -179,8 +180,6 @@ end_shape(CLOSE)
 
 def setup():
     size(300, 300)
-
-def draw():
     background(100)
     stroke_weight(3)
     stroke(0)
@@ -230,8 +229,6 @@ pontos = [
 
 def setup():
     size(300, 300)
-
-def draw():
     background(100)
     stroke_weight(3)
     stroke(0)
@@ -282,9 +279,7 @@ pontos = [
     ]
 
 def setup():
-    size(600, 600)
-
-def draw():
+    size(300, 300)
     background(100)
     stroke_weight(3)
     stroke(0)
@@ -339,9 +334,7 @@ pontos=[
     ]
 
 def setup():
-    size(600, 600)
-
-def draw():
+    size(300, 300)
     background(100)
     stroke_weight(3)
     stroke(0)
@@ -360,8 +353,8 @@ def draw():
         circle(x, y, 5)
         text(i, x+5, y-5)
 </pre>
-</details>
 
+</details>
 
 ### Exemplo 5: Usando `end_shape(CLOSE)`
 
@@ -383,9 +376,7 @@ pontos = [
     ]
 
 def setup():
-    size(600, 600)
-
-def draw():
+    size(300, 300)
     background(100)
     stroke_weight(3)
     stroke(0)
