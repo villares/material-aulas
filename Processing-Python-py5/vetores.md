@@ -57,7 +57,7 @@ class Particle:
         delta = self.pos - mouse_pos
         d = delta.mag
         if 0 < d < 50:
-            acel = delta.normalize() * 0.01
+            acel = delta.norm * 0.01
             self.vel += acel
         self.pos += self.vel
         self.vel = self.vel * 0.995  # slow down
@@ -77,8 +77,9 @@ class Particle:
 
 ![vetores1](assets/vetores2.gif)
 
-Neste segundo exemplo a diferença(subtração) entre um vetor criado com as cordenadas da posição do mouse(`mouse_pos`) e o vetor que indiaca a posição de cada partícula(`self.pos`) é usada para calcular um vetor `delta` cuja magnitude `delta.mag` afeta a aceleração das partículas. Podem ser visto também o uso da propriedade `.norm` para obter um vetor unitário (de magnitude 1) que mantém apenas a direção do vetor original `delta`, é usado para calcular a direção da aceleração. O código poderia talvez ser tornado mais eficiente usando o quadrado da magnitude(`.mag_sq`) que é mais econômico que o cálculo da magnitude.
+Neste segundo exemplo a diferença (subtração) entre um vetor criado com as cordenadas da posição do mouse (`mouse_pos`) e o vetor que representa a posição de cada partícula (`self.pos`) é usada para calcular um vetor `delta` cuja magnitude `delta.mag` afeta a aceleração das partículas. 
 
+Note como `delta` é usado para calcular a direção da aceleração. O código poderia talvez ser mais eficiente usando o quadrado da magnitude (`.mag_sq`) que é mais econômico que o cálculo da magnitude. Foi usada a propriedade `.norm`, para obter um vetor "normalizado" ou unitário (de magnitude 1) que mantém apenas a direção do vetor original, também poderíamos usar o método `.normalize()`.
 
 # Métodos e propriedades dos vetores `Py5Vector`
 
