@@ -139,18 +139,16 @@ class Bandeirinha():
         if self.x > width + 25:
             self.x = -25
         if self.y > height + 25:
-            #             self.y = -25
-            # ```
+            self.y = -25
+```
             
-            # ### 3. Instanciando mais alguns objetos
-            
-            # <img src="imagens/passo3.png" align="left" alt="output passo 3">
-            
-            # A vantagem da estruturação e encapsulamento de termos um objeto bandeira criado por uma classe Bandeirinha pode começar a ser visto quando instanciamos mais de uma bandeirinha.
-            
-            # ```python
+### 3. Instanciando mais alguns objetos
 
+<img src="imagens/passo3.png" align="left" alt="output passo 3">
 
+A vantagem da estruturação e encapsulamento de termos um objeto bandeira criado por uma classe Bandeirinha pode começar a ser visto quando instanciamos mais de uma bandeirinha.
+            
+```python
 def setup():
     """ Instancia três bandeirinhas """
     global bandeira_0, bandeira_1, bandeira_2
@@ -195,8 +193,6 @@ No método `anda()`:
 2. Tratamento da saída do objeto da área de desenho por qualquer dos lados.
 
 ```python
-
-
 class Bandeirinha():
     """ Classe Bandeirinha, cor sorteada, velocidade sorteada """
 
@@ -240,20 +236,18 @@ class Bandeirinha():
             self.y = -metade
         if self.x < -metade:
             self.x = width + metade
-        if self.y < -metade:
+        if self.y < -metad
+            self.y = height + metade
+```
+            
+### 5. Uma lista de objetos
+            
+Uma estrutura de dados, no caso uma lista, pode de maneira muito simples conter referências para um grande número de objetos. 
 
-
-            #             self.y = height + metade
-            # ```
+Aqui chegamos rapidamente a um comportamento visualmente interessante instanciando 50 bandeirinhas no `setup()` e em seguida no `draw()` iteramos por estas bandeirinhas de maneira bastante típica em Python com um laço `for `*`object`*` in `*`collection_of_objects`*`:`
             
-            # ### 5. Uma lista de objetos
-            
-            # Uma estrutura de dados, no caso uma lista, pode de maneira muito simples conter referências para um grande número de objetos.
-            # Aqui chegamos rapidamente a um comportamento visualmente interessante instanciando 50 bandeirinhas no `setup()` e em seguida no `draw()` iteramos por estas bandeirinhas de maneira bastante típica em Python com um laço `for `*`object`*` in `*`collection_of_objects`*`:`
-            
-            # ```python
+```python
 bandeirinhas = []  # lista de objetos
-
 
 def setup():
     """ Define área de desenho e popula lista de bandeirinhas """
@@ -280,8 +274,6 @@ def draw():
 Como extra exemplo dos métodos `append()` e `pop()` da lista, usados nos *eventos* de clique do mouse ou acionamento da barra de espaço no teclado, acrescentando ou removendo objetos respectivamente.
 
 ```python
-
-
 def mouse_pressed():
     """ Acrescenta pequena bandeirinha branca """
     nova_bandeirinha = Bandeirinha(mouse_x, mouse_y, 25)
@@ -297,7 +289,6 @@ def key_pressed():
 E o método `desenha()` da bandeirinha agora sofre a influência da distância do mouse;
 
 ```python
-
     def desenha(self):
         """ Desenha polígono em torno das coordenadas do objeto """
         metade = self.tamanho / 2
