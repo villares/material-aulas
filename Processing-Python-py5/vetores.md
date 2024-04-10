@@ -1,6 +1,6 @@
 # Operações com vetores e a classe `Py5Vector`
 
-Vetores no fundo são sequências de números, imagine os números aqui representados como listas: `[105, 42]` ou `[120, 81, 35]`. Os números que formam um vetor são chamados*componentes* e os vetores, em teoria, podem ter o número de componentes que você quiser, mas nos interessam mais neste momento os vetores com 2 ou 3 componentes pois eles são úteis para representar coordenadas, velocidades e acelerações em duas e três dimensões. Podemos visualizá-los como pontos ou como segmentos de reta orientados, a representação gráfica usual é como uma seta. 
+Vetores no fundo são sequências de números, imagine os números aqui representados como listas: `[105, 42]` ou `[120, 81, 35]`. Os números que formam um vetor são chamados *componentes* e os vetores, em teoria, podem ter o número de componentes que você quiser, mas nos interessam mais neste momento os vetores com 2 ou 3 componentes pois eles são úteis para representar coordenadas, velocidades e acelerações em duas e três dimensões. Podemos visualizá-los como pontos ou como segmentos de reta orientados, a representação gráfica usual é como uma seta. 
 
 > <sub>É possível trabalhar com vetores de muito mais dimensôes, que não são fáceis de visualizar, muito usados em computação científica, da álgebra linear à representação de palavras para processamento de linguagem natural e tradução automatizada.</sub>
 
