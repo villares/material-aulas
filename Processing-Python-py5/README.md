@@ -71,7 +71,7 @@
 - 4.1.1 [Primeiros passos de orientação a objetos: usando a classe Slider](slider_com_OO.md)
 - 4.2.1 [Um botão com orientação a objetos](botao_com_OO.md)
 - 4.3.1 [Uma classe de partículas simples](particulas.md)
-- 4.4.1 [Operações com vetores e a classe `Py5Vector` do Processing](vetores.md) 
+- 4.4.1 [Operações com vetores e a classe `Py5Vector`](vetores.md) 
 - 4.5.1 [Introdução a orientação a objetos com bandeirinhas](bandeirinhas)
 - 4.6.1 [Desenhando em um espaço fora da tela](offscreen_buffer.md) (offscreen buffer) e recortando imagens
 
