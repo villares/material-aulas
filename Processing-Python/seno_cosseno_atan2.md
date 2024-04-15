@@ -4,13 +4,13 @@
 
 As funções trigonométricas não são nenhum bicho de sete cabeças, 2π cabeças, no máximo...
 
-Para começar é preciso saber que quando uma dessas funções, como `sin(ang)`(seno) e `cos(ang)` (cosseno) pede um ângulo como argumento (o valor entre parênteses), espera que você informe esse ângulo em *radianos*, um jeito de descrever ângulos em que 2π (duas vezes pi radianos) significa 360° (360 graus), π radianos é 180°, π/2 é 90° e assim por diante.
+Para começar é preciso saber que quando uma dessas funções, como `sin(ang)`(seno) e `cos(ang)` (cosseno) pede um ângulo como argumento (o valor entre parênteses), espera que você informe esse ângulo em *radianos*, um jeito de descrever ângulos em que 2π (duas vezes pi radianos) significa 360° (360 graus), π radianos é 180°, π/2 é 90° e assim por diante. Para facilitar, o Processing oferece várias constantes relacionadas: `TWO_PI` (ou `TAU`, 360°),  `PI` (180°), `HALF_PI` (90°), `QUARTER_PI` (45°).
 
 Se você pensa em graus, e não se sente confortável usando ângulos em radianos, pode usar `radians(angulo_em_graus)` para converter graus em radianos. Outras funções, como `atan2()`, que vamos ver nesta página, devolvem como resultado um ângulo em radianos, que por sua vez pode ser convertido em graus com `degrees(angulo_em_radianos)` se você precisar.
 
 ### Seno e cosseno
 
-Na origem essas funções tratam das relações entre ângulos e proporções das medidas dos triângulos, sendo muito estudas, demonstradas, em triângulos retângulos ou em um círculo de raio unitário (o ciclo trigronométrico), mas para além desse contexto, das coisas mais úteis que você pode querer saber, e acredito não ser difícil demonstrar aqui, é que essas funções devolvem valores entre **-1** e **1** de maneira cíclica, periódica.
+Na origem essas funções tratam das relações entre ângulos e proporções das medidas dos triângulos, sendo muito estudadas, demonstradas, em triângulos retângulos ou em um círculo de raio unitário(o ciclo trigronométrico), mas para além desse contexto, das coisas mais úteis que você pode querer saber, e acredito não ser difícil demonstrar aqui, é que essas funções devolvem valores entre **-1** e **1** de maneira cíclica, periódica.
 
 Os primeiros exemplos a seguir são para visualizar como se dá o comportamento do seno e do cosseno.
 
