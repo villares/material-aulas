@@ -10,7 +10,7 @@ Se você pensa em graus, e não se sente confortável usando ângulos em radiano
 
 ### Seno e cosseno
 
-Na origem essas funções tratam das relações entre ângulos e proporções das medidas dos triângulos, sendo muito estudas, demonstradas, em triângulos retângulos ou em um círculo de raio unitário(o ciclo trigronométrico), mas para além desse contexto, das coisas mais úteis que você pode querer saber, e acredito não ser difícil demonstrar aqui, é que essas funções devolvem valores entre **-1** e **1** de maneira cíclica, periódica.
+Na origem essas funções tratam das relações entre ângulos e proporções das medidas dos triângulos, sendo muito estudadas, demonstradas, em triângulos retângulos ou em um círculo de raio unitário(o ciclo trigronométrico), mas para além desse contexto, das coisas mais úteis que você pode querer saber, e acredito não ser difícil demonstrar aqui, é que essas funções devolvem valores entre **-1** e **1** de maneira cíclica, periódica.
 
 Os primeiros exemplos a seguir são para visualizar como se dá o comportamento do seno e do cosseno.
 
