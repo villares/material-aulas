@@ -115,11 +115,11 @@ def indicacoes():
     line(x, 0, x, height)
     fill(255)
     no_stroke()
-    text(u'ângulo: {:0>3}'.format(a), 10, 20)
+    text(f'ângulo: {a:0>3}', 10, 20)
     fill(200, 200, 0)
-    text("cosseno", 10, 40)
+    text('cosseno', 10, 40)
     fill(0, 200, 200)
-    text("seno", 10, 60)
+    text('seno', 10, 60)
 ```
 Note que seno ou cosseno valendo zero significa que a bolinha fica com tamanho **100**, com valor **-1** ela deseaparece e com o valor **1** ela ganha o seu diâmetro máximo de **200** pixels.
 
@@ -184,11 +184,11 @@ def indicacoes():
     ang = radians(graus)
     seno = sin(ang)
     cosseno = cos(ang)
-    text(u'ângulo: {:0>3}'.format(graus), 10, 20)
+    text(f'ângulo: {graus:0>3}', 10, 20)
     fill(200, 200, 0)
-    text("cosseno: {:+.2f}".format(cosseno), 10, 40)
+    text(f'cosseno: {cosseno:+.2f}', 10, 40)
     fill(0, 200, 200)
-    text("seno: {:+.2f}".format(seno), 10, 60)
+    text(f'seno: {seno:+.2f}', 10, 60)
 ```
 
 ### A função do arco tangente
