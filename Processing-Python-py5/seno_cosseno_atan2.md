@@ -1,12 +1,12 @@
 
 # Um pouco de ângulos, com seno, cosseno e arco tangente
-
-## *sin()*, *cos()* e *atan2()*
+## As funções *sin()*, *cos()* e *atan2()* do py5
 
 As funções trigonométricas não são nenhum bicho de sete cabeças, 2π cabeças, no máximo...
 
-Para começar é preciso saber que quando uma dessas funções pede um ângulo como argumento (o valor entre parênteses), espera que você informe esse ângulo em *radianos*, por isso, se você pensa em graus, use `radians(angulo_em_graus)` para converter. Outras funções, como `atan2()`, que vamos ver nesta página, devolvem um ângulo, em radianos, que por sua vez pode ser convertido em graus com `degrees(angulo_em_radianos)`se você precisar.
+Para começar é preciso saber que quando uma dessas funções, como `sin(ang)`(seno) e `cos(ang)` (cosseno) pede um ângulo como argumento (o valor entre parênteses), espera que você informe esse ângulo em *radianos*, um jeito de descrever ângulos em que 2π (duas vezes pi radianos) significa 360° (360 graus), π radianos é 180°, π/2 é 90° e assim por diante.
 
+Se você pensa em graus, e não se sente confortável usando ângulos em radianos, pode usar `radians(angulo_em_graus)` para converter graus em radianos. Outras funções, como `atan2()`, que vamos ver nesta página, devolvem como resultado um ângulo em radianos, que por sua vez pode ser convertido em graus com `degrees(angulo_em_radianos)` se você precisar.
 
 ### Seno e cosseno
 
