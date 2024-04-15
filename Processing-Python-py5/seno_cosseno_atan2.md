@@ -1,14 +1,16 @@
-
-# Um pouco de ângulos, com seno, cosseno e arco tangente
-## As funções *sin()*, *cos()* e *atan2()* do py5
+# Para que servem e como usar as funções *sin()*, *cos()* e *atan2()* 
 
 As funções trigonométricas não são nenhum bicho de sete cabeças, 2π cabeças, no máximo...
 
-Para começar é preciso saber que quando uma dessas funções, como `sin(ang)`(seno) e `cos(ang)` (cosseno) pede um ângulo como argumento (o valor entre parênteses), espera que você informe esse ângulo em *radianos*, um jeito de descrever ângulos em que 2π (duas vezes pi radianos) significa 360° (360 graus), π radianos é 180°, π/2 é 90° e assim por diante. Para facilitar, o py5 oferece várias constantes relacionadas: `TWO_PI` (ou `TAU`, 360°),  `PI` (180°), `HALF_PI` (90°), `QUARTER_PI` (45°).
+> ### Um pouco sobre ângulos, para usar com seno, cosseno, e arco tangente
+>
+> Para começar é preciso saber que na programação é comum que as funções que pedem um ângulo como argumento, o valor entre parênteses em `sin(a)`(seno de um ângulo `a`) e `cos(a)` (cosseno de um ângulo `a`), esperem que você informe esse ângulo em *radianos*, um jeito de descrever ângulos em que 2π (duas vezes pi, ou "dois pi radianos") significa 360° (360 graus), π radianos é 180°, π/2 é 90° e assim por diante.
+> 
+> Para facilitar, o py5 oferece várias constantes relacionadas: `TWO_PI` (ou `TAU`, 360°),  `PI` (180°), `HALF_PI` (90°), `QUARTER_PI` (45°).
+>
+> Se você pensa em graus, ou não se sente confortável usando ângulos em radianos, pode usar `radians(angulo_em_graus)` para converter graus em radianos. Outras funções, como `atan2()`, que vamos ver nesta página, devolvem como resultado um ângulo em radianos, que por sua vez pode ser convertido em graus com `degrees(angulo_em_radianos)` se você precisar.
 
-Se você pensa em graus, e não se sente confortável usando ângulos em radianos, pode usar `radians(angulo_em_graus)` para converter graus em radianos. Outras funções, como `atan2()`, que vamos ver nesta página, devolvem como resultado um ângulo em radianos, que por sua vez pode ser convertido em graus com `degrees(angulo_em_radianos)` se você precisar.
-
-### Seno e cosseno
+## Seno e cosseno
 
 Na origem essas funções tratam das relações entre ângulos e proporções das medidas dos triângulos, sendo muito estudadas, demonstradas, em triângulos retângulos ou em um círculo de raio unitário(o ciclo trigronométrico), mas para além desse contexto, das coisas mais úteis que você pode querer saber, e acredito não ser difícil demonstrar aqui, é que essas funções devolvem valores entre **-1** e **1** de maneira cíclica, periódica.
 
@@ -125,7 +127,7 @@ Note que seno ou cosseno valendo zero significa que a bolinha fica com tamanho *
 
 #### Seno e cosseno fornecem as coordenadas dos pontos de um círculo!
 
-Com seno, cosseno, o raio e coordenadas do centro, é possível calcular o X e Y de um ponto para cada ângulo em um círculo, isso permite desenhar polígonos regulares e[estrelas](while.md), por exemplo.
+Com seno, cosseno, o raio e coordenadas do centro, é possível calcular o X e Y de um ponto para cada ângulo em um círculo, isso permite desenhar polígonos regulares e [estrelas](while.md), por exemplo.
 
 ![](assets/seno_cosseno_p.png)
 
@@ -197,7 +199,7 @@ def indicacoes():
 
 A função `atan()` (arco tangente) devolve o ângulo a partir da tangente desse ângulo, e é possível calcular a tangente dividindo o cateto oposto pelo cateto adjacente, no caso os lados paralelos aos eixos, do triângulo formado pelos pontos de uma 'linha' (como chamamos informalmente um segmento de reta definido por dois pontos).
 
-O cateto oposto é a diferença dos valores de Y e o adjacente a diferença dos valores de X das coordenadas da linha. Só que na prática isso é uma encrenca, se a linha ficar na vertical teremos uma divisão por zero…  Muito mais prático é entregar o trabalho de dividir para uma 'versão 2' da função do arco tangente: `atan2(dy, dx)`, os dois argumentos são as medidas dos catetos e ela cuida de tudo nos devolvendo um ângulo em radianos.
+O cateto oposto é a diferença dos valores em Y e o adjacente a diferença dos valores em X das coordenadas da linha. Só que na prática isso é uma encrenca, se a linha ficar na vertical teremos uma divisão por zero…  Muito mais prático é entregar o trabalho de dividir para uma 'versão 2' da função do arco tangente: `atan2(dy, dx)`, os dois argumentos são as medidas dos catetos e ela cuida de tudo nos devolvendo um ângulo em radianos.
 
 ![](assets/atan2.gif)
 
