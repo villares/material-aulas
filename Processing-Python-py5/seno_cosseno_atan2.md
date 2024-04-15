@@ -4,7 +4,7 @@
 
 As funções trigonométricas não são nenhum bicho de sete cabeças, 2π cabeças, no máximo...
 
-Para começar é preciso saber que quando uma dessas funções, como `sin(ang)`(seno) e `cos(ang)` (cosseno) pede um ângulo como argumento (o valor entre parênteses), espera que você informe esse ângulo em *radianos*, um jeito de descrever ângulos em que 2π (duas vezes pi radianos) significa 360° (360 graus), π radianos é 180°, π/2 é 90° e assim por diante.
+Para começar é preciso saber que quando uma dessas funções, como `sin(ang)`(seno) e `cos(ang)` (cosseno) pede um ângulo como argumento (o valor entre parênteses), espera que você informe esse ângulo em *radianos*, um jeito de descrever ângulos em que 2π (duas vezes pi radianos) significa 360° (360 graus), π radianos é 180°, π/2 é 90° e assim por diante. Para facilitar, o py5 oferece várias constantes relacionadas: `TWO_PI` (ou `TAU`, 360°),  `PI` (180°), `HALF_PI` (90°), `QUARTER_PI` (45°).
 
 Se você pensa em graus, e não se sente confortável usando ângulos em radianos, pode usar `radians(angulo_em_graus)` para converter graus em radianos. Outras funções, como `atan2()`, que vamos ver nesta página, devolvem como resultado um ângulo em radianos, que por sua vez pode ser convertido em graus com `degrees(angulo_em_radianos)` se você precisar.
 
@@ -18,18 +18,18 @@ Os primeiros exemplos a seguir são para visualizar como se dá o comportamento 
 
 ![](assets/seno_cosseno_0.png)
 
-Para produzir a imagem acima, criamos um laço repetição que produz um `x` de **0** a **720** , convertemos esse `x`num ângulo em radianos e dividimos por **2**, de forma a obter ângulos de **0** a **2π** radianos (ou **0°** a **360°** ).
+Para produzir a imagem acima, criamos um laço repetição que produz um `x` de **0** a **720** , dividimos esse `x` por **2**, de forma a obter ângulos **0°** a **360°** (0 a 2π quando convertido em radianos).
 
 Vamos  multiplicar o valor do seno e do cosseno do ângulo pela metade da altura da tela(aproveitando para inverter o sinal pois o eixo Y do Processing cresce para baixo e estamos acostumados a ver os gráficos com a parte positiva para cima). Para deslocar a origem para baixo somamos esse mesmo valor de metade da altura da tela.
 
 ```python
-size(720, 229)  # 360×2, 4 radianos
+size(720, 229)  # 2 × 360, 4π radianos
 for x in range(width):
-    meia_altura=height / 2
-    ang=radians(x / 2.0)  # 720 pixels -> 360 graus
-    seno=sin(ang) * -meia_altura + meia_altura
+    meia_altura = height / 2
+    ang = radians(x / 2.0)  # 720 pixels -> 360 graus
+    seno = sin(ang) * -meia_altura + meia_altura
     point(x, seno)
-    cosseno=cos(ang) * -meia_altura + meia_altura
+    cosseno = cos(ang) * -meia_altura + meia_altura
     point(x, cosseno)
 ```
 
@@ -59,11 +59,11 @@ def setup():
     stroke_weight(2)
     scale(1, -1)  # inverte o Y
     for x in range(width):
-        a=x / 100.0  # width ~2π×100
-        y_cosseno=cos(a) * 100
+        a = x / 100.0  # width ~2π×100
+        y_cosseno = cos(a) * 100
         stroke(200, 200, 0)
         point(x, y_cosseno)
-        y_seno=sin(a) * 100
+        y_seno = sin(a) * 100
         stroke(0, 200, 200)
         point(x, y_seno)
 
@@ -97,20 +97,20 @@ def setup():
 
 def draw():
     background(0)
-    a=radians(frame_count)
+    a = radians(frame_count)
     indicacoes()  # desenha textos e linha móvel
-    tam_cosseno=100 + cos(a) * 100
+    tam_cosseno = 100 + cos(a) * 100
     fill(200, 200, 0)
     ellipse(width / 3, height / 2,
             tam_cosseno, tam_cosseno)
-    tam_seno=100 + sin(a) * 100
+    tam_seno = 100 + sin(a) * 100
     fill(0, 200, 200)
     ellipse(2 * width / 3, height / 2,
             tam_seno, tam_seno)
 
 def indicacoes():
-    a=frame_count % 360
-    x=radians(a) * 100  # width tem aprox. 2π×100 pixels
+    a = frame_count % 360
+    x = radians(a) * 100  # width tem aprox. 2π×100 pixels
     stroke(255)
     line(x, 0, x, height)
     fill(255)
@@ -131,12 +131,12 @@ Com seno, cosseno, o raio e coordenadas do centro, é possível calcular o X e Y
 
 ```python
 size(400, 400)
-x_centro, y_centro=width / 2, height / 2
-raio=180
+x_centro, y_centro = width / 2, height / 2
+raio = 180
 for graus in range(0, 360, 18):  # cada 18°
-    ang=radians(graus)
-    x=x_centro + raio * cos(ang)
-    y=y_centro + raio * sin(ang)
+    ang = radians(graus)
+    x = x_centro + raio * cos(ang)
+    y = y_centro + raio * sin(ang)
     stroke_weight(5)
     point(x, y)
 ```
@@ -152,15 +152,15 @@ def setup():
     global x_centro, y_centro, raio
     size(400, 400)
     text_font(create_font('FreeMono Bold', 14))
-    x_centro, y_centro=width / 2, height / 2
-    raio=160
+    x_centro, y_centro = width / 2, height / 2
+    raio = 160
 
 def draw():
     background(0)
     indicacoes()  # desenha textos, círculo e linhas
-    ang=-radians(frame_count)  # prefiro anti-horário
-    x=x_centro + raio * cos(ang)
-    y=y_centro + raio * sin(ang)
+    ang = -radians(frame_count)  # prefiro anti-horário
+    x = x_centro + raio * cos(ang)
+    y = y_centro + raio * sin(ang)
     stroke_weight(3)
     stroke(0, 200, 200)
     line(x, y_centro, x, y)  # linha do seno
@@ -180,10 +180,10 @@ def indicacoes():
     line(x_centro - raio, y_centro,
          x_centro + raio, y_centro)
     fill(255)
-    graus=frame_count % 360
-    ang=radians(graus)
-    seno=sin(ang)
-    cosseno=cos(ang)
+    graus = frame_count % 360
+    ang = radians(graus)
+    seno = sin(ang)
+    cosseno = cos(ang)
     text(u'ângulo: {:0>3}'.format(graus), 10, 20)
     fill(200, 200, 0)
     text("cosseno: {:+.2f}".format(cosseno), 10, 40)
@@ -240,15 +240,15 @@ Mas, você pode querer calcular você mesma as coordenadas dos vértices da cabe
 
 ```python
 def seta(xa, ya, xb, yb):
-    tam_seta=dist(xa, ya, xb, yb)
-    ang=atan2(yb - ya, xb - xa)
+    tam_seta = dist(xa, ya, xb, yb)
+    ang = atan2(yb - ya, xb - xa)
     line(xa, ya, xb, yb)
-    tam_ponta=tam_seta / 10 * sqrt(2)
-    xpe=xb + cos(ang + QUARTER_PI + PI) * tam_ponta
-    ype=yb + sin(ang + QUARTER_PI + PI) * tam_ponta
+    tam_ponta = tam_seta / 10 * sqrt(2)
+    xpe = xb + cos(ang + QUARTER_PI + PI) * tam_ponta
+    ype = yb + sin(ang + QUARTER_PI + PI) * tam_ponta
     line(xb, yb, xpe, ype)  # parte esquerda da ponta
-    xpd=xb + cos(ang - QUARTER_PI + PI) * tam_ponta
-    ypd=yb + sin(ang - QUARTER_PI + PI) * tam_ponta
+    xpd = xb + cos(ang - QUARTER_PI + PI) * tam_ponta
+    ypd = yb + sin(ang - QUARTER_PI + PI) * tam_ponta
     line(xb, yb, xpd, ypd)  # parte direita da ponta
 ```
 
@@ -266,23 +266,23 @@ def setup():
 def draw():
     background(200)
     for i in range(10):
-        x=20 + i * 40
+        x = 20 + i * 40
         for j in range(10):
-            y=20 + j * 40
+            y = 20 + j * 40
             if dist(x, y, mouse_x, mouse_y) > 35:
                 seta_tam_fixo(x, y, mouse_x, mouse_y, 35)
 
 def seta_tam_fixo(xa, ya, xb, yb, tam):
-    ang=atan2(yb - ya, xb - xa)
-    tam_ponta=tam / 4 * sqrt(2)
-    xp=xa + cos(ang) * tam
-    yp=ya + sin(ang) * tam
+    ang = atan2(yb - ya, xb - xa)
+    tam_ponta = tam / 4 * sqrt(2)
+    xp = xa + cos(ang) * tam
+    yp = ya + sin(ang) * tam
     line(xa, ya, xp, yp)  # corpo com tamanho fixo
-    xpe=xp + cos(ang + QUARTER_PI + PI) * tam_ponta
-    ype=yp + sin(ang + QUARTER_PI + PI) * tam_ponta
+    xpe = xp + cos(ang + QUARTER_PI + PI) * tam_ponta
+    ype = yp + sin(ang + QUARTER_PI + PI) * tam_ponta
     line(xp, yp, xpe, ype)  # parte esquerda da ponta
-    xpd=xp + cos(ang - QUARTER_PI + PI) * tam_ponta
-    ypd=yp + sin(ang - QUARTER_PI + PI) * tam_ponta
+    xpd = xp + cos(ang - QUARTER_PI + PI) * tam_ponta
+    ypd = yp + sin(ang - QUARTER_PI + PI) * tam_ponta
     line(xp, yp, xpd, ypd)  # parte direita da ponta
 ```
 
