@@ -20,7 +20,7 @@ Os primeiros exemplos a seguir são para visualizar como se dá o comportamento 
 
 Para produzir a imagem acima, criamos um laço repetição que produz um `x` de **0** a **720** , dividimos esse `x` por **2**, de forma a obter ângulos **0°** a **360°** (0 a 2π quando convertido em radianos).
 
-Vamos  multiplicar o valor do seno e do cosseno do ângulo pela metade da altura da tela(aproveitando para inverter o sinal pois o eixo Y do Processing cresce para baixo e estamos acostumados a ver os gráficos com a parte positiva para cima). Para deslocar a origem para baixo somamos esse mesmo valor de metade da altura da tela.
+Vamos  multiplicar o valor do seno e do cosseno do ângulo pela metade da altura da tela(aproveitando para inverter o sinal pois o eixo Y do py5 cresce para baixo e estamos acostumados a ver os gráficos com a parte positiva para cima). Para deslocar a origem para baixo somamos esse mesmo valor de metade da altura da tela.
 
 ```python
 size(720, 229)  # 2 × 360, 4π radianos
@@ -86,7 +86,7 @@ def indicacoes():
 
 #### *sin()* e *cos()* no tempo
 
-Seno e cosseno são muito úteis para fazer animações cíclicas, é muito fácil usar a contagem pronta dos quadros oferecida pelo Processing,  `frame_count` como se fosse um ângulo em graus, converta em radianos e *voi-lá*!
+Seno e cosseno são muito úteis para fazer animações cíclicas, é muito fácil usar a contagem pronta dos quadros oferecida pelo py5,  `frame_count` como se fosse um ângulo em graus, converta em radianos e *voi-lá*!
 
 ![](assets/seno_cosseno.gif)
 
@@ -201,7 +201,7 @@ O cateto oposto é a diferença dos valores de Y e o adjacente a diferença dos 
 
 ![](assets/atan2.gif)
 
-Note que vamos obter ângulos com valores entre **-π** e **π** (entre **-180** e **180** graus) em vez de **0** a **2π**. Você pode somar a constate `PI` do Processing ao valor se preferir essa segunda faixa.
+Note que vamos obter ângulos com valores entre **-π** e **π** (entre **-180** e **180** graus) em vez de **0** a **2π**. Você pode somar a constate `PI` do py5 ao valor se preferir essa segunda faixa.
 
 #### Desenhando uma seta com *atan2()*
 
@@ -288,7 +288,7 @@ def seta_tam_fixo(xa, ya, xb, yb, tam):
 
 ![](assets/seta_curta.gif)
 
-Note que ocultei a setinha do mouse com `no_cursor()`, é possível voltar com o cursor, e escolher outros formatos ou até uma imagem como cursor, consulte a documentação de[`cursor()`](https://py.processing.org/reference/cursor.html).
+Note que ocultei a setinha do mouse com `no_cursor()`, é possível voltar com o cursor, e escolher outros formatos ou até uma imagem como cursor, consulte a documentação de [`cursor()`](https://py5coding.org/reference/sketch_cursor.html).
 
 ### Extra: Calculando a rotação de pontos na unha
 
