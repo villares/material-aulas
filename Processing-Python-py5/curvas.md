@@ -7,6 +7,8 @@ As curvas Bézier levam o nome do engenheiro francês Pierre Bézier, que as des
 
 ## Curvas Bézier cúbicas com `bezier_vertex()`
 
+![animação arrastando pontos da curva](assets/curves_animate.gif)
+
 Podemos criar uma forma curva aberta com uma ou mais chamadas a `bezier_vertex()` entre o `begin_shape()` e o `end_shape()`. A curva pode ser fechada se usarmos `end_shape(CLOSE)` ao final.
 
 Note que antes de cada `bezier_vertex()` é preciso que haja algum vértice, um ponto âncora, então, antes da primeira chamada a `bezier_vertex()` em geral é usada uma chamada da função `vertex()`, como neste exemplo a seguir. Este primeiro tipo de curva Bézier que veremos requer dois pontos de controle para cada novo vértice, sem levar em conta o primeiro vértice-âncora, por isso, na função `bezier_vertex()` os quatro primeiros argumentos são as cordenadas de dois pontos de controle e os últimos dois são as coordenadas do vértice. Cada vértice Bézier por sua vez pode servir de âncora para um próximo vértice Bézier, permitindo o encadeamento de trechos curvos.
@@ -71,6 +73,8 @@ def setup():
 Repare neste exemplo que quando há o alinhamento entre o segundo ponto de controle de um vértice (2), o próprio vértice (3), e o primeiro ponto de controle (4), pertencente ao próximo vértice em uma sequência de vértices, haverá continuidade na curva de um trecho para outro.
 
 ## Curvas Bézier quadráticas com `quadratic_vertex()`
+
+![animação arrastando pontos da curva](assets/curves_animate_quadratic.gif)
 
 Estas curvas também são construídas dentro de um contexto `begin_shape()`/`end_shape()` e também precisam de um vértice-âncora. comummente obtido usando uma chamada da função `vertex()`, em seguinda, cada chamada a `quadratic_vertex()` inclui nos argumentos as coordenades de um ponto de controle seguidas das coordenadas do novo vértice (que por sua vez pode servir de âncora para vértices Bézier subsequentes).
 
@@ -401,7 +405,7 @@ def setup():
 
 **Desafio:** Você conseguiria escrever o código que permite testar as curvas arrastando os pontos com o mouse, usando a estratégia do exemplo ["arrastando vários círculos"](https://github.com/villares/material-aulas/blob/main/Processing-Python-py5/arrastando_circulos.md#arrastando-v%C3%A1rios-c%C3%ADrculos)?
 
-![animação arrastando pontos da curva](assets/curves_animate.gif)
+![animação arrastando pontos da curva](assets/curves_animate_catmull.gif)
 
 <details>
 
