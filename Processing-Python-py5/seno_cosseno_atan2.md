@@ -302,12 +302,18 @@ Com ela é possível calcular, por exemplo, os vértices de um retângulo, como 
 
 ```python
 def setup():
-    size(500, 500)
-    background(100, 0, 100)
-    rps = rect_points(250, 250, 300, 200, ang=radians(30), mode=CENTER)
+    size(400, 400)
+    rect_mode(CENTER)
+    # retângulo normal, sem borda
+    no_stroke()
+    rect(200, 200, 300, 200)
+    # retângulo rotacionado, sem preenchimento
+    stroke(0)
+    no_fill()
+    rps = rect_points(200, 200, 300, 200, ang=radians(30), mode=CENTER)
     with begin_closed_shape():
         vertices(rps)
-
+    
 def rotate_point(x_original, y_original, ang, x_centro=0, y_centro=0):
     x, y = x_original - x_centro, y_original - y_centro
     xr = x * cos(ang) - y * sin(ang)
