@@ -14,7 +14,7 @@
 ##### Processing modo Java
 
 - Livro [O código transcendente](https://codigotranscendente.github.io/livro/about.html) de Mateus Berruezo
-- [O código Processing[(https://www.ranoya.com/books/public/processing/), [Guia de programação em Processing](https://www.ranoya.com/aulas/designgenerativo/playgroundDocs/introProcessing.php?theme=dgen&elementos=processing) e [Aulas de Processing em vídeo](https://www.youtube.com/watch?v=iWtdcmcD8qM&list=PLtqMZvORRX52bzxeoZ1QyqJIhR3EuU41R) do Prof. Guilherme Ranoya (UFPE).
+- [O código Processing](https://www.ranoya.com/books/public/processing/), [Guia de programação em Processing](https://www.ranoya.com/aulas/designgenerativo/playgroundDocs/introProcessing.php?theme=dgen&elementos=processing) e [Aulas de Processing em vídeo](https://www.youtube.com/watch?v=iWtdcmcD8qM&list=PLtqMZvORRX52bzxeoZ1QyqJIhR3EuU41R) do Prof. Guilherme Ranoya (UFPE).
 - [Programação Criativa](http://arteprog.space/programacao-criativa) de Monica Rizzolli e Alexandre Villares
 - [Tradução da referência da linguagem - versão 1.0 (2005)](http://www.dainf.ct.utfpr.edu.br/~merkle/processing/reference/ptBR/index.html), Prof. Luiz Merkle (UFTPR)
 
