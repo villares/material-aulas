@@ -14,13 +14,17 @@
 ##### Processing modo Java
 
 - Livro [O código transcendente](https://codigotranscendente.github.io/livro/about.html) de Mateus Berruezo
+- [O código Processing[(https://www.ranoya.com/books/public/processing/), [Guia de programação em Processing](https://www.ranoya.com/aulas/designgenerativo/playgroundDocs/introProcessing.php?theme=dgen&elementos=processing) e [Aulas de Processing em vídeo](https://www.youtube.com/watch?v=iWtdcmcD8qM&list=PLtqMZvORRX52bzxeoZ1QyqJIhR3EuU41R) do Prof. Guilherme Ranoya (UFPE).
 - [Programação Criativa](http://arteprog.space/programacao-criativa) de Monica Rizzolli e Alexandre Villares
-- [Guia de programação em Processing](https://www.ranoya.com/aulas/designgenerativo/playgroundDocs/introProcessing.php?theme=dgen&elementos=processing), Prof. Guilherme Ranoya (UFPE).
 - [Tradução da referência da linguagem - versão 1.0 (2005)](http://www.dainf.ct.utfpr.edu.br/~merkle/processing/reference/ptBR/index.html), Prof. Luiz Merkle (UFTPR)
 
 ##### Livros de Python
 
-- DOWNEY, Allen. [Pense em Python 2e](https://penseallen.github.io/PensePython2e/)
-- MELO, Wendel. [IUP - Introdução ao Universo da Programação com Python: Um livro aberto para aprender programação](https://wendelmelo.net/iup/)
-- SWEIGART, Al. Automatize tarefas maçantes com Python (traduzido pela Novatec)<br> ou [automatetheboringstuff.com](https://automatetheboringstuff.com) (site do autor em Inglês)
-- VANDERPLAS, Jake. [Whirlwind Tour of Python](https://jakevdp.github.io/WhirlwindTourOfPython)
+- Introdutórios:
+  - DOWNEY, Allen. [Pense em Python 2e](https://penseallen.github.io/PensePython2e/)
+  - MELO, Wendel. [IUP - Introdução ao Universo da Programação com Python: Um livro aberto para aprender programação](https://wendelmelo.net/iup/)
+  - SWEIGART, Al. Automatize tarefas maçantes com Python (traduzido pela Novatec)<br> ou [automatetheboringstuff.com](https://automatetheboringstuff.com) (site do autor em Inglês)
+- Intermediário:
+  - VANDERPLAS, Jake. [Whirlwind Tour of Python](https://jakevdp.github.io/WhirlwindTourOfPython) 
+- Avançado:
+  - RAMALHO, Luciano, [Python Fluente](https://pythonfluente.com) (disponível aberto no site do autor)
