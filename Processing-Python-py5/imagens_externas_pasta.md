@@ -29,23 +29,9 @@ Note que o primeiro argumento de `select_folder()` é `"Selecione uma pasta"` o 
 
 Na estratégia com *callback* uma função definida é chamada para nós quando algum evento acontece. Neste nosso caso, a função `adicionar_imagens()` é chamada no encerramento da janela de selecionar pastas (esta parte de abrir a janela para selecionar pastas é iniciada com a execução de `select_folder()`, mas o momento do encerramento depende da pessoa usando o programa).
 
-## Uma estrutura de dados para receber as imagens
+## A função `adicionar_imagens()`
 
-É preciso criar uma variável global para guardar as informações dos arquivos encontrados, fazemos isso com esta linha antes do `setup()` que cria uma lista vazia e aponta o nome `imagens` para ela:
-
-```python
-
-imagens = []
-
-def setup():
-    size(880, 550)
-
-def draw():
-    background(0)
-    ...
-```
-
-A função `adicionar_imagens()` é executada só quando a pessoa terminou de escolher uma pasta ou se tiver cancelado o processo, ela tem um parâmetro `caminho_pasta` que recebe o caminho da pasta selecionada ou o valor especial `None` (se a pessoa fechou a janela sem selecionar uma pasta):
+Então, é preciso definir uma função `adicionar_imagens()` que será executada só quando a pessoa terminou de escolher uma pasta ou se tiver cancelado o processo, ela precisa ter um parâmetro, `caminho_pasta`, que recebe o caminho da pasta selecionada ou o valor especial `None` (se a pessoa fechou a janela sem selecionar uma pasta):
 
 ```python
 def adicionar_imagens(caminho_pasta):
@@ -63,6 +49,22 @@ def adicionar_imagens(caminho_pasta):
 Saiba que o código que cuida da janela do sistema operacional para escolhermos a pasta, e também o código da função `adicionar_imagens()`, chamada em seguida, são executados em linhas de execução (*threads*) separadas do *sketch* principal, isto é correm em separado, e por conta disso não interrompem execução do `draw()`, o chamado 'laço principal de repetição' do Processing.
 
 O carregamento das imagens é um procedimento razoavelmente lento e por isso é possível vê-las aparecendo aos poucos na tela, conforme são acrescentadas na lista `imagens` pela execução do laço `for` em `adicionar_imagens()`.
+
+## Uma estrutura de dados para receber as imagens
+
+Atenção, note que dentro de `adicionar_imagens()` usamos `imagens.append(...)`, por isso precisamos criar essa lista `ìmagens` para guardar as informações dos arquivos encontrados, fazemos isso antes do `setup()` que criando uma lista vazia e apontando uma variável global chamada `imagens` para ela:
+
+```python
+
+imagens = []
+
+def setup():
+    size(880, 550)
+
+def draw():
+    background(0)
+    ...
+```
 
 ## A função auxiliar `lista_imagens()`
 
