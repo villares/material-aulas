@@ -25,7 +25,7 @@ def key_pressed():
 
 ```
 
-Note que o primeiro argumento de `select_folder()` é `"Selecione uma pasta"` o texto(*string*) que vai como título da janela de seleção. O segundo argumento `adicionar_imagens` é mais curioso, trata-se do nome de uma função que será chamada quando a pessoa terminar de interagir com a janela de seleção de pasta(diretório / *folder*). Isso é uma estratégia conhecida em programação como designar uma "função de retorno" ou, em inglês, *callback*.
+Note que o primeiro argumento de `select_folder()` é `'Selecione uma pasta'` o texto (*string*) que vai como título da janela de seleção. O segundo argumento `adicionar_imagens` é mais curioso, trata-se de uma referência a uma função que será chamada quando a pessoa terminar de interagir com a janela de seleção de pasta(diretório / *folder*). Isso é uma estratégia conhecida em programação como designar uma "função de retorno" ou, em inglês, *callback*. Repare que a referência ao "objeto função" que é passado como argumento da função `select_folder()` é o nome da função, sem aspas, mas sem os parenteses `()`, que fariam disso uma chamada da função (fariam com que ela fosse executada imediatamente).
 
 Na estratégia com *callback* uma função definida é chamada para nós quando algum evento acontece. Neste nosso caso, a função `adicionar_imagens()` é chamada no encerramento da janela de selecionar pastas (esta parte de abrir a janela para selecionar pastas é iniciada com a execução de `select_folder()`, mas o momento do encerramento depende da pessoa usando o programa).
 
