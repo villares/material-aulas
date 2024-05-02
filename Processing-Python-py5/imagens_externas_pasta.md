@@ -76,7 +76,7 @@ Uma boa parte da solução da nossa tarefa, na verdade, está encapsulada em `li
 
 Nessa função usamos uma tupla chamada `extensoes_validas`, contendo as extensões que vamos considerar para tratar os arquivos como arquivos de imagem, e criamos a lista `lista_caminhos`, que começa vazia e será devolvida no final da função (contendo caminhos para imagens, se tudo der certo). 
 
-Em seguida, checamos com um `if` se o caminho obtido é um caminho de diretório válido (`caminho_pasta.is_dir()` devolve `True`) e a função deve então percorrer o gerador `caminho_pasta.iterdir()`, verificando quais terminam com extensão de imagens e nesse casp os adicionando à lista `lista_caminhos`.
+Em seguida, checamos com um `if` se o caminho obtido é um caminho de diretório válido (`caminho_pasta.is_dir()` devolve `True`) e a função deve então percorrer o gerador `caminho_pasta.iterdir()`, verificando quais terminam com extensão de imagem e nesse caso, adicionando o caminho do arquivo à lista `lista_caminhos`.
 
 No final devolvemos com `return lista_caminhos` a lista, que estará vazia caso o diretório não seja válido ou não contenha nenhuma imagem, ou então `lista_caminhos` vai conter os caminhos dos arquivos de imagem, que vamos usar depois com `load_image()`:
 
