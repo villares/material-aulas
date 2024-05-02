@@ -26,6 +26,7 @@ def key_pressed():
     if key == 'o':
         select_folder('Selecione uma pasta', adicionar_imagens)
 
+# este código ainda não funciona, falta definir a função `adicionar_imagens()`
 ```
 
 Note que o primeiro argumento de `select_folder()` é `'Selecione uma pasta'` um simples texto (*string*) que vai como título da janela de seleção, já o segundo argumento, `adicionar_imagens`, é bastante curioso, trata-se de uma referência a uma função que será chamada quando a pessoa terminar de interagir com a janela de seleção de pastas apresentada pelo sistema operacional. 
@@ -38,8 +39,6 @@ Na estratégia de *callback* uma função que definimos é chamada para nós qua
 
 Então, como mencionado a pouco, é preciso definir uma função `adicionar_imagens()` que será executada só quando a pessoa terminou de escolher uma pasta ou se tiver cancelado o processo, essa função precisa receber um valor como argumento, isto é, precisa ter um parâmetro, que vamos nomear `caminho_pasta`, e que vai receber o caminho da pasta selecionada ou o valor especial `None` (se a pessoa fechou a janela sem selecionar uma pasta).
 
-Nossa função vai acrescentar numa lista global chamada `imagens` tuplas com dois elementos, o nome do arquivo e a imagem carregada com `load_image()`, um *string* e um objeto do tipo `Py5Image` com os dados da imagem, respectivamente.
-
 ```python
 def adicionar_imagens(caminho_pasta):
     if caminho_pasta == None:
@@ -51,7 +50,11 @@ def adicionar_imagens(caminho_pasta):
             print(f'imagem {caminho_imagem.name} carregada.')
             imagens.append((caminho_imagem.name, img))  # acrescenta uma tupla à lista imagens
         print(f'Número de imagens: {len(imagens)}')
+
+# precisa ser definida a função `lista_imagens()` e a lista global `imagens`
 ```
+
+Esta nossa função depende de uma função auxiliar chamanda `lista_imagens()`  que ainda não definimos, também precisa existir uma lista global chmanda `imagens`. Nossa função vai acrescentar na lista `imagens` tuplas com dois elementos, o nome do arquivo e a imagem carregada com `load_image()`, um *string* e um objeto do tipo `Py5Image` com os dados da imagem, respectivamente.
 
 Saiba que o código que cuida da janela do sistema operacional para escolhermos a pasta, e também o código da função `adicionar_imagens()`, chamada em seguida, são executados em linhas de execução (*threads*) separadas do *sketch* principal, isto é correm em separado, e por conta disso não interrompem execução do `draw()`, o "laço principal" para animações e interatividade da biblioteca py5 (como no Processing).
 
@@ -59,7 +62,7 @@ O carregamento das imagens é um procedimento razoavelmente lento e por isso é 
 
 ## Uma estrutura de dados para receber as imagens
 
-Atenção, repare que dentro de `adicionar_imagens()` usamos `imagens.append(...)`, por isso precisamos criar essa lista `ìmagens` para guardar os dados dos arquivos encontrados, fazemos isso antes do `setup()` que criando uma lista vazia e apontando uma variável global chamada `imagens` para ela:
+Dentro de `adicionar_imagens()` usamos `imagens.append(...)`, por isso precisamos criar essa lista `ìmagens` para guardar os dados dos arquivos encontrados, fazemos isso antes do `setup()` que criando uma lista vazia e apontando uma variável global chamada `imagens` para ela:
 
 ```python
 
