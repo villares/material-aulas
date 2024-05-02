@@ -20,7 +20,7 @@ Usaremos a função `sketch_path()` do py5, com o argumento `'data'` para obter 
 >  ```
 > Isso pode ser importante saber no futuro pois em diferentes sistemas operacionais os strings que representam o caminho para um arquivo ou pasta usam símbolos diferentes como separadores em cada sistema, melhor deixar o Python fazer a junção para você!
 
-Depois do procedimento que popula a lista `caminhos_arquivos`, que contém o caminho completo para os arquivos de imagem, nós vamos pegar cada um desses caminhos e usá-lo para carregar os dados da imagem com a função `load_image()` do py5. Essa função aceita um *string* com a localização de um arquivo no disco, mas aceita também um objeto `pathlib.Path`,e devolve um objeto `Py5Image` que pode ser mostrado na tela com a função `image()` posteriormente.
+Depois do procedimento que popula a lista `caminhos_arquivos`, que contém o caminho completo para os arquivos de imagem, nós vamos pegar cada um desses caminhos e usá-lo para carregar os dados da imagem com a função `load_image()` do py5. Essa função aceita um *string* com a localização de um arquivo no disco, mas aceita também um objeto `pathlib.Path`, e devolve um objeto `Py5Image` que pode ser mostrado na tela com a função `image()` posteriormente.
 
 ```python
 from random import choice
@@ -36,9 +36,9 @@ def setup():
     # se for, guarda na lista caminhos_arquivos.
     caminhos_arquivos = []
     # Repare que .iterdir() e .is_file() são métodos dos objetos pathlib.Path
-    # .iterdir() entrega Path dos seus itens, mas vai crashar se pasta não existir
+    # .iterdir() entrega Path dos seus itens, mas vai crashar se a pasta não existir
     for caminho_arquivo in data_folder.iterdir():  
-        if caminho_arquivo.is_file() and has_image_ext(caminho_arquivo.name):
+        if caminho_arquivo.is_file() and parece_ser_arquivo_de_imagem(caminho_arquivo):
             caminhos_arquivos.append(caminho_arquivo)
     # Agora efetivamente carrega na memória cada imagem a partir dos caminhos
     # listados no passo anterior. Se alista estiver vazia não faz nada.
@@ -68,14 +68,15 @@ def draw():
 def mouse_clicked():  # executada quando o mouse é clicado
     redraw()          # pede para executar mais um ciclo da função draw()
     
-def has_image_ext(file_name):
+def parece_ser_arquivo_de_imagem(file_path):
     """
-    Responde se a extensão do arquivo está na tupla contendo
-    extensões válidas para imagens.
+    Responde se a extensão do arquivo está entre as extensões válidas para imagens.
     """
-    valid_ext = ('jpg', 'png', 'jpeg', 'gif', 'tif', 'tga')
-    file_ext = file_name.split('.')[-1]
-    return file_ext.lower() in valid_ext
+    extensoes_de_imagem = ('jpg', 'png', 'jpeg', 'gif', 'tif', 'tga')
+    extensao = file_path.suffix.lower()[1:]  # sufixo convertido em minúsculas, a partir da segunda posição
+    # exemplo: Se file_path for Path('ARVORE.JPEG') o file_path.suffix será '.JPEG'
+    # file_path.suffix.lower() vai ser '.jpeg' e file_path.suffix.lower()[1:] e a extensao fica 'jpeg'
+    return extensao in extensoes_de_imagem
 
 ```
 ### Uma versão que checa se a pasta existe e não dá erro se a pasta estiver vazia
