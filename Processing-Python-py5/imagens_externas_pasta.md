@@ -189,7 +189,7 @@ def adicionar_imagens(caminho_pasta):
 Para entender melhor o funcionamento de `try:` e  `except ... :` na função `adicionar_imagens()`, você pode ler:
 - [Allen Downey explicando as exceções em Python no contexto de leitura e escrita de arquivos](https://penseallen.github.io/PensePython2e/14-arquivos.html#145---captura-de-exceções)
 - [O problema da divisão por zero (e um pouco sobre tratamento de exceções)](https://abav.lugaralgum.com/material-aulas/Processing-Python-py5/divisao.html)
-- [Tratamento de exceções na documentação oficial do Python](http://turing.com.br/pydoc/3.10/tutorial/errors.html#excecoes) 
+- [Tratamento de exceções na documentação oficial do Python](https://docs.python.org/pt-br/3/tutorial/errors.html#exceptions) 
 
 ### Uma variação para o desenho da grade
 
@@ -210,7 +210,7 @@ def draw():
         x += img.width * fator
 ```
 
-## Assuntos relacionados
+## Outros assuntos relacionados
 
 - Estrutura de pixels das imagens em [Pixels e imagens](pixels.md)
 - [Lendo e escrevendo texto em arquivos (*file IO*)](file_IO.md)
