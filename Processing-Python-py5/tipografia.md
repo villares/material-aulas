@@ -2,14 +2,13 @@
 
 ## Trabalhando com fontes e outros ajustes do texto
 
-Usamos `text("Lorem Ipsum dolor", x, y)` para escrever um texto na área de desenho. O tamanho pode ser controlado, em pontos, por `text_size()`. O alinhamento pode ser alterado por `text_align()`. A cor vem do `fill()`.
+Usamos `text('Lorem Ipsum dolor', x, y)` para escrever um texto na área de desenho. O tamanho pode ser controlado, em pontos, por `text_size()`. O alinhamento pode ser alterado por `text_align()`. A cor vem do `fill()`.
 
 ## Exemplo básico
 
 ```python
 """
-Adaptado do tutorial
-https://py.processing.org/tutorials/typography/
+Adaptado do tutorial https://py.processing.org/tutorials/typography/
 """
 
 x, y = 33, 60
@@ -35,15 +34,15 @@ def draw():
         x += random(-2, 2)
         y += random(-2, 2)
 
-    text("Cócegas", x, y)
+    text('Cócegas', x, y)
 
 
 ```
 
 ## Definindo a fonte
 
-Se não indicarmos alguma, uma fonte padrão será usada, mas podemos criar uma nova fonte(Py5Font) e usar em `text_font()`,
-a partir de uma fonte já instalada ou de um arquivo vetorial ** .ttf ** ou ** .otf ** na pasta * """data**:
+Se não indicarmos alguma, uma fonte padrão será usada, mas podemos criar uma nova fonte `Py5Font` e usar em `text_font()`,
+a partir de uma fonte já instalada ou de um arquivo vetorial **.ttf** ou **.otf**, usualmente na pasta `data`:
 
 ```python
 # para ver as fontes instaladas no seu computador
@@ -51,11 +50,10 @@ for font_name in Py5Font.list():
     print(font_name)
 # para usar a fonte Vera Sans Mono no estilo negrito
 f = create_font("Bitstream Vera Sans Mono Bold", 24)
-textFont(f)
+text_font(f)
 ```
 
-Especialmente no caso de não termos permissão para distribuir o arquivo vetorial da fonte, podemos criar uma fonte bitmap
-a partir da original e distribuir este novo arquivo **.vlw**, criado usando a ferramenta **Tool > Create Font...** no Processing IDE, produzimos o arquivo da fonte que pode ser carregado da seguinte maneira:
+Especialmente no caso de não termos permissão para distribuir o arquivo vetorial da fonte, podemos criar uma fonte bitmap a partir da original e distribuir este novo arquivo **.vlw**, criado usando a ferramenta **Tool > Create Font...** no Processing IDE, produzimos o arquivo da fonte que pode ser carregado da seguinte maneira:
 
 ```python
 font = load_font("LetterGothicStd-32.vlw")
@@ -65,7 +63,7 @@ font = load_font("LetterGothicStd-32.vlw")
 
 ![grade](https://raw.githubusercontent.com/arteprog/programacao-criativa/master/assets/imagens/typogrid.png)
 
-Baixe o arquivo descompactado ***.otf*** da fonte[Garoa Hacker Clube Bold](https://garoa.net.br/wiki/Fonte_Garoa_Hacker_Clube_Bold).
+Baixe o arquivo descompactado ***.otf*** da fonte [Garoa Hacker Clube Bold](https://garoa.net.br/wiki/Fonte_Garoa_Hacker_Clube_Bold).
 
 ```python
 glifos = "ABCDEFGHIJKLMNOPQRSTUVWXYZ☂#$*&"
@@ -163,7 +161,6 @@ def mouse_wheel(e):
 
 ## Sugestão de leitutra
 
-Tutoriais em:
-
-- https://processing.org/tutorials/typography/ (Java)
-- https://py.processing.org/tutorials/text/ (Python)
+- Tutoriais em:
+    - https://processing.org/tutorials/typography/ (Java)
+    - https://py.processing.org/tutorials/text/ (Python)
