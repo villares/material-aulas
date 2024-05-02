@@ -1,8 +1,8 @@
-# Textos no programa, no console e na tela (*strings*)
+# Textos no programa, no console e na tela: *strings*
 
-O tipo dos valores que representam texto, palavras, letras ou glifos em geral, é chamado * string*, ou * cadeia de caracteres * numa tradução para o português acadêmica que raramente você vai ouvir.
+O tipo dos valores que representam texto, palavras, letras ou glifos em geral, é chamado *string*, ou "cadeia de caracteres" numa tradução acadêmica para o português que raramente você vai ouvir.
 
-## *Strings* no meio do código
+## *Strings* no meio do código (*string literals*)
 
 Para expressar strings no corpo de um programa podemos os envolver em aspas duplas `"`  ou aspas simples `'`. Dentro de um texto envolto em aspas duplas podemos ter um texto que contém aspas simples, e vice-versa. Também podemos usar triplas de aspas: `'''` ou `"""`, fazemos isso especialmente para expressar strings com quebras de linha, como veremos mais adiante.
 
@@ -13,17 +13,13 @@ autor = "Noam Chomsky"
 
 ## Mostrando valores no console
 
-Usamos `print()` ou `print()` para * exibir * na parte de baixo do IDE, o chamado console. Essas funções convertem automaticamente outros tipos de valores em string, uma representação textual ou uma referência ao objeto passado.
+Usamos `print()` ou `print()` para *exibir* na parte de baixo do IDE, o chamado console. Essas funções convertem automaticamente outros tipos de valores em string, uma representação textual ou uma referência ao objeto passado.
 
 ```python
-
-
 def setup():            # Resultado exibido no console:
     print("Oi mundo!")  # Oi mundo!
     print(100 + 50)     # 150
     print(setup)        # <function setup at 0x7f1b493faee0> (ou algo semelhante)
-
-
 ```
 
 ## Manipulando *strings*
@@ -80,9 +76,9 @@ def draw():
     text(texto_mouse, 50, 70)
 ```
 
-![resultado](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/text-na-tela.png)
+![resultado](https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python-py5/assets/text-na-tela.png)
 
-Mais sobre desenhar texto na tela na página sobre tipografia básica em: [Trabalhando com fontes e outros ajustes do texto](https://github.com/villares/material-aulas/blob/master/Processing-Python/tipografia.md)
+Mais sobre desenhar texto na tela na página sobre tipografia básica em: [Trabalhando com fontes e outros ajustes do texto](tipografia.md)
 
 ### Caracteres especiais e outros glifos
 
@@ -114,6 +110,6 @@ banana
 
 ## Assuntos relacionados
 
-- [Métodos dos objetos string](string_methods.md)
+- [Métodos dos objetos *string*](string_methods.md)
 - [Trabalhando com fontes e outros ajustes do texto](tipografia.md)
 - [Lendo e escrevendo texto em arquivos](file_IO.md)
