@@ -33,7 +33,9 @@ Na estratégia com *callback* uma função definida é chamada para nós quando 
 
 ## A função `adicionar_imagens()`
 
-Então, é preciso definir uma função `adicionar_imagens()` que será executada só quando a pessoa terminou de escolher uma pasta ou se tiver cancelado o processo, ela precisa ter um parâmetro, `caminho_pasta`, que recebe o caminho da pasta selecionada ou o valor especial `None` (se a pessoa fechou a janela sem selecionar uma pasta):
+Então, é preciso definir uma função `adicionar_imagens()` que será executada só quando a pessoa terminou de escolher uma pasta ou se tiver cancelado o processo, ela precisa ter um parâmetro, `caminho_pasta`, que recebe o caminho da pasta selecionada ou o valor especial `None` (se a pessoa fechou a janela sem selecionar uma pasta).
+
+Nossa função vai acrescentar num lista global chamada `imagens` tuplas com dois elementos, o nome do arquivo e a imagem carregada com `load_image()`, um string e um objeto do tipo `Py5Image` com os dados da imagem, respectivamente.
 
 ```python
 def adicionar_imagens(caminho_pasta):
@@ -42,9 +44,9 @@ def adicionar_imagens(caminho_pasta):
     else:
         print(f'Pasta selecionada: {caminho_pasta.name}')
         for caminho_imagem in lista_imagens(caminho_pasta):
-            img = load_image(caminho_imagem)
+            img = load_image(caminho_imagem)  # carrega a imagem na memória
             print(f'imagem {caminho_imagem.name} carregada.')
-            imagens.append((caminho_imagem.name, img))
+            imagens.append((caminho_imagem.name, img))  # acrescenta uma tupla à lista imagens
         print(f'Número de imagens: {len(imagens)}')
 ```
 
@@ -54,11 +56,11 @@ O carregamento das imagens é um procedimento razoavelmente lento e por isso é 
 
 ## Uma estrutura de dados para receber as imagens
 
-Atenção, note que dentro de `adicionar_imagens()` usamos `imagens.append(...)`, por isso precisamos criar essa lista `ìmagens` para guardar as informações dos arquivos encontrados, fazemos isso antes do `setup()` que criando uma lista vazia e apontando uma variável global chamada `imagens` para ela:
+Atenção, note que dentro de `adicionar_imagens()` usamos `imagens.append(...)`, por isso precisamos criar essa lista `ìmagens` para guardar os dados dos arquivos encontrados, fazemos isso antes do `setup()` que criando uma lista vazia e apontando uma variável global chamada `imagens` para ela:
 
 ```python
 
-imagens = []
+imagens = []  # esta lista vai receber tuplas assim: (nome_da_imagem, objeto_py5image) 
 
 def setup():
     size(880, 550)
@@ -70,17 +72,18 @@ def draw():
 
 ## A função auxiliar `lista_imagens()`
 
-Uma boa parte da solução da nossa tarefa, na verdade, está encapsulada em `lista_imagens()`, função que usamos em `adicionar_imagens()` e que recebe o caminho da pasta selecionada no parâmetro `caminho_pasta`. Caso o valor que recebe seja um *string* (texto) em vez de um "objeto caminho" (`pathlib.Path`) ela converte `caminho_pasta` em caminho, se já for um caminho, nada muda. 
+Uma boa parte da solução da nossa tarefa, na verdade, está encapsulada em `lista_imagens()`, função que usamos em `adicionar_imagens()` e que recebe o caminho da pasta selecionada no parâmetro `caminho_pasta`. 
 
-É definida a tupla `extensoes_validas`, contendo as extensões que vamos considerar para tratar os arquivos como arquivos de imagem, e é criada a lista `lista_caminhos`, que será devolvida no final da função, e começa vazia.
+Nessa função usamos uma tupla chamada `extensoes_validas`, contendo as extensões que vamos considerar para tratar os arquivos como arquivos de imagem, e criamos a lista `lista_caminhos`, que começa vazia e será devolvida no final da função (contendo caminhos para imagens, se tudo der certo). 
 
-Em seguida, a função checa com um `if` se o caminho obtido é um caminho de diretório válido (`caminho_pasta.is_dir()` devolve `True`) e a função deve então percorrer o gerador `caminho_pasta.iterdir()` e devolver uma lista com os caminhos dos arquivos que tem extensão de imagem para serem usados no `load_image()`:
+Em seguida, checamos com um `if` se o caminho obtido é um caminho de diretório válido (`caminho_pasta.is_dir()` devolve `True`) e a função deve então percorrer o gerador `caminho_pasta.iterdir()`, verificando quais terminam com extensão de imagens e nesse casp os adicionando à lista `lista_caminhos`.
+
+No final devolvemos com `return lista_caminhos` a lista, que estará vazia caso o diretório não seja válido ou não contenha nenhuma imagem, ou então `lista_caminhos` vai conter os caminhos dos arquivos de imagem, que vamos usar depois com `load_image()`:
 
 ```python
 def lista_imagens(caminho_pasta):
-    caminho_pasta = Path(caminho_pasta) # Garante um objeto pathlib.Path
     extensoes_validas = ('.jpg', '.png', '.jpeg', '.gif', '.tif', '.tga')
-    lista_caminhos = []
+    lista_caminhos = []  # esta lista vai receber caminhos de arquivos com extensão de imagem
     if caminho_pasta.is_dir():
         for caminho_imagem in caminho_pasta.iterdir():
             if caminho_imagem.is_file() and caminho_imagem.suffix.lower() in extensoes_validas:
