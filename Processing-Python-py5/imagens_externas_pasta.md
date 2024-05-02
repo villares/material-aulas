@@ -70,30 +70,29 @@ def draw():
 
 ## A função auxiliar `lista_imagens()`
 
-Uma boa parte da solução da nossa tarefa, na verdade, está encapsulada em `lista_imagens()`, função que usamos em `adicionar_imagens()`. Ela recebe o caminho (*path*) da pasta selecionada e devolve uma lista com tuplas dos nomes dos arquivos das imagens e o caminho delas para ser usado no `load_image()`:
+Uma boa parte da solução da nossa tarefa, na verdade, está encapsulada em `lista_imagens()`, função que usamos em `adicionar_imagens()` e que recebe o caminho da pasta selecionada no parâmetro `caminho_pasta`. Caso o valor que recebe seja um *string* (texto) em vez de um "objeto caminho" (`pathlib.Path`) ela converte `caminho_pasta` em caminho, se já for um caminho, nada muda. 
+
+É definida a tupla `extensoes_validas`, contendo as extensões que vamos considerar para tratar os arquivos como arquivos de imagem, e é criada a lista `lista_caminhos`, que será devolvida no final da função, e começa vazia.
+
+Em seguida, a função checa com um `if` se o caminho obtido é um caminho de diretório válido (`caminho_pasta.is_dir()` devolve `True`) e a função deve então percorrer o gerador `caminho_pasta.iterdir()` e devolver uma lista com os caminhos dos arquivos que tem extensão de imagem para serem usados no `load_image()`:
 
 ```python
 def lista_imagens(caminho_pasta):
     caminho_pasta = Path(caminho_pasta) # Garante um objeto pathlib.Path
     extensoes_validas = ('.jpg', '.png', '.jpeg', '.gif', '.tif', '.tga')
     lista_caminhos = []
-    try:
+    if caminho_pasta.is_dir():
         for caminho_imagem in caminho_pasta.iterdir():
             if caminho_imagem.is_file() and caminho_imagem.suffix.lower() in extensoes_validas:
                 lista_caminhos.append(caminho_imagem)
-    except Exception as e:
-        print(e)
+    else:
+        print('Devolvendo uma lista vazia pois não foi fornecida uma pasta válida!')
     return lista_caminhos
 ```
 
-Para entender melhor o useo de `try:` e  `except... :` na função `lista_imagens()`, você pode ler:
-- [Allen Downey explicando as exceções em Python no contexto de leitura e escrita de arquivos](https://penseallen.github.io/PensePython2e/14-arquivos.html#145---captura-de-exceções)
-- [O problema da divisão por zero (e um pouco sobre tratamento de exceções)](https://abav.lugaralgum.com/material-aulas/Processing-Python-py5/divisao.html)
-- [Tratamento de exceções na documentação oficial do Python](http://turing.com.br/pydoc/3.10/tutorial/errors.html#excecoes) 
+## O código de um exemplo completo
 
-## O código completo
-
-Por fim, aqui vai o código completo do sketch, contendo a parte que desenha uma grade de imagens no `draw()` com os itens da lista `imagens`:
+Aqui vai então uma versão funcional do sketch, contendo a parte que desenha uma grade de imagens no `draw()` com os itens da lista `imagens`:
 
 ```python
 imagens = []
@@ -154,16 +153,42 @@ def lista_imagens(caminho_pasta):
     caminho_pasta = Path(caminho_pasta) # Garante um objeto pathlib.Path
     extensoes_validas = ('.jpg', '.png', '.jpeg', '.gif', '.tif', '.tga')
     lista_caminhos = []
-    try:
+    if caminho_pasta.is_dir():
         for caminho_imagem in caminho_pasta.iterdir():
             if caminho_imagem.is_file() and caminho_imagem.suffix.lower() in extensoes_validas:
                 lista_caminhos.append(caminho_imagem)
-    except Exception as e:
-        print(e)
+    else:
+        print('Devolvendo uma lista vazia pois não foi fornecida uma pasta válida!')
     return lista_caminhos
 ```
 
-## Uma variação para o desenho da grade
+### Uma versão mais robusta de `adicionar_imagens()`
+
+Se por acaso na pasta com imagens que estamos examinando houver algum arquivo que não é uma imagem mas tem extensão de imagem, ou se houver uma imagem "corrompida", a operação da funçao `load_image()` vai falhar, e pode *levantar uma exceção*. Podemos *tratar essa exceção*, usando uma estrutura com um bloco `try:` e outro `except ... :` como na função modificada a seguir:
+
+```python
+def adicionar_imagens(caminho_pasta):
+    """Callback que será chamado pela função select_folder() do py5"""
+    if caminho_pasta == None:
+        print('Seleção cancelada.')
+    else:
+        print(f'Pasta selecionada: {caminho_pasta.name}')
+        for caminho_imagem in lista_imagens(caminho_pasta):
+            try:
+                img = load_image(caminho_imagem)
+                print(f'imagem {caminho_imagem.name} carregada.')
+                imagens.append((caminho_imagem.name, img))
+            except Exception as erro:
+                print(erro)
+        print(f'Número de imagens: {len(imagens)}')
+```
+
+Para entender melhor o funcionamento de `try:` e  `except ... :` na função `adicionar_imagens()`, você pode ler:
+- [Allen Downey explicando as exceções em Python no contexto de leitura e escrita de arquivos](https://penseallen.github.io/PensePython2e/14-arquivos.html#145---captura-de-exceções)
+- [O problema da divisão por zero (e um pouco sobre tratamento de exceções)](https://abav.lugaralgum.com/material-aulas/Processing-Python-py5/divisao.html)
+- [Tratamento de exceções na documentação oficial do Python](http://turing.com.br/pydoc/3.10/tutorial/errors.html#excecoes) 
+
+### Uma variação para o desenho da grade
 
 Uma variante do `draw()` que permite largura variável das imagens, fixando a altura, como no exemplo anterior, mas deslocando na horizontal:
 
