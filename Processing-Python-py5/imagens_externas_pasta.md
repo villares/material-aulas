@@ -183,6 +183,7 @@ def adicionar_imagens(caminho_pasta):
                 imagens.append((caminho_imagem.name, img))
             except Exception as erro:
                 print(erro)
+                break # mais seguro, interrompe mais carregamentos
         print(f'Número de imagens: {len(imagens)}')
 ```
 
@@ -210,6 +211,29 @@ def draw():
         x += img.width * fator
 ```
 
+### Uma versão recursiva da função `lista_imagens()`
+
+Esta versão procura imagens em uma pasta fornecida como argumento, mas também em sub-pastas da pasta!
+
+```python
+def lista_imagens(caminho):
+    """
+    Devolve uma a lista dos caminhos (objetos pathlib.Path) dos arquivos com 
+    extensões de imagem no nome, encontrados iterando itens do diretório
+    passado como argumento para o parâmetro `caminho`, incluindo itens dos
+    sub-diretórios.
+    """
+    extensoes_validas = ('.jpg', '.png', '.jpeg', '.gif', '.tif', '.tga')
+    if caminho.is_dir():
+        lista_caminhos = []
+        for item in caminho.iterdir():
+            lista_caminhos.extend(lista_imagens(item))
+        return lista_caminhos
+    elif caminho.is_file() and caminho.suffix.lower() in extensoes_validas:
+        return [caminho]
+    else:
+        return []
+```
 ## Outros assuntos relacionados
 
 - Estrutura de pixels das imagens em [Pixels e imagens](pixels.md)
