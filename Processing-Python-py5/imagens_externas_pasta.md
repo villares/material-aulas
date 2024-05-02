@@ -5,7 +5,7 @@
 
 > Exemplo de execução carregando 110 imagens medievais coletadas pelo artista e educador[Daniel Seda](https://www.danielseda.com/).
 
-Tendo visto previamente como [ler e usar imagens de arquivos externos](imagens_externas.md) com `load_image()`, e a estrutura de dados lista(`list`) neste exemplo mais avançado vamos permitir que a pessoa escolha uma pasta e o *sketch* vai carregar todas as imagens nela encontradas e mostrá-las em uma grade.
+Tendo visto previamente como [ler e usar imagens de arquivos externos](imagens_externas.md) com `load_image()`, e a estrutura de dados lista(`list`) neste exemplo mais avançado vamos permitir que a pessoa escolha uma pasta e o *sketch* vai carregar todas as imagens nela encontradas e mostrá-las em uma grade. Vamos usar uma função do py5 que pede ao sistema operacional que abra uma janela na interface gŕafica para a seleção de um diretório, isto é, para que possamos escolher uma pasta (*folder*) no sistema de armazenagem de arquivos.
 
 **Cuidado!** Carregar na memória um grande número de imagens pesadas pode fazer o seu sketch quebrar... neste caso pode ser interessante gerar e armazernar apenas *thumbnails*, versões reduzidas das imagens, um assunto que não é abordado aqui.
 
@@ -28,17 +28,17 @@ def key_pressed():
 
 ```
 
-Note que o primeiro argumento de `select_folder()` é `'Selecione uma pasta'` o texto (*string*) que vai como título da janela de seleção. O segundo argumento `adicionar_imagens` é mais curioso, trata-se de uma referência a uma função que será chamada quando a pessoa terminar de interagir com a janela de seleção de pasta (diretório / *folder*). 
+Note que o primeiro argumento de `select_folder()` é `'Selecione uma pasta'` o texto (*string*) que vai como título da janela de seleção. O segundo argumento `adicionar_imagens` é mais curioso, trata-se de uma referência a uma função que será chamada quando a pessoa terminar de interagir com a janela de seleção de pastas apresentada pelo sistema operacional. 
 
 Estamos passando uma função como argumento de outra, em  uma estratégia conhecida como "função de retorno" ou, em inglês, *callback*. Repare que a referência ao "objeto função" que é passado como argumento da função `select_folder()` é o nome da função, sem aspas, mas sem os parenteses `()`, os parenteses fariam disso uma chamada da função (ela seria executada imediatamente neste ponto do código).
 
-Na estratégia com *callback* uma função definida é chamada para nós quando algum evento acontece. Neste nosso caso, a função `adicionar_imagens()` é chamada no encerramento da janela de selecionar pastas (esta parte de abrir a janela para selecionar pastas é iniciada com a execução de `select_folder()`, mas o momento do encerramento depende da pessoa usando o programa).
+Na estratégia com *callback* uma função definida é chamada para nós quando algum evento acontece. Neste nosso exemplo, a função `adicionar_imagens()` é chamada no envento do encerramento da janela de selecionar pastas. Note que a abertura da janela para selecionar pastas é iniciada com a execução de `select_folder()`, mas o momento do encerramento depende da pessoa usando o programa e não sabemos quanto tempo vai levar para acontecer.
 
 ## A função `adicionar_imagens()`
 
 Então, é preciso definir uma função `adicionar_imagens()` que será executada só quando a pessoa terminou de escolher uma pasta ou se tiver cancelado o processo, ela precisa ter um parâmetro, `caminho_pasta`, que recebe o caminho da pasta selecionada ou o valor especial `None` (se a pessoa fechou a janela sem selecionar uma pasta).
 
-Nossa função vai acrescentar num lista global chamada `imagens` tuplas com dois elementos, o nome do arquivo e a imagem carregada com `load_image()`, um string e um objeto do tipo `Py5Image` com os dados da imagem, respectivamente.
+Nossa função vai acrescentar numa lista global chamada `imagens` tuplas com dois elementos, o nome do arquivo e a imagem carregada com `load_image()`, um string e um objeto do tipo `Py5Image` com os dados da imagem, respectivamente.
 
 ```python
 def adicionar_imagens(caminho_pasta):
