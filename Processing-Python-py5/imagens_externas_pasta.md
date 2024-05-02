@@ -54,7 +54,7 @@ def adicionar_imagens(caminho_pasta):
 # precisa ser definida a função `lista_imagens()` e a lista global `imagens`
 ```
 
-Esta nossa função depende de uma função auxiliar chamanda `lista_imagens()`  que ainda não definimos, também precisa existir uma lista global chmanda `imagens`. Nossa função vai acrescentar na lista `imagens` tuplas com dois elementos, o nome do arquivo e a imagem carregada com `load_image()`, um *string* e um objeto do tipo `Py5Image` com os dados da imagem, respectivamente.
+Esta nossa função depende de uma função auxiliar chamanda `lista_imagens()`  que ainda não definimos, também precisa existir uma lista global chamanda `imagens`. Nossa função vai acrescentar nessa lista `imagens` tuplas com dois elementos, o nome do arquivo e a imagem carregada com `load_image()`, um *string* e um objeto do tipo `Py5Image` com os dados da imagem, respectivamente. Mais pra frente no `draw()`  vamos usar os elementos dessa lista para desenhar as imagens na tela.
 
 Saiba que o código que cuida da janela do sistema operacional para escolhermos a pasta, e também o código da função `adicionar_imagens()`, chamada em seguida, são executados em linhas de execução (*threads*) separadas do *sketch* principal, isto é correm em separado, e por conta disso não interrompem execução do `draw()`, o "laço principal" para animações e interatividade da biblioteca py5 (como no Processing).
 
@@ -241,7 +241,13 @@ def lista_imagens(caminho):
         return []
 ```
 
+### Um pequeno desafio, mostrar o nome das imagens na tela
+
+A nossa lista `imagens`, contém tuplas que além do objeto `Py5Image` que usamos para desenhar a imagem na tela com `image(img, x, y, img.width * fator, img.height * fator)`, tem o nome da imagem que desempacotamos na variável `nome`. No exemplo não usamos o nome da imagem. Você conseguiria desenhar o nome na tela usando a função `text()` do py5? Provavelmente você vai querer pesquisar mais coisas sobre como controlar a tipografia na tela.
+
+
 ## Outros assuntos relacionados
 
+- [Trabalhando com fontes e outros ajustes do texto](tipografia.md)
 - Estrutura de pixels das imagens em [Pixels e imagens](pixels.md)
 - [Lendo e escrevendo texto em arquivos (*file IO*)](file_IO.md)
