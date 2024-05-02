@@ -82,71 +82,71 @@ def parece_ser_arquivo_de_imagem(file_path):
 ### Uma versão que checa se a pasta existe e não dá erro se a pasta estiver vazia
 
 <details>
-  <summary>clique para ver</summary>
+    
+<summary>clique para ver</summary>
 
-<code>
+<pre>
+    
+from random import choice
 
-    from random import choice
+imagens = []  # Lista que vai receber objetos Py5Image (Processing Image data)
 
-    imagens = []  # Lista que vai receber objetos Py5Image (Processing Image data)
+def setup():
+    size(400, 400)
+    data_folder = sketch_path('data')  # este é um objeto pathlib.Path
+    caminhos_arquivos = []
+    try:
+        for caminho_arquivo in data_folder.iterdir():  
+            if caminho_arquivo.is_file() and parece_ser_arquivo_de_imagem(caminho_arquivo):
+                caminhos_arquivos.append(caminho_arquivo)
+    except OSError as e:
+        print(e)
+        # Exemplo: [Errno 2] Arquivo ou diretório inexistente: '~/exemplos/data'
 
-    def setup():
-        size(400, 400)
-        data_folder = sketch_path('data')  # este é um objeto pathlib.Path
-        caminhos_arquivos = []
+    # Agora efetivamente carrega na memória cada imagem a partir dos caminhos
+    # listados no passo anterior. Se alista estiver vazia não faz nada.
+    for caminho_arquivo in caminhos_arquivos:
         try:
-            for caminho_arquivo in data_folder.iterdir():  
-                if caminho_arquivo.is_file() and has_image_ext(caminho_arquivo.name):
-                    caminhos_arquivos.append(caminho_arquivo)
-        except OSError as e:
-            print(e)
-            # Exemplo: [Errno 2] Arquivo ou diretório inexistente: '~/exemplos/data'
-
-        # Agora efetivamente carrega na memória cada imagem a partir dos caminhos
-        # listados no passo anterior. Se alista estiver vazia não faz nada.
-        for caminho_arquivo in caminhos_arquivos:
             img = load_image(caminho_arquivo)
             imagens.append(img)
-        # Vamos congelar a repetição do draw() com no_loop().
-        no_loop()  
-        # Clique com o mouse para uma nova imagem, redraw() na função mouse_clicked()
+        except Exception as e:
+            print(e)  # Erro quando não foi possível carregar a imagem 
+    # Vamos congelar a repetição do draw() com no_loop().
+    no_loop()  
+    # Clique com o mouse para uma nova imagem, redraw() na função mouse_clicked()
 
-    def draw():
-        background(0)
-        if imagens:
-            random_image = choice(imagens)
-        else:
-            random_image = create_graphics(400, 400)
-            random_image.begin_draw()
-            random_image.text_size(20)
-            random_image.text('Imagens não encontradas', 100, 100)
-            random_image.end_draw()
-        # Para encolher proporcionalmente a imagem caso ela não caiba na àrea de desenho
-        fator_escala = 1 # caso a imagem caiba perfeitamente
-        # se a largura da imagem for maior que a largura da àrea de desenho
-        if random_image.width > width:  
-            fator_escala = width / random_image.width
-        # se mesmo tento sido já reduzida, a altura não couber
-        if random_image.height * fator_escala > height:  
-            fator_escala = height / random_image.height
-        # Mostra a imagem centrada na àrea de desenho
-        image_mode(CENTER)
-        image(random_image, width / 2, height / 2,
-              random_image.width * fator_escala, random_image.height * fator_escala)
+def draw():
+    background(0)
+    if imagens:
+        random_image = choice(imagens)
+    else:
+        random_image = create_graphics(400, 400)
+        random_image.begin_draw()
+        random_image.text_size(20)
+        random_image.text('Imagens não encontradas', 100, 100)
+        random_image.end_draw()
+    # Para encolher proporcionalmente a imagem caso ela não caiba na àrea de desenho
+    fator_escala = 1 # caso a imagem caiba perfeitamente
+    # se a largura da imagem for maior que a largura da àrea de desenho
+    if random_image.width > width:  
+        fator_escala = width / random_image.width
+    # se mesmo tento sido já reduzida, a altura não couber
+    if random_image.height * fator_escala > height:  
+        fator_escala = height / random_image.height
+    # Mostra a imagem centrada na àrea de desenho
+    image_mode(CENTER)
+    image(random_image, width / 2, height / 2,
+          random_image.width * fator_escala, random_image.height * fator_escala)
 
-    def mouse_clicked():  # executada quando o mouse é clicado
-        redraw()          # pede para executar mais um ciclo da função draw()
+def mouse_clicked():  # executada quando o mouse é clicado
+    redraw()          # pede para executar mais um ciclo da função draw()
 
-    def has_image_ext(file_name):
-        """
-        Responde se a extensão do arquivo está na tupla contendo
-        extensões válidas para imagens.
-        """
-        valid_ext = ('jpg', 'png', 'jpeg', 'gif', 'tif', 'tga')
-        file_ext = file_name.split('.')[-1]
-        return file_ext.lower() in valid_ext
+def parece_ser_arquivo_de_imagem(file_path):
+    extensoes_de_imagem = ('jpg', 'png', 'jpeg', 'gif', 'tif', 'tga')
+    extensao = file_path.suffix.lower()[1:]  # sufixo convertido em minúsculas, a partir da segunda posição
+    return extensao in extensoes_de_imagem
 
-</code>
+</pre>
 
 </details>
 
