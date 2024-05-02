@@ -5,7 +5,10 @@
 
 > Exemplo de execução carregando 110 imagens medievais coletadas pelo artista e educador[Daniel Seda](https://www.danielseda.com/).
 
-Tendo visto previamente como [ler e usar imagens de arquivos externos](imagens_externas.md) com `load_image()`, e a estrutura de dados lista(`list`) neste exemplo mais avançado vamos permitir que a pessoa escolha uma pasta e o *sketch* vai carregar todas as imagens nela encontradas.
+Tendo visto previamente como [ler e usar imagens de arquivos externos](imagens_externas.md) com `load_image()`, e a estrutura de dados lista(`list`) neste exemplo mais avançado vamos permitir que a pessoa escolha uma pasta e o *sketch* vai carregar todas as imagens nela encontradas e mostrá-las em uma grade.
+
+**Cuidado!** Carregar na memória um grande número de imagens pesadas pode fazer o seu sketch quebrar... neste caso pode ser interessante gerar e armazernar apenas *thumbnails*, versões reduzidas das imagens, um assunto que não é abordado aqui.
+
 
 ## A função `select_folder()` do py5
 
@@ -234,6 +237,7 @@ def lista_imagens(caminho):
     else:
         return []
 ```
+
 ## Outros assuntos relacionados
 
 - Estrutura de pixels das imagens em [Pixels e imagens](pixels.md)
