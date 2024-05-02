@@ -32,7 +32,7 @@ Note que o primeiro argumento de `select_folder()` é `'Selecione uma pasta'` o 
 
 Estamos passando uma função como argumento de outra, em  uma estratégia conhecida como "função de retorno" ou, em inglês, *callback*. Repare que a referência ao "objeto função" que é passado como argumento da função `select_folder()` é o nome da função, sem aspas, mas sem os parenteses `()`, os parenteses fariam disso uma chamada da função (ela seria executada imediatamente neste ponto do código).
 
-Na estratégia com *callback* uma função definida é chamada para nós quando algum evento acontece. Neste nosso exemplo, a função `adicionar_imagens()` é chamada no envento do encerramento da janela de selecionar pastas. Note que a abertura da janela para selecionar pastas é iniciada com a execução de `select_folder()`, mas o momento do encerramento depende da pessoa usando o programa e não sabemos quanto tempo vai levar para acontecer.
+Na estratégia com *callback* uma função definida é chamada para nós quando algum evento acontece. Neste nosso exemplo, a função `adicionar_imagens()` é chamada no envento do encerramento da janela de selecionar pastas. Note que a abertura da janela de seleção do sistema é iniciada com a execução de `select_folder()`, mas o momento do encerramento depende da pessoa usando o programa e não sabemos quanto tempo vai levar para acontecer.
 
 ## A função `adicionar_imagens()`
 
