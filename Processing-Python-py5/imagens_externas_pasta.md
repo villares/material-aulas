@@ -70,7 +70,7 @@ def draw():
 
 ## A função auxiliar `lista_imagens()`
 
-Uma boa parte da solução da nossa tarefa, na verdade, está encapsulada em `lista_imagens()`, função que usamos em `adicionar_imagens()`. Ela recebe o caminho da pasta selecionada (*path*) e devolve uma lista com tuplas dos nomes dos arquivos das imagens e o caminho (*path*) delas para ser usado no `load_image()`:
+Uma boa parte da solução da nossa tarefa, na verdade, está encapsulada em `lista_imagens()`, função que usamos em `adicionar_imagens()`. Ela recebe o caminho (*path*) da pasta selecionada e devolve uma lista com tuplas dos nomes dos arquivos das imagens e o caminho delas para ser usado no `load_image()`:
 
 ```python
 def lista_imagens(caminho_pasta):
