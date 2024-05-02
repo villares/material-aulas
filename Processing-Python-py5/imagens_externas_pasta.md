@@ -96,7 +96,7 @@ def lista_imagens(caminho_pasta):
     return lista_caminhos
 ```
 
-## O código de um exemplo completo
+## O código com a parte de desenhar a grade de imagens
 
 Aqui vai então uma versão funcional do sketch, contendo a parte que desenha uma grade de imagens no `draw()` com os itens da lista `imagens`:
 
