@@ -34,7 +34,7 @@
   - 1.3.5 [Laço de repetição com `while`](while.md)
 
 - 1.4.0 [Tipos de valores](tipagem_py.md) como texto (*strings*) e números inteiros (*int*) ou de ponto flutuante (*float*) 
-  - 1.4.1 [Textos no programa, no console e na tela (*strings*)](strings_py.md)
+  - 1.4.1 [Textos no programa, no console e na tela: *strings*](strings_py.md)
   - 1.4.2 [Trabalhando com fontes e outros ajustes do texto](tipografia.md) 
   - 1.4.3 [Métodos dos objetos *string*](string_methods.md)
   - 1.4.4 [O valor especial `None`](None.md)
