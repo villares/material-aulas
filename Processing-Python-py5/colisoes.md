@@ -34,7 +34,7 @@ def point_in_circle(px, py, cx, cy, r):
 
 ```python
 def rect_over_rect(x1, y1, w1, h1, x2, y2, w2, h2):
-    return (x1 + w1 >= x2 and    # borda direito do r1 passa esquerda do r2 
+    return (x1 + w1 >= x2 and    # borda direita do r1 passa esquerda do r2 
             x1 <= x2 + w2 and    # borda esquerda do r1 passa direita do r2
             y1 + h1 >= y2 and    # topo do r1 avança sobre base do r2
             y1 <= y2 + h2)       # base do r1 avança sobre topo do r2 
