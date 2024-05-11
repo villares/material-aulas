@@ -38,25 +38,9 @@ def rect_in_area(xm, ym, wm, hm, xa, ya, wa, ha):
 
 ### Ponto e polígono
 
-Um dos mais importantes problemas da geometria comptutacional, esta função, baseada em [Point Inclusion in Polygon Test](https://wrf.ecse.rpi.edu/Research/Short_Notes/pnpoly.html) de W. Randolph Franklin, recebe as coordenadas de um ponto e uma coleção de pontos (ou um iterável com tuplas de coordenadas, por exemplo).
-
-```python
-def point_in_poly(x, y, poly_pts):
-    inside = False
-    for i, p in enumerate(poly_pts):
-        pp = poly_pts[i - 1]
-        xi, yi = p
-        xj, yj = pp
-        intersect = ((yi > y) != (yj > y)) and (x < (xj - xi) * (y - yi) / (yj - yi) + xi)
-        if intersect:
-            inside = not inside
-    return inside
-```
-
-Um sketch de demonstração da função.
-
 ![collision_point_poly](https://github.com/villares/material-aulas/assets/3694604/bf5f8efe-a6dd-4b73-a358-4d053c355565)
 
+Um dos mais importantes problemas da geometria comptutacional, esta função, baseada em [Point Inclusion in Polygon Test](https://wrf.ecse.rpi.edu/Research/Short_Notes/pnpoly.html) de W. Randolph Franklin, recebe as coordenadas de um ponto e um iterável com pontos (ou tuplas de coordenadas) representando um polígono.
 
 ```python
 poly_pts = ((100, 100), (200, 100), (150, 150), (200, 200), (100, 200))
@@ -87,10 +71,10 @@ def point_in_poly(x, y, poly_pts):
 
 ## Experimentando com *shapely*
 
-Ponto em polígono usando o shapely
+O mesmo problema do ponto em polígono, mas usando a biblioteca *shapely*.
 
 ```python
-import shapely
+import shapely  # será necessário instalar a a biblioteca
 
 poly_pts = ((100, 100), (200, 100), (150, 150), (200, 200), (100, 200))
 shapely_poly = shapely.Polygon(poly_pts)
