@@ -13,7 +13,7 @@ Uma referência inestimável de funções que respondem as principais perguntas 
 
 Vamos experimentar aqui mostrar alguns dos casos mais simples. Para casos mais complexos, pode ser útil também experimentar usar uma biblioteca especializada em processar geometrias 2D, como *shapely*
 
-## Algumas implementações "ingênuas"
+## Algumas implementações 
 
 ### Ponto e círculo
 
@@ -38,15 +38,13 @@ def rect_in_area(xm, ym, wm, hm, xa, ya, wa, ha):
 
 ### Ponto e polígono
 
-Um dos mais importantes problemas da geometria comptutacional, esta função recebe as coordenadas de um ponto e uma coleção de pontos (ou um iterável com tuplas de coordenadas, por exemplo)
+Um dos mais importantes problemas da geometria comptutacional, esta função, baseada em [Point Inclusion in Polygon Test](https://wrf.ecse.rpi.edu/Research/Short_Notes/pnpoly.html) de W. Randolph Franklin, recebe as coordenadas de um ponto e uma coleção de pontos (ou um iterável com tuplas de coordenadas, por exemplo).
 
 ```python
 def point_in_poly(x, y, poly_pts):
-    # ray-casting algorithm based on
-    # https://wrf.ecse.rpi.edu/Research/Short_Notes/pnpoly.html
     inside = False
     for i, p in enumerate(poly_pts):
-        pp = poly[i - 1]
+        pp = poly_pts[i - 1]
         xi, yi = p
         xj, yj = pp
         intersect = ((yi > y) != (yj > y)) and (x < (xj - xi) * (y - yi) / (yj - yi) + xi)
@@ -54,6 +52,38 @@ def point_in_poly(x, y, poly_pts):
             inside = not inside
     return inside
 ```
+
+Um sketch de demonstração da função.
+
+![collision_point_poly](https://github.com/villares/material-aulas/assets/3694604/bf5f8efe-a6dd-4b73-a358-4d053c355565)
+
+
+```python
+poly_pts = ((100, 100), (200, 100), (150, 150), (200, 200), (100, 200))
+
+def setup():
+    size(400, 400)
+
+def draw():
+    if point_in_poly(mouse_x, mouse_y, poly_pts):
+        fill(0, 200, 0)
+    else:
+        fill(255)    
+    with begin_closed_shape():
+        vertices(poly_pts)
+    
+def point_in_poly(x, y, poly_pts):
+    inside = False
+    for i, p in enumerate(poly_pts):
+        pp = poly_pts[i - 1]
+        xi, yi = p
+        xj, yj = pp
+        intersect = ((yi > y) != (yj > y)) and (x < (xj - xi) * (y - yi) / (yj - yi) + xi)
+        if intersect:
+            inside = not inside
+    return inside
+```
+
 
 ## Experimentando com *shapely*
 
