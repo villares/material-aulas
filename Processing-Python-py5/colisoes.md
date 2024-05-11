@@ -28,11 +28,28 @@ def point_in_circle(px, py, cx, cy, r):
     return dist(px, py, cx, cy) <= r
 ```
 
-### Retângulo e retângulo
+### Retângulo dentro de um retângulo
 
-Esta funçao indica se há sobreposição entre dois retângulos descritos pelas coordenadas do canto superior esquerdo, largura e altura de cada um deles.
+Aa funçao `rect_in_area()` responde se um primeito retângulo está completamente dentro de segundo retângulo.
+
 
 ```python
+
+def setup():
+    size(400, 400)
+
+def draw():
+    background(200)
+    rm = mouse_x, mouse_y, 200, 100
+    ra = 50, 100, 300, 200
+    no_fill()
+    rect(*ra)
+    if rect_in_area(*rm, *ra):
+        fill(0, 200, 0)
+    else:
+        fill(255)
+    rect(*rm)
+
 def rect_in_area(xm, ym, wm, hm, xa, ya, wa, ha):
     return (xa < xm < xa + wa - wm and
             ya < ym < ya + ha - hm)
