@@ -17,6 +17,9 @@ Vamos experimentar aqui mostrar alguns dos casos mais simples. Para casos mais c
 
 ### Ponto e círculo
 
+![animação ponto no círculo](assets/point_in_circle.gif)
+
+
 Um dos casos mais simples, saber se um ponto está em um círculo, pode ser resolvido calculando a distância do ponto ao centro do círculo e comparando essa distância com o raio do círculo (se a distância for menou ou igual ao raio, o ponto está dentro).
 
 ```python
@@ -38,7 +41,7 @@ def rect_in_area(xm, ym, wm, hm, xa, ya, wa, ha):
 
 ### Ponto e polígono
 
-![collision_point_poly](https://github.com/villares/material-aulas/assets/3694604/bf5f8efe-a6dd-4b73-a358-4d053c355565)
+![animação ponto no polígono](assets/point_in_poly.gif)
 
 Um dos mais importantes problemas da geometria comptutacional, esta função, baseada em [Point Inclusion in Polygon Test](https://wrf.ecse.rpi.edu/Research/Short_Notes/pnpoly.html) de W. Randolph Franklin, recebe as coordenadas de um ponto e um iterável com pontos (ou tuplas de coordenadas) representando um polígono.
 
