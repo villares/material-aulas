@@ -13,7 +13,7 @@ Uma referência inestimável de funções que respondem as principais perguntas 
 
 Vamos experimentar aqui mostrar alguns dos casos mais simples. Para casos mais complexos, pode ser útil também experimentar usar uma biblioteca especializada em processar geometrias 2D, como *shapely*
 
-## Algumas mplementações "ingênuas"
+## Algumas implementações "ingênuas"
 
 ### Ponto e círculo
 
