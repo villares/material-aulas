@@ -28,10 +28,22 @@ def point_in_circle(px, py, cx, cy, r):
     return dist(px, py, cx, cy) <= r
 ```
 
-### Retângulo dentro de um retângulo
+### Retângulos
 
-Aa funçao `rect_in_area()` responde se um primeito retângulo está completamente dentro de segundo retângulo.
+#### Retângulo sobrepondo retângulo
 
+```python
+def rect_over_rect(x1, y1, w1, h1, x2, y2, w2, h2):
+    return (x1 + w1 >= x2 and    # borda direito do r1 passa esquerda do r2 
+            x1 <= x2 + w2 and    # borda esquerda do r1 passa direita do r2
+            y1 + h1 >= y2 and    # topo do r1 avança sobre base do r2
+            y1 <= y2 + h2)       # base do r1 avança sobre topo do r2 
+
+```
+
+#### Retângulo completamente dentro de um retângulo
+
+Aa funçao `rect_in_area()` responde se um primeito retângulo está completamente dentro de um segundo retângulo.
 
 ```python
 
@@ -87,7 +99,6 @@ def point_in_poly(x, y, poly_pts):
             inside = not inside
     return inside
 ```
-
 
 ## Experimentando com *shapely*
 
