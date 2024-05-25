@@ -586,6 +586,7 @@ def draw():
     for x, y in pontos:
         curve_vertex(x, y)
     curve_vertex(pontos[0][0], pontos[0][1])
+    curve_vertex(pontos[1][0], pontos[1][1])
     end_shape(CLOSE)
     stroke_weight(1)
     for i, ponto in enumerate(pontos):
