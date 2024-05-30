@@ -36,8 +36,8 @@ Você percebe o que está acontecendo? Pense nestas questões:
 - Por qual motivo o último pedido de rotação e desenho, sendo exatamente igual ao anterior, não faz o "quadrado 2" cair sobre o "quadrado 1"?
 
 As respostas para essas perguntas são:
-- A rotação está acontecento em torno da *origem do sistema de coordenadas*, isto é (0, 0), o ponto onde X e Y valem zero. Imagine um papel milimetrado com uma tachinha fixada na origen, estamos girando o papel em torno da taxinha.
-- É sim possível escolher esse ponto usando `translate()` mara mover a origem. Podemos tirar a tachinha, mover o papel e fixá-la novamente.
+- A rotação está acontecento em torno da *origem*, o ponto de referência inicial do sistema de coordenadas, onde X e Y valem zero. Imagine um papel milimetrado com uma tachinha fixada na origem e estamos então girando o papel em torno desse ponto.
+- É sim possível escolher a origem usando `translate()` mara mover a origem. Podemos tirar a tachinha, mover o papel e fixá-la novamente.
 - As operações de transformação do sistema de coordenadas, como a rotação com a função `rotate()`, são cumulativas, e isso vai ser um problema a ser resolvido um pouco mais a frente.
 
 ## Resolvendo a primeira parte, a escolha do centro da rotação, usando a translação
