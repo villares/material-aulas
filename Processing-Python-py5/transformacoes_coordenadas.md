@@ -125,7 +125,7 @@ def setup():
     scale(1.5)
 ```
 
-Repare como a aplicação do fator de escala acontece baseada na origem do sistema de coordanadas (que nesta caso não foi modificado) e é cumulativa. Note também como a escala afeta a espessura de linha do traço, o atributo gráfico que pode ser controlado com `stroke_weight()`.
+Repare no exemplo acima como a aplicação do fator de escala acontece baseada na origem do sistema de coordanadas, que não foi modificada, e a transformação de escala é cumulativa. Note também como a escala afeta a espessura de linha do traço, o atributo gráfico que pode ser controlado com `stroke_weight()`.
 
 Você consegue imaginar qual o código que gera a imagem a seguir?
 
@@ -212,7 +212,7 @@ def quadrado_girado(x, y, lado, rot):
 
 ![](assets/3D.png)
 
-Se você estiver trabalhando em três dimensões, poderá chamar a função `translate()` com três argumentos para as distâncias *x*, *y*, e *z*, a função `scale()` pode ser chamada também com três argumentos e as funções `rotate_x()`, `rotate_y()` e `rotate_z()`, que recebem um argumento em radianos e fazem a rotação em torno de cada eixo.
+Se você estiver trabalhando em três dimensões, poderá chamar a função `translate()` com três argumentos para as distâncias *x*, *y*, e *z*, a função `scale()` pode ser chamada também com três argumentos e as funções `rotate_x()`, `rotate_y()` e `rotate_z()`, que recebem um argumento em radianos e fazem a rotação em torno de cada eixo. Vej o código que produz esta imagem na [página sobre desenho em 3D](desenho-3D.md).
 
 ## Assuntos relacionados
 
