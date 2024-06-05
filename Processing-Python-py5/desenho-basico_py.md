@@ -11,7 +11,10 @@ rect(100, 50, 150, 200)
 
 ![IDE](assets/01-IDE.png)
 
-**Experimente alterar os números entre parênteses e executar novamente...**
+> Nota: Se você teve este erro, não esqueça de ligar a opção ***imported mode for py5*** no menu **py5** do Thonny.
+> ![image](https://github.com/villares/material-aulas/assets/3694604/f623c0d0-d5f0-4166-83ff-2edb9ea2423d)
+
+Experimente alterar os números entre parênteses e executar novamente!
 
 ## Área de desenho e coordenadas
 
