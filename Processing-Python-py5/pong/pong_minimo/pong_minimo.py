@@ -43,6 +43,7 @@ def draw():
     else:
         text_size(100)
         text_align(CENTER, CENTER)
+        fill(255)  # opcional no py5, necessário no pyp5js
         text("GAME OVER", width / 2, height / 2)
     # regras de rebatimento da bola
     if x > width - MEIA_BOLA:
