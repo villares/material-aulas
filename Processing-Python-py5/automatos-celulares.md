@@ -25,9 +25,11 @@ The Game of Life is a cellular automaton devised by the British
 mathematician John Horton Conway in 1970. It is the best-known example
 of a cellular automaton.
 
-Based on Jeremy Douglass' Processing code & Villares Processing Python mode code
-https://rosettacode.org/wiki/Conway%27s_Game_of_Life#Processing_Python_mode
+Based on Jeremy Douglass' Processing code & Villares' Processing Python mode code
+at https://rosettacode.org/wiki/Conway%27s_Game_of_Life#Processing_Python_mode
+now using py5 in imported mode style (learn more about it at https://py5coding.org)
 """
+from itertools import product
 
 cell_size = 5
 sample = 1
@@ -38,6 +40,7 @@ def setup():
     global grid, next_grid, rows, cols
     size(800, 800)
     no_stroke()
+    fill(255)
     rows = height // cell_size
     cols = width // cell_size
     grid = empty_grid()
@@ -51,28 +54,29 @@ def setup():
     print("'r' to randomize grid")
     print("'+' and '-' to change speed")
 
+def predraw_update():
+    if play:
+        for i, j in product(range(cols), range(rows)):
+            ngbs_alive = calc_ngbs_alive(i, j)
+            next_grid[i][j] = rule(grid[i][j], ngbs_alive)
+            
 def draw():
     background(0)
     for i in range(cols):
-        x = i * cell_size
         for j in range(rows):
-            y = j * cell_size
-            current_state = grid[i][j]
-            fill(255)
-            if current_state:
-                rect(x, y, cell_size, cell_size)
-            if play:
-                ngbs_alive = calc_ngbs_alive(i, j)
-                result = rule(current_state, ngbs_alive)
-                next_grid[i][j] = result
+            if grid[i][j]:
+                square(i * cell_size,
+                       j * cell_size,
+                       cell_size)
 
-    if play and frame_count % sample == 0 and not is_mouse_pressed:
+    if play and not is_mouse_pressed:
         step()
 
 def step():
     global grid, next_grid
-    grid = next_grid
-    next_grid = empty_grid()
+    if frame_count % sample == 0:
+        grid = next_grid
+        next_grid = empty_grid()
 
 def rule(current, ngbs):
     """ classic Conway's Game of Life rule """
@@ -84,10 +88,10 @@ def rule(current, ngbs):
         return current  # stays the same (ngbs == 2)
 
 def calc_ngbs_alive(i, j):
-    NEIGHBOURS = ((-1, 00), (0o1, 00),  # a tuple describing the neighbourhood of a cell
-                  (-1, -1), (00, -1),
-                  (0o1, -1), (-1, 0o1),
-                  (00, 0o1), (0o1, 0o1))
+    NEIGHBOURS = ((-1, 0), (1, 0),  # a tuple describing the neighbourhood of a cell
+                  (-1, -1), ( 0, -1),
+                  ( 1, -1), (-1,  1),
+                  ( 0,  1), ( 1,  1))
     alive = 0
     for iv, jv in NEIGHBOURS:
         alive += grid[(i + iv) % cols][(j + jv) % rows]
@@ -139,11 +143,14 @@ def paint():
     if p != last_cell:
         last_cell = p
         grid[i][j] = (1, 0)[grid[i][j]]
+
 ```
 
 #### GoL com tabuleiro infinito
 
 ```python
+# py5 "module mode" style code
+
 from collections import Counter
 from random import randint
 import py5
@@ -221,7 +228,8 @@ py5.run_sketch()
 #### GoL com Numpy
 
 ```python
-# baseado em on https://www.jpytr.com/post/game_of_life/
+# Baseado em on https://www.jpytr.com/post/game_of_life/
+# Usando py5 no estilo "module mode"
 
 import py5
 import numpy as np
