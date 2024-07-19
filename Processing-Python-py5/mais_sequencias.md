@@ -1,5 +1,5 @@
 # Mais sobre sequências e fatias em coleções ordenadas
-
+## Listas, tuplas e *strings*
 Listas e tuplas são duas das mais comuns coleções ordenadas de itens no Python. *Strings* (cadeias de caracteres) ou textos, para simplificar, são coleções ordenadas também, contendo caracteres (letras, emojis ou glifos em geral).  No meio do código, uma tupla pode ser construída com parenteses `( ,)` e a lista com colchetes `[ ,]`, um *string* com aspas, simples `'  '`,  duplas `"  "`  ou trincas de aspas simples ou duplas (`'''  '''` e `"""  """`).
 
 ```python
@@ -113,7 +113,7 @@ print(lista) # [1976, 2013]
 
 Tuplas e strings são imutáveis, não permitem esses tipos de operação.
 
-## Fatias
+### Fatiamento (*slicing*)
 
 Com a notação `[inicio:parada:passo]` podemos obter uma subsequência ou fatia (*slice*) de uma sequência. É possível deixar vazias as posições dessa notação, na forma `[inicio:parada]`, `[:parada]`, `[inicio:]`, ou ainda `[::passo]`, entre outras. Veja alguns exemplos:
 
