@@ -4,7 +4,7 @@
 
 ![](assets/java_python.png)
 
-# Considerações gerais
+## Considerações gerais
 
 - Como você provavelmente sabe, em Python o que conta para saber se uma linha de código está 'dentro' de uma função ou de outra estrutura qualquer, como um `if`, é a indentação. No Java são as chaves `{}` que mandam, mas é comum a indentação refletir a hierarquia, mesmo isso não sendo obrigatório. Por isso, use a ferramenta de auto-formatação do IDE antes de começar e avance com cuidado!
 - As chaves precisam ser removidas, e você deve trocar cada `{` por `:` no começo de um bloco de instruções(isso só não vale para as definições de *arrays*, que tem chaves mas não definem um bloco de instruções, e viram uma lista ou uma tupla com `[]` ou` ()`).
@@ -27,7 +27,7 @@
       return (a + b) / 2
   ```
 
-# Um quadro com equivalências para conversão
+## Um quadro com equivalências para conversão
 
 Os valores booleanos em Java são `true` e `false`, o que em Python fica `True` e `False`.  Vamos fazer um quadro com os operadores lógicos e algumas outras equivalências. 
 
@@ -44,16 +44,37 @@ Os valores booleanos em Java são `true` e `false`, o que em Python fica `True` 
 | `for (int i=0; i < limite; i++){ … `             | `for i in range(limite): …`                |
 | `for (int i=inicio; i < limite; i += passo){ … ` | `for i in range(inicio, limite, passo): …` |
 | `for (Bola b : array_list_bolas){ …`               | `for b in lista_bolas: …`                   |
-| `for (Bola b : array_list_bolas){ …`               | `for b in lista_bolas: …`                   |
 | `fill(#FFCC00) // cor em notação hexadecimal  `  | `fill("#FFCC00") # precisa aspas |
 
 E semelhante a `null` de Java temos o valor `None` em Python os usos não são totalmente equivalentes mas é um bom palpite fazer a substituição.
 
-# Loops `for`
+## Loops `for`
 
-O caso mais simples é um `for` baseado em um contador qualquer, como `for (int i=0; i < limite; i++){ … `  e a tradução é `for i in range(limite): …`
+O caso mais simples é um `for` baseado em um contador qualquer, ou o chamado *for each*:
 
-O chamado *for each*, mostrado no quadro, também é muito direto, mas se você encontrar um loop `for` no Java com um passo não inteiro (*float*), como a construção baseada em `range()` no  Python só funciona com números inteiros, você vai ter que implementar um range 'especial', como mostrado abaixo com `frange()` ou então convertê-lo em um loop `while`:
+**Java**
+```java
+for (int i=0; i < limite; i++){
+  …
+}
+
+for (Bola b : array_list_bolas){
+  …
+}
+```
+
+**Python**
+```python
+for b in lista_bolas:
+  …
+
+for i in range(limite):
+  …
+```
+
+## O caso dos passos não-inteiros
+
+Se você encontrar um loop `for` no Java com um passo não inteiro (*float*), como a construção baseada em `range()` no  Python só funciona com números inteiros, você pode convertê-lo em um loop `while`, usar da biblioteca Numpy o método `numpy.arange()`, ou ainda implementar um range 'especial', como mostrado mais abaixo com `frange()`:
 
 **Java**
 
@@ -63,8 +84,7 @@ for (float angulo=0; angulo < TWO_PI; angulo += passo){
     …
 }
 ```
-
-**Python**
+### Convertendo em `while` no Python
 
 ```python
 passo = TWO_PI / 18
@@ -74,7 +94,17 @@ while angulo < TWO_PI:
     angulo += passo
 ```
 
-### Implementando um range com passos não inteiros:
+### Usando NumPy
+
+```python
+import numpy as np
+
+angle_step = TWO_PI / 18
+for angle in np.arange(0, TWO_PI, angle_step):
+    ...
+```
+
+### Implementando um range com passos não inteiros
 
 ```python
 def frange(start, stop=None, step=1):
@@ -100,8 +130,7 @@ for angulo in frange(0, TWO_PI, passo):
 ```
 Nota: Cuidado com a comparação de *floats* que pode ser perigosa...
 
-# Aqui um exemplo de laço é feito apenas para pegar objetos de uma estrutura de dados:
-
+### Aqui um exemplo de laço é feito apenas para pegar objetos de uma estrutura de dados:
 
 ```java
 for (int i = 0;  i < meu_array.length; i++) {
@@ -157,7 +186,7 @@ for i, p in reversed(list(enumerate(particles))):
 ```
 
 
-# `if`, `else` e seus amigos
+## `if`, `else` e seus amigos
 
 Note que a condição do `if` no Python não tem os parênteses obrigatórios no Java. A combinação de um `else if` vira a contração `elif`.
 
@@ -193,7 +222,7 @@ for i in range(2, width - 2, 2):
         line(i, height / 2, i, height - 20)
 ```
 
-# Operador ternário
+### Operador ternário
 
 **Java**
 
@@ -208,7 +237,7 @@ resultado = cond ? a : b
 
 # switch & case
 
-Não existia `switch/case` no Python até recentementte, agora com Python 3.10 temos correspondência de padrões (*pattern matching*), mas acredito que em geral você pode trocar a estrutura do Java por uma cadeia de `if/elif` ou, se for só para chamar diferentes funções, um dicionário de funções.
+Não existe`switch/case` no Python. Com Python 3.10 temos correspondência de padrões (*pattern matching*), que pode até ser usada numa estrutura `match/case`, mas acredito que, em geral, você pode preferir trocar a estrutura do Java por uma cadeia de `if/elif` ou, se for só para chamar diferentes funções, um dicionário de funções.
 [TO DO página sobre isso].
 **Java** você pode trocar
 ```java
@@ -241,7 +270,7 @@ else:
     print("Not found")  
 ```
 
-# Variáveis globais
+## Variáveis globais
 
 Se a variável for *declarada e inicializada* (definido o tipo e o valor) no começo do *sketch* basta remover a declaração de tipo.
 
@@ -315,7 +344,7 @@ def draw():
     ellipse(xpos, ypos, rad * 2, rad * 2)
 ```
 
-# Strings
+## Strings
 
 Em Python 3 por padrão os strings agora são unicode (não era assim no Python 2). Existe um tipo `bytes` que não é unicode.
 
