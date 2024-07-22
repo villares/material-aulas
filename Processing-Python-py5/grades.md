@@ -74,5 +74,6 @@ def draw():
 
 - [Sequências e laços de repetição](lacos_py.md)
 - [Cores com HSB (Matiz, Saturação e Brilho)](cores_HSB.md)
-- [Usando uma função geradora (*generator*) que devolve tuplas de coordenadas](grades2.md)
+- [Usando uma função geradora (*generator*)](grades2.md)
+- [Uma grade com recursividade](https://abav.lugaralgum.com/material-aulas/Processing-Python-py5/recursao_py.html#uma-grade-recursiva)
 
