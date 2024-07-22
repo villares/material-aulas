@@ -1,4 +1,5 @@
-# Uma função geradora (*generator*) que devolve tuplas de coordenadas
+# Uma função geradora (*generator*) 
+## Devolve um objeto que produz tuplas de coordenadas
 
 Neste exemplo, a parte central da construção da grade, os laços encaixados produzindo as coordenadas, foi encapsulada em uma função separada, a qual passamos um certo número de filas e colunas. Os dois últimos argumentos, opcionais, definem a largura da coluna e altura da fila.
 
@@ -37,16 +38,16 @@ def grid(colunas, filas, tam_col=1, tam_fil=1):
     range_colunas = range(int(colunas))
     for y in range_filas:
         for x in range_colunas:
-            # o yield no lugar de return muda tudo
+            # o yield no lugar de return muda tudo...
             yield (x * tam_col, y * tam_fil)
 
-    # faz essa função como um todo devolve um objeto gerador que por sua vez vai
-    # produzindo os resultados conforme a necessidade. Dentro de um loop, por
-    # exemplo.
+    # ...faz esta função como um todo devolver um objeto gerador que por sua vez vai
+    # produzir os resultados conforme a necessidade, suspendendo a execução e depois
+    # voltando. Podendo o objeto gerador ser consumido dentro de um loop, por exemplo.
 ```
 
 ### Assuntos relacionados
 
 - [Cores com HSB (Matiz, Saturação e Brilho)](cores_HSB.md)
 
-![](assets/sketch_2020_04_12a.png)
+

@@ -40,11 +40,12 @@ for x in range(20, 400, 40): # 10 números de 20 a 380, de 40 em 40
 
 ![](assets/grade.png)
 
-É possível também fazer uma "coluna de filas", mudando só a ordem de desenho, mas não o resultado visual final.
-
-Veja um exemplo, um pouco ampliado, em que a posição do elemento altera a cor e o tamanho:
+É possível também fazer uma "coluna de filas", mudando só a ordem de desenho, mas não o resultado visual final. Veja um exemplo, um pouco ampliado, em que a posição do elemento altera a cor e o tamanho:
 
 ```python
+colunas = 10
+filas = 10
+
 def setup():  
     size(400, 400)
     color_mode(HSB)
@@ -52,24 +53,26 @@ def setup():
 def draw():
     background(0)
     no_stroke()
-    colunas, filas = 10, 10    
-    tam_coluna, tam_fila = width / colunas, height / filas  # largura coluna, altura fila
-    offset_x, offset_y = tam_coluna / 2., tam_fila / 2.  # deslocamento de meio tamanho
+    cw = width / colunas # largura celula/coluna (também altura da fila)
     for i in range(colunas):
-        x = i * tam_coluna + offset_x
+        x = i * cw + cw / 2
         for j in range(filas):
-            y = j * tam_coluna + offset_y
-            # desenho do elemento em x, y
-            s = 10 + i + j
-            h = (x + y) % 256
+            y = j * cw + cw / 2
+            # diâmeto baseado na soma da linha  coluna
+            d = 10 + cw * (i + j) / (colunas * 2.5)
+            # matiz baseado no produto da linha e coluna
+            h = 10 + (i * j) * 2.2
             c = color(h, 255, 200)
             fill(c)
-            ellipse(x, y, s, s)
+            # desenho do elemento em x, y
+            circle(x, y, d)
+
 ```
-![](https://github.com/villares/material-aulas/blob/master/Processing-Python/assets/sketch_2020_04_12b.png?raw=true)
+![](assets/grade_colorida.png)
 
 ### Assuntos relacionados
 
 - [Sequências e laços de repetição](lacos_py.md)
+- [Cores com HSB (Matiz, Saturação e Brilho)](cores_HSB.md)
 - [Usando uma função geradora (*generator*) que devolve tuplas de coordenadas](grades2.md)
 
