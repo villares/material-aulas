@@ -4,7 +4,40 @@ Allen Downey [no livro Pense em Python 2e](https://penseallen.github.io/PensePyt
 
 Para que isso funcione, e não caia em uma cilada conhecida como "recursão infinita", é preciso que a função sendo chamada possa, em certas condições, chegar em uma opção de execução que não requer chamar ela mesma. Essa condição que executa sem recursão é também conhecida como "caso base".
 
+## Árvore recursiva
+
+<iframe src="https://abav.lugaralgum.com/sketch-a-day/2019/sketch_191025pybr2019/index.html" width=500 height=500></iframe>
+
+[exemplo interativo com pyp5js](https://abav.lugaralgum.com/sketch-a-day/2019/sketch_191025pybr2019/index.html)
+
+```python
+def setup():
+    size(500, 500)
+
+def draw():
+    background(240, 240, 200)
+    translate(250, 300)  # desloca a origem, o 0,0 das coordenadas
+    galho(60)
+
+def galho(tamanho):
+    ang = radians(mouse_x)
+    encurtar = 0.8
+    line(0, 0, 0, -tamanho)
+    if tamanho > 5:  # caso base quando tamanho não é maior que 5
+        translate(0, -tamanho)  # desloca origem para ponta do galho
+        rotate(ang)
+        galho(tamanho * encurtar)
+        rotate(2 * -ang)
+        galho(tamanho * encurtar)
+        rotate(ang)            # desfaz rotação
+        translate(0, tamanho)  # desfaz deslocamento da origem
+```
+
+Note como a função `galho()`, no seu corpo, chama `galho()` com valores sucessivamente menores, e se o `tamanho` form menor que 5, não chama mais a si mesma.
+
 ## Uma grade recursiva
+
+![](assets/grade_recursiva.png)
 
 ```python
 def setup():
@@ -30,34 +63,4 @@ def grid(grid_x, grid_y, grid_size, n):
                 grid(x, y, cell_size, int(random(1, 5)))
 ```
 
-![](assets/grade_recursiva.png)
 
-
-## Árvore recursiva
-
-```python
-def setup():
-    size(500, 500)
-
-def draw():
-    background(240, 240, 200)
-    translate(250, 300)  # desloca a origem, o 0,0 das coordenadas
-    galho(60)
-
-def galho(tamanho):
-    ang = radians(mouse_x)
-    encurtar = 0.8
-    line(0, 0, 0, -tamanho)
-    if tamanho > 5:  # caso base quando tamanho não é maior que 5
-        translate(0, -tamanho)  # desloca origem para ponta do galho
-        rotate(ang)
-        galho(tamanho * encurtar)
-        rotate(2 * -ang)
-        galho(tamanho * encurtar)
-        rotate(ang)            # desfaz rotação
-        translate(0, tamanho)  # desfaz deslocamento da origem
-```
-
-[exemplo interativo com pyp5js](https://abav.lugaralgum.com/sketch-a-day/2019/sketch_191025pybr2019/index.html)
-
-<iframe src="https://abav.lugaralgum.com/sketch-a-day/2019/sketch_191025pybr2019/index.html" width=500 height=500></iframe>
