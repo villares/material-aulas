@@ -6,8 +6,7 @@ Para que isso funcione, e não caia em uma cilada conhecida como "recursão infi
 
 ## Árvore recursiva
 
-<div id = "iframe_DIV" ></div>
-<a id="iframe_A" href="https://abav.lugaralgum.com/sketch-a-day/2019/sketch_191025pybr2019/index.html" width=600 height=600> Exemplo interativo com pyp5js</a>
+<iframe src="https://abav.lugaralgum.com/sketch-a-day/2019/sketch_191025pybr2019/index.html" width=500 height=500> Exemplo interativo com pyp5js</iframe>
 
 > Mova o mouse sobre o *sketch* acima.
 
