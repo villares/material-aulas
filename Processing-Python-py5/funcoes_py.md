@@ -78,7 +78,7 @@ A função `olho()` desenha um olho mas não devolve nenhum valor, na verdade el
 
 As funções que são feitas para devolver um resultado contém a palavra `return` no seu corpo, seguida do resultado calculado. A instrução `return` pode aparecer no meio da função, mas sempre que for executada interrompe a execucão da função, *devolvendo* o fluxo de execução para o ponto onde a função foi chamada.
 
-<sup>Se não houver um valor depois de `return` no corpo, a função devolve o valor especial `None`, o mesmo que acontece com funções que não tem `return`, só que no ponto onde está escrito `return`.</sup>
+<sup>Se não houver uma expressão ou valor depois na palavra chave `return` em uma linha do corpo da função, esta se encerrará caso a linha seja executada e será devolvido o valor especial `None`, o mesmo valor que é devolvido por funções que não tem `return` no corpo quando chegam ao final e se encerram.</sup>
 
 Aqui alguns exemplos:
 
@@ -136,7 +136,7 @@ else:
 
 Para que uma função seja executada pelo Python, ela precisa ser "chamada", também dizemos "invocada", por meio de seu nome e os parênteses justapostos. Mas se você olhar atentamente, onde estão as chamadas para `setup()` e `draw()`?
 
-A biblioteca py5 faz essas chamadas para nós dentro da função `run_sketch()`, que por sua vez está sendo chamada automáticamente 
+A biblioteca py5 faz essas chamadas para nós dentro da função `run_sketch()`, que por sua vez está sendo chamada automaticamente 
 para pelo *plug-in* `thonny-py5mode`, quando a opção *imported mode for py5* está ligada, no Thonny IDE. A função `run_sketch()` cuida então de chamar para nós a função `setup()` logo no ínicio apenas uma vez, e `draw()` sem parar, no que é conhecido às vezes como "laço principal de animação" do sketch. Da mesma forma, as "funções de evento", como `key_pressed()`, e outras tantas, são chamadas pela biblioteca.
 
 > Mais detalhes ainda (se você tiver curiosidade): Isso tudo foi feito para simplificar a experiência de quem está programando. Além chamar as funções apropriadas, o plug-in também evita que tenhamos que digitar `py5.` como prefixo em todas as funções que vem da biblioteca. Então isso tudo é um pouco mágico e pode parecer um pouco confuso.
@@ -154,7 +154,9 @@ para pelo *plug-in* `thonny-py5mode`, quando a opção *imported mode for py5* e
 
 ## Abstração
 
-Você vai ouvir as pessoas falando sobre a ideia de abstração e encapsulamento na programação, isso tem a ver com o poder de se dar um nome a um conjunto coisas que captura de alguma forma a essencia do que esse conjunto faz. Isso é o que fazemos ao criar e nomear uma função. Posteriormente podemos comport abstrações ainda maiores usando funções que criamos anteriormente.
+Você vai ouvir pessoas falando sobre as ideias de abstração e encapsulamento na programação, alguns autores associam em especial o termo encapsulamento às ideias de orientação a objetos, mas o autor Allen Downey, por exemplo, o usa também no contexo da criação de funções.
+
+Ambas as palavras remetem ao poder de se dar nomes a reunião de elementos que capturam, de alguma forma, a essencia do que esses elementos reunidos fazem, escondendo detalhes do seu funcionamento conjunto. Isso é o que fazemos ao criar e nomear funções. Posteriormente podemos compor abstrações ainda maiores usando as funções que criamos anteriormente, e no caso da orientação a objetos nomear classes cujos objetos tem suas próprias funções, os métodos.
 
 ## Glossário
 
