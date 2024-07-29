@@ -160,7 +160,9 @@ Vamos ver agora duas estruturas de dados muito usadas em Python para guardar col
 Exemplo de uma tupla:
 
 ```python
-tupla_sertaneja = ("Maiara", "Maraisa")
+tupla_sertaneja = "Maiara", "Maraisa"
+# ou
+# tupla_sertaneja = ("Maiara", "Maraisa")
 ```
 
 Exemplo de uma lista:
@@ -168,7 +170,7 @@ Exemplo de uma lista:
 ```python
 escritores = ["Primo Levi", "Machado de Asssis"]
 ```
-A principal diferença, além do fato de que a tupla foi construída com parenteses `( ,)`e a lista com colchetes `[ ,]`, é que **uma lista permite que seus itens sejam alterados**, itens podem ser adicionados, removidos, ou, como um todo, podem ser reordenados. Dizemos que uma lista é *mutável*.
+A principal diferença, além do fato de que uma tupla é construída com uma ou mais vírgulas apenas, e se necessário em alguns contextos com parenteses `( ,)`, e uma lista é construida com colchetes `[ ,]`, e tupla  é que **uma lista permite que seus itens sejam alterados**, itens podem ser adicionados, removidos, ou, como um todo, podem ser reordenados. Dizemos que uma lista é *mutável*.
 
 ```python
 frutas = ["uva", "banana"]
@@ -205,7 +207,7 @@ Um outro termo usado para se referir a uma coleção em que a ordem importa e n�
 Podemos 'desempacotar' uma tupla, atribuindo os seus valores a variáveis, desde que o número de variáveis seja igual ao número de itens:
 
 ```python
-posicao = (250, 120) 
+posicao = 250, 120  # ou posição = (250, 120) 
 x, y = posicao # x passa a valer 250 e y passa a valer 120
 
 # mais simples, mas com o mesmo resultado, do que escrever:
