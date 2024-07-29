@@ -92,7 +92,11 @@ viva!
 </pre>
 </details>
 
-## Mais exemplos (com o resultado oculto para você tentar resolver antes de olhar)
+## Mais exemplos 
+
+Veja a seguir mais alguns exemplos com o resultado oculto para você tentar resolver antes de olhar.
+
+#### Linhas
 
 Agora outro exemplo usando `range()` com efeito visual.
 
