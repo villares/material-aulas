@@ -1,8 +1,9 @@
 # Sequências e laços de repetição
 
-É muito comum em programação pedir ao computador que repita uma ação várias vezes, possivelmente com variações. Para fazer isso frequentemente usamos os chamados laços de repetição (*loops*) e o processo também pode ser chamado de iteração (note que não é i**n**teração, que é outra coisa).
+É muito comum em programação pedir ao computador que repita uma ação várias vezes, possivelmente com variações. Para fazer isso frequentemente usamos os chamados laços de repetição (*loops*) e o processo de repetir operações também é por vezes chamado de iteração (note que não é i**n**teração, que é outra coisa).
 
-Antes de chegar na execução das repetições com o laço `for`, propriamente, é útil saber como criar rapidamente sequências de valores. Existe uma função em Python que produz um "máquina" que produz valores inteiros, o `range()`, poderíamos talvez traduzir *range* como "faixa" e `range()` então produz geradore de "faixas de números inteiros". Podemos obter sequências chamadas listas, a partir do range usando `list(range(n))`, como veremos a seguir.
+Antes de mostrar as repetições usando a estrutura chamada laço `for` pode ser útil saber como criar rapidamente sequências de valores. Existe uma função em Python que produz uma espécie de  "máquina" que entrega valores inteiros, chamada `range()`.
+Poderíamos talvez traduzir *range* como "faixa" e `range()` então produz geradores de "faixas de números inteiros" que poderemos consumir nos laços `for`. Se quisermos obter listas, que poderam ser percorridas e consultadas diversas vezes, ou exibidas com `print()`,  podemos usar `list(range(n))`, como veremos a seguir.
 
 ## Produzindo sequências de inteiros com `range()`
 
