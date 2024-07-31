@@ -49,7 +49,8 @@ def setup():
                   50, 100)     # 6: vértice
     end_shape()
 
-    pontos = [
+    # anotações
+    pts = [
         (100, 50),   # 0 
         (150, 150),  # 1
         (250, 150),  # 2
@@ -59,12 +60,10 @@ def setup():
         (50, 100),   # 6
         ]
     stroke_weight(1)
-    for i, ponto in enumerate(pontos):
-        x, y = ponto
+    for i, (x, y) in enumerate(pts):
         fill(255)
         circle(x, y, 5)
-        t="{}: {:3}, {:3}".format(i, x, y)
-        text(t, x+5, y-5)
+        text(f"{i}: {x}, {y}", x+5, y-5)
 </pre>
 
 </details>
