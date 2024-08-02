@@ -13,7 +13,7 @@ def setup():
 
 
 def draw():
-    """ Laço principal de repetição do Processing """
+    """ Laço principal de repetição """
     global x, y
     background(0)  # limpeza do frame, fundo preto
     bandeirinha(x, y)  # desenha o polígono

@@ -13,7 +13,7 @@ def setup():
 
 
 def draw():
-    """ Laço principal de repetição do Processing """
+    """ Laço principal de repetição """
     background(0)  # atualização do desenho, fundo preto
     bandeira_0.desenha()
     bandeira_0.anda()

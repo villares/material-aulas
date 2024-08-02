@@ -1,7 +1,7 @@
 """
 Exemplo de declaração de uma função com parâmetros; translação do sistema de cordenadas,
 preservando o sistema orginal numa pilha com pushMatrix() e chamada da nova função.
-Nota: A área de desenho padrão do Processing é 100 x 100 pixels, com um fundo cinza.
+Nota: A área de desenho padrão é 100 x 100 pixels, com um fundo cinza.
 """
 
 
