@@ -3,23 +3,17 @@
 
 <img src="imagens/passo_final.gif" align="right"  alt="output passo 4">
 
-O material abaixo serviu de base para o artigo:
-
-> VILLARES, A. B. A.; MOREIRA, D. DE C.; GOMES, M. R. [Ensino de programação em um contexto de exploração gráfica com Processing modo Python](https://villares.github.io/mestrado/VILLARES_MOREIRA_GOMES_GRAPHICA_2017). In: Anais GRAPHICA 2017 - XII International Conference on Graphics Engineering for Arts and Design. Anais…Araçatuba(SP) UNIP, 2017.
-
-*Para executar [instale o Processing com o modo Python](http://villares.github.io/como-instalar-o-processing-modo-python/)*
-
 Bandeirinhas são um tema recorrente da cultura visual brasileira, visível não só nas Festas Juninas como explorado largamente por artistas visuais como Alfredo Volpi. Foram escolhidas para gerar reconhecimento e interesse visual nas imagens e animações produzidas.
 
 Numa aula que se desenvolve normalmente em cerca de 7 etapas, são introduzidos conceitos de orientação a objetos: Classe, atributos de dados e métodos, instâncias e encapsulamento. Não são abordadadas ainda questões de herança e composição.
-Para poder aproveitar o exemplo os alunos tiveram contato em aulas anteriores  com programação [procedural/imperativa](http://cs.lmu.edu/~ray/notes/paradigms/)
- além de vocabulário específico da plataforma Processing:
-* Declaração de variáveis e noções de tipagem;
-* Métodos de desenho `rect`, `line`, `ellipse`, `beginShape`, `vertex` e `endShape`;
-* Controle de atributos gráficos `fill`, `stroke`, `noStroke`, `noFill`, `background`;
-* Controle de fluxo de execução e laços (`if`, `else` e `for`);
+Para poder aproveitar o exemplo os alunos tiveram contato em aulas anteriores  com programação [imperativa](http://cs.lmu.edu/~ray/notes/paradigms/) além de vocabulário gráfico do Processing / py5:
+
+* Variáveis e noções de tipagem;
+* Funções de desenho `rect`, `line`, `begin_shape`, `vertex` e `end_shape`;
+* Controle de atributos gráficos `fill`, `stroke`, `no_Stroke`, `no_fill`, `background`;
+* Controle de fluxo de execução e laços `if`, `else` e `for`;
 * Declaração de funções com e sem parâmetros;
-* Controle do sistema de coordenadas `pushMatrix`, `translate`, `rotate`, `scale`, `popMatrix`.
+* Controle do sistema de coordenadas `push_matrix`, `translate`, `rotate`, `scale`, `pop_matrix`.
 
 ### 0. Definindo funções e deslocando o sistema de coordenadas
 
@@ -49,7 +43,7 @@ def bandeirinha(px, py, tamanho=50):
         vertex(0, 0)
         vertex(metade, metade)
         vertex(metade, -metade)
-        endShape(CLOSE)  # encerra polígono, fechando no primeiro vértice
+        end_shape(CLOSE)  # encerra polígono, fechando no primeiro vértice
 ```
 A definição da função `setup()` não é obrigatória no Modo Python, mas é a parte inicial da estrutura `setup()`/`draw()` usada na maior parte dos programas que trabalham com interação ou movimento em Processing e é invocada uma única vez no início da execução. Note que neste momento já estará definida a função `bandeirinha()`.
 
@@ -308,3 +302,9 @@ E o método `desenha()` da bandeirinha agora sofre a influência da distância d
             vertex(metade, -metade)
             end_shape(CLOSE)  # encerra polígono, fechando no primeiro vértice
 ```
+
+---
+
+Uma versão anterior deste manterial foi a base para o artigo:
+
+> VILLARES, A. B. A.; MOREIRA, D. DE C.; GOMES, M. R. [Ensino de programação em um contexto de exploração gráfica com Processing modo Python](https://villares.github.io/mestrado/VILLARES_MOREIRA_GOMES_GRAPHICA_2017). In: Anais GRAPHICA 2017 - XII International Conference on Graphics Engineering for Arts and Design. Anais…Araçatuba(SP) UNIP, 2017.
