@@ -1,27 +1,25 @@
-# Particulas (Orientação a objetos)
-
-> Adapatdo de: VILLARES, A. B. A.
-MOREIRA, D. DE C.
-GOMES, M. R. [Ensino de programação em um contexto de exploração gráfica com Processing modo Python](https://villares.github.io/mestrado/VILLARES_MOREIRA_GOMES_GRAPHICA_2017). In: Anais GRAPHICA 2017 - XII International Conference on Graphics Engineering for Arts and Design. Anais…Araçatuba(SP) UNIP, 2017.
-> *Para executar[instale o Processing com o modo Python](http://villares.github.io/como-instalar-o-processing-modo-python /) *
+# Particulas com orientação a objetos
 
 Vamos ver aqui alguns conceitos introdutórios de orientação a objetos:
+- Como definir uma classe e instanciar objetos;
+- Como definir e consultar atributos (variáveis de instância ou campos) de um objeto;
+- Como definir e invocar métodos de um objeto.
 
-- Definindo uma Classe e instanciando objetos
-- Atributos(propriedades ou campos) e métodos de um um objeto
-
-Não são abordadadas ainda questões de herança ou composição.
+Não são abordadadas neste momento:
+- Herança;
+- Composição.
 
 Prerequisitos para aproveitar melhor este material:
-* Desenho básico no Processing:
-* Declaração de variáveis e noções de tipagem
-* Métodos de desenho `rect`, `line`, `ellipse`
-* Controle de atributos gráficos `fill`, `stroke`, `no_stroke`, `no_fill`, `background`
-* Controle de fluxo de execução e laços(`if`, `else` e `for`)
-* Declaração de funções com e sem parâmetros
+- Desenho básico com py5/Processing;
+- Variáveis e noções de tipagem;
+- Funções de desenho `rect`, `line` e `circle`;
+- Controle de atributos gráficos `fill`, `stroke`, `no_stroke`, `no_fill` e `background`;
+- Controle de fluxo de execução com condições (`if` e `else`) e laços de repetição (`for`);
+- Declaração de novas funções
 
-# 0. Começando sem orientação a objetos
-# Redesenhando formas e atualizando variáveis no laço principal do Processing
+## 0. Começando sem orientação a objetos
+
+### Redesenhando formas e atualizando variáveis no laço principal do Processing
 
 Para obter o efeito de movimento(animação de uma partícula) criaremos um par de variáveis globais `x` e `y`, que serão inicializadas no `setup()` com as coordenadas do meio da àrea de desenho. Note que o escopo global dessas variáveis precisa ser indicado com a palavra chave `global` quando pretendemos alterá-las.
 
@@ -51,8 +49,8 @@ def draw():
 
 
 ```
-# 1. Primeira aproximação de uma classe
-# Definindo a classe Partícula
+## 1. Primeira aproximação de uma classe
+### Definindo a classe Partícula
 
 Vamos agora obter o mesmo comportamento usando um objeto da classe definida pelo bloco `class Particula(): `.
 
@@ -105,8 +103,8 @@ class Particula():
 
 ```
 
-# 2. Instanciando mais objetos
-# Criando algumas partículas
+## 2. Instanciando mais objetos
+### Criando algumas partículas
 
 A vantagem da estruturação e encapsulamento de ter uma classe Particula pode começar a fazer sentido quando instanciamos mais de uma particula.
 
@@ -158,7 +156,6 @@ No método `atualize()`:
 
 ```python
 
-
 class Particula():
     """ Classe Particula, cor sorteada, velocidade sorteada """
 
@@ -198,8 +195,8 @@ class Particula():
 
 ```
 
-# 4. Muitas partículas!
-# Uma lista de objetos
+## 4. Muitas partículas!
+### Uma lista de objetos
 
 Uma estrutura de dados, no caso uma lista, pode de maneira muito simples conter referências para um grande número de objetos.
 Aqui chegamos rapidamente a um comportamento visualmente interessante instanciando 50 particulas no `setup()` e em seguida no `draw()` iteramos por estas particulas de maneira bastante típica em Python com um laço `for `*`object`*` in `*`collection_of_objects`*`: `
@@ -226,6 +223,10 @@ def draw():
 
 
 ```
+
 ```
 ...o código continua com a classe Particula mostrada anteriormente
 ```
+
+> Baseado inicialmente em: VILLARES, A. B. A.; MOREIRA, D. DE C.; GOMES, M. R. [Ensino de programação em um contexto de exploração gráfica com Processing modo Python](https://villares.github.io/mestrado/VILLARES_MOREIRA_GOMES_GRAPHICA_2017). In: Anais GRAPHICA 2017 - XII International Conference on Graphics Engineering for Arts and Design. Anais…Araçatuba(SP) UNIP, 2017.
+
