@@ -1,13 +1,13 @@
 """
-Exemplo de declaração de uma função com parâmetros; translação do sistema de cordenadas,
-preservando o sistema orginal numa pilha com pushMatrix() e chamada da nova função.
-Nota: A área de desenho padrão é 100 x 100 pixels, com um fundo cinza.
+Exemplo de declaração de uma função com parâmetros; translação do sistema de cordenadas, preservando o sistema orginal numa pilha com push_matrix() e chamada da nova função.
+
+Nota: A área de desenho padrão do py5 é 100 x 100 pixels, com um fundo cinza.
 """
 
 
 def setup():
     """ Código chamado uma vez no início da execução pelo Processing """
-    size(100, 100)  # define as dimensões do 'canvas' do Processing
+    size(100, 100)  # define as dimensões da área de desenho
     bandeirinha(50, 50)  # chama a função bandeirinha
 
 

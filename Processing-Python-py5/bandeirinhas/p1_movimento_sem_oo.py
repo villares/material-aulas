@@ -6,14 +6,14 @@ um fundo preto e com atualização (incremento) de variáveis globais x e y.
 
 
 def setup():
-    """ Código de configuração, executado no início pelo Processing """
+    """ Código de configuração, executado no início."""
     global x, y
     size(100, 100)  # área de desenho
     x, y = width / 2, height / 2   # coordenadas do meio da área de desenho
 
 
 def draw():
-    """ Laço principal de repetição """
+    """ Laço principal da animação. """
     global x, y
     background(0)  # limpeza do frame, fundo preto
     bandeirinha(x, y)  # desenha o polígono
