@@ -1,14 +1,14 @@
 # Desenhando em um espaço fora da tela (*offscreen buffer*)
 
-É possível desenhar em um objeto especial, uma espécie de tela virtual, criando superfícies * Py5Graphics * com a função[create_graphics()](https://py.processing.org/reference/create_graphics.html), em vez de desenhar diretamente na tela em uma estratégia conhecida como _offscreen buffer_. Depois é possível mostrar ou não essa imagem na área de desenho normal com a função `image()` (a mesma que usamos para mostrar uma imagem externa carregada carregada com `load_image()`, uma * Py5Image*).
+É possível desenhar em um objeto especial, uma espécie de tela virtual, criando superfícies *Py5Graphics* com a função [create_graphics()](https://py5coding.org/reference/sketch_create_graphics.html), em vez de desenhar diretamente na tela em uma estratégia conhecida como _offscreen buffer_. Depois é possível mostrar ou não essa imagem na área de desenho normal com a função `image()`, a mesma que usamos para mostrar uma imagem externa carregada carregada com `load_image()`, um objeto *Py5Image*.
 
-**Atenção: ** Não esqueça de usar `.begin_draw()` e `.end_draw()` ou você será brindado com uma `NullPointerException`
+Uma vez instanciada a superfície de desenho com, por exempo, `b = create_graphics(width, height)`, antes de se desenhar é necessário chamar o método `b.begin_draw()`. As instruções de desenho são também invocadas como métodos da superfíe, como por exemplo, `b.backround(0)` ou `b.rect(100, 100, 100, 100)`, e ao final é recomendável encerrar com `b.end_draw()`.
 
 Algumas vantagens dessa estratégia podem ser:
 - Desenho cumulativo em uma camada enquanto se anima elementos(com limpeza do frame) em outra camada
-- Potencialmente mais rápido do que desenhar na tela(reaproveitando um desenho com partes já prontas, por exemplo)
+- Potencialmente mais rápido do que desenhar na tela (reaproveitando um desenho com partes já prontas, por exemplo)
 - Salvar o imagens em camadas separadas para posterior tratamento.
-- Aplicação de máscaras de recorte ou outros tratamentos
+- Aplicação de máscaras de recorte ou outros efeitos
 
 Outra estratégia semelhante é desenhar em um objeto ou *grupo* de objetos *Py5Shape*, que pode ser criado com a função [create_shape()](http://py5coding.org/reference/sketch_create_shape.html), e pode depois desenhado na tela com `shape()'.
 
