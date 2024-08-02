@@ -9,11 +9,11 @@ Numa aula que se desenvolve normalmente em cerca de 7 etapas, são introduzidos 
 Para poder aproveitar o exemplo os alunos tiveram contato em aulas anteriores  com programação [imperativa](http://cs.lmu.edu/~ray/notes/paradigms/) além de vocabulário gráfico do Processing / py5:
 
 * Variáveis e noções de tipagem;
-* Funções de desenho `rect`, `line`, `begin_shape`, `vertex` e `end_shape`;
+* Funções de desenho básico como `rect`, `line`, `circle`, e polígonos (com `begin_shape`, `vertex` e `end_shape`);
 * Controle de atributos gráficos `fill`, `stroke`, `no_Stroke`, `no_fill`, `background`;
 * Controle de fluxo de execução e laços `if`, `else` e `for`;
 * Declaração de funções com e sem parâmetros;
-* Controle do sistema de coordenadas `push_matrix`, `translate`, `rotate`, `scale`, `pop_matrix`.
+* Controle do sistema de coordenadas `push_matrix`, `translate`, `rotate`, `scale`, `pop_matrix` (ou com um gerenciador de contexto).
 
 ### 0. Definindo funções e deslocando o sistema de coordenadas
 
