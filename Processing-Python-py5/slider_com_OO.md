@@ -106,7 +106,7 @@ def galho(tamanho):
 ## Como é a definição da classe `Slider`? (a classe por dentro)       
 
 > **Atenção: o código abaixo faz parte do exemplo acima.**
-> Em projetos grandes, mais complexos, pode ser interessante separar as classes em outro arquivo para facilitar a manipulação e leitura do código. Para isso, crie um novo arquivo, que pode se chamar, por exemplo `slider.py`, vizinho ao seu arquivo principal. No arquivo principal é preciso usar a instrução `from slider import Slider` no começo do seu código. Se não quiser fazer isso, simplesmente cole-o no final do seu arquivo principal, após o código anterior`.
+> Em projetos grandes, mais complexos, pode ser interessante separar as classes em outro arquivo para facilitar a manipulação e leitura do código. Para isso, crie um novo arquivo, que pode se chamar, por exemplo `slider.py`, vizinho ao seu arquivo principal. O comentário `# PY5 IMPORTED MODE CODE` é necessário neste caso, ele permite que as funções do py5 neste arquivo sejam reconhecidas pela ferramenta `run_sketch` ou pelo plug-in do THonny. Já no arquivo principal é preciso então usar a instrução `from slider import Slider` no começo do seu código. Se não quiser fazer nada disso, simplesmente cole o código com a definição da classe no final do seu arquivo principal, depois do código inicial com `setup()` e `draw()`.
     
 Veja uma primeira versão da classe Slider
 
