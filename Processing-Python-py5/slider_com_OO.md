@@ -111,6 +111,7 @@ def galho(tamanho):
 Veja uma primeira versão da classe Slider
 
 ```python
+# PY5 IMPORTED MODE CODE
 
 class Slider:
 
@@ -165,6 +166,8 @@ class Slider:
 Acrescentando algumas funcionalidades extra e comentários à classe `Slider`.
 
 ```python
+# PY5 IMPORTED MODE CODE
+
 class Slider:
 
     template = "{:.1f}"  # para formatar como mostra o valor
