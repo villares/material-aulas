@@ -12,7 +12,7 @@ Material para cursos e oficinas desenvolvido neste [repositório](https://github
 > - [pyp5js](https://github.com/berinhard/pyp5js), combina pyodide e p5js, experimente uma [**variante do editor online**](https://abav.lugaralgum.com/pyp5js/py5mode/) do projeto.
 > - Outras opções no quadro [Processing + Python tools table](https://github.com/villares/Resources-for-teaching-programming#processing--python-tools-table)
 > - Outras ferramentas de [desenho ou modelagem tridimensional com Python](outras-ferramentas/)
-/
+
 ### Como colaborar e contribuir?
 
 Este material didático pode ser modificado e usado para dar aulas. Leia as [instruções para colaborar com este repositório](/sobre/como-contribuir.md) e abra [*issues*](https://github.com/villares/material-aulas/issues) apontando problemas, sugerindo assuntos e melhorias, ou contribua com *Pull Requests* para o repositório.
