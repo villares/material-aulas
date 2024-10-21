@@ -7,11 +7,11 @@ Material para cursos e oficinas desenvolvido neste [repositório](https://github
 > Legado [Material para Processing modo Python](Processing-Python/) (2019—2022)
 
 ### Contexto
-> Este material didático foi criado inicialmente para ensinar/aprender a programar usando **Processing modo Python**, uma ferramenta livre de programação com a sintaxe de Python e que inclui o vocabulário, os recursos de desenho e manipulação de imagens do Processing. Atualmente há outras possibilidades de combinar essas duas linguagens, veja abaixo com obter algumas delas:
+> Este material didático foi criado inicialmente para ensinar/aprender a programar usando **Processing modo Python**, uma ferramenta livre de programação com a sintaxe de Python e que inclui o vocabulário, os recursos de desenho e manipulação de imagens do Processing. Atualmente há outras possibilidades de combinar Python e Processing, e outras ferramentas que combinam Python e desenho ou modelos tridimensionas, veja abaixo com obter algumas delas:
 > - Biblioteca [py5](https://py5coding.org), recomendada para a versão mais recente deste material, siga as [**instruções de instalação** usando Thonny IDE + plugin](https://abav.lugaralgum.com/como-instalar-py5/).
 > - [pyp5js](https://github.com/berinhard/pyp5js), combina pyodide e p5js, experimente uma [**variante do editor online**](https://abav.lugaralgum.com/pyp5js/py5mode/) do projeto.
-> - Outras opções no quadro [Processing + Python tools table](https://github.com/villares/Resources-for-teaching-programming#processing--python-tools-table).
-> - Outras opções de [desenho com programação](/outras-ferramentas/)
+> - Outras opções no quadro [Processing + Python tools table](https://github.com/villares/Resources-for-teaching-programming#processing--python-tools-table)
+> - Outras ferramentas de [desenho ou modelagem tridimensional com Python](outras-ferramentas/)
 
 ### Como colaborar e contribuir?
 
