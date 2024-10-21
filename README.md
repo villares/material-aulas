@@ -11,6 +11,7 @@ Material para cursos e oficinas desenvolvido neste [repositório](https://github
 > - Biblioteca [py5](https://py5coding.org), recomendada para a versão mais recente deste material, siga as [**instruções de instalação** usando Thonny IDE + plugin](https://abav.lugaralgum.com/como-instalar-py5/).
 > - [pyp5js](https://github.com/berinhard/pyp5js), combina pyodide e p5js, experimente uma [**variante do editor online**](https://abav.lugaralgum.com/pyp5js/py5mode/) do projeto.
 > - Outras opções no quadro [Processing + Python tools table](https://github.com/villares/Resources-for-teaching-programming#processing--python-tools-table).
+> - Outras opções de [desenho com programação](/outras-ferramentas/)
 
 ### Como colaborar e contribuir?
 
