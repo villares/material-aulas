@@ -1,6 +1,7 @@
-# Mais sobre sequências e fatias em coleções ordenadas
+# Mais sobre sequências de elementos e fatias
+
 ## Listas, tuplas e *strings*
-Listas e tuplas são duas das mais comuns coleções ordenadas de itens no Python. *Strings* (cadeias de caracteres) ou textos, para simplificar, são coleções ordenadas também, contendo caracteres (letras, emojis ou glifos em geral).  No meio do código, uma tupla pode ser construída com parenteses `( ,)` e a lista com colchetes `[ ,]`, um *string* com aspas, simples `'  '`,  duplas `"  "`  ou trincas de aspas simples ou duplas (`'''  '''` e `"""  """`).
+Listas e tuplas são duas das mais comuns coleções ordenadas de itens no Python. *Strings* (cadeias de caracteres) ou textos, para simplificar, são coleções ordenadas também, contendo caracteres (letras, emojis ou glifos em geral).  No meio do código, uma tupla pode ser construída com elementos separados por vírgulas, e se necessário parenteses, `( ,)`,  a lista é feita com colchetes `[ ,]`, e um *string* com aspas, simples `'  '`,  duplas `"  "`  ou trincas de aspas simples ou duplas (`'''  '''` e `"""  """`).
 
 ```python
 anos = [1968, 1976, 1980, 1994]  # uma lista de números
@@ -11,9 +12,7 @@ pontuacao = ".,:;()?"    # um string
 versao = "3.7a"   # ou outro string
 ```
 
-Uma lista permite que seus itens ou elementos sejam alterados, adicionados, removidos, ou, como um todo, os itens podem ser reordenados. Dizemos que listas são mutáveis. 
-
-Já uma tupla ou um *string* não podem ter elementos adicionados, removidos e também não podem ser reordenados, dizemos que são estruturas imutáveis. Se for necessária uma correção, sempre podemos criar tuplas e *strings* novamente com a alteração em substituição à coleção original.
+Uma lista permite que seus itens ou elementos sejam alterados, adicionados, removidos, ou, como um todo, os itens podem ser reordenados. Dizemos que listas são mutáveis. Já uma tupla ou um *string* não podem ter elementos adicionados, removidos e também não podem ser reordenados, dizemos que são estruturas imutáveis. Se for necessária uma correção, sempre podemos criar tuplas e *strings* novamente com a alteração em substituição à coleção original.
 
 Saiba que tuplas são mais ‘econômicas’ em termos computacionais (por exemplo, em casos de grande quantidade de dados, gastam menos memória) e são bastante usadas quando a ordem dos elementos tem significado, por exemplo podemos fazer uma tupla com os dados para a construção de um círculo:
 
@@ -173,12 +172,63 @@ print(c)         # exibe <reversediterator object at 0xNN> onde NN varia
 print(list(c))   # exibe: [4, 3, 2, 1, 0]
 ```
 
+
+## Enumerando os itens de uma coleção
+
+Ao iterarmos por uma coleção, pode ser útil obter ao mesmo tempo que o item, um contador. No caso de sequências ordenadas, como listas e tuplas, esse contador é o índice da posição do item na sequência. Isso é chamado de enumeração, e fazemos isso usando a função embutida `enumerate()`.
+
+```python
+for «variável_para_índice», «variável_para_item» in enumerate(«coleção»):
+    «corpo»
+```
+
+Veja usado no contexto do exemplo anterior.
+
+```python
+def setup():
+    size(400, 400)
+    pontos = [(50, 50), (300, 370), (200, 50), (150, 150)]
+    for i, ponto in enumerate(pontos):
+        # enumerate vai nos entregar uma sequência de tuplas:
+        # (índice, item_da_coleção)
+        x, y = ponto  
+        fill(255)
+        ellipse(x, y, 5 + i * 5, 5 + i * 5)
+        # legenda em um string no formato «i:  x, y»
+        legenda = str(i) + ": " + str(x) + ", " + str(y)  
+        fill(0)
+        text(legenda, x + 15, y)
+
+# Você também pode encontrar escrito assim: «for i, (x, y) in enumerate(pontos):»
+# E a construção «legenda = "{}: {}, {}".format(i, x, y)» para o formar texto
+# o método .format() injeta valores passados como argumentos em posições marcadas com {} 
+```
+![sketch_2020_04_10a](assets/enumerate.png)
+
+#### Uma utilidade de enumerar, pegar pares de itens
+
+```python
+def setup():
+    size(400, 400)
+    fill(0)  # preenchimento preto esconde a treta da linha sobrepondo
+    pontos = [(50, 50), (300, 370), (200, 50), (150, 150)]
+    for i, ponto in enumerate(pontos):  # (índice, ponto) para cada ponto de `pontos`
+        xa, ya = ponto
+        ponto_anterior = pontos[i - 1] # pega o último item da lista quando i é 0
+        xb, yb = ponto_anterior  
+        ellipse(xa, ya, 10, 10)
+        # desenha linha entre os dois pontos
+        line(xa, ya, xb, yb)
+        # desenha círculo menor entre os pontos
+        ellipse((xa + xb) / 2, (ya + yb) / 2, 5, 5)
+```
+
+![`enumerara()` ](assets/for_com_enumerate.png)
+
+
 ## Assuntos relacionados
 
-- [Sequências e laços de repetição](lacos_py.md) - o primeiro contato com este assunto das coleções.
-
+- [Repetição com `for`](lacos_py.md) - o primeiro contato com este assunto da iteração.
 - [Mais sobre listas e seus métodos](list_methods.md) (inserir itens no meio, encontrar o índice de um item e muito mais)
-
 - [Arrastando vários círculos](arrastando_circulos.md#arrastando-v%C3%A1rios-c%C3%ADrculos)
-
 - [Mais sobre *strings*](strings_py.md) e [métodos dos objetos *string*](string_methods.md)

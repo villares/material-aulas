@@ -26,9 +26,9 @@
   - 1.2.4 [Funções recursivas](recursao_py.md) e a recursividade no seu desenho 
   - 1.2.5 [Primeiros passos de desenho em 3D](desenho-3D.md) - `size(…, …, P3D)`
 
-- 1.3.0 [Sequências e laços de repetição (iteração com `for`)](lacos_py.md)
-  - 1.3.1 [Mais sobre sequências e fatias](mais_sequencias.md)
-  - 1.3.2 [Grades retangulares: filas e colunas de elementos](grades.md)
+- 1.3.0 [Repetição com laços `for`](lacos_py.md)
+  - 1.3.1 [Grades retangulares: filas e colunas de elementos](grades.md)
+  - 1.3.2 [Mais sobre sequências de elementos e fatias](mais_sequencias.md)
   - 1.3.3 [Mais sobre polígonos](poligonos_2.md)
   - 1.3.4 [Desenhando formas curvas](curvas.md)
   - 1.3.5 [Laço de repetição com `while`](while.md)
