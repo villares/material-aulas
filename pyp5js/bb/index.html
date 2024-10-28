@@ -2,9 +2,11 @@
 
 <!-- pyp5js index.html boilerplate -->
 <html lang="en">
+
 <head>
+
   <meta charset="utf-8">
-  <!-- meta name="viewport" content="width=device-width, initial-scale=1.0"-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>pyp5js with Pyodide Demo</title>
 
   <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
@@ -28,6 +30,7 @@
 <body>
   <div class="demoContainer">
     <div style="display: block">
+      <textarea class="display-none" id="id_py_code" name="py_code"></textarea>
       <div class="code-container">
         <div class="text-editor-box">
           <div id="text-editor" class="text-editor"></div>
@@ -47,7 +50,7 @@
       <!-- You sketch will go here! -->
     </div>
   </div>
+</body>
 <script src="target/target_sketch.js"></script>
 <script src="afterBody.js"></script>
-</body>
 </html>
