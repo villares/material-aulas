@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<!-- pyp5js index.html boilerplate -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- meta name="viewport" content="width=device-width, initial-scale=1.0"-->
+  <title>pyp5js with Pyodide Demo</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
+  <script src="https://cdn.jsdelivr.net/pyodide/v0.18.1/full/pyodide.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"
+    integrity="sha512-GZ1RIgZaSc8rnco/8CXfRdCpDxRCphenIiZ2ztLy3XQfCbQUSCuk8IudvNHxkRA3oUg6q0qejgN/qqyG1duv5Q=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/mode-python.min.js"
+    integrity="sha512-2Ke4vMGrMfYRM55pT1aA5bw7Pl82Sc7K5Hg8XZYZu+EQrb0AO1mNYTagwZm+MFVAImYS9Mlnm73zcgc01wPXxA=="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/theme-monokai.min.js"
+    integrity="sha512-S4i/WUGRs22+8rjUVu4kBjfNuBNp8GVsgcK2lbaFdws4q6TF3Nd00LxqnHhuxS9iVDfNcUh0h6OxFUMP5DBD+g=="
+    crossorigin="anonymous"></script>
+  <script src="share.js"></script>
+  <script src="startpanel.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/basscss@7.1.1/css/basscss.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="demoContainer">
+    <div style="display: block">
+      <div class="code-container">
+        <div class="text-editor-box">
+          <div id="text-editor" class="text-editor"></div>
+          <div id="sketch-buttons" class="clearfix">
+            <div class="left-buttons">
+              <button id="executeBtn" title="(Ctrl/Cmd + Enter) to refresh the skecth" type="button"
+                class="btn btn-primary bg-green rounded py1 px2 mb1">Run</button>
+              <button id="clearBtn" title="(Ctrl/Cmd + .) to clear the skecth" type="button"
+                class="btn btn-primary rounded bg-red py1 px2 mb1">Clear</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="sketch-holder">
+      <!-- You sketch will go here! -->
+    </div>
+  </div>
+</body>
+<script src="target/target_sketch.js"></script>
+<script src="afterBody.js"></script>
+</html>
