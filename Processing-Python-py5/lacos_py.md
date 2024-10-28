@@ -2,7 +2,7 @@
 
 É muito comum em programação pedir ao computador que repita uma ação várias vezes, possivelmente com variações. Para fazer isso frequentemente usamos os chamados laços de repetição (*loops*) e o processo de repetir operações também é por vezes chamado de iteração (note que não é i**n**teração, que é outra coisa).
 
-Usando a estrutura `for` podemos fazer uma ação para cada item de uma coleção 'iterável', como as estruturas de dados que veremos depois, ou para cada item produzido por um gerador,  cada linha de um leitor de arquivos, ou ainda para cada número entregue por uma faixa de inteiros criada com `range()`.  
+Usando a estrutura `for` podemos fazer uma ação para cada item de um 'iterável', coleções como as estruturas de dados, ou para cada item produzido por um gerador iterador. Imagine fazer algo para cada linha devolvida por um leitor de arquivos, ou ainda para cada número entregue por uma faixa de números inteiros (que pose der criada com a função embutida `range()`).  
 
 Em cada ciclo um item é atribuido a uma variável, cujo nome vem logo após o `for` e antes do `in`. No bloco indentado de código, também conhecido como o *corpo*, acontecem ações, quase sempre usando o valor do item atribuído à variável no início de cada ciclo. 
 
@@ -14,8 +14,20 @@ for «variavel» in «iterável»:
 
 Uma das estruturas de dados mais versáteis do Python são as listas, podemos criar uma lista no código envolvendo elementos separados por vírgulas em colchetes, como no exemplo abaixo uma lista de números chamada `tamanho`.
 
+Círculos concêntricos
+
+
 ```python
-size(200, 200)
+size(400, 400)
+diâmetros = [300, 250, 200, 150, 100, 50]  # uma lista de números
+for d in diâmetros:  # atribua a variável `d` para cada diâmetro
+    circle(200, 200, d)  # desenha a cada volta um círculo o diâmetro `d` da vez
+```
+
+
+```python
+size(400, 200)
+
 no_fill()         # formas sem preenchimento
 rect_mode(CENTER) # desenhar retângulos e quadrados pelo centro
 
