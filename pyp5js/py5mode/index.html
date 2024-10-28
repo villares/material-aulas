@@ -7,7 +7,7 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>pyp5js with Pyodide demo (py5mode)</title>
+  <title>pyp5js with Pyodide Demo</title>
 
   <script src="https://cdn.jsdelivr.net/npm/p5@1.0.0/lib/p5.js"></script>
   <script src="https://cdn.jsdelivr.net/pyodide/v0.18.1/full/pyodide.js"></script>
@@ -22,7 +22,7 @@
     integrity="sha512-S4i/WUGRs22+8rjUVu4kBjfNuBNp8GVsgcK2lbaFdws4q6TF3Nd00LxqnHhuxS9iVDfNcUh0h6OxFUMP5DBD+g=="
     crossorigin="anonymous"></script>
   <script src="share.js"></script>
-
+  <script src="startpanel.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/basscss@7.1.1/css/basscss.min.css">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -62,8 +62,11 @@
       <!-- You sketch will go here! -->
     </div>
   </div>
+  <div id="ScreenConsole"></div>
   <div>
-    <p style="font-family: 'sans'; font-size:14px; margin-left: 20px;">If you execute the code but nothing is being rendered in the browser, please open your browser's console to read the error traceback (usually you can do this by pressing F12 and clicking in the Console tab).</p>
+    <!-- p style="font-family: 'sans'; font-size:14px; margin-left: 20px;">If you execute the code but nothing is being rendered in the browser,
+      please open your browser's console to read the error traceback (usually you can do this by pressing F12 and
+      clicking in the Console tab).</p -->
      <p style="background-color: #f6f8fa; font-family: 'sans'; font-size:14px; margin-left: 20px;"><a
         href="https://github.com/berinhard/pyp5js"><b>pyp5js</b></a> running on top of <a
         href="https://github.com/iodide-project/pyodide" target="_blank">pyodide</a></p>

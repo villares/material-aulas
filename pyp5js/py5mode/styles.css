@@ -74,3 +74,10 @@ pre {
 .display-none {
   display: none;
 }
+
+#ScreenConsole {
+width: calc(100% - 60px) !important;
+}
+#text-editor {
+height: calc(100vh - 380px) !important;
+}
