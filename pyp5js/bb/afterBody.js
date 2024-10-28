@@ -19,6 +19,9 @@ document.getElementById("id_py_code").innerHTML = initialSketch;
 
 document.addEventListener("DOMContentLoaded", function () {
   //// Buttons
+  const shareBtn = document.getElementById("shareBtn");
+  const fullScreenBtn = document.getElementById("fullScreenBtn");
+  const collapseBtn = document.getElementById("collapseBtn");
   const executeBtn = document.getElementById("executeBtn");
   const clearBtn = document.getElementById("clearBtn");
 
@@ -65,6 +68,27 @@ document.addEventListener("DOMContentLoaded", function () {
       window.instance.remove();
     }
   });
-  
+  shareBtn.addEventListener("click", () => {
+    if (window.instance) {
+      const sketchUrl = createSketchUrl();
+      copyTextToClipboard(sketchUrl);
+      shareBtn.textContent = "Copied URL!";
+      setTimeout(() => {
+        shareBtn.textContent = "Share";
+      }, 3000);
+      runCode();
+    }
+  });
+  fullScreenBtn.addEventListener("click", () => {
+    const fullScreenSketchUrl = createSketchUrl(true);
+    window.location = fullScreenSketchUrl;
+  });
+  collapseBtn.addEventListener("click", () => {
+    const textEditorEl = document.getElementById("text-editor");
+    textEditorEl.classList.toggle("hidden-editor");
+    collapseBtn.textContent = collapseBtn.textContent.includes("Collapse")
+      ? "Expand"
+      : "Collapse";
+  });
   document.body.addEventListener("keydown", keyDown);
 });
