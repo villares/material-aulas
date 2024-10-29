@@ -12,10 +12,9 @@ for «variavel» in «iterável»:
 ```
 ## Andando por uma coleção de elementos
 
-Uma das estruturas de dados mais versáteis do Python são as listas, podemos criar uma lista no código envolvendo elementos separados por vírgulas em colchetes, como no exemplo abaixo uma lista de números chamada `tamanho`.
+Uma das estruturas de dados mais versáteis do Python são as listas, podemos criar uma lista no código envolvendo elementos separados por vírgulas em colchetes, como no exemplo abaixo uma lista de números chamada `diâmetros` par desenhar círculos concêntricos.
 
-Círculos concêntricos
-
+![](assets/for_circulos.png)
 
 ```python
 size(400, 400)
@@ -24,22 +23,43 @@ for d in diâmetros:  # atribua a variável `d` para cada diâmetro
     circle(200, 200, d)  # desenha a cada volta um círculo o diâmetro `d` da vez
 ```
 
+Note que começamos pelo círculo maior por conta dos cículos serem opacos, e dessa maneira os menores não escondem os maiores que foram desenhados antes. No exemplo seguinte vamos desligar o preenchimento dos quadrados e desenhá-los em tamanho crescente.
 
 ```python
-size(400, 200)
-
-no_fill()         # formas sem preenchimento
-rect_mode(CENTER) # desenhar retângulos e quadrados pelo centro
-
-tamanhos = [20, 40, 80, 160]
+size(400, 400)
+no_fill()  # formas sem preenchimento
+tamanhos = [20, 40, 80, 160, 320]
 for t in tamanhos:
-    square(100, 100, t)
+    square(40, 40, t)
 ```
 ![](assets/for_t_in_tamanhos.png)
 
+Se introduzirmos uma varíavel para a posição, podemos atualizá-la dentro do laço. Veja um laço que percorre uma lista de cores.
+
+```python
+size(400, 400)
+
+no_fill()  # formas sem preenchimento
+
+cores = [
+    color(0, 0, 200),    # azul
+    color(255, 255, 0),  # amarelo
+    color(0, 128, 0),    # verde
+    color(255, 0, 255),  # magenta
+    color(0, 255, 255),  # ciano
+    ]
+x = 40
+for c in cores:
+    fill(c)
+    rect(x, 40, 64, 320)
+    x = x + 64
+``
+
+Se você tiver instalada a biblioteca `matplotlib` pode pedir as cores pelo nome, então a lista pode ficar `cores = ['blue', 'yellow', 'green', 'magenta', 'cyan']`
+
 ## Produzindo sequências de inteiros com `range()`
 
-### Você consegue imaginar o resultado do código a seguir?
+**Você consegue imaginar o resultado do código a seguir?**
 
 ```python
 for n in range(10): # para cada número do range(10) 
@@ -68,14 +88,14 @@ A função embutida `range()` do Python produz um "objeto range", poderíamos ta
 print(list(range(10)))
 ```
 
-#### Você consegue imaginar como é essa lista?
+**Você consegue imaginar como é essa lista?**
 <details>
   <summary>clique para ver a resposta</summary>
 
 <code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</code>
 </details>
 
-#### Qual você acha que é o resultado de usar `range(1, 11)`?
+**Qual você acha que é o resultado de usar `range(1, 11)`?**
 
 ```python
 print(list(range(1, 11)))
@@ -118,7 +138,7 @@ viva!
 
 Veja a seguir mais alguns exemplos com o resultado oculto para você tentar resolver antes de olhar.
 
-#### Linhas
+### Linhas
 
 Agora outro exemplo usando `range()` com efeito visual.
 
@@ -128,7 +148,7 @@ for i in range(14):
     line(30, y, 80, y)
 ```
 
-#### Quais serão os valores de y e como fica o desenho das linhas?
+**Quais serão os valores de y e como fica o desenho das linhas?**
 <details>
   <summary>clique para ver os resultados</summary>
 
@@ -157,7 +177,7 @@ for j in range(14):
 <img src="assets/verticais.png">
 </details>
 
-#### Você consegue imaginar um desenho usando esse tipo de repetição e números [pseudo-aleatórios](aleatoriedade_1.md) com `random()`?
+**Você consegue imaginar um desenho usando esse tipo de repetição e números [pseudo-aleatórios](aleatoriedade_1.md) com `random()`?**
 
 ### Mais sobre o `range()`
 
@@ -172,7 +192,7 @@ for x in range(10, 80, 5): # x começa valendo 10 e termina valendo 75
     line(x, 30, x, 80)     # x aumenta de 5 em 5
 ```
 
-#### Você consegue imaginar o resultado visual?
+**Você consegue imaginar o resultado visual?**
 <details>
   <summary>clique para ver o resutado visual</summary>
 
@@ -236,7 +256,7 @@ x, y = posicao # x passa a valer 250 e y passa a valer 120
 # y = posicao[1]  
 ```
 
-## Juntando as coisas
+**Juntando as coisas**
 
 E é possível fazer tuplas com tuplas dentro, listas com listas dentro, listas com tuplas dentro e etc. Vamos experimentar fazer uma lista de tuplas representando as coordenadas de alguns pontos:
 
@@ -244,7 +264,7 @@ E é possível fazer tuplas com tuplas dentro, listas com listas dentro, listas 
 pontos = [(10, 10), (100, 20), (200, 50), (50, 150)]
 ```
 
-#### Qual é o resultado de `print(pontos[3])`?
+**Qual é o resultado de `print(pontos[3])`?**
 <details>
   <summary>clique para ver a resposta</summary>
 
@@ -277,22 +297,9 @@ for x, y in pontos:
 
 ## Assuntos relacionados
 
-#### Desenhando grades com laços "aninhados" 
+[**Grades retangulares**: filas e colunas de elementos](grades.md)
 
-[Grades retangulares: filas e colunas de elementos](grades.md)
-
-```python
-for x in range(5, 100, 10):  # x: 5, 15, 25, 35 ... 95
-    for y in range(5, 100, 10):  # y: 5, 15, 25, 35 ... 95
-        ellipse(x, y, 5, 5) 
-```
-![mini grade](assets/mini-grid.png)
-
-#### Mais sobre sequências e fatias
-
-[Tuplas e listas, mais sobre iterar sobre estruturas de dados e enumerar elementos](lacos_py.md)
-
-#### Outra estrutura de repetição: `while`
+[**Mais sobre sequências e fatias** - tuplas e listas, mais sobre iterar sobre estruturas de dados e enumerar elementos](lacos_py.md)
 
 [Laços de repetição com `while`](while.md) 
 
