@@ -9,6 +9,17 @@ size(400, 40)
 # deslocamento (offset) inicial: 20 - deslocamento horizontal de cada círculo: 40 
 for x in range(20, 400, 40): # 10 números de 20 a 380, incluso, de 40 em 40
     ellipse(x, 20, 35, 35) # círculos de diâmetro 35
+
+
+size(400, 400)
+num_filas = num_colunas = 10
+h_fila = w_coluna = 40
+for fila in range(num_filas):
+    y = fila * h_fila + h_fila / 2
+    for coluna in range(num_colunas):
+        x = coluna * w_coluna + w_coluna / 2
+        circle(x, y, 10)
+
 ```
 
 ![](assets/fila.png)
