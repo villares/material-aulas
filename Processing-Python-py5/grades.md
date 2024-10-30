@@ -11,13 +11,16 @@ w_coluna = 40
 for coluna in range(num_colunas):  # coluna vai de 0 a 9
     x = coluna * w_coluna + w_coluna / 2  # começa 20 e aumenta de 40 em 40
     circle(x, 20, 35)
+```
 
+![](assets/fila.png)
+
+Seria possível obter o mesmo resultado usando a estratégia `range(inicio, parada, passa)`
+```
 # deslocamento (offset) inicial: 20 - deslocamento horizontal de cada círculo: 40 
 for x in range(20, 400, 40): # 10 números de 20 a 380, incluso, de 40 em 40
     circle(x, 20, 35) # círculos de diâmetro 35
 ```
-
-![](assets/fila.png)
 
 Imagine que é possível escrever de forma parecida uma fila vertical, uma coluna de círculos... 
 
@@ -26,6 +29,9 @@ Imagine que é possível escrever de forma parecida uma fila vertical, uma colun
 
 <pre>
 size(400, 400) 
+for fila in range(num_filas):  # fila vai de 0 a 9
+    y = fila * h_fila + h_fila / 2
+    circle(20, y, 35)
 # deslocamento (offset) inicial: 20 - deslocamente vertical de cada círculo: 40
 for y in range(20, 400, 40): # 10 números de 20 a 380, incluso, de 40 em 40 
     ellipse(20, y, 35, 35) # círculos de diâmetro 35 
@@ -33,7 +39,7 @@ for y in range(20, 400, 40): # 10 números de 20 a 380, incluso, de 40 em 40
 
 </details>
 
-Em seguida, veremos que uma fila de colunas se torna uma grade de elementos:
+Em seguida, veremos o empilhamento de filas se torna uma grade de elementos:
 
 ```python
 size(400, 400)
@@ -44,7 +50,13 @@ for fila in range(num_filas):  # fila vai de 0 a 9
     for coluna in range(num_colunas):  # coluna vai de 0 a 9
         x = coluna * w_coluna + w_coluna / 2
         circle(x, y, 35)
-        
+```
+
+![](assets/grade.png)
+
+A mesma grade usando diretamente o `range()`
+
+```        
 # deslocamento (offset) inicial: 20 - largura das colunas: 40 
 for x in range(20, 400, 40): # 10 números de 20 a 380, de 40 em 40
     # deslocamento (offset) inicial: 20 - altura das filas: 40  
@@ -52,9 +64,7 @@ for x in range(20, 400, 40): # 10 números de 20 a 380, de 40 em 40
         circle(x, y, 35) # círculos de diâmetro 35
 ```
 
-![](assets/grade.png)
-
-É possível também fazer uma "coluna de filas", mudando só a ordem de desenho, mas não o resultado visual final. Veja um exemplo, um pouco ampliado, em que a posição do elemento altera a cor e o tamanho:
+É possível também fazer uma "fila de colunas", mudando só a ordem de encaixa dos laços (e ordem em que os círculos são desenhados) mas não o resultado visual final. Veja um exemplo, um pouco ampliado, em que a posição do elemento altera a cor e o tamanho:
 
 ```python
 colunas = 10
@@ -68,10 +78,10 @@ def draw():
     background(0)
     no_stroke()
     cw = width / colunas # largura celula/coluna (também altura da fila)
-    for i in range(colunas):
-        x = i * cw + cw / 2
-        for j in range(filas):
-            y = j * cw + cw / 2
+    for j in range(filas):
+        y = j * cw + cw / 2
+        for i in range(colunas):
+            x = i * cw + cw / 2
             # diâmeto baseado na soma da linha  coluna
             d = 10 + cw * (i + j) / (colunas * 2.5)
             # matiz baseado no produto da linha e coluna
