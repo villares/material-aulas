@@ -6,20 +6,15 @@ Vamos começar com uma fila de círculos:
 
 ```python
 size(400, 40)
+num_colunas = 10
+w_coluna = 40
+for coluna in range(num_colunas):  # coluna vai de 0 a 9
+    x = coluna * w_coluna + w_coluna / 2  # começa 20 e aumenta de 40 em 40
+    circle(x, 20, 35)
+
 # deslocamento (offset) inicial: 20 - deslocamento horizontal de cada círculo: 40 
 for x in range(20, 400, 40): # 10 números de 20 a 380, incluso, de 40 em 40
-    ellipse(x, 20, 35, 35) # círculos de diâmetro 35
-
-
-size(400, 400)
-num_filas = num_colunas = 10
-h_fila = w_coluna = 40
-for fila in range(num_filas):
-    y = fila * h_fila + h_fila / 2
-    for coluna in range(num_colunas):
-        x = coluna * w_coluna + w_coluna / 2
-        circle(x, y, 10)
-
+    circle(x, 20, 35) # círculos de diâmetro 35
 ```
 
 ![](assets/fila.png)
@@ -42,11 +37,19 @@ Em seguida, veremos que uma fila de colunas se torna uma grade de elementos:
 
 ```python
 size(400, 400)
+num_filas = num_colunas = 10
+h_fila = w_coluna = 40
+for fila in range(num_filas):  # fila vai de 0 a 9
+    y = fila * h_fila + h_fila / 2
+    for coluna in range(num_colunas):  # coluna vai de 0 a 9
+        x = coluna * w_coluna + w_coluna / 2
+        circle(x, y, 35)
+        
 # deslocamento (offset) inicial: 20 - largura das colunas: 40 
 for x in range(20, 400, 40): # 10 números de 20 a 380, de 40 em 40
     # deslocamento (offset) inicial: 20 - altura das filas: 40  
     for y in range(20, 400, 40): # 10 números de 20 a 380, de 40 em 40
-        ellipse(x, y, 35, 35) # círculos de diâmetro 35
+        circle(x, y, 35) # círculos de diâmetro 35
 ```
 
 ![](assets/grade.png)
