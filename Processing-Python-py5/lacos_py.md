@@ -202,9 +202,7 @@ for x in range(10, 80, 5): # x começa valendo 10 e termina valendo 75
 
 ## Um pouco mais sobre listas e tuplas
 
-Nos primeiros exemplos, percorremos com o laço `for` uma lista (`list`), que é uma estrutura de dados do Python para armazenar uma sequência ordenada de itens ou elementos. Uma outra estrutura para sequências de elementos no Python se chama tupla (`tuple`).
-
-> Contexto extra: A principal diferença, além do fato de que uma lista é construida com colchetes `[ ,]`, e uma tupla é construída com uma ou mais vírgulas apenas, se necessário em envolta em parenteses `( ,)`, é que uma lista permite que seus itens sejam alterados, itens podem ser adicionados, removidos, ou, como um todo, podem ser reordenados. Dizemos que uma lista é *mutável*. Já uma tupla não pode ter itens removidos, addicionados ou ser reordenada, dizemos que ela é *imutável* (mesmo se um item dela for mutável e com isso puder ter o seu conteúdo mais interno alterado). Não preocupa muito o fato das tuplas serem imutáveis, se for necessária uma correção ou atualização de uma tupla, podemos criar uma nova com a alteração em substituição da original. Uma das vantagens das tuplas é que elas ocupam menos espaço na memória, um outro é de que elas podem ser armazenadas em um conjunto (`set`) ou serem chaves de um dicionário (`dict`).
+Nos primeiros exemplos, percorremos com o laço `for` uma lista (`list`), que é uma estrutura de dados do Python para armazenar uma sequência ordenada mutável de itens ou elementos. Uma outra estrutura para sequências de elementos no Python, que é imutável, se chama tupla (`tuple`).
 
 ```python
 # Uma lista de nomes de frutas
@@ -236,9 +234,13 @@ cantores.append('Zezé')
 # AttributeError: 'tuple' object has no attribute 'append'
 ```
 
-As tuplas, em certos contextos, são mais eficientes que as listas, ocupam menos espaço na memória, por exemplo, mas é mais interessante, por enquanto, considerar que são bastante convenientes quando a ordem dos elementos tem significado. Um outro termo usado para se referir a uma coleção em que a ordem importa e não faz sentido reordenar os elementos é 'registro', se temos tuplas com nomes, emails e telefones, por exemplo, funcioanm como um registro, como uma linha em uma planilha em que cada posição tem um signifiado.
+A principal diferença, além do fato de que uma lista é construida com colchetes `[ ,]`, e uma tupla é construída com uma ou mais vírgulas apenas, se necessário em envolta em parenteses `( ,)`, é que uma lista permite que seus itens sejam alterados, itens podem ser adicionados, removidos, ou, como um todo, podem ser reordenados. Por conta disso, dizemos que uma lista é *mutável*.
 
-Também podemos fazer uma tupla com coordenadas x e y, a primeira posição 'significa' (a ordem indica) um valor no eixo X e a segunda posição indica um valor no eixo Y:
+Já uma tupla não pode ter itens removidos, addicionados ou ser reordenada, dizemos que ela é *imutável* (mesmo se um item dela for mutável e com isso puder ter o seu conteúdo mais interno alterado). Não preocupa muito o fato das tuplas serem imutáveis, se for necessária uma correção ou atualização de uma tupla, podemos criar uma nova com a alteração em substituição da original. Uma das vantagens das tuplas é que elas ocupam menos espaço na memória, um outro é de que elas podem ser armazenadas em um conjunto (`set`) ou serem chaves de um dicionário (`dict`).
+
+Tuplas são bastante convenientes quando a ordem dos elementos tem significado. Um termo usado para se referir a uma coleção em que a ordem importa e não faz sentido reordenar os elementos é 'registro', imagine uma coleção de tuplas com nomes, emails e telefones, por exemplo, essas tuplas funcioanam como registros, como linhas em uma planilha em que cada posição (a coluna da planilha) tem um signifiado.
+
+Para um exemplo da geometria, podemos fazer uma tupla com coordenadas x e y, dessa forma, a primeira posição 'significa', isto é, a ordem indica, um valor no eixo X e a segunda posição indica um valor no eixo Y:
 
 ```python
 posicao = (150, 50)  #  x: 150 y: 50
