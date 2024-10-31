@@ -55,11 +55,13 @@ for c in cores:
     x = x + 64
 ```
 
+![](assets/for_c_in_cores.png)
+
 Se você tiver instalada a biblioteca `matplotlib` pode pedir as cores pelo nome, então a lista pode ficar `cores = ['blue', 'yellow', 'green', 'magenta', 'cyan']`
 
 ## Produzindo sequências de inteiros com `range()`
 
-A função embutida `range()` do Python produz um "objeto range", poderíamos talvez traduzir *range* como "faixa"; esses objetos especiais que são "faixas de números inteiros" podem ser usados nos laços `for`. Outra maneira de ver exatamente os números, os exibindo com a função `print()`, é convertertendo estes objetos em listas com `list(range(n))`. Usando `range()` com o argumento 10, `range(10)`, nos exemplos abaixo, vamos obter uma lista de 10 números inteiros.
+A função embutida `range()` do Python produz um "objeto range", poderíamos talvez traduzir *range* como "faixa"; esses objetos especiais que são "faixas de números inteiros" podem ser usados nos laços `for`. 
 
 **Você consegue imaginar o resultado do código a seguir?**
 
@@ -84,6 +86,8 @@ for n in range(10): # para cada número do range(10)
 </pre>
 </details>
 
+Outra maneira de ver exatamente os números, os exibindo com a função `print()`, é convertertendo estes objetos em listas com `list(range(n))`. Usando `range()` com o argumento 10, `range(10)`, nos exemplos abaixo, vamos obter uma lista de 10 números inteiros.
+
 **Você consegue imaginar como é essa lista?**
 
 ```python
@@ -95,6 +99,18 @@ print(list(range(10)))
 
 <code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</code>
 </details>
+
+Então para produzir uma fila de círculos, podemos fazer assim.
+
+```python
+size(400, 40)
+for n in range(10):    # n vai de 0 a 9
+    x = 20 + n * 40    # x começa como 20 e aumenta de 40 em 40
+    circle(x, 20, 35)  # círculos com diâmetro 35
+```
+
+![](assets/fila.png)
+
 
 **Qual você acha que é o resultado de usar `range(1, 11)`?**
 
@@ -109,8 +125,14 @@ print(list(range(1, 11)))
 
 </details>
 
-Podemos usar `range(parada)` ou `range(inicio, parada)`, o número da parada nunca aparece no resultado, não está incluso! O número início de início, se houver, será o primeiro número, senão, o Python começa a contar do zero. Há ainda a forma  `range(inicio, parada, passo)` que veremos mais adiante.
+### Mais maneiras de usar `range()`
 
+Podemos usar `range(parada)` ou `range(inicio, parada)`, o número da parada nunca aparece no resultado, não está inclus. O número de início, se houver, será o primeiro número, senão, o Python começa a contar do zero. Há ainda a forma  `range(inicio, parada, passo)`. Veja como poderia ser escrito o exemplo da fila de círculos.
+
+```
+for x in range(20, 400, 40): # 10 números de 20 a 380 (em passos de 40)
+    circle(x, 20, 35) # círculos de diâmetro 35
+```
 
 ### Sobre os nomes das variáveis usadas no `for` e "repetições simples
 
@@ -205,23 +227,23 @@ for x in range(10, 80, 5): # x começa valendo 10 e termina valendo 75
 Nos primeiros exemplos, percorremos com o laço `for` uma lista (`list`), que é uma estrutura de dados do Python para armazenar uma sequência ordenada mutável de itens ou elementos. Uma outra estrutura para sequências de elementos no Python, que é imutável, se chama tupla (`tuple`).
 
 ```python
-# Uma lista de nomes de frutas
-frutas = ['uva', 'banana']
-frutas.append('jaca')  # append acrescenta um item no final da lista
-print(frutas) 
-# Resutado exibido no console: ["uva", "banana", "jaca"]
+# Uma lista de nomes de cores
+cores = ['blue', 'green']
+cores.append('red')  # append acrescenta um item no final da lista
+print(cores) 
+# Resutado exibido no console: ['blue', 'green', 'red']
 
-frutas[0] = 'kiwi'  # 0 é o índice do primeiro item da lista
-print(frutas) 
-# Exibe: ['kiwi', 'banana', 'jaca']
+cores[0] = 'yellow'  # 0 é o índice do primeiro item da lista
+print(cores) 
+# Exibe: ['yellow', 'green', 'red']
 
 # consultando um item pelo índice
-print(frutas[1]) 
-# Exibe: banana
+print(cores[1]) 
+# Exibe: green
 
-del frutas[1]
-print(frutas) 
-# Exibe: ['kiwi', "jaca']
+del cores[1]   # remove o segundo item
+print(cores) 
+# Exibe: ['yellow', "red']
 
 # Uma tupla de cantores sertanejos
 cantores = 'Milionário', 'José Rico'
