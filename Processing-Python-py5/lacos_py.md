@@ -145,10 +145,9 @@ print(list(range(0, 11, 2)))
 </details>
 
 
+Veja agora uma outra maneira de escrever o exemplo da fila de círculos.
 
-Veja agora como poderia ser escrito o exemplo da fila de círculos.
-
-```
+```python
 for x in range(20, 400, 40): # 10 números de 20 a 380 (em passos de 40)
     circle(x, 20, 35) # círculos de diâmetro 35
 ```
