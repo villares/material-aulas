@@ -54,9 +54,9 @@ for fila in range(num_filas):  # fila vai de 0 a 9
 
 ![](assets/grade.png)
 
-A mesma grade usando diretamente o `range()`
+A mesma grade usando o `range()` com início, parada e passo.
 
-```        
+```python     
 # deslocamento (offset) inicial: 20 - largura das colunas: 40 
 for x in range(20, 400, 40): # 10 números de 20 a 380, de 40 em 40
     # deslocamento (offset) inicial: 20 - altura das filas: 40  
