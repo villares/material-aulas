@@ -70,7 +70,7 @@ for n in range(10): # para cada número do range(10)
     print(n)        # n vai ter um valor diferente a cada ciclo
 ```
 <details>
-  <summary>clique para ver o resutado no console</summary>
+  <summary>clique para ver o resutado</summary>
 
 <pre>
 0
@@ -100,7 +100,8 @@ print(list(range(10)))
 <code>[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]</code>
 </details>
 
-Então para produzir uma fila de círculos, podemos fazer assim.
+
+Para produzir uma fila de círculos, podemos fazer assim.
 
 ```python
 size(400, 40)
@@ -111,6 +112,10 @@ for n in range(10):    # n vai de 0 a 9
 
 ![](assets/fila.png)
 
+
+### Mais maneiras de usar `range()`
+
+Podemos usar `range(parada)` ou `range(inicio, parada)`, o número da parada nunca aparece no resultado, não está inclus. O número de início, se houver, será o primeiro número, senão, o Python começa a contar do zero. Há ainda a forma  `range(inicio, parada, passo)`. 
 
 **Qual você acha que é o resultado de usar `range(1, 11)`?**
 
@@ -125,14 +130,31 @@ print(list(range(1, 11)))
 
 </details>
 
-### Mais maneiras de usar `range()`
 
-Podemos usar `range(parada)` ou `range(inicio, parada)`, o número da parada nunca aparece no resultado, não está inclus. O número de início, se houver, será o primeiro número, senão, o Python começa a contar do zero. Há ainda a forma  `range(inicio, parada, passo)`. Veja como poderia ser escrito o exemplo da fila de círculos.
+**Qual você acha que é o resultado de usar `range(0, 11, 2)`?**
+
+```python
+print(list(range(0, 11, 2)))
+```
+
+<details>
+  <summary>clique para ver a resposta</summary>
+
+<code>[0, 2, 4, 6, 8, 10]</code>
+
+</details>
+
+
+
+Veja agora como poderia ser escrito o exemplo da fila de círculos.
 
 ```
 for x in range(20, 400, 40): # 10 números de 20 a 380 (em passos de 40)
     circle(x, 20, 35) # círculos de diâmetro 35
 ```
+
+![](assets/fila.png)
+
 
 ### Sobre os nomes das variáveis usadas no `for` e "repetições simples
 
@@ -148,7 +170,7 @@ for _ in range(3): # repita 3 vezes!
 ```
 
 <details>
-  <summary>clique para ver o resutado no console</summary>
+  <summary>clique para ver o resutado</summary>
 
 <pre>
 viva!
