@@ -53,11 +53,13 @@ for c in cores:
     fill(c)
     rect(x, 40, 64, 320)
     x = x + 64
-``
+```
 
 Se você tiver instalada a biblioteca `matplotlib` pode pedir as cores pelo nome, então a lista pode ficar `cores = ['blue', 'yellow', 'green', 'magenta', 'cyan']`
 
 ## Produzindo sequências de inteiros com `range()`
+
+A função embutida `range()` do Python produz um "objeto range", poderíamos talvez traduzir *range* como "faixa"; esses objetos especiais que são "faixas de números inteiros" podem ser usados nos laços `for`. Outra maneira de ver exatamente os números, os exibindo com a função `print()`, é convertertendo estes objetos em listas com `list(range(n))`. Usando `range()` com o argumento 10, `range(10)`, nos exemplos abaixo, vamos obter uma lista de 10 números inteiros.
 
 **Você consegue imaginar o resultado do código a seguir?**
 
@@ -82,13 +84,12 @@ for n in range(10): # para cada número do range(10)
 </pre>
 </details>
 
-A função embutida `range()` do Python produz um "objeto range", poderíamos talvez traduzir *range* como "faixa"; esses objetos especiais que são "faixas de números inteiros" podem ser usados nos laços `for`. Uma maneira de ver exatamente os números, exibindo com a função `print()`, é convertertendo estes objetos em listas com `list(range(n))`. Usando `range()` com o argumento 10, `range(10)`, no código abaixo, vamos obter uma lista de 10 números inteiros.
+**Você consegue imaginar como é essa lista?**
 
 ```python
 print(list(range(10)))
 ```
 
-**Você consegue imaginar como é essa lista?**
 <details>
   <summary>clique para ver a resposta</summary>
 
@@ -106,12 +107,12 @@ print(list(range(1, 11)))
 
 <code>[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]</code>
 
-Podemos usar <code>range(parada)</code> ou <code>range(inicio, parada)</code>, o número início está incluso, o número de parada não está incluso. Há ainda a forma  <code>range(inicio, parada, passo)</code> que veremos mais adiante.
-
 </details>
 
+Podemos usar `range(parada)` ou `range(inicio, parada)`, o número da parada nunca aparece no resultado, não está incluso! O número início de início, se houver, será o primeiro número, senão, o Python começa a contar do zero. Há ainda a forma  `range(inicio, parada, passo)` que veremos mais adiante.
 
-### Sobre os nomes das variáveis usadas no `for` e "repetições simples"
+
+### Sobre os nomes das variáveis usadas no `for` e "repetições simples
 
 É tradicional usar certos nomes de variável `i`, `j` e `k`, por exemplo, para armazenar números de 'contadores' ou 'índices' que vão variando a cada volta do laço `for`.
 
@@ -199,10 +200,11 @@ for x in range(10, 80, 5): # x começa valendo 10 e termina valendo 75
 <img src="assets/verticais.png">
 </details>
 
-
 ## Um pouco mais sobre listas e tuplas
 
-A principal diferença, além do fato de que uma lista é construida com colchetes `[ ,]`, e uma tupla é construída com uma ou mais vírgulas apenas, se necessário em envolta em parenteses `( ,)`, é que uma lista permite que seus itens sejam alterados, itens podem ser adicionados, removidos, ou, como um todo, podem ser reordenados. Dizemos que uma lista é *mutável*. Já uma tupla não pode ter itens removidos, addicionados ou ser reordenada, dizemos que ela é *imutável* (mesmo se um item puder ter o seu conteúdo mais interno alterado). Se for necessária uma correção, podemos criar uma nova tupla com a alteração em substituição da original. 
+Nos primeiros exemplos, percorremos com o laço `for` uma lista (`list`), que é uma estrutura de dados do Python para armazenar uma sequência ordenada de itens ou elementos. Uma outra estrutura para sequências de elementos no Python se chama tupla (`tuple`).
+
+> Contexto extra: A principal diferença, além do fato de que uma lista é construida com colchetes `[ ,]`, e uma tupla é construída com uma ou mais vírgulas apenas, se necessário em envolta em parenteses `( ,)`, é que uma lista permite que seus itens sejam alterados, itens podem ser adicionados, removidos, ou, como um todo, podem ser reordenados. Dizemos que uma lista é *mutável*. Já uma tupla não pode ter itens removidos, addicionados ou ser reordenada, dizemos que ela é *imutável* (mesmo se um item dela for mutável e com isso puder ter o seu conteúdo mais interno alterado). Não preocupa muito o fato das tuplas serem imutáveis, se for necessária uma correção ou atualização de uma tupla, podemos criar uma nova com a alteração em substituição da original. Uma das vantagens das tuplas é que elas ocupam menos espaço na memória, um outro é de que elas podem ser armazenadas em um conjunto (`set`) ou serem chaves de um dicionário (`dict`).
 
 ```python
 # Uma lista de nomes de frutas
@@ -234,7 +236,9 @@ cantores.append('Zezé')
 # AttributeError: 'tuple' object has no attribute 'append'
 ```
 
-As tuplas, em certos contextos computacionais, são mais eficientes que as listas, ocupam menos espaço na memória, por exemplo, não que você precise se preocupar com isso neste momento. É mais interessante, por enquanto, considerar que são bastante convenientes quando a ordem dos elementos tem significado, por exemplo, podemos fazer uma tupla com coordenadas x e y, a primeira posição 'significa' (a ordem indica) um valor no eixo X e a segunda posição indica um valor no eixo Y:
+As tuplas, em certos contextos, são mais eficientes que as listas, ocupam menos espaço na memória, por exemplo, mas é mais interessante, por enquanto, considerar que são bastante convenientes quando a ordem dos elementos tem significado. Um outro termo usado para se referir a uma coleção em que a ordem importa e não faz sentido reordenar os elementos é 'registro', se temos tuplas com nomes, emails e telefones, por exemplo, funcioanm como um registro, como uma linha em uma planilha em que cada posição tem um signifiado.
+
+Também podemos fazer uma tupla com coordenadas x e y, a primeira posição 'significa' (a ordem indica) um valor no eixo X e a segunda posição indica um valor no eixo Y:
 
 ```python
 posicao = (150, 50)  #  x: 150 y: 50
@@ -242,8 +246,6 @@ posicao = (150, 50)  #  x: 150 y: 50
 print(posicao[0])  # exibe 150
 print(posicao[1])  # exibe 50
 ```
-
-Um outro termo usado para se referir a uma coleção em que a ordem importa e não faz sentido reordenar é 'registro', se temos tuplas com nomes, emails e telefones, por exemplo, como uma linha em uma planilha.
 
 Podemos 'desempacotar' uma tupla, atribuindo os seus valores a variáveis, desde que o número de variáveis seja igual ao número de itens:
 
