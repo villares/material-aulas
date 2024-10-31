@@ -109,27 +109,32 @@ print(media(100, 21))
 # resultado: 60.5
 ```
 
-Mais um exemplo
+Mais um exemplo, uma função que diz se o mouse está sobre um círculo cujas coordenadas do centro e o diâmetro sejam passados como argumentos.
 
 ```python
-def menor_de_idade(idade):
-     if idade < 18:
+def mouse_sobre_circulo(x, y, d):
+     if dist(mouse_x, mouse_y, x, y) < d / 2:
           return True
      else:
           return False
 
 # Poderia ser escrito abreviadamente assim...
-# def menor_de_idade(idade):
-#     return idade < 18
+# def mouse_sobre_circulo(x, y, d):
+#     return dist(mouse_x, mouse_y, x, y) < d / 2
 ```
 
-(função do exemplo anterior em uso)
+<!-- (função do exemplo anterior em uso)
 
 ```python
-if menor_de_idade(idade_aluno):
-     print('quer um refri?')
-else:
-     print('quer uma cerveja?')
+def setup():
+    size(400, 400)
+
+def draw():
+    if mouse_sobre_circulo(100, 150, 50): 
+         fill(0, 200, 0)  # quando sob o mouse, verde
+     else:
+         fill(255)   # senão, branco
+    circle(100, 150, 50)
 ```
 
 ## Alerta: Mágica escondida!
