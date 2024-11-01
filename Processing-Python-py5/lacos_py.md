@@ -155,7 +155,7 @@ for x in range(20, 400, 40): # 10 números de 20 a 380 (em passos de 40)
 ![](assets/fila.png)
 
 
-### Sobre os nomes das variáveis usadas no `for` e "repetições simples
+### Sobre os nomes das variáveis usadas no `for` e as repetições simples
 
 É tradicional usar certos nomes de variável `i`, `j` e `k`, por exemplo, para armazenar números de 'contadores' ou 'índices' que vão variando a cada volta do laço `for`.
 
@@ -221,7 +221,7 @@ for j in range(14):
 <img src="assets/verticais.png">
 </details>
 
-**Você consegue imaginar um desenho usando esse tipo de repetição e números [pseudo-aleatórios](aleatoriedade_1.md) com `random()`?**
+**Desafio: Você consegue imaginar um desenho usando esse tipo de repetição e números [pseudo-aleatórios](aleatoriedade_1.md) com `random()`?**
 
 ### Mais sobre o `range()`
 
@@ -245,7 +245,7 @@ for x in range(10, 80, 5): # x começa valendo 10 e termina valendo 75
 
 ## Um pouco mais sobre listas e tuplas
 
-Nos primeiros exemplos, percorremos com o laço `for` uma lista (`list`), que é uma estrutura de dados do Python para armazenar uma sequência ordenada mutável de itens ou elementos. Uma outra estrutura para sequências de elementos no Python, que é imutável, se chama tupla (`tuple`).
+Nos primeiros exemplos, percorremos com o laço `for` uma lista (*list*), que é uma estrutura de dados do Python para armazenar uma sequência ordenada mutável de itens ou elementos. Uma outra estrutura para sequências de elementos no Python, que é imutável, se chama tupla (*tuple*).
 
 ```python
 # Uma lista de nomes de cores
@@ -277,13 +277,11 @@ cantores.append('Zezé')
 # AttributeError: 'tuple' object has no attribute 'append'
 ```
 
-A principal diferença, além do fato de que uma lista é construida com colchetes `[ ,]`, e uma tupla é construída com uma ou mais vírgulas apenas, se necessário em envolta em parenteses `( ,)`, é que uma lista permite que seus itens sejam alterados, itens podem ser adicionados, removidos, ou, como um todo, podem ser reordenados. Por conta disso, dizemos que uma lista é *mutável*.
+Uma lista é construida com colchetes `[ ,]`, e uma tupla é construída com os itens separados por vírgulas, e quando necessário, envoltos em parenteses `( ,)`. Uma lista permite que seus itens sejam alterados, itens podem ser adicionados, removidos, ou, como um todo, podem ser reordenados. Por conta disso, dizemos que uma lista é *mutável*. Já uma tupla não pode ter itens removidos, addicionados ou ser reordenada, dizemos que ela é *imutável* (mesmo se um item dela for mutável e com isso puder ter o seu conteúdo mais interno alterado). 
 
-Já uma tupla não pode ter itens removidos, addicionados ou ser reordenada, dizemos que ela é *imutável* (mesmo se um item dela for mutável e com isso puder ter o seu conteúdo mais interno alterado). Não preocupa muito o fato das tuplas serem imutáveis, se for necessária uma correção ou atualização de uma tupla, podemos criar uma nova com a alteração em substituição da original. Uma das vantagens das tuplas é que elas ocupam menos espaço na memória, um outro é de que elas podem ser armazenadas em um conjunto (`set`) ou serem chaves de um dicionário (`dict`).
+Não preocupa muito o fato das tuplas serem imutáveis, se for necessária uma correção ou atualização de uma tupla, podemos criar uma nova com a alteração em substituição da original. Uma das vantagens das tuplas é que elas ocupam menos espaço na memória, um outro é de que elas podem ser armazenadas em um conjunto (*set*) ou serem chaves de um dicionário (*dict*). Tuplas são bastante convenientes quando a ordem dos elementos tem significado. Um termo usado para se referir a uma coleção em que a ordem importa e não faz sentido reordenar os elementos é "registro", imagine uma coleção de tuplas com nomes de pessoas, emails e telefones, por exemplo: essas tuplas funcionam como registros, como linhas em uma planilha em que cada posição (a coluna da planilha) tem um signifiado.
 
-Tuplas são bastante convenientes quando a ordem dos elementos tem significado. Um termo usado para se referir a uma coleção em que a ordem importa e não faz sentido reordenar os elementos é 'registro', imagine uma coleção de tuplas com nomes, emails e telefones, por exemplo, essas tuplas funcioanam como registros, como linhas em uma planilha em que cada posição (a coluna da planilha) tem um signifiado.
-
-Para um exemplo da geometria, podemos fazer uma tupla com coordenadas x e y, dessa forma, a primeira posição 'significa', isto é, a ordem indica, um valor no eixo X e a segunda posição indica um valor no eixo Y:
+Para um exemplo da geometria, podemos fazer uma tupla com coordenadas x e y, dessa forma, a primeira posição *significa*, isto é, a ordem indica, um valor no eixo X e a segunda posição indica um valor no eixo Y:
 
 ```python
 posicao = (150, 50)  #  x: 150 y: 50
@@ -292,7 +290,7 @@ print(posicao[0])  # exibe 150
 print(posicao[1])  # exibe 50
 ```
 
-Podemos 'desempacotar' uma tupla, atribuindo os seus valores a variáveis, desde que o número de variáveis seja igual ao número de itens:
+Podemos "desempacotar" uma tupla, atribuindo os seus valores a variáveis, desde que o número de variáveis seja igual ao número de itens:
 
 ```python
 posicao = 250, 120  # ou posição = (250, 120) 
@@ -321,7 +319,7 @@ pontos = [(10, 10), (100, 20), (200, 50), (50, 150)]
  
 ### Iterando pelos dados
 
-Finalmente vamos usar a estrutura de iteração, o *loop* `for`, para repetir a ação de desenhar um círculo, usando as coordenadas das tuplas de coordenadas na lista `pontos`:
+Finalmente, vamos usar a estrutura de iteração, o *loop* `for`, para repetir a ação de desenhar um círculo, usando as coordenadas das tuplas de coordenadas na lista `pontos`:
 
 ```python
 size(400, 400)
@@ -331,7 +329,7 @@ for t in pontos:
     circle(x, y, 15)
 ```
 
-ou ainda podemos escrever abreviadamente assim:
+Podemos ainda escrever abreviadamente assim:
 
 ```python
 size(400, 400)
