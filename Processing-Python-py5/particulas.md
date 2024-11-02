@@ -18,7 +18,7 @@ Prerequisitos para aproveitar melhor este material:
 
 Para obter o efeito de movimento(animação de uma partícula) criaremos um par de variáveis globais `x` e `y`, que serão inicializadas no `setup()` com as coordenadas do meio da àrea de desenho. Note que o escopo global dessas variáveis precisa ser indicado com a palavra chave `global` quando pretendemos alterá-las.
 
-<img src="assets/particulas0.gif"  align=left padding=10px >
+<img src="assets/particulas0.gif"  align=left >
 
 O código que vai em `draw()` tem a execução repetida continuamente, é o "laço principal" do * sketch*. Neste bloco vamos inicialmente limpar a tela com `background()` e em seguida invocar a função de desenho `circle()` na posição indicada pelas variáveis `x` e `y`, atualizar as variáveis de posição e por fim checar se estas estão além de um certo limite e precisam ser redefinidas para um novo ciclo da animação.
 
