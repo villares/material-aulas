@@ -14,7 +14,7 @@ Prerequisitos para aproveitar melhor este material:
 
 ## 0. Começando sem orientação a objetos
 
-### Redesenhando formas e atualizando variáveis no laço principal do Processing
+**Redesenhando formas e atualizando variáveis no laço principal do Processing**
 
 Para obter o efeito de movimento(animação de uma partícula) criaremos um par de variáveis globais `x` e `y`, que serão inicializadas no `setup()` com as coordenadas do meio da àrea de desenho. Note que o escopo global dessas variáveis precisa ser indicado com a palavra chave `global` quando pretendemos alterá-las.
 
@@ -46,7 +46,8 @@ def draw():
         y = -tamanho / 2
 ```
 ## 1. Primeira aproximação de uma classe
-### Definindo a classe Partícula
+
+**Definindo a classe Partícula**
 
 Vamos agora obter o mesmo comportamento usando um objeto da classe definida pelo bloco `class Particula(): `.
 
@@ -57,16 +58,16 @@ Na definição da classe `Particula`, o método `desenhar()` contém a parte de 
 ```python
 def setup():
     """Código de configuração, executado no início pelo py5."""
-    global particula_0
+    global pa
     size(100, 100)  # área de desenho
-    particula_0 = Particula(width / 2, height / 2, 50)
+    pa = Particula(width / 2, height / 2, 50)
 
 
 def draw():
     """ Laço principal de repetição do Processing """
     background(0)  # atualização do desenho, fundo preto
-    particula_0.desenhar()
-    particula_0.atualizar()
+    pa.desenhar()
+    pa.atualizar()
 
 
 class Particula():
@@ -91,39 +92,45 @@ class Particula():
             self.y = - self.tamanho / 2
 ```
 
+Pode parecer custosa demais toda essa buroracia para obter o mesmo comportamento que tínhamos anteriormente, vejamos então quais são os possíveis benefícios.
+
 ## 2. Instanciando mais objetos
-### Criando algumas partículas
+
+**Criando algumas partículas**
 
 A vantagem da estruturação e encapsulamento de ter uma classe Particula pode começar a fazer sentido quando instanciamos mais de uma particula.
+
+<img src="assets/particuals0.guf" align="right"  alt="output passo 4">
 
 ```python
 def setup():
     """ Instancia três particulas """
-    global particula_0, baindeira_1, particula_2
+    global pa, pb, pc
     size(100, 100)  # área de desenho (width, height)
-    meia_largura, meia_altura = width / 2, height / 2
-    particula_0 = Particula(meia_largura, meia_altura)
-    particula_1 = Particula(80, 10, 30)
-    particula_2 = Particula(10, 40, 20)
+    pa = Particula(50, 50, 40)
+    pb = Particula(80, 10, 30)
+    pc = Particula(10, 40, 20)
+
 
 
 def draw():
     """ Limpa a tela, desenha e atualiza particulas """
     background(0)  # atualização do desenho, fundo preto
-    particula_0.desenhar()
-    particula_0.atualizar()
-    particula_1.desenhar()
-    particula_1.atualizar()
-    particula_2.desenhar()
-    particula_2.atualizar()
+    pa.desenhar()
+    pa.atualizar()
+    pb.desenhar()
+    pb.atualizar()
+    pc.desenhar()
+    pc.atualizar()
 
 
 ```
 ```
 ...o código continua com a classe Particula mostrada anteriormente
 ```
-# 3. Ampliando a classe Particula
-# Mudando o comportamento e adicionando outras propriedades.
+## 3. Ampliando a classe Particula
+
+**Mudando o comportamento e adicionando outras propriedades.**
 
 O passo seguinte é dado ampliando o código da classe Particula.
 
@@ -179,7 +186,8 @@ class Particula():
 ```
 
 ## 4. Muitas partículas!
-### Uma lista de objetos
+
+**Uma lista de objetos**
 
 Uma estrutura de dados, no caso uma lista, pode de maneira muito simples conter referências para um grande número de objetos.
 Aqui chegamos rapidamente a um comportamento visualmente interessante instanciando 50 particulas no `setup()` e em seguida no `draw()` iteramos por estas particulas de maneira bastante típica em Python com um laço `for `*`object`*` in `*`collection_of_objects`*`: `
