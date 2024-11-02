@@ -190,8 +190,11 @@ class Particula():
 
 **Uma lista de objetos**
 
-Uma estrutura de dados, no caso uma lista, pode de maneira muito simples conter referências para um grande número de objetos.
-Aqui chegamos rapidamente a um comportamento visualmente interessante instanciando 50 particulas no `setup()` e em seguida no `draw()` iteramos por estas particulas de maneira bastante típica em Python com um laço `for `*`object`*` in `*`collection_of_objects`*`: `
+Uma estrutura de dados, no caso uma lista, pode conter referências para um número de objetos.
+
+Podemos instancianr 50 particulas no `setup()` acrescentando em uma lista com o método `.append()`.
+
+Em seguida, no `draw()` iteramos por estas particulas, chamando os métodos `.desenhar()`  e `.atualizar()`  de cada partícula.
 
 ```python
 particulas = []  # lista de objetos
