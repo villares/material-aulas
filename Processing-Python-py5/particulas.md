@@ -20,6 +20,9 @@ Para obter o efeito de movimento(animação de uma partícula) criaremos um par 
 
 O código que vai em `draw()` tem a execução repetida continuamente, é o "laço principal" do * sketch*. Neste bloco vamos inicialmente limpar a tela com `background()` e em seguida invocar a função de desenho `circle()` na posição indicada pelas variáveis `x` e `y`, atualizar as variáveis de posição e por fim checar se estas estão além de um certo limite e precisam ser redefinidas para um novo ciclo da animação.
 
+<img src="assets/particuals0.guf" align="right"  alt="output passo 4">
+
+
 ```python
 tamanho = 50
 
@@ -41,8 +44,6 @@ def draw():
         x = -tamanho / 2
     if y > height + tamanho / 2:
         y = -tamanho / 2
-
-
 ```
 ## 1. Primeira aproximação de uma classe
 ### Definindo a classe Partícula
