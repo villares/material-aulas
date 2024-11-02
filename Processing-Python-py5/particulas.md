@@ -18,10 +18,9 @@ Prerequisitos para aproveitar melhor este material:
 
 Para obter o efeito de movimento(animação de uma partícula) criaremos um par de variáveis globais `x` e `y`, que serão inicializadas no `setup()` com as coordenadas do meio da àrea de desenho. Note que o escopo global dessas variáveis precisa ser indicado com a palavra chave `global` quando pretendemos alterá-las.
 
+<img src="assets/particulas0.gif" align="left"  alt="um círculo animado">
+
 O código que vai em `draw()` tem a execução repetida continuamente, é o "laço principal" do * sketch*. Neste bloco vamos inicialmente limpar a tela com `background()` e em seguida invocar a função de desenho `circle()` na posição indicada pelas variáveis `x` e `y`, atualizar as variáveis de posição e por fim checar se estas estão além de um certo limite e precisam ser redefinidas para um novo ciclo da animação.
-
-<img src="assets/particuals0.gif" align="left"  alt="um círculo animado">
-
 
 ```python
 tamanho = 50
@@ -98,9 +97,9 @@ Pode parecer custosa demais toda essa buroracia para obter o mesmo comportamento
 
 **Criando algumas partículas**
 
-A vantagem da estruturação e encapsulamento de ter uma classe Particula pode começar a fazer sentido quando instanciamos mais de uma particula.
+<img src="assets/particulas1.gif" align="left"  alt="um círculo animado">
 
-<img src="assets/particuals1.gif" align="left"  alt="algumas partículas">
+A vantagem da estruturação e encapsulamento de ter uma classe Particula pode começar a fazer sentido quando instanciamos mais de uma particula.
 
 ```python
 def setup():
@@ -111,8 +110,6 @@ def setup():
     pb = Particula(80, 10, 30)
     pc = Particula(10, 40, 20)
 
-
-
 def draw():
     """ Limpa a tela, desenha e atualiza particulas """
     background(0)  # atualização do desenho, fundo preto
@@ -122,8 +119,6 @@ def draw():
     pb.atualizar()
     pc.desenhar()
     pc.atualizar()
-
-
 ```
 ```
 ...o código continua com a classe Particula mostrada anteriormente
@@ -132,12 +127,14 @@ def draw():
 
 **Mudando o comportamento e adicionando outras propriedades.**
 
+<img src="assets/particulas2.gif" align="left"  alt="um círculo animado">
+
 O passo seguinte é dado ampliando o código da classe Particula.
 
 No método `__init__()`:
-1. Sorteio do tamanho, caso nenhum tenha sido fornecido na expressão construtora
+1. Sorteio do tamanho, caso nenhum tenha sido fornecido quando o objeto é instanciado.
 2. Sorteio da velocidade, decomposta nos componentes horizontal `self.vx` e vertical `self.vy`
-3. Sorteio da cor, ligeiramente translúcida.
+3. Sorteio da cor, ligeiramente translúcida. 
 
 No método `desenhar()`:
 1. Remoção do contorno com `no_stroke()`
@@ -167,6 +164,7 @@ class Particula():
 
     def desenhar(self):
         """ Desenha círculo """
+        no_stroke()
         fill(self.cor)
         circle(self.x, self.y, self.tamanho)
 
@@ -189,12 +187,13 @@ class Particula():
 
 **Uma lista de objetos**
 
+<img src="assets/particulas3.gif" align="left"  alt="um círculo animado">
+
 Uma estrutura de dados, no caso uma lista, pode de maneira muito simples conter referências para um grande número de objetos.
 Aqui chegamos rapidamente a um comportamento visualmente interessante instanciando 50 particulas no `setup()` e em seguida no `draw()` iteramos por estas particulas de maneira bastante típica em Python com um laço `for `*`object`*` in `*`collection_of_objects`*`: `
 
 ```python
 particulas = []  # lista de objetos
-
 
 def setup():
     """ Define área de desenho e popula lista de particulas """
@@ -204,15 +203,12 @@ def setup():
         nova_particula = Particula(meia_largura, meia_altura)
         particulas.append(nova_particula)
 
-
 def draw():
     """ Limpa a tela, desenha e atualiza particulas """
     background(0)  # atualização do desenho, fundo preto
     for particula in particulas:
         particula.desenhar()
         particula.atualizar()
-
-
 ```
 
 ```
