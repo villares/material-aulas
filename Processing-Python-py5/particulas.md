@@ -14,11 +14,12 @@ Prerequisitos para aproveitar melhor este material:
 
 ## 0. Começando sem orientação a objetos
 
+<img src="assets/particulas0.gif" align=right padding=20px>
+
 **Redesenhando formas e atualizando variáveis no laço principal do Processing**
 
 Para obter o efeito de movimento(animação de uma partícula) criaremos um par de variáveis globais `x` e `y`, que serão inicializadas no `setup()` com as coordenadas do meio da àrea de desenho. Note que o escopo global dessas variáveis precisa ser indicado com a palavra chave `global` quando pretendemos alterá-las.
 
-<img src="assets/particulas0.gif" align=left padding=20px>
 
 O código que vai em `draw()` tem a execução repetida continuamente, é o "laço principal" do * sketch*. Neste bloco vamos inicialmente limpar a tela com `background()` e em seguida invocar a função de desenho `circle()` na posição indicada pelas variáveis `x` e `y`, atualizar as variáveis de posição e por fim checar se estas estão além de um certo limite e precisam ser redefinidas para um novo ciclo da animação.
 
@@ -95,9 +96,9 @@ Pode parecer custosa demais toda essa buroracia para obter o mesmo comportamento
 
 ## 2. Instanciando mais objetos
 
-**Criando algumas partículas**
-
 <img src="assets/particulas1.gif" align=right padding=20px>
+
+**Criando algumas partículas**
 
 A vantagem da estruturação e encapsulamento de ter uma classe Particula pode começar a fazer sentido quando instanciamos mais de uma particula.
 
@@ -125,9 +126,9 @@ def draw():
 ```
 ## 3. Ampliando a classe Particula
 
-**Mudando o comportamento e adicionando outras propriedades.**
-
 <img src="assets/particulas2.gif" align=right padding=20px>
+
+**Mudando o comportamento e adicionando outras propriedades.**
 
 O passo seguinte é dado ampliando o código da classe Particula.
 
@@ -185,9 +186,9 @@ class Particula():
 
 ## 4. Muitas partículas!
 
-**Uma lista de objetos**
-
 <img src="assets/particulas3.gif" align=right padding=20px>
+
+**Uma lista de objetos**
 
 Uma estrutura de dados, no caso uma lista, pode de maneira muito simples conter referências para um grande número de objetos.
 Aqui chegamos rapidamente a um comportamento visualmente interessante instanciando 50 particulas no `setup()` e em seguida no `draw()` iteramos por estas particulas de maneira bastante típica em Python com um laço `for `*`object`*` in `*`collection_of_objects`*`: `
