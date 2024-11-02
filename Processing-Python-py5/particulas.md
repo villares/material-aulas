@@ -52,8 +52,10 @@ def draw():
 Vamos agora obter o mesmo comportamento usando um objeto da classe definida pelo bloco `class Particula(): `.
 
 A definição da classe começa com o método especial `__init__()` que inicializa os atributos de dados(campos) de posição e tamanho quando um novo objeto é criado.
-No bloco `setup()` criamos uma instância de particula no meio da àrea de desenho com a linha`particula = Particula(width / 2, height / 2)` e o bloco `draw()` vai repetidamente limpar a tela e chamar os métodos de desenho e atualização, `particula.desenhar()` e `particula.atualizar()` respectivamente.
-Na definição da classe `Particula`, o método `desenhar()` contém a parte de desenho que escrevemos no passo inicial, mas em vez de variáveis globais agora vai usar usa os atributos de posição e tamanho do próprio objeto (instância do objeto) quando executado. Já o método `atualizar()` contém o código anteriormente usado para atualizar a posição nas variáveis globais, agora atualiza os dados (campos ou atributos) de posição do objeto.
+
+No bloco `setup()` criamos uma instância de particula no meio da àrea de desenho com a linha`particula = Particula(width / 2, height / 2)` e o bloco `draw()` vai repetidamente limpar a tela e chamar os métodos de desenho e atualização da posição, `particula.desenha()` e `particula.move()` respectivamente.
+
+Na definição da classe `Particula`, o método `desenha()` contém a parte de desenho que escrevemos no passo inicial, mas em vez de variáveis globais agora vai usar usa os atributos de posição e tamanho do próprio objeto (instância do objeto) quando executado. Já o método `move()` contém o código anteriormente usado para atualizar a posição nas variáveis globais, agora atualiza os atributos de posição do objeto.
 
 ```python
 def setup():
@@ -66,8 +68,8 @@ def setup():
 def draw():
     """ Laço principal de repetição do Processing """
     background(0)  # atualização do desenho, fundo preto
-    pa.desenhar()
-    pa.atualizar()
+    pa.desenha()
+    pa.move()
 
 
 class Particula():
@@ -78,11 +80,11 @@ class Particula():
         self.y = y
         self.tamanho = tamanho
 
-    def desenhar(self):
+    def desenha(self):
         """ Desenha círculo """
         circle(self.x, self.y, self.tamanho)
 
-    def atualizar(self):
+    def move(self):
         """ atualiza a posição do objeto """
         self.x += 1
         self.y += 1
@@ -114,12 +116,12 @@ def setup():
 def draw():
     """ Limpa a tela, desenha e atualiza particulas """
     background(0)  # atualização do desenho, fundo preto
-    pa.desenhar()
-    pa.atualizar()
-    pb.desenhar()
-    pb.atualizar()
-    pc.desenhar()
-    pc.atualizar()
+    pa.desenha()
+    pa.move()
+    pb.desenha()
+    pb.move()
+    pc.desenha()
+    pc.move()
 ```
 ```
 ...o código continua com a classe Particula mostrada anteriormente
@@ -137,11 +139,11 @@ No método `__init__()`:
 2. Sorteio da velocidade, decomposta nos componentes horizontal `self.vx` e vertical `self.vy`
 3. Sorteio da cor, ligeiramente translúcida. 
 
-No método `desenhar()`:
+No método `desenha()`:
 1. Remoção do contorno com `no_stroke()`
 2. Aplicação da cor de preenchimento com `fill(self.cor)`.
 
-No método `atualizar()`:
+No método `move()`:
 1. Atualização da posição pela soma dos componentes de velocidade na posição
 2. Tratamento da saída do objeto da área de desenho por qualquer dos lados.
 
@@ -163,13 +165,13 @@ class Particula():
                          random(256),  # B
                          200)  # alpha
 
-    def desenhar(self):
+    def desenha(self):
         """ Desenha círculo """
         no_stroke()
         fill(self.cor)
         circle(self.x, self.y, self.tamanho)
 
-    def atualizar(self):
+    def move(self):
         """ atualiza a posição do objeto e devolve do lado oposto se sair """
         self.x += self.vx
         self.y += self.vy
@@ -194,7 +196,7 @@ Uma estrutura de dados, no caso uma lista, pode conter referências para um núm
 
 Podemos instancianr 50 particulas no `setup()` acrescentando em uma lista com o método `.append()`.
 
-Em seguida, no `draw()` iteramos por estas particulas, chamando os métodos `.desenhar()`  e `.atualizar()`  de cada partícula.
+Em seguida, no `draw()` iteramos por estas particulas, chamando os métodos `.desenha()`  e `.move()`  de cada partícula.
 
 ```python
 particulas = []  # lista de objetos
@@ -211,8 +213,8 @@ def draw():
     """ Limpa a tela, desenha e atualiza particulas """
     background(0)  # atualização do desenho, fundo preto
     for particula in particulas:
-        particula.desenhar()
-        particula.atualizar()
+        particula.desenha()
+        particula.move()
 ```
 
 ```
