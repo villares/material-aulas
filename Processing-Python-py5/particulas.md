@@ -7,10 +7,10 @@ Vamos ver aqui alguns conceitos introdutórios de orientação a objetos:
 
 Prerequisitos para aproveitar melhor este material:
 - Vocabulário básico de desenho, tal como a função `circle()` e controle de atributos gráficos `fill`, `stroke`, `no_stroke`, `no_fill` e `background`;
-- Conhecimento da estrutura `setup()`/`draw()` do Processing
+- Conhecimento da estrutura `setup()`/`draw()` do py5, que vem do Processing;
 - Uso de variáveis, conceito de atribuição, escopos global e local;
 - Controle de fluxo de execução com condições (`if` e `else`) e laços de repetição (`for`);
-- Declaração de novas funções
+- Declaração de novas funções.
 
 ## 0. Começando sem orientação a objetos
 
@@ -21,26 +21,26 @@ Para obter o efeito de movimento(animação de uma partícula) criaremos um par 
 O código que vai em `draw()` tem a execução repetida continuamente, é o "laço principal" do * sketch*. Neste bloco vamos inicialmente limpar a tela com `background()` e em seguida invocar a função de desenho `circle()` na posição indicada pelas variáveis `x` e `y`, atualizar as variáveis de posição e por fim checar se estas estão além de um certo limite e precisam ser redefinidas para um novo ciclo da animação.
 
 ```python
-tamanho = 10
+tamanho = 50
 
 def setup():
-    """ Código de configuração, executado no início pelo Processing """
+    """Código de configuração, executado no início pelo py5."""
     global x, y     # a instrução global permite atribuir nomes a variáveis globais nesta função
     size(100, 100)  # área de desenho
     x, y = width / 2, height / 2   # coordenadas do meio da área de desenho
 
 
 def draw():
-    """ O laço principal de repetição do Processing usado para animações e sketches interativos"""
+    """O laço principal de repetição do Processing usado para animações e sketches interativos."""
     global x, y
     background(0)  # limpeza do frame, fundo preto
     circle(x, y, tamanho)  # desenha um círculo
     x += 1  # incrementa o x (equivale a x = x + 1)
     y += 1  # incrementa o y
-    if x > width + 25:
-        x = -25
-    if y > height + 25:
-        y = -25
+    if x > width + tamanho / 2:
+        x = -tamanho / 2
+    if y > height + tamanho / 2:
+        y = -tamanho / 2
 
 
 ```
@@ -54,13 +54,11 @@ No bloco `setup()` criamos uma instância de particula no meio da àrea de desen
 Na definição da classe `Particula`, o método `desenhar()` contém a parte de desenho que escrevemos no passo inicial, mas em vez de variáveis globais agora vai usar usa os atributos de posição e tamanho do próprio objeto (instância do objeto) quando executado. Já o método `atualizar()` contém o código anteriormente usado para atualizar a posição nas variáveis globais, agora atualiza os dados (campos ou atributos) de posição do objeto.
 
 ```python
-
-
 def setup():
-    """ Código de configuração, executado no início pelo Processing """
+    """Código de configuração, executado no início pelo py5."""
     global particula_0
     size(100, 100)  # área de desenho
-    particula_0 = Particula(width / 2, height / 2)
+    particula_0 = Particula(width / 2, height / 2, 50)
 
 
 def draw():
@@ -71,9 +69,9 @@ def draw():
 
 
 class Particula():
-    """ Classe Particula, com métodos de desenho e atualizaçao ('atualize') """
+    """ Classe Particula, com métodos de desenho e atualização."""
 
-    def __init__(self, x, y, tamanho=50):
+    def __init__(self, x, y, tamanho):
         self.x = x
         self.y = y
         self.tamanho = tamanho
@@ -86,12 +84,10 @@ class Particula():
         """ atualiza a posição do objeto """
         self.x += 1
         self.y += 1
-        if self.x > width + 25:
-            self.x = -25
-        if self.y > height + 25:
-            self.y = -25
-
-
+        if self.x > width + self.tamanho / 2:
+            self.x = - self.tamanho / 2
+        if self.y > height +  self.tamanho / 2:
+            self.y = - self.tamanho / 2
 ```
 
 ## 2. Instanciando mais objetos
@@ -100,7 +96,6 @@ class Particula():
 A vantagem da estruturação e encapsulamento de ter uma classe Particula pode começar a fazer sentido quando instanciamos mais de uma particula.
 
 ```python
-
 def setup():
     """ Instancia três particulas """
     global particula_0, baindeira_1, particula_2
@@ -180,8 +175,6 @@ class Particula():
             self.x = width + metade
         if self.y < -metade:
             self.y = height + metade
-
-
 ```
 
 ## 4. Muitas partículas!
