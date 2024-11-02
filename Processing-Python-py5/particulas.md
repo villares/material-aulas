@@ -20,7 +20,7 @@ Para obter o efeito de movimento(animação de uma partícula) criaremos um par 
 
 O código que vai em `draw()` tem a execução repetida continuamente, é o "laço principal" do * sketch*. Neste bloco vamos inicialmente limpar a tela com `background()` e em seguida invocar a função de desenho `circle()` na posição indicada pelas variáveis `x` e `y`, atualizar as variáveis de posição e por fim checar se estas estão além de um certo limite e precisam ser redefinidas para um novo ciclo da animação.
 
-<img src="assets/particuals0.guf" align="right"  alt="output passo 4">
+<img src="assets/particuals0.gif" align="left"  alt="um círculo animado">
 
 
 ```python
@@ -100,7 +100,7 @@ Pode parecer custosa demais toda essa buroracia para obter o mesmo comportamento
 
 A vantagem da estruturação e encapsulamento de ter uma classe Particula pode começar a fazer sentido quando instanciamos mais de uma particula.
 
-<img src="assets/particuals0.guf" align="right"  alt="output passo 4">
+<img src="assets/particuals1.gif" align="left"  alt="algumas partículas">
 
 ```python
 def setup():
