@@ -16,7 +16,8 @@ for coluna in range(num_colunas):  # coluna vai de 0 a 9
 ![](assets/fila.png)
 
 Seria possível obter o mesmo resultado usando a estratégia `range(inicio, parada, passa)`
-```
+
+```python
 # deslocamento (offset) inicial: 20 - deslocamento horizontal de cada círculo: 40 
 for x in range(20, 400, 40): # 10 números de 20 a 380, incluso, de 40 em 40
     circle(x, 20, 35) # círculos de diâmetro 35
