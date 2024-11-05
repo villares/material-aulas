@@ -80,3 +80,9 @@ Também é possível indicar o valor máximo de cada canal **RGB** usando `color
 ## Sobre a notação hexa com `#`
 
 É possível usar a notação hexadecimal começando com `#` seguido por `RRGGBB`, também conhecida como cor hexa e apreciada por web-designers e comum também no Processing Java, mas só entre aspas no modo Python, como em `fill("#FFAA00"`) nas funções `color()`, `fill()`,  `background()` e `stroke()`.
+
+## Usando cores nomeadas e outras funcionlidades do `py5`
+
+Se você tiver a biblioteca *matplotlib* instalada pode usar strings com os nomes ds cores [como explicdo na documentação do py5](https://py5coding.org/integrations/matplotlib.html#named-colors).
+
+[Usando a biblioteca *coulour* é possível usar cores HSL e outras melhorias](https://py5coding.org/integrations/colors.html) 
