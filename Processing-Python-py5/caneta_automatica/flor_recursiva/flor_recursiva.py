@@ -1,8 +1,7 @@
+size(400, 400) # sem setup, size tem que estar na primeira linha!
+
 from caneta_automatica import *
-
-size(400, 400)
 inicie_caneta()
-
 
 def flor(n, tamanho):
     for passo in range(n):
@@ -10,7 +9,6 @@ def flor(n, tamanho):
         vire(360 / n)
         if tamanho > 5:
             flor(n, tamanho / 3)
-
 
 suba_caneta()
 ande(100)

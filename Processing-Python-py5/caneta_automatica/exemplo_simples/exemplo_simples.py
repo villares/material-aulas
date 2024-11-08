@@ -6,7 +6,7 @@ def setup():
     inicie_caneta()
     quadrado(100)  # chama a função quadrado
 
-    # saveFrame("quadrado.png")
+    save_frame("quadrado.png")
 
 
 def quadrado(tamanho):
