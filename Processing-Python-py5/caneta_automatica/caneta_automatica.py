@@ -1,6 +1,5 @@
-# -*- coding: utf-8 -*-
-# Precisa a linha acima exatamente asssim, não remova o '#'!
-# abav.lugaralgum.com/material-aulas/Processing-Python/modulos
+# PY5 IMPORTED MODE CODE
+# a linha acima é necessária, não remova!
 """
 Módulo caneta automática tem funções que lembram a tartaruga da
 linguagem Logo, permitem desenhar "arrastando uma caneta".
