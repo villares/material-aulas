@@ -1,3 +1,6 @@
+# PY5 IMPORTED MODE CODE
+# a linha acima é necessária, não remova!
+
 def inicie_caneta():
     global caneta
     caneta = True
