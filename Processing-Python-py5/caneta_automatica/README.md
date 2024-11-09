@@ -10,8 +10,10 @@ O módulo *caneta_automatica.py* deve ficar dentro da mesma pasta que o seu *ske
 Para importar e começar a usar a caneta você precisa das seguintes linhas:
 
 ```python
-size(400, 400)  # área de desenho do Processing
-inicie_caneta()  # precisa ser depois do 'size()'
+size(400, 400)  # se não houver setup(), size() precisa estar na primeira linha
+
+from caneta_automatica import *  # traz o vocabulário da caneta
+inicie_caneta()                  # precisa ser depois do 'size()' caso esteja dentro do setup()
 ```
 
 # Exemplos de uso
@@ -30,11 +32,11 @@ for i in range(4):  # repete 4 vezes:
     vire(90)        # viar 90 graus à esquerda
 ```
 
-![quadrado](quadrado.png)
+![quadrado](exemplo_simples/quadrado.png)
 
 Equivalente, mas agora definindo mais funções.
 
-```pyde
+```python
 
 
 def setup():
@@ -57,7 +59,7 @@ def quadrado(tamanho):
 
 Recursividade acontece quando durante a execução de uma função nós pedimos a execução da própria função. Esta função flor, chama a função flor se o tamanho dela for maior que 5.
 
-```pyde
+```python
 
 
 def setup():
@@ -81,7 +83,7 @@ def flor(n, tamanho):
 
 
 ```
-![flor](caneta_flor.png)
+![flor](flor_recursiva/caneta_flor.png)
 
 
 # Como o módulo `caneta_automatica.py` é feito por dentro?
