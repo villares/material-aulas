@@ -257,7 +257,7 @@ def key_released():
   ```
   Note que agora `a` e  `A` devem aparecer como ` A` e , `1` e `!`  como`1` . Fique atento e teste para evitar surpresas! No meu computador o `key_code` de `+` e `-` do teclado numérico lateral, por exemplo, aparecem como `k` e `m`.
 - Foi usada `sorted()` para obter uma lista ordenada a partir do conjunto `teclas_apertadas`
-- Dentro do `key_pressed()` tem um pequeno truque que impede o *sketch*  de ser interrompido pela tecla `ESC`.
+<!-- - Dentro do `keyPressed()` no Processing modo Python tinha um pequeno truque que impedia o *sketch*  de ser interrompido pela tecla `ESC`, mas não funciona mais -->
 - No dicionário acrescentei alguns códigos de teclas que vi, estando no Linux, os códigos e nomes das teclas podem variar dependendo do seu sistema operacional.
 
 ### Combinando estratégias
