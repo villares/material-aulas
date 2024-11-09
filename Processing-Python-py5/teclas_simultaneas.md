@@ -223,9 +223,9 @@ def key_pressed():
     else:
         teclas_apertadas.add(key_code)
 
-    # Impeça que o sketch seja encerrado com ESC!
+    # No Processing tradicional é possível impedir que ESC feche o sketch... no py5 ainda não é possível.
     if key == ESC:
-        this.key = ' '
+         print('ESC')     
 
 def key_released():
     if key != CODED:
