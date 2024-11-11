@@ -137,7 +137,7 @@ class Slider:
     def display(self):
         push()  # combina pushMatrix() and pushStyle()
         reset_matrix()
-        camera()
+#         camera()  # acrescente caso o sketch seja com P3D!
         rect_mode(CENTER)
         stroke_weight(4)
         stroke(200)
