@@ -25,7 +25,7 @@ Se você quer apoiar a continuidade deste projeto, que produz material didático
 - Fazines e pôsters [**`desenho()`**](https://desenho.lugaralgum.com) `"""Para desenhar com código, para desenhar junto, com o computador e com outras pessoas!"""`
 - Desenhos diários: [sketch-a-day](https://abav.lugaralgum.com/sketch-a-day)
 - [Paper objects with Processing and Python](https://github.com/villares/Paper-objects-with-Processing-and-Python)
-- [Trabalho em andamento] [Quebra-acabeças de Parsons com resultado visual](https://abav.lugaralgum.com/faded-parsons-visual/)
+- [Trabalho em andamento] [Quebra-cabeças de Parsons com resultado visual](https://abav.lugaralgum.com/faded-parsons-visual/)
 - [Trabalho em andamento] [NumPy para leigos](https://hackmd.io/@villares/numpy-para-leigos)
 - Outras opções de desenho com Python: [Resources for teaching programming for artists, designers and architects](https://github.com/villares/Resources-for-teaching-programming) 
 - [Outros recursos e livros de Processing e Python](sobre/outros_recursos.md)
