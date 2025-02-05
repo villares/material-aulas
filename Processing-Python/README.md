@@ -40,7 +40,7 @@
 
 - 1.7.0[Aleatoriedade: `random` e números 'sorteados'](aleatoriedade_1.md)
   - 1.7.1 [Mais sobre aleatoriedade e as diferenças ente o `random` de Processing e de Python](aleatoriedade_2.md)
-  - 1.7.2 [*Perlin Noise* (ruído de Perlin) um tipo especial de número pseudo-aleatório](noise.md)
+  - 1.7.2 [*Perlin Noise* (ruído de Perlin) um tipo especial de número pseudoaleatório](noise.md)
   - 1.7.3 [Como usar seno `sin()`, cosseno `cos()` e arco tangente `atan2()`](seno_cosseno_atan2.md)
   - 1.7.4 [Manipulando números com `remap()` e `lerp()`](map_lerp.md) - e fazendo cores intermediárias!
   - 1.7.5 [O que é *easing*?](easing.md) - transições de movimento

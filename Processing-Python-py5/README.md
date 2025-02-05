@@ -58,7 +58,7 @@
 ### Aprofundando algumas ideias
 
 - 3.1.0 [Mais sobre aleatoriedade](aleatoriedade_2.md) e as diferenças ente o `random` do py5 e o do Python
-  - 3.1.1 [*Perlin Noise* (ruído de Perlin)](noise.md) um tipo especial de número pseudo-aleatório
+  - 3.1.1 [*Perlin Noise* (ruído de Perlin)](noise.md) um tipo especial de número pseudoaleatório
 - 3.2.1 [Mais sobre atributos gráficos](mais_atributos_graficos.md)
 - 3.4.1 [Como usar seno `sin()`, cosseno `cos()` e arco tangente `atan2()`](seno_cosseno_atan2.md) 
 - 3.5.1 [Manipulando números com `remap()` e `lerp()`](map_lerp.md) e também interpolando cores

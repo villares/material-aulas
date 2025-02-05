@@ -1,8 +1,8 @@
 # Números "aleatórios"
 
-## Mais precisamente números pseudo-aleatórios
+## Mais precisamente números pseudoaleatórios
 
-Computadores são máquinas determinísticas e não conseguem realmente 'sortear' um número, por isso usam algorítmos (receitas) que produzem sequências de números praticamente indistinguíveis, para a maioria dos usos[<sup>＊</sup>](#footnote1), de sequências verdadeiramente aleatórias. Por conta disso ganham este nome tecnicamente mais preciso de *pseudo-aleatórios* (falsos aleatórios). 
+Computadores são máquinas determinísticas e não conseguem realmente 'sortear' um número, por isso usam algorítmos (receitas) que produzem sequências de números praticamente indistinguíveis, para a maioria dos usos[<sup>＊</sup>](#footnote1), de sequências verdadeiramente aleatórias. Por conta disso ganham este nome tecnicamente mais preciso de *pseudoaleatórios* (falsos aleatórios). 
 
 ### Função `random()` no py5
 
@@ -47,11 +47,11 @@ faixa = random(-5, 5)  # exemplos: 3.91, -2.23, -1.2, 4.25
 
 ## Assuntos relacionados
 
-- [Mais sobre pseudo-aleatoriedade, módulo `random` do Python e sementes](aleatoriedade_2.md)
+- [Mais sobre pseudoaleatoriedade, módulo `random` do Python e sementes](aleatoriedade_2.md)
 
 ---
 
-> <a name="footnote1" href="#mais-precisamente-números-pseudo-aleatórios">＊</a> Para aplicações de segurança da informação, como por exemplo gerar certos tipos de chaves criptográficas, é possível incluir 'fontes externas de entropia', de forma a garantir resultados mais imprevisíveis.
+> <a name="footnote1" href="#mais-precisamente-números-pseudoaleatórios">＊</a> Para aplicações de segurança da informação, como por exemplo gerar certos tipos de chaves criptográficas, é possível incluir 'fontes externas de entropia', de forma a garantir resultados mais imprevisíveis.
 
 ---
 

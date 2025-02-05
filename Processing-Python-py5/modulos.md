@@ -19,7 +19,7 @@ from nome_arquivo import uma_funcao, outra_funcao, Uma_classe, Outra_classe   # 
 
 A instrução `import` e suas variantes são usadas para importar ferramentas da biblioteca padrão do Python, módulos que vem junto com o interpretador Python contendo diversas funções e classes, mas que só ficam disponíveis quando requisitados.
 
-Vamos usar como exemplo aqui o módulo `random` de Python que tem uma função chamada `choice()`, que 'sorteia um item' (leia mais sobre[pseudo-aleatoriedade](aleatoriedade_1.md) e o [módulo `random`](aleatoriedade_2.md)) de uma coleção, que pode ser uma tupla, lista, conjunto..., e isso pode ser bastante útil na programação criativa.
+Vamos usar como exemplo aqui o módulo `random` de Python que tem uma função chamada `choice()`, que 'sorteia um item' (leia mais sobre[pseudoaleatoriedade](aleatoriedade_1.md) e o [módulo `random`](aleatoriedade_2.md)) de uma coleção, que pode ser uma tupla, lista, conjunto..., e isso pode ser bastante útil na programação criativa.
 
 Se fizermos `import random`, temos dois problemas, matamos a função `random()` do Processing e temos que usar a forma `sorteio = random.choice(colecao)` que é muito longa. A forma `from random import *` também mata o `random()` do Processing. Uma opção melhor pode ser fazer assim:
 

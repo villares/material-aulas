@@ -1,4 +1,4 @@
-### Mais precisamente números pseudo-aleatórios, e usos de `random` no Processinge e no Python
+### Mais precisamente números pseudoaleatórios, e usos de `random` no Processinge e no Python
 
 #### O material desta página foi revisto e dividido em:
 

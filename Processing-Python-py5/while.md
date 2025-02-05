@@ -100,7 +100,7 @@ def mandala(x, y, raio, num_petalas):
 
 ##### Adicionando tuplas sorteadas à uma lista, dependendo de uma regra, a restrição da distância.
 
-Suponha que você quer uma coleção de 1000 pontos, descritos por tuplas (x, y), produzidos (pseudo-)aleatoriamente, mas que cumpram um requisito, no caso estar a uma certa distância do centro do desenho. A cada ciclo do laço é "sorteada" uma posição, mas ela é adicionada à lista apenas se cumprir o requisito. Como garantir que são adicionadas exatamente 1000 posições, uma vez que podem ser sorteadas posições que não atendem o requisito em alguns ciclos? A resposta é este uso de `while`.
+Suponha que você quer uma coleção de 1000 pontos, descritos por tuplas (x, y), produzidos (pseudo)aleatoriamente, mas que cumpram um requisito, no caso estar a uma certa distância do centro do desenho. A cada ciclo do laço é "sorteada" uma posição, mas ela é adicionada à lista apenas se cumprir o requisito. Como garantir que são adicionadas exatamente 1000 posições, uma vez que podem ser sorteadas posições que não atendem o requisito em alguns ciclos? A resposta é este uso de `while`.
 
 ```python
 posicoes = []  # uma lista para guardar tuplas de posições

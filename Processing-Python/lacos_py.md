@@ -121,7 +121,7 @@ for j in range(14):
 <img src="https://raw.githubusercontent.com/villares/material-aulas/master/Processing-Python/assets/verticais.png">
 </details>
 
-#### Você consegue imaginar um desenho usando esse tipo de repetição e números [pseudo-aleatórios](aleatoriedade_1.md) com `random()`?
+#### Você consegue imaginar um desenho usando esse tipo de repetição e números [pseudoaleatórios](aleatoriedade_1.md) com `random()`?
 
 ### Mais sobre o `range()`
 

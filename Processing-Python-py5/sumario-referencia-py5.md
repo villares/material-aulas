@@ -319,7 +319,7 @@
 * [noise_detail()](http://py5coding.org/reference/sketch_noise_detail.html) - Ajusta o caráter e o nível de detalhe do algoritmo de ruído de Processing, produzido pela função `noise()`.
 * [noise_seed()](http://py5coding.org/reference/sketch_noise_seed.html) - Define o valor inicial para `noise()`.
 * [np_random](http://py5coding.org/reference/sketch_np_random.html) - Acesse o gerador de números aleatórios numpy que o py5 usa para fornecer a funcionalidade de números aleatórios.
-* [os_noise()](http://py5coding.org/reference/sketch_os_noise.html) - Gere valores de ruído pseudo-aleatórios para coordenadas específicas usando o algoritmo OpenSimplex 2 (versão suave / SuperSimplex).
+* [os_noise()](http://py5coding.org/reference/sketch_os_noise.html) - Gere valores de ruído pseudoaleatórios para coordenadas específicas usando o algoritmo OpenSimplex 2 (versão suave / SuperSimplex).
 * [os_noise_seed()](http://py5coding.org/reference/sketch_os_noise_seed.html) - Define o valor de semente para `os_noise()`.
 * [random()](http://py5coding.org/reference/sketch_random.html) - Gera números aleatórios.
 * [random_choice()](http://py5coding.org/reference/sketch_random_choice.html) - Selecione itens aleatórios de uma lista.

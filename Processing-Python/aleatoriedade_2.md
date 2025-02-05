@@ -1,6 +1,6 @@
 # Mais aleatoriedade
 
-Vamos começar revisando a  função `random()` do Processing, que produz números pseudo-aleatórios e já vimos anteriormente, em seguida vamos ver um pouco do módulo *random* de Python que pode ser *importado* (com a instrução `import` no início do código), que e tem uma função `random()` e algumas outras funções relacionadas.
+Vamos começar revisando a  função `random()` do Processing, que produz números pseudoaleatórios e já vimos anteriormente, em seguida vamos ver um pouco do módulo *random* de Python que pode ser *importado* (com a instrução `import` no início do código), que e tem uma função `random()` e algumas outras funções relacionadas.
 
 ### A função `random()` do Processing
 
@@ -30,7 +30,7 @@ No entanto, o módulo `random` de Python oferece outras funções muito simpáti
 
 #### Produzindo números inteiros com `randint()`
 
-É comum querermos produzir números pseudo-aleatórios inteiros, em Processing costumamos truncar, convertendo com `int()` como em `int(random(1, 6))`, mas em Python podemos fazer assim:
+É comum querermos produzir números pseudoaleatórios inteiros, em Processing costumamos truncar, convertendo com `int()` como em `int(random(1, 6))`, mas em Python podemos fazer assim:
 
 ```python
 from random import randint
@@ -44,7 +44,7 @@ for _ in range(100):
 
 #### Selecionando um único item com `choice()`
 
-A função `choice(colection)` devolve um item de uma coleção (tupla, lista, conjunto). Para cada execução um item é escolhido (pseudo-)aleatoriamente.
+A função `choice(colection)` devolve um item de uma coleção (tupla, lista, conjunto). Para cada execução um item é escolhido (pseudo)aleatoriamente.
 
 ```python
 from random import choice
@@ -139,7 +139,7 @@ def draw():
 
 ![random_choice](assets/shuffle.gif)
 
-### Sementes dos geradores pseudo-aleatórios (*random seed*)
+### Sementes dos geradores pseudoaleatórios (*random seed*)
 
 Como os números produzidos por `random()` não são verdadeiramente aleatórios, e sim produzidos por algorítmos geradores determinísticos, é possível fixar um parâmetro inical, conhecido como semente (*seed*), o que permite reproduzir novamente a mesma sequência de números.
 
@@ -203,7 +203,7 @@ def draw():
 
 ### Um exemplo do `randomSeed()` do Processing
 
-Neste exemplo abaixo usamos uma semente para manter 'congelados' os números gerados por `random()` entre frames do `draw()`, mantendo a interatividade de ajuste do ângulo da árvore com o mouse. Quando uma imagem é exportada, o nome do arquivo contém a semente (_seed_) do gerador de números pseudo-aleatórios.
+Neste exemplo abaixo usamos uma semente para manter 'congelados' os números gerados por `random()` entre frames do `draw()`, mantendo a interatividade de ajuste do ângulo da árvore com o mouse. Quando uma imagem é exportada, o nome do arquivo contém a semente (_seed_) do gerador de números pseudoaleatórios.
 
 ```python
 def setup():

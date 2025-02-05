@@ -221,7 +221,7 @@ for j in range(14):
 <img src="assets/verticais.png">
 </details>
 
-**Desafio: Você consegue imaginar um desenho usando esse tipo de repetição e números [pseudo-aleatórios](aleatoriedade_1.md) com `random()`?**
+**Desafio: Você consegue imaginar um desenho usando esse tipo de repetição e números [pseudoaleatórios](aleatoriedade_1.md) com `random()`?**
 
 ### Mais sobre o `range()`
 
