@@ -41,10 +41,10 @@
   - 1.4.5 [Números inteiros (*int*) e números de ponto flutuante (*float*)](numeros.md)
 
 - 1.5.0 [Mais interação e input com teclado e mouse](input_py.md)
-  - 1.5.1 [Escutando teclas simultâneas](teclas_simultaneas.md)
+  - 1.5.1 [Detectando teclas simultâneas](teclas_simultaneas.md)
   - 1.5.2 [Um botão simples](botao_simples.md)
   - 1.5.3 [Arrastando círculos](arrastando_circulos.md)
-  - 1.5.4 [Rodinha do mouse(*mouse wheel*)](rodinha_mouse.md)
+  - 1.5.4 [Usando a rodinha do mouse(*mouse wheel*)](rodinha_mouse.md)
   - 1.5.5 [Parando o `draw()`](no_loop.md)
 
 ### Mais sobre estruturas de dados
