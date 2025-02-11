@@ -38,7 +38,7 @@ end_shape(CLOSE)  # encerra o desenho de um polígono fechado
 
 Vejamos um exemplo que combina a estrutura que vimos antes com o uso de variáveis para calcular a posição dos vértices, formando um estrela!
 
-```pyde
+```python
 size(400, 400)
 background(0, 0, 200)  # um fundo azul
 x, y = width / 2, height / 2  # coordenadas do centro
