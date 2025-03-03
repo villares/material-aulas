@@ -1,7 +1,5 @@
 # Removendo itens de coleções
 
-
-
 ## O problema de remover itens ao mesmo tempo em que se "percorre" uma lista
 
 Este problema sempre aparece quando queremos remover itens de uma estrutura de dados "dinâmica" isto é com número variável de itens, como uma lista. Se tentarmos remover itens em uma iteração (como um laço for) que percorra a mesma estrutura que vamos modificar, podemos ter problemas. 
