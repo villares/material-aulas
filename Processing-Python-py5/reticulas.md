@@ -18,7 +18,9 @@ def setup():
             diametro = esp * 0.75
             circle(x, y, diametro)  
 ```
-![image](assets/Sy82uILaT.png "image")
+![image](assets/Sy82uILaT.png)
+
+![image](assets/Adalovelace.jpg)
 
 
 ```python=
