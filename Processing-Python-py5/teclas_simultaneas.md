@@ -1,4 +1,4 @@
-## Escutando teclas simultâneas
+## Detectando teclas simultâneas
 
 A questão de identificar teclas apertadas simultaneamente pode surgir quando estamos desenvolvendo um *sketch* interativo, e em especial se estamos criando um jogo, em que mais pessoas interagem simultaneamente usando o teclado, também sempre que a interface fica mais complexa e precisa de teclas em combinação. 
 
@@ -223,9 +223,10 @@ def key_pressed():
     else:
         teclas_apertadas.add(key_code)
 
-    # No Processing tradicional é possível impedir que ESC feche o sketch... no py5 ainda não é possível.
+    # É possível impedir que ESC feche o sketch...
     if key == ESC:
-         print('ESC')     
+        print('ESC')
+        intercept_escape()  # ... chamando esta função especial do py5.
 
 def key_released():
     if key != CODED:
@@ -257,7 +258,7 @@ def key_released():
   ```
   Note que agora `a` e  `A` devem aparecer como ` A` e , `1` e `!`  como`1` . Fique atento e teste para evitar surpresas! No meu computador o `key_code` de `+` e `-` do teclado numérico lateral, por exemplo, aparecem como `k` e `m`.
 - Foi usada `sorted()` para obter uma lista ordenada a partir do conjunto `teclas_apertadas`
-<!-- - Dentro do `keyPressed()` no Processing modo Python tinha um pequeno truque que impedia o *sketch*  de ser interrompido pela tecla `ESC`, mas não funciona mais -->
+- Dentro de `key_pressed()`é possível chamar `intercept_escape()` para impedir que o *sketch* seja interrompido pela tecla `ESC`.
 - No dicionário acrescentei alguns códigos de teclas que vi, estando no Linux, os códigos e nomes das teclas podem variar dependendo do seu sistema operacional.
 
 ### Combinando estratégias
