@@ -86,7 +86,7 @@
 
 - 6.1.0 [Carregado formas de um arquivo vetorial (SVG)](recursos_vetoriais_externos.md)
 - 6.2.0 [Lendo arquivos de imagem(*bitmap/raster*)](imagens_externas.md)
-  - 6.2.1 [Criando retínsculas a partir de amostras de pixels de image](reticulas.md)
+  - 6.2.1 [Criando retículas a partir de amostras de pixels de image](reticulas.md)
   - 6.2.2 [Lendo todas as imagens da pasta `data`](imagens_externas_pasta2.md) e sorteando uma
   - 6.2.3 [Lendo todas as imagens de uma pasta selecionada pela pessoa usuária](imagens_externas_pasta.md) (avançado)
 - 6.3.0 [Lendo e escrevendo texto em arquivos (*file IO*)](file_IO.md)
