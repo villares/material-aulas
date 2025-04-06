@@ -5,7 +5,7 @@ Este material didático pode ser modificado e usado para dar aulas. Leia estas i
 
 > **Antes de contribuir com *Pull Request*, converse em uma  issue!** Ao contribuir você está doando a propriedade intelectual do material produzido para este projeto iniciado por Alexandre B A Villares, que conta com as licenças GPL v3 para o código e CC BY-SA 4.0 para texto e imagens, como descrito na página inicial. Tenha cuidado caso pretenda adaptar materiais de outras fontes, discutindo se isso é apropriado com as pessoas mantenedoras.
 
-Também é possível contribuir com doações de qualquer valor com PIX 46c37783-5edb-4f1c-b3a8-1309db11488c, [PayPal](https://www.paypal.com/donate/?hosted_button_id=5B4MZ78C9J724) ou ainda no [Gumroad](https://gumroad.com/villares)!
+Também é possível contribuir com doações de qualquer valor com PIX 46c37783-5edb-4f1c-b3a8-1309db11488c, [PayPal](https://www.paypal.com/donate/?hosted_button_id=5B4MZ78C9J724) ou ainda no [Wise](https://wise.com/pay/me/alexandrev562)!
 
 ## Passo 0
 
