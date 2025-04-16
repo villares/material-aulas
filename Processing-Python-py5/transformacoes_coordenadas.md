@@ -61,7 +61,7 @@ def setup():
 
 Note que o segundo e terceiro quadrados são desenhados com `square(0, 0, 200)`, nas novas coordenadas do centro da tela após o `translate(250, 250)`, e não mais em `square(250, 250, 200)`.
 
-## A sutil questão da acumulação de `translate()` e `rotate()`
+## A questão da acumulação de `translate()` e `rotate()`
 
 A segunda parte do problema, que se manifestou sutilmente até agora, é de que as transformações do sistema de coordenadas não cumulativas. Como mover e girar o mesmo papel milimetrado sucessivamente.
 
@@ -102,6 +102,55 @@ def quadrado_girado(x, y, lado, rot):
 ```
 
 ![](assets/2d_transformations_3.png)
+
+
+### Um exemplo de uso do quadrado girado
+
+O artista pioneiro da arte computacional Georg Nees tem uma obra ["Schotter" (1968-1970)](https://collections.vam.ac.uk/item/O221321/schotter-print-nees-georg/), cujas formas podemos tentar recriar com os quadrados girados e um aumento gradual de deslocamentos e rotações usando `random()`.
+
+![Schotter](assets/schotter.png)
+
+
+```python
+colunas = 12
+filas = 22
+tam = 30  # tamanho dos quadrados
+
+def setup():
+    size(500, 800)
+    rect_mode(CENTER)
+    no_loop() # desativa a repetição do draw
+    no_fill()
+     
+def draw():
+    background(240, 240, 230)
+    largura_grade = tam * colunas
+    altura_grade = tam * filas
+    margem = (width - largura_grade) / 2
+    margem_vertical = (height - altura_grade) / 2
+    desordem = 0
+    for fila in range(filas):
+        y = margem_vertical + fila * tam + tam / 2         
+        for col in range(colunas):
+            x = margem + col * tam + tam / 2
+            dx = random(-desordem / 16, desordem / 16)  # deslocamento x
+            dy = random(-desordem / 16, desordem / 16)  # deslocamento y
+            ar = random(-desordem / 16, desordem / 16)  # rotação em graus
+            quadrado_girado(x + dx, y + dy, tam, radians(ar))
+            desordem = desordem + 1
+        
+def quadrado_girado(x, y, lado, rot):
+    push_matrix()  # preserva do sistema de coordenadas
+    translate(x, y)
+    rotate(rot)
+    square(0, 0, lado)
+    pop_matrix()  # restaura o sistema de coordenadas
+    
+def key_pressed():
+    save_frame('###.png')
+    redraw()
+```
+
 
 ## Mudando a escala
 
@@ -203,12 +252,14 @@ def quadrado_girado(x, y, lado, rot):
         square(0, 0, lado)
 ```
 
-> Notas:
-> - **Sempre execute `push_matrix()` e `pop_matrix()` em pares** ou **use o gerenciador de contexto `with push_matrix():`** senão você vai encontrar erros. Um dos erros é basicamente uma proteção antes do famoso *estouro* ou *transbordamento* da pilha, *stack overflow*, `push_matrix() cannot use push more than 32 times`. O outro erro é o aviso de que está faltando um *push* anterior, e a pilha está vazia, `missing a push_matrix() to go with that pop_matrix()`.
-> - No py5, como no Processing, o sistema de coordenadas é restaurado ao seu estado original (origem na parte superior esquerda da janela, sem rotação e sem mudança de escala) toda vez que a função `draw()` é executada. É possível também voltar para o estado inicial o sistema de coordenadas com `reset_matrix()`.
+## Algumas dicas importantes
+
+- **Sempre execute `push_matrix()` e `pop_matrix()` em pares** ou **use o gerenciador de contexto `with push_matrix():`** senão você vai encontrar erros. Um dos erros é basicamente uma proteção antes do famoso *estouro* ou *transbordamento* da pilha, *stack overflow*, `push_matrix() cannot use push more than 32 times`. O outro erro é o aviso de que está faltando um *push* anterior, e a pilha está vazia, `missing a push_matrix() to go with that pop_matrix()`.
+
+- No py5, como no Processing, **o sistema de coordenadas é restaurado ao seu estado original toda vez que a função `draw()` é executada** (origem volta a ser na parte superior esquerda da janela, sem rotação e sem mudança de escala). É possível também voltar para o estado inicial o sistema de coordenadas com `reset_matrix()`.
 
 
-## Transformações tridimensionais
+### Transformações tridimensionais
 
 ![](assets/3D.png)
 
