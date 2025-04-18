@@ -9,15 +9,23 @@ Os autômatos celulares foram pesquisados em profundidade por [Stephen Wolfram](
 Neste material didático os olhamos deste ponto de vista, assim como do ponto de vista didático (para quem quer aprender/ensinar programação), exploratório, lúdico e estético. 
 
 ### Alguns exemplos
-- "Autômato Celular Elementar" de Wolfram(1D)
-  - TODO
-- Jogo da vida de Conway(*Conway's game of life*)
-  - Exemplo do Jogo da vida de Conway com tabuleiro de lista de listas
-  - Exemplo do Jogo da vida de Conway com tabuleiro infinito em um conjunto(set) e a biblioteca py5
-  - Exemplo do Jogo da vida de Conway com Numpy
-  - Estudar exemplo https://rosettacode.org/wiki/Conway%27s_Game_of_Life#Python
 
-#### GoL com lista de listas
+- Jogo da vida de Conway (*Conway's Game of Life*)
+  
+  - Exemplo com tabuleiro usando uma lista de listas 
+    `[[0, 1, ...], [0, 0, ....], ....]`
+  - Exemplo com tabuleiro usando um dicionário (*dict*)
+  - Exemplo com tabuleiro infinito, usando um conjunto (*set*)
+  - Exemplo do Jogo da vida de Conway com Numpy
+  -  Mais exemplos em [Conway's Game of Life - Rosetta Code](https://rosettacode.org/wiki/Conway%27s_Game_of_Life#Python) 
+
+- TODO:
+  
+  - Autômato Celular Elementar de Wolfram (1D)
+
+#### *Game of Life* usando uma lista de listas
+
+Esta versão mantém o tabuleiro em uma lista de listas e está escrito no estilo *py5 imported mode*.
 
 ```python
 """
@@ -59,7 +67,7 @@ def predraw_update():
         for i, j in product(range(cols), range(rows)):
             ngbs_alive = calc_ngbs_alive(i, j)
             next_grid[i][j] = rule(grid[i][j], ngbs_alive)
-            
+
 def draw():
     background(0)
     for i in range(cols):
@@ -143,10 +151,111 @@ def paint():
     if p != last_cell:
         last_cell = p
         grid[i][j] = (1, 0)[grid[i][j]]
+```
+
+#### *Game of Life* com um tabuleiro em um dicionário
+
+```python
+# py5 "module mode" style code
+
+
+from random import choice
+from itertools import product
+
+import py5
+
+W = 10   # cell size
+nbs = (  # neighbourhood 
+    (-1, -1), (0, -1), (1, -1),
+    (-1,  0),          (1,  0),
+    (-1,  1), (0,  1), (1,  1)
+    )
+board = {}  # empty dict
+live_nbs_count = {}
+debug = False
+play = False
+sample = 10 # smaller is faster
+
+def setup():
+    global cols, rows
+    py5.size(800, 600)
+    cols = int(py5.width / W)
+    rows = int(py5.height / W)
+    clear_board()
+    py5.no_stroke()
+    py5.color_mode(py5.HSB)
+    
+def clear_board():
+    for col, row in product(range(cols), range(rows)):
+        board[col, row] = 0
+    nbs_count_update()
+    
+def random_board():
+    for col, row in product(range(cols), range(rows)):
+        board[col, row] = choice([0, 1])
+    nbs_count_update()
+
+def nbs_count_update():
+    for col, row in product(range(cols), range(rows)):
+        live_nbs_count[col, row] = sum(
+            board[(col + dc) % cols, (row + df) % rows]
+            for dc, df in nbs)
+    
+def step():
+    global board
+    next_board = {}
+    for (col, row), state in board.items():
+        live_nbs = live_nbs_count[col, row]
+        # death by loneliness
+        if state == 1 and live_nbs < 2:
+            next_board[col, row] = 0
+        # death by overcrowding
+        elif state == 1 and live_nbs > 3:
+            next_board[col, row] = 0
+        # birth
+        elif state == 0 and live_nbs == 3:
+            next_board[col, row] = 1
+        # keep same
+        else:
+            next_board[col, row] = state
+    board = next_board
+    nbs_count_update()
+  
+def draw():
+    for (col, row), state in board.items():
+        x, y = col * W, row * W
+        live_nbs = live_nbs_count[col, row]
+        if state == 1:
+            py5.fill(live_nbs * 32, 200, 200)
+        elif live_nbs == 3: # state == 0 but will become alive next.
+            py5.fill(64)
+        else: # state == 0
+            py5.fill(0)
+        py5.square(x, y, W)
+        if debug:
+            py5.fill(255)
+            py5.text_align(py5.CENTER, py5.CENTER)
+            py5.text(live_nbs, x + W / 2, y + W / 2)
+        
+    if play and (py5.frame_count % sample) == 0:
+        step()
+  
+def key_pressed():
+    global play
+    if py5.key == 'c':
+        clear_board()
+    elif py5.key == 'r':
+        random_board()
+    elif py5.key == ' ':
+        play = not play
+        
+py5.run_sketch(block=False)
 
 ```
 
-#### GoL com tabuleiro infinito
+#### *Game of Life* com um tabuleiro infinito
+
+Usando a estrutura de dados conjunto (*set*)
 
 ```python
 # py5 "module mode" style code
@@ -169,7 +278,7 @@ def add_cells():
     for _ in range(500):
         cell = randint(-50, 50), randint(-50, 50)
         current_board.add(cell)
-            
+
 def draw():
     py5.translate(ox * cell_size, oy * cell_size)
     py5.background(0)
@@ -177,7 +286,7 @@ def draw():
         py5.square(x * cell_size, y * cell_size, cell_size)
     if py5.frame_count % 2 == 0:
         update()
-        
+
 def update():
     global current_board
     n_counts = Counter()
@@ -193,17 +302,17 @@ def update():
         elif cell in current_board:
             next_board.add(cell)
     current_board = next_board          
-            
+
 def neighbours(x, y):    
     neighbourhood = ((-1, 0), (1, 0), (-1, -1), (0, -1),
                      (1, -1), (-1, 1), (0, 1), (1, 1))
     return [((x + i),  (y + j)) for i, j in neighbourhood]
-    
-    
+
+
 def mouse_dragged():
     cell = (py5.mouse_x  // cell_size - ox), (py5.mouse_y // cell_size - oy)
     current_board.add(cell)
-    
+
 def key_pressed():
     global cell_size, ox, oy
     if py5.key == ' ':
@@ -221,11 +330,13 @@ def key_pressed():
         ox -= 16
     elif py5.key_code == py5.RIGHT:
         ox += 16
-        
+
 py5.run_sketch()
 ```
 
-#### GoL com Numpy
+#### *Game of Life* usando Numpy e Scipy
+
+Este exemplo faz uso dos *arrays* Numpy e da contagem de vizinhos com Scipy
 
 ```python
 # Baseado em on https://www.jpytr.com/post/game_of_life/
