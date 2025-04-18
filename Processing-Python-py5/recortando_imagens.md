@@ -2,13 +2,69 @@
 
 ## Copiando trechos retangulares de uma imagem
 
-## Recortando imagens com uma máscara
+É possível se obter uma parte da tela de desenho usando a função `get_pixels()` ou uma parte de um objeto Py5Image ou Py5Graphics usando o método `get_pixels()`, em ambos os casos passando como argumentos uma posição e dimensões de um retângulo (`x, y, w, h`) como no exemplo abaixo.
 
 ```python
+url = 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Mapa_de_S%C3%A3o_Paulo_-_1924.jpg'
+
+def setup():
+    global img
+    size(700, 700)
+    img = load_image(url) # demora um pouco carregar a imagem
+    no_loop()
+
+def draw():
+    for i in range(7):
+        for j in range(7):
+            x = random_int(img.width - width)
+            y = random_int(img.height - height)
+            result = img.get_pixels(x, y, 100, 100)
+            image(result, i * 100, j * 100)
+
+def key_pressed():
+    save_frame('recorte_retangular###.png')
+    redraw()
+```
+
+![exemplo recorte retangular](assets/recorte_retangular.png)
+
+## Recortando imagens com uma máscara
+
+O método `.mask()` modifica uma imagem usando como máscara de recorte uma outra imagem, que precisa ter as mesmas dimensões da imagem que está sendo recortada. 
+
+```python
+url = 'https://garoa.net.br/mediawiki/images/thumb/Convite_NdP_ago.png/750px-Convite_NdP_ago.png'
+
 def setup():
     global img
     size(500, 500)
-    img = load_image('https://garoa.net.br/mediawiki/images/thumb/Convite_NdP_ago.png/750px-Convite_NdP_ago.png')
+    img = load_image(ur')
+    # a máscara tem que ter tamanho igual a da imagem que vai ser clipada
+    clip_mask = create_graphics(img.width, img.height)
+    clip_mask.begin_draw()
+    clip_mask.no_fill()
+    for i in range(256):
+        clip_mask.stroke(255 - i)  # cor de traço vai de branco a preto
+        clip_mask.circle(img.width / 2, img.height / 2, i * 2)
+    clip_mask.end_draw()
+    img.mask(clip_mask)  # esta operação modifica a imagem
+    image_mode(CENTER)
+
+def mouse_pressed():
+    translate(mouse_x, mouse_y)
+    rotate(random(PI))
+    image(img, 0, 0)
+```
+
+![image](assets/recorte_circular.png)
+
+```python
+url = 'https://garoa.net.br/mediawiki/images/thumb/Convite_NdP_ago.png/750px-Convite_NdP_ago.png'
+
+def setup():
+    global img
+    size(500, 500)
+    img = load_image(url)
     # a máscara tem que ter tamanho igual a da imagem que vai ser clipada
     clip_mask = create_graphics(img.width, img.height)
     clip_mask.begin_draw()
@@ -28,7 +84,9 @@ def mouse_pressed():
 
 ![image](https://user-images.githubusercontent.com/3694604/188531711-8143041d-515d-41ab-ab81-d6d494d0c45c.png)
 
-# Criando uma máscara dinamicamente
+## Exemplos avançados de máscara
+
+### Criando uma máscara dinamicamente
 
 ![clipping mask](https://user-images.githubusercontent.com/3694604/188624349-0c7e0880-ad0d-47f1-b594-26da4393d459.png)
 
@@ -67,7 +125,7 @@ def draw():
     image(offscreen, 400, 0)   # mostra a imagem original
 ```
 
-### Exemplo avançado de máscara
+### Recortando com Numpy para preservar o canal alpha
 
 ```python
 # from https://github.com/py5coding/py5generator/discussions/159#discussioncomment-3567982
