@@ -4,22 +4,23 @@ Veja aqui motivos para usar laços com `while`, a sintaxe, a descrição de estr
 
 Quando é comum usar o `while`?
 
-- Você precisa de contadores ou uma sequênica de números não-inteiros e a forma do laço `for` com `for i in range(inicio, parada, passo):` só funciona com inteiros. Isso pode ser resolvido implementando um [`frange()`](java_para_python.md#implementando-um-range-com-passos-não-inteiros) mas é mais comum ser feito com `while`;
+- Você precisa de contadores ou uma sequênica de números não-inteiros e a forma do laço `for` com `for i in range(inicio, parada, passo):` só funciona com inteiros. Isso pode ser resolvido implementando um [`np.arange()`](java_para_python.md#implementando-um-range-com-passos-não-inteiros) mas é mais comum ser feito com `while`;
 - Você só vai saber a hora de parar o laço no meio do processo de repetições, isto é, o número de de iterações, o número de "voltas" do laço, não é conhecido com antecedência, é um chamado "laço indetermidado".
 
 ### Sintaxe dos laços `while`
 
 De forma geral os laços de repetição baseados no `while` tem a seguinte estrutura: 
 
-```python 
+```python
 while «condição»: #  enquanto a condição for verdadeira, execute:
     «corpo» 
 ```
+
 Em contraste com estrutura do `if`, em que quando a condição é avaliada como True (verdadeiro) o bloco de código do corpo é executado uma única vez, No caso do `while`, o bloco do corpo será executado diversas vezes, enquanto a condição for verdadeira, podendo inclusive resultar em um loop infinito. Para evitar essa repetição infinita é necessário garantir que, no código do corpo, em algum momento:
 
 - Alguma ação acontece que torna a condição avaliada pelo laço seja `False` (falsa)
 - Alguma condição no corpo, em uma estrutura com `if`, por exemplo, permite a execução da instrução `break`. 
- 
+
 Uma dessas duas coisas é necessária para evitar uma repetição infinita.
 
 Vejamos uma descrição em abstrato de algumas dessas estratégias (que podem inclusive ser combinadas):
@@ -116,6 +117,7 @@ def setup():
              circle(x, y, 5)
     print(len(posicoes))  # exibe: 1000
 ```
+
 ![pontos limitados pela distância](assets/while_distancia.png)
 
 Note que neste exemplo, muito simples, não garantimos que não teremos posições sobrepostas. Isto pode ser resolvido consultando se a posição "sorteada" já existir na estrutura de dados. Para listas isso é algo não eficiente. Veja o exemplo a seguir, que resolve este problema, mas se trata de um desenho diferente, e a não-sobreposição é a única restrição.
@@ -166,7 +168,7 @@ def setup():
 
 # `While` e `else`
 
-### `While` e `else` 
+### `While` e `else`
 
 Uma sintaxe que pode ser usada também nos laços `for`, é uma cláusula `else` após o laço, o código neste bloco só executa se o laço transcorreu até o fim sem interrupção (sem um `break`).
 
