@@ -33,11 +33,10 @@ def draw():
     for i, a in enumerate(lista_amostras):
         fill(128)
         rect(i * 10, 300, 10, 300 * a)
-
-
 ```
 
 # Exemplo de osciladores (geradores de onda) com análise frequência
+
 # grádica (FFT)
 
 ```python
@@ -109,6 +108,4 @@ def draw():
                             -1, len(oscillators),
                             0, height)
     text(oscillator.get_class().get_simple_name(), 0, vertical_position)
-
-
 ```

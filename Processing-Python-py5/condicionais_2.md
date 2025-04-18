@@ -35,6 +35,7 @@ Muitas linguagens tem uma sintaxe conhecida como * operador condicional ternári
 ```python
 n = x if cond else y
 ```
+
 Isso equivale a:
 
 ```python
@@ -43,6 +44,7 @@ if cond:
 else:
     n = y
 ```
+
 Veja um outro exemplo:
 
 ```python

@@ -20,7 +20,6 @@ from random import random
 
 ![image](https://user-images.githubusercontent.com/3694604/191616536-04fd5dc5-84a9-4bc1-be76-daf578c04cb6.png)
 
-
 Mas, se fizermos isso "matamos" o `random()` do py5. Uma alternativa, se quisermos manter as duas, é escrever: 
 
 `from random import random as py_random`
@@ -40,21 +39,23 @@ Note que a função `random()` em Python não recebe argumentos (isto é não va
 - No Processing tradicional a forma mais comum era truncar, convertendo com `int()`, como em `sorteio_inteiro = int(random(-5, 6))` que 'sorteia' com igual probabilidades os números de -5 a 5.
 
 - Podemos usar a função `randint()` do módulo `random` do Python da seguinte maneira:
-    ```python
-    from random import randint
-    sorteio_inteiro = randint(-5, 5)
-    ```
+  
+  ```python
+  from random import randint
+  sorteio_inteiro = randint(-5, 5)
+  ```
+
 - Ou ainda a função `random_int()` do py5, que funciona da mesma maneira. 
     ![image](https://user-images.githubusercontent.com/3694604/191616197-420869d9-1be3-4ea7-a3db-fbaec345c5c6.png)
-    
-    ```python
-    # Um outro exemplo
-    for _ in range(100):
-        valor = random_int(1, 5) # 'sorteia' os números 1, 2, 3, 4, 5
-        print(valor)  
-    
-    # Resultado: produz 100 valores de 1 a 5, INCLUI O 5!!!
-    ```
+  
+  ```python
+  # Um outro exemplo
+  for _ in range(100):
+      valor = random_int(1, 5) # 'sorteia' os números 1, 2, 3, 4, 5
+      print(valor)  
+  
+  # Resultado: produz 100 valores de 1 a 5, INCLUI O 5!!!
+  ```
 
 #### Selecionando um único item com `choice()`
 
@@ -214,7 +215,6 @@ def draw():
         text(i, x + tam / 2, y + tam / 2) # escrevendo o números 
 ```
 
-
 ### Um exemplo do `random_seed()` do py5
 
 Neste exemplo abaixo usamos uma semente para manter 'congelados' os números gerados por `random()` entre frames do `draw()`, mantendo a interatividade de ajuste do ângulo da árvore com o mouse. Quando uma imagem é exportada, o nome do arquivo contém a semente (_seed_) do gerador de números pseudoaleatórios.
@@ -259,8 +259,5 @@ def key_pressed():  # executada quando uma tecla for precinada
         save_frame(nome_arquivo)
         print("PNG salvo")
 ```
+
 ![image](https://user-images.githubusercontent.com/3694604/191619761-26477e41-196a-4a28-ab1a-96b15b04c355.png)
-
----
-
-Texto e imagens: CC BY-NC-SA 4.0; Código: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.

@@ -61,14 +61,11 @@ def mouse_dragged():  # quando o mouse é movido apertado
         x_circulo += mouse_x - pmouse_x
         # mouse_y - pmouse_y é o que o mouse foi arrastado em Y
         y_circulo += mouse_y - pmouse_y
-
-
 ```
 
 # Arrastando vários círculos
 
 ![vários círculos sendo arrastados](assets/arrastar_circulos.gif)
-
 
 Para acompanhar o próximo exemplo você precisa estar familiarizado com[sequências e laços de repetição](lacos_py.md), uma vez que vamos usar uma estrutura de dados, uma lista, com tuplas dentro, para manter a posição e tamanho de vários círculos, permitindo que qualquer um deles seja arrastado!. Um dos elementos sofisticados deste exemplo é que pegamos para olhar os dados de um círculo por vez, mas ao mesmo tempo, graças à função `enumerate()` recebemos a informação do índice, da posição desses dados na lista `circulos`. Usamos esse índice para indicar qual círculo está sendo arrastado.
 
@@ -130,14 +127,12 @@ def mouse_dragged():  # quando o mouse é movido apertado
         x += mouse_x - pmouse_x
         y += mouse_y - pmouse_y
         circulos[arrastando] = (x, y, d)
-
-
 ```
+
 # Desafio
 
 Note que quando os círculos se sobrepõe, o clique do mouse "captura" o mais de baixo para o arraste. Você conseguiria mudar este comportamento?
 Dica:  É possível usar `reversed()` para inverter uma lista, mas o problema é que `enumerate()` não nos entrega uma lista... é possível converter o "objeto enumerador" entregue por `enumerate()` em uma lista com `list()`.
-
 
 # Assuntos relacionados
 

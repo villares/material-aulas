@@ -25,7 +25,7 @@ def draw():
     fill(r, g, b, 128)  # cor 'sorteada' 50% translúcida
     if is_mouse_pressed:
         ellipse(mouse_x, mouse_y, tamanho, tamanho)
-        
+
 def keyPressed():
     if key == ' ':  # tecle espaço para limpar a tela
         background(200)
@@ -34,6 +34,7 @@ def keyPressed():
 ```
 
 #### Outros exemplos
+
 ```python
 # Produz um valor entre 0 e 10 (10 não incluso)
 sorteio = random(10) 
@@ -52,7 +53,3 @@ faixa = random(-5, 5)  # exemplos: 3.91, -2.23, -1.2, 4.25
 ---
 
 > <a name="footnote1" href="#mais-precisamente-números-pseudoaleatórios">＊</a> Para aplicações de segurança da informação, como por exemplo gerar certos tipos de chaves criptográficas, é possível incluir 'fontes externas de entropia', de forma a garantir resultados mais imprevisíveis.
-
----
-
-Texto e imagens: CC BY-NC-SA 4.0; Códig: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.

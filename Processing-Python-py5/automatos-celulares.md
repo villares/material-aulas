@@ -17,7 +17,7 @@ Neste material didático os olhamos deste ponto de vista, assim como do ponto de
   - Exemplo com tabuleiro usando um dicionário (*dict*)
   - Exemplo com tabuleiro infinito, usando um conjunto (*set*)
   - Exemplo do Jogo da vida de Conway com Numpy
-  -  Mais exemplos em [Conway's Game of Life - Rosetta Code](https://rosettacode.org/wiki/Conway%27s_Game_of_Life#Python) 
+  - Mais exemplos em [Conway's Game of Life - Rosetta Code](https://rosettacode.org/wiki/Conway%27s_Game_of_Life#Python) 
 
 - TODO:
   
@@ -184,12 +184,12 @@ def setup():
     clear_board()
     py5.no_stroke()
     py5.color_mode(py5.HSB)
-    
+
 def clear_board():
     for col, row in product(range(cols), range(rows)):
         board[col, row] = 0
     nbs_count_update()
-    
+
 def random_board():
     for col, row in product(range(cols), range(rows)):
         board[col, row] = choice([0, 1])
@@ -200,7 +200,7 @@ def nbs_count_update():
         live_nbs_count[col, row] = sum(
             board[(col + dc) % cols, (row + df) % rows]
             for dc, df in nbs)
-    
+
 def step():
     global board
     next_board = {}
@@ -220,7 +220,7 @@ def step():
             next_board[col, row] = state
     board = next_board
     nbs_count_update()
-  
+
 def draw():
     for (col, row), state in board.items():
         x, y = col * W, row * W
@@ -236,10 +236,10 @@ def draw():
             py5.fill(255)
             py5.text_align(py5.CENTER, py5.CENTER)
             py5.text(live_nbs, x + W / 2, y + W / 2)
-        
+
     if play and (py5.frame_count % sample) == 0:
         step()
-  
+
 def key_pressed():
     global play
     if py5.key == 'c':
@@ -248,9 +248,8 @@ def key_pressed():
         random_board()
     elif py5.key == ' ':
         play = not play
-        
-py5.run_sketch(block=False)
 
+py5.run_sketch(block=False)
 ```
 
 #### *Game of Life* com um tabuleiro infinito
