@@ -1,16 +1,16 @@
 # Parando o `draw()`
 
-O laço principal do Processing é uma função de nome `draw()` que devemos definir quando queremos fazer * sketches * animados ou interativos, e cujo conteúdo fica sendo repetido. O Processing, normalmente, chama para nós essa função sem parar, cada ciclo é um * frame * (quadro de uma animação). Vamos ver aqui algumas 'estratégias alternativas' à repetição continua do `draw()`.
+O laço principal do Processing é uma função de nome `draw()` que devemos definir quando queremos fazer *sketches* animados ou interativos, e cujo conteúdo fica sendo repetido. O Processing, normalmente, chama para nós essa função sem parar, cada ciclo é um *frame* (quadro de uma animação). Vamos ver aqui algumas 'estratégias alternativas' à repetição continua do `draw()`.
 
 # Um *sketch* sem `draw()`
 
-É possível trabalhar  com desenhos estáticos sem o `draw()`,  sem `setup()` também para * sketches * muito simples, ou apenas com `setup()` como no exemplo abaixo.
+É possível trabalhar  com desenhos estáticos sem o `draw()`,  sem `setup()` também para *sketches* muito simples, ou apenas com `setup()` como no exemplo abaixo.
 
 ![](assets/no_loop_setup_only.png)
 
 # Um corpo de`draw()` vazio
 
-Para poder usar as funções disparadas por eventos, como `key_pressed()` ou `mouse_pressed()` é preciso que seja criada uma função `draw()`, mesmo que vazia.  Em Python é possível criar uma função vazia com a palavra chave `pass` no corpo da função, algo como 'passar a vez em um jogo'. Veja abaixo um exemplo com a função `mouse_moved()`.
+Para poder usar as funções disparadas por eventos, como `key_pressed()` ou `mouse_pressed()` no Processing é preciso que seja criada uma função `draw()`, mesmo que vazia. No py5 isso não é mais necessário, mas se você quiser,  em Python é possível criar uma função vazia com a palavra chave `pass` no corpo da função, algo como 'passar a vez em um jogo'. Veja abaixo um exemplo com a função `mouse_moved()`.
 
 ![](assets/no_loop_draw_pass.gif)
 
@@ -33,16 +33,16 @@ Neste  exemplo a função `draw()` é executada 4 vezes e para, chamando `no_loo
 O operador `%` é usado para obter o resto da divisão do número do frame(`frame_count`) por 4 . Veja como são os resultados:
 
 | frame_count | % 4 (resto da divisão por 4) |
-| ---------- | ---------------------------- |
-| 1 | 1 |
-| 2 | 2 |
-| 3 | 3 |
-| 4 | 0 |
-| 5 | 1 |
-| 6 | 2 |
-| 7 | 3 |
-| 8 | 0 |
-| ... | ... |
+| ----------- | ---------------------------- |
+| 1           | 1                            |
+| 2           | 2                            |
+| 3           | 3                            |
+| 4           | 0                            |
+| 5           | 1                            |
+| 6           | 2                            |
+| 7           | 3                            |
+| 8           | 0                            |
+| ...         | ...                          |
 
 # A função `redraw()`
 
