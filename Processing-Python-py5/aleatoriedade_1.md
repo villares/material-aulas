@@ -25,7 +25,7 @@ def draw():
     fill(r, g, b, 128)  # cor 'sorteada' 50% translúcida
     if is_mouse_pressed:
         ellipse(mouse_x, mouse_y, tamanho, tamanho)
-
+        
 def keyPressed():
     if key == ' ':  # tecle espaço para limpar a tela
         background(200)
@@ -34,7 +34,6 @@ def keyPressed():
 ```
 
 #### Outros exemplos
-
 ```python
 # Produz um valor entre 0 e 10 (10 não incluso)
 sorteio = random(10) 

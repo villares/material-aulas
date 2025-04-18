@@ -189,7 +189,3 @@ Ambas as palavras remetem ao poder de se dar nomes a reunião de elementos que c
 
 - [Parâmetros opcionais e outras malandragens](funcoes_2.md)
 - [Recursividade em funções](recursao_py.md)
-
----
-
-Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.

@@ -130,7 +130,3 @@ DELETE    '\x7f'
 - [Um botão simples](botao_simples.md)
 - [Arrastando círculos](arrastando_circulos.md)
 - [Como ler a rodinha do mouse (*mouse wheel* ou *scroll wheel*)](rodinha_mouse.md)
-
-
----
-Texto e imagens / text and images: CC BY-NC-SA 4.0; Código / code: GNU GPL v3.0 exceto onde explicitamente indicado por questões de compatibilidade.

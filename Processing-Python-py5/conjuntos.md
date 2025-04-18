@@ -87,8 +87,6 @@ def mouse_clicked():
         y = 650 + i * 30 - 20
         if y < mouse_y < y + 30 and 30 < mouse_x < 30 + text_width(c['label']):
             c['visible'] = not c['visible']
-
-
 ```
 
 # Assuntos relacionados
