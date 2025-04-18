@@ -65,8 +65,6 @@ def key_pressed():
     if key == "p":  # aciona o 'flag' de gravação do PDF
         salvar_pdf = True
         print("salvando PDF")
-
-
 ```
 
 [Exemplo de PDF com um frame](assets/exemplo.pdf)
@@ -107,17 +105,13 @@ def key_pressed():
         else:
             end_record()                   # encerra a gravação do PDF
             print("encerrando gravação de PDF")
-
-
 ```
-[Exemplo de PDF com vários frames](assets/exemplo2.pdf)
 
+[Exemplo de PDF com vários frames](assets/exemplo2.pdf)
 
 Um segundo exemplo de salvar com acumulação de frames
 
 ```python
-
-
 gravando_pdf = False
 
 
@@ -161,10 +155,7 @@ def key_pressed():
             gravando_pdf = False
             end_record()
             print(u'Gravação encerrada')
-
-
 ```
-
 
 ## Outras estratégias
 
@@ -173,7 +164,6 @@ def key_pressed():
 Usando `create_graphics()` podemos mostrar na tela o desenho mas salvar o arquivo do desenho com alguns ajustes especiais.
 
 ```python
-
 f = create_graphics(width * 2, height * 2, PDF, "file.pdf")
 begin_record(f)  # inicia a gravação do arquivo
 f.stroke_weight(2)
@@ -183,13 +173,12 @@ f.scale(2)
 # encerra a gravação
 end_record()
 ```
+
 Veja um exemplo mais completo desta estratégia no exemplo a seguir, que produz um PDF com várias páginas.
 
 ### Salvando um PDF com múltiplas páginas
 
 ```python
-
-
 nome_arquivo = "10_paginas.pdf"
 
 
@@ -212,27 +201,25 @@ def draw():
         exit()
     else:
         pdf.next_page()
-
-
 ```
 
-# Limitações
+## Limitações
 
 O que não funciona quando exportamos em PDF?
 
 - A chamada `blend_mode(MULTIPLY)` ou qualquer outra variante de `blend_mode()` não tem efeito no PDF(só na tela).
 - Para exportar desenhos em 3D, é preciso usar `begin_raw()`  e `end_raw()` em lugar de `begin_record/end_record` e o resultado é um tanto deficiente(veja exemplo em [Exportando SVG](exportando_svg.md)).
 
-# O que pode dar errado? Algumas considerações finais
+## O que pode dar errado? Algumas considerações finais
 
 Se não estiver funcionando, confira se não está esquecendo algo sobre exportação de PDF:
 
 - Pense com cuidado se seu sketch precisa salvar apenas um frame ou acumular frames(muda a estratégia um pouco)
 - Não esqueça que só aparecem na gravação ações e ajustes feitos depois do begin_record() ou beginRaw() e isso é bastante crítico em relação a:
-    - `background()`
-    - ajustes como `color_mode()`, `rect_mode()` ou outros ajustes de atributos
+  - `background()`
+  - ajustes como `color_mode()`, `rect_mode()` ou outros ajustes de atributos
 - não esqueça de declarar com `global` o flag/indicador tanto no `draw()` como no `key_pressed()`, se apropriado, para alterar o estado ou início da gravação.
 
-# Assuntos relacionados:
+## Assuntos relacionados
 
 - [Exportando SVG](exportando_svg.md)

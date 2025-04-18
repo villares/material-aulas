@@ -8,7 +8,6 @@ Passamos como argumento o nome do arquivo que deve ser salvo, e a extensão de t
 
 O código abaixo exemplifica como salvar uma imagem PNG de um quadro. Quando uma tecla é pressionada, é executada a função `key_pressed()` e se for identificada a tecla "s" (`key == 's'`) é execuatada a função `save_frame()`, que grava uma imagem.
 
-
 ```python
 def setup():
     size(500, 500)
@@ -82,8 +81,8 @@ def setup():
     # se acrescentar instruções de desenho daqui em diante aparecerem só na tela
     f.save('imagem_ampliada.png')  # finalmente salva o arquivo
     # use f.save('imagem_ampliada.png', drop_alpha=False) para exportar um png com fundo transparente  
-
 ```
+
 Repare que a espessura de linha está sendo ajustada para um valor diferente com `f.strokeWeight()`. Sem o ajuste ela ficaria 10 vezes maior no arquivo do que na área de desenho normal(acompanhando e resto da imagem) e desta maneira ela fica apenas 5 vezes maior no arquivo.
 
 ![](assets/exportando_imagem_ampliada.png)
@@ -119,6 +118,7 @@ def key_pressed():
     if key == 'h':
         salvar_png = True
 ```
+
 ![3069](https://user-images.githubusercontent.com/3694604/233481566-b1757f01-f477-4663-b02e-8b60f5471a5d.png)
 
 ### Gravando frames acumulados de um sketch
@@ -138,7 +138,7 @@ def draw():
     if gravando:
         output_buffer.scale(fator_escala) # precisa escalar novamente a cada frame
     circle(mouse_x, mouse_y, width / 5)        
-        
+
 def key_pressed():
     global gravando, file_name, output_buffer
     if key == 'r':   # a tecla 'r' liga e desliga a gravação (recording)
@@ -159,7 +159,6 @@ def key_pressed():
 ```
 
 ![126](https://user-images.githubusercontent.com/3694604/233814450-7a7d015f-476a-4c42-bf32-13ee07646525.png)
-
 
 ## Exportando apenas parte da tela (e em um local selecionado!)
 

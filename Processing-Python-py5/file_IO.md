@@ -1,17 +1,22 @@
-# Lendo e escrevendo texto em arquivos (*file IO*)
+# Lendo e escrevendo texto em arquivos
+
+ (*file IO*)
 
 ## Lendo as linhas de um arquivo texto
 
 Nosso primeiro exemplo vai ser sobre como ler linhas de texto(*strings*) de um arquivo texto(*text file*).
 
 O arquivo `frutas.txt` vai ficar dentro da pasta `/ data /` dentro  do seu sketch:
+
 ```
 sketch_2020_05a(pasta/folder do sketch)
   L  sketch_frutas.py    (arquivo com o código do sketch)
   L  data                (uma pasta/folder)
        L  frutas.txt     (um arquivo texto)
 ```
+
 Conteúdo do aquivo `frutas.txt`:
+
 ```
 maçã
 abacaxi
@@ -63,7 +68,6 @@ with open(path_arquivo, 'r') as arquivo:
 Usando o a função `select_input()`,  você permite que a pessoa escolha um arquivo para subsequente leitura, como no exemplo com `load_strings()`. É preciso passar dois argumentos: um texto para o título da janela de seleção, e o nome da função que será executada quano a pessoa terminar de selecionar o arquivo (ou cancelar a seleção).
 
 ```python
-
 linhas = [
     "tecle 'o' para abrir um arquivo",
     "tecle 'a' para apagar a lista",
@@ -100,8 +104,7 @@ def select_file(selection):
 
 ![resultado](assets/select_input.png)
 
-## Escrevendo texto em arquivos 
-
+## Escrevendo texto em arquivos
 
 De maneira análoga à leitura, podemos usar `save_strings()` o `with open(____, 'w') as ____:` do Python, para salvar em um arquivo do disco uma lista de *strings*.
 
@@ -158,9 +161,11 @@ def carregar_circulos(arquivo):
             circulo = float(str_x), float(str_y), float(str_tamanho)
             circulos.append(circulo)
 ```
+
 ![circulos](assets/output.png)
 
 Veja um trecho do arquivo gerado pelo exemplo[`output.txt`](assets/output.txt)
+
 ```
 68 120 37.5507659912
 71 98 32.7605819702
@@ -175,6 +180,7 @@ Veja um trecho do arquivo gerado pelo exemplo[`output.txt`](assets/output.txt)
 103 47 33.4321708679
 ...
 ```
+
 ### Escrevendo em arquivos no Python sem a ajuda do py5
 
 A maneira mais 'universal' em Python de se escrever em um arquivo texto é usando `open(caminho_arquivo, modo)`, que fornece um objeto com o método `.write()`.
@@ -188,7 +194,7 @@ with open(caminho_arquivo, "w") as file:
     for circulo in circulos:
         x, y, tamanho = circulo
         file.write(f'{x} {y} {tamanho}')
- ```
+```
 
 ## Assuntos relacionados
 

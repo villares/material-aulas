@@ -23,13 +23,11 @@ Desta maneira é possível desenhar os mesmos elementos 2D que utilizamos até a
 
 - A função `sphere(raio)` desenha uma aproximação de uma esfera, também na origem. O numero de faces da esfera pode ser controlado pela função[`sphere_detail()`](https://py.processing.org/reference/sphere_detail.html).
 
-
-# Alguns objetos desenhados em 3D
+## Alguns objetos desenhados em 3D
 
 ![imagem exemplo 3D](assets/passos3D.gif)
 
 ```python
-
 def setup():
     size(500, 500, P3D)
     rect_mode(CENTER)
@@ -67,7 +65,7 @@ def caixa(x, y, z, *tam):
     pop_matrix()
 ```
 
-# Desenhando uma caixa entre dois pontos
+## Desenhando uma caixa entre dois pontos
 
 Usando um volume `box()` girado em 3D.
 
@@ -97,7 +95,7 @@ def bar_line(x1, y1, z1, x2, y2, z2, weight=10):
     pop_matrix()
 ```
 
-# Desenhando um prisma girado em 3D
+## Desenhando um prisma girado em 3D
 
 ```python
 def prism_line(x1, y1, z1, x2, y2, z2, radius=10, num_points=6):
@@ -138,7 +136,7 @@ def z_circle(x, y, radius, num_points=16):
              for i in range(num_points)]
 ```
 
-# Carregando arquivos OBJ externos
+## Carregando arquivos OBJ externos
 
 Usando `size()` com `P3D` é possível carregar arquivos OBJ com a função `load_shape('arquivo.obj')` e mostrá-los com `shape(s, x, y)`.
 Procure o exemplo que vem no IDE na janela de exemplos: `Basic > Shape > LoadDisplayOBJ`.
@@ -179,7 +177,7 @@ def draw():
 ```
 -->
 
-# Explorando ajustes avançados com a função `hint()`
+## Explorando ajustes avançados com a função `hint()`
 
 É possível controlar alguns aspectos do cálculo da apresentação 3D, meio que um ajuste fino, que tem impacto na performance (velocidade de execução) e aparência. 
 

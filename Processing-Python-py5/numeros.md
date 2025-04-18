@@ -1,6 +1,5 @@
 # Números inteiros (*int*) e de ponto flutuante (*float*)
 
-
 Em computação existem sistemas de classificação para valores armazenados na memória do computador, dizemos que os valores tem um *tipo*. Valores numéricos em Python são, na maior parte das vezes, dos tipos ***inteiro*** (abreviamos `int`), ***número de ponto flutuante*** (que tem uma parte fracionária, e abreviamos `float`) ou ***número complexo*** (`complex`, sendo `1j` a raiz quadrada de -1, que na escola costumamos chamar de *i*). Leia mais sobre isso em: [Tipos de valores(inteiros, números de ponto flutuante, texto(strings))](tipagem_py.md)
 
 Veja este exemplo que mostra a divisão de dois números inteiros (*int*), `4` dividido por `10`. O resultado, `0.4`, é um número de ponto flutuante (*float*). Em programação a "vírgula" é um ponto.
@@ -12,9 +11,8 @@ print(a)
 # Note que em Python o separador decimal é um ponto (.)
 ```
 
-
 ### Conversão em inteiros
- 
+
 Certas situações em Python exigem números inteiros, como, por exemplo,  ao se usar `for n in range(inicio, parada):`, os valores de `inicio` e `parada` precisam ser números inteiros.
 
 A forma mais comum de converter um número de ponto flutuante (`float`) em inteiros (`int`) é usando a função embutida `int()`. Mas note que `int()` simplesmente joga fora a parte depois do ponto, e não é como outros tipos de "arredondamento". Experimente usar a função embutida `round()`, que também devolve um número do tipo inteiro para ver o que acontece!
@@ -27,7 +25,7 @@ print(a)
 b = round(10.654)
 print(b)         # Experimente e descubra!
 # resultado: ?
- 
+
 # Experimente também...
 print(round(10.5))
 ```
@@ -86,7 +84,6 @@ print(isclose(a, b))
 
 Você pode ler mais sobre os problemas causados pela representação interna dos números decimais em binário no computador em [Aritimética de ponto flutuante: problemas e limitações](https://docs.python.org/pt-br/3/tutorial/floatingpoint.html).
 
-
 ## Glossário
 
 [**tipo**](https://penseallen.github.io/PensePython2e/01-jornada.html#termo:tipo) Uma categoria de valores. Alguns tipos que vimos por enquanto são números inteiros (tipo `int`), números de ponto flutuante (tipo `float`) e *strings* (tipo `str`).
@@ -99,4 +96,3 @@ Você pode ler mais sobre os problemas causados pela representação interna dos
 
 - [Valores e seus tipos](tipagem_py.md)
 - [Divisão por zero e o resto da divisão](divisao.md)
-

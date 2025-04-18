@@ -90,11 +90,7 @@ Um erro em um programa.
 
 O processo de encontrar e corrigir(depurar) bugs.
 
-
-
 \-------
-
-
 
 [**variável**](https://penseallen.github.io/PensePython2e/02-vars-expr-instr.html#termo:variável)
 
@@ -164,11 +160,7 @@ O significado de um programa.
 
 Um erro que faz com que um programa faça algo diferente do que o programador pretendia.
 
-
-
 \-----
-
-
 
 [**função**](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:função)
 
@@ -342,7 +334,6 @@ Um ramo condicional em uma função recursiva que não faz uma chamada recursiva
 
 Recursividade que não tem um caso-base, ou nunca o atinge. A recursividade infinita eventualmente causa um erro em tempo de execução.
 
-
 \------
 
 [**variável temporária**](https://penseallen.github.io/PensePython2e/06-funcoes-result.html#termo:variável%20temporária)
@@ -364,7 +355,6 @@ O código que se usa durante o desenvolvimento de programa, mas que não faz par
 [**guardião**](https://penseallen.github.io/PensePython2e/06-funcoes-result.html#termo:guardião)
 
 Um padrão de programação que usa uma instrução condicional para verificar e lidar com circunstâncias que possam causar erros.
-
 
 [**reatribuição**](https://penseallen.github.io/PensePython2e/07-iteracao.html#termo:reatribuição)
 
@@ -583,8 +573,6 @@ Variável booleana usada para indicar se uma condição é verdadeira.
 [declaração](https://penseallen.github.io/PensePython2e/11-dicionarios.html#termo:declaração)
 
 Instrução tal como global, que diz ao interpretador algo a respeito de uma variável.
-
-
 
 [tupla](https://penseallen.github.io/PensePython2e/12-tuplas.html#termo:tupla)
 

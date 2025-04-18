@@ -25,6 +25,7 @@ size(400, 400) # define o tamanho da área de deseno (w, h)
 print(width)   # exibe no console largura atual da tela
 print(height)  # exibe no console altura atual da tela
 ```
+
 ![Coordenadas](assets/01-console.png)
 
 O computador precisa saber a posição de cada elemento a ser desenhado, e para informá-la usaremos coordenadas cartesianas, um par de números ** x ** e ** y ** que indicam posições ao longo de dois eixos, X(horizontal) e Y(vertical). Isso nos permite especificar uma posição precisa na grade, e, por convenção, para fazer isso indicamos o valor de ** x ** primeiro, e em seguida o valor de ** y**.
@@ -84,6 +85,7 @@ O fundo também serve para apagar a área de desenho
 ```python
 background(0, 255, 0)  # fundo verde, limpa a tela background(R, G, B)
 ```
+
 ## Onde encontrar os nomes das funções, o vocabulário, e os seus significados?
 
 O tempo todo vamos consultar o que é conhecido documentação de referência. Para o vocabulário de desenho da biblioteca py5, que é o que estamos usando para desenhar, ela fica em [py5coding.org](https://py5coding.org/reference/summary.html), mas aqui mesmo neste material tem um [sumário traduzido da referência](sumario-referencia-py5.md) que você pode consultar!
@@ -95,7 +97,6 @@ Para a linguagem Python em si, sua sintaxe, palavras-chave, funções embutidas 
 Comentários são anotações, pedaços de texto no código, que não são executados pelo computador, são ignorados. Em Python, comentários começam com `#` e vão até o final da linha. Quando o `#` é no começo da linha ocupam uma linha inteira, e servem também como uma maneira rápida de desativar um trecho do código! Em inglês tem até uma expressão para isso: *comment out* (desativar por meio de um comentário).
 
 Os Comentários são feitos principalmente para o benefício as pessoas que colaboram com você e estão lendo o código, como, por exemplo, uma pessoa muito importante que é você-daqui-a-uma-semana, entender qual era o objetivo daquele pedaço do programa. Os comentários que você está vendo neste material didático talvez não sejam um exemplo muito bom de comentários pois eles estão explicando funcionamento muito elementar das funções e experessões usadas, idealmente, anote o seu código com explicações curtas que falem mais do motivo ou objetivo daquele bloco e não esqueça de mudá-los quando o objetivo e o código mudar.
-
 
 ```python
 # Oi eu sou um comentário de uma linha inteira
@@ -114,6 +115,7 @@ Quando ficam logo no começo do corpo de uma definição de função ou classe, 
 chamados 'docstrings' (textos de documentação).
 """
 ```
+
 ## Próximos passos
 
 - [Variáveis](variaveis.md)

@@ -1,15 +1,16 @@
 # *Perlin noise*
+
 # Ruído de Perlin
 
 Nesta altura você possívelmente já experimentou fazer algo usando[números(pseudo)aleatórios](aleatoriedade_1.md), e talvez tenha notado o quão abruptas são as variações produzidas por esse tipo de estratégia, os números produzidos a cada chamada de `random()` tem uma chance igual de estar em qualquer lugar da faixa indicada, isso gera facilmente paletas e tamanhos imprevisíveis, mas, frequentemente, por conta de contrastes muito acentuados, não tão interessantes. O Ruído de Perlin, que pode ser obtido com a função embutida do Processing, `noise()`, ao contrário, produz valores que tem algum grau de semelhança entre "vizinhos", valores que se relacionam de alguma forma ao longo do tempo ou do espaço. Estes valores então permitem gerar variações de cor e formas que nos remetem a elementos naturais como topografias ou névoas, entre outras texturas.
 
->*An algorithm known as “Perlin noise, ” named for its inventor Ken Perlin, takes this concept into account. Perlin developed the noise function while working on the original Tron movie in the early 1980s; it was designed to create procedural textures for computer-generated effects. In 1997 Perlin won an Academy Award in technical achievement for this work. Perlin noise can be used to generate various effects with natural qualities, such as clouds, landscapes, and patterned textures like marble.*
->
->*Perlin noise has a more organic appearance because it produces a naturally ordered(“smooth”) sequence of pseudo-random numbers. The graph on the left below shows Perlin noise over time, with the x-axis representing time; note the smoothness of the curve.*
->
->(Trecho de [*The Nature of Code*](https://natureofcode.com/book/introduction /), 2012, de Daniel Shiffman.)
+> *An algorithm known as “Perlin noise, ” named for its inventor Ken Perlin, takes this concept into account. Perlin developed the noise function while working on the original Tron movie in the early 1980s; it was designed to create procedural textures for computer-generated effects. In 1997 Perlin won an Academy Award in technical achievement for this work. Perlin noise can be used to generate various effects with natural qualities, such as clouds, landscapes, and patterned textures like marble.*
+> 
+> *Perlin noise has a more organic appearance because it produces a naturally ordered(“smooth”) sequence of pseudo-random numbers. The graph on the left below shows Perlin noise over time, with the x-axis representing time; note the smoothness of the curve.*
+> 
+> (Trecho de [*The Nature of Code*](https://natureofcode.com/book/introduction /), 2012, de Daniel Shiffman.)
 
-# *Perlin Noise* 1D
+## *Perlin Noise* 1D
 
 O primeiro exemplo de Ruído de Perlin, apresentado a seguir, usa a função `noise()` do py5, que gera um número entre **0** e **1**, inicialmente com apenas um argumento. Vamos comparar o resultado com `random(1)` na parte de cima da àrea de desenho. Note que na parte de baixo, com `noise()` os valores produzidos tem relação com os vizinhos, ao contrário do `random()`, produzindo uma curva relativamente suave. A amplitude pode ser ajustada mudando o valor pelo qual multiplicamos o resultado de `noise()`, ou então, usando `lerp()`.
 
@@ -48,8 +49,6 @@ def key_pressed():
         desloca_x += 5
     if key == 'x':
         desloca_x -= 5
-
-
 ```
 
 ![](assets/perlin1D.gif)
@@ -61,7 +60,7 @@ Com o teclado podemos alterar o valor da escala e do deslocamente em X.
 
 Note que não é necessário usar `noise_seed()` no `draw()` pois a semente do `noise()` é inicializada no início da execução do * sketch * e os valores obtidos são consultados por meio dos argumentos, determinísticos, calculados, como posições a serem consultadas em um 'campo' fixo.
 
-# *Perlin Noise* em 2D, acrescentando um Y
+## *Perlin Noise* em 2D, acrescentando um Y
 
 Agora acrescentaremos uma segunda dimensão, um Y, que serve de segundo argumento na função `noise()`. Ambos X e Y são multiplicados pela escala, e, no exemplo abaixo, serão deslocados pela posição do mouse.
 
@@ -82,8 +81,6 @@ def draw():
                   mouse_y * escala)
         y = height * n
         line(x, height, x, height - y)
-
-
 ```
 
 ![](assets/perlin2D_1.gif)
@@ -109,13 +106,11 @@ def draw():
         y = height * n
         vertex(x, height - y)
     end_shape()
-
-
 ```
 
 ![](assets/perlin2D_3.gif)
 
-# *Perlin Noise* em uma grade 2D
+## *Perlin Noise* em uma grade 2D
 
 Uma segunda maneira de usar o ruído de Perlin é distribuindo os valores em uma grade, de maneira que as coordenadas no plano da tela informam os passos tanto em X como em Y.
 
@@ -157,12 +152,11 @@ def key_pressed():
         desloca_y += 5
     if key_code == DOWN:
         desloca_y -= 5
-
-
 ```
+
 ![](assets/perlin2D_2.gif)
 
-# *Perlin Noise* 3D, acrescentando um Z
+## *Perlin Noise* 3D, acrescentando um Z
 
 Este é um exemplo de Ruído de Perlin com três dimensões. O mouse desloca o campo em X e Y, as setas para cima e para baixo deslocam em Z.
 
@@ -198,9 +192,8 @@ def key_pressed():
         z += 1
     if key_code == DOWN:
         z -= 1
-
-
 ```
+
 ![](assets/perlin3D.gif)
 
 Agora, praticamente a mesma ideia mas visualizada em 3D
@@ -253,13 +246,11 @@ def key_pressed():
         yo += 1
     if key_code == CONTROL:
         yo -= 1
-
-
 ```
 
 ![](assets/perlin3D_3D.gif)
 
-# Campo "vetorial" de ruído
+## Campo "vetorial" de ruído
 
 Um campo em que o valor do ruído Perlin gira um ângulo.
 
@@ -267,11 +258,9 @@ Um campo em que o valor do ruído Perlin gira um ângulo.
 escala = 0.003
 z = 0
 
-
 def setup():
     size(400, 400)
     stroke(255)
-
 
 def draw():
     background(0)
@@ -286,23 +275,19 @@ def draw():
             line(-5, 0, 5, 0)
             pop_matrix()
 
-
 def key_pressed():
     global z
     if key_code == UP:
         z += 1
     if key_code == DOWN:
         z -= 1
-
-
 ```
-![](assets/campo_perlin.gif)
 
-# Perlin em uma grade variável com `while`
+![campoPerlin.gif](/home/villares/GitHub/material-aulas/Processing-Python-py5/assets/campoPerlin.gif)
+
+## Perlin em uma grade variável com `while`
 
 ```python
-
-
 def setup():
     size(650, 650)
 
@@ -330,6 +315,6 @@ def draw():
                 25 + total_h, w, h)
             total_w += w
         total_h += h
- ```
- 
+```
+
  ![](assets/perlin_while.gif)

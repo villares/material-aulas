@@ -18,6 +18,7 @@ if denomidador == 0:   # se denominador é igual a 0
 else:
     resultado = 10 / denominador
 ```
+
 Ou o equivalente
 
 ```python
@@ -35,12 +36,12 @@ try:
 except ZeroDivisionError:
     resultado = 1000000
 ```
+
 #### Uma outra maneira, malandra
 
 Quando você sabe que os valores do denomidador nunca ficam negativos, e o resultado da divisão pode ser um número aproximado*, é possível somar algum valor que apenas impeça o denomidador de ser zero.
 
 > Lembrando que operações com números do tipo *ponto flutuante* são frequententemente boas aproximações, leia mais sobre isso em [Números inteiros (*int*) e de ponto flutuante (*float*)](numeros.md).
-
 
 ```python
 tangente_aproximada = dy / (0.00001 + distancia)
@@ -59,9 +60,11 @@ O resto da divisão nos inteiros de 7 por 3 é 1. Em Python obtemos esse valor c
 resto = 7 % 3
 print(resto)  # exibe: 1
 ```
+
 E essa operação é **extremamente útil**, para saber se um número é par ou ímpar, se é divisível por um certo número ou para produzir sequencias que se repetem!
 
 ### Testando se um número é par
+
 ```python
 if a % 2 == 0:
     print('a é par!')
@@ -76,7 +79,7 @@ def setup():
     size(500, 500)
     background(0, 100, 100)
     no_stroke()  
-    
+
 def draw():
     # se o número do do quadro for par, preenchimento preto
     if frame_count % 2:
@@ -89,12 +92,14 @@ def draw():
 ![](assets/resto_da_divisao.png)
 
 ### Testando se um número é divisível por outro
+
 ```python
 if a % b == 0:
     print('a é divisível por b!')
 else:
     print('a não é divisível por b!')
 ```
+
 ### Mantendo os números circulando até um valor máximo
 
 Para qualquer valor de **a**, o resultado da expressão **a % b** sempre é menor que **b**, e no máximo vale **b - 1**.
@@ -104,7 +109,9 @@ Podemos usar **n % max** em uma sequencia crescente de números **n** para obter
 for n in range(10):  # pegue um n para cada número de 0 a 9
    print(n % 2)      # exiba no console o resto da divisão de n por 2
 ```
+
 Resultado:
+
 ```
 0
 1
@@ -113,12 +120,16 @@ Resultado:
 0
 1
 ```
+
 Outro exemplo.
+
 ```python
 for n in range(100):  # pegue um n para cada número de 0 a 99
    print(n % 5)       # exiba no console o resto da divisão de n por 5
 ```
+
 Resultado (truncado, seriam 100 números):
+
 ```
 0
 1
@@ -130,6 +141,7 @@ Resultado (truncado, seriam 100 números):
 …
 4
 ```
+
 Um exemplo visual, em que as cores são definidas pelo matiz, com um número que vai de 0 a 255 e volta para o 0, calculado a partir do resto da divisão do número do quadro (`frame_count`) por 256.
 
 ```python
@@ -138,7 +150,7 @@ def setup():
     background(0, 100, 100)
     no_stroke()
     color_mode(HSB) # matiz, saturação, brilho
-    
+
 def draw():
     matiz = frame_count % 256
     fill(matiz, 255, 255)
@@ -151,4 +163,3 @@ def draw():
 
 - [Valores e seus tipos](tipagem_py.md)
 - [Números inteiros (*int*) e de ponto flutuante (*float*)](numeros.md)
-

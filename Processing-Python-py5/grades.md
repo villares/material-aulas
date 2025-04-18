@@ -57,7 +57,7 @@ for fila in range(num_filas):  # fila vai de 0 a 9
 
 A mesma grade usando o `range()` com início, parada e passo.
 
-```python     
+```python
 # deslocamento (offset) inicial: 20 - largura das colunas: 40 
 for x in range(20, 400, 40): # 10 números de 20 a 380, de 40 em 40
     # deslocamento (offset) inicial: 20 - altura das filas: 40  
@@ -91,8 +91,8 @@ def draw():
             fill(c)
             # desenho do elemento em x, y
             circle(x, y, d)
-
 ```
+
 ![](assets/grade_colorida.png)
 
 ### Assuntos relacionados
@@ -101,4 +101,3 @@ def draw():
 - [Cores com HSB (Matiz, Saturação e Brilho)](cores_HSB.md)
 - [Usando uma função geradora (*generator*)](grades2.md)
 - [Uma grade com recursividade](https://abav.lugaralgum.com/material-aulas/Processing-Python-py5/recursao_py.html#uma-grade-recursiva)
-

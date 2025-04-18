@@ -1,6 +1,5 @@
 # Exportando SVG
 
-
 ## Usando um objeto Py5Graphics
 
 A estratégia mostrada a seguir permite mostrar na tela o desenho mas salvar um arquivo ajustes especiais, como por exemplo dimensões escaladas.
@@ -48,14 +47,11 @@ def key_pressed():
     global save_frame
     if key == 'e':
         save_frame = True
-
-
 ```
 
 ## Permitindo que a pessoa escolha onde salvar
 
 ```python
-
 save_now = False
 fator_escala = 3
 
@@ -76,7 +72,7 @@ def draw():
     if save_now:
         end_record()
         exit_sketch()
-        
+
 
 def salva_svg(selection):
     global save_now, output
@@ -94,8 +90,6 @@ def key_pressed():
     if key == 's':
         sugestao = "exemplo.svg"
         select_output("Salvar:", salva_svg, sugestao)
-
-
 ```
 
 ## Limitações
@@ -115,7 +109,6 @@ No exemplo a seguir mostramos como exportar desenhos tridimensionais em formato 
 O resultado, infelizmente,  é  bastante limitado, como pode ser visto abaixo:
 
 ![a](assets/3Da.svg) ![b](assets/3Db.svg)
-
 
 ```python
 """
@@ -165,10 +158,8 @@ def key_pressed():
     global save_frame
     if key == 'e':
         save_frame = True
-
-
 ```
 
-## Assuntos relacionados:
+## Assuntos relacionados
 
 - [Exportando PDF](exportando_pdf.md)

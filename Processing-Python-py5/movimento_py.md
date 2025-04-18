@@ -1,4 +1,4 @@
-# Criando uma animação 
+# Criando uma animação
 
 Vamos fazer uma animação clássica que é um elemento que se desloca e rebate nas bordas da tela, no nosso caso, um círculo branco em um fundo azul.
 
@@ -23,7 +23,6 @@ E finalmente, no exemplo a seguir, usamos uma [execução condicional](condicion
 Dá pra saber se o círculo está sainda a direta quando a posição `px` fica maior do que a largura da tela (`px > width`), mas nesse caso é o centro do círculo que está saindo, então `px > width - raio` é mais sofisticado. E para evitar uma saída do lado esquerdo também usamos então `px < raio` em vez de `px < 0`. A condição completa com o `if` fica `if px > width - raio or px < raio:` e dentro desse `if` invertemos o sentido da velocidade com `vx = -vx`. Uma estratégia equivalente é usada com `py`, a posição vertical do centro do círculo.
 
 ## O código completo
-
 
 ```python
 raio = 50  # tamanho do raio do círculo
@@ -60,4 +59,3 @@ Experimente desligar por meio de um `#` tornando um comentário a linha do `back
 - [Condicionais(`if` e `else`)](condicionais_py.md)
 - [Escopo: variáveis globais e locais](escopo_py.md)
 - [Como exportar animações](exportar_animacoes.md)
-

@@ -55,8 +55,6 @@ def sigmoid_easing(p):
 ![](assets/easing_2.gif)
 
 ```python
-
-
 def cubic_ease_in(p):
     return p ** 3
 
@@ -81,18 +79,13 @@ def cubic_ease_out(p):
 
 def circular_ease_out(p):
     return sqrt((2 - p) * p)
-
-
 ```
 
-# Exemplos com *ease in*  e *ease out*
+## Exemplos com *ease in*  e *ease out*
 
 ![](assets/easing_3.gif)
 
-
 ```python
-
-
 def sine_in_out(p):
     return -(cos(PI * p) - 1) / 2
 
@@ -135,24 +128,16 @@ def back_ease_in_out(p):
         return (p2 ** 2 * ((c2 + 1) * p2 - c2)) / 2
     else:
         return ((p2 - 2) ** 2 * ((c2 + 1) * (p2 - 2) + c2) + 2) / 2
-
-
 ```
 
-
-# Um remap com easing embutido
+## Um remap com easing embutido
 
 ```python
-
-
 def sigmoid_map(value, start1, stop1, start2, stop2, const=6):
     """ from John @introscopia """
     m = remap(value, start1, stop1, -const, const)
     return ((stop2 - start2) * (1 / (1 + exp(-m)))) + start2
-
-
 ```
-
 
 # Assuntos relacionados
 

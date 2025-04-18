@@ -1,11 +1,8 @@
 # Mais exemplos de 3D
 
-
-
 ## Cubo 3D com texturas
 
 ```python
-
 """
 Baseado no exemplo Texture Cube de Dave Bollinger pra o Processing
 """
@@ -42,7 +39,7 @@ def draw():
     background(0)
     no_stroke()
 
- 
+
     textured_cube(half_width, half_height, -100,
                   90, textures,
                   rotx=rotx, roty=roty)
@@ -54,7 +51,7 @@ def textured_cube(x, y, z, extent, textures, rotx=0, roty=0):
     except TypeError:
         textures = (textures, )
     textures *= 6
-    
+
     A = ((-1, -1, 1, 0, 0),  # +Z "front" face.
          (1, -1, 1, 1, 0), 
          (1, 1, 1, 1, 1),
@@ -89,22 +86,18 @@ def textured_cube(x, y, z, extent, textures, rotx=0, roty=0):
             with begin_shape(QUADS):
                 texture(tex)
                 vertices(face)
-                
+
 
 def mouse_dragged():
     global rotx, roty
     rate = 0.01
     rotx += (pmouse_y - mouse_y) * rate
     roty += (mouse_x - pmouse_x) * rate
-
-
 ```
 
 ## Usando a cor para alterar a profundidade de um elemento
 
 ```python
-
-
 def setup():
     size(640, 360, P3D)
     # The image file must be in the data folder of the current sketch
@@ -134,6 +127,4 @@ def draw():
             sphere(passo)
             #circle(x, y, passo)
             pop_matrix()
-
-
 ```
