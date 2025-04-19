@@ -28,7 +28,7 @@ def key_pressed():
 
 ![exemplo recorte retangular](assets/recorte_retangular.png)
 
-## Recortando imagens com uma forma circular
+## Recortando imagens com outras formas
 
 O método `.mask()` modifica uma imagem usando como máscara de recorte uma outra imagem, que precisa ter as mesmas dimensões da imagem que está sendo recortada, mesmo que a região recortada seja menor.
 
@@ -86,6 +86,8 @@ def mouse_pressed():
 
 ![exemplo com máscara de borda suave](assets/mascara_gradiente.png)
 
+### Uma função para simplificar recortes em imagens grandes
+
 Agora se quisermos recortar um trecho não retangular de uma imagem grande, e não quisermos produzir uma máscara do mesmo tamanho, podemos combinar as duas estratégias anteriores, copiando um trecho retangular e depois recortando, com a função mostrada abaixo.
 
 ```python
@@ -134,7 +136,7 @@ def key_pressed():
 
 ![recorte hexagonal](assets/recorte_hexagonal.png)
 
-## Outros exemplos avançados de mascaramento e recorte
+## Outros exemplos avançados
 
 ### Criando uma máscara dinamicamente
 
@@ -177,7 +179,11 @@ def draw():
 
 ![máscara dinâmica](assets/mascara_dinamica.png)
 
-### Recortando com Numpy para preservar o canal alpha
+### Recortando com Numpy e preservando a transparência
+
+Outra estratégia que pode melhorar a perfomance na manipulação de imagens com recortes é usar arrays Numpy para manipular de forma "vetorizada" os pixels da imagem. No exemplo abaixo há uma opoção que preserva o canal alpha (partes translúcidas de transparentes) da imagem recortada, e outra que não preserva.
+
+
 
 ```python
 # from https://github.com/py5coding/py5generator/discussions/159#discussioncomment-3567982
@@ -190,12 +196,13 @@ def setup():
     offscreen = create_graphics(width, height)
     offscreen.begin_draw()
     offscreen.clear()  # fundo transparente
-    # offscreen.background(0, 200, 0, 100)  # é possível fundo translúcido
+    # Note que seria possível um fundo translúcido com a linha abaixo
+    # offscreen.background(0, 200, 0, 100) 
     offscreen.fill(255, 0, 0, 128)  # vermelho translúcido
     for _ in range(100):
         offscreen.rect(random(width), random(height), 50, 50)
     offscreen.end_draw()
-    # create a clean copy of the offscreen's alpha channel because the draw() method will ruin it
+    # faremos uma coía do canal alpha da camada a ser recortada
     offscreen.load_np_pixels()
     offscreen_alpha_channel = offscreen.np_pixels.copy()[:, :, 0]
 
@@ -206,18 +213,19 @@ def draw():
     line(0, y, width, y)
 
     clip_mask.begin_draw()
-    clip_mask.clear()  # necessary because clip_mask is being recycled
+    clip_mask.clear()  # é preciso limpar este buffer para reutilizar
     clip_mask.fill(255)
     clip_mask.circle(mouse_x, mouse_y, 250)
     clip_mask.end_draw()
     clip_mask.load_np_pixels()
     offscreen.load_np_pixels()
     if is_mouse_pressed:
-        # calculate the minimum alpha values and set the alpha channel to that
+        # calcula e usa os valores mínimos entre os do alpha da máscara e os da imagem
         offscreen.np_pixels[:, :, 0] = np.where(clip_mask.np_pixels[:, :, 0] < offscreen_alpha_channel,
                                                 clip_mask.np_pixels[:, :, 0], offscreen_alpha_channel)
     else:
-        # copy clip_mask's red channel to offscreen's alpha channel
+        # usa os  valores do canal vermelho da máscara como alpha 
+        # isso gera uma imagem recortada que não tem partes translúcidas. 
         offscreen.np_pixels[:, :, 0] = clip_mask.np_pixels[:, :, 1]
     offscreen.update_np_pixels()
     image(offscreen, 0, 0)
