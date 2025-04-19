@@ -44,6 +44,8 @@ def key_pressed():
 
 ![](assets/offscreen2.gif)
 
+Pode ser útil desenhar em um *offscreen buffer* com a intenção de consultar os pixels para fazer o desenho principal, como neste caso com tipografia em que um texto é desenhado em *img* para que possamos desenhar uma grade de elementos baseada na disposição dos pixels da imagem auxiliar.
+
 ```python
 def setup():
     global img
