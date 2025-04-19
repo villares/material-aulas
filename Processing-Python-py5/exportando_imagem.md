@@ -60,7 +60,7 @@ def draw():
 
 ## Exportando em resolução maior do que a da tela
 
-Um objeto * Py5Graphics * é uma espécie de tela virtual que pode gravar o resultado do desenho em paralelo à área de desenho normal, podendo também receber ajustes especiais aplicados apenas a esse objeto-tela, como `.scale()` no exemplo abaixo, o que permite exportar uma imagem 10 vezes maior do que a mostrada na tela. Outro ponto interessante deste método é que permite exportar imagens com o fundo transparente.
+Um objeto *Py5Graphics* é uma espécie de tela virtual que pode gravar o resultado do desenho em paralelo à área de desenho normal, podendo também receber ajustes especiais aplicados apenas a esse objeto-tela, como `.scale()` no exemplo abaixo, o que permite exportar uma imagem 10 vezes maior do que a mostrada na tela. Outro ponto interessante deste método é que permite exportar imagens com o fundo transparente.
 
 ### Exportando um sketch estático
 
