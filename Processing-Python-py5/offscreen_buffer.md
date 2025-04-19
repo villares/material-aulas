@@ -1,41 +1,93 @@
 # Desenhando em um espaço fora da tela (*offscreen buffer*)
 
-É possível desenhar em um objeto especial, uma espécie de tela virtual, criando superfícies *Py5Graphics* com a função [create_graphics()](https://py5coding.org/reference/sketch_create_graphics.html), em vez de desenhar diretamente na tela em uma estratégia conhecida como _offscreen buffer_. Depois é possível mostrar ou não essa imagem na área de desenho normal com a função `image()`, a mesma que usamos para mostrar uma imagem externa carregada carregada com `load_image()`, um objeto *Py5Image*.
+Em vez de desenhar diretamente na tela como fazemos normalmente, podemos obter uma área de desenho fora da área visível do *sketch* com a função [create_graphics()](https://py5coding.org/reference/sketch_create_graphics.html), que criaum objeto *Py5Graphics* com as dimensões que determinarmos. Essa estratégia é conhecida também como "usar um _offscreen buffer_".
 
-Uma vez instanciada a superfície de desenho com, por exempo, `b = create_graphics(width, height)`, antes de se desenhar é necessário chamar o método `b.begin_draw()`. As instruções de desenho são também invocadas como métodos da superfíe, como por exemplo, `b.backround(0)` ou `b.rect(100, 100, 100, 100)`, e ao final é recomendável encerrar com `b.end_draw()`.
+Depois de manipular essa área de desenho virtual é possível consultar os pixels que ela contém, e mostrá-la, se quisermos, na área de desenho normal com a função `image()`, a mesma que usamos para mostrar na tela um objeto *Py5Image*, como uma imagem externa carregada  com `load_image()` .
 
-Algumas vantagens dessa estratégia podem ser:
+Algumas usos comuns desta estratégia são:
 
-- Desenho cumulativo em uma camada enquanto se anima elementos(com limpeza do frame) em outra camada
-- Potencialmente mais rápido do que desenhar na tela (reaproveitando um desenho com partes já prontas, por exemplo)
-- Salvar o imagens em camadas separadas para posterior tratamento.
-- Aplicação de máscaras de recorte ou outros efeitos
+- Desenhar cumulativamente (com rastro) em uma camada, enquanto se anima elementos, com limpeza do frame, em outra camada;
+- Preparar uma imagem cujos pixels serã consultados para produzir o desenho principal;
+- Salvar o imagens em camadas separadas para posterior tratamento;
+- Desenhar uma imagem muito maior do que a tela, para [salvar em alta resolução](exportando_imagens.md);
+- Criar uma [máscaras de recorte](recortando_imagens.md) ou criar imagem ou textura que gostaríamos de recortar;
+- Desenhar mais rápido na tela, de uma vez só, possivelmente reaproveitando um desenho com partes já prontas. Uma estratégia semelhante existe para objetos vetorias, que consiste em desenhar um objeto ou *grupo* de objetos *Py5Shape*, que pode ser criado com a função [create_shape()](http://py5coding.org/reference/sketch_create_shape.html) e pode depois ser desenhado na tela com `shape()`.
 
-Outra estratégia semelhante é desenhar em um objeto ou *grupo* de objetos *Py5Shape*, que pode ser criado com a função [create_shape()](http://py5coding.org/reference/sketch_create_shape.html), e pode depois desenhado na tela com `shape()'.
+## Animando o fundo de um desenho com acumulação
 
-## Um primeiro exemplo
+![](assets/offscreen1.gif)
+
+Note como neste exemplo o fundo é apagado a cada frame (com uma cor que varia) e seria possível produzir uma animação com outros elementos sendo desenhados. Enquanto isso, no objeto `img` acontece um desenho com acumulação como normalmente fazemos na tela principal.
 
 ```python
 def setup():
     size(400, 400)
     global img
-    img = create_graphics(400, 400)
-    img.begin_draw()
-    img.clear()  # limpa os pixels, deixa transparente
-    # img.background(200) # fundo (opaco)
-    img.fill(255, 0, 0)
-    img.rect(100, 100, 100, 100)
-    img.end_draw()
-
+    img = create_graphics(400, 400)  # Objeto Py5Graphics
 
 def draw():
-    background(sin(radians(frame_count * 0.5)) * 128 + 128)
+    background(sin(radians(frame_count)) * 128 + 128)    
+    if is_mouse_pressed:
+        img.begin_draw()
+        img.fill(255, 0, 0)
+        img.circle(mouse_x, mouse_y, 50)
+        img.end_draw()
     image(img, 0, 0)
-    fill(0, 0, 200)
-    circle(mouse_x, mouse_y, 100)
+
+def key_pressed():
+    img.begin_draw()
+    img.clear()  # limpa o área de desenho a deixando transparente
+    img.end_draw()
+```
+
+## Pegando pixels de letras escondindas
+
+![](assets/offscreen2.gif)
+
+```python
+def setup():
+    global img
+    size(700, 300)
+    background(0)
+    no_stroke()
+    frame_rate(10)
+    f = create_font('Tomorrow ExtraBold', 140)
+    img = create_graphics(width, height)
+    img.begin_draw()
+    img.smooth()
+    img.text_font(f)
+    img.text_size(120)
+    img.text_leading(100)
+    img.text_align(CENTER, CENTER)
+    img.text('LETRAS\nEPECIAIS', width / 2, height / 2)
+    img.end_draw()
+
+def draw():
+    background(100)
+    step = 8
+    for x in range(0, width, step): 
+        for y in range(0, height, step):
+            xc, yc = step / 2 + x, step / 2 + y
+            px = img.get_pixels(int(xc), int(yc))
+            if px != 0:
+                draw_grid(x, y, step)
+
+def draw_grid(x, y, step):
+    random_spark = 0 if random(100) > 1 else random(255)
+    grid_positions = (
+        (0, 0, color(255, 0, 0)),
+        (0, 1, color(0, 255, 0)),
+        (1, 1, color(0, 0, 255)),
+        (1, 0, random_spark)
+    )
+    for xo, yo, fill_color in grid_positions:
+        fill(fill_color)
+        rect(x + xo * step / 2, y + yo * step / 2, step / 2, step / 2)
 ```
 
 ## Camadas que podem ser salvas em separado
+
+No exemplo abaixo são feitos dois desenhos, que podem ser salvos separadamente e também mostrados juntos na tela. Repare com as imagens salvas tem o fundo transparente, e a imagem na tela aparece com o cinza padrão ao fundo.
 
 ```python
 def setup():
