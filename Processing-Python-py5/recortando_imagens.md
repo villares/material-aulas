@@ -2,7 +2,9 @@
 
 ## Copiando trechos retangulares de uma imagem
 
-É possível se obter uma parte da tela de desenho usando a função `get_pixels()` ou uma parte de um objeto Py5Image ou Py5Graphics usando o método `get_pixels()`, em ambos os casos passando como argumentos uma posição e dimensões de um retângulo (`x, y, w, h`) como no exemplo abaixo.
+![exemplo recorte retangular](assets/recorte_retangular.png)
+
+É possível se obter uma parte da tela de desenho usando a função `get_pixels()` ou uma parte de um objeto Py5Image ou Py5Graphics usando o método `.get_pixels()`, em ambos os casos passando como argumentos uma posição e dimensões de um retângulo (`x, y, w, h`) como no exemplo abaixo.
 
 ```python
 url = 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Mapa_de_S%C3%A3o_Paulo_-_1924.jpg'
@@ -26,40 +28,45 @@ def key_pressed():
     redraw()
 ```
 
-![exemplo recorte retangular](assets/recorte_retangular.png)
+
 
 ## Recortando imagens com outras formas
 
-O método `.mask()` modifica uma imagem usando como máscara de recorte uma outra imagem, que precisa ter as mesmas dimensões da imagem que está sendo recortada, mesmo que a região recortada seja menor.
+![recorte circular](assets/recorte_circular.png)
+
+O método `.mask()` modifica uma imagem usando como máscara de recorte uma outra imagem (um objeto Py5Image, ou um [*offscreen buffer*](offscreen_buffer.md), uma área de desenho fora da tela em um objeto Py5Graphic), que precisa ter as mesmas dimensões da imagem que está sendo recortada, mesmo que a região recortada seja menor. No exemplo abaixo,  a outra imagem tem o fundo transparente desenhamos um círculo branco nela.
 
 ```python
 url = 'https://garoa.net.br/mediawiki/images/thumb/Convite_NdP_ago.png/750px-Convite_NdP_ago.png'
 
 def setup():
-    global img
     size(500, 500)
+    
     img = load_image(url)
     # a máscara tem que ter tamanho igual a da imagem que vai ser clipada
     clip_mask = create_graphics(img.width, img.height)
-    # se não for usado background() o fundo de clip_mask é transparente
-    clip_mask.begin_draw() 
-    clip_mask.no_fill()
-    for i in range(256):
-        clip_mask.stroke(255 - i)  # cor de traço vai de branco a preto
-        clip_mask.circle(img.width / 2, img.height / 2, i * 2)
+    clip_mask.begin_draw()
+    clip_mask.fill(255)
+    clip_mask.circle(img.width / 2, img.height / 2, 400)
     clip_mask.end_draw()
-    img.mask(clip_mask)  # esta operação modifica a imagem
+    
+    img.mask(clip_mask)  # esta operação modifica a imagem `img`
     image_mode(CENTER)
 
-def mouse_pressed():
-    translate(mouse_x, mouse_y)
-    rotate(random(PI))
-    image(img, 0, 0)
+    background(100)
+    image(img, 250, 250)
+    
+    save('recorte_circular.png')
+
 ```
 
-![recorte circular](assets/recorte_circular.png)
+### Recortes que geram regiões translúcidas
 
-Repare que as regiões brancas da imagem-máscara são as que permanecem na imagem modificada. As regiões transparentes ou pretas serão recortadas. Se fizermos um gradiente do branco ao preto como no exemplo abaixo, podemos ter um recorte "suave" com uma transição de opacidade no resultado.
+Repare que as partes brancas da imagem-máscara são as que permanecem na imagem modificada. As partes transparentes ou pretas serão recortadas.
+
+Se fizermos um gradiente do branco ao preto como no exemplo abaixo, podemos ter um recorte "suave" com uma transição de opacidade no resultado.
+
+![exemplo com máscara de borda suave](assets/mascara_gradiente.png)
 
 ```python
 url = 'https://garoa.net.br/mediawiki/images/thumb/Convite_NdP_ago.png/750px-Convite_NdP_ago.png'
@@ -84,11 +91,11 @@ def mouse_pressed():
     image(img, 0, 0)
 ```
 
-![exemplo com máscara de borda suave](assets/mascara_gradiente.png)
-
 ### Uma função para simplificar recortes em imagens grandes
 
 Agora se quisermos recortar um trecho não retangular de uma imagem grande, e não quisermos produzir uma máscara do mesmo tamanho, podemos combinar as duas estratégias anteriores, copiando um trecho retangular e depois recortando, com a função mostrada abaixo.
+
+![recorte hexagonal](assets/recorte_hexagonal.png)
 
 ```python
 url = 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Mapa_de_S%C3%A3o_Paulo_-_1924.jpg'
@@ -134,7 +141,7 @@ def key_pressed():
     redraw()
 ```
 
-![recorte hexagonal](assets/recorte_hexagonal.png)
+
 
 ## Outros exemplos avançados
 
@@ -182,8 +189,6 @@ def draw():
 ### Recortando com Numpy e preservando a transparência
 
 Outra estratégia que pode melhorar a perfomance na manipulação de imagens com recortes é usar arrays Numpy para manipular de forma "vetorizada" os pixels da imagem. No exemplo abaixo há uma opoção que preserva o canal alpha (partes translúcidas de transparentes) da imagem recortada, e outra que não preserva.
-
-
 
 ```python
 # from https://github.com/py5coding/py5generator/discussions/159#discussioncomment-3567982
