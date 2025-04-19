@@ -28,9 +28,9 @@ def key_pressed():
 
 ![exemplo recorte retangular](assets/recorte_retangular.png)
 
-## Recortando imagens com uma máscara
+## Recortando imagens com uma forma circular
 
-O método `.mask()` modifica uma imagem usando como máscara de recorte uma outra imagem, que precisa ter as mesmas dimensões da imagem que está sendo recortada. 
+O método `.mask()` modifica uma imagem usando como máscara de recorte uma outra imagem, que precisa ter as mesmas dimensões da imagem que está sendo recortada, mesmo que a região recortada seja menor.
 
 ```python
 url = 'https://garoa.net.br/mediawiki/images/thumb/Convite_NdP_ago.png/750px-Convite_NdP_ago.png'
@@ -57,9 +57,9 @@ def mouse_pressed():
     image(img, 0, 0)
 ```
 
-![image](assets/recorte_circular.png)
+![recorte circular](assets/recorte_circular.png)
 
-Repare que as regiões brancas da imagem-máscara são as que permanecem na imagem modificada. As regiões transparentes ou pretas serão recortadas. Se fizermos um gradiente do branco ao preto como no exemplo abaixo, podemos ter um recorte "suave" com uma transição de opacidade. 
+Repare que as regiões brancas da imagem-máscara são as que permanecem na imagem modificada. As regiões transparentes ou pretas serão recortadas. Se fizermos um gradiente do branco ao preto como no exemplo abaixo, podemos ter um recorte "suave" com uma transição de opacidade no resultado.
 
 ```python
 url = 'https://garoa.net.br/mediawiki/images/thumb/Convite_NdP_ago.png/750px-Convite_NdP_ago.png'
@@ -84,12 +84,11 @@ def mouse_pressed():
     image(img, 0, 0)
 ```
 
-![image](https://user-images.githubusercontent.com/3694604/188531711-8143041d-515d-41ab-ab81-d6d494d0c45c.png)
+![exemplo com máscara de borda suave](assets/mascara_gradiente.png)
 
-Agora se quisermos recortar um trecho irregular (não retangular) de uma imagem grande, e não quisermos produzir uma máscara enorme, podemos combinar as duas estratégias anteriores com a função mostrada abaixo.
+Agora se quisermos recortar um trecho não retangular de uma imagem grande, e não quisermos produzir uma máscara do mesmo tamanho, podemos combinar as duas estratégias anteriores, copiando um trecho retangular e depois recortando, com a função mostrada abaixo.
 
 ```python
-
 url = 'https://upload.wikimedia.org/wikipedia/commons/c/cb/Mapa_de_S%C3%A3o_Paulo_-_1924.jpg'
 
 def setup():
@@ -107,7 +106,7 @@ def draw():
     image_mode(CENTER)
     image(recorte, 250, 250)          
     save('recorte_hexagonal.png')
-    
+
 def mascara_hexagonal(w, h):
     m = create_graphics(int(w), int(h))
     m.begin_draw()
@@ -121,7 +120,7 @@ def mascara_hexagonal(w, h):
             m.vertex(x, y)
     m.end_draw()
     return m
-         
+
 def recorte_com_mascara(img, mascara, x, y):    
     w, h = mascara.width, mascara.height
     resultado = create_image(mascara.width, mascara.height, ARGB)
@@ -131,16 +130,15 @@ def recorte_com_mascara(img, mascara, x, y):
 
 def key_pressed():
     redraw()
-
 ```
 
-![image](assets/recorte_hexagonal.png)
+![recorte hexagonal](assets/recorte_hexagonal.png)
 
-## Exemplos avançados de máscara
+## Outros exemplos avançados de mascaramento e recorte
 
 ### Criando uma máscara dinamicamente
 
-![clipping mask](https://user-images.githubusercontent.com/3694604/188624349-0c7e0880-ad0d-47f1-b594-26da4393d459.png)
+Neste exemplo abaixo o objeto Py5Graphic usado como máscara de recorte é alterado a cada frame, tendo o seu conteúdo redesenhado. Aproveitar o mesmo objeto é mais eficiente do ponto de vista da performance (do que criar um novo objeto a cada frame).
 
 ```python
 def setup():
@@ -176,6 +174,8 @@ def draw():
     image(result, 0, 0)        # mostra a imagem modificada
     image(offscreen, 400, 0)   # mostra a imagem original
 ```
+
+![máscara dinâmica](assets/mascara_dinamica.png)
 
 ### Recortando com Numpy para preservar o canal alpha
 
