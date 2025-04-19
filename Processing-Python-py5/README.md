@@ -53,7 +53,7 @@
   - 1.5.4 [Usando a rodinha do mouse(*mouse wheel*)](rodinha_mouse.md)
   - 1.5.5 [Parando o `draw()`](no_loop.md)
 
-### Orientação a Objetos
+### Orientação a objetos
 
 - 2.1.1 [Primeiros passos de orientação a objetos: usando a classe Slider](slider_com_OO.md)
 - 2.2.1 [Um botão com orientação a objetos](botao_com_OO.md)
@@ -69,7 +69,7 @@
 - 3.4.1 [Compreensão de listas e outras *comprehensions*](comprehension.md)
 - 3.5.1 [Removendo itens de coleções](removendo_itens.md)
 
-### Aprofundando algumas das ideias
+### Aprofundando algumas das ideias anteriores
 
 - 4.1.0 [Mais sobre aleatoriedade](aleatoriedade_2.md) e as diferenças ente o `random` do py5 e o do Python
   - 4.1.1 [*Perlin Noise* (ruído de Perlin)](noise.md) um tipo especial de número pseudoaleatório
@@ -89,7 +89,7 @@
 - 5.3.1 [Exportando SVG (saída vetorial)](exportando_svg.md)
 - 5.4.1 [Exportando animações (vídeos ou GIF)](exportar_animacoes.md)
 
-### Lendo arquivos externos
+### Lendo e escrevendo arquivos externos
 
 - 6.1.0 [Carregado formas de um arquivo vetorial (SVG)](recursos_vetoriais_externos.md)
 - 6.2.0 [Lendo arquivos de imagem(*bitmap/raster*)](imagens_externas.md)
@@ -105,28 +105,26 @@
 
 - 7.1.1 [Usando várias abas no IDE e importando código de outros módulos](modulos.md) 
 
-- 7.2.1 [Dicas para portar exemplos do Processing modo Java para o modo Python](java_para_python.md)
+- 7.2.1 [Dicas para portar exemplos de Processing para Python com py5](java_para_python.md)
 
-- 7.3.1 [Manipulando a janela](mais_que_size.md) (Tela cheia, redimensionamento e múltiplas janelas) 
+- 7.3.1 [Manipulando a janela](mais_que_size.md) - Tela cheia, redimensionamento e múltiplas janelas
 
 - 7.4.1 [Uma janela de diálogo com um campo de texto](input_janela.md)
   
   <!-- - 7.5.1 usando bibliotecas externas Python e Java) -->
-  
-  <!-- 7.6.1 [Exportando um aplicativo independente](export_application.md) [REVISAR] -->
 
 ### Pequenos projetos e outros exemplos
 
 #### Neste repositório
 
-- [Módulos ou mosaicos de Truchet](truchet.md)
+- [Módulos de Truchet](truchet.md) - Azulejos e rotações
 - [Jogo PONG](pong/) - Estudos para o fazer um jogo
 - [L-System](LSystem.md) - Sistema de Lindenmayer
-- [Autômatos Celulares](automatos-celulares.md)
+- [Autômatos Celulares](automatos-celulares.md) - Jogo da vida de Conway (*Conway's Game of Life*)
 
 #### Externos
 
 - [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
-- [Paper Objects with Processing and Python](https://abav.lugaralgum.com/Paper-objects-with-Processing-and-Python)
-- [Arc, tangents & Bezier studies](https://github.com/villares/arc_tangents_and_bezier_studies)
-- [Simulações física 2D com PyMunk - Pinball](https://github.com/villares/pymunk-pinball-paulista)
+- [Paper Objects with Processing and Python](https://abav.lugaralgum.com/Paper-objects-with-Processing-and-Python) - Volumes para cortar e montar
+- [Arc, tangents & Bezier studies](https://github.com/villares/arc_tangents_and_bezier_studies) - Como desenhar linhas tangentes entre arcos e polígonos com arredondamentos
+- [Simulações física 2D com PyMunk](https://github.com/villares/pymunk-pinball-paulista) - Pinball
