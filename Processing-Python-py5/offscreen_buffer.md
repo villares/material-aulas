@@ -1,6 +1,6 @@
 # Desenhando em um espaço fora da tela (*offscreen buffer*)
 
-Em vez de desenhar diretamente na tela como fazemos normalmente, podemos obter uma área de desenho fora da área visível do *sketch* com a função [create_graphics()](https://py5coding.org/reference/sketch_create_graphics.html), que criaum objeto *Py5Graphics* com as dimensões que determinarmos. Essa estratégia é conhecida também como "usar um _offscreen buffer_".
+Em vez de desenhar diretamente na tela como fazemos normalmente, podemos obter uma área de desenho fora da área visível do *sketch* com a função [create_graphics()](https://py5coding.org/reference/sketch_create_graphics.html), que cria um objeto *Py5Graphics* com as dimensões que determinarmos. Essa estratégia é conhecida também como "usar um _offscreen buffer_".
 
 Depois de manipular essa área de desenho virtual é possível consultar os pixels que ela contém, e mostrá-la, se quisermos, na área de desenho normal com a função `image()`, a mesma que usamos para mostrar na tela um objeto *Py5Image*, como uma imagem externa carregada  com `load_image()` .
 
@@ -125,4 +125,7 @@ def key_pressed():
 ![camada1](https://user-images.githubusercontent.com/3694604/70395382-dc6f4280-19dc-11ea-9d9b-d8a371a1c7d8.png)
 ![combinadas](https://user-images.githubusercontent.com/3694604/70395383-dd07d900-19dc-11ea-9671-4cf6eb2d510e.png)
 
-# 
+## Assuntos relacionados
+
+- [Recortando e mascarando imagens](recortando_imagens.md)
+- [Exportando imagens](exportando_imagem.md)
