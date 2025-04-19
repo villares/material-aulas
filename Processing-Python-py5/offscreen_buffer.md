@@ -1,16 +1,16 @@
 # Desenhando em um espaço fora da tela (*offscreen buffer*)
 
-Em vez de desenhar diretamente na tela como fazemos normalmente, podemos obter uma área de desenho fora da área visível do *sketch* com a função [create_graphics()](https://py5coding.org/reference/sketch_create_graphics.html), que cria um objeto *Py5Graphics* com as dimensões que determinarmos. Essa estratégia é conhecida também como "usar um _offscreen buffer_".
+Em vez de desenhar diretamente na tela como fazemos normalmente, podemos obter uma área de desenho fora da área visível do *sketch* com a função [create_graphics()](https://py5coding.org/reference/sketch_create_graphics.html), que cria um objeto *Py5Graphics* com as dimensões que determinarmos. Essa estratégia é conhecida também como um "_offscreen buffer_".
 
-Depois de manipular essa área de desenho virtual é possível consultar os pixels que ela contém, e mostrá-la, se quisermos, na área de desenho normal com a função `image()`, a mesma que usamos para mostrar na tela um objeto *Py5Image*, como uma imagem externa carregada  com `load_image()` .
+Depois de manipular essa área de desenho virtual é possível consultar os pixels que ela contém e mostrá-la, se quisermos, na área de desenho normal com a função `image()`, a mesma que usamos para mostrar na tela um objeto *Py5Image*, como uma imagem externa carregada  com `load_image()` .
 
 Algumas usos comuns desta estratégia são:
 
 - Desenhar cumulativamente (com rastro) em uma camada, enquanto se anima elementos, com limpeza do frame, em outra camada;
-- Preparar uma imagem cujos pixels serã consultados para produzir o desenho principal;
-- Salvar o imagens em camadas separadas para posterior tratamento;
-- Desenhar uma imagem muito maior do que a tela, para [salvar em alta resolução](exportando_imagens.md);
-- Criar uma [máscaras de recorte](recortando_imagens.md) ou criar imagem ou textura que gostaríamos de recortar;
+- Preparar uma imagem cujos pixels serão consultados para produzir o desenho principal;
+- Desenhar imagens em "camadas" podendo as salvar separadamente, para posterior tratamento, por exemplo;
+- Desenhar uma imagem muito maior do que a tela. permitindo [salvar um trabalho em alta resolução](exportando_imagens.md);
+- Criar uma [máscara de recorte](recortando_imagens.md) ou uma imagem/textura que gostaríamos de recortar depois;
 - Desenhar mais rápido na tela, de uma vez só, possivelmente reaproveitando um desenho com partes já prontas. Uma estratégia semelhante existe para objetos vetorias, que consiste em desenhar um objeto ou *grupo* de objetos *Py5Shape*, que pode ser criado com a função [create_shape()](http://py5coding.org/reference/sketch_create_shape.html) e pode depois ser desenhado na tela com `shape()`.
 
 ## Animando o fundo de um desenho com acumulação
