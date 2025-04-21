@@ -1,6 +1,6 @@
 # Mais sobre os atributos gráficos
 
-Esta página tenta ampliar um pouco o assundo dos atributos gráficos, que são os ajustes que podemos fazer nas formas que desenhamos, mencionados desde os [primeiros passos](https://github.com/villares/material-aulas/blob/main/Processing-Python/desenho-basico_py.md) e também quando falamos [mais sobre as cores](https://github.com/villares/material-aulas/blob/main/Processing-Python/mais_sobre_cores.md).
+Esta página tenta ampliar um pouco o assunto dos atributos gráficos, que são os ajustes que podemos fazer nas formas que desenhamos, mencionados desde os [primeiros passos](https://github.com/villares/material-aulas/blob/main/Processing-Python/desenho-basico_py.md) e também quando falamos [mais sobre as cores](https://github.com/villares/material-aulas/blob/main/Processing-Python/mais_sobre_cores.md).
 
 ## Quais são os ajustes que podemos fazer nos atributos gráficos das formas que desenhamos?
 
@@ -17,7 +17,7 @@ As funções `push_style()` e `pop_style()` (ou `push()` e `pop()` que combinam 
 
 Usando `pg = get_graphics()` podemos obter uma referência ao objeto Py5Graphics do sketch, que é a superfície em que estamos desenhando. Podemos consultar `pg._instance.fillColor` e `pg._instance.strokeColor` para saber as cores que estão atualmente em uso.
 
-Veja um exemplo de uso, uma função que desenha uma pequena seta cuja cabeça é um triângulo preenchido com a mesma cor 'atual' do traço(_stroke_).
+Veja um exemplo de uso, uma função que desenha uma pequena seta cuja cabeça é um triângulo preenchido com a mesma cor "corrente" do traço(_stroke_).
 
 ```python
 def setup():
