@@ -221,7 +221,10 @@ for j in range(14):
 <img src="assets/verticais.png">
 </details>
 
-**Desafio: Você consegue imaginar um desenho usando esse tipo de repetição e números [pseudoaleatórios](aleatoriedade_1.md) com `random()`?**
+### Desafio: Você consegue escrever?
+
+Faça um desenho usando esse tipo de repetição e números [pseudoaleatórios](aleatoriedade_1.md) com `random()`
+
 
 ### Mais sobre o `range()`
 
@@ -242,6 +245,45 @@ for x in range(10, 80, 5): # x começa valendo 10 e termina valendo 75
 
 <img src="assets/verticais.png">
 </details>
+
+### Comparando algumas das estratégias
+
+Veja como resultados semelhantes podem ser obtidos com diferentes estratégias.
+
+![](assets/4filas.png)
+
+```python
+def setup():
+    size(500, 200)
+
+    # Como nos primeiros exemplos, a posição x não depende da coleção pela qual andamos
+    fill(200, 0, 0)
+    x = 25
+    for _ in range(10):
+        circle(x, 25, 40)
+        x = x + 50
+
+    # Como nos últimos exemplos, o x é produzido diretamente por range()
+    fill(0, 200, 0)
+    for x in range(25, 500, 50):
+        circle(x, 75, 40)
+
+    # Usando o contador para calcular a posição
+    fill(0, 0, 200)
+    for i in range(10):
+        circle(25 + i * 50, 125, 40)
+
+    # Como no exemplo anterior, com mais variáveis, e mostrando o contador como um texto
+    text_align(CENTER, CENTER)
+    y = 175
+    w = 50
+    for i in range(10):
+        x = w / 2 + i * w
+        fill(0)
+        circle(x, y, w - 10)
+        fill(255)
+        text(i, x, y)
+```
 
 ## Um pouco mais sobre listas e tuplas
 
