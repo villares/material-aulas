@@ -73,7 +73,7 @@ Vamos comparar algumas maneiras de obter este mesmo tipo de resultado.
 def setup():
     size(500, 500)
 
-    # Modificando variáveis fora do laço
+    # É possível não usar o valor do range(), modificando variáveis fora do laço
     fill(200, 0, 0)
     y = 25
     for _ in range(5):
@@ -83,19 +83,19 @@ def setup():
             x = x + 50
         y = y + 50
     
-    # Mais curto, mas só funciona com inteiros
+    # Usando só os valores produzidos por um range() com passo é sucinto, mas só funciona com inteiros
     fill(0, 200, 0)  
     for x in range(25, 250, 50):
         for y in range(25, 250, 50):
             circle(250 + x, y, 40)
 
-    # Útil quando se quer saber o número da fila e da coluna
+    # Pode ser util saber o número da fila e da coluna.
     fill(0, 0, 200)
     for i in range(5):
         for j in range(5):
             circle(25 + i * 50, 250 + 25 + j * 50, 40)
 
-    # Baseado no anterior, usando mais variáveis e com os números
+    # Como o anterior, mas usando mais variáveis e desenhando os números
     text_align(CENTER, CENTER)
     w = 50
     for i in range(5):
