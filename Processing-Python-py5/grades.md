@@ -65,6 +65,52 @@ for x in range(20, 400, 40): # 10 números de 20 a 380, de 40 em 40
         circle(x, y, 35) # círculos de diâmetro 35
 ```
 
+Vamos comparar algumas maneiras de obter este mesmo tipo de resultado.
+
+![grade](assets/4grades.png)
+
+```python
+def setup():
+    size(500, 500)
+
+    # Modificando variáveis fora do laço
+    fill(200, 0, 0)
+    y = 25
+    for _ in range(5):
+        x = 25
+        for _ in range(5):
+            circle(x, y, 40)
+            x = x + 50
+        y = y + 50
+    
+    # Mais curto, mas só funciona com inteiros
+    fill(0, 200, 0)  
+    for x in range(25, 250, 50):
+        for y in range(25, 250, 50):
+            circle(250 + x, y, 40)
+
+    # Útil quando se quer saber o número da fila e da coluna
+    fill(0, 0, 200)
+    for i in range(5):
+        for j in range(5):
+            circle(25 + i * 50, 250 + 25 + j * 50, 40)
+
+    # Baseado no anterior, usando mais variáveis e com os números
+    text_align(CENTER, CENTER)
+    w = 50
+    for i in range(5):
+        x = 250 + w / 2 + i * w
+        for j in range(5):
+            y = 250 + w / 2 + j * w
+            fill(0)
+            circle(x, y, w - 10)
+            fill(255)
+            text(f'{i}, {j}', x, y)
+```
+
+
+### Variações da grade
+
 É possível também fazer uma "fila de colunas", mudando só a ordem de encaixa dos laços (e ordem em que os círculos são desenhados) mas não o resultado visual final. Veja um exemplo, um pouco ampliado, em que a posição do elemento altera a cor e o tamanho:
 
 ```python
