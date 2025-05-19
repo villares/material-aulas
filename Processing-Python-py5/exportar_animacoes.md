@@ -67,4 +67,4 @@ Uma última estratégia que pode ser útil para documentar e compartilhar o resu
 - [Blue Recorder](https://github.com/xlmnxp/blue-recorder) - Linux - exporta GIF e vídeos.
 - [LICEcap](https://www.cockos.com/licecap) - Windows e MacOS - exporta GIF
 - [OBS Studio](https://obsproject.com) - Windows, MacOS e Linux - exporta vídeos
-- [GifCam](https://gifcam.br.uptodown.com/windows) - Windows - exporta e edita GIF
+- [GifCam](https://blog.bahraniapps.com/gifcam/) - Windows - exporta e edita GIF
