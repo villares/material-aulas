@@ -6,7 +6,7 @@
 ### Elementos fundamentais
 
 - 1.0.0 [Primeiros passos e desenho básico](desenho-basico_py.md)
-  
+
   - 1.0.1 [Variáveis](variaveis.md)
   - 1.0.2 [Desenhando polígonos](poligonos_1.md)
   - 1.0.3 [O que é indentação?](indentacao.md) - primeiro contato com `setup()` e `draw()`
@@ -102,29 +102,21 @@
 ### Questões mais avançadas das ferramentas
 
 - 7.1.0 [Os "modos de uso" da biblioteca py5](os_modos_de_py5.md)
-
 - 7.1.1 [Usando várias abas no IDE e importando código de outros módulos](modulos.md) 
-
 - 7.2.1 [Dicas para portar exemplos de Processing para Python com py5](java_para_python.md)
-
 - 7.3.1 [Manipulando a janela](mais_que_size.md) - Tela cheia, redimensionamento e múltiplas janelas
-
 - 7.4.1 [Uma janela de diálogo com um campo de texto](input_janela.md)
-  
   <!-- - 7.5.1 usando bibliotecas externas Python e Java) -->
 
 ### Pequenos projetos e outros exemplos
 
-#### Neste repositório
-
-- [Módulos de Truchet](truchet.md) - Azulejos e rotações
-- [Jogo PONG](pong/) - Estudos para o fazer um jogo
-- [L-System](LSystem.md) - Sistema de Lindenmayer
-- [Autômatos Celulares](automatos-celulares.md) - Jogo da vida de Conway (*Conway's Game of Life*)
-
-#### Externos
-
-- [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
-- [Paper Objects with Processing and Python](https://abav.lugaralgum.com/Paper-objects-with-Processing-and-Python) - Volumes para cortar e montar
-- [Arc, tangents & Bezier studies](https://github.com/villares/arc_tangents_and_bezier_studies) - Como desenhar linhas tangentes entre arcos e polígonos com arredondamentos
-- [Simulações física 2D com PyMunk](https://github.com/villares/pymunk-pinball-paulista) - Pinball
+- Neste repositório
+    - [Módulos de Truchet](truchet.md) - Azulejos e rotações
+    - [Jogo PONG](pong/) - Estudos para o fazer um jogo
+    - [L-System](LSystem.md) - Sistema de Lindenmayer
+    - [Autômatos Celulares](automatos-celulares.md) - Jogo da vida de Conway (*Conway's Game of Life*)
+- Externos
+    - [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
+    - [Paper Objects with Processing and Python](https://abav.lugaralgum.com/Paper-objects-with-Processing-and-Python) - Volumes para cortar e montar
+    - [Arc, tangents & Bezier studies](https://github.com/villares/arc_tangents_and_bezier_studies) - Como desenhar linhas tangentes entre arcos e polígonos com arredondamentos
+    - [Simulações física 2D com PyMunk](https://github.com/villares/pymunk-pinball-paulista) - Pinball
