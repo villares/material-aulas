@@ -1,0 +1,63 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Alexandre Villares</title>
+    <link rel="stylesheet" href="https://abav.lugaralgum.com/assets/css/style.css">
+    <link rel="stylesheet" href="https://abav.lugaralgum.com/assets/css/syntax.css">
+    <link rel="stylesheet" href="//fonts.bunny.net/css?family=Inconsolata" media="all"> 
+  </head>
+  <body>
+<h1><a href="https://abav.lugaralgum.com/material-aulas" style="font-family: inconsolata, monospace">Introdução à programação<br />
+com Python em um contexto visual</a></h1>
+<h1 id='toc'></h1>
+<hr><article>
+    <div class="content">
+      {{ content }}
+    </div>
+</article>
+    <footer>
+      <div class="container">
+      </div>
+<hr><script>
+const currentURL = window.location.href;
+const constantToReplace = "abav.lugaralgum.com/material-aulas/";
+const newConstant = "github.com/villares/material-aulas/tree/main/";
+const newURL = currentURL.replace(constantToReplace, newConstant).replace('.html', '.md');
+const linkElement = document.createElement('a');
+linkElement.href = newURL;
+linkElement.textContent = 'veja esta página no repositório';
+document.body.appendChild(linkElement);
+</script>      
+    </footer>
+    <script>
+	function iframeFix(aId, divId) {
+	  const $a = document.getElementById(aId);
+	  const $div = document.getElementById(divId);
+	  const renderIframe = (img = {}) => {
+	    const w = img.naturalWidth || 100;
+	    const h = img.naturalHeight || 100;
+	    $div.innerHTML = `<iframe src="${$a.href}" frameborder=0 width="${w}" height="${h}"></iframe>`;
+	  };
+	  if ($a !== null && $div !== null) {
+	    let img = $div.querySelector("img");
+	    if (img) {
+	      if (img.complete) {
+	        renderIframe(img);
+	      } else {
+	        img.addEventListener("load", () => renderIframe(img));
+	      }
+	    } else {
+	      renderIframe();
+	    }
+	  $a.innerHTML = ""	
+	  }
+	}
+
+	iframeFix("iframe_A", "iframe_DIV");
+    </script>
+    <script src="https://abav.lugaralgum.com/assets/scripts.js"></script>
+  </body>
+</html>
