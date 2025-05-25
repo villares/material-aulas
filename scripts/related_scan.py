@@ -41,6 +41,8 @@ for entry in summary.read_text().splitlines():
             try:
                 lines = py5.load_strings(page)        
                 img = get_first_image(lines)
+                if img and img.startswith('assets'):
+                    img = 'https://abav.lugaralgum.com/material-aulas/Processing-Python-py5/' + img
             except Exception as e:
                 img = str(e)
             print(number, img)
