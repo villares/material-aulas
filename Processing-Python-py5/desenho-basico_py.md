@@ -28,7 +28,7 @@ print(height)  # exibe no console altura atual da tela
 
 ![Coordenadas](assets/01-console.png)
 
-O computador precisa saber a posição de cada elemento a ser desenhado, e para informá-la usaremos coordenadas cartesianas, um par de números ** x ** e ** y ** que indicam posições ao longo de dois eixos, X(horizontal) e Y(vertical). Isso nos permite especificar uma posição precisa na grade, e, por convenção, para fazer isso indicamos o valor de ** x ** primeiro, e em seguida o valor de ** y**.
+O computador precisa saber a posição de cada elemento a ser desenhado, e para informá-la usaremos coordenadas cartesianas, um par de números **x** e **y** que indicam posições ao longo de dois eixos, X(horizontal) e Y(vertical). Isso nos permite especificar uma posição precisa na grade, e, por convenção, para fazer isso indicamos o valor de **x** primeiro, e em seguida o valor de **y**.
 
 Note que o eixo X cresce para a direita como de costume(nas aulas de matemática), mas o eixo Y é 'invertido' com valores crescendo 'para baixo'. Por exemplo, um ponto em(5, 14) fica a 5 unidades da borda esquerda da tela e 14 unidades para baixo do topo.
 
@@ -38,45 +38,49 @@ Note que o eixo X cresce para a direita como de costume(nas aulas de matemática
 
 ```python
 rect(20, 10, 40, 80)     # retângulo (x, y, largura, altura)
-ellipse(10, 20, 50, 50)  # oval (x, y, largura, altura)
+ellipse(10, 20, 50, 80)  # oval (x, y, largura, altura)
 line(10, 10, 50, 50)     # linha do ponto 1 ao ponto 2 (x1, y1, x2, y2)
-point(100, 50)           # ponto em (x, y)
-square(100, 50, 40)      # quadrado na posição x:100 y:50 e lado:40
+point(40, 50)            # ponto em x:40 y:50
+square(55, 30, 40)       # quadrado na posição x:55 y:30 e lado:40
 circle(50, 100, 40)      # círculo na posição x:50 y:100 e diâmetro:40
 ```
 
+![formas basicas](assets/01-formas.png)
+
+> Note como os elementos desenhados por último sobrepõe aqueles desenhados antes. O ponto é bastante sutíl com essas espessura de linha.
+
 ## Cores e atributos gráficos (preenchimento e traço de contorno)
 
-Para mudar as cores do preenchimento branco e do traço de contorno preto que são usadas inicialmente para desenhar as formas, indicamos inicialmente 3 números de 0 a 255 para definir uma combinação de vermelho(R), verde(G) e azul(B).
-É preciso definir a cor * antes * de pedir o desenho de uma forma!
+Para mudar as cores do preenchimento branco e do traço de contorno preto que são usadas inicialmente para desenhar as formas, podemos indicar 3 números de 0 a 255 para definir uma combinação de vermelho (*Red*), verde (*Green*) e azul (*Blue*). É preciso definir a cor *antes* de pedir o desenho de uma forma!
 
 ```python
-fill(0, 255, 0)  # preenchimento verde
-ellipse(50, 50, 50, 50)  # produz um círculo verde
+fill(0, 255, 0)  # preenchimento verde (R:Vermelho, G:Verde, B:Azul)
+circle(50, 50, 50, 50)  # produz um círculo verde
+
+```
+
+![formas basicas](assets/01-verde.png)
+
+Uma outra maneira de indicar cores é com a notação hexadecimal, `'#RRGGBB`. No exemplo abaixo, FF é 255 em hexadecimal, então `#00FF00` equivale a 0 de vermelho, 255 de verde , e 0 de azul, que resulta no mesmo círculo verde.
+
+```python
+fill('#00FF00')  # preenchimento verde
+circle(50, 50, 50, 50)  # produz um círculo verde
 ```
 
 É possível ajustar a cor de preenchimento de uma forma com `fill()` a cor de traço do contorno com `stroke()`, pedir uma forma sem preenchimento com `no_fill()` ou sem traço de contorno com `no_stroke()`. A espessura do traço de contorno pode ser controlada com `stroke_weight()`.
 
 ```python
-no_fill()  # sem preenchimento, formas vazadas
-stroke(0, 0, 255)  # exemplo de cor do traço azul cor (R, G, B)
-stroke_weight(10)  # espessura do traço de contorno 10 pixels
-no_stroke()  # sem traço de contorno
+fill(255, 0, 0)           # cor de preenchimento vermelha
+no_stroke()         # sem traço de contorno
+square(50, 50, 40)  # produz um quadrado branco 
+no_fill()          # sem preenchimento, formas vazadas
+stroke(0, 0, 255)  # exemplo de cor do traço azul, usando RGB
+stroke_weight(10)       # espessura do traço de contorno 10 pixels
+circle(50, 50, 50)  # produz um círculo vazado com contorno verde
 ```
 
-A cor indicada pode ser indicada com 3 números R, G, B.
-
-```python
-# preenchimento vermelho (R:Vermelho, G:Verde, B:Azul)
-fill(255, 0, 0,)
-```
-
-Uma outra maneira de indicar cores é com a notação hexadecimal, `'#RRGGBB`. No exemplo abaixo, FF é 255 em hexadecimal, então `#00FF00` equivale a 0 de vermelho, 255 de verde , e 0 de azul, que resulta verde.
-
-```python
-fill('#00FF00')  # preenchimento verde
-ellipse(50, 50, 50, 50)  # produz um círculo verde
-```
+![formas basicas](assets/01-stroke.png)
 
 ## Fundo (*background*) e limpeza da área de desenho
 
@@ -124,4 +128,4 @@ chamados 'docstrings' (textos de documentação).
 
 ---
 
-Este material é parcialmente baseado nos materiais criados para o curso [Progração Criativa](https://arteprog.space/programacao-criativa/)
+A ilustração do sistema de coordenadas foi reproduzida do curso [Progração Criativa](https://arteprog.space/programacao-criativa/)
