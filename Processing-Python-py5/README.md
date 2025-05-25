@@ -1,9 +1,9 @@
-## Material para py5 com Thonny IDE
+# Material para py5 com Thonny IDE
+
+### Elementos fundamentais
 
 - 0.0.0 [O que é e como instalar o py5 e o Thonny IDE](https://abav.lugaralgum.com/como-instalar-py5/)
   - 0.0.1 [Sumário traduzido da referência do py5](sumario-referencia-py5.md)
-
-### Elementos fundamentais
 
 #### Primeiros passos
 - 1.0.0 [Primeiros passos e desenho básico](desenho-basico_py.md)
@@ -58,7 +58,7 @@
 - 2.2.1 [Um botão com orientação a objetos](botao_com_OO.md)
 - 2.3.1 [Uma classe de partículas simples](particulas.md)
 - 2.4.1 [Operações com vetores e a classe `Py5Vector`](vetores.md)
-- 2.5.1 [Introdução a orientação a objetos com bandeirinhas](bandeirinhas/)
+- 2.5.1 [Introdução a orientação a objetos com bandeirinhas](bandeirinhas/README.md)
 
 ### Mais sobre estruturas de dados
 - 3.1.1 [Métodos das listas](list_methods.md)
@@ -105,7 +105,7 @@
 ### Pequenos projetos e outros exemplos
 - Neste repositório
     - [Módulos de Truchet](truchet.md) - Azulejos e rotações
-    - [Jogo PONG](pong/) - Estudos para o fazer um jogo
+    - [Jogo PONG](pong/README.md) - Estudos para o fazer um jogo
     - [L-System](LSystem.md) - Sistema de Lindenmayer
     - [Autômatos Celulares](automatos-celulares.md) - Jogo da vida de Conway (*Conway's Game of Life*)
 - Externos
