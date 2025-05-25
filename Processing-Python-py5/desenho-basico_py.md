@@ -47,14 +47,14 @@ circle(50, 100, 40)      # círculo na posição x:50 y:100 e diâmetro:40
 
 ![formas basicas](assets/01-formas.png)
 
-> Note como os elementos desenhados por último sobrepõe aqueles desenhados antes. O ponto é bastante sutíl com essas espessura de linha.
+Repare como os elementos desenhados por último sobrepõe aqueles desenhados antes. Veja também como ponto é bastante sutíl com apenas 1 pixel na espessura de traço padrão.
 
 ## Cores e atributos gráficos (preenchimento e traço de contorno)
 
 Para mudar as cores do preenchimento branco e do traço de contorno preto que são usadas inicialmente para desenhar as formas, podemos indicar 3 números de 0 a 255 para definir uma combinação de vermelho (*Red*), verde (*Green*) e azul (*Blue*). É preciso definir a cor *antes* de pedir o desenho de uma forma!
 
 ```python
-fill(0, 255, 0)  # preenchimento verde (R:Vermelho, G:Verde, B:Azul)
+fill(0, 255, 0)         # preenchimento com verde máximo Red:0 Green:255 Blue:0
 circle(50, 50, 50, 50)  # produz um círculo verde
 
 ```
@@ -71,12 +71,12 @@ circle(50, 50, 50, 50)  # produz um círculo verde
 É possível ajustar a cor de preenchimento de uma forma com `fill()` a cor de traço do contorno com `stroke()`, pedir uma forma sem preenchimento com `no_fill()` ou sem traço de contorno com `no_stroke()`. A espessura do traço de contorno pode ser controlada com `stroke_weight()`.
 
 ```python
-fill(255, 0, 0)           # cor de preenchimento vermelha
+fill(255, 0, 0)     # cor de preenchimento vermelha
 no_stroke()         # sem traço de contorno
 square(50, 50, 40)  # produz um quadrado branco 
-no_fill()          # sem preenchimento, formas vazadas
-stroke(0, 0, 255)  # exemplo de cor do traço azul, usando RGB
-stroke_weight(10)       # espessura do traço de contorno 10 pixels
+no_fill()           # sem preenchimento, formas vazadas
+stroke(0, 0, 255)   # exemplo de cor do traço azul 
+stroke_weight(10)   # espessura do traço de contorno 10 pixels
 circle(50, 50, 50)  # produz um círculo vazado com contorno verde
 ```
 
