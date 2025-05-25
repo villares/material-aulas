@@ -80,15 +80,24 @@ stroke_weight(10)   # espessura do traço de contorno 10 pixels
 circle(50, 50, 50)  # produz um círculo vazado com contorno verde
 ```
 
-![formas basicas](assets/01-stroke.png)
+![traço](assets/01-stroke.png)
 
 ## Fundo (*background*) e limpeza da área de desenho
 
-O fundo também serve para apagar a área de desenho
+O fundo preenche a área de desenho com uma cor e apaga qualquer coisa que já tenha sido desenhada (o que vai se mostrar útil quando fizermos animações).
 
 ```python
-background(0, 255, 0)  # fundo verde, limpa a tela background(R, G, B)
+square(10, 10, 80)       # não vai ser visto!
+background(255, 255, 0)  # fundo amarelo, limpa a tela 
+fill(128)
+no_stroke()
+square(50, 50, 40)
+stroke(255)
+stroke_weight(5)
+no_fill()
+circle(50, 50, 50)
 ```
+![fundo](assets/01-background.png)
 
 ## Onde encontrar os nomes das funções, o vocabulário, e os seus significados?
 
