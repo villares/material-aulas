@@ -103,7 +103,7 @@ circle(50, 50, 50)
 
 O tempo todo vamos consultar o que é conhecido documentação de referência. Para o vocabulário de desenho da biblioteca py5, que é o que estamos usando para desenhar, ela fica em [py5coding.org](https://py5coding.org/reference/summary.html), mas aqui mesmo neste material tem um [sumário traduzido da referência](sumario-referencia-py5.md) que você pode consultar!
 
-Para a linguagem Python em si, sua sintaxe, palavras-chave, funções embutidas e a chamada "biblioteca padrão" do Python que é enorme, você pode consultar a documentação do Pythin em [docs.python.org/pt-br/3.8/](https://docs.python.org/pt-br/3.8/).
+Para a linguagem Python em si, sua sintaxe, palavras-chave, funções embutidas e a chamada "biblioteca padrão" do Python que é enorme, e você pode consultar a documentação em [docs.python.org/pt-br/3/](https://docs.python.org/pt-br/3/).
 
 ## Comentários, o que são e como criar comentários em Python?
 
@@ -133,7 +133,8 @@ chamados 'docstrings' (textos de documentação).
 
 - [Variáveis](variaveis.md)
 - [Desenhando polígonos](poligonos_1.md)
-- [O que é indentação?](indentacao.md)
+- [O que é indentação?](indentacao.md) - primeiro contato com `setup()` e `draw()`
+- [Mais sobre cores(RGB e HSB)](mais_sobre_cores.md)
 
 ---
 
