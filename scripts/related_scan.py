@@ -31,13 +31,16 @@ def get_external_page(page):
     return py5.load_strings(page)
 
 for entry in summary.read_text().splitlines():
-    number, page = get_linked_page(entry)
-    if page:
-        if 'http' not in page:
-            page = summary.parent / page
-        try:
-            lines = py5.load_strings(page)        
-            img = get_first_image(lines)
-        except Exception as e:
-            img = str(e)
-        print(page, img)
+    if entry.startswith('#'):
+        print(entry)
+    else:
+        number, page = get_linked_page(entry)
+        if page:
+            if 'http' not in page:
+                page = summary.parent / page
+            try:
+                lines = py5.load_strings(page)        
+                img = get_first_image(lines)
+            except Exception as e:
+                img = str(e)
+            print(number, img)
