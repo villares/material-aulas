@@ -5,8 +5,8 @@
 
 ### Elementos fundamentais
 
-#### Primeiros passos e desenho básico
-- 1.0.0 [Desenho básico](desenho-basico_py.md)
+#### Primeiros passos
+- 1.0.0 [Primeiros passos e desenho básico](desenho-basico_py.md)
 - 1.0.1 [Variáveis](variaveis.md)
 - 1.0.2 [Desenhando polígonos](poligonos_1.md)
 - 1.0.3 [O que é indentação?](indentacao.md) - primeiro contato com `setup()` e `draw()`
