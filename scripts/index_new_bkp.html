@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Introdução à programação com Python em um contexto visual</title>
+    <link rel="stylesheet" href="https://abav.lugaralgum.com/assets/css/style.css">
+    <link rel="stylesheet" href="https://abav.lugaralgum.com/assets/css/syntax.css">
+    <link rel="stylesheet" href="//fonts.bunny.net/css?family=Inconsolata" media="all"> 
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+/* Create columns that float next to each other */
+.column {
+  float: left;
+  width: 25%;
+  padding: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 1040px) {
+  .column {
+    width: 95%;
+  }
+}
+
+ul {
+    padding-left: 0;       /* Remove default left padding */
+    margin-left: 0;        /* Remove default left margin */
+    //list-style-type: none; /* Remove default list styling */
+
+}
+
+li {
+    align-items: center; /* Center items vertically */
+    margin-top: 10px; /* Space between list items */
+    margin-bottom: 10px; /* Space between list items */
+}
+img.thumbnail {
+    width: 50px; /* Set width */
+    height: 50px; /* Set height */
+    float: left; /* Float the image to the left */
+    margin-right: 10px; /* Space between image and link */
+}
+li.thumbnail {
+    display: block; /* Ensure the link takes up the full width */
+}
+</style>
+</head>
+<body>
+
+<h1><a href="https://abav.lugaralgum.com/material-aulas/Processing-Python-py5" style="font-family: inconsolata, monospace">Introdução à programação<br />
+com Python em um contexto visual</a></h1>
+<hr>
+<div class="row">
+<h1>Material para usar com Thonny e py5</h2>
+<!-- primeira coluna -->
+<div class="column"><div class="container">
+<h3>Elementos essenciais</h3>
+    <div id="problem-list-1">
+    <h4>100 - primeiros passos</h4>
+        <ul>
+            <li class="thumbnail"><img alt="Indentação e um retângulo" class="thumbnail" src="https://abav.lugaralgum.com/faded-parsons-visual/parsons_probs/000_indentar.png"/>Indentação e um retângulo. usando a função size() dentro do setup()</li>
+        </ul>
+    </div>
+</div></div>
+<!-- segunda coluna -->
+<div class="column"><div class="container">
+    <div id="problem-list-2">
+    <h4>130 - laços de repetição</h4>
+        <ul>
+            <li class="thumbnail"><img alt="Laço simples" class="thumbnail" src="https://abav.lugaralgum.com/faded-parsons-visual/parsons_probs/130_loop2.png"/>Laço simples  Uma fila de elementos
+            </li>
+        </ul>
+    </div>
+</div></div>
+<!-- terceira coluna -->
+<div class="column"><div class="container">
+<h2>Sobre este material</h2>
+
+<p>Este material didático foi criado inicialmente para ensinar/aprender a programação usando <strong>Processing modo Python</strong>, uma ferramenta livre de programação com a sintaxe de Python com os recursos de desenho e manipulação de imagens do Processing, dentro do Processing IDE, um projeto que não está mais ativo. O material desenvolvido entre 2019 e 2022 para esta ferramenta antiga, <a href="Processing-Python/">ainda está disponível aqui</a>. 
+
+Atualmente há várias outras possibilidades de combinar Python e Processing, e outras ferramentas que combinam Python e desenho ou modelos tridimensionas, veja abaixo com obter algumas delas:</p>
+  <ul>
+    <li>A biblioteca <a href="https://py5coding.org">py5</a>, é o que recomendamos para a versão mais recente deste material, siga as <a href="https://abav.lugaralgum.com/como-instalar-py5/"><strong>instruções de instalação</strong> usando Thonny IDE + plugin</a>.</li>
+    <li>O projeto <a href="https://github.com/berinhard/pyp5js">pyp5js</a>, combina pyodide e p5js, experimente uma <a href="https://abav.lugaralgum.com/pyp5js/py5mode/"><strong>variante do editor online</strong></a> que que tenta usar os nomes das funções da biblioteca py5.</li>
+    <li>Você pode explorar outras opções no quadro <a href="https://github.com/villares/Resources-for-teaching-programming#processing--python-tools-table">Processing + Python tools table</a></li>
+    <li>Ferramentas de <a href="outras-ferramentas/">desenho ou modelagem tridimensional com Python</a></li>
+  </ul>
+
+    </div>
+    </div>
+
+<div class="column">
+<div class="container">
+
+<h2 id="como-colaborar-e-contribuir"><a href="#como-colaborar-e-contribuir">Como colaborar e contribuir?</a></h2>
+
+<p>Este material didático pode ser modificado e usado para dar aulas. Leia as <a href="/material-aulas/sobre/como-contribuir.html">instruções para colaborar com este repositório</a> e abra <a href="https://github.com/villares/material-aulas/issues"><em>issues</em></a> apontando problemas, sugerindo assuntos e melhorias, ou contribua com <em>Pull Requests</em> para o repositório.</p>
+
+<p>Se você quer apoiar a continuidade deste projeto, que produz material didático aberto, faça um PIX <code class="language-plaintext highlighter-rouge">46c37783-5edb-4f1c-b3a8-1309db11488c</code>, <a href="https://www.paypal.com/donate/?hosted_button_id=5B4MZ78C9J724">doação de qualquer valor aqui</a> ou também com 
+<a href="https://wise.com/pay/me/alexandrev562">Wise</a>!</p>
+
+<h3 id="recursos-relacionados"><a href="#recursos-relacionados">Recursos relacionados</a></h3>
+
+<ul>
+  <li>Fazines e pôsters <a href="https://desenho.lugaralgum.com"><strong><code class="language-plaintext highlighter-rouge">desenho()</code></strong></a> <code class="language-plaintext highlighter-rouge">"""Para desenhar com código, para desenhar junto, com o computador e com outras pessoas!"""</code></li>
+  <li>Desenhos diários: <a href="https://abav.lugaralgum.com/sketch-a-day">sketch-a-day</a></li>
+  <li><a href="https://github.com/villares/Paper-objects-with-Processing-and-Python">Paper objects with Processing and Python</a></li>
+  <li><a href="https://abav.lugaralgum.com/faded-parsons-visual/">Quebra-cabeças de Parsons com resultado visual</a></li>
+  <li><a href="https://hackmd.io/@villares/numpy-para-leigos">NumPy para leigos</a>[Trabalho em andamento]</li>
+  <li>Outras opções de desenho com Python: <a href="https://github.com/villares/Resources-for-teaching-programming">Resources for teaching programming for artists, designers and architects</a></li>
+  <li><a href="/material-aulas/sobre/outros_recursos.html">Outros recursos e livros de Processing e Python</a></li>
+</ul>
+
+</div>
+</div><!-- end of row div -->
+</div>
+
+
+<hr>
+<h3 id="licenças"><a href="#licenças">Licenças</a></h3>
+
+<p><strong>Texto e imagens:</strong> © 2021-2025 Alexandre B A Villares - Licença <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">CC BY-SA 4.0</a>, para o material acrescentado a partir de 2022 (usando a biblioteca py5), exceto onde indicado, confira atribuições em cada página para materiais adaptados/remixados de outras fontes. Agradeço aos colaboradores do repositório que doam suas contribuições nestes termos!</p>
+
+<p><strong>Código:</strong> GNU GPL v3.0, exceto onde for indicado, por alguma razão.</p>
+
+</div>
+</article>
+
+<footer>
+    <hr>      
+    <a href="https://github.com/villares/material-aulas/tree/main/">veja esta página no repositório</a>
+</footer>
+</body>
+</html>

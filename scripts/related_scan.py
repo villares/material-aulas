@@ -5,6 +5,7 @@ import py5
 from markdown import markdown as md_to_html
 
 summary = Path("/home/villares/GitHub/material-aulas/Processing-Python-py5/README.md")
+template = Path('index_template.html').read_text()
 
 li_template = """<li class="thumbnail"><img alt="{img_alt}" class="thumbnail" src="{img_src}"/>{entry}</li>""".format
 
@@ -34,12 +35,21 @@ def get_external_page(page):
     return py5.load_strings(page)
 
 li_block = False
+primeira_coluna = ''
+segunda_coluna = ''
+primeira = True
 for entry in summary.read_text().splitlines():
     if entry.startswith('#'):
-        print(md_to_html(entry))
+        h = md_to_html(entry)
+        if 'Orientação a Objetos' in entry:
+            primeira=False
         if li_block:
-            print('</ul>')
+            h = '</ul>\n' + h
             li_block = False       
+        if primeira:
+            primeira_coluna += h +'\n'
+        else:
+            segunda_coluna += h +'\n'
     else:
         number, page = get_linked_page(entry)
         if page:
@@ -55,9 +65,18 @@ for entry in summary.read_text().splitlines():
             except Exception as e:
                 img = str(e)
             #print(number, img)
+            entry = entry.strip(' -0123456789.') # .replace('.md', '.html')
             if not li_block:
                 li_block = True
-                print('<ul>')
-            entry = entry.strip(' -0123456789.') # .replace('.md', '.html')
+                entry = '<ul>\n' + entry
             li = li_template(img_alt=number, img_src=img, entry=md_to_html(entry))
-            print(li)
+            if primeira:
+                primeira_coluna += li +'\n'
+#             else:
+#                 segunda_coluna += li +'\n'
+
+Path('index.html').write_text(
+    template
+      .replace('{primeira_coluna}', primeira_coluna)
+      .replace('{segunda_coluna}', segunda_coluna)
+    )
