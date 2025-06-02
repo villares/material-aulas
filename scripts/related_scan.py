@@ -15,8 +15,7 @@ def get_linked_page(txt):
     return None, None
 
 def replace_md_target(entry):
-    """Replaces .md links with the correct HTML path."""
-    base = 'material-aulas/Processing-Python-py5/'
+    base = 'Processing-Python-py5/'
     number, target = get_linked_page(entry)
     if not target:
         return entry  # No replacement needed
@@ -44,10 +43,9 @@ primeira = True
 
 for entry in summary.read_text().splitlines():
     entry = entry.strip()
-
     if entry.startswith('#'):
-        h = md_to_html(entry)
-        if 'Mais sobre' in entry:
+        h = md_to_html(entry) 
+        if 'Mais sobre' in entry:  ### Preimeira secçao da segunda coluna
             primeira = False
         if primeira:
                 primeira_coluna += h +'\n'
@@ -57,14 +55,14 @@ for entry in summary.read_text().splitlines():
         number, page = get_linked_page(entry)
         if page:
             page_path = page if 'http' in page else summary.parent / page
-            
             try:
                 lines = py5.load_strings(page_path)
                 img = get_first_image(lines)
                 if img and img.startswith('assets'):
                     img = f'https://abav.lugaralgum.com/material-aulas/Processing-Python-py5/{img}'
             except Exception:
-                img = ''
+                print(img)
+                #img = ''
 
             #entry = entry.lstrip('-0123456789. ')
             html_entry = md_to_html(replace_md_target(entry).strip(' -'))
