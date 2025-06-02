@@ -1,5 +1,7 @@
 # O que é indentação?
-
+<!--
+![](assets/compras.png)
+-->
 A palavra *indentação* também significa  'recuo',  veja este exemplo de uma lista de compras relativamente organizada:
 
 ```
