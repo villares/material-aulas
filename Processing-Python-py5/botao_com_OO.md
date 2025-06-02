@@ -1,5 +1,7 @@
 # Um botão com orientação a objetos
 
+![](assets/OO-botao.png)
+
 Primeiro vamos ver como usar um botão, instanciando dois objetos da classe `Botao`. 
 
 ```python
@@ -13,27 +15,26 @@ def setup():
     b1 = Botao(100, 150, 200, 50, "clique aqui")
     b2 = Botao(100, 250, 200, 50, "de novo!")
 
-
 def draw():
+    global estado_inicial
+    
     if estado_inicial:
         background(200)
     else:
         background(10)
 
-    global estado_inicial
     resultado1 = b1.display()
     resultado2 = b2.display()
     if resultado1 or resultado2:
         print('clique')
         estado_inicial = not estado_inicial
-
-
 ```
-Aqui a classe utilizada no exemplo.
+Aqui a classe utilizada no exemplo (no arquivo `botao.py`).
 
 ```python
-# para o arquivo botao.py
-from py5 import *
+# PY5 IMPORTED MODE CODE
+# O comentário anterior é necessário para poder usar a classe
+# no arquivo separado botao.py
 
 class Botao():
 
@@ -61,14 +62,13 @@ class Botao():
              self.x + self.w / 2,
              self.y + self.h / 2)
 
-        if mouse_over and self.pressed and not mouse_pressed:
+        if mouse_over and self.pressed and not is_mouse_pressed:
             self.pressed = False
             return True
-
-        if mouse_over and mouse_pressed:
+        if mouse_over and is_mouse_pressed:
             self.pressed = True
         else:
             self.pressed = False
-
+            
         return False
 ```
