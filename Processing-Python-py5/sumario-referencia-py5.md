@@ -1,21 +1,6 @@
 # Sumário da Referência do py5
-
-
-
 <!--
-* [Desenhando formas](#desenhando-formas): [Elementos básicos](#elementos-básicos); [Formas 3D](#formas-3d); [Formas baseadas em vértices](#formas-baseadas-em-vértices); [Curvas independentes](#curvas-independentes); [Criando e exibindo objetos Py5Shape](#criando-e-exibindo-objetos-py5shape).
-* [Cor e outros atributos gráficos](#cor-e-outros-atributos-gráficos): [Criando e atribuindo cores](#criando-e-atribuindo-cores); [Analisando cores](#analisando-cores); [Atributos de traço e controle de estilo](#atributos-de-traço-e-controle-de-estilo).
-* [Entrada de dados (*Input*)](#entrada-de-dados-input): [Lendo arquivos](#lendo-arquivos); [Variáveis do teclado](#variáveis-do-teclado); [Funções de evento do teclado](#funções-de-evento-do-teclado); [Variáveis do mouse](#variáveis-do-mouse); [Funções de evento do mouse](#funções-de-evento-do-mouse); [Funções auxiliares de data e horário](#funções-auxiliares-de-data-e-horário).
-* [Saída de dados (*Output*)](#saída-de-dados-output): [Escrevendo arquivos](#escrevendo-arquivos); [Saída de imagens](#saída-de-imagens); [Área de texto (console)](#área-de-texto-console).
-* [Tipografia](#tipografia): [Desenhando texto](#desenhando-texto); [Carregando e selecionando fontes](#carregando-e-selecionando-fontes); [Métricas de texto](#métricas-de-texto).
-* [Transformações do Sistema de Coordenadas](#transformações-do-sistema-de-coordenadas): [Operações Básicas](#operações-básicas); [Rotações 3D](#rotações-3d); [Operações com a matriz de transformações](#operações-com-a-matriz-de-transformações).
-* [Ambiente do Sketch](#ambiente-do-sketch): [Configuração e variáveis](#configuração-e-variáveis); [Outros controles da janela do sketch](#outros-controles-da-janela-do-sketch).
-* [Relacionadas à matemática](#relacionadas-à-matemática): [Cálculo](#cálculo); [Aleatoriedade (*Random*)](#aleatoriedade-random); [Trigonometria](#trigonometria).
-* [Trabalhando com imagens](#trabalhando-com-imagens): [Carregando e exibindo](#carregando-e-exibindo); [Pixels](#pixels); [Texturas](#texturas); [Objetos de imagem](#objetos-de-imagem).
-* [Cena 3D](#cena-3d): [Câmera](#câmera); [Coordenadas](#coordenadas); [Luzes](#luzes); [Propriedade dos materiais](#propriedade-dos-materiais)
-* [Apresentação (*Rendering*)](#apresentação-rendering): [Contexto gráfico](#contexto-gráfico); [Shaders](#shaders).
-* [Execução do sketch](#execução-do-sketch): [Controle do laço de repetição *draw*](#controle-do-laço-de-repetição-draw); [Controle avançado da execução](#controle-avançado-da-execução); [Análise da Performance (*Performance Profiling*)](#análise-da-performance-performance-profiling); [Linhas de execução (*Threading*)](#linhas-de-execução-threading); [Constantes da JVM](#constantes-da-jvm).
-* [Classes e outras ferramentas do py5](#classes-e-outras-ferramentas-do-py5): [Classes](#classes); [Ferramentas](#ferramentas).
+![](assets/thumb-referencia.png)
 -->
 
 ### Desenhando formas 
