@@ -110,6 +110,6 @@
     - [Autômatos Celulares](automatos-celulares.md) - Jogo da vida de Conway (*Conway's Game of Life*)
 - Externos
     - [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
-    - [Paper Objects with Processing and Python](https://abav.lugaralgum.com/Paper-objects-with-Processing-and-Python) - Volumes para cortar e montar
+    - [Paper Objects with Processing and Python](https://github.com/villares/Paper-objects-with-Processing-and-Python) - Volumes para cortar e montar
     - [Arc, tangents & Bezier studies](https://github.com/villares/arc_tangents_and_bezier_studies) - Como desenhar linhas tangentes entre arcos e polígonos com arredondamentos
     - [Simulações física 2D com PyMunk](https://github.com/villares/pymunk-pinball-paulista) - Pinball
