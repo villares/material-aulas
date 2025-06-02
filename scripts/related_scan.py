@@ -13,7 +13,16 @@ def get_linked_page(txt):
     if match := re.match(pattern, txt):
         return match.group(1), match.group(2)  # Number and link target
     return None, None
-    
+
+def replace_md_target(entry):
+    """Replaces .md links with the correct HTML path."""
+    base = 'material-aulas/Processing-Python-py5/'
+    number, target = get_linked_page(entry)
+    if not target:
+        return entry  # No replacement needed
+    new_target = base + target[:-3] + '.html'  # Convert to .html path
+    return entry.replace(target, new_target)
+
 def get_image_src(txt):
     patterns = [
         r'!\[(?P<alt>[^\]]*)\]\((?P<src>[^)]+)\)',  # Markdown image
@@ -29,7 +38,6 @@ def get_first_image(lines):
         if img_src := get_image_src(line):
             return img_src
 
-li_block_open = False
 primeira_coluna = ''
 segunda_coluna = ''
 primeira = True
@@ -41,9 +49,6 @@ for entry in summary.read_text().splitlines():
         h = md_to_html(entry)
         if 'Mais sobre' in entry:
             primeira = False
-        if li_block_open:
-            h = '</ul>\n' + h  # Close list before adding heading
-            li_block_open = False  
         if primeira:
                 primeira_coluna += h +'\n'
         else:
@@ -62,22 +67,13 @@ for entry in summary.read_text().splitlines():
                 img = ''
 
             #entry = entry.lstrip('-0123456789. ')
-            html_entry = md_to_html(entry.lstrip('- ').replace('.md', ''))
+            html_entry = md_to_html(replace_md_target(entry).strip(' -'))
             li = li_template(img_alt=number or '', img_src=img or '', entry=html_entry)
-
-            if not li_block_open:
-                li_block_open = True
-                li = '<ul>\n' + li
-            
             if primeira:
                 primeira_coluna += li +'\n'
             else:
                 segunda_coluna += li +'\n'
-if li_block_open:
-    if primeira:
-        primeira_coluna += '</ul>\n'
-    else:
-        segunda_coluna += '</ul>\n'
+
 
 output_path = Path.cwd().parent / 'index_new.html'
 output_path.write_text(
