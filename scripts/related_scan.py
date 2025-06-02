@@ -62,10 +62,10 @@ for entry in summary.read_text().splitlines():
                     img = f'https://abav.lugaralgum.com/material-aulas/Processing-Python-py5/{img}'
             except Exception:
                 print(img)
-                #img = ''
-
             #entry = entry.lstrip('-0123456789. ')
-            html_entry = md_to_html(replace_md_target(entry).strip(' -'))
+            if not 'http' in entry:
+                entry = replace_md_target(entry)
+            html_entry = md_to_html(entry.strip(' -'))
             li = li_template(img_alt=number or '', img_src=img or '', entry=html_entry)
             if primeira:
                 primeira_coluna += li +'\n'
