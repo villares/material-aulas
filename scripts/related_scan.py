@@ -61,7 +61,8 @@ for entry in summary.read_text().splitlines():
             except Exception:
                 img = ''
 
-            entry = entry.lstrip('-0123456789. ')
+            #entry = entry.lstrip('-0123456789. ')
+            entry = entry.lstrip('- ')
             li = li_template(img_alt=number or '', img_src=img or '', entry=md_to_html(entry))
 
             if not li_block_open:
