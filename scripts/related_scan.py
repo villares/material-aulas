@@ -62,8 +62,8 @@ for entry in summary.read_text().splitlines():
                 img = ''
 
             #entry = entry.lstrip('-0123456789. ')
-            entry = entry.lstrip('- ')
-            li = li_template(img_alt=number or '', img_src=img or '', entry=md_to_html(entry))
+            html_entry = md_to_html(entry.lstrip('- ').replace('.md', ''))
+            li = li_template(img_alt=number or '', img_src=img or '', entry=html_entry)
 
             if not li_block_open:
                 li_block_open = True
@@ -79,7 +79,8 @@ if li_block_open:
     else:
         segunda_coluna += '</ul>\n'
 
-Path('index.html').write_text(
+output_path = Path.cwd().parent / 'index_new.html'
+output_path.write_text(
     template.replace('{primeira_coluna}', primeira_coluna)
             .replace('{segunda_coluna}', segunda_coluna)
 )
