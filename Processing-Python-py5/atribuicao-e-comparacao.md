@@ -1,4 +1,7 @@
 # Qual a diferença entre "=" e "==" em Python?
+<!--
+![](assets/thumb-=.png)
+-->
 
 ## O símbolo "=" é o operador de atribuição
 
