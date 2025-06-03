@@ -16,13 +16,13 @@
 - 1.1.0 [Execução condicional (`if`/`else`)](condicionais_py.md), operadores relacionais e operadores lógicos
 - 1.1.1 [Mais movimento e interatividade com `setup()` e `draw()`](setup_draw.md)
 - 1.1.2 [Qual a diferença entre `=` (atribuição) e `==` (comparação)?](atribuicao-e-comparacao.md)
-- 1.1.3 [Criando uma animação](movimento_py.md)    
+- 1.1.3 [Criando uma animação](movimento_py.md)
 - 1.1.4 [Escopo de variáveis(local e global)](escopo_py.md)
 - 1.1.5 [Aleatoriedade: `random` e números "sorteados"](aleatoriedade_1.md)
 - 1.1.6 [Divisão por zero e o resto da divisão](divisao.md) 
 
 #### Definindo novas funções
-- 1.2.0 [Definindo novas funções](funcoes_py.md)  
+- 1.2.0 [Definindo novas funções](funcoes_py.md)
 - 1.2.1 [Funções com argumentos padrão(ou opcionais)](funcoes_2.md)
 - 1.2.2 [Condições aninhadas e outras estruturas condicionais](condicionais_2.md)
 - 1.2.3 [Modificando o sistema de coordenadas](transformacoes_coordenadas.md) com `translate()`, `rotate()`, `scale()` e mais!
@@ -38,7 +38,7 @@
 - 1.3.5 [Laço de repetição com `while`](while.md)
 
 #### Tipos de valores
-- 1.4.0 [Tipos de valores](tipagem_py.md) como texto (*strings*) e números inteiros (*int*) ou de ponto flutuante (*float*)   
+- 1.4.0 [Tipos de valores](tipagem_py.md) como texto (*strings*) e números inteiros (*int*) ou de ponto flutuante (*float*)
 - 1.4.1 [Textos no programa, no console e na tela: *strings*](strings_py.md)
 - 1.4.2 [Trabalhando com fontes e outros ajustes do texto](tipografia.md) 
 - 1.4.3 [Métodos dos objetos *string*](string_methods.md)
@@ -110,6 +110,6 @@
     - [Autômatos Celulares](automatos-celulares.md) - Jogo da vida de Conway (*Conway's Game of Life*)
 - Externos
     - [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
-    - [Paper Objects with Processing and Python](https://github.com/villares/Paper-objects-with-Processing-and-Python) - Volumes para cortar e montar
-    - [Arc, tangents & Bezier studies](https://github.com/villares/arc_tangents_and_bezier_studies) - Como desenhar linhas tangentes entre arcos e polígonos com arredondamentos
+    - [Paper Objects with Processing and Python](https://abav.lugaralgum.com/Paper-objects-with-Processing-and-Python) - Volumes para cortar e montar
+    - [Arc, tangents & Bezier studies](https://abav.lugaralgum.com/arc_tangents_and_bezier_studies) - Como desenhar linhas tangentes entre arcos e polígonos com arredondamentos
     - [Simulações física 2D com PyMunk](https://github.com/villares/pymunk-pinball-paulista) - Pinball
