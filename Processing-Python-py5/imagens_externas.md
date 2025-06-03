@@ -1,4 +1,7 @@
 # Como usar imagens externas
+<!--
+![Uma imagem externa por cima da janela](assets/copy2.png)
+-->
 
 ## Acessando um arquivo com `load_image()`
 
@@ -28,7 +31,7 @@ def draw():
 
 ```
 
-Se a imagem tiver ** exatamente ** a mesma dimensão da área de desenho ela pode ser usada em `background()`.
+Se a imagem tiver **exatamente** a mesma dimensão da área de desenho ela pode ser usada em `background()`.
 
 ```python
 def setup():
@@ -135,7 +138,7 @@ def draw():
 
 ```
 
-![Uma imagem externa por cima da janela](assets/copy2.png "Uma imagem externa por cima da janela")
+![Uma imagem externa por cima da janela](assets/copy2.png)
 
 ## Assuntos relacionados
 
