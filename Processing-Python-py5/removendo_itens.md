@@ -1,5 +1,8 @@
 # Removendo itens de coleções
 
+<!-- thumb para o sumário
+![](assets/thumb-removendo.png)
+-->
 ## O problema de remover itens ao mesmo tempo em que se "percorre" uma lista
 
 Este problema sempre aparece quando queremos remover itens de uma estrutura de dados "dinâmica" isto é com número variável de itens, como uma lista. Se tentarmos remover itens em uma iteração (como um laço for) que percorra a mesma estrutura que vamos modificar, podemos ter problemas. 
@@ -24,14 +27,13 @@ Uma das soluções possíveis é copiar a estrutura e "andar" pela cópia enquan
 # certo
 
 a = [1, 2, 4, 0, 0, 0, 0, 8, 0, 9, 0]
-for n in a[:]:   # a[:] é uma 'fatia' que é uma cópia da lista toda
+for n in a.copy():
     if  n == 0:
         a.remove(n)
         
 print(a)  # exibe  [1, 2, 4, 8, 9]
 ``` 
-
-A função embutida `reversed()` cria um objeto iterável que também pode ser usado neste caso (e que lembra a estratégia de iteração do final para o começo usada em outras linguagens que necessitam de um índice para consultar os itens da coleção).
+Em vez `a.copy()` é possível também usar `a[:]`, que é uma 'fatia' contendo uma cópia da lista toda, ou ainda a função embutida `reversed()`, que cria um objeto iterável e também pode ser usada neste caso. Essa última forma lembra a estratégia de iteração do final para o começo usada em outras linguagens que necessitam de um índice para consultar os itens da coleção.
 
 ```python
 a = [1, 2, 4, 0, 0, 0, 0, 8, 0, 9, 0]
