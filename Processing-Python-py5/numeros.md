@@ -1,5 +1,9 @@
 # Números inteiros (*int*) e de ponto flutuante (*float*)
 
+<!--
+![](assets/thumb-int-float.png)
+-->
+
 Em computação existem sistemas de classificação para valores armazenados na memória do computador, dizemos que os valores tem um *tipo*. Valores numéricos em Python são, na maior parte das vezes, dos tipos ***inteiro*** (abreviamos `int`), ***número de ponto flutuante*** (que tem uma parte fracionária, e abreviamos `float`) ou ***número complexo*** (`complex`, sendo `1j` a raiz quadrada de -1, que na escola costumamos chamar de *i*). Leia mais sobre isso em: [Tipos de valores(inteiros, números de ponto flutuante, texto(strings))](tipagem_py.md)
 
 Veja este exemplo que mostra a divisão de dois números inteiros (*int*), `4` dividido por `10`. O resultado, `0.4`, é um número de ponto flutuante (*float*). Em programação a "vírgula" é um ponto.
