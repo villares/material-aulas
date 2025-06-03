@@ -1,10 +1,10 @@
-Material para cursos e oficinas desenvolvido neste [repositório](https://github.com/villares/material-aulas/).
 
 ## Conteúdos didáticos
 
-**[Material para Python 3 com py5 (2022—presente)](Processing-Python-py5/README.md)**
+**[Material para Python 3 com py5 (2022—presente)](https://abav.lugaralgum.com/material-aulas/)**
 
-> Legado [Material para Processing modo Python](Processing-Python/) (2019—2022)
+> A nova capa do material didático é um HTML gerado por um script que processa este [sumário](Processing-Python-py5/README.md) em markdown acrescentando thumbnails e uma coluna de texto a partir de um template.
+> O antigo material para Processing modo Python (2019—2022) ainda está na pasta [Processing-Python](Processing-Python/).
 
 ### Contexto
 > Este material didático foi criado inicialmente para ensinar/aprender a programar usando **Processing modo Python**, uma ferramenta livre de programação com a sintaxe de Python e que inclui o vocabulário, os recursos de desenho e manipulação de imagens do Processing. Atualmente há outras possibilidades de combinar Python e Processing, e outras ferramentas que combinam Python e desenho ou modelos tridimensionas, veja abaixo com obter algumas delas:
@@ -25,7 +25,7 @@ Se você quer apoiar a continuidade deste projeto, que produz material didático
 - Fazines e pôsters [**`desenho()`**](https://desenho.lugaralgum.com) `"""Para desenhar com código, para desenhar junto, com o computador e com outras pessoas!"""`
 - Desenhos diários: [sketch-a-day](https://abav.lugaralgum.com/sketch-a-day)
 - [Paper objects with Processing and Python](https://github.com/villares/Paper-objects-with-Processing-and-Python)
-- [Trabalho em andamento] [Quebra-cabeças de Parsons com resultado visual](https://abav.lugaralgum.com/faded-parsons-visual/)
+- [Quebra-cabeças de Parsons com resultado visual](https://abav.lugaralgum.com/faded-parsons-visual/)
 - [Trabalho em andamento] [NumPy para leigos](https://hackmd.io/@villares/numpy-para-leigos)
 - Outras opções de desenho com Python: [Resources for teaching programming for artists, designers and architects](https://github.com/villares/Resources-for-teaching-programming) 
 - [Outros recursos e livros de Processing e Python](sobre/outros_recursos.md)
