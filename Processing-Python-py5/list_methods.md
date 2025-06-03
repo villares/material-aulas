@@ -10,11 +10,11 @@ Antes de chegar aqui, provavelmente, você já leu neste material que é possív
 
 - `.insert(i, x)` - Insere um item `x` em uma dada posição `i`. O primeiro argumento é o índice do elemento antes do qual será feita a inserção, assim `a.insert(0, x)` insere um elemento na frente da lista e `a.insert(len(a), x)` e equivale a `a.append(x)`.
 
-- `.remove(x)` - Remove o primeiro item encontrado na lista cujo valor é igual a *x*. Se não existir valor igual, uma exceção[`ValueError`](https://docs.python.org/pt-br/3.8/library/exceptions.html  # ValueError "ValueError") é levantada.
+- `.remove(x)` - Remove o primeiro item encontrado na lista cujo valor é igual a *x*. Se não existir valor igual, uma exceção [`ValueError`](https://docs.python.org/pt-br/3.8/library/exceptions.html#ValueError) é levantada.
 
 - `.pop(i)` - Remove um item na posição `i` da lista e o devolve. Se nenhum índice é especificado, `.pop()` remove e devolve o último item da lista.
 
-- `.index(x [, <inicio>[, <parada>]])` - Devolve o índice base-zero do primeiro item cujo valor é igual a *x*, levantando uma excessão [`ValueError`](https://docs.python.org/pt-br/3.8/library/exceptions.html#ValueError") se este valor não existe. Os argumentos opcionais *<inicio>* e *<parada>* são interpretados como nas notações de fatiamento e são usados para limitar a busca para uma subsequência específica da lista. O índice retornado é calculado relativo ao começo da sequência inteira e não referente ao argumento *parada*. 
+- `.index(x [, inicio[, parada]])` - Devolve o índice base-zero do primeiro item cujo valor é igual a `x`, levantando uma excessão [`ValueError`](https://docs.python.org/pt-br/3.8/library/exceptions.html#ValueError") se este valor não existe. Os argumentos opcionais `inicio` e `parada` são interpretados como nas notações de fatiamento e são usados para limitar a busca para uma subsequência específica da lista. O índice retornado é calculado relativo ao começo da sequência inteira e não referente ao argumento `parada`. 
 
 > **Nota:** Os colchetes na demonstração do método indicam que os parâmetros são opcionais e não devem ser escritos! Ao chamar o método, vocẽ pode usar `lista.index(x)`, `lista.index(x, inicio)` ou`lista.index(x, inicio, parada)`. Você verá este tipo de notação frequentemente na documentação do Python.
 
