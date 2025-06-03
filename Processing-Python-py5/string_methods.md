@@ -1,5 +1,7 @@
 # Métodos dos objetos *string*
 
+<!-- ![](assets/thumb-metodos-str.png) -->
+
 *Strings* são um tipo de dado armazenado na memória do computador para representar texto (uma sequência de caracteres, do tipo, ou dizemos também classe, `str`) e, mais que isso, em Python, são acompanhados de uma série de funções que podem ser acionadas com a *sintaxe do ponto* (*dot syntax*).
 
 <sub>Na programação orientada a objetos vemos que funções atreladas a objetos de uma classe são conhecidas como métodos.</sub>
