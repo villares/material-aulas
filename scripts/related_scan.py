@@ -59,7 +59,7 @@ for entry in summary.read_text().splitlines():
                 lines = py5.load_strings(page_path)
                 img = get_first_image(lines)
                 if img and img.startswith('assets'):
-                    img = f'https://abav.lugaralgum.com/material-aulas/Processing-Python-py5/{img}'
+                    img = f'/material-aulas/Processing-Python-py5/{img}'
             except Exception:
                 print(img)
             #entry = entry.lstrip('-0123456789. ')
@@ -67,7 +67,7 @@ for entry in summary.read_text().splitlines():
                 entry = replace_md_target(entry)
             html_entry = md_to_html(entry.strip(' -'))
             li = li_template(img_alt=number or '',
-                             img_src=img or '/Processing-Python-py5/assets/thumb-bullet.png',
+                             img_src=img or '/material-aulas/Processing-Python-py5/assets/thumb-bullet.png',
                              entry=html_entry)
             if primeira:
                 primeira_coluna += li +'\n'
@@ -75,7 +75,7 @@ for entry in summary.read_text().splitlines():
                 segunda_coluna += li +'\n'
 
 
-output_path = Path.cwd().parent / 'index_new.html'
+output_path = Path.cwd().parent / 'index.html'
 output_path.write_text(
     template.replace('{primeira_coluna}', primeira_coluna)
             .replace('{segunda_coluna}', segunda_coluna)

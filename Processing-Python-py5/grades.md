@@ -1,5 +1,9 @@
 # Grades retangulares: filas e colunas de elementos
 
+<!--
+![](assets/grade_colorida.png)
+-->
+
 Para produzir uma grade retangular de elementos (filas e colunas) podemos utilizar laços de repetição 'encaixados' ou 'aninhados' (*nested*).
 
 Vamos começar com uma fila de círculos:
