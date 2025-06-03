@@ -1,27 +1,30 @@
 # Funções como argumentos de outras funções
 
-## Funções são valores/objetos e podem ser passadas ao se chamar outras funções
+<!-- thumb para o sumário
+![](assets/thumb-lambda.png)
+-->
 
-Pode passar despercebido no começo do aprendizado da linguagem Python que as funções embutidas, que já vem com a linguagem, bem com as que definimos ou até importamos, são também "objetos", são "valores" e podem ser passadas como argumentos na chamada de outras funções.
+**Funções são valores/objetos e podem ser passadas ao se chamar outras funções**
 
-## O método `sort()` das listas e a função `filter()`
+Pode passar despercebido no começo do aprendizado da linguagem Python que as funções embutidas, que já vem com a linguagem, bem com as que definimos ou até importamos, são também "objetos", são "valores" e podem ser passadas como argumentos na chamada de outras funções. Vamos 
 
-### `sort()` e o argumento nomeado `key`.
+## `sorted()`, `.sort()` e o argumento nomeado `key`.
 
-O método `sort()`, quando chamado em uma lista que contém números, põe os itens da lista em ordem crescente, já em listas contendo *strings * (texto) põe os itens em ordem alfabética:
+A função embutida `sorted()` quando chamada tendo como argumento uma lista que contém números, devolve uma nova lista com os itens da lista original em ordem crescente, já em listas contendo *strings * (texto) põe os itens em ordem alfabética:
 
 ```python
 frutas = ['morango', 'abacaxi', 'uva', 'banana', 'caju']
-frutas.sort()
-print(frutas)  # ['abacaxi', 'banana', 'caju', 'morango', 'uva']
+frutas_ordenadas = sorted(ftutas)
+print(frutas_ordenadas)  # ['abacaxi', 'banana', 'caju', 'morango', 'uva']
 ```
+O método `.sort()` das listas funciona de maneira bem parecida, mas altera a lista original (*in-place* no jargão).
 
 A função embutida `len()` do Python, quando aplicada a *strings* nos devolve o tamanho, número de caracteres:
 
 ```python
 print(len('abacaxi'))  # exibe: 7
 ```
-Se passarmos o nome da função `len()`, isto é `len` sem os parenteses, como o argumento nomeado (*keyword argument*) `key` do método `sort()` a lista vai ser ordenada pelo tamanho(crescente) das palavras!
+Tanto `.sort()` como a função `sorted()` aceitam um argumento nomeado (*keyword argument*) `key`. Se passarmos o nome da função `len()`, isto é `len` sem os parenteses, para o método desta maneira, `sort(key=len)`, a lista vai ser ordenada pelo tamanho(crescente) das palavras!
 
 ```python
 frutas = ['morango', 'abacaxi', 'uva', 'banana', 'caju']
@@ -44,7 +47,7 @@ frutas.sort(key=ultima_letra)
 print(frutas)  # ['uva', 'banana', 'abacaxi', 'morango', 'caju']
 ```
 
-### Como selecionar valores de uma coleção, com um laço e com a função `filter()`.
+## Como selecionar valores de uma coleção, com um laço e com a função `filter()`.
 
 Imagine que você tem uma coleção de valores, áreas, por exemplo, e gostaria de remover os zeros. Na verdade vamos produzir uma nova coleção só com os valores que nos interessam, sem zeros ou valores negativos. Uma primeira maneira de fazer isso seria por meio de um laço de repetição:
 
@@ -109,7 +112,7 @@ Não abuse no uso de *lambdas*, na dúvida defina uma função com nome usando `
 
 Você conseguiria escrever o exemplo de `filter()` usando uma função `lambda` ?
 
-## Listas e dicionários de funções
+### Listas e dicionários de funções
 
 Como as funções são também objetos/valores, podemos guardá-las em listas e dicionários.
 
