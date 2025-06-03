@@ -66,7 +66,9 @@ for entry in summary.read_text().splitlines():
             if not 'http' in entry:
                 entry = replace_md_target(entry)
             html_entry = md_to_html(entry.strip(' -'))
-            li = li_template(img_alt=number or '', img_src=img or '', entry=html_entry)
+            li = li_template(img_alt=number or '',
+                             img_src=img or '/Processing-Python-py5/assets/thumb-bullet.png',
+                             entry=html_entry)
             if primeira:
                 primeira_coluna += li +'\n'
             else:
