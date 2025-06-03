@@ -1,4 +1,4 @@
-# Métodos dos objetos *string*
+# Métodos dos objetos *string* e interpolação com *f-strings*
 
 <!-- ![](assets/thumb-metodos-str.png) -->
 
