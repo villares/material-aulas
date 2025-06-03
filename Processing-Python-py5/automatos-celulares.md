@@ -3,7 +3,7 @@
 # O que são os autômatos celulares, de onde veio essa ideia?
 
 <!--
-![](assets/thum-conway.jpg)
+![](assets/thumb-conway.jpg)
 -->
 
 Criados inicalmente como ferramentas de exploração teórica/matemática, robôs auto-replicantes imaginados por von Neuman ou crescimento de cristais, mas também uma atividade lúdica, tornada relativamente popular pela coluna do Martin Gardner de recreações matemáticas na revista Scientific America, que apresentou o jogo da vida do Conway, um dos mais famosos conjuntos de regras para simulação de autômatos celulares em plano (2D). Mais recentemente pesquisadores de urbanismo os estudam como uma ferramenta de simulação, aplicando-os na análise da evolução de trechos de cidade, entre outras tentativas de aplicação.
