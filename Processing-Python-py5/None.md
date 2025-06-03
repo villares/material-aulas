@@ -1,5 +1,9 @@
 # O valor especial `None`
 
+<!-- thumb para o sumário
+![](assets/thumb-None.png)
+-->
+
 O Python tem um valor especial chamado `None`, que é um objeto único de um tipo só dele, o `NoneType`, e é em geral usado para representar "nada" ou "nenhum valor". Pode ser usado para indicar a ausência de um valor válido, ou o final de uma sequência de valores(uma estratégia conhecida como "valor sentinela").
 
 ## O exemplo da função que carrega uma imagem no Processing
