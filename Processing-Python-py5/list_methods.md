@@ -10,7 +10,7 @@ Antes de chegar aqui, provavelmente, você já leu neste material que é possív
 
 - `.insert(i, x)` - Insere um item `x` em uma dada posição `i`. O primeiro argumento é o índice do elemento antes do qual será feita a inserção, assim `a.insert(0, x)` insere um elemento na frente da lista e `a.insert(len(a), x)` e equivale a `a.append(x)`.
 
-- `.remove(x)` - Remove o primeiro item encontrado na lista cujo valor é igual a *x*. Se não existir valor igual, uma exceção[`ValueError`](https://docs.python.org/pt-br/3.8/library/exceptions.html  # ValueError "ValueError") é levantada.
+- `.remove(x)` - Remove o primeiro item encontrado na lista cujo valor é igual a *x*. Se não existir valor igual, uma exceção [`ValueError`](https://docs.python.org/pt-br/3.8/library/exceptions.html#ValueError) é levantada.
 
 - `.pop(i)` - Remove um item na posição `i` da lista e o devolve. Se nenhum índice é especificado, `.pop()` remove e devolve o último item da lista.
 
