@@ -8,9 +8,11 @@ fill(0)
 # nome = '='
 # texto = '=\nigual?\n=='
 
-# nome = 'list-comp'
-# text_size(18)
-# texto = 'lista = [\nx for x\nin outra]'
+nome = 'list-comp'
+text_size(18)
+texto = 'lista = [\nf(x) for x\nin outra]'
+text_align(LEFT, CENTER)
+text(texto, 5, 50)
 
 # nome = 'lambda'
 # text_size(18)
@@ -22,10 +24,10 @@ fill(0)
 # text_align(LEFT, CENTER)
 # text(texto, 5, 50)
 
-nome = 'None'
-text_size(40)
-text_align(CENTER, CENTER)
-text(nome, 50, 50)
+# nome = 'None'
+# text_size(40)
+# text_align(CENTER, CENTER)
+# text(nome, 50, 50)
 
 
 # nome = 'metodos-str'
