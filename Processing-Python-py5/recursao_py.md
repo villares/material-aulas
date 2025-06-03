@@ -1,4 +1,7 @@
 # Recursão
+<!-- thumb para o sumário
+![](assets/recursividade-1.png)
+-->
 
 Allen Downey [no livro Pense em Python 2e](https://penseallen.github.io/PensePython2e/05-cond-recur.html#termo:recursividade) define *recursividade* como o processo de chamar uma função que está sendo atualmente executada. A ideia central da recursividade, ou recursão, é de que uma função pode chamar outras funções, e no caso de uma função recursiva, a função pode também chamar ela mesma!
 
