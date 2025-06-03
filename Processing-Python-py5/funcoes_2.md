@@ -41,7 +41,8 @@ Agora imagine que gostaríamos de especificar um valor de opacidade(*alpha*) opc
 ```python
 def cor_sorteada(alpha=None):
     """
-    Sorteia uma cor RGB, com opacidade se fornecida.
+    Sorteia uma cor RGB,
+    com opacidade se fornecida.
     """
     r = random(256)
     g = random(256)
@@ -57,7 +58,8 @@ O exemplo anterior foi feito para mostrar uma estratégia muito usada para argum
 ```python
 def cor_sorteada(alpha=255):
     """
-    Sorteia uma cor RGB, opaca por padrão.
+    Sorteia uma cor RGB,
+    opaca por padrão.
     """
     r = random(256)
     g = random(256)
