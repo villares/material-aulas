@@ -1,5 +1,9 @@
 # Experimentos com retículas e imagens
 
+<!--
+![image](assets/reticula100sat.png)
+-->
+
 ### Criando uma grade de elementos
 
 ```python!
