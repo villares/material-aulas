@@ -1,4 +1,7 @@
 # Métodos das listas
+<!--
+![](assets/thumb-list-methods.png)
+-->
 
 Listas são coleções ordenadas, sequências mutáveis, e como quase tudo em Python, são objetos e por isso vem acompanhadas de uma série de funções que podem ser acionadas com a *sintaxe do ponto* (*dot syntax*).
 
