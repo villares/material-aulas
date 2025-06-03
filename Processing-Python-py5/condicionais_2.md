@@ -1,9 +1,12 @@
 # Condicões aninhadas e outras estruturas condicionais
 
-## Se, senão se, senão
+<!--
+![](assets/thumb-if-elif-else.png)
+-->
 
-É comum encontraramos, além da composição das condições usando operadores lógicos, `ìf` dentro de um `ìf` ou de um `else`.
-No caso de repetidos `if`, o 'else + if' é abreviado `elif`.
+## Se, senão se, senão (`if`, `elif`, `else`)
+
+É comum encontraramos, além da composição das condições usando operadores lógicos, `ìf` dentro de um `ìf` ou de um `else`. No caso de repetidos `if`, o 'else + if' é abreviado `elif`.
 
 ```python
 if a == 0:  # se `a` é igual a 0
