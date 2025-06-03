@@ -1,4 +1,4 @@
-# Material didático para usar com Thonny IDE e py5<
+# Material didático para usar com Thonny IDE e py5
 
 ## Elementos fundamentais
 
