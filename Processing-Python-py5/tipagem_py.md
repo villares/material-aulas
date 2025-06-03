@@ -1,6 +1,8 @@
 
 # Valores e seus tipos
 
+<!-- ![](assets/thumb-tipagem.png) -->
+
 Em computação existe uma classificação dos valores armazenados na memória do computador, dizemos que os valores tem um *tipo*.  Diferentes linguagens de programação tratam da especificação dos tipos, e da forma como manipulamos valores de diferentes tipos, de maneiras diferentes. Em Python, quando fazemos uma atribuição, criando ou alterando uma variável, não somos obrigados a mencionar o tipo. Podemos dizer que os tipos em Python são atributos dos objetos e não das variáveis, os nomes que apontam para eles. 
 
 Vejamos alguns exemplos. Fazendo uma atribuição com `i = 10`, o `i` é um nome que aponta para um valor na memória, `10`, um número **inteiro**, do tipo *integer* que é normalmente abreviado como `int`. 
@@ -89,12 +91,11 @@ Nesta tabela apresento apenas alguns dos tipos que vamos encontrar. Vou marcar c
 | `Py5Image` | imagens raster/bitmap, podem ser criadas/carregadas na memória com `loadImage(arquivo_de_imagem)` | Py5 |
 | `Py5Shape` | contém formas vetoriais, como as descritas num SVG, pode ser criado com `loadShape(arquivo)`| Py5 |
 | `Py5Vector`| vetor, usado geralmente para descrever posição, velocidade ou aceleração (em 2, 3  ou 4 dimensões) | Py5 |
-| `color`<sup>＊</sup>| uma cor é um `int` disfarçado, que pode ser construída com `color(R,G,B, Alfa)`, se estivermos no modo RGB | Py5 |
+| `Py5Color`<sup>＊</sup>| uma cor é meio que um `int` disfarçado, pode ser construída com `color(R,G,B, Alfa)`, se estivermos no modo RGB | Py5 |
 
-> ＊ Preciso contar que a as cores inicialmente não são um tipo 'de verdade' no Processing, são apenas números inteiros grandes, com 4 bytes, para R, G, B e Alpha (opacidade) respectivamente, a função `color()` monta esse número grande pra nós. É útil (mais fácil) pensar em cores como um tipo especial de valores.
+> ＊ As cores inicialmente não eram um tipo 'de verdade' no Processing, eram apenas números inteiros grandes, com 4 bytes, para R, G, B e Alpha (opacidade) respectivamente, a função `color()` monta esse número grande pra nós, e no py5, embala em um objeto Py5Color. Mas os `int` grandões ainda funcionam também. 
 
 Existe uma discussão relativamente complexa sobre o tipo `bytes` do Python que lembra um *string* mas só com caracteres *ASCII*, e isso dá uma certa confusão com os *strings*, pois não são texto *Unicode*, mas essa é uma questão avançada que eu queria evitar neste primeiro momento.
-
 
 ## Glossário
 
