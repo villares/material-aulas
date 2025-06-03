@@ -1,5 +1,9 @@
 # Recortando imagens
 
+<!-- thumb para o sumário
+![recorte hexagonal](assets/recorte_hexagonal.png)
+-->
+
 ## Copiando trechos retangulares de uma imagem
 
 ![exemplo recorte retangular](assets/recorte_retangular.png)
