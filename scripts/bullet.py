@@ -1,3 +1,7 @@
-fill(0)
+
+fill(240)
+no_stroke()
 circle(50, 50, 50)
-save('thumb-bullet.png')
+
+out = Path.cwd().parent / 'assets' / 'thumb-bullet.png'
+save(out)
