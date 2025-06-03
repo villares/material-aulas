@@ -1,5 +1,9 @@
 # Exportando PDF
 
+<!--  thumb para o sumário
+![](assets/thumb-pdf.png)
+-->
+
 Saver salvar um PDF é muito útil, pois é formato que preserva informação vetorial, de maneira semelhante ao SVG(recomendo a leitura da página sobre exportar SVG também).
 
 É importante considerar que existe mais de uma estratégia para exportar arquivos vetorias. Imagens *raster* são mais fáceis, basta exportar o que acumulou na tela em qualquer momento, com desenho vetorial ou você redesenha tudo a cada quadro ou você tem que pensar com cuidado sobre a acumulação de quadros para o arquivo não ficar imenso. Vocẽ tem interação? Precisa ligar e desligar a gravação dos frames.
