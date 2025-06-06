@@ -5,7 +5,7 @@ Esta página tenta ampliar um pouco o assunto dos atributos gráficos, que são 
 ## Quais são os ajustes que podemos fazer nos atributos gráficos das formas que desenhamos?
 
 - Cor de preenchimento `fill()` ou não-preenchimento `no_fill()`, cor de traço `stroke()` e não-traço `no_stroke()`
-- As cores podem ser indicadas como uma trinca de números de 0 a 255 (R, G, B) ou ainda com um quarto número que define o * alpha * ou opacidade(R, G, B, A) sendo que * alpha * 0 torna a cor totalmente transparente e 255 totalmente opaca. Se usarmos `color_mode(HSB)` podemos indicar matiz(*hue*), saturação(*saturation*) e Brilho(*brightness*), também com o quarto valor para o * alpha * opcional.
+- As cores podem ser indicadas como uma trinca de números de 0 a 255 (R, G, B) ou ainda com um quarto número que define a opacidade, que também é conhecido como *alpha* (R, G, B, A). O *alpha* 0 torna a cor totalmente transparente e 255 totalmente opaca. Se usarmos `color_mode(HSB)` podemos indicar matiz (*hue*), saturação (*saturation*) e Brilho (*brightness*), também com um quarto valor opcional para a opacidade / *alpha*.
 - Espessura de traço `stroke_weight()` (não pode ser menor que zero!)
 - Junções e terminações dos traços[`stroke_join()`](https://py5coding.org/reference/sketch_stroke_join.html) e[`stroke_caps()`](https://py5coding.org/reference/sketch_stroke_cap.html)
 
