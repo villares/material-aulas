@@ -19,14 +19,14 @@ def setup():
     fill(255)
     stroke_cap(SQUARE)
     line(20, 67, 80, 67)
-    text("stroke_cap('SQUARE')", 50, 90)
+    text("stroke_cap(SQUARE)", 50, 90)
     stroke_cap(PROJECT)
     line(20, 107, 80, 107)
-    text("stroke_cap('PROJECT')", 50, 130)
+    text("stroke_cap(PROJECT)", 50, 130)
     stroke_cap(ROUND)
     line(20, 147, 80, 147)
-    text("stroke_cap('ROUND')\n(default)", 50, 170)
-    save('mais_atributos.png')
+    text("stroke_cap(ROUND)\n(default)", 50, 170)
+    save('/home/villares/GitHub/material-aulas/Processing-Python-py5/assets/mais_atributos.png')
     
 def label(mode, x, y, extra=''):
     fill(255)
