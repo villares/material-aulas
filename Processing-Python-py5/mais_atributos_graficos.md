@@ -9,6 +9,8 @@ Esta página tenta ampliar um pouco o assunto dos atributos gráficos, que são 
 - Espessura de traço `stroke_weight()` (não pode ser menor que zero!)
 - Junções e terminações dos traços[`stroke_join()`](https://py5coding.org/reference/sketch_stroke_join.html) e[`stroke_caps()`](https://py5coding.org/reference/sketch_stroke_cap.html)
 
+![](assets/mais_atributos.png)
+
 ## Preservando o estado atual dos atributos (fazendo modificações e depois voltando ao estado anterior)
 
 As funções `push_style()` e `pop_style()` (ou `push()` e `pop()` que combinam os primeiros com `push_matrix`/`pop_matrix`) permitem alterar os atributos gráficos em uso para desenhar(dentro de uma função, por exemplo) e depois devolver os atributos ao que eram antes. Desta forma, uma função pode usar uma cor específica e outra que é a corrente, sem perturbar a segunda.
