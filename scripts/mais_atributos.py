@@ -23,12 +23,10 @@ def setup():
     stroke_cap(PROJECT)
     line(20, 107, 80, 107)
     text("stroke_cap('PROJECT')", 50, 130)
+    stroke_cap(ROUND)
     line(20, 147, 80, 147)
     text("stroke_cap('ROUND')\n(default)", 50, 170)
-
-    
-    
-    save('out.png')
+    save('mais_atributos.png')
     
 def label(mode, x, y, extra=''):
     fill(255)
