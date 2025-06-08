@@ -1,4 +1,3 @@
-
 def setup():
     size(600, 600)
     scale(1.5)
@@ -11,10 +10,8 @@ def setup():
     join_demo(250, 190,'ROUND')
     cap_demo(100, 190, 'ROUND', extra='(default)')
     cap_demo(100, 250, 'PROJECT')
-    cap_demo(100, 310, 'SQUARE')
-    
+    cap_demo(100, 310, 'SQUARE')    
     save('/home/villares/GitHub/material-aulas/Processing-Python-py5/assets/mais_atributos.png')
-
 
 def cap_demo(x, y, mode, extra=''):
     stroke_cap(eval(mode))
