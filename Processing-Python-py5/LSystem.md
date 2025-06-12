@@ -71,6 +71,8 @@ Resultado: **`aaantiihco-onstiihtüüüciiho-onaaaliihssiihmaaameeênteeê`**
 
 ## Um exemplo inicial de L-System
 
+Partindo de regras de substição, uma frace inicial (axioma), e ações de desenho para cada símbolo, tais como andar com uma caneta para frente, virar para direita ou para esquerda um certo ângulo, ou ainda volar a uma posição anterior armazenada em uma pilha, é possível produzir desenhos que se aproximam de plantas e fractais com autosimilaridade em várias escalas.
+
 ![image](https://github.com/villares/material-aulas/assets/3694604/e0e6f78d-047c-4070-9218-4d1a7e91d183)
 
 ```python
