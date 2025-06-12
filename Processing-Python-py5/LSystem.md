@@ -34,12 +34,12 @@ Podemos concatenar novas palavras com o operador `+`. Um *string* vazio com `''`
 
 ```python
 >>> 'a' + 'e' + 'i' + 'o' + 'u'
-'aeioy'
+'aeiou'
 
 >>> '' + 'a'
 'a'  
 ```
-Um dicionário é uma estrutura que guarda *valores* que podem ser encontrados a partir de uma *chave*. Quando consultamos o dicionário com a sintaxe dos colchetes `dicionario[chave]`, se não houver a chave ocorre uma exceção `KeyError`. Usando o método `.get(chave)` é possível evitar essa excessão. Na forma `.get(chave, valor_para_chave_faltando)` é possível escolher o que o dicionário devolve caso a chave não seja encontrada.
+Um dicionário é uma estrutura que guarda pares *chave-valor*. Os *valores* podem ser pesquisados na estrutura a partir de uma *chave*. Quando consultamos o dicionário com a sintaxe dos colchetes `dicionario[chave]`, ele entrega o o valor, e se não houver a chave ocorre uma exceção `KeyError`. Usando o método `.get(chave)` é possível evitar essa excessãom e o valor especial `None` é devolvido, mas e usarmos a forma `.get(chave, valor_para_chave_faltando)` é possível escolher o que o dicionário devolve caso a chave não seja encontrada. Isso permite que o dicionário devolva a própria chave se usarmos a forma `.get(chave, chave)` o que se mostra muito útil quando usamos o dicionário para indicar substituições, e a falta da chave indica que a própria chave deve ser usada sem nenhuma substituição.
 
 ```python
 >>> ingles = {'maçã': 'apple', 'pêra': 'pear'}
