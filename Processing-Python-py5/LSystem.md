@@ -12,6 +12,14 @@ A tradução computacional dessas estruturas foi discutida pela primeira vez na 
 > - [Using Lindenmayer Systems to Introduce Computer Science Concepts](https://www.russellgordon.ca/cemc/2017/lindenmayer-systems/)
 > - [Wikipedia: L-system](https://en.wikipedia.org/wiki/L-system)
 
+
+## Pré-requisitos
+
+Para poder entender os exemplos apresentados mais à frente, é preciso familiaridade com algumas ideias do Python:
+- como percorrer e "montar" uma cadeia de caracteres (*string*)
+- como usar a estrutura de dados dicionário (*dict*)
+
+
 ## Um exemplo simples
 
 ![image](https://github.com/villares/material-aulas/assets/3694604/e0e6f78d-047c-4070-9218-4d1a7e91d183)
