@@ -20,8 +20,8 @@ Para poder entender os exemplos apresentados mais à frente, é preciso familiar
 - como usar a estrutura de dados dicionário (*dict*)
 
 Podemos percorrer uma palavra com um laço `for`.
-```python-console
->>>for letra in 'aeiou':
+```python-cons
+>>> for letra in 'aeiou':
        print(letra)
 a
 e
@@ -32,16 +32,16 @@ u
 
 Podemos concatenar novas palavras com o operador `+`. Um *string* vazio com `''` pode ser concatenado sem alterar o resultado.
 
-```python-console
->>>'a' + 'e' + 'i' + 'o' + 'u'
+```python-cons
+>>> 'a' + 'e' + 'i' + 'o' + 'u'
 'aeioy'
 
->>>'' + 'a'
+>>> '' + 'a'
 'a'  
 ```
 Um dicionário é uma estrutura que guarda *valores* que podem ser encontrados a partir de uma *chave*. Quando consultamos o dicionário com a sintaxe dos colchetes `dicionario[chave]`, se não houver a chave ocorre uma exceção `KeyError`. Usando o método `.get(chave)` é possível evitar essa excessão. Na forma `.get(chave, valor_para_chave_faltando)` é possível escolher o que o dicionário devolve caso a chave não seja encontrada.
 
-```python-console
+```python-cons
 >>> ingles = {'maçã': 'apple', 'pêra': 'pear'}
 >>> ingles['maçã']
 'apple'
