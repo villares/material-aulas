@@ -47,21 +47,21 @@ Um dicionário é uma estrutura que guarda pares *chave-valor*. Os *valores* pod
 >>> ingles['maçã']
 'apple'
 
->>> ingles['cupuaçu']
+>>> fruta = 'cupuaçu'  # não tem 'cupuaçu' no dicionário
+
+>>> ingles[fruta]   # a fruta é 'cupuaçu'
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 KeyError: 'cupuaçu'
 
->>> fruta = 'banana'
-
->>> ingles.get(fruta, 'não sei')
+>>> ingles.get(fruta, 'não sei') # .get() evita o erro
 'não sei'
 
->>> ingles.get(fruta, fruta)
-'banana'
+>>> ingles.get(fruta, fruta)  
+'cupuaçu'
 ```
 
-Como pode ser observado no exemplo acima, se usarmos a forma `.get(chave, chave)`, obtemos a própria chave caso ela não seja encontrada no dicionário, e isso se mostra muito útil quando usamos o dicionário para indicar regras de substituições: a falta da chave indica que a própria chave deve ser usada sem nenhuma substituição.
+Como pode ser observado no exemplo acima, se usarmos a forma `.get(chave, chave)`, obtemos a própria chave caso ela não seja encontrada no dicionário, e isso se mostra muito útil quando usamos o dicionário para indicar regras de substituição: a falta da chave indica que a própria chave deve ser usada sem nenhuma substituição.
 
 No exemplo abaixo vamos armazenar algumas letras como chaves associadas a uma sequência de letras como valor para cada uma delas, usaremos o valores para substituir as letras das chaves encontradas em um laço `for`.
 
@@ -77,7 +77,7 @@ Resultado: **`aaantiihcoôonstiihtüüüciihoôonaaaliihssiihmaaameeênteeê`**
 
 ## Um exemplo inicial de L-System
 
-Partindo de regras de substição, uma frase inicial (axioma), e ações de desenho vinculadas a cada símbolo, tais como andar com uma caneta para frente, virar para direita ou para esquerda um certo ângulo, ou ainda volar a uma posição anterior armazenada em uma pilha, é possível produzir desenhos que se aproximam de plantas e fractais com autosimilaridade em várias escalas.
+Partindo de regras de substição aplicadas à uma frase inicial (axioma) é possível produzir desenhos que se aproximam de plantas e fractais com autosimilaridade em várias escalas. Para isso parte dos símbolos (letras) são interpretados como uma ação de desenho, tal como andar com uma caneta para frente, virar para direita ou para esquerda um certo ângulo, ou ainda, volar a uma posição anterior armazenada em uma pilha.
 
 ![image](https://github.com/villares/material-aulas/assets/3694604/e0e6f78d-047c-4070-9218-4d1a7e91d183)
 
