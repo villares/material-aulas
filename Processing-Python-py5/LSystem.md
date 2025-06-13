@@ -50,10 +50,8 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 KeyError: 'cupuaçu'
 >>> fruta = 'banana'
->>> ingles[fruta]
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-KeyError: 'banana'
+>>> ingles[fruta, 'não sei']
+'não sei'
 >>> ingles.get(fruta, fruta)
 'banana'
 ```
