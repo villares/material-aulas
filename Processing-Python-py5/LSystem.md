@@ -43,15 +43,20 @@ Um dicionário é uma estrutura que guarda pares *chave-valor*. Os *valores* pod
 
 ```python
 >>> ingles = {'maçã': 'apple', 'pêra': 'pear'}
+
 >>> ingles['maçã']
 'apple'
+
 >>> ingles['cupuaçu']
 Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 KeyError: 'cupuaçu'
+
 >>> fruta = 'banana'
->>> ingles[fruta, 'não sei']
+
+>>> ingles.get(fruta, 'não sei')
 'não sei'
+
 >>> ingles.get(fruta, fruta)
 'banana'
 ```
