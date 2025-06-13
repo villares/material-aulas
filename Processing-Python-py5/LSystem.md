@@ -39,7 +39,7 @@ Podemos concatenar novas palavras com o operador `+`. Um *string* vazio com `''`
 >>> '' + 'a'
 'a'  
 ```
-Um dicionário é uma estrutura que guarda pares *chave-valor*. Os *valores* podem ser pesquisados na estrutura a partir de uma *chave*. Quando consultamos o dicionário com a sintaxe dos colchetes `dicionario[chave]`, ele entrega o o valor, e se não houver a chave ocorre uma exceção `KeyError`. Usando o método `.get(chave)` é possível evitar essa excessãom e o valor especial `None` é devolvido, mas e usarmos a forma `.get(chave, valor_para_chave_faltando)` é possível escolher o que o dicionário devolve caso a chave não seja encontrada. Isso permite que o dicionário devolva a própria chave se usarmos a forma `.get(chave, chave)` o que se mostra muito útil quando usamos o dicionário para indicar substituições, e a falta da chave indica que a própria chave deve ser usada sem nenhuma substituição.
+Um dicionário é uma estrutura que guarda pares *chave-valor*. Os *valores* podem ser pesquisados na estrutura a partir de uma *chave*. Quando consultamos o dicionário com a sintaxe dos colchetes `dicionario[chave]`, ele entrega o o valor, e se não houver a chave ocorre uma exceção `KeyError`. Usando o método `.get(chave)` é possível evitar essa excessãom e o valor especial `None` é devolvido, mas e usarmos a forma `.get(chave, valor_para_chave_faltando)` é possível escolher o que o dicionário devolve caso a chave não seja encontrada. 
 
 ```python
 >>> ingles = {'maçã': 'apple', 'pêra': 'pear'}
@@ -57,7 +57,10 @@ KeyError: 'banana'
 >>> ingles.get(fruta, fruta)
 'banana'
 ```
-No exemplo abaixo vamos armazenar algumas letras como chaves, e associar uma sequência de letras a elas, as usando para substituir as letras originais.
+
+Como pode ser observado no exemplo acima, se usarmos a forma `.get(chave, chave)`, obtemos a própria chave caso ela não seja encontrada no dicionário, e isso se mostra muito útil quando usamos o dicionário para indicar regras de substituições: a falta da chave indica que a própria chave deve ser usada sem nenhuma substituição.
+
+No exemplo abaixo vamos armazenar algumas letras como chaves associadas a uma sequência de letras como valor para cada uma delas, usaremos o valores para substituir as letras das chaves encontradas em um laço `for`.
 
 ```python
 vogais = {'a': 'aaa', 'e': 'eeê', 'i': 'iih', 'o': 'o-o', 'u': 'üüü'}
@@ -71,7 +74,7 @@ Resultado: **`aaantiihco-onstiihtüüüciiho-onaaaliihssiihmaaameeênteeê`**
 
 ## Um exemplo inicial de L-System
 
-Partindo de regras de substição, uma frace inicial (axioma), e ações de desenho para cada símbolo, tais como andar com uma caneta para frente, virar para direita ou para esquerda um certo ângulo, ou ainda volar a uma posição anterior armazenada em uma pilha, é possível produzir desenhos que se aproximam de plantas e fractais com autosimilaridade em várias escalas.
+Partindo de regras de substição, uma frase inicial (axioma), e ações de desenho vinculadas a cada símbolo, tais como andar com uma caneta para frente, virar para direita ou para esquerda um certo ângulo, ou ainda volar a uma posição anterior armazenada em uma pilha, é possível produzir desenhos que se aproximam de plantas e fractais com autosimilaridade em várias escalas.
 
 ![image](https://github.com/villares/material-aulas/assets/3694604/e0e6f78d-047c-4070-9218-4d1a7e91d183)
 
