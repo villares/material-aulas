@@ -66,14 +66,14 @@ Como pode ser observado no exemplo acima, se usarmos a forma `.get(chave, chave)
 No exemplo abaixo vamos armazenar algumas letras como chaves associadas a uma sequência de letras como valor para cada uma delas, usaremos o valores para substituir as letras das chaves encontradas em um laço `for`.
 
 ```python
-vogais = {'a': 'aaa', 'e': 'eeê', 'i': 'iih', 'o': 'o-o', 'u': 'üüü'}
+vogais = {'a': 'aaa', 'e': 'eeê', 'i': 'iih', 'o': 'oôo', 'u': 'üüü'}
 palavra = 'anticonstitucionalissimamente'
 nova_palavra = ''
 for letra in palavra:
     nova_palavra = nova_palavra + vogais.get(letra, letra)
 print(nova_palavra)
 ```
-Resultado: **`aaantiihco-onstiihtüüüciiho-onaaaliihssiihmaaameeênteeê`**
+Resultado: **`aaantiihcoôonstiihtüüüciihoôonaaaliihssiihmaaameeênteeê`**
 
 ## Um exemplo inicial de L-System
 
