@@ -83,7 +83,7 @@ Resultado: **`aaantiihcoôonstiihtüüüciihoôonaaaliihssiihmaaameeênteeê`**
 
 ### Desenhando linhas, como se arrastando uma caneta
 
-Para simular o movimento de uma "caneta" fazendo linhas sucessivas, podemos mover a origem do sistema de coordenadas como `translate()`  desenhar uma linha e em seguida mover a origem para o final da linha, para mudar a orientação dos traços é possível "girar o papel", como rotações em torno da origem. As transformações podem ser desfeitas em determinados momentos, trazendo a "caneta" para um ponto e orientação anterior.
+Para simular o movimento de uma "caneta" fazendo linhas sucessivas, podemos mover a origem do sistema de coordenadas como `translate()`  desenhar uma linha e em seguida mover a origem para o final da linha, para mudar a orientação dos traços é possível "girar o papel" em torno da origem com `rotate()`. Se salvarmos o estado do sistema de coordenadas com `push_matrix()` podemos desfazer transformações posteriores com `pop_matrix()`, trazendo a "caneta" para um ponto e orientação anterior.
 
 Veja abaixo um exemplo e o resultado que gera.
 
@@ -119,6 +119,8 @@ def setup():
 
 
 ## Um exemplo inicial de L-System
+
+Estudados os pré-requisitos podemos finalmente construir um exemplo de L-System.
 
 Partindo de regras de substição aplicadas à uma frase inicial (axioma) é possível produzir desenhos que se aproximam de plantas e fractais com autosimilaridade em várias escalas. Para isso parte dos símbolos (letras) são interpretados como uma ação de desenho, tal como andar com uma caneta para frente, virar para direita ou para esquerda um certo ângulo, ou ainda, volar a uma posição anterior armazenada em uma pilha.
 
