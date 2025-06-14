@@ -16,8 +16,11 @@ A tradução computacional dessas estruturas foi discutida pela primeira vez na 
 ## Pré-requisitos
 
 Para poder entender os exemplos apresentados mais à frente, é preciso familiaridade com algumas ideias do Python:
-- como percorrer e "montar" uma cadeia de caracteres (*string*)
-- como usar a estrutura de dados dicionário (*dict*)
+- Como percorrer e "montar" uma cadeia de caracteres (*string*);
+- Como usar a estrutura de dados [dicionário (*dict*)](dicionario.md);
+- Como desenhar linhas [modificando o sistema de coordenadas](transformacoes_coordenadas) a cada passo, podendo voltar a pontos anteriores.
+
+### Percorrendo e concatenando *strings*
 
 Podemos percorrer uma palavra com um laço `for`.
 ```python
@@ -39,6 +42,9 @@ Podemos concatenar novas palavras com o operador `+`. Um *string* vazio com `''`
 >>> '' + 'a'
 'a'  
 ```
+
+### Usando dicionários para fazer substituições em *strings*
+
 Um dicionário é uma estrutura que guarda pares *chave-valor*. Os *valores* podem ser pesquisados na estrutura a partir de uma *chave*. Quando consultamos o dicionário com a sintaxe dos colchetes `dicionario[chave]`, ele entrega o o valor, e se não houver a chave ocorre uma exceção `KeyError`. Usando o método `.get(chave)` é possível evitar essa excessãom e o valor especial `None` é devolvido, mas e usarmos a forma `.get(chave, valor_para_chave_faltando)` é possível escolher o que o dicionário devolve caso a chave não seja encontrada. 
 
 ```python
@@ -74,6 +80,43 @@ for letra in palavra:
 print(nova_palavra)
 ```
 Resultado: **`aaantiihcoôonstiihtüüüciihoôonaaaliihssiihmaaameeênteeê`**
+
+### Desenhando linhas, como se arrastando uma caneta
+
+Para simular o movimento de uma "caneta" fazendo linhas sucessivas, podemos mover a origem do sistema de coordenadas como `translate()`  desenhar uma linha e em seguida mover a origem para o final da linha, para mudar a orientação dos traços é possível "girar o papel", como rotações em torno da origem. As transformações podem ser desfeitas em determinados momentos, trazendo a "caneta" para um ponto e orientação anterior.
+
+Veja abaixo um exemplo e o resultado que gera.
+
+```python
+def setup():
+    size(400, 400)
+    translate(200, 350)  # move a origem para um ponto mais abaixo do que o meio da tela
+    
+    line(0, 0, 0, -100)  # uma linha de tamanho 100 para cima
+    translate(0, -100)   # muda a origem para o final da linha
+    
+    rotate(radians(45))  # gira o papel 45 graus
+    
+    line(0, 0, 0, -100)  # uma linha de tamanho 100 para cima
+    translate(0, -100)   # muda a origem para o final dalinha
+
+    push_matrix()        # guarda o sistema de coordenadas (1)
+    
+    rotate(radians(45))  # "gira o papel" 45 graus para a esquerda
+    
+    line(0, 0, 0, -100)  # uma linha de tamanho 100 para cima
+    translate(0, -100)   # muda a origem para o final dalinha
+    
+    pop_matrix()         # vota ao sistema de coordenadas (1)
+    
+    rotate(radians(-45))  # "gira o papel" 45 graus para a direita
+        
+    line(0, 0, 0, -100)  # uma linha de tamanho 100 para cima
+    translate(0, -100)   # muda a origem para o final dalinha
+```
+
+![turtle-move](https://github.com/user-attachments/assets/c40ca77b-0a90-43fc-9b19-9807b6512314)
+
 
 ## Um exemplo inicial de L-System
 
