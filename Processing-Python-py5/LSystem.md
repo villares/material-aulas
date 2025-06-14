@@ -15,10 +15,11 @@ A tradução computacional dessas estruturas foi discutida pela primeira vez na 
 
 ## Pré-requisitos
 
-Para poder entender os exemplos apresentados mais à frente, é preciso familiaridade com algumas ideias do Python:
-- Como percorrer e "montar" uma cadeia de caracteres (*string*);
-- Como usar a estrutura de dados [dicionário (*dict*)](dicionario.md);
-- Como desenhar linhas [modificando o sistema de coordenadas](transformacoes_coordenadas) a cada passo, podendo voltar a pontos anteriores.
+Para poder entender os exemplos apresentados mais à frente, é preciso familiaridade com algumas ideias do Python e da biblioteca py5:
+- Poemos percorrer as letras ou símbolos de uma cadeia de caracteres (*string*);
+- Podemos compor uma cadeia de caracteres a partir de símbolos isolados;
+- Podemos usar a estrutura de dados [dicionário (*dict*)](dicionario.md) para armazenar regras de substiruição;
+- Podemos desenhar linhas [modificando o sistema de coordenadas](transformacoes_coordenadas) a cada passo, e isso permite também voltar a pontos anteriores do desenho.
 
 ### Percorrendo e concatenando *strings*
 
@@ -117,12 +118,11 @@ def setup():
 
 ![turtle-move](https://github.com/user-attachments/assets/c40ca77b-0a90-43fc-9b19-9807b6512314)
 
-
 ## Um exemplo inicial de L-System
 
 Estudados os pré-requisitos podemos finalmente construir um exemplo de L-System.
 
-Partindo de regras de substição aplicadas à uma frase inicial (axioma) é possível produzir desenhos que se aproximam de plantas e fractais com autosimilaridade em várias escalas. Para isso parte dos símbolos (letras) são interpretados como uma ação de desenho, tal como andar com uma caneta para frente, virar para direita ou para esquerda um certo ângulo, ou ainda, volar a uma posição anterior armazenada em uma pilha.
+Partindo de regras de substição aplicadas à uma frase inicial (axioma) é possível produzir desenhos que se aproximam de plantas e fractais com autosimilaridade em várias escalas. Para isso parte dos símbolos (letras) são interpretados como uma ação de desenho, tal como andar com uma caneta para frente, virar para direita ou para esquerda um certo ângulo, ou ainda, volar a uma posição anterior armazenada em uma pilha de estados do sistema de coordenadas.
 
 ![image](https://github.com/villares/material-aulas/assets/3694604/e0e6f78d-047c-4070-9218-4d1a7e91d183)
 
@@ -152,16 +152,16 @@ def setup():
     translate(xo, yo)
     for simbolo in frase:
         if simbolo == "F":
-            line(0, 0, 0, -tamanho)
-            translate(0, -tamanho)
+            line(0, 0, 0, -tamanho)  # desenha uma linha
+            translate(0, -tamanho)   # move a origem 
         if simbolo == "+":
-            rotate(radians(angulo))
+            rotate(radians(angulo)) 
         if simbolo == "-":
-            rotate(radians(-angulo))
+            rotate(radians(-angulo))  
         if simbolo == "[":
-            push_matrix()
+            push_matrix()  # grava o estado (posição e ângulo)
         if simbolo == "]":
-            pop_matrix()
+            pop_matrix()   # volta ao último estado gravado
 ```
 
 ## Uma versão com interatividade
