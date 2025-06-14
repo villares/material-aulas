@@ -15,11 +15,10 @@ A tradução computacional dessas estruturas foi discutida pela primeira vez na 
 
 ## Pré-requisitos
 
-Para poder entender os exemplos apresentados mais à frente, é preciso familiaridade com algumas ideias do Python e da biblioteca py5:
-- Poemos percorrer as letras ou símbolos de uma cadeia de caracteres (*string*);
-- Podemos compor uma cadeia de caracteres a partir de símbolos isolados;
-- Podemos usar a estrutura de dados [dicionário (*dict*)](dicionario.md) para armazenar regras de substiruição;
-- Podemos desenhar linhas [modificando o sistema de coordenadas](transformacoes_coordenadas) a cada passo, e isso permite também voltar a pontos anteriores do desenho.
+Para entender os exemplos apresentados mais à frente, é preciso familiaridade com algumas ideias do Python e da biblioteca py5:
+- É possível percorrer os caracteres (letras ou símbolos) de uma cadeia de caracteres (*string*) e podemos compor uma nova concatenando elementos;
+- A estrutura de dados [dicionário (*dict*)](dicionario.md) pode ser usada para armazenar regras de substiruição;
+- Se desenharamos linhas ao mesmo tempo que [modificamos o sistema de coordenadas](transformacoes_coordenadas) a cada passo, podemos mudar de direção e também voltar a pontos anteriores do desenho.
 
 ### Percorrendo e concatenando *strings*
 
@@ -91,29 +90,29 @@ Veja abaixo um exemplo e o resultado que gera.
 ```python
 def setup():
     size(400, 400)
-    translate(200, 350)  # move a origem para um ponto mais abaixo do que o meio da tela
+    translate(200, 350)  # move a origem para um ponto mais abaixo do que o meio da tela (posição 0)
     
     line(0, 0, 0, -100)  # uma linha de tamanho 100 para cima
-    translate(0, -100)   # muda a origem para o final da linha
+    translate(0, -100)   # muda a origem para o final da linha (posição 1)
     
     rotate(radians(45))  # gira o papel 45 graus
     
     line(0, 0, 0, -100)  # uma linha de tamanho 100 para cima
-    translate(0, -100)   # muda a origem para o final dalinha
+    translate(0, -100)   # muda a origem para o final da linha (posição 2)
 
-    push_matrix()        # guarda o sistema de coordenadas (1)
+    push_matrix()        # guarda o sistema de coordenadas (posição 2)
     
     rotate(radians(45))  # "gira o papel" 45 graus para a esquerda
     
     line(0, 0, 0, -100)  # uma linha de tamanho 100 para cima
-    translate(0, -100)   # muda a origem para o final dalinha
+    translate(0, -100)   # muda a origem para o final dalinha (posição 3)
     
-    pop_matrix()         # vota ao sistema de coordenadas (1)
+    pop_matrix()         # vota ao sistema de coordenadas (posição 2)
     
     rotate(radians(-45))  # "gira o papel" 45 graus para a direita
         
     line(0, 0, 0, -100)  # uma linha de tamanho 100 para cima
-    translate(0, -100)   # muda a origem para o final dalinha
+    translate(0, -100)   # muda a origem para o final dalinha (posição 4)
 ```
 
 ![turtle-move](https://github.com/user-attachments/assets/c40ca77b-0a90-43fc-9b19-9807b6512314)
