@@ -12,7 +12,116 @@ A tradução computacional dessas estruturas foi discutida pela primeira vez na 
 > - [Using Lindenmayer Systems to Introduce Computer Science Concepts](https://www.russellgordon.ca/cemc/2017/lindenmayer-systems/)
 > - [Wikipedia: L-system](https://en.wikipedia.org/wiki/L-system)
 
-## Um exemplo simples
+
+## Pré-requisitos
+
+Para entender os exemplos apresentados mais à frente, é preciso familiaridade com algumas ideias do Python e da biblioteca py5:
+- É possível percorrer os caracteres (letras ou símbolos) de uma cadeia de caracteres (*string*) e podemos compor uma nova concatenando elementos;
+- A estrutura de dados [dicionário (*dict*)](dicionario.md) pode ser usada para armazenar regras de substiruição;
+- Se desenharamos linhas ao mesmo tempo que [modificamos o sistema de coordenadas](transformacoes_coordenadas) a cada passo, podemos mudar de direção e também voltar a pontos anteriores do desenho.
+
+### Percorrendo e concatenando *strings*
+
+Podemos percorrer uma palavra com um laço `for`.
+```python
+>>> for letra in 'aeiou':
+       print(letra)
+a
+e
+i
+o
+u
+```
+
+Podemos concatenar novas palavras com o operador `+`. Um *string* vazio com `''` pode ser concatenado sem alterar o resultado.
+
+```python
+>>> 'a' + 'e' + 'i' + 'o' + 'u'
+'aeiou'
+
+>>> '' + 'a'
+'a'  
+```
+
+### Usando dicionários para fazer substituições em *strings*
+
+Um dicionário é uma estrutura que guarda pares *chave-valor*. Os *valores* podem ser pesquisados na estrutura a partir de uma *chave*. Quando consultamos o dicionário com a sintaxe dos colchetes `dicionario[chave]`, ele entrega o o valor, e se não houver a chave ocorre uma exceção `KeyError`. Usando o método `.get(chave)` é possível evitar essa excessãom e o valor especial `None` é devolvido, mas e usarmos a forma `.get(chave, valor_para_chave_faltando)` é possível escolher o que o dicionário devolve caso a chave não seja encontrada. 
+
+```python
+>>> ingles = {'maçã': 'apple', 'pêra': 'pear'}
+
+>>> ingles['maçã']
+'apple'
+
+>>> fruta = 'cupuaçu'  # não tem 'cupuaçu' no dicionário
+
+>>> ingles[fruta]   # a fruta é 'cupuaçu'
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+KeyError: 'cupuaçu'
+
+>>> ingles.get(fruta, 'não sei') # .get() evita o erro
+'não sei'
+
+>>> ingles.get(fruta, fruta)  
+'cupuaçu'
+```
+
+Como pode ser observado no exemplo acima, se usarmos a forma `.get(chave, chave)`, obtemos a própria chave caso ela não seja encontrada no dicionário, e isso se mostra muito útil quando usamos o dicionário para indicar regras de substituição: a falta da chave indica que a própria chave deve ser usada sem nenhuma substituição.
+
+No exemplo abaixo vamos armazenar algumas letras como chaves associadas a uma sequência de letras como valor para cada uma delas, usaremos o valores para substituir as letras das chaves encontradas em um laço `for`.
+
+```python
+vogais = {'a': 'aaa', 'e': 'eeê', 'i': 'iih', 'o': 'oôo', 'u': 'üüü'}
+palavra = 'anticonstitucionalissimamente'
+nova_palavra = ''
+for letra in palavra:
+    nova_palavra = nova_palavra + vogais.get(letra, letra)
+print(nova_palavra)
+```
+Resultado: **`aaantiihcoôonstiihtüüüciihoôonaaaliihssiihmaaameeênteeê`**
+
+### Desenhando linhas, como se arrastando uma caneta
+
+Para simular o movimento de uma "caneta" fazendo linhas sucessivas, podemos mover a origem do sistema de coordenadas como `translate()`  desenhar uma linha e em seguida mover a origem para o final da linha, para mudar a orientação dos traços é possível "girar o papel" em torno da origem com `rotate()`. Se salvarmos o estado do sistema de coordenadas com `push_matrix()` podemos desfazer transformações posteriores com `pop_matrix()`, trazendo a "caneta" para um ponto e orientação anterior.
+
+Veja abaixo um exemplo e o resultado que gera.
+
+```python
+def setup():
+    size(400, 400)
+    translate(200, 350)  # move a origem para um ponto mais abaixo do que o meio da tela (posição 0)
+    
+    line(0, 0, 0, -100)  # uma linha de tamanho 100 para cima
+    translate(0, -100)   # muda a origem para o final da linha (posição 1)
+    
+    rotate(radians(45))  # gira o papel 45 graus
+    
+    line(0, 0, 0, -100)  # uma linha de tamanho 100 para cima
+    translate(0, -100)   # muda a origem para o final da linha (posição 2)
+
+    push_matrix()        # guarda o sistema de coordenadas (posição 2)
+    
+    rotate(radians(45))  # "gira o papel" 45 graus para a esquerda
+    
+    line(0, 0, 0, -100)  # uma linha de tamanho 100 para cima
+    translate(0, -100)   # muda a origem para o final dalinha (posição 3)
+    
+    pop_matrix()         # vota ao sistema de coordenadas (posição 2)
+    
+    rotate(radians(-45))  # "gira o papel" 45 graus para a direita
+        
+    line(0, 0, 0, -100)  # uma linha de tamanho 100 para cima
+    translate(0, -100)   # muda a origem para o final dalinha (posição 4)
+```
+
+![turtle-move](https://github.com/user-attachments/assets/c40ca77b-0a90-43fc-9b19-9807b6512314)
+
+## Um exemplo inicial de L-System
+
+Estudados os pré-requisitos podemos finalmente construir um exemplo de L-System.
+
+Partindo de regras de substição aplicadas à uma frase inicial (axioma) é possível produzir desenhos que se aproximam de plantas e fractais com autosimilaridade em várias escalas. Para isso parte dos símbolos (letras) são interpretados como uma ação de desenho, tal como andar com uma caneta para frente, virar para direita ou para esquerda um certo ângulo, ou ainda, volar a uma posição anterior armazenada em uma pilha de estados do sistema de coordenadas.
 
 ![image](https://github.com/villares/material-aulas/assets/3694604/e0e6f78d-047c-4070-9218-4d1a7e91d183)
 
@@ -42,16 +151,16 @@ def setup():
     translate(xo, yo)
     for simbolo in frase:
         if simbolo == "F":
-            line(0, 0, 0, -tamanho)
-            translate(0, -tamanho)
+            line(0, 0, 0, -tamanho)  # desenha uma linha
+            translate(0, -tamanho)   # move a origem 
         if simbolo == "+":
-            rotate(radians(angulo))
+            rotate(radians(angulo)) 
         if simbolo == "-":
-            rotate(radians(-angulo))
+            rotate(radians(-angulo))  
         if simbolo == "[":
-            push_matrix()
+            push_matrix()  # grava o estado (posição e ângulo)
         if simbolo == "]":
-            pop_matrix()
+            pop_matrix()   # volta ao último estado gravado
 ```
 
 ## Uma versão com interatividade
