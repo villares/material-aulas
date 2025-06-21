@@ -59,7 +59,7 @@ Que pode ser reescrito assim:
 lista_resultante = [«novo_elemento» for «valor» in «iterável» if «condição»]
 ```
 
-Veja mais alguns exemplos, primeiro um sem "filtragem".
+Veja mais um exemplo, primeiro um sem "filtragem".
 
 ```python
 dimensoes_retangulos = [(10, 20), (20, 30), (10, 30), (30, 30), (30, 10)]
