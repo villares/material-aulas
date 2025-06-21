@@ -1,16 +1,10 @@
 # Manipulando números com `remap()` e `lerp()`
 
-## Sumário
-
-- [A função `remap()`](#a-função-remap)
-- [A função `lerp()`: interpolação linerar](#a-função-lerp-interpolação-linear)
-- [A função `lerp_color()`: interpolando cores](#a-função-lerpcolor-interpolando-cores)
-
-### A função `remap()`
+## A função `remap()`: traduzindo valores entre duas escalas
 
 > O py5, por ser uma ferramenta híbrida com elementos de Processing e de Python, teve que resolver um conflito de nomes, as duas linguagens tem funções chamadas `map()` mas com comportamentos/significados totalmente distintos. Nesta página vamos explorar o comportamento do `map()` do Processing que no py5 se chama `remap()`. Você pode ler sobre o `map()` do Python também em outra página: [Funções como argumentos de outras funções](funcoes-como-argumentos.md).
 
-A função `remap()` converte um valor de uma faixa de números devolvendo um valor equivalente em outra faxia. Recebendo um número, que vamos chamar de **`a`**, que está em uma faixa de origem de `a0`  a `a1` , devolve um número **`b`**  na faixa de destino de `b0` a `b1`, de forma que 'mapeia' valores de uma faixa para outra. A sintaxe fica assim, entregamos 5 argumentos e obtemos um valor como resposta:
+A função `remap()` converte um valor que está no contexto de uma certa uma faixa de números devolvendo um valor equivalente em outra faxia. Recebendo um número, que vamos chamar de **`a`**, que está em uma faixa de origem de `a0`  a `a1` , devolve um número **`b`**  na faixa de destino de `b0` a `b1`, de forma que 'mapeia' valores de uma faixa para outra. A sintaxe fica assim, entregamos 5 argumentos e obtemos um valor como resposta:
 
 ```python
 b = remap(a, a0, a1, b0, b1)
@@ -41,7 +35,7 @@ def draw():
 
 ![](assets/map_1.gif)
 
-# A função `lerp()`: interpolação linear
+## A função `lerp()`: interpolação linear
 
 O nome vem, de  <i>**l**inear int**erp**olation</i> (interpolação linear) e a função permite obter um número intermediário ente do outros números `v0` e `v1` de maneira proporcional a um parâmetro **`t`** . Você pode interpretar **`t`** como uma porcentagem, **0** faz `lerp()` devolver o primeiro número, `v0`, e ** 1 **  produz o segundo, `v1`.  Com o **`t`**  valendo  ** 0.5 ** (50 %) o valor devolvido fica bem no meio do caminho entre os dois números (uma média aritmética).
 
@@ -52,7 +46,7 @@ Isso lembra o `remap()` que acabamos de ver, mas com uma faixa de origem (para o
 Note que assim como em `map()` valores fora da faixa esperada de origem(no caso entre ** 0 ** e ** 1**) produzem valores além dos limites fornecidos.
 
 
-# A função `lerp_color()`: interpolando cores
+## A função `lerp_color()`: interpolando cores
 
 Podemos também obter cores intermediárias com a função `lerp_color()`, um * lerp * especial para cores.
 
@@ -61,8 +55,6 @@ Podemos também obter cores intermediárias com a função `lerp_color()`, um * 
 Veja exemplos de uso abaixo.
 
 ```python
-
-
 def setup():
     size(400, 400)
     stroke_weight(3)
@@ -120,6 +112,6 @@ def dots(x1, y1, x2, y2, ca, cb, steps=10, dot_size=10):
     pop_matrix()
 ```
 
-# Assuntos relacionados
+## Assuntos relacionados
 
-- [Transições com * easing*](easing.md)
+- [Transições de movimento com *easing*](easing.md)
