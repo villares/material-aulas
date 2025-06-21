@@ -4,12 +4,12 @@
 ![](assets/thumb-list-comp.png)
 -->
 
-É muito comum usarmos um laço de repetição para produzir e acumular elementos em uma estrutura de dados, vamos ver um exemplo de um `for` que acrescenta itens em uma lista. São pontos com um `x` que vai crescendo de 10 em 10 e um `y` pseudoaleatório produzido com a função `random()` do py5, para produzir depois um polígono:
+É muito comum usarmos um laço de repetição para produzir e acumular elementos em uma estrutura de dados, vamos ver um exemplo de um `for` que acrescenta itens em uma lista. São pontos com um `x` que vai crescendo de 10 em 10 e um `y` pseudoaleatório produzido com a função `random()` do py5, para produzir depois um polígono com 11 vértices:
 
 ![](assets/random_poly.png)
 
 ```python
-for i in range(10):
+for i in range(11):
     x = i * 10
     y = 50 + random(-25, 25)
     pontos.append((x, y))  # os parenteses extra criam uma tupla
@@ -22,7 +22,7 @@ with begin_shape():
 Existe um maneira alternativa de fazer isso usando a sintaxe chamada *compreensão de lista*, compare:
 
 ```python
-pontos = [(i * 10, 50 + random(-25, 25)) for i in range(10)]
+pontos = [(i * 10, 50 + random(-25, 25)) for i in range(11)]
 
 no_fill()
 with begin_shape():
@@ -94,7 +94,7 @@ Veja como poderia ficar aquele primeiro exemplo do polígono aleatório aberto.
 ```python
 no_fill()
 with begin_shape():
-    vertices((i * 10, 50 + random(-25, 25)) for i in range(10))
+    vertices((i * 10, 50 + random(-25, 25)) for i in range(11))
 ```
 
 ## Compreensão de conjuntos e dicionários
