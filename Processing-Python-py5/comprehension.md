@@ -4,7 +4,7 @@
 ![](assets/thumb-list-comp.png)
 -->
 
-É muito comum usarmos um laço de repetição para produzir e acumular elementos em uma estrutura de dados, vamos ver um exemplo de um `for` que acrescenta itens em uma lista. São pontos com um `x` que vai crescendo de 10 em 10 e um `y` pseudoaleatório produzido com a função `random()` do py5, para produzir depois um polígono com 11 vértices:
+É muito comum usarmos um laço de repetição para produzir e acumular elementos em uma estrutura de dados, vamos ver um exemplo de um `for` que acrescenta itens em uma lista. São pontos com um `x` que vai crescendo de 10 em 10 e um `y` pseudoaleatório produzido com a função `random()` do py5, para poder depois desenhar um polígono, aberto e sem preenchimento, com 11 vértices que vai de um lado a outro de uma pequena área de desenho:
 
 ![](assets/random_poly.png)
 
@@ -29,7 +29,7 @@ with begin_shape():
     vertices(pontos)
 ```
 
-Veja se você consegue identificar, nos exemplos acima, os elementos do seguinte padrão geral, que usa um laço de repetição para construir a lista: 
+Veja se você consegue identificar nos dois exemplos acima os elementos do seguinte padrão geral, que usa um laço de repetição para construir a lista e depois a compreensão de lista. 
 
 ```python
 lista_resultante = []
@@ -37,11 +37,13 @@ for «valor» in «iterável»:
       lista_resultante.append(«novo_elemento»)  # o novo elemento é acrescentado
 ```
 
-E a forma reescrita:
+E a forma reescrita
 
 ```python
 lista_resultante = [«novo_elemento» for «valor» in «iterável»]
 ```
+
+### Acrescentando uma condição para o acréscimo de elementos
 
 É possível ainda "filtrar", usar uma condição que permite ou não produzir novos elementos.
 
@@ -57,9 +59,7 @@ Que pode ser reescrito assim:
 lista_resultante = [«novo_elemento» for «valor» in «iterável» if «condição»]
 ```
 
-### Mais exemplos
-
-Sem "filtragem"
+Veja mais alguns exemplos, primeiro um sem "filtragem".
 
 ```python
 dimensoes_retangulos = [(10, 20), (20, 30), (10, 30), (30, 30), (30, 10)]
