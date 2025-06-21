@@ -13,7 +13,7 @@ a = numeros.pop() # remove o 90, a = 90
 b = nomeros.pop(0) # remove o 10, b = 10 
 print(numeros) # exibe [20, 30, 40, 50, 60, 70, 80]
 ```
-Também é possível usar a instrução `del` com o índice.
+Também é possível usar a instrução `del` com o índice. 
 
 ```python
 numeros = [100, 200, 300]
@@ -24,7 +24,9 @@ Traceback (most recent call last):
   File "<stdin>", line 1, in <module>
 IndexError: list assignment index out of range
 ```
-E por fim, poemos usar o método `.remove()` com um valor, e a primeira instância encontrada do valor vai ser removida.
+Tanto com `del lista[indice]` como com `lista.pop(indice)` é preciso garantir que o índice cai dentro da lista!
+
+Outra maneira de remover itens de uma lista é o método `.remove(valor)`, nesse caso a primeira instância encontrada do valor vai ser removida. 
 
 ```python
 numeros = [2, 5, 2, 5, 2, 5, 2]
@@ -35,7 +37,7 @@ Traceback (most recent call last):
   File "<stdin>", line 2, in <module>
 ValueError: list.remove(x): x not in list
 ```
-
+Tentar remover um valor que não está contido na lista produz um erro, você pode checar antes com `if x in numeros: numeros.remove(x)`.
 
 ## Não remova itens ao mesmo tempo em que percorre uma coleção
 
@@ -80,7 +82,10 @@ print(numeros)  # exibe  [1, 2, 4, 8, 9]
 # experimente também: `for i, n in reversed(list(enumerate(numeros))):`
 # E nesse caso é possível usar `del numeros[i]` ou `numeros.pop(i)`
 ```
-Uma outra solução é construir uma nova lista sem os itens que você quer remover, seja com um laço também ou com uma compreensão de listas no exemplo abaixo:
+
+## Criando uma nova lista filtrando os valores a serem removidos
+
+Uma outra solução é construir uma nova lista sem os itens que você quer remover, seja com um laço também ou com uma compreensão de listas como no exemplo abaixo:
 
 ```python
 numeros = [1, 2, 4, 0, 0, 0, 0, 8, 0, 9, 0]
