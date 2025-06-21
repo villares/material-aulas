@@ -1,16 +1,3 @@
-# Primeiros passos de orientação a objetos: usando a classe Slider
-<!-- para o sumário
-![](assets/trimesh_demo.gif)
--->
-
-## Um exemplo animado    
-
-Neste exemplo, a função ajudante `draw_mesh()` desenha uma malha obtida com a manipulação dos objetos *shapely* e *trimesh*, suprimindo arestas desnecessários das faces. É possível também exportar um arquivo STL usando o método `.export()` das malhas *trimesh*.
-
-
-![](assets/trimesh_demo.gif)
-
-```python
 import shapely
 import trimesh
 import py5_tools
@@ -30,7 +17,7 @@ def setup():
     paredes = translated_box(0, 0, 0, 200).difference(furo_central)  
     caixa_furada = paredes.difference(prisma_lua).difference(prisma_cruz)
     # para exportar um gif animado
-    py5_tools.animated_gif('trimesh_demo.gif', duration=0.05, frame_numbers=range(1, 361, 3))
+    #py5_tools.animated_gif('trimesh_demo.gif', duration=0.05, frame_numbers=range(1, 361, 3))
    
 def draw():
     background(0, 100, 100)
@@ -41,12 +28,10 @@ def draw():
     fill(200, 200, 0)
     draw_mesh(caixa_furada)
   
-
 def key_pressed():
     if key == 's':
-        print('exportando "caixa_furada.stl"')
-        caixa_furada.export('caixa_furada.stl')
-    
+        caixa_furada.export('model.stl')
+  
 def apply_rotation(obj, angle, direction=[1, 0, 0], center=[0, 0, 0]):
     rot_matrix = trimesh.transformations.rotation_matrix(angle, direction, center)
     obj.apply_transform(rot_matrix)  # modifica a malha!
@@ -57,6 +42,7 @@ def translated_box(x, y, z, w, h=None, d=None):
     mesh = trimesh.creation.box((w, h, d))
     mesh.apply_translation((x, y, z))  # modifica a manha!
     return mesh
+
 
 def draw_mesh(m):
     """Desenha malha trimesh reduzindo arestas coplanares."""
@@ -72,4 +58,3 @@ def draw_mesh(m):
     # desenha apenas as linhas dos limites das facetas
     a, b = np.vstack(bs).T
     lines(np.column_stack((vs[a], vs[b])))
-```
