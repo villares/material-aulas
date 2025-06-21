@@ -9,10 +9,10 @@ fill(0)
 # texto = '=\nigual?\n=='
 
 nome = 'list-comp'
-text_size(18)
-texto = 'lista = [\nf(x) for x\nin outra]'
+text_size(17)
+texto = 'lista = [\n f(x) for x\n in outra\n if g(x)\n]'
 text_align(LEFT, CENTER)
-text(texto, 5, 50)
+text(texto, 2, 50)
 
 # nome = 'lambda'
 # text_size(18)
