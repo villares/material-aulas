@@ -4,10 +4,7 @@
 
 A biblioteca **py5** pode ser usada de várias maneiras, são estilos ou contextos de programação que chamamos de "modos". Mais detalhes podem ser encontrados em [py5coding.org - The Five py5 Modes](http://py5coding.org/content/py5_modes.html).
 
-> ⚠️ **Se estiver em um Mac:**<br>
-> Leia [Special Notes for OSX Users](http://py5coding.org/content/osx_users.html).
-
-### Module mode (modo de módulo)
+### *Module mode* (modo de módulo)
 
 Este modo pode parecer familiar para alguns programadores Python. Você importa a biblioteca no começo do código e define algumas funções especiais que o py5 chama para você, como `setup()` (executa uma vez quando o sketch é iniciado), `draw()` (repete continuamente, usado para interação e animações ) e, se quiser, algumas outras [funções de evento](http://py5coding.org/reference/sketch.html). No final você chama `py5.run_sketch()`.
 
@@ -34,7 +31,7 @@ py5.run_sketch()
 > ℹ️ **Detalhe interno:**<br>
 > Se você não definir uma função `settings()` (opcional neste modo), a função `setup()` será dividida em `setup()` e `settings()` para você "automagicamente" sob o capô, de acordo com algumas regras especiais, pois a infra do Processing requer que `size()` esteja em `settings()`, mas você não precisa se preocupar com isso.
 
-### Imported mode (modo importado)
+### *Imported mode* (modo importado)
 
 Originalmente criado para programadores iniciantes, o *modo importado* é análogo ao modo como as pessoas programamam no Processing IDE. Você não precisa digitar `py5.` o tempo todo.
 
@@ -58,7 +55,7 @@ run_sketch()
 
 > Se estiver usando a ferramenta `run_sketch` ou o plugin `thonny-py5mode` no Thonny não precisa `run_sketch()` no final.
 
-### Static mode (modo estático)
+### *Static mode* (modo estático)
 
 No *static mode* podemos criar imagens estáticas usando código sem precisar de declarações de função. Ele foi pensado para quem está dando seus primeiros passos na programação com Python.
 
@@ -77,7 +74,7 @@ Para usar o modo estático no Jupyter Lab, instale o *py5bot Kernel* conforme de
 
 Você também pode usar a ferramenta `run_sketch` ou o plug-in Thonny IDE conforme descrito para *modo importado*.
 
-### Class mode (modo de classe)
+### *Class mode* (modo de classe)
 
 Para usuários mais avançados que desejam executar vários esboços ao mesmo tempo, o *class mode* convida você a criar uma classe com um método `settings`, agora necessário, `setup`,`draw` e outros métodos desejados.
 
@@ -103,6 +100,6 @@ test = TestSketch()
 test.run_sketch()
 ```
 
-## Leitura adicional
+## *Processing mode* e leituras adicionais
 
-Para mais detalhes, visite a **documentação do py5** completa em [py5coding.org](https://py5coding.org)
+Existe ainda uma forma de chamar o py5 a partir de código Java, o usando como uma ponte para poder combinar Java e Python em um *sketch* do Processing. Para mais detalhes sobre os modos, visite a documentação completa do py5 em [py5coding.org](https://py5coding.org).
