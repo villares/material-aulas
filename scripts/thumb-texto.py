@@ -8,11 +8,11 @@ fill(0)
 # nome = '='
 # texto = '=\nigual?\n=='
 
-nome = 'list-comp'
-text_size(16)
-texto = 'lista = [\n f(x) for x\n in iteravel\n if cond(x)\n]'
-text_align(LEFT, CENTER)
-text(texto, 2, 50)
+# nome = 'list-comp'
+# text_size(16)
+# texto = 'lista = [\n f(x) for x\n in iteravel\n if cond(x)\n]'
+# text_align(LEFT, CENTER)
+# text(texto, 2, 50)
 
 # nome = 'lambda'
 # text_size(18)
@@ -52,17 +52,19 @@ text(texto, 2, 50)
 # text_align(LEFT, CENTER)
 # text(texto, 2, 50)
 
-# nome = 'removendo'
-# text_size(12)
-# texto = """# cuidado!
-# 
-# c = a.copy()
-# for n in c:
-#   if  n == 0:
-#     a.remove(n)
-# """
-# text_align(LEFT, CENTER)
-# text(texto, 5, 50)
+nome = 'removendo'
+text_size(12)
+texto = """\
+a.pop(1)
+del a[i]
+# laço, cuidado!
+copia = a.copy()
+for n in copia:
+  if  n == 0:
+    a.remove(n)
+"""
+text_align(LEFT, CENTER)
+text(texto, 3, 55)
 
 
 print(f'<!-- thumb para o sumário\n![](assets/thumb-{nome}.png)\n-->')
