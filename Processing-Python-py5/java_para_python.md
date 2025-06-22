@@ -388,32 +388,6 @@ else:
   print("diferentes")
 ```
 
-<!---
-# Importando bibliotecas e as outras abas do sketch
-
-No Processing modo Java as bibliotecas são importadas com `import` mas no modo Python essa instrução é mais usada para importar *módulos* da biblioteca padrão do Python, e arquivos **.py** das outras abas do IDE, que ao contrário do modo Java não são automaticamente parte do *sketch*.
-
-Para bibliotecas de terceiros, [TODO]
-
-**Java**
-
-```java
-import com.hamoid.*; // importa biblioteca VideoExport no modo Java
-```
-
-**Python**
-
-```python
-add_library('VideoExport')  # a mesma biblioteca no modo Python
-```
-
-Para usar múltiplas abas no modo Python, é preciso tratá-las como módulos e trazer classes ou funções com `import`. Há mais de uma maneira de fazer isso.
-
-```python
-from outra_aba import *  # importa código do arquivo outra_aba.py
-```
--->
-
 ## Orientação a objetos
 
 ### Obtendo uma instância e acessando métodos e atributos
@@ -584,6 +558,18 @@ print(board)
 #        [0., 0., 0.]]
 ``` 
 
----
+### Importando bibliotecas e usando arquivos separados (a outras "abas" do sketch)
 
-Trabalho em andamento...
+No Processing modo Java as bibliotecas são importadas com `import`, já no Python essa instrução é usada para importar *módulos* da biblioteca padrão do Python e arquivos que no Procesing apareceriam nas outras abas do IDE por estarem na mesma pasta e no modo Java fariam automaticamente parte do *sketch*.
+
+Para usar múltiplos arquivos em Python é preciso tratá-los como módulos e trazer classes ou funções com `import`. 
+
+```python
+from outra_aba import funcao, Classe  # importa código do arquivo outra_aba.py
+```
+
+Há mais de uma maneira de fazer isso. Você pode ler mais a respeito na página [Usando várias abas no IDE e importando código de outros módulos](modulos.md)
+
+Para usar bibliotecas Python de terceiros se você já faz isso, pode usar `pip` dentro de um *virtual environment*, ou usar o painel `Manage Packages...` do Thonny que faz isso para você.
+
+Para usar a bibliotecas Java feitas para o Processing, veja a página [Usando bibliotecas Java para Processing no py5](bibliotecas-java.md)
