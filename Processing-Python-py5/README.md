@@ -57,7 +57,7 @@
 - 2.1.1 [Primeiros passos de orientação a objetos: usando a classe Slider](slider_com_OO.md)
 - 2.2.1 [Um botão com orientação a objetos](botao_com_OO.md)
 - 2.3.1 [Uma classe de partículas simples](particulas.md)
-    - 2.3.2 [Introdução a orientação a objetos com bandeirinhas](https://github.com/villares/material-aulas/blob/main/Processing-Python-py5/bandeirinhas/README.md)
+    - 2.3.2 [Introdução a orientação a objetos com bandeirinhas](https://abav.lugaralgum.com/material-aulas/Processing-Python-py5/bandeirinhas/)
 - 2.4.1 [Operações com vetores e a classe `Py5Vector`](vetores.md)
 - 2.5.1 [Manipulando formas 2D e 3D como`shapely` e `trimesh`](shapely-e-trimesh.md)
 
