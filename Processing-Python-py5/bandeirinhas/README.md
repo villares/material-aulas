@@ -266,6 +266,8 @@ def draw():
 
 ### 6. Acrescentando e removendo objetos; Mudança da cor com o mouse próximo.
 
+<img src="https://abav.lugaralgum.com/material-aulas/Processing-Python-py5/bandeirinhas/imagens/passo_final.gif">
+
 Como extra exemplo dos métodos `append()` e `pop()` da lista, usados nos *eventos* de clique do mouse ou acionamento da barra de espaço no teclado, acrescentando ou removendo objetos respectivamente.
 
 ```python
