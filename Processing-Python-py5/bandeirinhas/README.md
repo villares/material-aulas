@@ -1,6 +1,9 @@
 # Orientação a objetos com bandeirinhas
 ## Um exemplo em 7 passos
 
+<!--
+<img src="https://github.com/villares/material-aulas/raw/main/Processing-Python-py5/bandeirinhas/imagens/passo_final.gif>
+-->
 <img src="imagens/passo_final.gif" align="right"  alt="output passo 4">
 
 Bandeirinhas são um tema recorrente da cultura visual brasileira, visível não só nas Festas Juninas como explorado largamente por artistas visuais como Alfredo Volpi. Foram escolhidas para gerar reconhecimento e interesse visual nas imagens e animações produzidas.
