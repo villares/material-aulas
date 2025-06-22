@@ -1,13 +1,16 @@
 # Como usar bibliotecas feitas para o Processing Java
 
+No Processing IDE você as instalava bibliotecas Java desenvolvidas pela comunidade usando o painel `Manage Libraries...` do IDE, e no antigo *modo Python* se usava uma função `add_library()`.
 
-Muitas das bibliotecas Java feitas para o Processing funcionam com o py5, no Processing IDE você as instalava usando o painel `Manage Libraries...` do IDE, e no antigo *modo Python* se usava uma função `add_library()`, agora é preciso usar esta função ajudante `py5_tools.processing.download_library()` no exemplo abaixo vamos mostrar como instalar e usar *PeasyCam*.
+Muitas das bibliotecas feitas para o Processing funcionam com o py5, e é possível usar esta função ajudante `py5_tools.processing.download_library()`, que baixa os arquivos de uma biblioteca cadastrada pela comunidade Processing, como por exemplo a biblioteca *PeasyCam* cujo exemplo vamos mostrar aqui.
 
 ```python
 import py5_tools
 print(py5_tools.processing.download_library("PeasyCam"))  # o print é opcional, pra ver o resultado
 ```
-Essa instalação da biblioteca precisa ser feita uma vez só.
+Essa instalação da biblioteca precisa ser feita uma vez só. E caso a biblioteca não esteja no cadastro da Fundação Processing, é possível copiar manulamente os arquivos `.jar` para a pasta do *sketch*, ou ainda, indicar onde eles se encontram seguindo [instruções na documentação do py5](https://py5coding.org/reference/py5tools_add_jars.html).
+
+Muitas dessas bibliotecas precisam na sua inicialização de uma referência do *sketch* em execução, que no Java é obtida com a expressão `this`. Com py5 podemos obter essa referência chamando a função `get_current_sketch()`.
 
 ## Um exemplo com *PeasyCam*
 
