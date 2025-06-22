@@ -1,12 +1,10 @@
 # Orientação a objetos com bandeirinhas
+
 ## Um exemplo em 7 passos
 
-<!--
-<img src="https://github.com/villares/material-aulas/raw/main/Processing-Python-py5/bandeirinhas/imagens/passo_final.gif>
--->
-<img src="imagens/passo_final.gif" align="right"  alt="output passo 4">
-
 Bandeirinhas são um tema recorrente da cultura visual brasileira, visível não só nas Festas Juninas como explorado largamente por artistas visuais como Alfredo Volpi. Foram escolhidas para gerar reconhecimento e interesse visual nas imagens e animações produzidas.
+
+<img src="https://abav.lugaralgum.com/material-aulas/Processing-Python-py5/bandeirinhas/imagens/passo_final.gif" align="right"  alt="output passo 4">
 
 Numa aula que se desenvolve normalmente em cerca de 7 etapas, são introduzidos conceitos de orientação a objetos: Classe, atributos de dados e métodos, instâncias e encapsulamento. Não são abordadadas ainda questões de herança e composição.
 Para poder aproveitar o exemplo os alunos tiveram contato em aulas anteriores  com programação [imperativa](http://cs.lmu.edu/~ray/notes/paradigms/) além de vocabulário gráfico do Processing / py5:
@@ -267,6 +265,8 @@ def draw():
 ```
 
 ### 6. Acrescentando e removendo objetos; Mudança da cor com o mouse próximo.
+
+<img src="https://abav.lugaralgum.com/material-aulas/Processing-Python-py5/bandeirinhas/imagens/passo_final.gif">
 
 Como extra exemplo dos métodos `append()` e `pop()` da lista, usados nos *eventos* de clique do mouse ou acionamento da barra de espaço no teclado, acrescentando ou removendo objetos respectivamente.
 
