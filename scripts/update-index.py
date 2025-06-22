@@ -60,6 +60,8 @@ for entry in summary.read_text().splitlines():
                 img = get_first_image(lines)
                 if img and img.startswith('assets'):
                     img = f'/material-aulas/Processing-Python-py5/{img}'
+                if not img:
+                    print(f'Falta imagem thumbnail para {page}')
             except Exception:
                 print(img)
             #entry = entry.lstrip('-0123456789. ')
@@ -80,3 +82,4 @@ output_path.write_text(
     template.replace('{primeira_coluna}', primeira_coluna)
             .replace('{segunda_coluna}', segunda_coluna)
 )
+print(f'{output_path} atualizado.')
