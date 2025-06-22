@@ -71,15 +71,15 @@
 
 ## Aprofundando ideias anteriores
 - 4.1.0 [Mais sobre aleatoriedade](aleatoriedade_2.md) e as diferenças ente o `random` do py5 e o do Python
-- 4.1.1 [*Perlin Noise* (ruído de Perlin)](noise.md) um tipo especial de número pseudoaleatório
+    - 4.1.1 [*Perlin Noise* (ruído de Perlin)](noise.md) um tipo especial de número pseudoaleatório
 - 4.2.1 [Mais sobre atributos gráficos](mais_atributos_graficos.md)
-- 4.4.1 [Como usar seno `sin()`, cosseno `cos()` e arco tangente `atan2()`](seno_cosseno_atan2.md) 
-- 4.5.1 [Manipulando números com `remap()` e `lerp()`](map_lerp.md) e também interpolando cores
-- 4.6.1 [O que é *easing*?](easing.md) - transições de movimento
-- 4.7.1 [Funções como argumentos de outras funções](funcoes-como-argumentos.md) - `sort()` e funções `lambda`
-- 4.7.2 [Detectando a sobreposição de elementos geométricos](colisoes.md) - o problema das "colisões"
-- 4.7.3 [Desenhando em um espaço fora da tela (*offscreen buffer*)](offscreen_buffer.md)  
-- 4.7.4 [Recortando e mascarando imagens](recortando_imagens.md)
+- 4.3.1 [Como usar seno `sin()`, cosseno `cos()` e arco tangente `atan2()`](seno_cosseno_atan2.md) 
+- 4.4.1 [Manipulando números com `remap()` e `lerp()`](map_lerp.md) e também interpolando cores
+- 4.5.1 [O que é *easing*?](easing.md) - transições de movimento
+- 4.6.1 [Funções como argumentos de outras funções](funcoes-como-argumentos.md) - `sort()` e funções `lambda`
+- 4.7.1 [Detectando a sobreposição de elementos geométricos](colisoes.md) - o problema das "colisões"
+- 4.8.1 [Desenhando em um espaço fora da tela (*offscreen buffer*)](offscreen_buffer.md)
+- 4.9.1 [Recortando e mascarando imagens](recortando_imagens.md)
 
 ## Exportação de imagens e outras saídas
 - 5.1.1 [Exportando imagens (bitmap/raster)](exportando_imagem.md)
@@ -97,12 +97,12 @@
   - 6.3.1 [Lendo e escrevendo dados "tabulados" em CSV](file_IO2.md)
 
 ## Questões mais avançadas das ferramentas
-- 7.1.0 [Os "modos de uso" da biblioteca py5](os_modos_de_py5.md)
-- 7.1.1 [Usando várias abas no IDE e importando código de outros módulos](modulos.md) 
-- 7.2.1 [Dicas para portar exemplos de Processing para Python com py5](java_para_python.md)
-- 7.3.1 [Manipulando a janela](mais_que_size.md) - Tela cheia, redimensionamento e múltiplas janelas
-- 7.4.1 [Uma janela de diálogo com um campo de texto](input_janela.md)
-  <!-- - 7.5.1 usando bibliotecas externas Python e Java) -->
+- 7.1.0 [Os "modos de uso" da biblioteca py5](os_modos_de_py5.md)'
+    - 7.1.1 [Usando várias abas no IDE e importando código de outros módulos](modulos.md) 
+    - 7.1.2 [Dicas para portar exemplos de Processing para Python com py5](java_para_python.md)
+    - 7.1.3 [Usando bibliotecas externas feitas para Processing Java](bibliotecas-java.md)
+- 7.2.1 [Manipulando a janela](mais_que_size.md) - Tela cheia, redimensionamento e múltiplas janelas
+- 7.3.1 [Uma janela de diálogo com um campo de texto](input_janela.md)
 
 ## Pequenos projetos e outros exemplos
 - Neste repositório
