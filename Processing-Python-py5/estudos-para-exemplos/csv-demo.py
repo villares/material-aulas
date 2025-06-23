@@ -17,6 +17,5 @@ def setup():
         v = float(item['valor'])
         rect(x, y, w, h)
         
-    save('csv.png')
         
         
