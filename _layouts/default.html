@@ -61,6 +61,7 @@ function iframeFix(aId, divId) {
 iframeFix("iframe_A", "iframe_DIV");
 
 // To add the buttons that send code blocks to a pyp5js py5-mode editor
+// looks for <!-- interactive --> comment before the code blocks
 const EDITOR_BASE_URL = "https://abav.lugaralgum.com/material-aulas/pyp5js/py5mode/";
 
 function encodeForEditor(code) {
@@ -89,7 +90,7 @@ function createEditorUrl(code, fullScreen = false) {
  */
 function createEditorButton(code) {
   const button = document.createElement("button");
-  button.textContent = "Open in Editor";
+  button.textContent = "Abrir no Editor Online";
   button.className = "editor-link-button";
   button.style.cssText = `
     background-color: #4CAF50;
@@ -111,7 +112,7 @@ function createEditorButton(code) {
   });
 
   // Add a tooltip
-  button.title = "Open on editor";
+  // button.title = "Open on editor";
   
   return button;
 }
@@ -123,7 +124,7 @@ function createEditorButton(code) {
  */
 function createCopyUrlButton(code) {
   const button = document.createElement("button");
-  button.textContent = "Copy URL";
+  button.textContent = "Copiar URL do Editor";
   button.className = "copy-url-button";
   button.style.cssText = `
     background-color: #2196F3;
@@ -154,14 +155,14 @@ function createCopyUrlButton(code) {
     }, 1500);
   });
 
-  button.title = "Copy editor URL to clipboard";
+  button.title = "Copy URL";
   
   return button;
 }
 
 /**
  * Copy text to clipboard
- * @param {string} text - Text to copy to clipboard
+ * @param {string} text
  */
 function copyTextToClipboard(text) {
   if (navigator.clipboard) {
@@ -201,53 +202,43 @@ function fallbackCopyTextToClipboard(text) {
 }
 
 /**
+ * Check if an element has an interactive comment before it
+ * @param {HTMLElement} codeContainer - The code container element
+ * @returns {boolean} - True if interactive comment is found before the element
+ */
+function hasInteractiveComment(codeContainer) {
+  let currentElement = codeContainer.previousSibling;
+  
+  // Check up to 3 previous siblings to find the comment
+  for (let i = 0; i < 3 && currentElement; i++) {
+    // Check if it's a comment node
+    if (currentElement.nodeType === Node.COMMENT_NODE) {
+      const commentText = currentElement.textContent.trim();
+      if (commentText === 'interactive') {
+        return true;
+      }
+    }
+    
+    // Move to previous sibling
+    currentElement = currentElement.previousSibling;
+  }
+  
+  return false;
+}
+
+/**
  * Process code blocks in the document to add editor buttons
  */
 function processCodeBlocks() {
-  // GitHub Pages renders markdown code blocks in different ways depending on the theme
-  // This selector tries to cover most common patterns
+  const allCodeBlocks = document.querySelectorAll('pre code');
   
-  // First attempt: Look for code blocks with the interactive class
-  // When using ```python-interactive in markdown, GitHub Pages typically adds a class
-  const interactiveBlocks = document.querySelectorAll([
-    '.language-python-interactive pre code',
-    '.language-javascript-interactive pre code',
-    '.language-js-interactive pre code',
-    '.highlighter-rouge.language-python-interactive .highlight pre.highlight code',
-    '.highlighter-rouge.language-javascript-interactive .highlight pre.highlight code',
-    '.highlighter-rouge.language-js-interactive .highlight pre.highlight code',
-    'pre.highlight-interactive code',
-    'div[class*="-interactive"] pre code'
-  ].join(', '));
-  
-  if (interactiveBlocks.length > 0) {
-    // Process the blocks marked as interactive
-    interactiveBlocks.forEach(addButtonsToCodeBlock);
-    console.log(`Added buttons to ${interactiveBlocks.length} interactive code blocks`);
-  } else {
-    // Fallback: If no interactive blocks found, look for classes with specific patterns
-    const alternativeSelector = [
-      // Common patterns for code blocks with interactive in the class name
-      '[class*="-interactive"]',
-      // If there are parent elements with -interactive in the class
-      'div[class*="-interactive"] pre',
-      'div[class*="-interactive"] code'
-    ].join(', ');
+  allCodeBlocks.forEach(codeBlock => {
+    const codeContainer = codeBlock.closest('pre');
     
-    const alternativeBlocks = document.querySelectorAll(alternativeSelector);
-    if (alternativeBlocks.length > 0) {
-      alternativeBlocks.forEach(element => {
-        // Find the actual code element
-        const codeElement = element.tagName === 'CODE' ? element : element.querySelector('code');
-        if (codeElement) {
-          addButtonsToCodeBlock(codeElement);
-        }
-      });
-      console.log(`Added buttons to ${alternativeBlocks.length} alternative interactive code blocks`);
-    } else {
-      console.log('No interactive code blocks found on this page');
+    if (codeContainer && hasInteractiveComment(codeContainer)) {
+      addButtonsToCodeBlock(codeBlock);
     }
-  }
+  });
 }
 
 /**
@@ -297,8 +288,8 @@ function addButtonsToCodeBlock(codeBlock) {
  */
 function initCodeBlockEnhancer() {
   processCodeBlocks();
-  console.log("Code Block Encoder initialized");
 }
+
 // Run initialization when DOM is fully loaded
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', initCodeBlockEnhancer);
@@ -306,14 +297,9 @@ if (document.readyState === 'loading') {
   initCodeBlockEnhancer();
 }
 
-
 </script>
 
-
-
 <script src="https://abav.lugaralgum.com/assets/scripts.js"></script>
-
-
 
   </body>
 </html>
