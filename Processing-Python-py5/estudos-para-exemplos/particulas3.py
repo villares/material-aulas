@@ -28,7 +28,7 @@ class Particula():
         if tamanho:
             self.tamanho = tamanho
         else:
-            self.tamanho = random(50, 200)
+            self.tamanho = random(10, 50)
         self.vx = random(-1, 1)
         self.vy = random(-1, 1)
         self.cor = color(random(256),  # R

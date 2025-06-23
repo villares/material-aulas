@@ -1,11 +1,17 @@
 # Particulas com orientação a objetos
 
+<!-- 
+![](assets/particulas3.gif)
+-->
+
 Vamos ver aqui alguns conceitos introdutórios de orientação a objetos:
+
 - Como definir uma classe e instanciar objetos;
 - Como definir e consultar atributos (variáveis de instância ou campos) de um objeto;
 - Como definir e invocar métodos de um objeto.
 
 Prerequisitos para aproveitar melhor este material:
+
 - Vocabulário básico de desenho, tal como a função `circle()` e controle de atributos gráficos `fill`, `stroke`, `no_stroke`, `no_fill` e `background`;
 - Conhecimento da estrutura `setup()`/`draw()` do py5, que vem do Processing;
 - Uso de variáveis, conceito de atribuição, escopos global e local;
@@ -20,8 +26,7 @@ Prerequisitos para aproveitar melhor este material:
 
 Para obter o efeito de movimento(animação de uma partícula) criaremos um par de variáveis globais `x` e `y`, que serão inicializadas no `setup()` com as coordenadas do meio da àrea de desenho. Note que o escopo global dessas variáveis precisa ser indicado com a palavra chave `global` quando pretendemos alterá-las.
 
-
-O código que vai em `draw()` tem a execução repetida continuamente, é o "laço principal" do * sketch*. Neste bloco vamos inicialmente limpar a tela com `background()` e em seguida invocar a função de desenho `circle()` na posição indicada pelas variáveis `x` e `y`, atualizar as variáveis de posição e por fim checar se estas estão além de um certo limite e precisam ser redefinidas para um novo ciclo da animação.
+O código que vai em `draw()` tem a execução repetida continuamente, é o "laço principal" do *sketch*. Neste bloco vamos inicialmente limpar a tela com `background()` e em seguida invocar a função de desenho `circle()` na posição indicada pelas variáveis `x` e `y`, atualizar as variáveis de posição e por fim checar se estas estão além de um certo limite e precisam ser redefinidas para um novo ciclo da animação.
 
 ```python
 tamanho = 50
@@ -45,6 +50,7 @@ def draw():
     if y > height + tamanho / 2:
         y = -tamanho / 2
 ```
+
 ## 1. Primeira aproximação de uma classe
 
 **Definindo a classe Partícula**
@@ -123,27 +129,32 @@ def draw():
     pc.desenha()
     pc.move()
 ```
+
 ```
 ...o código continua com a classe Particula mostrada anteriormente
 ```
+
 ## 3. Ampliando a classe Particula
 
-<img src="assets/particulas2.gif" align=right padding=20px>
+<img title="" src="assets/particulas2.gif" alt="" align="right">
 
 **Mudando o comportamento e adicionando outras propriedades.**
 
 O passo seguinte é dado ampliando o código da classe Particula.
 
 No método `__init__()`:
+
 1. Sorteio do tamanho, caso nenhum tenha sido fornecido quando o objeto é instanciado.
 2. Sorteio da velocidade, decomposta nos componentes horizontal `self.vx` e vertical `self.vy`
 3. Sorteio da cor, ligeiramente translúcida. 
 
 No método `desenha()`:
+
 1. Remoção do contorno com `no_stroke()`
 2. Aplicação da cor de preenchimento com `fill(self.cor)`.
 
 No método `move()`:
+
 1. Atualização da posição pela soma dos componentes de velocidade na posição
 2. Tratamento da saída do objeto da área de desenho por qualquer dos lados.
 
@@ -157,7 +168,7 @@ class Particula():
         if tamanho:
             self.tamanho = tamanho
         else:
-            self.tamanho = random(50, 200)
+            self.tamanho = random(10, 50)
         self.vx = random(-1, 1)
         self.vy = random(-1, 1)
         self.cor = color(random(256),  # R
@@ -222,4 +233,3 @@ def draw():
 ```
 
 > Baseado inicialmente em: VILLARES, A. B. A.; MOREIRA, D. DE C.; GOMES, M. R. [Ensino de programação em um contexto de exploração gráfica com Processing modo Python](https://villares.github.io/mestrado/VILLARES_MOREIRA_GOMES_GRAPHICA_2017). In: Anais GRAPHICA 2017 - XII International Conference on Graphics Engineering for Arts and Design. Anais…Araçatuba(SP) UNIP, 2017.
-
