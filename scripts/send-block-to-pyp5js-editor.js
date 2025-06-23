@@ -1,3 +1,4 @@
+
 // To add the buttons that send code blocks to a pyp5js py5-mode editor
 // looks for <!-- interactive --> comment before the code blocks
 const EDITOR_BASE_URL = "https://abav.lugaralgum.com/material-aulas/pyp5js/py5mode/";
@@ -28,7 +29,7 @@ function createEditorUrl(code, fullScreen = false) {
  */
 function createEditorButton(code) {
   const button = document.createElement("button");
-  button.textContent = "Abrir no Editor Online";
+  button.textContent = "Abrir no editor online";
   button.className = "editor-link-button";
   button.style.cssText = `
     background-color: #4CAF50;
@@ -49,24 +50,24 @@ function createEditorButton(code) {
     window.open(editorUrl, "_blank");
   });
 
-  // Add a tooltip
-  // button.title = "Open on editor";
+  // tooltip (não quero)
+  // button.title = "Abrir no editor online";
   
   return button;
 }
 
 /**
- * Create a "Copy URL" button that copies the editor URL to clipboard
- * @param {string} code - The code to include in the URL
- * @returns {HTMLElement} - The button element
+ * Create a button that copies the editor URL to clipboard
+ * @param {string} code 
+ * @returns {HTMLElement} 
  */
 function createCopyUrlButton(code) {
   const button = document.createElement("button");
-  button.textContent = "Copiar URL do Editor";
+  button.textContent = "Copiar URL do editor";
   button.className = "copy-url-button";
   button.style.cssText = `
     background-color: #2196F3;
-    border: none;
+    bordfullyer: none;
     color: white;
     padding: 5px 10px;
     text-align: center;
@@ -84,7 +85,7 @@ function createCopyUrlButton(code) {
     
     // Visual feedback for copy action
     const originalText = button.textContent;
-    button.textContent = "Copied!";
+    button.textContent = "Copiado!";
     button.style.backgroundColor = "#45a049";
     
     setTimeout(() => {
@@ -93,14 +94,14 @@ function createCopyUrlButton(code) {
     }, 1500);
   });
 
-  button.title = "Copy URL";
+  // button.title = "Copiar URL do editor online no clipboard";
   
   return button;
 }
 
 /**
  * Copy text to clipboard
- * @param {string} text
+ * @param {string} text - Text to copy to clipboard
  */
 function copyTextToClipboard(text) {
   if (navigator.clipboard) {
@@ -141,24 +142,29 @@ function fallbackCopyTextToClipboard(text) {
 
 /**
  * Check if an element has an interactive comment before it
- * @param {HTMLElement} codeContainer - The code container element
+ * @param {HTMLElement} element - The element to check
  * @returns {boolean} - True if interactive comment is found before the element
  */
-function hasInteractiveComment(codeContainer) {
-  let currentElement = codeContainer.previousSibling;
+function hasInteractiveComment(element) {
+  let currentElement = element.previousSibling;
   
-  // Check up to 3 previous siblings to find the comment
-  for (let i = 0; i < 3 && currentElement; i++) {
-    // Check if it's a comment node
-    if (currentElement.nodeType === Node.COMMENT_NODE) {
+  // Check the immediate previous sibling first (most common case)
+  if (currentElement && currentElement.nodeType === Node.COMMENT_NODE) {
+    const commentText = currentElement.textContent.trim();
+    if (commentText === 'interactive') {
+      return true;
+    }
+  }
+  
+  // Check up to 2 more previous siblings in case there are whitespace text nodes
+  for (let i = 0; i < 2 && currentElement; i++) {
+    currentElement = currentElement.previousSibling;
+    if (currentElement && currentElement.nodeType === Node.COMMENT_NODE) {
       const commentText = currentElement.textContent.trim();
       if (commentText === 'interactive') {
         return true;
       }
     }
-    
-    // Move to previous sibling
-    currentElement = currentElement.previousSibling;
   }
   
   return false;
@@ -168,13 +174,17 @@ function hasInteractiveComment(codeContainer) {
  * Process code blocks in the document to add editor buttons
  */
 function processCodeBlocks() {
-  const allCodeBlocks = document.querySelectorAll('pre code');
+  // Look for the GitHub Pages rendered code block structure
+  const codeContainers = document.querySelectorAll('div[class*="language-"][class*="highlighter-rouge"]');
   
-  allCodeBlocks.forEach(codeBlock => {
-    const codeContainer = codeBlock.closest('pre');
-    
-    if (codeContainer && hasInteractiveComment(codeContainer)) {
-      addButtonsToCodeBlock(codeBlock);
+  codeContainers.forEach(container => {
+    // Check if there's an interactive comment before this container
+    if (hasInteractiveComment(container)) {
+      // Find the code element inside this container
+      const codeElement = container.querySelector('code');
+      if (codeElement) {
+        addButtonsToCodeBlock(codeElement);
+      }
     }
   });
 }
