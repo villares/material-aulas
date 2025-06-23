@@ -24,6 +24,7 @@ Dá pra saber se o círculo está sainda a direta quando a posição `px` fica m
 
 ## O código completo
 
+<!-- interactive -->
 ```python
 raio = 50  # tamanho do raio do círculo
 vx = 2.5   # velocidade horizontal inicial
