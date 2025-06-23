@@ -60,6 +60,9 @@ São inúmeras as situações que produzem este tipo de valores, veja mais algun
 
 No exemplo a abaixo usamos uma estrutura `if`/ `else` para escolher a cor de preenchimento dos círculos, como resultado da comparação `mouse_y < 128`. Usamos o valor booleano de `is_mouse_pressed` (`True` ou `False`) em um `if` que determina se algum círculo yé desenhado ou não. Por fim usamos um `if` que combina dois valores usando `and`(**e**), `is_key_pressed` e a comparação de igualdade `==`, para decidir se deve apagar o desenho (`is_key_pressed and key == 'a'`).
 
+![exemplo condicional](assets/condicional.gif)
+
+<!-- interactive -->
 ``` python
 def setup():
     size(256, 256)
@@ -82,7 +85,6 @@ def draw():
     if is_key_pressed and key == 'a':    
         background(0, 100, 0)  # apague a tela com um fundo verde
 ```
-![exemplo condicional](assets/condicional.gif)
 
 ## Quadro de operadores
 

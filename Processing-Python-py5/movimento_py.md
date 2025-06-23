@@ -14,7 +14,7 @@ Tudo que é desenhado dentro de `draw()` é na verdade redesenhado cerca de 60 v
 
 Para se obter o efeito de uma animação de elementos se deslocando na tela é preciso ainda "limpar" o quadro no começo de cada `draw()` frequentemente com a instrução `background()`. Se desenharmos sem essa "limpeza" da tela os elementos "acumulam" ou "deixam um rastro".
 
-## Mantendo registro da posição e velocidade, e os atualizando
+## Mantendo e atualizando registros da posição e da velocidade
 
 Repare como a posição e velocidade do círculo é mantida em algumas variáveis, `px`, `py`, `vx` e `vy`, que precisam ser 'lembradas' entre os ciclos de repetição do `draw()` e dentro de `draw()` são modificadas. Isso é o que chamamamos de *variáveis globais*, em contraste com variáveis que criadas dentro do `draw()`, que seriam. *variáveis locais*. Leia mais sobre isso na página [Escopo: variáveis globais e locais](escopo_py.md). 
 
@@ -24,6 +24,7 @@ Dá pra saber se o círculo está sainda a direta quando a posição `px` fica m
 
 ## O código completo
 
+<!-- interactive -->
 ```python
 raio = 50  # tamanho do raio do círculo
 vx = 2.5   # velocidade horizontal inicial
