@@ -53,7 +53,7 @@ No exemplo abaixo usaremos o laço `while` testando se o valor de um ângulo `an
 
 O corpo do laço produz os vértices, que são pontos de um polígono em forma de estrela, a cada ciclo, e `ang` vai tendo o seu valor aumentado (`ang += passo`), até deixar de ser menor que `TWO_PI`, dessa forma encerrando o laço.
 
-```python
+```python-interactive
 def setup():
     size(400, 400)
     background(0)
