@@ -2,16 +2,9 @@
 
 # *Comma Separated Values*, um formato de intercâmbio primitivo, porém ainda útil
 
-Vamos agora falar sobre como ler e escrever dados simples em um arquivo CSV, o nome vem de *Comma Separated Values*, isto é, um arquivo texto com valores separados por vígula (mas às vezes se usam outros separadores como tabulções, no que teoricamente deveriam ser um TSV...).  Tanto o Processing como o a biblioteca padrão do Python tem ferramentas para ajudar a lidar com este formato.
+Vamos ver aqui como ler e escrever dados simples em um arquivo CSV, o nome vem de *Comma Separated Values*, isto é, um arquivo texto com valores separados por vígula (mas às vezes se usam outros separadores como tabulções, no que teoricamente deveriam ser um TSV...).  Tanto o Processing como o a biblioteca padrão do Python tem ferramentas para ajudar a lidar com este formato. 
 
-```
-sketch_csv(pasta/folder do sketch)
-  L  sketch_csv.py (o arquivo do seu programa)
-  L  data (uma pasta/folder)
-       L  dados.csv (o arquivo CSV)
-```
-
-Conteúdo do aquivo [`dados.csv`](assets/dados.csv):
+Para reproduzir o exemplo, você pode baixar o arquivo arquivo [`dados.csv`](assets/dados.csv), cujas primeiras linhas são mostradas trabaixo.
 
 ```
 nome, valor, area, largura, comprimento, x, y
@@ -19,17 +12,30 @@ A1, 800, 32, 2, 16, 0, 19
 A3, 2520, 252, 14, 18, 2, 17
 ...
 ```
-Exemplo que lê o arquivo
+Exemplo de código que lê o arquivo e desenha retângulos a partir das infotmações.
+Note que cada linha do arquivo se torna um pequeno dicionário, cujas chaves são os nomes das colunas (que podem ser encontrados em `reader.fieldnames`. Os valores são sempre *strings* e por vezes precisam ser convertidos em números.
+
+![](assets/csv.png)
 
 ```python
 import csv
 
-with open('dados.csv', newline='') as csvfile:
+with open('dados.csv') as csvfile:
     reader = csv.DictReader(csvfile)
-    for row in reader:
-        print(row['nome'], row['valor'])
-
-print(row)
+    print(reader.fieldnames)
+    # ['nome', 'valor', 'largura', 'comprimento', 'x', 'y']
+    linhas = list(reader)
+    
+def setup():
+    size(750, 750)
+    for item in linhas:
+        nome = item['nome']
+        x = int(item['x'])
+        y = int(item['y'])
+        w = int(item['largura'])
+        h = int(item['comprimento'])
+        v = float(item['valor'])
+        rect(x, y, w, h)
 ```
 
 # Assuntos relacionados
