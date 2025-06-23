@@ -19,7 +19,7 @@ with begin_shape():
     vertices(pontos)
 ```
 
-Existe um maneira alternativa de fazer isso usando a sintaxe chamada *compreensão de lista*, compare:
+Existe um maneira alternativa de fazer isso usando a sintaxe chamada *compreensão de listas*, compare:
 
 ```python
 pontos = [(i * 10, 50 + random(-25, 25)) for i in range(11)]
@@ -99,7 +99,7 @@ with begin_shape():
 
 ## Compreensão de conjuntos e dicionários
 
-Uma sintaze semelhante pode ser usada para criar um conjunto (*set*) ou um dicionário (*dict*). Neste primeiro exemplo, queremos manter apenas os valores únicos de áreas.
+Uma sintaxe semelhante à das compreensões de listas pode ser usada para criar um conjunto (*set*) ou um dicionário (*dict*). Neste primeiro exemplo, queremos manter apenas os valores únicos de áreas.
 
 ```python
 dimensoes_retangulos = [(10, 20), (20, 30), (10, 30), (30, 30), (30, 10), (5, 40)]
