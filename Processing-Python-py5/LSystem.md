@@ -91,6 +91,7 @@ Para simular o movimento de uma "caneta" fazendo linhas sucessivas, podemos move
 
 Veja abaixo um exemplo e o resultado que gera.
 
+<!-- interactive -->
 ```python
 def setup():
     size(400, 400)
@@ -129,13 +130,14 @@ Partindo de regras de substição aplicadas à uma frase inicial (axioma) é pos
 
 ![image](https://github.com/villares/material-aulas/assets/3694604/e0e6f78d-047c-4070-9218-4d1a7e91d183)
 
+<!-- interactive -->
 ```python
 axioma = "X"
 regras = {"X": "F+[[X]-X]-F[-FX]+X",
           "F": "FF"
           }
 
-tamanho = 10
+passo = 10
 angulo = 25
 iteracoes = 4  # repeticoes (voltas na aplicação das regras)
 xo, yo = 300, 500
@@ -155,8 +157,8 @@ def setup():
     translate(xo, yo)
     for simbolo in frase:
         if simbolo == "F":
-            line(0, 0, 0, -tamanho)  # desenha uma linha
-            translate(0, -tamanho)   # move a origem 
+            line(0, 0, 0, -passo)  # desenha uma linha
+            translate(0, -passo)   # move a origem 
         if simbolo == "+":
             rotate(radians(angulo)) 
         if simbolo == "-":
@@ -169,12 +171,15 @@ def setup():
 
 ## Uma versão com interatividade
 
+Esta versão permite controlar com o teclado o tamnaho das linhas (passo), ângulo e número de iterações (cuidado que muitas iterações podem tornar o sketch muito lento)>
+
+<!-- interactive -->
 ```python
 axioma = "X"
 regras = {"X": "F+[[X]-X]-F[-FX]+X",
           "F": "FF"
           }
-tamanho = 10
+passo = 10
 angulo = 25
 iteracoes = 4  # repeticoes (voltas na aplicação das regras)
 xo, yo = 300, 500
@@ -212,8 +217,8 @@ def desenha_sistema(simbolos):
     """
     for simbolo in simbolos:
         if simbolo == "F":
-            line(0, 0, 0, -tamanho)
-            translate(0, -tamanho)
+            line(0, 0, 0, -passo)
+            translate(0, -passo)
         if simbolo == "+":
             rotate(radians(angulo))
         if simbolo == "-":
@@ -224,11 +229,11 @@ def desenha_sistema(simbolos):
             pop_matrix()
 
 def key_pressed():
-    global tamanho, angulo, iteracoes, frase
+    global passo, angulo, iteracoes, frase
     if key == 'z':
-        tamanho -= 1  # tamanho = tamanho - 1
+        passo -= 1  # passo = passo - 1
     if key == 'x':
-        tamanho += 1
+        passo += 1
     if key == 'a':
         angulo -= 1
     if key == 's':
@@ -295,3 +300,4 @@ def draw():
         elif simbolo == ']':
             pop_matrix()
 ```
+> Esta última versão com 3D precisa modificações no editor online do pyp5js pois o p5.js tem a origem no centro da tela quando em 3D... esperimente este link com o [código modificado](https://abav.lugaralgum.com/material-aulas/pyp5js/py5mode/?sketch=YXhpb21hJTIwJTNEJTIwJ1gnJTBBcmVncmFzJTIwJTNEJTIwJTdCJTBBJTIwJTIwJTIwJTIwJ1gnJTNBJTIwJ0YlMkIlNUIlNUJYJTVELVglNUQtRiU1Qi1GWCU1RCUyQlgnJTJDJTBBJTIwJTIwJTIwJTIwJ0YnJTNBJTIwJ0ZGJyUyQyUwQSUyMCUyMCUyMCUyMCU3RCUwQXBhc3NvJTIwJTNEJTIwNSUwQWFuZ3VsbyUyMCUzRCUyMDI1JTIwJTIwJTIzJTIwYW5ndWxvJTIwZW0lMjBncmF1cyUwQWl0ZXJhY29lcyUyMCUzRCUyMDUlMEElMEFkZWYlMjBzZXR1cCgpJTNBJTBBJTIwJTIwJTIwJTIwZ2xvYmFsJTIwZnJhc2VfcmVzdWx0YWRvJTBBJTIwJTIwJTIwJTIwc2l6ZSg5MDAlMkMlMjA5MDAlMkMlMjBQM0QpJTBBJTIwJTIwJTIwJTIwZnJhc2VfaW5pY2lhbCUzRGF4aW9tYSUwQSUyMCUyMCUyMCUyMGZvciUyMF8lMjBpbiUyMHJhbmdlKGl0ZXJhY29lcyklM0ElMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBmcmFzZV9yZXN1bHRhZG8lMjAlM0QlMjAnJyUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMGZvciUyMHNpbWJvbG8lMjBpbiUyMGZyYXNlX2luaWNpYWwlM0ElMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBzdWJzdGl0dWlyJTIwJTNEJTIwcmVncmFzLmdldChzaW1ib2xvJTJDJTIwc2ltYm9sbyklMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBmcmFzZV9yZXN1bHRhZG8lMjAlM0QlMjBmcmFzZV9yZXN1bHRhZG8lMjAlMkIlMjBzdWJzdGl0dWlyJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIzJTIwcHJpbnQoZnJhc2VfaW5pY2lhbCUyQyUyMGZyYXNlX3Jlc3VsdGFkbyklMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBmcmFzZV9pbmljaWFsJTNEZnJhc2VfcmVzdWx0YWRvJTBBJTIwJTIwJTIwJTIwcHJpbnQobGVuKGZyYXNlX3Jlc3VsdGFkbykpJTBBJTBBZGVmJTIwZHJhdygpJTNBJTBBJTIwJTIwJTIwJTIwYmFja2dyb3VuZCgyMTAlMkMlMjAyMTAlMkMlMjAxNTApJTBBJTIwJTIwJTIwJTIwdHJhbnNsYXRlKC13aWR0aCUyMCUyRiUyMDIlMkMlMjAtaGVpZ2h0JTIwJTJGJTIwMiklMEElMjAlMjAlMjAlMjBzdHJva2Vfd2VpZ2h0KDMpJTBBJTIwJTIwJTIwJTIwYW5ndWxvJTIwJTNEJTIwMjUlMEElMjAlMjAlMjAlMjAlMjMlMjBhbmd1bG8lMjAlM0QlMjBtb3VzZV94JTIwJTJGJTIwNzAuMCUwQSUyMCUyMCUyMCUyMHRyYW5zbGF0ZSh3aWR0aCUyMCUyRiUyMDIlMkMlMjBoZWlnaHQlMjAqJTIwMC44KSUwQSUyMCUyMCUyMCUyMHJvdGF0ZV95KGZyYW1lX2NvdW50JTIwJTJGJTIwMTAwLjApJTBBJTIwJTIwJTIwJTIwZm9yJTIwc2ltYm9sbyUyMGluJTIwZnJhc2VfcmVzdWx0YWRvJTNBJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwaWYlMjBzaW1ib2xvJTIwJTNEJTNEJTIwJ1gnJTNBJTIwJTIwJTIwJTIzJTIwc2UlMjBzaW1ib2xvJTIwZm9yJTIwaWd1YWwlMjBhJTIwJ1gnJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwcGFzcyUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMGVsaWYlMjBzaW1ib2xvJTIwJTNEJTNEJTIwJ0YnJTNBJTIwJTIwJTIwJTIzJTIwZWxzZSUyMGlmJTIwKHNlbiVDMyVBM28lMjBzZSklMjBvJTIwc2ltYm9sbyUyMCVDMyVBOSUyMEYlMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBsaW5lKDAlMkMlMjAwJTJDJTIwMCUyQyUyMC1wYXNzbyklMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjB0cmFuc2xhdGUoMCUyQyUyMC1wYXNzbyklMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjByb3RhdGVfeShyYWRpYW5zKC1hbmd1bG8pKSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMGVsaWYlMjBzaW1ib2xvJTIwJTNEJTNEJTIwJyUyQiclM0ElMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjByb3RhdGUocmFkaWFucygtYW5ndWxvKSklMjAlMjAlMjMlMjAlMkIlMjByYW5kb20oLTUlMkMlMjA1KSkpJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwZWxpZiUyMHNpbWJvbG8lMjAlM0QlM0QlMjAnLSclM0ElMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjByb3RhdGUocmFkaWFucyglMkJhbmd1bG8pKSUyMCUyMCUyMyUyMCUyQiUyMHJhbmRvbSgtNSUyQyUyMDUpKSklMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBlbGlmJTIwc2ltYm9sbyUyMCUzRCUzRCUyMCclNUInJTNBJTBBJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwJTIwcHVzaF9tYXRyaXgoKSUwQSUyMCUyMCUyMCUyMCUyMCUyMCUyMCUyMGVsaWYlMjBzaW1ib2xvJTIwJTNEJTNEJTIwJyU1RCclM0ElMEElMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjAlMjBwb3BfbWF0cml4KCk%3D)
