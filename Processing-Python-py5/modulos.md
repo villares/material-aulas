@@ -1,21 +1,21 @@
 # Usando as abas no Thonny IDE e importando código de outros módulos
 
-Para organizar melhor um *sketch* mais longo é comum separar as definições de classes e outras funções em "arquivos secundários", e é comum também trabalhar com esses vários arquivos abertos em diferentes abas do Thoony. 
+<!--
+![](assets/thumb-module.gif)
+-->
 
-No Processing Java a integração entre arquivos é feita magicamente para você unindo todas as abas abertas do Processing IDE no modo Java, como se tudo fossem um só arquivo. Com o modo Python, e agora no Thonny IDE com py5, é diferente, você precisa pedir para o arquivo principal "importar" código dos outros, e aqui vamos ver um pouco sobre como isso funciona.
+Para organizar melhor um *sketch* mais longo é comum separar as definições de classes e outras funções em "arquivos secundários", e é comum também trabalhar com esses vários arquivos abertos em diferentes abas do Thonny.  No Processing Java a integração entre arquivos é feita magicamente para você unindo todas as abas abertas do Processing IDE no modo Java, como se tudo fossem um só arquivo. Com o antigo modo Python, e agora no Thonny IDE com py5, é diferente, você precisa pedir para o arquivo principal "importar" código dos outros, como se eles fossem um biblioteca. Vejamos como isso funciona.
 
 ## Exemplos de importação de módulos em Python
 
-Cada arquivo que escrevemos tem o potencial de conter código que se comporta da mesma maneira como um *módulo* da biblioteca padrão em Python, veja alguns exemplos de importação, as instruções que trazem os nomes de outros módulos para você usar no seu programa.
-
-```
-import random as rnd         # traga o módulo random da biblioteca padrão, com outro nome, usando o apelido rnd
-from random import choice    # traga a função choice() do módulo random
-from nome_arquivo import *   # traga todos os nomes de nome_arquivo.py (não é muito recomendado)
-from nome_arquivo import uma_funcao, outra_funcao, Uma_classe, Outra_classe   # traga estes nomes no nome_arquivo.py
-``` 
+Cada arquivo que escrevemos tem o potencial de conter código que se comporta da mesma maneira como uma uma biblioteca, isto é, um arquivo é considerado um módulo (*module*), que pode ser um arquivo baixado e instalado a partir de um pacote ou biblioteca (*package* / *library*)), ou pode ser também da biblioteca padrão do Python, que já vem com o interpretador. Veja alguns exemplos de importação, as instruções que trazem os nomes de outros módulos para você usar no seu programa.
 
 ### Exemplo de importação da biblioteca padrão do Python
+
+```python
+import random as rnd         # traga o módulo random da biblioteca padrão, com outro nome, usando o apelido rnd
+from random import choice    # traga a função choice() do módulo random
+```
 
 A instrução `import` e suas variantes são usadas para importar ferramentas da biblioteca padrão do Python, módulos que vem junto com o interpretador Python contendo diversas funções e classes, mas que só ficam disponíveis quando requisitados.
 
@@ -43,6 +43,11 @@ sorteio = rnd.choice(colecao)
 
 As funções `setup()`, `draw()` assim como as que são acionadas por eventos, por exemplo, `mouse_dragged()` ou `key_pressed()`, precisam ficar no mesmo arquivo principal.
 
+```python
+from nome_arquivo import *   # traga todos os nomes de nome_arquivo.py (não é muito recomendado)
+from nome_arquivo import uma_funcao, outra_funcao, Uma_classe, Outra_classe   # traga estes nomes no nome_arquivo.py
+``` 
+
 Saba também que, em princípio, quando está executando o código que está em um outro módulo, o Python não conhece o vocabulário da biblioteca py5, isso pode não ser um problema, mas também pode ser remediado com a extratégia [explicada na documentação do py5](http://py5coding.org/content/importing_py5_code.html) que consiste em adicionar um "comentário especial" para marcar arquivos secundários com código que queremos separar, e que use as funções do py5 no modo importado.
 
 Arquivo principal `meu_sketch.py`:
@@ -67,7 +72,7 @@ def pincel_quadrado(tam):
     square(mouse_x, mouse_y, tam)
 ```
 
-# Glossário
+## Glossário
 
 - [módulo](https://penseallen.github.io/PensePython2e/03-funcoes.html#termo:módulo)
    Um arquivo que contém uma coleção de funções relacionadas e outras definições.
