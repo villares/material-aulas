@@ -99,13 +99,15 @@ with begin_shape():
 
 ## Compreensão de conjuntos e dicionários
 
+Uma sintaze semelhante pode ser usada para criar um conjunto (*set*) ou um dicionário (*dict*). Neste primeiro exemplo, queremos manter apenas os valores únicos de áreas.
+
 ```python
 dimensoes_retangulos = [(10, 20), (20, 30), (10, 30), (30, 30), (30, 10), (5, 40)]
 areas_sem_repetir = {a * b for a, b in dimensoes_retangulos}
 print(areas_sem_repetir) #  set([900, 200, 300, 600])
 ```
 
-Um dicionário "pré-calculado" das áreas
+E num segundo exemplo um pouco forçado, vamos fazer um dicionário "pré-calculado" das áreas dos retângulos.
 
 ```
 areas_dict = {(a, b): a * b for a, b in dimensoes_retangulos}
