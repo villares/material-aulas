@@ -350,8 +350,8 @@ class begin_contour():
     def __exit__(self,  exc_type, exc_value, exc_tb):
         _P5_INSTANCE.endContour()
 
-class begin_shape(*args):
-    def __init__(self):
+class begin_shape():
+    def __init__(self, *args):
         _P5_INSTANCE.beginShape(*args)
 
     def __enter__(self):
