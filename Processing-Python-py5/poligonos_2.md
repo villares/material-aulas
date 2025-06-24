@@ -1,68 +1,6 @@
 # Desenhando polígonos - II
 # Mais sobre polígonos e outras "polilinhas"
 
-<!-- para o thumbnail do sumário
-![](assets/estrelas.png)
--->
-
-## Uma forma alternativa ao `begin_shape()`/`close_shape()`
-
-O Python tem uma estratégia especial, que é aproveitada por quem prepara as bibliotecas para nós, para quando é preciso "começar" uma operação e depois de um certo ponto do programa garantir que ela é "encerrada"; 
-
-Nos exemplos iniciais de polígonos que vimos fizemos uso do par `begin_shape()` e `end_shape()` para produzir os desenhos abaixo.
-
-![e4](assets/beginShape_endShape.png)
-
-<!-- editor-pyp5js -->
-```python
-size(400, 200)
-
-begin_shape()  # inicia o desenho do polígono da esquerda
-vertex(10, 10)
-vertex(50, 50)
-vertex(190, 30)
-vertex(90, 150)
-vertex(30, 100)
-end_shape()  # encerra o desenho de um polígono aberto
-
-begin_shape()  # inicia o desenho do polígono da direita
-vertex(210, 10)
-vertex(250, 50)
-vertex(390, 30)
-vertex(290, 150)
-vertex(230, 100)
-end_shape(CLOSE)  # encerra o desenho de um polígono fechado
-```
-
-A nova  estratégia propõe que você crie um "contexto" em que a operação está acontecendo com a palavra chave `with`. É usado `with` e uma chamada para uma função que cria um *gerenciador de contexto*. Então você indica pela indentação do código as coisas que precisam acontecer naquele contexto, por exemplo enquanto o o `begin_shape()` está em ação. Quando a indentação acaba, o contexto se encerra, e, o *gerenciador de contexto*, cuida de encerrar o que tiver que ser encerrado. Veja como é possível desenhar os mesmos polígonos anteriores com essa estratégia.
-
-<!-- editor-pyp5js -->
-```python
-size(400, 200)
-
-with begin_shape():  # inicia o polígono aberto
-    vertex(10, 10)
-    vertex(50, 50)
-    vertex(190, 30)
-    vertex(90, 150)
-    vertex(30, 100)
-# acaba a indentação e terminou o desenho do polígono
-
-with begin_closed_shape():  # inicia o polígono fechado
-    vertex(210, 10)
-    vertex(250, 50)
-    vertex(390, 30)
-    vertex(290, 150)
-    vertex(230, 100)
-# aqui já acabou o desenho do polígono
-```
-
-O resultado em desenho é exatamente o mesmo.
-
-![image](https://user-images.githubusercontent.com/3694604/189493248-0bb81ba8-955a-43d8-8ba2-a077bda4c6f6.png)
-
-
-
 ## Calculando os pontos com um laço de repetição
 
 Podemos calcular as coordenadas dos vértices dentro de um laço de repetição. Veja este exemplo de um função que desenha uma estrela.
@@ -92,6 +30,61 @@ def estrela(cx, cy, pontas, raio1, raio2):
 
 ![](assets/estrelas.png)
 
+## Uma forma alternativa ao `begin_shape()`/`close_shape()`
+
+O Python tem uma estratégia especial, chamada "gerenciador de contexto" que é aproveitada por quem prepara as bibliotecas para nós, para quando é preciso "começar" uma operação e depois de um certo ponto do programa garantir que ela é "encerrada"; 
+
+Nos exemplos iniciais de polígonos que vimos fizemos uso do par `begin_shape()` e `end_shape()` para produzir os desenhos abaixo.
+
+![e4](assets/beginShape_endShape.png)
+
+<!-- editor-pyp5js -->
+```python
+size(400, 200)
+
+begin_shape()  # inicia o desenho do polígono da esquerda
+vertex(10, 10)
+vertex(50, 50)
+vertex(190, 30)
+vertex(90, 150)
+vertex(30, 100)
+end_shape()  # encerra o desenho de um polígono aberto
+
+begin_shape()  # inicia o desenho do polígono da direita
+vertex(210, 10)
+vertex(250, 50)
+vertex(390, 30)
+vertex(290, 150)
+vertex(230, 100)
+end_shape(CLOSE)  # encerra o desenho de um polígono fechado
+```
+
+A nova  estratégia propõe que você crie um "contexto" em que a operação está acontecendo com a palavra chave `with`. É usado `with` e uma chamada para criar um "gerenciador de contexto". Então você indica pela indentação do código as coisas que precisam acontecer naquele contexto, por exemplo enquanto o o `begin_shape()` está em ação. Quando a indentação acaba, o contexto se encerra, e, o gerenciador de contexto cuida de encerrar o que tiver que ser encerrado. Veja como é possível desenhar os mesmos polígonos anteriores com essa estratégia.
+
+<!-- editor-pyp5js -->
+```python
+size(400, 200)
+
+with begin_shape():  # inicia o polígono aberto
+    vertex(10, 10)
+    vertex(50, 50)
+    vertex(190, 30)
+    vertex(90, 150)
+    vertex(30, 100)
+# acaba a indentação e terminou o desenho do polígono
+
+with begin_closed_shape():  # inicia o polígono fechado
+    vertex(210, 10)
+    vertex(250, 50)
+    vertex(390, 30)
+    vertex(290, 150)
+    vertex(230, 100)
+# aqui já acabou o desenho do polígono
+```
+
+O resultado em desenho é exatamente o mesmo.
+
+![image](https://user-images.githubusercontent.com/3694604/189493248-0bb81ba8-955a-43d8-8ba2-a077bda4c6f6.png)
 
 ## Usando pontos de uma estrutura de dados
 
@@ -159,7 +152,7 @@ def setup():
 
 ### Uma função para desenhar polígonos com furos
 
-Imagine uma função que desenha uma forma poligonal baseada em vértices (*Py5Shape*) com furos se mandarmos uma lista de pontos, mais uma lista de furos com listas de pontos dentro.
+Imagine uma função que desenha uma forma poligonal baseada em vértices com furos se mandarmos uma lista de pontos, mais uma lista de furos com listas de pontos dentro.
 
 <!-- editor-pyp5js -->
 ```python
@@ -177,13 +170,13 @@ def poly_shape(pts, holes=None, closed=True):
     Note que `holes` espera uma sequencias de sequencia de pontos, que precisam estar
     em sentido anti-horário. Por default faz um polígono fechado.
     """
-    begin_shape()  # inicia o Py5Shape
+    begin_shape()  # inicia a forma externa
     vertices(pts)
-    if holes:
+    if holes:  # as formas dos furos
         for hole in holes:
-            with begin_contour(): 
-                vertices(hole)
-    # encerra o Py5Shape
+            with begin_contour():  # usando um gerenciador de contexto
+                vertices(hole)     # vertices() aceita vários vértices de uma vez
+    # Duas opções de encerramento
     if closed:
         end_shape(CLOSE)
     else:
