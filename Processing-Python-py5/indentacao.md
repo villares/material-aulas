@@ -39,6 +39,7 @@ A função `setup()` vai ser executada apenas uma vez no começo, e a função `
 
 Repare como a indentação é o que determina o que está dentro de cada função.
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(400, 400)
