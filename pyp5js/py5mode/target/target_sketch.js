@@ -1740,10 +1740,33 @@ event_functions = {
 start_p5(preload, setup, draw, event_functions)
 `;
 
+function preprocessCode(code) {
+  // Check if the code contains a setup definition
+  if (code.indexOf('def setup') === -1) {
+    // If not, wrap the entire code inside a new setup function
+    const lines = code.trim().split('\n');
+    const indentedLines = lines.map(function(line) {
+      return '  ' + line;
+    });
+    code = 'def setup():\n' + indentedLines.join('\n');
+  }
+  // Check if the code contains a size() function call
+  if (code.indexOf('size(') === -1) {
+    // Find the indentation level of the first line inside the setup function
+    const setupIndex = code.indexOf('def setup');
+    const setupEndIndex = code.indexOf('\n', setupIndex);
+    const setupLine = code.substring(setupEndIndex + 1);
+    const indentation = setupLine.match(/^ */)[0];
+    // add size(100, 100) as the first line of the setup definition
+    code = code.replace('def setup():', 'def setup():\n' + indentation + 'size(100, 100)');
+  }
+  return code;
+}
+
 function runCode() {
     let code = [
         placeholder,
-        userCode,
+        preprocessCode(userCode),
         wrapperContent,
         startCode,
     ].join('\n');
