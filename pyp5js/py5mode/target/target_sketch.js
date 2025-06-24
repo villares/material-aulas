@@ -809,11 +809,15 @@ def text_descent(*args):
 def load_font(*args):
     return _P5_INSTANCE.loadFont(*args)
 
+def create_font(*args): # py5 compatibility
+    print('Sorry, create_font() is unavailable in pyp5js!')
+
 def text(*args):
     return _P5_INSTANCE.text(*args)
 
-def text_font(*args):
-    return _P5_INSTANCE.textFont(*args)
+def text_font(*args): # py5 compatibility
+    if args[0]:
+        return _P5_INSTANCE.textFont(*args)
 
 def orbit_control(*args):
     return _P5_INSTANCE.orbitControl(*args)
