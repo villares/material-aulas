@@ -420,7 +420,7 @@ def no_loop(*args):
 def loop(*args):
     return _P5_INSTANCE.loop(*args)
 
-class push():
+class push():  # py5  compatibility
     def __init__(self):
         _P5_INSTANCE.push()
 
@@ -745,6 +745,13 @@ def random_seed(*args):
 def random(*args):
     return _P5_INSTANCE.random(*args)
 
+def random_int(*args):  # py5 compatibility
+    *a, b = args
+    return int(_P5_INSTANCE.random(*a, b + 1))
+
+def random_choice(seq):  # py5 compatibility
+    return seq[int(_P5_INSTANCE.random(len(seq)))]
+
 def random_gaussian(*args):
     return _P5_INSTANCE.randomGaussian(*args)
 
@@ -802,11 +809,15 @@ def text_descent(*args):
 def load_font(*args):
     return _P5_INSTANCE.loadFont(*args)
 
+def create_font(*args): # py5 compatibility
+    print('Sorry, create_font() is unavailable in pyp5js!')
+
 def text(*args):
     return _P5_INSTANCE.text(*args)
 
-def text_font(*args):
-    return _P5_INSTANCE.textFont(*args)
+def text_font(*args): # py5 compatibility
+    if args[0]:
+        return _P5_INSTANCE.textFont(*args)
 
 def orbit_control(*args):
     return _P5_INSTANCE.orbitControl(*args)
@@ -953,6 +964,7 @@ def createCanvas(*args):
 def size(*args):
     canvas = createCanvas(*args)
     background(200) # py5 compatibility
+    fill(255) # py5 compatibility (for text default color)
     return canvas
     
 def __deviceMoved(e):
