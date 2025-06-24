@@ -420,7 +420,7 @@ def no_loop(*args):
 def loop(*args):
     return _P5_INSTANCE.loop(*args)
 
-class push():
+class push():  # py5  compatibility
     def __init__(self):
         _P5_INSTANCE.push()
 
