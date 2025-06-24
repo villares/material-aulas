@@ -18,6 +18,7 @@ Note que se você entregar um número **`a`** fora da faixa de origem indicada(e
 
 Em um caso de uso bem simples, o `remap()` podemos transformar o valor da posição horizontal do mouse, `mouse_x`, que é um número entre ** 0 ** e a largura da área de desenho(`width`), em um valor para controlar elementos do desenho(na faixa que desejarmos).  No exemplo abaixo, cinzas entre preto e branco podem são criados com números na faixa entre ** 0 ** e ** 255**, e um círculo vai ser movido entre as posições ** x ** de ** 100 ** a ** 300**.
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(400, 400)
@@ -54,6 +55,7 @@ Podemos também obter cores intermediárias com a função `lerp_color()`, um * 
 
 Veja exemplos de uso abaixo.
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(400, 400)
@@ -76,9 +78,8 @@ def draw():
 ```
 ![](assets/lerp_3b.gif)
 
+<!-- editor-pyp5js -->
 ```python
-
-
 def setup():
     size(400, 400)
 

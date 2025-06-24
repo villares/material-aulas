@@ -14,6 +14,7 @@ Em uma função `easing(p)` um `p = 0` devolve **0** e `p = 1` produz **1**, mas
 
 Vejamos um exemplo que fizemos inicialmente na explicação do `remap()` de um círculo que anda e vai de preto para branco, mas agora usando `lerp()` e uma função de *easing* exponencial 'sigmóide', na saída e na chegada(*in* e *out*).
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(400, 400)

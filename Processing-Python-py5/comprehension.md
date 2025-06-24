@@ -8,6 +8,7 @@
 
 ![](assets/random_poly.png)
 
+<!-- editor-pyp5js -->
 ```python
 for i in range(11):
     x = i * 10
@@ -21,6 +22,7 @@ with begin_shape():
 
 Existe um maneira alternativa de fazer isso usando a sintaxe chamada *compreensão de listas*, compare:
 
+<!-- editor-pyp5js -->
 ```python
 pontos = [(i * 10, 50 + random(-25, 25)) for i in range(11)]
 

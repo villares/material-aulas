@@ -45,6 +45,7 @@ def rect_over_rect(x1, y1, w1, h1, x2, y2, w2, h2):
 
 Aa funçao `rect_in_area()` responde se um primeito retângulo está completamente dentro de um segundo retângulo.
 
+<!-- editor-pyp5js -->
 ```python
 
 def setup():
@@ -74,6 +75,7 @@ def rect_in_area(xm, ym, wm, hm, xa, ya, wa, ha):
 
 Um dos mais importantes problemas da geometria comptutacional, esta função, baseada em [Point Inclusion in Polygon Test](https://wrf.ecse.rpi.edu/Research/Short_Notes/pnpoly.html) de W. Randolph Franklin, recebe as coordenadas de um ponto e um iterável com pontos (ou tuplas de coordenadas) representando um polígono.
 
+<!-- editor-pyp5js -->
 ```python
 poly_pts = ((100, 100), (200, 100), (150, 150), (200, 200), (100, 200))
 
@@ -123,7 +125,7 @@ def draw():
     with begin_closed_shape():
         vertices(poly_pts)
 ```
-
+> este último exemplo não funciona no editor online.
 
 
 

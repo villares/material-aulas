@@ -47,6 +47,7 @@ Note que a função `random()` em Python não recebe argumentos (isto é não va
 - Ou ainda a função `random_int()` do py5, que funciona da mesma maneira. 
     ![image](https://user-images.githubusercontent.com/3694604/191616197-420869d9-1be3-4ea7-a3db-fbaec345c5c6.png)
     
+<!-- editor-pyp5js -->
     ```python
     # Um outro exemplo
     for _ in range(100):
@@ -72,6 +73,7 @@ print(sorteio)
 
 Veja também outro exemplo, mais visual.
 
+<!-- editor-pyp5js -->
 ```python
 from random import choice
 
@@ -125,6 +127,8 @@ A coleção precisa ser ordenada e mutável, como uma lista, não pode ser uma t
 
 Veja um outro exemplo de `shuffle()`, embaralhando uma lista de tuplas que representam as posições em uma grade. As cores e os números são relativos à ordem dos elementos na lista (0, vermelho) é o primeiro quadrado da lista.
 
+
+<!-- editor-pyp5js -->
 ```python
 from random import shuffle 
 
@@ -188,6 +192,7 @@ r = rnd.random() * 100
 
 Modificando o exemplo anterior com `shuffle`.
 
+<!-- editor-pyp5js -->
 ```python
 from random import shuffle, seed
 
@@ -219,6 +224,7 @@ def draw():
 
 Neste exemplo abaixo usamos uma semente para manter 'congelados' os números gerados por `random()` entre frames do `draw()`, mantendo a interatividade de ajuste do ângulo da árvore com o mouse. Quando uma imagem é exportada, o nome do arquivo contém a semente (_seed_) do gerador de números pseudoaleatórios.
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     global seed

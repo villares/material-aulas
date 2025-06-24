@@ -20,6 +20,7 @@ Caso o mouse esteja dentro do círculo quando for apertado, mudamos `arrastando`
 
 3. Dentro de `mouse_dragged()`, executado quando o mouse é movido apertado, isto é, em 'arraste' (*drag*), se o indicador `arrastando` for `True`, indicando que o círculo estava sob o mouse, vamos atualizar as variáveis globais `x_circulo` e `y_circulo` com o deslocamento do mouse. O deslocamento é obtido pela diferença da posição atual do mouse, `mouse_x` e `mouse_y`, para a posição imediatamente anterior(*previous*) que temos com`pmouse_x` e `pmouse_y`.
 
+<!-- editor-pyp5js -->
 ```python
 arrastando = False
 x_circulo, y_circulo = 150, 150
@@ -77,6 +78,7 @@ Para acompanhar o próximo exemplo você precisa estar familiarizado com[sequên
 
 3. A função `mouse_dragged()`, caso `arrastando` não seja `None`, é criada uma nova tupla com a posição atualizada do círculo e é alterada a lista na posição indicada por `arrastando`.
 
+<!-- editor-pyp5js -->
 ```python
 arrastando = None  # None quer dizer nenhum círculo sendo arrastado
 circulos = []  # lista com coordenadas e tamanhos dos círculos

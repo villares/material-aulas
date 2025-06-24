@@ -13,6 +13,7 @@ Um exemplo clássico de desenho que tira partido de uma função recursiva é um
 
 ![imagem de uma forquilha](assets/recursividade-0.png)
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(500, 500)
@@ -41,6 +42,7 @@ A solução para se obter o desenho abaixo é limitar a chamada recursiva a `gal
 
 ![Imagem da árvore recursiva](assets/recursividade-1.png)
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(500, 500)
@@ -70,6 +72,7 @@ Por fim, vejamos um exemplo interativo em que o ângulo entre os galhos da árvo
 
 <iframe src="https://abav.lugaralgum.com/sketch-a-day/2019/sketch_191025pybr2019/index.html" width=500 height=500> Exemplo interativo com pyp5js</iframe>
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(500, 500)
@@ -99,6 +102,7 @@ No exemplo a seguir uma função `grade()`que desenha uma grade feita por grades
 
 ![](assets/grade_recursiva.png)
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(600, 600)

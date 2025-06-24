@@ -4,14 +4,13 @@ Um exemplo de como usar a rodinha do mouse para controlar o desenho, por meio da
 
 ![rodinha](assets/rodinha_mouse.gif)
 
+<!-- editor-pyp5js -->
 ```python
 tamanho = 100
-
 
 def setup():
     size(400, 400)
     stroke_weight(3)
-
 
 def draw():
     background(0, 0, 200)
@@ -28,8 +27,6 @@ def mouse_wheel(event):
     global tamanho
     movimento_roda = event.get_count()
     tamanho += movimento_roda
-
-
 ```
 
 # Um exemplo mais extenso
@@ -38,6 +35,7 @@ O exemplo a seguir amplia o código de[arrastar círculos](arrastando_circulos.m
 
 ![rodinha](assets/rodinha_mouse_2.gif)
 
+<!-- editor-pyp5js -->
 ```python
 arrastando = None  # None quer dizer nenhum círculo sendo arrastado
 circulos = []  # lista com coordenadas e tamanhos dos círculos

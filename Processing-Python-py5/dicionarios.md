@@ -78,6 +78,7 @@ letras_chave.pop('D', None) # Seguro, e devolve None se não houver a chave.
 
 ### Peças de um tabuleiro em um dicionário com tuplas como chaves
 
+<!-- editor-pyp5js -->
 ```python
 """
 Um tabuleiro que permite acrescentar e remover peças com o clique do mouse

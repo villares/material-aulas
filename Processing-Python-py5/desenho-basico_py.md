@@ -1,7 +1,9 @@
 # Primeiros passos e desenho básico
 
-Se você seguiu os passos [para instalar Thonny IDE com o py5](https://abav.lugaralgum.com/como-instalar-py5) , verifique se a opção *imported mode* está ativada no menu **py5** e experimente digitar o código abaixo no editor de código, e, em seguida, clique no botão com a seta triangular para frente (executar/*run*):
+Se você seguiu os passos [para instalar Thonny IDE com o py5](https://abav.lugaralgum.com/como-instalar-py5) , verifique se a opção *imported mode* está ativada no menu **py5** e experimente digitar o código abaixo no editor de código, e, em seguida, clique no botão com a seta triangular para frente (executar/*run*). 
+<sub>Alguns dos exemplos deste material funcionam no editor [pyp5js adaptado](https://abav.lugaralgum.com/material-aulas/pyp5js/py5mode), e podem ser editados clicando no botão "Abrir no editor online".<\sub> 
 
+<!-- editor-pyp5js -->
 ```python
 # área de desenho, largura (width) 400, altura (height) 400
 size(400, 400)
@@ -20,6 +22,7 @@ Experimente alterar os números entre parênteses e executar novamente!
 
 Usamos a função `size()` para indicar o tamanho da área de desenho que desejamos(sem ela é gerada uma pequena tela de 100 por 100 pixels). Processing nos oferece automaticamente duas variáveis, os nomes `width` e `height`, que referenciam os valores de largura e altura da área de desenho, respectivamente. Podemos mostrar esses valores na parte de baixo da janela, o *console* ou *shell*, usando a função `print()` (exibir).
 
+<!-- editor-pyp5js -->
 ```python
 size(400, 400) # define o tamanho da área de deseno (w, h)
 print(width)   # exibe no console largura atual da tela
@@ -36,6 +39,7 @@ Note que o eixo X cresce para a direita como de costume(nas aulas de matemática
 
 ## Desenhando algumas formas
 
+<!-- editor-pyp5js -->
 ```python
 rect(20, 10, 40, 80)     # retângulo (x, y, largura, altura)
 ellipse(10, 20, 50, 80)  # oval (x, y, largura, altura)
@@ -53,6 +57,7 @@ Repare como os elementos desenhados por último sobrepõe aqueles desenhados ant
 
 Para mudar as cores do preenchimento branco e do traço de contorno preto que são usadas inicialmente para desenhar as formas, podemos indicar 3 números de 0 a 255 para definir uma combinação de vermelho (*Red*), verde (*Green*) e azul (*Blue*). É preciso definir a cor *antes* de pedir o desenho de uma forma!
 
+<!-- editor-pyp5js -->
 ```python
 fill(0, 255, 0)         # preenchimento com verde máximo Red:0 Green:255 Blue:0
 circle(50, 50, 50, 50)  # produz um círculo verde
@@ -63,6 +68,7 @@ circle(50, 50, 50, 50)  # produz um círculo verde
 
 Uma outra maneira de indicar cores é com a notação hexadecimal, `'#RRGGBB`. No exemplo abaixo, FF é 255 em hexadecimal, então `#00FF00` equivale a 0 de vermelho, 255 de verde , e 0 de azul, que resulta no mesmo círculo verde.
 
+<!-- editor-pyp5js -->
 ```python
 fill('#00FF00')  # preenchimento verde
 circle(50, 50, 50, 50)  # produz um círculo verde
@@ -70,6 +76,7 @@ circle(50, 50, 50, 50)  # produz um círculo verde
 
 É possível ajustar a cor de preenchimento de uma forma com `fill()` a cor de traço do contorno com `stroke()`, pedir uma forma sem preenchimento com `no_fill()` ou sem traço de contorno com `no_stroke()`. A espessura do traço de contorno pode ser controlada com `stroke_weight()`.
 
+<!-- editor-pyp5js -->
 ```python
 fill(255, 0, 0)     # cor de preenchimento vermelha
 no_stroke()         # sem traço de contorno
@@ -86,6 +93,7 @@ circle(50, 50, 50)  # produz um círculo vazado com contorno verde
 
 O fundo preenche a área de desenho com uma cor e apaga qualquer coisa que já tenha sido desenhada (o que vai se mostrar útil quando fizermos animações).
 
+<!-- editor-pyp5js -->
 ```python
 square(10, 10, 80)       # não vai ser visto!
 background(255, 255, 0)  # fundo amarelo, limpa a tela 
@@ -111,6 +119,7 @@ Comentários são anotações, pedaços de texto no código, que não são execu
 
 Os Comentários são feitos principalmente para o benefício as pessoas que colaboram com você e estão lendo o código, como, por exemplo, uma pessoa muito importante que é você-daqui-a-uma-semana, entender qual era o objetivo daquele pedaço do programa. Os comentários que você está vendo neste material didático talvez não sejam um exemplo muito bom de comentários pois eles estão explicando funcionamento muito elementar das funções e experessões usadas, idealmente, anote o seu código com explicações curtas que falem mais do motivo ou objetivo daquele bloco e não esqueça de mudá-los quando o objetivo e o código mudar.
 
+<!-- editor-pyp5js -->
 ```python
 # Oi eu sou um comentário de uma linha inteira
 

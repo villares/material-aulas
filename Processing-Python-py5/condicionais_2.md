@@ -20,6 +20,9 @@ else:    # senão...
 No contexto de um *sketch* com py5, é comum querer checar, por exemplo, qual tecla foi apertada.
 
 ```python
+def setup():
+   size(100, 100)
+
 def key_pressed():
     if key == ' ':   # se a barra de espaço foi apertada
          background(200)  # limpe a tela de desenho com um fundo cinza

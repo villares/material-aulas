@@ -8,8 +8,9 @@ Para produzir uma grade retangular de elementos (filas e colunas) podemos utiliz
 
 Vamos começar com uma fila de círculos:
 
+<!-- editor-pyp5js -->
 ```python
-size(400, 40)
+size(400, 400)
 num_colunas = 10
 w_coluna = 40
 for coluna in range(num_colunas):  # coluna vai de 0 a 9
@@ -46,6 +47,7 @@ for y in range(20, 400, 40): # 10 números de 20 a 380, incluso, de 40 em 40
 
 Em seguida, veremos o empilhamento de filas se torna uma grade de elementos:
 
+<!-- editor-pyp5js -->
 ```python
 size(400, 400)
 num_filas = num_colunas = 10
@@ -73,6 +75,7 @@ Vamos comparar algumas maneiras de obter este mesmo tipo de resultado.
 
 ![grade](assets/4grades.png)
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(500, 500)
@@ -117,6 +120,7 @@ def setup():
 
 É possível também fazer uma "fila de colunas", mudando só a ordem de encaixa dos laços (e ordem em que os círculos são desenhados) mas não o resultado visual final. Veja um exemplo, um pouco ampliado, em que a posição do elemento altera a cor e o tamanho:
 
+<!-- editor-pyp5js -->
 ```python
 colunas = 10
 filas = 10

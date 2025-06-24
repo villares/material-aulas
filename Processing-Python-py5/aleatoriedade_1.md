@@ -12,6 +12,7 @@ Um exemplo tradicional, e divertido, é fazer um pincel de círculos com o taman
 
 ![pincel com random](assets/pincel_aleatorio.gif)
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(400, 400)
@@ -34,6 +35,7 @@ def keyPressed():
 ```
 
 #### Outros exemplos
+
 ```python
 # Produz um valor entre 0 e 10 (10 não incluso)
 sorteio = random(10) 

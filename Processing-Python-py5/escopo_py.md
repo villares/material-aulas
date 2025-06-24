@@ -10,6 +10,7 @@ Os parâmetros são os nomes que recebem os valores (argumentos), usados na cham
 
 ### Exemplo de uma variável local
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(256, 256)
@@ -46,6 +47,7 @@ Essas variáveis podem ser usadas ao longo de todo o programa. Se você desejar 
 
 ### Exemplo de uma variável global
 
+<!-- editor-pyp5js -->
 ```python
 x = 0  # x é uma variável global
 
@@ -83,6 +85,7 @@ Sem a instrução `global x` dentro da função `mouse_pressed()` você não ver
 
 ### Mais um exemplo, com variáveis globais e locais
 
+<!-- editor-pyp5js -->
 ```python
 # tamanho_maximo é uma variável global, pode ser usada em qualquer ponto do programa.
 tamanho_maximo = 50
