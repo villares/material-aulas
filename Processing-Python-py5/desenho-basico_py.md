@@ -1,7 +1,6 @@
 # Primeiros passos e desenho básico
 
 Se você seguiu os passos [para instalar Thonny IDE com o py5](https://abav.lugaralgum.com/como-instalar-py5) , verifique se a opção *imported mode* está ativada no menu **py5** e experimente digitar o código abaixo no editor de código, e, em seguida, clique no botão com a seta triangular para frente (executar/*run*). 
-<sub>Alguns dos exemplos deste material funcionam no editor [pyp5js adaptado](https://abav.lugaralgum.com/material-aulas/pyp5js/py5mode), e podem ser editados clicando no botão "Abrir no editor online".<\sub> 
 
 <!-- editor-pyp5js -->
 ```python
@@ -11,9 +10,11 @@ size(400, 400)
 rect(100, 50, 150, 200)
 ```
 
+> **Nota:** Alguns dos exemplos deste material, mas não todos, funcionam no editor [pyp5js adaptado](https://abav.lugaralgum.com/material-aulas/pyp5js/py5mode), e podem ser editados clicando no botão "Abrir no editor online".
+
 ![IDE](assets/01-IDE.png)
 
-> Nota: Se você teve este erro, não esqueça de ligar a opção ***imported mode for py5*** no menu **py5** do Thonny.
+> **Nota:** Se você teve este erro, não esqueça de ligar a opção ***imported mode for py5*** no menu **py5** do Thonny.
 > ![image](https://github.com/villares/material-aulas/assets/3694604/f623c0d0-d5f0-4166-83ff-2edb9ea2423d)
 
 Experimente alterar os números entre parênteses e executar novamente!
@@ -60,7 +61,7 @@ Para mudar as cores do preenchimento branco e do traço de contorno preto que s�
 <!-- editor-pyp5js -->
 ```python
 fill(0, 255, 0)         # preenchimento com verde máximo Red:0 Green:255 Blue:0
-circle(50, 50, 50, 50)  # produz um círculo verde
+circle(50, 50, 50)      # produz um círculo verde
 
 ```
 
