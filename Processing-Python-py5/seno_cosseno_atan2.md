@@ -181,7 +181,7 @@ def draw():
 
 def indicacoes():
     stroke(255)
-    stroke_weight(1)ou o sumário
+    stroke_weight(1)
     no_fill()
     circle(x_centro, y_centro, raio * 2)
     line(x_centro, y_centro - raio,
