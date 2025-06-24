@@ -7,7 +7,7 @@
 ### 3D 
 
 - **[FreeCAD](https://freecadweb.org)** — Your own 3D parametric modeler
-  - It has great a Python interactive console, bult-in editor (macro panel) and can also be used for 2D
+  - It has a great Python interactive console, bult-in editor (macro panel) and can also be used for 2D
 - [Blender](https://blender.org) — Blender's [Python API](https://docs.blender.org/api/current/index.html)
 - [Ursina](https://www.ursinaengine.org/) — A 3D game engine based on the [Panda3D](https://www.panda3d.org/) framework
 - [trimesh](https://trimesh.org/) — A Python library to work with 3D meshes. Can be used on Jupyter Notebooks and integrates well with [py5](https://p5coding.org)
