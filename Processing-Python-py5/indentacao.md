@@ -11,11 +11,11 @@ comes:
     abacate
     alho
     tomate
-    bread
+    pão de alho
 
 bebes:
     chá mate
-    água
+    água com gás
     sucos:
         maçã
         uva
