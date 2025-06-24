@@ -10,6 +10,7 @@ O verbo *to draw* em inglês pode ser traduzido no nosso caso como "desenhar", e
 
 Veja um exemplo mínimo, e a seguir um GIF com a captura de tela da execução.
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(500, 500)
@@ -24,6 +25,7 @@ def draw():
 
 Neste exemplo, um quadrado branco é desenhado na ponta do mouse, mas só se um botão do mouse estiver apertado.
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(500, 500)
@@ -42,6 +44,7 @@ def draw():
 
 Para se obter um efeito semelhante a uma animação, isto é, como se os elementos do desenho estivessem se transformando ou se deslocando na tela, devemos "limpar" o quadro no começo de cada execução da função `draw()`, usando `background()`, por exemplo. Para um exemplo que se mexe sozinho, sem a interação com o mouse, veja [Criando uma animação simples](movimento_py.md)
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(500, 500)
