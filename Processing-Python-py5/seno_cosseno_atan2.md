@@ -24,6 +24,7 @@ Para produzir a imagem acima, criamos um laço repetição que produz um `x` de 
 
 Vamos  multiplicar o valor do seno e do cosseno do ângulo pela metade da altura da tela(aproveitando para inverter o sinal pois o eixo Y do py5 cresce para baixo e estamos acostumados a ver os gráficos com a parte positiva para cima). Para deslocar a origem para baixo somamos esse mesmo valor de metade da altura da tela.
 
+<!-- editor-pyp5js -->
 ```python
 size(720, 229)  # 2 × 360, 4π radianos
 for x in range(width):
@@ -50,6 +51,7 @@ Desta vez o exemplo usa `translate()` e `scale()` para deslocar e inverter o eix
 
 ![](assets/seno_cosseno.png)
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(628, 200)  # malandrangem 2π×100, 2×100
@@ -92,6 +94,7 @@ Seno e cosseno são muito úteis para fazer animações cíclicas, é muito fác
 
 ![](assets/seno_cosseno.gif)
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(628, 200)  # malandrangem 2π×100, 200
@@ -131,6 +134,7 @@ Com seno, cosseno, o raio e coordenadas do centro, é possível calcular o X e Y
 
 ![](assets/seno_cosseno_p.png)
 
+<!-- editor-pyp5js -->
 ```python
 size(400, 400)
 x_centro, y_centro = width / 2, height / 2
@@ -149,6 +153,7 @@ Vamos agora desenhar atualizando o ângulo com o tempo, dessa forma animando o p
 
 ![](assets/seno_cosseno_c.gif)
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     global x_centro, y_centro, raio
@@ -213,6 +218,7 @@ A estratégia mostrada inicialmente é usar o ângulo da linha para girar o sist
 
 ![](assets/seta.gif)
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(400, 400)
@@ -240,6 +246,7 @@ def seta(xa, ya, xb, yb):
 
 Mas, você pode querer calcular você mesma as coordenadas dos vértices da cabeça da seta assim:
 
+<!-- editor-pyp5js -->
 ```python
 def seta(xa, ya, xb, yb):
     tam_seta = dist(xa, ya, xb, yb)
@@ -258,7 +265,7 @@ def seta(xa, ya, xb, yb):
 
 Ampliando a estratégia mostrada na segunda versão da seta, em que a coordenada dos pontos são calculados usando seno e cosseno, é possível fazer setas de tamanho fixo, apontadas para o mouse. O ângulo continua sendo providenciado pela função do arco tangente.
 
-
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(400, 400)
@@ -300,6 +307,7 @@ Com ela é possível calcular, por exemplo, os vértices de um retângulo, como 
 
 ![](assets/rect_rot.png)
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(400, 400)
