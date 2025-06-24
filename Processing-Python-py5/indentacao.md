@@ -10,9 +10,12 @@ comes:
     cebola
     abacate
     alho
+    tomate
+    bread
 
 bebes:
     chá mate
+    água
     sucos:
         maçã
         uva
