@@ -6,6 +6,7 @@ Variáveis são nomes que inventamos quando estamos escrevendo um programa, e qu
 
 Para criar uma nova variável, e também para modificar o valor para o qual uma variável existente aponta, usamos o operador de atribuição `=`.
 
+<!-- editor-pyp5js -->
 ```python
 lado = 50  # cria a variável `lado` que aponta para o valor 50
 rect(10, 10, lado, lado)  # desenha um retângulo na posição x:10, y:10, largura:50, altura:50
@@ -15,6 +16,7 @@ text(nome, 20, 75)  # desenha o texto de `nome` na área de desenho
 ```
 ![exemplo 1](assets/variaveis_Guido.png)
 
+<!-- editor-pyp5js -->
 ```python
 # Se você tentar usar a variável `a` aqui, antes de criar, vai ter um erro
 # do tipo NameError (não conheço `a`)
