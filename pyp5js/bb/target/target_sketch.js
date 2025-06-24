@@ -340,12 +340,19 @@ def curve_point(*args):
 def curve_tangent(*args):
     return _P5_INSTANCE.curveTangent(*args)
 
-def begin_contour(*args):
-    return _P5_INSTANCE.beginContour(*args)
+class begin_contour():
+    def __init__(self):
+        _P5_INSTANCE.beginContour()
+        
+    def __enter__(self):
+        pass
+    
+    def __exit__(self,  exc_type, exc_value, exc_tb):
+        _P5_INSTANCE.endContour()
 
 class begin_shape():
-    def __init__(self):
-        _P5_INSTANCE.beginShape()
+    def __init__(self, *args):
+        _P5_INSTANCE.beginShape(*args)
 
     def __enter__(self):
         pass
