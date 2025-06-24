@@ -91,7 +91,7 @@ Para simular o movimento de uma "caneta" fazendo linhas sucessivas, podemos move
 
 Veja abaixo um exemplo e o resultado que gera.
 
-<!-- interactive -->
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(400, 400)
@@ -130,7 +130,7 @@ Partindo de regras de substição aplicadas à uma frase inicial (axioma) é pos
 
 ![image](https://github.com/villares/material-aulas/assets/3694604/e0e6f78d-047c-4070-9218-4d1a7e91d183)
 
-<!-- interactive -->
+<!-- editor-pyp5js -->
 ```python
 axioma = "X"
 regras = {"X": "F+[[X]-X]-F[-FX]+X",
@@ -173,7 +173,7 @@ def setup():
 
 Esta versão permite controlar com o teclado o tamnaho das linhas (passo), ângulo e número de iterações (cuidado que muitas iterações podem tornar o sketch muito lento)>
 
-<!-- interactive -->
+<!-- editor-pyp5js -->
 ```python
 axioma = "X"
 regras = {"X": "F+[[X]-X]-F[-FX]+X",

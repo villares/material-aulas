@@ -62,7 +62,7 @@ No exemplo a abaixo usamos uma estrutura `if`/ `else` para escolher a cor de pre
 
 ![exemplo condicional](assets/condicional.gif)
 
-<!-- interactive -->
+<!-- editor-pyp5js -->
 ``` python
 def setup():
     size(256, 256)
