@@ -10,9 +10,12 @@ comes:
     cebola
     abacate
     alho
+    tomate
+    pão de alho
 
 bebes:
     chá mate
+    água com gás
     sucos:
         maçã
         uva
