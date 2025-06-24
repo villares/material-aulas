@@ -26,14 +26,15 @@ Vamos  multiplicar o valor do seno e do cosseno do ângulo pela metade da altura
 
 <!-- editor-pyp5js -->
 ```python
-size(720, 229)  # 2 × 360, 4π radianos
-for x in range(width):
-    meia_altura = height / 2
-    ang = radians(x / 2.0)  # 720 pixels -> 360 graus
-    seno = sin(ang) * -meia_altura + meia_altura
-    point(x, seno)
-    cosseno = cos(ang) * -meia_altura + meia_altura
-    point(x, cosseno)
+def setup():
+    size(720, 229)  # 2 × 360, 4π radianos
+    for x in range(width):
+        meia_altura = height / 2
+        ang = radians(x / 2.0)  # 720 pixels -> 360 graus
+        seno = sin(ang) * -meia_altura + meia_altura
+        point(x, seno)
+        cosseno = cos(ang) * -meia_altura + meia_altura
+        point(x, cosseno)
 ```
 
 Qual é o seno e qual o cosseno? Veja o resultado das instruções a seguir.
@@ -136,15 +137,16 @@ Com seno, cosseno, o raio e coordenadas do centro, é possível calcular o X e Y
 
 <!-- editor-pyp5js -->
 ```python
-size(400, 400)
-x_centro, y_centro = width / 2, height / 2
-raio = 180
-for graus in range(0, 360, 18):  # cada 18°
-    ang = radians(graus)
-    x = x_centro + raio * cos(ang)
-    y = y_centro + raio * sin(ang)
-    stroke_weight(5)
-    point(x, y)
+def setup():
+    size(400, 400)
+    x_centro, y_centro = width / 2, height / 2
+    raio = 180
+    for graus in range(0, 360, 18):  # cada 18°
+        ang = radians(graus)
+        x = x_centro + raio * cos(ang)
+        y = y_centro + raio * sin(ang)
+        stroke_weight(5)
+        point(x, y)
 ```
 
 ### Uma versão animada e com algumas indicações
