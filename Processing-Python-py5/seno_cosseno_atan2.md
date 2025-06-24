@@ -26,15 +26,14 @@ Vamos  multiplicar o valor do seno e do cosseno do ângulo pela metade da altura
 
 <!-- editor-pyp5js -->
 ```python
-def setup():
-    size(720, 229)  # 2 × 360, 4π radianos
-    for x in range(width):
-        meia_altura = height / 2
-        ang = radians(x / 2.0)  # 720 pixels -> 360 graus
-        seno = sin(ang) * -meia_altura + meia_altura
-        point(x, seno)
-        cosseno = cos(ang) * -meia_altura + meia_altura
-        point(x, cosseno)
+size(720, 229)  # 2 × 360, 4π radianos
+for x in range(width):
+    meia_altura = height / 2
+    ang = radians(x / 2.0)  # 720 pixels -> 360 graus
+    seno = sin(ang) * -meia_altura + meia_altura
+    point(x, seno)
+    cosseno = cos(ang) * -meia_altura + meia_altura
+    point(x, cosseno)
 ```
 
 Qual é o seno e qual o cosseno? Veja o resultado das instruções a seguir.
@@ -250,6 +249,10 @@ Mas, você pode querer calcular você mesma as coordenadas dos vértices da cabe
 
 <!-- editor-pyp5js -->
 ```python
+def setup():
+    size(400, 400)
+    seta(100, 150, 300, 250)
+
 def seta(xa, ya, xb, yb):
     tam_seta = dist(xa, ya, xb, yb)
     ang = atan2(yb - ya, xb - xa)
