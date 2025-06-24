@@ -53,25 +53,9 @@ end_shape(CLOSE)  # encerra o desenho de um polígono fechado
 
 ## Desenhando uma estrela de quatro pontas
 
-<!-- editor-pyp5js -->
 Vejamos um exemplo que combina a estrutura que vimos antes com o uso de variáveis para calcular a possize(400, 200)
 
-begin_shape()  # inicia o desenho do polígono da esquerda
-vertex(10, 10)
-vertex(50, 50)
-vertex(190, 30)
-vertex(90, 150)
-vertex(30, 100)
-end_shape()  # encerra o desenho de um polígono aberto
-
-begin_shape()  # inicia o desenho do polígono da direita
-vertex(210, 10)
-vertex(250, 50)
-vertex(390, 30)
-vertex(290, 150)
-vertex(230, 100)
-end_shape(CLOSE)  # encerra o desenho de um polígono fechadoição dos vértices, formando um estrela!
-
+<!-- editor-pyp5js -->
 ```python
 size(400, 400)
 background(0, 0, 200)  # um fundo azul
