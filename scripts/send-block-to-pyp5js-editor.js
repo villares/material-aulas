@@ -1,6 +1,6 @@
 
 // To add the buttons that send code blocks to a pyp5js py5-mode editor
-// looks for <!-- interactive --> comment before the code blocks
+// looks for <!-- editor-pyp5js --> comment before the code blocks
 const EDITOR_BASE_URL = "https://abav.lugaralgum.com/material-aulas/pyp5js/py5mode/";
 
 function encodeForEditor(code) {
@@ -141,9 +141,9 @@ function fallbackCopyTextToClipboard(text) {
 }
 
 /**
- * Check if an element has an interactive comment before it
+ * Check if an element has an editor-pyp5js comment before it
  * @param {HTMLElement} element - The element to check
- * @returns {boolean} - True if interactive comment is found before the element
+ * @returns {boolean} - True if editor-pyp5js comment is found before the element
  */
 function hasInteractiveComment(element) {
   let currentElement = element.previousSibling;
@@ -151,7 +151,7 @@ function hasInteractiveComment(element) {
   // Check the immediate previous sibling first (most common case)
   if (currentElement && currentElement.nodeType === Node.COMMENT_NODE) {
     const commentText = currentElement.textContent.trim();
-    if (commentText === 'interactive') {
+    if (commentText === 'editor-pyp5js') {
       return true;
     }
   }
@@ -161,7 +161,7 @@ function hasInteractiveComment(element) {
     currentElement = currentElement.previousSibling;
     if (currentElement && currentElement.nodeType === Node.COMMENT_NODE) {
       const commentText = currentElement.textContent.trim();
-      if (commentText === 'interactive') {
+      if (commentText === 'editor-pyp5js') {
         return true;
       }
     }
@@ -178,7 +178,7 @@ function processCodeBlocks() {
   const codeContainers = document.querySelectorAll('div[class*="language-"][class*="highlighter-rouge"]');
   
   codeContainers.forEach(container => {
-    // Check if there's an interactive comment before this container
+    // Check if there's an editor-pyp5js comment before this container
     if (hasInteractiveComment(container)) {
       // Find the code element inside this container
       const codeElement = container.querySelector('code');
