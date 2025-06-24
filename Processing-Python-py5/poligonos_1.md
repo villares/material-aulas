@@ -10,7 +10,7 @@ Processing oferece funções para desenhar triângulos `triangle()` e quadrilát
 
 <!-- editor-pyp5js -->
 ```python
-size(400, 400)
+size(400, 200)
 
 # vi(10, 10) v2(200, 30) v3(30, 150)
 triangle(10, 10, 200, 30, 30, 150)
