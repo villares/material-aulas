@@ -9,6 +9,7 @@ Também veremos uma variante dessa ideia usando arcos que, ao que parece, foi po
 
 ## Um primeiro exemplo com diagonais
 
+<!-- editor-pyp5js -->
 ```python
 COLS = FILS = 15
 
@@ -39,9 +40,6 @@ def azulejo(x, y, tam, rot):
              tam / 2,  tam / 2,
             -tam / 2,  tam / 2)
     pop_matrix()  # volta coordenadas anteriores
-
-def key_pressed():
-    save('truchet_diagonal.png')
 ```
 ![truched diagonal](assets/truchet_diagonal.png)
 
@@ -49,6 +47,7 @@ def key_pressed():
 
 Infelizmente o antialiasing dos arcos, nas saídas raster (como PNG) tem apresentado visualmente pequenas discontinuidades nos arcos ("dentes"), por isso eu estou chamando `no_smooth()` no setup (precisa ser logo após `size()`). Note que se exportarmos uma versão vetorial (como PDF ou SVG) é possível confirmar que a geometria dos arcos está correta, bem encaixada, sem discontinuidades. 
 
+<!-- editor-pyp5js -->
 ```python
 COLS = FILS = 10
 
@@ -85,9 +84,6 @@ def azulejo(x, y, tam, rot):
     arc(-tam / 2, -tam / 2, tam, tam, 0, PI / 2)
     arc(tam / 2, tam / 2, tam, tam, PI, 3 * PI / 2)
     pop_matrix()  # volta coordenadas anteriores
-
-def key_pressed():
-    save('truchet_arcos.png')
 ```
 
 ![truched diagonal](assets/truchet_arcos.png)
