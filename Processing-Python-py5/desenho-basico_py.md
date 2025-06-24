@@ -10,7 +10,7 @@ size(400, 400)
 rect(100, 50, 150, 200)
 ```
 
-> **Nota:** Alguns dos exemplos deste material, mas não todos, funcionam no editor [pyp5js adaptado](https://abav.lugaralgum.com/material-aulas/pyp5js/py5mode), e podem ser editados clicando no botão "Abrir no editor online".
+> **Nota:** Alguns dos exemplos deste material, mas não todos, funcionam no [editor pyp5js adaptado](https://abav.lugaralgum.com/material-aulas/pyp5js/py5mode), e podem ser editados clicando no botão "Abrir no editor online".
 
 ![IDE](assets/01-IDE.png)
 
