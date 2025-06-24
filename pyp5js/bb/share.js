@@ -36,8 +36,30 @@ def draw():
     initialSketch = decodeSketchUrl(currentUrl.get("sketch"));
   }
 
-  return initialSketch;
+  return preprocessCode(initialSketch);
 }
+
+function preprocessCode(code) {
+  // Check if the code contains a def setup(): definition
+  if (code.indexOf('def setup') === -1) {
+    // If not, check if the code contains a size() function
+    if (code.indexOf('size(') === -1) {
+      // If not, wrap the entire code inside a new setup() function and add size(100, 100)
+      const lines = code.trim().split('\n');
+      const indentedLines = lines.map(function(line) {
+        return '  ' + line;
+      });
+      code = 'def setup():\n  size(100, 100)\n' + indentedLines.join('\n');
+    } else {
+      // If size() is present, wrap the entire code inside a new setup() function
+      const lines = code.trim().split('\n');
+      const indentedLines = lines.map(function(line) {
+        return '  ' + line;
+      });
+      code = 'def setup():\n' + indentedLines.join('\n');
+    }
+  }
+
 
 // Made by user Dean Taylor in
 // https://stackoverflow.com/questions/400212/how-do-i-copy-to-the-clipboard-in-javascript
