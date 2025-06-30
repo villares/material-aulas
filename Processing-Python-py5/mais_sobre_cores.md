@@ -16,6 +16,7 @@ Por baixo dos panos o Processing trata as cores como um número inteiro "bem gra
 
 Por padrão escolhemos cores no Processing com trincas de números entre **0** e **255** que representam valores de intensidade nos canais **R** (*Red*, vermelho), **G** (*Green*, verde) e **B** (*Blue*, azul). Um quarto número define a opacidade (*Alpha*) pode ser usado para indicar cores translúcidas (**0** fica totalmente transparente, e invisível, e **255** totalmente opaca, como se não tivesse sido usado o quarto número). 
 
+<!-- editor-pyp5js -->
 ```python
 stroke_weight(5)
 stroke(200, 0, 0)  # traço vermelho
@@ -40,6 +41,7 @@ Uma maneira de escolher uma cor e obter os valores RGB dela é usando a ferramen
 
 Se chamaramos a função *color_mode* com a constante **HSB**, `color_mode(HSB)`, podemos passar a usar números representando Matiz(*Hue*), Saturação(*Saturation*) e Brilho(*Brightness*).
 
+<!-- editor-pyp5js -->
 ```python
 color_mode(HSB)
 # fila de linhas com cores saturadas
@@ -64,6 +66,7 @@ for x in range(100):
 
 Normalmente, os valores, tanto RGB como HSB são indicados em uma escala de ** 0 ** a ** 255**, mas isso pode ser alterado na chamada a `color_mode()` como no exemplo abaixo.
 
+<!-- editor-pyp5js -->
 ```python
 # H, S e B indo de 0 a 100
 color_mode(HSB, 100)
