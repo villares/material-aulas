@@ -1767,6 +1767,9 @@ function preprocessCode(code) {
     // add size(100, 100) as the first line of the setup definition
     code = code.replace('def setup():', 'def setup():\n' + indentation + 'size(100, 100)');
   }
+  if (code.indexOf('get_pixels(') > 0) {
+      code = code.replace('get_pixels(', 'get(')
+  }
   return code;
 }
 

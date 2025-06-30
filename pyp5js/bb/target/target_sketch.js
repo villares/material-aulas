@@ -1747,7 +1747,6 @@ event_functions = {
 start_p5(preload, setup, draw, event_functions)
 `;
 
-
 function preprocessCode(code) {
   // Check if the code contains a setup definition
   if (code.indexOf('def setup') === -1) {
@@ -1768,9 +1767,11 @@ function preprocessCode(code) {
     // add size(100, 100) as the first line of the setup definition
     code = code.replace('def setup():', 'def setup():\n' + indentation + 'size(100, 100)');
   }
+  if (code.indexOf('get_pixels(') > 0) {
+      code = code.replace('get_pixels(', 'get(')
+  }
   return code;
 }
-
 
 function runCode() {
     let code = [
