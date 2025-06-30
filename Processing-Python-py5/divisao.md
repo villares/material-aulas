@@ -74,6 +74,7 @@ else:
 
 Um exemplo visual, em que a cor do círculo muda se o número do quadro é par ou impar.
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(500, 500)
@@ -144,6 +145,7 @@ Resultado (truncado, seriam 100 números):
 
 Um exemplo visual, em que as cores são definidas pelo matiz, com um número que vai de 0 a 255 e volta para o 0, calculado a partir do resto da divisão do número do quadro (`frame_count`) por 256.
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(500, 500)
