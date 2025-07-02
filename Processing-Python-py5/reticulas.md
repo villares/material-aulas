@@ -4,6 +4,8 @@
 ![image](assets/reticula100sat.png)
 -->
 
+Podemos consultar as cores dos pixels de uma imagem na memória e produzir uma nova retícula usando uma amostra das cores na posição de uma grade de elementos.
+
 ### Criando uma grade de elementos
 
 <!-- editor-pyp5js -->
@@ -40,7 +42,7 @@ def setup():
     
 def draw():
     no_stroke()
-    num_colunas = num_filas = 100
+    num_colunas = num_filas = 10
     esp = width / num_colunas
     background(0)  # fundo preto
     for m in range(num_filas):
@@ -55,8 +57,8 @@ def draw():
 ```
 ![image](assets/reticula10.png)
 
-Vamos ignorar as cores, mas mudar o diâmetro usando o valor da luminosidade dos pixels.
 
+Experimente aumentar um pocuo o número de filas e colunas. No exemplo abaixo vamos ignorar as cores dos pixels e mudar o diâmetro usando o valor da luminosidade das cores.
 
 ```python
 num_colunas = num_filas = 80
@@ -125,6 +127,9 @@ def draw():
 
 
 ### Cores saturadas 
+
+No exemplo abaixo vamos reconstruir as cores usando o moo HSB, usando a informação do matiz, mas as tornado super saturadas.
+Infelizmente no editor online este e os próximos exemplos produzem cores distorcidas.
 
 ```python
 def setup():
