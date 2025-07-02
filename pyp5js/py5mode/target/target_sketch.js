@@ -205,7 +205,7 @@ def no_erase(*args):
 
 def color_mode(*args):
     if args == ('hsb',):  # py5 compatibility
-        return _P5_INSTANCE.colorMode(HSB, 255, 255, 255)
+        return _P5_INSTANCE.colorMode('hsb', 255, 255, 255)
     else:
         return _P5_INSTANCE.colorMode(*args)
 
