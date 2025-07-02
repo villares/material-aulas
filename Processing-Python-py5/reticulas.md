@@ -34,8 +34,11 @@ Agora vamos carregar esta imagem na memória:
 <!-- editor-pyp5js -->
 ```python
 def setup():
+    global img
     size(800, 800)
     img = load_image("https://upload.wikimedia.org/wikipedia/commons/d/dd/Adalovelace.jpg")
+    
+def draw():
     no_stroke()
     num_colunas = num_filas = 100
     esp = width / num_colunas
@@ -54,7 +57,7 @@ def setup():
 
 Vamos ignorar as cores, mas mudar o diâmetro usando o valor da luminosidade dos pixels.
 
-<!-- editor-pyp5js -->
+
 ```python
 num_colunas = num_filas = 80
 
@@ -113,8 +116,8 @@ def draw():
                 b = brightness(cor)
                 fill(0)
             #fill(cor)
-            d = remap(b, 0, 255, esp + 5, 0) 
             no_stroke()
+            d = remap(b, 0, 255, esp + 5, 0) 
             circle(x, y, d)
 ```
 ![image](assets/reticula100.png)
@@ -123,7 +126,6 @@ def draw():
 
 ### Cores saturadas 
 
-<!-- editor-pyp5js -->
 ```python
 def setup():
     global img
@@ -156,7 +158,6 @@ def draw():
 
 ### Cores saturadas escuras com quadradinhos
 
-<!-- editor-pyp5js -->
 ```python
 num_colunas = num_filas = 100
 
