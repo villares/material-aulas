@@ -14,6 +14,7 @@ Então, vamos usar a função `rotate()`, e em seguida vamos desenhar um quadrad
 
 > Nota: No py5 quando uma função pede um ângulo como argumento, espera que você informe esse ângulo em *radianos*, por isso, se você pensa em graus, use `radians(angulo_em_graus)` para converter.
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(500, 500)
@@ -44,6 +45,7 @@ As respostas para essas perguntas são:
 
 Se movermos a origem para o ponto no centro da área de desenho, usando [`translate()`](https://py5coding.org/reference/sketch_translate.html), com os argumentos `250, 250`,  conseguiremos girar o sitema de coordenadas em torno de um novo centro.
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(500, 500)
@@ -67,6 +69,7 @@ A segunda parte do problema, que se manifestou sutilmente até agora, é de que 
 
 Suponha que queremos desenhar uma fila de quadrados girados, e veja este exemplo ingênuo de uma função `quadrado_girado_errado()` que desenha, bem, um quadrado girado. O código a seguir, usando a função `quadrado_girado_errado()`  falha horrívelmente na missão de desenhar uma fila com os quadrados alinhados com Y valendo 100, como parecem indicar as coordenadas passadas como argumentos (100, 100), (250, 100) e (400, 100).
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(500, 500)
@@ -110,7 +113,7 @@ O artista pioneiro da arte computacional Georg Nees tem uma obra ["Schotter" (19
 
 ![Schotter](assets/schotter.png)
 
-
+<!-- editor-pyp5js -->
 ```python
 colunas = 12
 filas = 22
@@ -158,6 +161,7 @@ Além da translação e rotação é possível também escalar o sistema de coor
 
 ![](assets/2d_transformations_scale.png)
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(500, 500)
