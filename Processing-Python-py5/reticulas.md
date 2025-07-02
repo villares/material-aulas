@@ -107,20 +107,20 @@ def draw():
     background(255)  # fundo branco
     esp = width / num_colunas
     if img:
-        for m in range(num_filas):
-            y = m * esp + esp / 2
-            for n in range(num_colunas):  # 0, 1, 2, 3, 4, 5
-                x = n * esp + esp / 2
-                # remap(v, inicial_origem, final_origem, inicaial_algo, final_alvo)
+        for fila in range(num_filas):
+            y = fila * esp + esp / 2
+            for coluna in range(num_colunas):  # 0, 1, 2, 3, 4, 5
+                x = coluna * esp + esp / 2
+                # remap(v, inicial_origem, final_origem, inicial_algo, final_alvo)
                 xi = int(remap(x, 0, width, 0, img.width))
                 yi = int(remap(y, 0, height, 0, img.height))
                 cor = img.get_pixels(xi, yi)
                 b = brightness(cor)
                 fill(0)
-            #fill(cor)
-            no_stroke()
-            d = remap(b, 0, 255, esp + 5, 0) 
-            circle(x, y, d)
+                #fill(cor)
+                no_stroke()
+                d = remap(b, 0, 255, esp + 5, 0) 
+                circle(x, y, d)
 ```
 ![image](assets/reticula100.png)
 
