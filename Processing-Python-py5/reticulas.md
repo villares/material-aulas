@@ -4,6 +4,8 @@
 ![image](assets/reticula100sat.png)
 -->
 
+Podemos consultar as cores dos pixels de uma imagem na memória e produzir uma nova retícula usando uma amostra das cores na posição de uma grade de elementos.
+
 ### Criando uma grade de elementos
 
 <!-- editor-pyp5js -->
@@ -40,7 +42,7 @@ def setup():
     
 def draw():
     no_stroke()
-    num_colunas = num_filas = 100
+    num_colunas = num_filas = 10
     esp = width / num_colunas
     background(0)  # fundo preto
     for m in range(num_filas):
@@ -55,8 +57,8 @@ def draw():
 ```
 ![image](assets/reticula10.png)
 
-Vamos ignorar as cores, mas mudar o diâmetro usando o valor da luminosidade dos pixels.
 
+Experimente aumentar um pocuo o número de filas e colunas. No exemplo abaixo vamos ignorar as cores dos pixels e mudar o diâmetro usando o valor da luminosidade das cores.
 
 ```python
 num_colunas = num_filas = 80
@@ -105,26 +107,29 @@ def draw():
     background(255)  # fundo branco
     esp = width / num_colunas
     if img:
-        for m in range(num_filas):
-            y = m * esp + esp / 2
-            for n in range(num_colunas):  # 0, 1, 2, 3, 4, 5
-                x = n * esp + esp / 2
-                # remap(v, inicial_origem, final_origem, inicaial_algo, final_alvo)
+        for fila in range(num_filas):
+            y = fila * esp + esp / 2
+            for coluna in range(num_colunas):  # 0, 1, 2, 3, 4, 5
+                x = coluna * esp + esp / 2
+                # remap(v, inicial_origem, final_origem, inicial_algo, final_alvo)
                 xi = int(remap(x, 0, width, 0, img.width))
                 yi = int(remap(y, 0, height, 0, img.height))
                 cor = img.get_pixels(xi, yi)
                 b = brightness(cor)
                 fill(0)
-            #fill(cor)
-            no_stroke()
-            d = remap(b, 0, 255, esp + 5, 0) 
-            circle(x, y, d)
+                #fill(cor)
+                no_stroke()
+                d = remap(b, 0, 255, esp + 5, 0) 
+                circle(x, y, d)
 ```
 ![image](assets/reticula100.png)
 
 
 
 ### Cores saturadas 
+
+No exemplo abaixo vamos reconstruir as cores usando o moo HSB, usando a informação do matiz, mas as tornado super saturadas.
+Infelizmente no editor online este e os próximos exemplos produzem cores distorcidas.
 
 ```python
 def setup():
