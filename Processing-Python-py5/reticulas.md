@@ -7,7 +7,8 @@
 ### Criando uma grade de elementos
 
 <!-- editor-pyp5js -->
-```python!
+
+```python
 num_colunas = num_filas = 10
 
 def setup():
@@ -23,14 +24,15 @@ def setup():
             diametro = esp * 0.75
             circle(x, y, diametro)  
 ```
+
 ![image](assets/reticula10c.png)
 
 Agora vamos carregar esta imagem na memória:
 
 ![image](assets/Adalovelace.jpg)
 
-
-```python=
+<!-- editor-pyp5js -->
+```python
 def setup():
     size(800, 800)
     img = load_image("https://upload.wikimedia.org/wikipedia/commons/d/dd/Adalovelace.jpg")
@@ -53,7 +55,7 @@ def setup():
 Vamos ignorar as cores, mas mudar o diâmetro usando o valor da luminosidade dos pixels.
 
 <!-- editor-pyp5js -->
-```python!
+```python
 num_colunas = num_filas = 80
 
 def setup():
@@ -83,10 +85,11 @@ def draw():
 
 ![ada](assets/reticula80.png)
 
----
-Exemplo retícula pontos pretos
 
-```python=
+### Exemplo retícula pontos pretos
+
+<!-- editor-pyp5js -->
+```python
 num_colunas = num_filas = 100
 
 def setup():
@@ -117,10 +120,11 @@ def draw():
 ![image](assets/reticula100.png)
 
 
----
-cores saturadas 1
 
-```python=
+### Cores saturadas 
+
+<!-- editor-pyp5js -->
+```python
 def setup():
     global img
     size(800, 800)
@@ -150,11 +154,10 @@ def draw():
 ```
 ![image](assets/reticula100sat.png)
 
----
+### Cores saturadas escuras com quadradinhos
 
-Cores saturadas escuras com quadradinhos
-
-```python=
+<!-- editor-pyp5js -->
+```python
 num_colunas = num_filas = 100
 
 def setup():
