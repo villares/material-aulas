@@ -16,6 +16,7 @@ Uma das estruturas de dados mais versáteis do Python são as listas, podemos cr
 
 ![](assets/for_circulos.png)
 
+<!-- editor-pyp5js -->
 ```python
 size(400, 400)
 diâmetros = [300, 250, 200, 150, 100, 50]  # uma lista de números
@@ -25,6 +26,7 @@ for d in diâmetros:  # atribua a variável `d` para cada diâmetro
 
 Note que começamos pelo círculo maior por conta dos cículos serem opacos, e dessa maneira os menores não escondem os maiores que foram desenhados antes. No exemplo seguinte vamos desligar o preenchimento dos quadrados e desenhá-los em tamanho crescente.
 
+<!-- editor-pyp5js -->
 ```python
 size(400, 400)
 no_fill()  # formas sem preenchimento
@@ -36,6 +38,7 @@ for t in tamanhos:
 
 Se introduzirmos uma varíavel para a posição, podemos atualizá-la dentro do laço. Veja um laço que percorre uma lista de cores.
 
+<!-- editor-pyp5js -->
 ```python
 size(400, 400)
 
@@ -65,6 +68,7 @@ A função embutida `range()` do Python produz um "objeto range", poderíamos ta
 
 **Você consegue imaginar o resultado do código a seguir?**
 
+<!-- editor-pyp5js -->
 ```python
 for n in range(10): # para cada número do range(10) 
     print(n)        # n vai ter um valor diferente a cada ciclo
@@ -103,6 +107,7 @@ print(list(range(10)))
 
 Para produzir uma fila de círculos, podemos fazer assim.
 
+<!-- editor-pyp5js -->
 ```python
 size(400, 40)
 for n in range(10):    # n vai de 0 a 9
@@ -147,6 +152,7 @@ print(list(range(0, 11, 2)))
 
 Veja agora uma outra maneira de escrever o exemplo da fila de círculos.
 
+<!-- editor-pyp5js -->
 ```python
 for x in range(20, 400, 40): # 10 números de 20 a 380 (em passos de 40)
     circle(x, 20, 35) # círculos de diâmetro 35
@@ -163,6 +169,7 @@ for x in range(20, 400, 40): # 10 números de 20 a 380 (em passos de 40)
 
 Algumas vezes nem vamos usar os itens! Só queremos repetir a operação, então em vez de guardar o valor em uma variável nomeada com `x`, `y`, `n` ou `i` usamos uma variável com o curioso nome`_` (*underscore*, ou como muitos falam 'underline'). Isso é uma dica de quem está escrevendo o código de que o valor da variável vai ser desprezado. Exemplo:
 
+<!-- editor-pyp5js -->
 ```python
 for _ in range(3): # repita 3 vezes!
    print("viva!")
@@ -186,6 +193,7 @@ Veja a seguir mais alguns exemplos com o resultado oculto para você tentar reso
 
 Agora outro exemplo usando `range()` com efeito visual.
 
+<!-- editor-pyp5js -->
 ```python
 for i in range(14):
     y = 10 + 5 * i
@@ -252,6 +260,7 @@ Veja como resultados semelhantes podem ser obtidos com diferentes estratégias.
 
 ![](assets/4filas.png)
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(500, 200)
@@ -289,6 +298,7 @@ def setup():
 
 Nos primeiros exemplos, percorremos com o laço `for` uma lista (*list*), que é uma estrutura de dados do Python para armazenar uma sequência ordenada mutável de itens ou elementos. Uma outra estrutura para sequências de elementos no Python, que é imutável, se chama tupla (*tuple*).
 
+<!-- editor-pyp5js -->
 ```python
 # Uma lista de nomes de cores
 cores = ['blue', 'green']
@@ -363,6 +373,7 @@ pontos = [(10, 10), (100, 20), (200, 50), (50, 150)]
 
 Finalmente, vamos usar a estrutura de iteração, o *loop* `for`, para repetir a ação de desenhar um círculo, usando as coordenadas das tuplas de coordenadas na lista `pontos`:
 
+<!-- editor-pyp5js -->
 ```python
 size(400, 400)
 pontos = [(10, 10), (100, 20), (200, 50), (50, 150)]
@@ -375,7 +386,7 @@ Podemos ainda escrever abreviadamente assim:
 
 ```python
 size(400, 400)
-pontos = [(50, 50), (300, 370), (200, 50), (150, 150)]
+pontos = [(50, 50), (300, 3<!-- editor-pyp5js -->70), (200, 50), (150, 150)]
 for x, y in pontos:
     circle(x, y, 15)
 ```
