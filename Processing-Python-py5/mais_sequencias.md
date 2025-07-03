@@ -184,6 +184,7 @@ for «variável_para_índice», «variável_para_item» in enumerate(«coleção
 
 Veja usado no contexto do exemplo anterior.
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(400, 400)
@@ -207,6 +208,7 @@ def setup():
 
 #### Uma utilidade de enumerar, pegar pares de itens
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(400, 400)
@@ -216,11 +218,11 @@ def setup():
         xa, ya = ponto
         ponto_anterior = pontos[i - 1] # pega o último item da lista quando i é 0
         xb, yb = ponto_anterior  
-        ellipse(xa, ya, 10, 10)
+        circle(xa, ya, 10)
         # desenha linha entre os dois pontos
         line(xa, ya, xb, yb)
         # desenha círculo menor entre os pontos
-        ellipse((xa + xb) / 2, (ya + yb) / 2, 5, 5)
+        circle((xa + xb) / 2, (ya + yb) / 2, 5)
 ```
 
 ![`enumerara()` ](assets/for_com_enumerate.png)

@@ -4,6 +4,7 @@
 
 Aqui um exemplo de um botão muito simplificado, basicamente uma função que desenha um retângulo aredondado com texto e que devolve `True` caso o mouse esteja apertado sobre ele(`False` caso contrário).
 
+<!-- editor-pyp5js -->
 ```python
 fundo = color(0, 0, 200)
 
@@ -49,6 +50,7 @@ Repare que o comportamento deixa um pouco a desejar em relação a um botão apr
     
 É possível obter um comportamento semelhante de acionamento com um clique completo repetindo uma chamada de função para os botões, uma vez em `draw()` para visualização e outra na função de evento `mouse_clicked()`, como no código abaixo:
     
+<!-- editor-pyp5js -->
 ```python
 fundo = color(0, 0, 200)
 

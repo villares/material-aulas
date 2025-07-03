@@ -49,6 +49,7 @@ s = '10' + str(5)  # A variável `s` vai apontar para o valoe '105'
 
 Veja aqui duas outras maneiras de fazer a conversão de outros tipos de valores em strings, ao mesmo tempo que se "monta" um string maior, o que é chamado às vezes de interpolação de strings:
 
+<!-- editor-pyp5js -->
 ```python
 
 def setup():
@@ -65,6 +66,7 @@ Mais sobre como formatar a conversão dos números em strings, procurar e substi
 
 ### Mostrando texto na área de desenho
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(400, 400)

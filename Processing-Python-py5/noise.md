@@ -16,14 +16,14 @@ O primeiro exemplo de Ruído de Perlin, apresentado a seguir, usa a função `no
 
 Pense no argumento que usamos na chamada de `noise()` como um X, um valor que deslocamos no espaço com uma certa * velocidade*. A velocidade é ajustada pela variável `escala` que vai multiplicar o X. Podemos experimentar mudar o valor dessa * escala * ou * velocidade * dos passos dados pelo argumento de entrada no espaço e também podemos deslocar esse X uma certa distância arbitraria(somando `desloca_x`). Saiba que os resultados de `noise()` são simétricos para valores negativos de X.
 
+
+<!-- editor-pyp5js -->
 ```python
 escala = 0.01
 desloca_x = 0
 
-
 def setup():
     size(400, 400)
-
 
 def draw():
     background(240)
@@ -66,13 +66,12 @@ Agora acrescentaremos uma segunda dimensão, um Y, que serve de segundo argument
 
 Com essa segunda dimensão, perpendicular à primeira, é como se estivéssemos movendo o corte de um terreno. O `mouse_y` move o corte em uma direção perpendicular à tela, que é paralela ao corte.
 
+<!-- editor-pyp5js -->
 ```python
 escala = 0.004
 
-
 def setup():
     size(400, 400)
-
 
 def draw():
     background(200)
@@ -87,13 +86,12 @@ def draw():
 
 Agora o mesmo exemplo desenhando um único polígono com `begin_shape()` e `end_shape()`
 
+<!-- editor-pyp5js -->
 ```python
 escala = 0.004
 
-
 def setup():
     size(400, 400)
-
 
 def draw():
     background(200)
@@ -114,18 +112,18 @@ def draw():
 
 Uma segunda maneira de usar o ruído de Perlin é distribuindo os valores em uma grade, de maneira que as coordenadas no plano da tela informam os passos tanto em X como em Y.
 
+
+<!-- editor-pyp5js -->
 ```python
 escala = 0.01
 desloca_x = 100
 desloca_y = 100
 tam = 10
 
-
 def setup():
     size(400, 400)
     no_stroke()
-
-
+    
 def draw():
     background(0)
     for x in range(0, width, tam):
@@ -136,7 +134,6 @@ def draw():
                     tam / 2 + y,
                     2 + tam * n,
                     2 + tam * n)
-
 
 def key_pressed():
     global escala, desloca_x, desloca_y
@@ -160,16 +157,15 @@ def key_pressed():
 
 Este é um exemplo de Ruído de Perlin com três dimensões. O mouse desloca o campo em X e Y, as setas para cima e para baixo deslocam em Z.
 
+<!-- editor-pyp5js -->
 ```python
 escala_noise = 0.1
 z = 0
-
 
 def setup():
     size(400, 400)
     no_stroke()
     color_mode(HSB)
-
 
 def draw():
     background(0)
@@ -184,7 +180,6 @@ def draw():
             fill(240 * n, 255, 255)
             ellipse(tam / 2 + x * tam, tam / 2 + y * tam,
                     tam - tam * n, tam - tam * n)
-
 
 def key_pressed():
     global z
@@ -202,12 +197,10 @@ Agora, praticamente a mesma ideia mas visualizada em 3D
 escala_noise = 0.1
 xo = yo = zo = 0
 
-
 def setup():
     size(400, 400, P3D)
     # noStroke()
     color_mode(HSB)
-
 
 def draw():
     background(0)
@@ -230,7 +223,6 @@ def draw():
                           tam / 2 + z * tam)
                 box(tam - tam * n)
                 pop()
-
 
 def key_pressed():
     global xo, yo, zo

@@ -12,6 +12,7 @@ De maneira análoga, `is_key_pressed`, `key` e `key_code` tratam do estado do te
 
 ![](assets/keyPressed_keyCode.gif)
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(400, 400)
@@ -59,6 +60,7 @@ As funções precisam ser definidas fora do bloco de `draw()`. Ao contrário do 
 
 ![](assets/mouseDragged.gif)
 
+<!-- editor-pyp5js -->
 ```python
 def setup():
     size(400, 400)
