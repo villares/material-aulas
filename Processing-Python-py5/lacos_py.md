@@ -386,7 +386,7 @@ Podemos ainda escrever abreviadamente assim:
 
 ```python
 size(400, 400)
-pontos = [(50, 50), (300, 3<!-- editor-pyp5js -->70), (200, 50), (150, 150)]
+pontos = [(10, 10), (100, 20), (200, 50), (50, 150)]
 for x, y in pontos:
     circle(x, y, 15)
 ```
