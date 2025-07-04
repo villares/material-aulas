@@ -31,6 +31,7 @@ Neste material didático os olhamos deste ponto de vista, assim como do ponto de
 
 Esta versão mantém o tabuleiro em uma lista de listas e está escrito no estilo *py5 imported mode*.
 
+
 ```python
 """
 The Game of Life is a cellular automaton devised by the British
@@ -66,11 +67,6 @@ def setup():
     print("'r' to randomize grid")
     print("'+' and '-' to change speed")
 
-def predraw_update():
-    if play:
-        for i, j in product(range(cols), range(rows)):
-            ngbs_alive = calc_ngbs_alive(i, j)
-            next_grid[i][j] = rule(grid[i][j], ngbs_alive)
 
 def draw():
     background(0)
@@ -83,6 +79,11 @@ def draw():
 
     if play and not is_mouse_pressed:
         step()
+
+    if play:
+        for i, j in product(range(cols), range(rows)):
+            ngbs_alive = calc_ngbs_alive(i, j)
+            next_grid[i][j] = rule(grid[i][j], ngbs_alive)
 
 def step():
     global grid, next_grid
