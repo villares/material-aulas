@@ -231,5 +231,71 @@ def draw():
 ```
 ...o código continua com a classe Particula mostrada anteriormente
 ```
+## 5. Partículas com rastro e que reduzem de tamanho, acrescentadas com o mouse
+
+Neste exemplo, as partículas são acrescentadas com o arrastar do mouse, reduzem com o tempo e acabam por ser removidas da lista quando o tamanho fica menor que 1 píxel.
+
+<!-- editor-pyp5js -->
+```python
+particulas = []  # lista de objetos
+
+def setup():
+    """ Define área de desenho e popula lista de particulas """
+    size(400, 400)  # área de desenho (width, height)
+
+def draw():
+    """ Limpa a tela, desenha e atualiza particulas """
+    fill(0, 10)
+    rect(0, 0, width, height)
+    for particula in particulas.copy():
+        particula.atualizar(particulas)
+
+def mouse_dragged():
+    particulas.append(Particula(mouse_x, mouse_y))
+
+class Particula():
+    """ Classe Particula, cor sorteada, velocidade sorteada """
+
+    def __init__(self, x, y, tamanho=None):
+        self.x = float(x)
+        self.y = float(y)
+        if tamanho:
+            self.tamanho = tamanho
+        else:
+            self.tamanho = random(10, 50)
+        self.vx = random(-1, 1)
+        self.vy = random(-1, 1)
+        self.cor = color(random(256),  # R
+                         random(256),  # G
+                         random(256),  # B
+                         200)  # alpha
+
+    def atualizar(self, particulas):
+        self.desenha()
+        self.move()
+        self.tamanho = self.tamanho * 0.99
+        if self.tamanho < 1:
+            particulas.remove(self)
+
+    def desenha(self):
+        """ Desenha círculo """
+        no_stroke()
+        fill(self.cor)
+        circle(self.x, self.y, self.tamanho)
+
+    def move(self):
+        """ atualiza a posição do objeto e devolve do lado oposto se sair """
+        self.x += self.vx
+        self.y += self.vy
+        metade = self.tamanho / 2
+        if self.x > width + metade:
+            self.x = -metade
+        if self.y > height + metade:
+            self.y = -metade
+        if self.x < -metade:
+            self.x = width + metade
+        if self.y < -metade:
+            self.y = height + metade
+```
 
 > Baseado inicialmente em: VILLARES, A. B. A.; MOREIRA, D. DE C.; GOMES, M. R. [Ensino de programação em um contexto de exploração gráfica com Processing modo Python](https://villares.github.io/mestrado/VILLARES_MOREIRA_GOMES_GRAPHICA_2017). In: Anais GRAPHICA 2017 - XII International Conference on Graphics Engineering for Arts and Design. Anais…Araçatuba(SP) UNIP, 2017.
