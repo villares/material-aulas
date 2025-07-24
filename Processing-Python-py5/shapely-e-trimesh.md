@@ -1,9 +1,19 @@
-# Primeiros passos de orientação a objetos: usando a classe Slider
+# Primeiros passos de orientação a objetos: usando `shapely` e `trimesh`
 <!-- para o sumário
 ![](assets/trimesh_demo.gif)
 -->
 
-## Um exemplo animado    
+As bibliotecas `shapely` e `trimesh`, pacotes do ecossistema Python que permitem manipular objetos, geometrias 2D e 3D, que podem ser produzidos e combinados de diversas maneiras. Veremos que ambas oferecem diversas classes, estruturas de código que produzem as instâncias, os objetos, descrevendo a geometria de formas planas ou malhas tridimensionais que vamos manipular. E estes objetos tem funções, os métodos, que permitem as operações, tais como união, intersecção, subtração, e etc.
+
+## Primeiros passos no `shapely`
+
+...
+
+## Primeiros passos no `trimesh`
+
+...
+
+## Um exemplo animado combinando as duas bibliotecas
 
 Neste exemplo, a função ajudante `draw_mesh()` desenha uma malha obtida com a manipulação dos objetos *shapely* e *trimesh*, suprimindo arestas desnecessários das faces. É possível também exportar um arquivo STL usando o método `.export()` das malhas *trimesh*.
 
