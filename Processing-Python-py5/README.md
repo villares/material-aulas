@@ -106,12 +106,12 @@
 
 ## Pequenos projetos e outros exemplos
 - Neste repositório
-    - [Módulos de Truchet](truchet.md) - Azulejos e rotações
-    - [Jogo PONG](../pong/README.md) - Estudos para o fazer um jogo
-    - [L-System](LSystem.md) - Sistema de Lindenmayer
-    - [Autômatos Celulares](automatos-celulares.md) - Jogo da vida de Conway (*Conway's Game of Life*)
+    - 8.1.1 [Módulos de Truchet](truchet.md) - Azulejos e rotações
+    - 8.1.2 [Jogo PONG](../pong/) - Estudos para o fazer um jogo
+    - 8.1.3 [L-System](LSystem.md) - Sistema de Lindenmayer
+    - 8.1.4 [Autômatos Celulares](automatos-celulares.md) - Jogo da vida de Conway (*Conway's Game of Life*)
 - Externos
-    - [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
-    - [Paper Objects with Processing and Python](https://abav.lugaralgum.com/Paper-objects-with-Processing-and-Python) - Volumes para cortar e montar
-    - [Arc, tangents & Bezier studies](https://abav.lugaralgum.com/arc_tangents_and_bezier_studies) - Como desenhar linhas tangentes entre arcos e polígonos com arredondamentos
-    - [Simulações física 2D com PyMunk](https://github.com/villares/pymunk-pinball-paulista) - Pinball
+    - 8.2.1 [Lousa mágica](https://abav.lugaralgum.com/lousa-magica) - Desenho com Arduino e potenciômetros
+    - 8.2.2 [Paper Objects with Processing and Python](https://abav.lugaralgum.com/Paper-objects-with-Processing-and-Python) - Volumes para cortar e montar
+    - 8.2.3 [Arc, tangents & Bezier studies](https://abav.lugaralgum.com/arc_tangents_and_bezier_studies) - Como desenhar linhas tangentes entre arcos e polígonos com arredondamentos
+    - 8.2.4 [Simulações física 2D com PyMunk](https://github.com/villares/pymunk-pinball-paulista) - Pinball
