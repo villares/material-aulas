@@ -7,7 +7,55 @@ As bibliotecas `shapely` e `trimesh`, pacotes do ecossistema Python que permitem
 
 ## Primeiros passos no `shapely`
 
-...
+<img width="800" height="400" alt="shapely_demo" src="https://github.com/user-attachments/assets/c0af634e-a3d7-4ec2-8660-213c8a168c34" />
+
+```python
+from shapely import Polygon, Point, LineString
+
+def setup():
+    size(800, 400)
+    background(0, 150, 150)
+    # Dois polígonos, um triângulo e um retângulo
+    p = Polygon([(50, 50), (150, 50), (50, 150)])
+    shape(p)
+    q = Polygon([(70, 70), (150, 70), (150, 150), (70, 150)])
+    shape(q)
+    translate(150, 0)  # empurra o próximo desenho mais para a direita
+    # Podemos pedir para que shapely calcule um recorte, subtração
+    L = p - q  # isto equivale  `p.difference(q)`
+    shape(L)
+    translate(150, 0)  # empurra o próximo desenho mais para a direita
+    # Podemos pedir para que shapely calcule um "offset", uma forma expandida
+    L_aumentado = L.buffer(10)
+    shape(L_aumentado)
+    translate(150, 0)  # empurra o próximo desenho mais para a direita
+    # Podemos fazer a fusão, união entre formas (mas o operador + não funciona)
+    forma_unida = p.union(q)  # `p + q` não funciona! 
+    shape(forma_unida)
+    translate(150, 0)  # empurra o próximo desenho mais para a direita
+    # Podemos fazer um furo, subtraindo uma versão encolhida da própria forma
+    forma_reduzida = forma_unida.buffer(-10)  # offset negativo, para dentro
+    forma_com_furo = forma_unida.difference(forma_reduzida)
+    shape(forma_com_furo)    
+    reset_matrix()  # volta sistema de coordenadas para a origem no canto
+    translate(0, 200)  # empurra os próximos desenhos para baixo
+    # Para fazer um círculo podemos fazer um offset de um ponto.
+    c = Point(100, 100).buffer(50)  # o valor buffer é o raio
+    shape(c)
+    # Um exemplo de uma linha e uma linha com buffer
+    ls = LineString([(200, 50), (450, 50)])
+    lsb = LineString([(200, 100), (450, 100)]).buffer(10)
+    shape(ls)
+    shape(lsb)
+    # Podemos calcular a intersecção entre duas formas
+    ca = Point(550, 100).buffer(50)
+    shape(ca)
+    cb = Point(600, 100).buffer(50)
+    shape(cb)
+    translate(150, 0)
+    ci = ca.intersection(cb)
+    shape(ci)
+```
 
 ## Primeiros passos no `trimesh`
 
@@ -16,7 +64,6 @@ As bibliotecas `shapely` e `trimesh`, pacotes do ecossistema Python que permitem
 ## Um exemplo animado combinando as duas bibliotecas
 
 Neste exemplo, a função ajudante `draw_mesh()` desenha uma malha obtida com a manipulação dos objetos *shapely* e *trimesh*, suprimindo arestas desnecessários das faces. É possível também exportar um arquivo STL usando o método `.export()` das malhas *trimesh*.
-
 
 ![](assets/trimesh_demo.gif)
 
