@@ -75,7 +75,7 @@ def setup():
 
 ## Primeiros passos no `trimesh`
 
-```python```
+```python
 def setup():
     global caixa_furada
     size(500, 500, P3D)
