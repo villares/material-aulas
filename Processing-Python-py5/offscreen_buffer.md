@@ -47,22 +47,27 @@ def key_pressed():
 Pode ser útil desenhar em um *offscreen buffer* com a intenção de consultar os pixels para fazer o desenho principal, como neste caso com tipografia em que um texto é desenhado em *img* para que possamos desenhar uma grade de elementos baseada na disposição dos pixels da imagem auxiliar.
 
 ```python
+from py5_tools import animated_gif
+
 def setup():
     global img
-    size(700, 300)
+    size(840, 280)
     background(0)
     no_stroke()
     frame_rate(10)
-    f = create_font('Tomorrow ExtraBold', 140)
+    f = create_font('Tomorrow ExtraBold', 120)
     img = create_graphics(width, height)
     img.begin_draw()
     img.smooth()
     img.text_font(f)
-    img.text_size(120)
-    img.text_leading(100)
+    img.text_size(130)
+    img.text_leading(110)
     img.text_align(CENTER, CENTER)
-    img.text('LETRAS\nEPECIAIS', width / 2, height / 2)
+    img.text('LETRAS\nESPECIAIS', width / 2, height / 2)
     img.end_draw()
+    
+    # pular o frame 0 que não desenhamos nada no setup...
+    animated_gif('letras.gif', duration=0.1, frame_numbers=range(1, 11))
 
 def draw():
     background(100)
