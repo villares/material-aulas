@@ -56,12 +56,67 @@ def setup():
     ci = ca.intersection(cb)
     shape(ci)
 ```
+É possível mover os objetos `shapely` com `shapely.affinity.translate()`
+
+```python=
+import shapely
+
+def setup():
+    size(200, 200)
+    background(0, 150, 150)
+    ca = shapely.Point(100, 100).buffer(50)  
+    cb = shapely.affinity.translate(c, 50, 0)
+    crescente = ca - cb 
+    shape(crescente)
+    save('shapely_translate.png')
+```
+![shapely_translate](https://hackmd.io/_uploads/HkFLmbuDxl.png)
+
 
 ## Primeiros passos no `trimesh`
 
-...
+```python```
+def setup():
+    global caixa_furada
+    size(500, 500, P3D)
+    furo_central = translated_box(0, 0, 0, 180, 300, 180)
+    paredes = translated_box(0, 0, 0, 200).difference(furo_central)  
+    caixa_furada = paredes.difference(prisma_lua).difference(prisma_cruz)
+    shape(caixa_furada)
+    
+def translated_box(x, y, z, w, h=None, d=None):
+    h = h or w
+    d = d or h
+    mesh = trimesh.creation.box((w, h, d))
+    mesh.apply_translation((x, y, z))  # modifica a manha!
+    return mesh
+```
 
-## Um exemplo animado combinando as duas bibliotecas
+## Exemplos combinando as duas bibliotecas
+
+Objetos `shapely` podem ser extrudados com `trimesh.creation.extrude.polygon()`.
+
+<img width="200" height="200" alt="trimesh_crescent" src="https://github.com/user-attachments/assets/56bb3154-ff0a-4641-8c80-eb71dc783b75" />
+
+```python
+import shapely
+import trimesh
+
+def setup():
+    global malha
+    size(200, 200, P3D)
+    c = shapely.Point(0, 0).buffer(50)  # buffer com o raio
+    d = shapely.affinity.translate(c, 50, 0)
+    crescente = c - d
+    malha = trimesh.creation.extrude_polygon(crescente, 50)
+    background(150, 0, 150)
+    lights()
+    translate(width / 2, height / 2)
+    rotate_y(radians(45))
+    shape(malha)
+```
+
+### Um exemplo animado avançado
 
 Neste exemplo, a função ajudante `draw_mesh()` desenha uma malha obtida com a manipulação dos objetos *shapely* e *trimesh*, suprimindo arestas desnecessários das faces. É possível também exportar um arquivo STL usando o método `.export()` das malhas *trimesh*.
 
