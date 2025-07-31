@@ -8,7 +8,7 @@ As bibliotecas `shapely` e `trimesh`, pacotes do ecossistema Python que permitem
 
 ## Primeiros passos no `shapely`
 
-<img title="" src="/assets/shapely1.png" alt="shapely_demo" width="800" height="400">
+![shapely_demo](/assets/shapely1.png)
 
 ```python
 from shapely import Polygon, Point, LineString
@@ -116,7 +116,7 @@ Note que ao contrário da translação de um objeto no `shapely` que produz um n
 
 Veja como os polígonos `shapely` podem ser extrudados com `trimesh.creation.extrude.polygon()` se tornando um volume tridimensional.
 
-<img title="" src="file:///assets/shapely_trimesh_extrude.png" alt="trimesh_crescent" width="200" height="200">
+![shapely_extrude](/assets/shapely_trimesh_extrude.png)
 
 ```python
 import shapely
