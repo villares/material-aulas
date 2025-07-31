@@ -8,7 +8,7 @@ As bibliotecas `shapely` e `trimesh`, pacotes do ecossistema Python que permitem
 
 ## Primeiros passos no `shapely`
 
-<img title="" src="file:///home/villares/GitHub/material-aulas/Processing-Python-py5/assets/shapely1.png" alt="shapely_demo" width="800" height="400">
+<img title="" src="/assets/shapely1.png" alt="shapely_demo" width="800" height="400">
 
 ```python
 from shapely import Polygon, Point, LineString
@@ -73,7 +73,7 @@ def setup():
     save('shapely_translate.png')
 ```
 
-![shapely_translate](/home/villares/GitHub/material-aulas/Processing-Python-py5/assets/shapely_translate.png)
+![shapely_translate](/assets/shapely_translate.png)
 
 ## Primeiros passos no `trimesh`
 
@@ -83,7 +83,7 @@ A caixa, que é um dos sólidos mais básicos, pode ser produzida com `trimesh.c
 
 
 
-![shapely_translate](/home/villares/GitHub/material-aulas/Processing-Python-py5/assets/shapely_box_difference.png)
+![shapely_translate](/assets/shapely_box_difference.png)
 
 ```python
 import trimesh
@@ -116,7 +116,7 @@ Note que ao contrário da translação de um objeto no `shapely` que produz um n
 
 Veja como os polígonos `shapely` podem ser extrudados com `trimesh.creation.extrude.polygon()` se tornando um volume tridimensional.
 
-<img title="" src="file:///home/villares/GitHub/material-aulas/Processing-Python-py5/assets/shapely_trimesh_extrude.png" alt="trimesh_crescent" width="200" height="200">
+<img title="" src="file:///assets/shapely_trimesh_extrude.png" alt="trimesh_crescent" width="200" height="200">
 
 ```python
 import shapely
