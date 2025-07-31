@@ -57,13 +57,15 @@ for entry in summary.read_text().splitlines():
             page_path = page if 'http' in page else summary.parent / page
             try:
                 lines = py5.load_strings(page_path)
+                # print(page_path)
                 img = get_first_image(lines)
                 if img and img.startswith('assets'):
                     img = f'/material-aulas/Processing-Python-py5/{img}'
                 if not img:
                     print(f'Falta imagem thumbnail para {page}')
-            except Exception:
-                print(img)
+            except Exception as e:
+                print(e)
+                print(f'Erro na obtenção de imagem thumbnail para {page}')
             #entry = entry.lstrip('-0123456789. ')
             if not 'http' in entry:
                 entry = replace_md_target(entry)

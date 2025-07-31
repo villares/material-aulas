@@ -107,7 +107,7 @@
 ## Pequenos projetos e outros exemplos
 - Neste repositório
     - 8.1.1 [Módulos de Truchet](truchet.md) - Azulejos e rotações
-    - 8.1.2 [Jogo PONG](../pong/) - Estudos para o fazer um jogo
+    - 8.1.2 [Jogo PONG](https://abav.lugaralgum.com/material-aulas/pong/) - Estudos para o fazer um jogo
     - 8.1.3 [L-System](LSystem.md) - Sistema de Lindenmayer
     - 8.1.4 [Autômatos Celulares](automatos-celulares.md) - Jogo da vida de Conway (*Conway's Game of Life*)
 - Externos
