@@ -1,4 +1,5 @@
 # Primeiros passos de orientação a objetos: usando `shapely` e `trimesh`
+
 <!-- para o sumário
 ![](assets/trimesh_demo.gif)
 -->
@@ -7,7 +8,7 @@ As bibliotecas `shapely` e `trimesh`, pacotes do ecossistema Python que permitem
 
 ## Primeiros passos no `shapely`
 
-<img width="800" height="400" alt="shapely_demo" src="https://github.com/user-attachments/assets/c0af634e-a3d7-4ec2-8660-213c8a168c34" />
+<img title="" src="file:///home/villares/GitHub/material-aulas/Processing-Python-py5/assets/shapely1.png" alt="shapely_demo" width="800" height="400">
 
 ```python
 from shapely import Polygon, Point, LineString
@@ -56,34 +57,51 @@ def setup():
     ci = ca.intersection(cb)
     shape(ci)
 ```
-É possível mover os objetos `shapely` com `shapely.affinity.translate()`
 
-```python=
+No exemplo anterior, movemos o sistema de coordenadas para posicionar os desenhos, no entanto, é também possível mover os próprios objetos `shapely`, quer dizer, na verdade, é possível produzir cópias transladadas dos objetos com a função `shapely.affinity.translate()`, modificando as coordenadas da geometria, como no exemplo abaixo.
+
+```python
 import shapely
 
 def setup():
     size(200, 200)
     background(0, 150, 150)
     ca = shapely.Point(100, 100).buffer(50)  
-    cb = shapely.affinity.translate(c, 50, 0)
+    cb = shapely.affinity.translate(ca, 50, 0)
     crescente = ca - cb 
     shape(crescente)
     save('shapely_translate.png')
 ```
-![shapely_translate](https://hackmd.io/_uploads/HkFLmbuDxl.png)
 
+![shapely_translate](/home/villares/GitHub/material-aulas/Processing-Python-py5/assets/shapely_translate.png)
 
 ## Primeiros passos no `trimesh`
 
+A biblioteca `trimesh` pode produzir uma série de "sólidos primitivos", malhas com a geometria de sólidos simples, como pode ser visto na [documentação de integração do py5](https://py5coding.org/integrations/trimesh.html).  No exemplo abaixo é mostrada uma operações de subtração entre malhas, no caso duas caixas, com o método `.difference()`.
+
+A caixa, que é um dos sólidos mais básicos, pode ser produzida com `trimesh.creation.box((w, h, d))` na origem, e  no exemplo usamos uma função ajudante que cria uma caixa, aplica uma translação logo em seguida.
+
+
+
+![shapely_translate](/home/villares/GitHub/material-aulas/Processing-Python-py5/assets/shapely_box_difference.png)
+
 ```python
+import trimesh
+
 def setup():
     global caixa_furada
     size(500, 500, P3D)
+    background(150, 0, 150)
+    lights()
+    translate(width / 2, height / 2)
+    rotate_y(radians(30))
+    rotate_x(radians(60))
     furo_central = translated_box(0, 0, 0, 180, 300, 180)
-    paredes = translated_box(0, 0, 0, 200).difference(furo_central)  
-    caixa_furada = paredes.difference(prisma_lua).difference(prisma_cruz)
-    shape(caixa_furada)
-    
+    paredes_caixa = translated_box(0, 0, 0, 200).difference(furo_central)  
+    shape(paredes_caixa)
+    save('out.png')
+
+
 def translated_box(x, y, z, w, h=None, d=None):
     h = h or w
     d = d or h
@@ -92,11 +110,13 @@ def translated_box(x, y, z, w, h=None, d=None):
     return mesh
 ```
 
+Note que ao contrário da translação de um objeto no `shapely` que produz um novo objeto transladado, no `trimesh` a operação do método `.apply_translation()` modifica a malha.
+
 ## Exemplos combinando as duas bibliotecas
 
-Objetos `shapely` podem ser extrudados com `trimesh.creation.extrude.polygon()`.
+Veja como os polígonos `shapely` podem ser extrudados com `trimesh.creation.extrude.polygon()` se tornando um volume tridimensional.
 
-<img width="200" height="200" alt="trimesh_crescent" src="https://github.com/user-attachments/assets/56bb3154-ff0a-4641-8c80-eb71dc783b75" />
+<img title="" src="file:///home/villares/GitHub/material-aulas/Processing-Python-py5/assets/shapely_trimesh_extrude.png" alt="trimesh_crescent" width="200" height="200">
 
 ```python
 import shapely
@@ -105,14 +125,14 @@ import trimesh
 def setup():
     global malha
     size(200, 200, P3D)
-    c = shapely.Point(0, 0).buffer(50)  # buffer com o raio
-    d = shapely.affinity.translate(c, 50, 0)
-    crescente = c - d
-    malha = trimesh.creation.extrude_polygon(crescente, 50)
     background(150, 0, 150)
     lights()
     translate(width / 2, height / 2)
     rotate_y(radians(45))
+    c = shapely.Point(0, 0).buffer(50)  # buffer com o raio
+    d = shapely.affinity.translate(c, 50, 0)
+    crescente = c - d
+    malha = trimesh.creation.extrude_polygon(crescente, 50)
     shape(malha)
 ```
 
@@ -143,7 +163,7 @@ def setup():
     caixa_furada = paredes.difference(prisma_lua).difference(prisma_cruz)
     # para exportar um gif animado
     py5_tools.animated_gif('trimesh_demo.gif', duration=0.05, frame_numbers=range(1, 361, 3))
-   
+
 def draw():
     background(0, 100, 100)
     lights()
@@ -152,13 +172,13 @@ def draw():
     rotate_y(radians(frame_count))
     fill(200, 200, 0)
     draw_mesh(caixa_furada)
-  
+
 
 def key_pressed():
     if key == 's':
         print('exportando "caixa_furada.stl"')
         caixa_furada.export('caixa_furada.stl')
-    
+
 def apply_rotation(obj, angle, direction=[1, 0, 0], center=[0, 0, 0]):
     rot_matrix = trimesh.transformations.rotation_matrix(angle, direction, center)
     obj.apply_transform(rot_matrix)  # modifica a malha!
