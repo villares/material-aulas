@@ -12,9 +12,9 @@
 * [ellipse()](http://py5coding.org/reference/sketch_ellipse.html) - Desenha uma elipse (oval) - na tela.
 * [ellipse_mode()](http://py5coding.org/reference/sketch_ellipse_mode.html ) - Modifica o ponto a partir do qual elipses e círculos são desenhados alterando a maneira como os valores fornecidos são interpretados.
 * [line()](http://py5coding.org/reference/sketch_line.html) - Desenha uma linha (um caminho direto entre dois pontos) - na tela.
-* [lines()](http://py5coding.org/reference/sketch_lines.html) - Desenhe uma coleção de linhas na tela.
+* [lines()](http://py5coding.org/reference/sketch_lines.html) - Desenha uma coleção de linhas na tela.
 * [point()](http://py5coding.org/reference/sketch_point.html) - Desenha um ponto, uma coordenada no espaço na dimensão de um pixel.
-* [points()](http://py5coding.org/reference/sketch_points.html) - Desenhe uma coleção de pontos, cada um uma coordenada no espaço na dimensão de um pixel.
+* [points()](http://py5coding.org/reference/sketch_points.html) - Desenha uma coleção de pontos, cada um uma coordenada no espaço na dimensão de um pixel.
 * [quad()](http://py5coding.org/reference/sketch_quad.html) - Um quadrilátero é um quadrilátero, um polígono de quatro lados.
 * [rect()](http://py5coding.org/reference/sketch_rect.html) - Desenha um retângulo na tela.
 * [rect_mode()](http://py5coding.org/reference/sketch_rect_mode.html). Modifica o local a partir do qual os retângulos e quadrados são desenhados, alterando a maneira como os valores fornecidos são interpretados.
