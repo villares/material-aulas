@@ -398,6 +398,6 @@ py5.run_sketch()
 
 ## Bibliografia
 
-- SHIFFMAN, Daniel. _Cellular Automata_. In: < https://natureofcode.com/book/chapter-7-cellular-automata/>.
+- SHIFFMAN, Daniel. _Cellular Automata_. In: <https://natureofcode.com/book/chapter-7-cellular-automata/>.
 
 <!-- Versão traduzida do NoC cap 7 https://github.com/villares/material-aulas/blob/db11434439fc166893da4e9f931c95ca3c72137a/Processing-Python-py5/automatos-celulares.md?plain=1#L17 -->
