@@ -8,7 +8,7 @@
 
 Estudados inicialmente como ferramentas de exploração teórica/matemática por John von Neuman, imaginando robôs auto-replicantes, já foram usados para simular o crescimento de cristais, mas também como uma atividade lúdica, tornada relativamente popular pela coluna do Martin Gardner de recreações matemáticas na revista Scientific America. Gardner apresentou a uma legião de entusiastas o jogo da vida do Conway, um dos mais famosos conjuntos de regras para simulação de autômatos celulares em plano (2D).
 
-Os autômatos celulares foram pesquisados em profundidade por [Stephen Wolfram](https://www.wolframscience.com/nks/), que desenvolveu um sistema ultra-simplificado de autômatos celulares em uma linha (1D), e recentemente pesquisadores autômatos como uma ferramenta de simulação, como por exemplo no urbanismo, aplicando-os na análise da evolução de trechos de cidade, entre outras tentativas de aplicação. 
+Os autômatos celulares foram pesquisados em profundidade por [Stephen Wolfram](https://www.wolframscience.com/nks/), que desenvolveu um sistema ultra-simplificado de autômatos celulares em uma linha (1D), e recentemente pesquisadores experimentam autômatos como ferramentas de simulação, por exemplo, no urbanismo, aplicando-os na análise da evolução de trechos de cidade, entre outras tentativas de aplicação. 
 
 Artista visuais que se interessam por computação tem explorado os autômatos faz décadas, por conta dos padrões interessantes que geram e também pelo impacto que provoca ver a sua evolução, lembrando seres vivos em ação. Neste material os olhamos por este lado exploratório, lúdico e estético, assim como pelo ponto de vista didático, pela capacidade dessas estruturas de motivar quem quer aprender/ensinar programação.
 
