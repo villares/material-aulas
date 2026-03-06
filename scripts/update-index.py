@@ -1,6 +1,6 @@
 import re
 from pathlib import Path
-import py5
+import py5  # usado por causa do py5.load_strings() :D
 from markdown import markdown as md_to_html  # pip install markdown
 
 summary = Path("/home/villares/GitHub/material-aulas/Processing-Python-py5/README.md")
