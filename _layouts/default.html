@@ -235,8 +235,10 @@ function hasInteractiveComment(element) {
  * Process code blocks in the document to add editor buttons
  */
 function processCodeBlocks() {
-  // Look for the GitHub Pages rendered code block structure
-  const codeContainers = document.querySelectorAll('div[class*="language-"][class*="highlighter-rouge"]');
+  // Match both Pygments/codehilite output (div.highlight) and the legacy
+  // Jekyll/Rouge structure (div.language-*.highlighter-rouge) so the template
+  // keeps working if any Jekyll-rendered pages are still around.
+  const codeContainers = document.querySelectorAll('div.highlight, div[class*="language-"][class*="highlighter-rouge"]');
   
   codeContainers.forEach(container => {
     // Check if there's an editor-pyp5js comment before this container
